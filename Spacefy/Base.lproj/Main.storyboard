@@ -8,23 +8,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Planets-->
         <scene sceneID="LRe-Nu-tEj">
             <objects>
-                <viewController id="07m-Tu-aeB" sceneMemberID="viewController">
+                <viewController title="Planets" id="07m-Tu-aeB" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BYK-kt-o1J">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="IZF-UF-Xi4"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="b7Y-Mp-piz"/>
+                    <navigationItem key="navigationItem" title="Planets" id="dSY-Zg-Cst"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RN3-Cg-vA5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="588.54961832061065" y="78.873239436619727"/>
+            <point key="canvasLocation" x="1473" y="-125"/>
         </scene>
-        <!--Item-->
+        <!--Solar System-->
         <scene sceneID="SNn-b2-nLL">
             <objects>
                 <viewController id="gQn-wP-iVq" sceneMemberID="viewController">
@@ -34,13 +34,13 @@
                         <viewLayoutGuide key="safeArea" id="JMN-dM-naN"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="qfD-zt-Xfm"/>
+                    <navigationItem key="navigationItem" title="Solar System" id="LHg-4c-rgF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hh-Wq-4DT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1414.5038167938931" y="78.873239436619727"/>
+            <point key="canvasLocation" x="1473" y="530"/>
         </scene>
-        <!--Planets-->
+        <!--Moons-->
         <scene sceneID="cm2-cp-L33">
             <objects>
                 <viewController id="YeA-9C-bJG" sceneMemberID="viewController">
@@ -50,11 +50,27 @@
                         <viewLayoutGuide key="safeArea" id="M9D-wI-6U6"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Planets" id="PIi-ix-fhi"/>
+                    <navigationItem key="navigationItem" title="Moons" id="Pzj-t1-fsU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5m-vK-CbO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1414.5038167938931" y="-573.23943661971839"/>
+            <point key="canvasLocation" x="1473" y="1187"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="tFi-lf-54H">
+            <objects>
+                <viewController id="7iD-uX-sMN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2hw-6S-aKG">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="mmf-Up-9ML"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="ieP-vV-UUG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zFj-EN-4q9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1473" y="1842"/>
         </scene>
         <!--Home-->
         <scene sceneID="jVH-Jz-OdK">
@@ -66,27 +82,11 @@
                         <viewLayoutGuide key="safeArea" id="3ha-hz-fvU"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="20221210_TabBarHome" id="D9r-i9-tti"/>
+                    <navigationItem key="navigationItem" title="Home" id="BRI-kk-Bp6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWD-vL-0u3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="588.54961832061065" y="-573.23943661971839"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="GpW-IC-BCN">
-            <objects>
-                <viewController id="DzM-ef-EZn" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="urx-LG-b3X">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Yvn-Xp-tFz"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ZMZ-75-TOR"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gsS-rg-YQr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-451" y="1221"/>
+            <point key="canvasLocation" x="1474" y="-776"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wIt-NY-bWj">
@@ -98,41 +98,121 @@
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Inj-ab-jKt" kind="relationship" relationship="viewControllers" id="DnT-r7-pLs"/>
-                        <segue destination="07m-Tu-aeB" kind="relationship" relationship="viewControllers" id="hpn-ap-bI6"/>
-                        <segue destination="gQn-wP-iVq" kind="relationship" relationship="viewControllers" id="usb-jx-MOn"/>
-                        <segue destination="YeA-9C-bJG" kind="relationship" relationship="viewControllers" id="6Te-EZ-bNa"/>
-                        <segue destination="DZY-Ph-Qa8" kind="relationship" relationship="viewControllers" id="1Qv-qD-CXj"/>
+                        <segue destination="wdh-MH-3ct" kind="relationship" relationship="viewControllers" id="SsP-4I-XGv"/>
+                        <segue destination="ON5-hv-n7d" kind="relationship" relationship="viewControllers" id="a3Q-XZ-1Yv"/>
+                        <segue destination="Rp1-fq-fud" kind="relationship" relationship="viewControllers" id="usb-jx-MOn"/>
+                        <segue destination="WSK-Uq-SSu" kind="relationship" relationship="viewControllers" id="6Te-EZ-bNa"/>
+                        <segue destination="ngh-gc-kvT" kind="relationship" relationship="viewControllers" id="RvS-5M-rs9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Bf-RX-MfB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-451" y="-227"/>
+            <point key="canvasLocation" x="-274" y="-227"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="ZoA-nX-fX2">
+        <!--Planets-->
+        <scene sceneID="kpZ-yu-EAu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DZY-Ph-Qa8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7cc-jp-wMI"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ON5-hv-n7d" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Planets" image="20221210_TabBarPlanet" id="3HP-Vc-wqK"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Ny-aP-97k">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="7Om-xV-OdQ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="DzM-ef-EZn" kind="relationship" relationship="rootViewController" id="cgH-ac-Ab6"/>
+                        <segue destination="07m-Tu-aeB" kind="relationship" relationship="rootViewController" id="yJG-kz-l0l"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x8y-8P-1xG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="snz-3j-tTN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-451" y="504"/>
+            <point key="canvasLocation" x="688" y="-125"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="YOU-7E-w08">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wdh-MH-3ct" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="20221210_TabBarHome" id="D9r-i9-tti"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="rZa-Sy-oFi">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Inj-ab-jKt" kind="relationship" relationship="rootViewController" id="F5X-cW-e9E"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6dj-YM-5ob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="689" y="-776"/>
+        </scene>
+        <!--SolarAR-->
+        <scene sceneID="gUI-r2-2Nb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rp1-fq-fud" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="SolarAR" image="20221210_TabBarGalaxy" id="qfD-zt-Xfm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="uB1-w5-szJ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gQn-wP-iVq" kind="relationship" relationship="rootViewController" id="yyf-ut-d2X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cnp-Zd-vkE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="688" y="530"/>
+        </scene>
+        <!--Moons-->
+        <scene sceneID="zud-xC-A9P">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WSK-Uq-SSu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Moons" image="20221210_TabBarMoon" id="PIi-ix-fhi"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="R5L-Mb-iK8">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YeA-9C-bJG" kind="relationship" relationship="rootViewController" id="nEc-Q4-Nub"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yIS-3h-zRm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="688" y="1187"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Z6F-Td-idU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ngh-gc-kvT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="20221210_TabBarSettings" id="4XO-Kb-lyH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="e9e-vz-yla">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7iD-uX-sMN" kind="relationship" relationship="rootViewController" id="oTD-mB-nSA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JZa-kK-qNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="688" y="1842"/>
         </scene>
     </scenes>
     <resources>
+        <image name="20221210_TabBarGalaxy" width="25" height="25"/>
         <image name="20221210_TabBarHome" width="25" height="25"/>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="20221210_TabBarMoon" width="25" height="25"/>
+        <image name="20221210_TabBarPlanet" width="25" height="25"/>
+        <image name="20221210_TabBarSettings" width="25" height="25"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

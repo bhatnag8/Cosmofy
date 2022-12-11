@@ -1,3 +1,9 @@
 1. <a href="https://www.flaticon.com/free-icons/home" title="home icons">Home icons created by Freepik - Flaticon</a>
 
-2. 
+2. <a href="https://www.flaticon.com/free-icons/planet-earth" title="planet earth icons">Planet earth icons created by Freepik - Flaticon</a>
+
+3. <a href="https://www.flaticon.com/free-icons/solar-system" title="solar system icons">Solar system icons created by Freepik - Flaticon</a>
+
+4. <a href="https://www.flaticon.com/free-icons/moon" title="moon icons">Moon icons created by Freepik - Flaticon</a>
+
+5. <a href="https://www.flaticon.com/free-icons/gear" title="gear icons">Gear icons created by Freepik - Flaticon</a>
