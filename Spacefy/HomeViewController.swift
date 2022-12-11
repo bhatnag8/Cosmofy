@@ -15,7 +15,8 @@ class HomeViewController: // multiple inheritance
     
     // variables
     @IBOutlet weak var collectionView: UICollectionView!
-    var arrProductPhotos = [UIImage(named: <#T##String#>)]
+    var arrProductPhotos = [UIImage(named: "20221211_HomeBanner1")!,
+                            UIImage(named: "20221211_HomeBanner2")!]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +27,17 @@ class HomeViewController: // multiple inheritance
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return arrProductPhotos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeCollectionViewCell
+        cell.homeImage.image = arrProductPhotos[indexPath.row]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
 
 }
