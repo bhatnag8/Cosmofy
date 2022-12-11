@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4L4-Tn-4q4">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -56,30 +56,107 @@
                                 </cells>
                             </collectionView>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="FSp-XR-xks">
-                                <rect key="frame" x="138.66666666666666" y="544" width="116" height="26"/>
+                                <rect key="frame" x="138.66666666666666" y="544" width="115.66666666666666" height="26"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGrayColor"/>
                                 <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacefy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQe-vs-Ngb">
+                                <rect key="frame" x="16" y="483.33333333333331" width="131" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="uzc-DZ-ACf">
+                                <rect key="frame" x="16" y="594" width="361" height="159"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zza-Zn-RFA">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="73.333333333333329"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="U3E-c5-147">
+                                                <rect key="frame" x="11.999999999999996" y="14.333333333333368" width="52.666666666666657" height="44.666666666666657"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97j-ma-yeM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="52.666666666666664" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJl-XE-PA6">
+                                                        <rect key="frame" x="0.0" y="24.333333333333258" width="52.666666666666664" height="20.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="AppColorDarker"/>
+                                        <constraints>
+                                            <constraint firstItem="U3E-c5-147" firstAttribute="centerY" secondItem="zza-Zn-RFA" secondAttribute="centerY" id="OOV-i4-6eS"/>
+                                            <constraint firstItem="U3E-c5-147" firstAttribute="leading" secondItem="zza-Zn-RFA" secondAttribute="leading" constant="12" id="pWq-fr-453"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Hz-YE-9Za">
+                                        <rect key="frame" x="0.0" y="85.333333333333371" width="361" height="73.666666666666686"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Q81-Xj-lCz">
+                                                <rect key="frame" x="12" y="14.666666666666625" width="161.66666666666666" height="44.666666666666657"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article of the Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDk-wc-cvd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="161.66666666666666" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nkd-fn-Uky">
+                                                        <rect key="frame" x="0.0" y="24.333333333333371" width="161.66666666666666" height="20.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="AppColorDarker"/>
+                                        <constraints>
+                                            <constraint firstItem="Q81-Xj-lCz" firstAttribute="centerY" secondItem="4Hz-YE-9Za" secondAttribute="centerY" id="hkL-nK-tox"/>
+                                            <constraint firstItem="Q81-Xj-lCz" firstAttribute="leading" secondItem="4Hz-YE-9Za" secondAttribute="leading" constant="12" id="vMb-rJ-n7O"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Hs4-jw-R6g"/>
+                        <viewLayoutGuide key="safeArea" id="fcd-fE-6qF"/>
                         <color key="backgroundColor" name="AppColor"/>
                         <constraints>
-                            <constraint firstItem="Hs4-jw-R6g" firstAttribute="trailing" secondItem="Rir-Sb-YO9" secondAttribute="trailing" id="IKO-jF-dPj"/>
-                            <constraint firstItem="Rir-Sb-YO9" firstAttribute="leading" secondItem="Hs4-jw-R6g" secondAttribute="leading" id="QZa-yP-fLg"/>
-                            <constraint firstItem="Rir-Sb-YO9" firstAttribute="top" secondItem="XLD-56-E3w" secondAttribute="top" id="Qkr-hy-IfG"/>
+                            <constraint firstItem="fcd-fE-6qF" firstAttribute="trailing" secondItem="uzc-DZ-ACf" secondAttribute="trailing" constant="16" id="1Sa-1m-VvI"/>
+                            <constraint firstItem="aQe-vs-Ngb" firstAttribute="leading" secondItem="XLD-56-E3w" secondAttribute="leadingMargin" id="3OD-J2-x1h"/>
+                            <constraint firstItem="uzc-DZ-ACf" firstAttribute="leading" secondItem="fcd-fE-6qF" secondAttribute="leading" constant="16" id="3nF-I4-jya"/>
+                            <constraint firstItem="uzc-DZ-ACf" firstAttribute="top" secondItem="Rir-Sb-YO9" secondAttribute="bottom" constant="24" id="EsZ-lO-BgC"/>
+                            <constraint firstItem="fcd-fE-6qF" firstAttribute="trailing" secondItem="Rir-Sb-YO9" secondAttribute="trailing" id="IKO-jF-dPj"/>
+                            <constraint firstItem="Rir-Sb-YO9" firstAttribute="leading" secondItem="fcd-fE-6qF" secondAttribute="leading" id="QZa-yP-fLg"/>
+                            <constraint firstItem="fcd-fE-6qF" firstAttribute="bottom" secondItem="uzc-DZ-ACf" secondAttribute="bottom" constant="16" id="XMT-dG-lrt"/>
+                            <constraint firstItem="Rir-Sb-YO9" firstAttribute="top" secondItem="XLD-56-E3w" secondAttribute="top" id="YJJ-8P-Gqd"/>
                             <constraint firstItem="FSp-XR-xks" firstAttribute="bottom" secondItem="Rir-Sb-YO9" secondAttribute="bottom" id="j6A-uN-ZzC"/>
+                            <constraint firstItem="FSp-XR-xks" firstAttribute="top" secondItem="aQe-vs-Ngb" secondAttribute="bottom" constant="20" id="jgu-eU-dgP"/>
                             <constraint firstItem="FSp-XR-xks" firstAttribute="centerX" secondItem="Rir-Sb-YO9" secondAttribute="centerX" id="nIh-u6-MzW"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="20221210_TabBarHome" id="c9D-rl-Udd"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="20221210_TabBarHome" id="yAI-Zn-rYX"/>
+                    <navigationItem key="navigationItem" title="Spacefy" largeTitleDisplayMode="always" id="ygK-fh-8f4"/>
                     <connections>
+                        <outlet property="bottomView" destination="4Hz-YE-9Za" id="cKX-sb-LGq"/>
                         <outlet property="collectionView" destination="Rir-Sb-YO9" id="f4V-5F-rKN"/>
+                        <outlet property="label1" destination="97j-ma-yeM" id="qrF-0M-gWX"/>
+                        <outlet property="label2" destination="rJl-XE-PA6" id="zP0-Fh-3Dl"/>
+                        <outlet property="label3" destination="Nkd-fn-Uky" id="Cgw-Gg-KWP"/>
                         <outlet property="pageControl" destination="FSp-XR-xks" id="KEw-xO-UYl"/>
+                        <outlet property="topView" destination="zza-Zn-RFA" id="Asi-L9-XNo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qFs-N1-fEZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="688" y="-787"/>
+            <point key="canvasLocation" x="687.78625954198469" y="-796.47887323943667"/>
         </scene>
         <!--Planets-->
         <scene sceneID="LRe-Nu-tEj">
@@ -88,14 +165,14 @@
                     <view key="view" contentMode="scaleToFill" id="BYK-kt-o1J">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="IZF-UF-Xi4"/>
+                        <viewLayoutGuide key="safeArea" id="krG-JU-7uw"/>
                         <color key="backgroundColor" name="AppColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Planets" id="dSY-Zg-Cst"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RN3-Cg-vA5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473" y="-125"/>
+            <point key="canvasLocation" x="1425" y="-125"/>
         </scene>
         <!--Solar System-->
         <scene sceneID="SNn-b2-nLL">
@@ -104,14 +181,14 @@
                     <view key="view" contentMode="scaleToFill" id="sdW-HC-HkP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="JMN-dM-naN"/>
+                        <viewLayoutGuide key="safeArea" id="z37-Vc-5et"/>
                         <color key="backgroundColor" name="AppColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Solar System" id="LHg-4c-rgF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hh-Wq-4DT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473" y="530"/>
+            <point key="canvasLocation" x="1424" y="530"/>
         </scene>
         <!--Moons-->
         <scene sceneID="cm2-cp-L33">
@@ -120,14 +197,14 @@
                     <view key="view" contentMode="scaleToFill" id="nUb-if-s6y">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="M9D-wI-6U6"/>
+                        <viewLayoutGuide key="safeArea" id="oU3-JC-zdF"/>
                         <color key="backgroundColor" name="AppColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Moons" id="Pzj-t1-fsU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5m-vK-CbO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473" y="1187"/>
+            <point key="canvasLocation" x="1424" y="1187"/>
         </scene>
         <!--Settings-->
         <scene sceneID="tFi-lf-54H">
@@ -136,14 +213,14 @@
                     <view key="view" contentMode="scaleToFill" id="2hw-6S-aKG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="mmf-Up-9ML"/>
+                        <viewLayoutGuide key="safeArea" id="phi-CT-TD2"/>
                         <color key="backgroundColor" name="AppColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="ieP-vV-UUG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFj-EN-4q9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473" y="1842"/>
+            <point key="canvasLocation" x="1424" y="1842"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wIt-NY-bWj">
@@ -155,7 +232,7 @@
                         <color key="selectedImageTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Q6w-r6-G07" kind="relationship" relationship="viewControllers" id="g8U-uF-cph"/>
+                        <segue destination="Q6w-r6-G07" kind="relationship" relationship="viewControllers" id="qdc-zB-TMH"/>
                         <segue destination="ON5-hv-n7d" kind="relationship" relationship="viewControllers" id="a3Q-XZ-1Yv"/>
                         <segue destination="Rp1-fq-fud" kind="relationship" relationship="viewControllers" id="usb-jx-MOn"/>
                         <segue destination="WSK-Uq-SSu" kind="relationship" relationship="viewControllers" id="6Te-EZ-bNa"/>
@@ -185,11 +262,11 @@
             </objects>
             <point key="canvasLocation" x="688" y="-125"/>
         </scene>
-        <!--SolarAR-->
+        <!--Solar System-->
         <scene sceneID="gUI-r2-2Nb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rp1-fq-fud" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="SolarAR" image="20221210_TabBarGalaxy" id="qfD-zt-Xfm"/>
+                    <tabBarItem key="tabBarItem" title="Solar System" image="20221210_TabBarGalaxy" id="qfD-zt-Xfm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="uB1-w5-szJ">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -250,7 +327,10 @@
         <image name="20221210_TabBarPlanet" width="25" height="25"/>
         <image name="20221210_TabBarSettings" width="25" height="25"/>
         <namedColor name="AppColor">
-            <color red="0.9930384743165408" green="0.97855230528408543" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.99299997091293335" green="0.97899997234344482" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppColorDarker">
+            <color red="0.99299997091293335" green="0.97899997234344482" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
