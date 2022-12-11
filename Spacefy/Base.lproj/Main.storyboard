@@ -75,6 +75,7 @@
         <!--Home-->
         <scene sceneID="jVH-Jz-OdK">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tWD-vL-0u3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController title="Home" id="Inj-ab-jKt" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tRf-t7-rIi">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -84,7 +85,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="BRI-kk-Bp6"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tWD-vL-0u3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1474" y="-776"/>
         </scene>
