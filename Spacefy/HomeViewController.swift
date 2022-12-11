@@ -23,6 +23,10 @@ class HomeViewController: // multiple inheritance
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
     
+    @IBAction func linkButton(_ sender: UIButton) {
+        UIApplication.shared.open(URL(string: "https://www.rocketstem.org/2015/04/23/the-top-100-images-of-the-universe-captured-by-the-hubble-space-telescope/")! as URL, options: [:], completionHandler: nil)
+    }
+    
     var arrProductPhotos = [UIImage(named: "20221211_HomeBanner3")!,
                             UIImage(named: "20221211_HomeBanner4")!,
                             UIImage(named: "20221211_HomeBanner5")!,
@@ -45,7 +49,7 @@ class HomeViewController: // multiple inheritance
     }
     
     func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 7.5, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
     }
     
     @objc func moveToNextIndex() {
