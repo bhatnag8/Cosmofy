@@ -186,7 +186,7 @@
         <!--Planets-->
         <scene sceneID="LRe-Nu-tEj">
             <objects>
-                <viewController title="Planets" id="07m-Tu-aeB" sceneMemberID="viewController">
+                <viewController title="Planets" id="07m-Tu-aeB" customClass="PlanetsViewController" customModule="Spacefy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BYK-kt-o1J">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -356,7 +356,7 @@
             <color red="0.99299997091293335" green="0.97899997234344482" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AppColorDarker">
-            <color red="0.99299997091293335" green="0.97899997234344482" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.93435412511807014" green="0.92545207281070552" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
