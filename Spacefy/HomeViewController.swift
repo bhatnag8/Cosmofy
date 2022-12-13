@@ -32,7 +32,6 @@ class HomeViewController: // multiple inheritance
                             UIImage(named: "20221211_HomeBanner5")!,
                             UIImage(named: "20221211_HomeBanner6")!,
                             UIImage(named: "20221211_HomeBanner7")!]
-//                            UIImage(named: "20221211_HomeBanner8")!,]
     var timer : Timer?
     var currentCellIndex = 0
         
@@ -62,7 +61,6 @@ class HomeViewController: // multiple inheritance
         bottomView.layer.shadowOffset = .zero
         bottomView.layer.shadowRadius = 1
     
-    
         startTimer()
         
     }
@@ -70,6 +68,7 @@ class HomeViewController: // multiple inheritance
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 7.5, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
     }
+    
     
     @objc func moveToNextIndex() {
         if (currentCellIndex < arrProductPhotos.count - 1) {
@@ -97,12 +96,6 @@ class HomeViewController: // multiple inheritance
             label1.text = "Hubble's Top 100 • #15"
             label2.text = "Stellar Spire in the Eagle Nebula"
         }
-//        else if (currentCellIndex == 5) { // 8
-//            label1.text = "Hubble's Top 100 • #21"
-//            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
-//        }
-    
-        
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -126,6 +119,7 @@ class HomeViewController: // multiple inheritance
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let width = scrollView.frame.width
         currentCellIndex = Int(scrollView.contentOffset.x / width)
+        
         if (currentCellIndex == 0) { // 3
             label1.text = "Hubble's Top 100 • #1"
             label2.text = "Pillars of Creation (New View)"
@@ -142,11 +136,9 @@ class HomeViewController: // multiple inheritance
             label1.text = "Hubble's Top 100 • #15"
             label2.text = "Stellar Spire in the Eagle Nebula"
         }
-//        else if (currentCellIndex == 5) { // 8
-//            label1.text = "Hubble's Top 100 • #21"
-//            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
-//        }
         pageControl.currentPage = currentCellIndex
+        timer?.invalidate()
+        startTimer()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

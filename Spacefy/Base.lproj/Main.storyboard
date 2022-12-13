@@ -61,8 +61,8 @@
                                 <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacefy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQe-vs-Ngb">
-                                <rect key="frame" x="16" y="483.33333333333331" width="131" height="40.666666666666686"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <rect key="frame" x="16.000000000000007" y="481.66666666666669" width="123.66666666666669" height="38.333333333333314"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -163,8 +163,8 @@
                             <constraint firstItem="fcd-fE-6qF" firstAttribute="bottom" secondItem="uzc-DZ-ACf" secondAttribute="bottom" constant="16" id="XMT-dG-lrt"/>
                             <constraint firstItem="Rir-Sb-YO9" firstAttribute="top" secondItem="XLD-56-E3w" secondAttribute="top" id="YJJ-8P-Gqd"/>
                             <constraint firstItem="FSp-XR-xks" firstAttribute="bottom" secondItem="Rir-Sb-YO9" secondAttribute="bottom" id="j6A-uN-ZzC"/>
-                            <constraint firstItem="FSp-XR-xks" firstAttribute="top" secondItem="aQe-vs-Ngb" secondAttribute="bottom" constant="20" id="jgu-eU-dgP"/>
                             <constraint firstItem="FSp-XR-xks" firstAttribute="centerX" secondItem="Rir-Sb-YO9" secondAttribute="centerX" id="nIh-u6-MzW"/>
+                            <constraint firstItem="uzc-DZ-ACf" firstAttribute="top" secondItem="aQe-vs-Ngb" secondAttribute="bottom" constant="74" id="zTp-Sl-qDY"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="20221210_TabBarHome" id="yAI-Zn-rYX"/>
@@ -303,7 +303,21 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxr-g8-LIB">
                                         <rect key="frame" x="0.0" y="295" width="345" height="271"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMi-8c-vIU">
+                                                <rect key="frame" x="24" y="24" width="297" height="74.333333333333329"/>
+                                                <color key="backgroundColor" name="AppColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="WMi-8c-vIU" secondAttribute="height" multiplier="4:1" id="mhm-YR-enh"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" name="AppColorDarker"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="WMi-8c-vIU" secondAttribute="trailing" constant="24" id="Z5V-71-0XC"/>
+                                            <constraint firstItem="WMi-8c-vIU" firstAttribute="leading" secondItem="rxr-g8-LIB" secondAttribute="leading" constant="24" id="aBO-5O-RxZ"/>
+                                            <constraint firstItem="WMi-8c-vIU" firstAttribute="top" secondItem="rxr-g8-LIB" secondAttribute="top" constant="24" id="zma-hU-0Cg"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
