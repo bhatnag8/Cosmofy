@@ -53,8 +53,6 @@ class PlanetsViewController: UIViewController {
         
         innerView2.layer.cornerRadius = 24
         bottomView2.layer.cornerRadius = 24
-        
-        
     }
     
     override func viewDidLayoutSubviews() {

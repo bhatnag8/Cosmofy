@@ -60,7 +60,7 @@ class HomeViewController: // multiple inheritance
         bottomView.layer.shadowOffset = .zero
         bottomView.layer.shadowRadius = 1
     
-        startTimer()
+        startTimer(time: 7.5)
         
     }
     
@@ -69,8 +69,8 @@ class HomeViewController: // multiple inheritance
         topView.layer.cornerRadius = topView.bounds.height / 2
     }
     
-    func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 7.5, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
+    func startTimer(time: Double) {
+        timer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
     }
     
     
@@ -142,7 +142,7 @@ class HomeViewController: // multiple inheritance
         }
         pageControl.currentPage = currentCellIndex
         timer?.invalidate()
-        startTimer()
+        startTimer(time: 5.0)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
