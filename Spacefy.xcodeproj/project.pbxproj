@@ -10,6 +10,7 @@
 		2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F073A122946BE4000F024B8 /* PlanetsViewController.swift */; };
 		2F0B04D22945A522001FAAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B04D12945A522001FAAE6 /* HomeViewController.swift */; };
 		2F0B04D62945A576001FAAE6 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B04D52945A576001FAAE6 /* HomeCollectionViewCell.swift */; };
+		2F7DCBA0294835A20015073C /* ShowSplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DCB9F294835A20015073C /* ShowSplashScreen.swift */; };
 		2FBBB6592945531500BBB072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBB6582945531500BBB072 /* AppDelegate.swift */; };
 		2FBBB65B2945531500BBB072 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBB65A2945531500BBB072 /* SceneDelegate.swift */; };
 		2FBBB65D2945531500BBB072 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBB65C2945531500BBB072 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 		2F073A122946BE4000F024B8 /* PlanetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewController.swift; sourceTree = "<group>"; };
 		2F0B04D12945A522001FAAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2F0B04D52945A576001FAAE6 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F7DCB9F294835A20015073C /* ShowSplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSplashScreen.swift; sourceTree = "<group>"; };
 		2FBBB6552945531500BBB072 /* Spacefy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spacefy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FBBB6582945531500BBB072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FBBB65A2945531500BBB072 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				2F0B04D12945A522001FAAE6 /* HomeViewController.swift */,
 				2F073A122946BE4000F024B8 /* PlanetsViewController.swift */,
 				2F0B04D52945A576001FAAE6 /* HomeCollectionViewCell.swift */,
+				2F7DCB9F294835A20015073C /* ShowSplashScreen.swift */,
 			);
 			path = Spacefy;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F0B04D62945A576001FAAE6 /* HomeCollectionViewCell.swift in Sources */,
+				2F7DCBA0294835A20015073C /* ShowSplashScreen.swift in Sources */,
 				2FBBB65D2945531500BBB072 /* ViewController.swift in Sources */,
 				2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */,
 				2FBBB6592945531500BBB072 /* AppDelegate.swift in Sources */,

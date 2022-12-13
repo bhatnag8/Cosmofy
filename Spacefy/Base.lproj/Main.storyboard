@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4L4-Tn-4q4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cVz-jo-Ent">
     <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -235,6 +235,7 @@
         <scene sceneID="wIt-NY-bWj">
             <objects>
                 <tabBarController id="4L4-Tn-4q4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="IHr-WS-x7v"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cpz-ND-2Hg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -383,6 +384,43 @@
             </objects>
             <point key="canvasLocation" x="688" y="1842"/>
         </scene>
+        <!--Show Splash Screen-->
+        <scene sceneID="TIk-yd-6vn">
+            <objects>
+                <viewController id="cVz-jo-Ent" customClass="ShowSplashScreen" customModule="Spacefy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bfS-0l-QFj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20221212_SplashScreen2" translatesAutoresizingMaskIntoConstraints="NO" id="WwA-bp-sIN">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacefy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJi-eb-N4X">
+                                <rect key="frame" x="146" y="422.33333333333331" width="101" height="32.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eup-24-ZrR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WwA-bp-sIN" firstAttribute="top" secondItem="bfS-0l-QFj" secondAttribute="top" id="BWz-ch-2yS"/>
+                            <constraint firstItem="WwA-bp-sIN" firstAttribute="trailing" secondItem="eup-24-ZrR" secondAttribute="trailing" id="Srh-R3-pLb"/>
+                            <constraint firstItem="rJi-eb-N4X" firstAttribute="centerX" secondItem="eup-24-ZrR" secondAttribute="centerX" id="du4-FS-1ij"/>
+                            <constraint firstItem="WwA-bp-sIN" firstAttribute="leading" secondItem="eup-24-ZrR" secondAttribute="leading" id="kPG-ab-q2G"/>
+                            <constraint firstItem="rJi-eb-N4X" firstAttribute="centerY" secondItem="eup-24-ZrR" secondAttribute="centerY" id="mTa-Oc-stW"/>
+                            <constraint firstAttribute="bottom" secondItem="WwA-bp-sIN" secondAttribute="bottom" id="ud4-1x-085"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="4L4-Tn-4q4" kind="presentation" identifier="showSplashScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="MLb-AP-DLg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="apR-DX-zuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1166" y="-227"/>
+        </scene>
     </scenes>
     <resources>
         <image name="20221210_TabBarGalaxy" width="25" height="25"/>
@@ -390,12 +428,13 @@
         <image name="20221210_TabBarMoon" width="25" height="25"/>
         <image name="20221210_TabBarPlanet" width="25" height="25"/>
         <image name="20221210_TabBarSettings" width="25" height="25"/>
+        <image name="20221212_SplashScreen2" width="4136" height="3102"/>
         <image name="link.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="AppColor">
             <color red="0.99299997091293335" green="0.97899997234344482" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AppColorDarker">
-            <color red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
