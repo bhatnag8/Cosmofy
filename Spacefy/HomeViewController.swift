@@ -42,8 +42,7 @@ class HomeViewController: // multiple inheritance
         collectionView.dataSource = self
         pageControl.numberOfPages = arrProductPhotos.count
         
-        bottomView.layer.cornerRadius = 16
-        topView.layer.cornerRadius = 16
+        
         
         topView.layer.borderColor = UIColor.gray.cgColor
         topView.layer.borderWidth = 1
@@ -63,6 +62,11 @@ class HomeViewController: // multiple inheritance
     
         startTimer()
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        bottomView.layer.cornerRadius = bottomView.bounds.height / 2
+        topView.layer.cornerRadius = topView.bounds.height / 2
     }
     
     func startTimer() {
