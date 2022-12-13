@@ -16,18 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20221212_SplashScreen2" translatesAutoresizingMaskIntoConstraints="NO" id="uAZ-KO-mc8">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacefy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTe-99-9bB">
-                                <rect key="frame" x="149.66666666666666" y="423.66666666666669" width="93.666666666666657" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="146" y="422.33333333333331" width="101" height="32.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="uAZ-KO-mc8" secondAttribute="bottom" id="4fa-kK-fEa"/>
                             <constraint firstItem="wTe-99-9bB" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="E7F-mN-HW8"/>
                             <constraint firstItem="wTe-99-9bB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GH1-IQ-qUR"/>
+                            <constraint firstItem="uAZ-KO-mc8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cEm-DN-pDr"/>
+                            <constraint firstItem="uAZ-KO-mc8" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="oC0-uc-85M"/>
+                            <constraint firstItem="uAZ-KO-mc8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="q71-4R-2Yv"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,6 +44,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="20221212_SplashScreen2" width="4136" height="3102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

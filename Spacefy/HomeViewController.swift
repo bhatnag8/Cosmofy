@@ -31,8 +31,8 @@ class HomeViewController: // multiple inheritance
                             UIImage(named: "20221211_HomeBanner4")!,
                             UIImage(named: "20221211_HomeBanner5")!,
                             UIImage(named: "20221211_HomeBanner6")!,
-                            UIImage(named: "20221211_HomeBanner7")!,
-                            UIImage(named: "20221211_HomeBanner8")!,]
+                            UIImage(named: "20221211_HomeBanner7")!]
+//                            UIImage(named: "20221211_HomeBanner8")!,]
     var timer : Timer?
     var currentCellIndex = 0
         
@@ -42,8 +42,27 @@ class HomeViewController: // multiple inheritance
         collectionView.delegate = self
         collectionView.dataSource = self
         pageControl.numberOfPages = arrProductPhotos.count
-        topView.layer.cornerRadius = 16
+        
         bottomView.layer.cornerRadius = 16
+        topView.layer.cornerRadius = 16
+        
+        topView.layer.borderColor = UIColor.gray.cgColor
+        topView.layer.borderWidth = 1
+        
+        bottomView.layer.borderColor = UIColor.gray.cgColor
+        bottomView.layer.borderWidth = 1
+        
+        topView.layer.shadowColor = UIColor.black.cgColor
+        topView.layer.shadowOpacity = 1
+        topView.layer.shadowOffset = .zero
+        topView.layer.shadowRadius = 1
+        
+        bottomView.layer.shadowColor = UIColor.black.cgColor
+        bottomView.layer.shadowOpacity = 1
+        bottomView.layer.shadowOffset = .zero
+        bottomView.layer.shadowRadius = 1
+    
+    
         startTimer()
         
     }
@@ -77,10 +96,11 @@ class HomeViewController: // multiple inheritance
         } else if (currentCellIndex == 4) { // 7
             label1.text = "Hubble's Top 100 • #15"
             label2.text = "Stellar Spire in the Eagle Nebula"
-        } else if (currentCellIndex == 5) { // 8
-            label1.text = "Hubble's Top 100 • #21"
-            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
         }
+//        else if (currentCellIndex == 5) { // 8
+//            label1.text = "Hubble's Top 100 • #21"
+//            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
+//        }
     
         
     }
@@ -121,15 +141,17 @@ class HomeViewController: // multiple inheritance
         } else if (currentCellIndex == 4) { // 7
             label1.text = "Hubble's Top 100 • #15"
             label2.text = "Stellar Spire in the Eagle Nebula"
-        } else if (currentCellIndex == 5) { // 8
-            label1.text = "Hubble's Top 100 • #21"
-            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
         }
+//        else if (currentCellIndex == 5) { // 8
+//            label1.text = "Hubble's Top 100 • #21"
+//            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
+//        }
         pageControl.currentPage = currentCellIndex
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
     }
+    
 
 }

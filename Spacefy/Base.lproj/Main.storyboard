@@ -278,14 +278,53 @@
                     <view key="view" contentMode="scaleToFill" id="HSZ-QI-MiW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="dZh-6U-ySF">
+                                <rect key="frame" x="24" y="179" width="345" height="566"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQ6-CA-0RI">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="271"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qrw-dw-0wp">
+                                                <rect key="frame" x="24" y="24" width="297" height="74.333333333333329"/>
+                                                <color key="backgroundColor" name="AppColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="qrw-dw-0wp" secondAttribute="height" multiplier="4:1" id="uju-F3-Xqd"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" name="AppColorDarker"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="qrw-dw-0wp" secondAttribute="trailing" constant="24" id="7dO-te-rAS"/>
+                                            <constraint firstItem="qrw-dw-0wp" firstAttribute="leading" secondItem="kQ6-CA-0RI" secondAttribute="leading" constant="24" id="OTL-r3-zTr"/>
+                                            <constraint firstItem="qrw-dw-0wp" firstAttribute="top" secondItem="kQ6-CA-0RI" secondAttribute="top" constant="24" id="sed-1X-Nv8"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxr-g8-LIB">
+                                        <rect key="frame" x="0.0" y="295" width="345" height="271"/>
+                                        <color key="backgroundColor" name="AppColorDarker"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="0hn-Lw-6h6"/>
                         <color key="backgroundColor" name="AppColor"/>
+                        <constraints>
+                            <constraint firstItem="dZh-6U-ySF" firstAttribute="leading" secondItem="0hn-Lw-6h6" secondAttribute="leading" constant="24" id="449-an-DRT"/>
+                            <constraint firstItem="0hn-Lw-6h6" firstAttribute="bottom" secondItem="dZh-6U-ySF" secondAttribute="bottom" constant="24" id="79X-dx-Puz"/>
+                            <constraint firstItem="dZh-6U-ySF" firstAttribute="top" secondItem="0hn-Lw-6h6" secondAttribute="top" constant="24" id="WlM-rF-VT5"/>
+                            <constraint firstItem="0hn-Lw-6h6" firstAttribute="trailing" secondItem="dZh-6U-ySF" secondAttribute="trailing" constant="24" id="jV0-dA-OP9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Planets" id="HuV-2L-Goi"/>
+                    <connections>
+                        <outlet property="view1" destination="kQ6-CA-0RI" id="noy-0G-gTm"/>
+                        <outlet property="view2" destination="rxr-g8-LIB" id="LBY-dA-25s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y61-YI-Uvp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1424" y="-135"/>
+            <point key="canvasLocation" x="1423.6641221374045" y="-135.21126760563382"/>
         </scene>
         <!--Solar System-->
         <scene sceneID="gUI-r2-2Nb">
@@ -356,7 +395,7 @@
             <color red="0.99299997091293335" green="0.97899997234344482" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AppColorDarker">
-            <color red="0.93608160540330132" green="0.94098255621693117" blue="0.94098255621693117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
