@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "20221210_TabBarPlanet_25x25.png",
+      "filename" : "20221215_TabBarPlanet_25x25.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "20221210_TabBarPlanet_50x50.png",
+      "filename" : "20221215_TabBarPlanet_50x50.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "20221210_TabBarPlanet_75x75.png",
+      "filename" : "20221215_TabBarPlanet_75x75.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
