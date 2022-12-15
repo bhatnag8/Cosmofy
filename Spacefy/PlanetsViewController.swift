@@ -55,7 +55,7 @@ class PlanetsViewController: UIViewController {
         bottomView2.layer.cornerRadius = 24
     }
     
-    override func viewDidLayoutSubviews() {
+    override func viewDidAppear(_ animated: Bool) {
         button1.layer.cornerRadius = button1.bounds.height / 2
         button2.layer.cornerRadius = button2.bounds.height / 2
         button3.layer.cornerRadius = button2.bounds.height / 2
