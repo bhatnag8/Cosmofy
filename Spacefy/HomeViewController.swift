@@ -65,8 +65,11 @@ class HomeViewController: // multiple inheritance
     }
     
     override func viewDidLayoutSubviews() {
-        bottomView.layer.cornerRadius = bottomView.bounds.height / 2
-        topView.layer.cornerRadius = topView.bounds.height / 2
+        //        bottomView.layer.cornerRadius = bottomView.bounds.height / 2
+        //        topView.layer.cornerRadius = topView.bounds.height / 2
+        
+        bottomView.layer.cornerRadius = 24
+        topView.layer.cornerRadius = 24
     }
     
     func startTimer(time: Double) {
