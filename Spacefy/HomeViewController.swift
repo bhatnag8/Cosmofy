@@ -27,7 +27,7 @@ class HomeViewController: // multiple inheritance
         UIApplication.shared.open(URL(string: "https://www.rocketstem.org/2015/04/23/the-top-100-images-of-the-universe-captured-by-the-hubble-space-telescope/")! as URL, options: [:], completionHandler: nil)
     }
     
-    var arrProductPhotos = [UIImage(named: "20221211_HomeBanner3")!,
+    var arrProductPhotos = [UIImage(named: "20221211_HomeBanner8")!,
                             UIImage(named: "20221211_HomeBanner4")!,
                             UIImage(named: "20221211_HomeBanner5")!,
                             UIImage(named: "20221211_HomeBanner6")!,
@@ -44,10 +44,10 @@ class HomeViewController: // multiple inheritance
         
         
         
-        topView.layer.borderColor = UIColor.gray.cgColor
+        topView.layer.borderColor = UIColor.black.cgColor
         topView.layer.borderWidth = 1
         
-        bottomView.layer.borderColor = UIColor.gray.cgColor
+        bottomView.layer.borderColor = UIColor.black.cgColor
         bottomView.layer.borderWidth = 1
         
         topView.layer.shadowColor = UIColor.black.cgColor

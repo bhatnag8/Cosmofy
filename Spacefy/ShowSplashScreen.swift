@@ -12,7 +12,7 @@ class ShowSplashScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        perform(#selector(self.showNavController), with: nil, afterDelay: 2)
+        perform(#selector(self.showNavController), with: nil, afterDelay: 1)
     }
     
     @objc func showNavController() {
