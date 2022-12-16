@@ -661,7 +661,7 @@
             <color red="0.99299997091293335" green="0.97899997234344482" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AppColorDarker">
-            <color red="0.76758719544236753" green="0.80019032680240443" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.76800000667572021" green="0.80000001192092896" blue="0.93699997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="colorEarth">
             <color red="0.21600000560283661" green="0.24300000071525574" blue="0.50599998235702515" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -673,13 +673,13 @@
             <color red="0.77600002288818359" green="0.51399999856948853" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="colorMercury">
-            <color red="0.40098041296005249" green="0.39607846736907959" blue="0.90980398654937744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.40099999308586121" green="0.39599999785423279" blue="0.9100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="colorNeptune">
             <color red="0.31400001049041748" green="0.45500001311302185" blue="0.9649999737739563" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="colorSaturn">
-            <color red="0.054901964962482452" green="0.16862745583057404" blue="0.14117647707462311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.054999999701976776" green="0.16899999976158142" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="colorUranus">
             <color red="0.30399999022483826" green="0.3580000102519989" blue="0.36100000143051147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
