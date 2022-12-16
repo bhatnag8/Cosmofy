@@ -62,7 +62,6 @@
 		2FBBB6572945531500BBB072 /* Spacefy */ = {
 			isa = PBXGroup;
 			children = (
-				2FFA7198294578CE004C2A57 /* Storyboards */,
 				2FBBB6582945531500BBB072 /* AppDelegate.swift */,
 				2FBBB65A2945531500BBB072 /* SceneDelegate.swift */,
 				2FBBB65E2945531500BBB072 /* Main.storyboard */,
@@ -75,13 +74,6 @@
 				2F7DCB9F294835A20015073C /* ShowSplashScreen.swift */,
 			);
 			path = Spacefy;
-			sourceTree = "<group>";
-		};
-		2FFA7198294578CE004C2A57 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

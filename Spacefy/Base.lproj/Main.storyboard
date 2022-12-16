@@ -552,11 +552,11 @@
             </objects>
             <point key="canvasLocation" x="1423.6641221374045" y="-135.21126760563382"/>
         </scene>
-        <!--Solar System-->
+        <!--Milky Way-->
         <scene sceneID="gUI-r2-2Nb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rp1-fq-fud" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Solar System" image="20221210_TabBarGalaxy" id="qfD-zt-Xfm"/>
+                    <tabBarItem key="tabBarItem" title="Milky Way" image="20221210_TabBarGalaxy" id="qfD-zt-Xfm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="uB1-w5-szJ">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
