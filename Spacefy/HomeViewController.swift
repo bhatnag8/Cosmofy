@@ -42,8 +42,6 @@ class HomeViewController: // multiple inheritance
         collectionView.dataSource = self
         pageControl.numberOfPages = arrProductPhotos.count
         
-        
-        
         topView.layer.borderColor = UIColor.black.cgColor
         topView.layer.borderWidth = 1
         
@@ -65,9 +63,6 @@ class HomeViewController: // multiple inheritance
     }
     
     override func viewDidLayoutSubviews() {
-        //        bottomView.layer.cornerRadius = bottomView.bounds.height / 2
-        //        topView.layer.cornerRadius = topView.bounds.height / 2
-        
         bottomView.layer.cornerRadius = 24
         topView.layer.cornerRadius = 24
     }
@@ -88,8 +83,8 @@ class HomeViewController: // multiple inheritance
         pageControl.currentPage = currentCellIndex
         
         if (currentCellIndex == 0) { // 3
-            label1.text = "Hubble's Top 100 • #1"
-            label2.text = "Pillars of Creation (New View)"
+            label1.text = "Hubble's Top 100 • #21"
+            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
         } else if (currentCellIndex == 1) { // 4
             label1.text = "Hubble's Top 100 • #2"
             label2.text = "A Rose Made of Galaxies"
@@ -128,8 +123,8 @@ class HomeViewController: // multiple inheritance
         currentCellIndex = Int(scrollView.contentOffset.x / width)
         
         if (currentCellIndex == 0) { // 3
-            label1.text = "Hubble's Top 100 • #1"
-            label2.text = "Pillars of Creation (New View)"
+            label1.text = "Hubble's Top 100 • #21"
+            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
         } else if (currentCellIndex == 1) { // 4
             label1.text = "Hubble's Top 100 • #2"
             label2.text = "A Rose Made of Galaxies"
