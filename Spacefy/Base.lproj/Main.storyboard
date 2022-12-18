@@ -301,20 +301,14 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qrw-dw-0wp">
                                                 <rect key="frame" x="24" y="24.000000000000004" width="297" height="59.333333333333343"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20221215_PlanetsViewIcon1" translatesAutoresizingMaskIntoConstraints="NO" id="jtY-jq-k7A">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20221216_NavigationBarIcon_Mercury" translatesAutoresizingMaskIntoConstraints="NO" id="jtY-jq-k7A">
                                                         <rect key="frame" x="16.000000000000004" y="12" width="35.333333333333343" height="35.333333333333336"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="jtY-jq-k7A" secondAttribute="height" multiplier="1:1" id="kRG-av-CiN"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20221216_NavigationBarIcon_Mercury" translatesAutoresizingMaskIntoConstraints="NO" id="1uz-WA-gAy">
-                                                        <rect key="frame" x="55.333333333333329" y="12" width="35.333333333333329" height="35.333333333333336"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="1uz-WA-gAy" secondAttribute="height" multiplier="1:1" id="G2C-jH-u9n"/>
-                                                        </constraints>
-                                                    </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inner Planets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9F-ak-MW6">
-                                                        <rect key="frame" x="102.66666666666664" y="8" width="178.33333333333337" height="43.333333333333336"/>
+                                                        <rect key="frame" x="59.333333333333329" y="8" width="221.66666666666669" height="43.333333333333336"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -324,14 +318,11 @@
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="jtY-jq-k7A" secondAttribute="bottom" constant="12" id="43n-77-U2r"/>
                                                     <constraint firstAttribute="bottom" secondItem="I9F-ak-MW6" secondAttribute="bottom" constant="8" id="58n-bv-CdQ"/>
-                                                    <constraint firstItem="I9F-ak-MW6" firstAttribute="leading" secondItem="1uz-WA-gAy" secondAttribute="trailing" constant="12" id="GIw-Pe-CiH"/>
                                                     <constraint firstAttribute="trailing" secondItem="I9F-ak-MW6" secondAttribute="trailing" constant="16" id="KwN-eq-IHZ"/>
                                                     <constraint firstItem="jtY-jq-k7A" firstAttribute="leading" secondItem="qrw-dw-0wp" secondAttribute="leading" constant="16" id="UGE-T0-R3M"/>
+                                                    <constraint firstItem="I9F-ak-MW6" firstAttribute="leading" secondItem="jtY-jq-k7A" secondAttribute="trailing" constant="8" id="WbB-4M-1co"/>
                                                     <constraint firstAttribute="width" secondItem="qrw-dw-0wp" secondAttribute="height" multiplier="5:1" id="YFf-UY-Tlh"/>
-                                                    <constraint firstAttribute="bottom" secondItem="1uz-WA-gAy" secondAttribute="bottom" constant="12" id="ed2-YR-0ze"/>
-                                                    <constraint firstItem="1uz-WA-gAy" firstAttribute="top" secondItem="qrw-dw-0wp" secondAttribute="top" constant="12" id="tU6-1N-Dpv"/>
                                                     <constraint firstItem="jtY-jq-k7A" firstAttribute="top" secondItem="qrw-dw-0wp" secondAttribute="top" constant="12" id="tfy-D6-zwZ"/>
-                                                    <constraint firstItem="1uz-WA-gAy" firstAttribute="leading" secondItem="jtY-jq-k7A" secondAttribute="trailing" constant="4" id="uol-y5-oZw"/>
                                                     <constraint firstItem="I9F-ak-MW6" firstAttribute="top" secondItem="qrw-dw-0wp" secondAttribute="top" constant="8" id="zOs-SG-JPX"/>
                                                 </constraints>
                                             </view>
@@ -682,7 +673,6 @@
         <image name="20221210_TabBarPlanet" width="25" height="25"/>
         <image name="20221210_TabBarSettings" width="25" height="25"/>
         <image name="20221211_HomeBanner3" width="706" height="1024"/>
-        <image name="20221215_PlanetsViewIcon1" width="512" height="512"/>
         <image name="20221215_PlanetsViewIcon2" width="512" height="512"/>
         <image name="20221216_NavigationBarIcon_Mercury" width="40" height="40"/>
         <image name="link.circle.fill" catalog="system" width="128" height="123"/>
