@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tLQ-zy-Hs2">
     <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -771,7 +772,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="f2B-Qc-m41"/>
                     <connections>
-                        <segue destination="4L4-Tn-4q4" kind="presentation" identifier="showSplashScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="MLb-AP-DLg"/>
+                        <segue destination="4L4-Tn-4q4" kind="presentation" identifier="showSplashScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="MLb-AP-DLg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apR-DX-zuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -800,7 +801,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="cVz-jo-Ent" kind="presentation" identifier="showMemory" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Spz-bj-g8w"/>
+                        <segue destination="cVz-jo-Ent" kind="presentation" identifier="showMemory" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="Spz-bj-g8w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dho-JF-7lo" userLabel="First Responder" sceneMemberID="firstResponder"/>
