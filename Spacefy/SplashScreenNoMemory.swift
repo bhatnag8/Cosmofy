@@ -12,7 +12,7 @@ class SplashScreenNoMemory: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        perform(#selector(self.showNavController), with: nil, afterDelay: 0.5)
+        perform(#selector(self.showNavController), with: nil, afterDelay: 1)
     }
     
     @objc func showNavController() {
