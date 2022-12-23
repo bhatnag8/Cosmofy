@@ -83,19 +83,19 @@ class HomeViewController: // multiple inheritance
         pageControl.currentPage = currentCellIndex
         
         if (currentCellIndex == 0) { // 3
-            label1.text = "Hubble's Top 100 • #21"
+            label1.text = "Hubble's Top 100" // 21
             label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
         } else if (currentCellIndex == 1) { // 4
-            label1.text = "Hubble's Top 100 • #2"
+            label1.text = "Hubble's Top 100" // 2
             label2.text = "A Rose Made of Galaxies"
         } else if (currentCellIndex == 2) { // 5
-            label1.text = "Hubble's Top 100 • #4"
+            label1.text = "Hubble's Top 100" // 4
             label2.text = "Antennae Galaxies Reloaded"
         } else if (currentCellIndex == 3) { // 6
-            label1.text = "Hubble's Top 100 • #12"
+            label1.text = "Hubble's Top 100" // 12
             label2.text = "Hubble’s Sharpest View of the Orion Nebula"
         } else if (currentCellIndex == 4) { // 7
-            label1.text = "Hubble's Top 100 • #15"
+            label1.text = "Hubble's Top 100" // 15
             label2.text = "Stellar Spire in the Eagle Nebula"
         }
     }
@@ -123,19 +123,19 @@ class HomeViewController: // multiple inheritance
         currentCellIndex = Int(scrollView.contentOffset.x / width)
         
         if (currentCellIndex == 0) { // 3
-            label1.text = "Hubble's Top 100 • #21"
+            label1.text = "Hubble's Top 100" // 21
             label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
         } else if (currentCellIndex == 1) { // 4
-            label1.text = "Hubble's Top 100 • #2"
+            label1.text = "Hubble's Top 100" // 2
             label2.text = "A Rose Made of Galaxies"
         } else if (currentCellIndex == 2) { // 5
-            label1.text = "Hubble's Top 100 • #4"
+            label1.text = "Hubble's Top 100" // 4
             label2.text = "Antennae Galaxies Reloaded"
         } else if (currentCellIndex == 3) { // 6
-            label1.text = "Hubble's Top 100 • #12"
+            label1.text = "Hubble's Top 100" // 12
             label2.text = "Hubble’s Sharpest View of the Orion Nebula"
         } else if (currentCellIndex == 4) { // 7
-            label1.text = "Hubble's Top 100 • #15"
+            label1.text = "Hubble's Top 100" // 15
             label2.text = "Stellar Spire in the Eagle Nebula"
         }
         pageControl.currentPage = currentCellIndex

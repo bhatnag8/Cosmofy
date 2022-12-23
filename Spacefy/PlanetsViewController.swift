@@ -26,8 +26,6 @@ class PlanetsViewController: UIViewController {
     @IBOutlet weak var button7: UIButton!
     @IBOutlet weak var button8: UIButton!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -47,23 +45,63 @@ class PlanetsViewController: UIViewController {
         view2.layer.cornerRadius = 24
         view2.layer.borderColor = UIColor.black.cgColor
         view2.layer.borderWidth = 1
-        
-        innerView1.layer.cornerRadius = 24
-        bottomView1.layer.cornerRadius = 24
-        
-        innerView2.layer.cornerRadius = 24
-        bottomView2.layer.cornerRadius = 24
+    
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        button1.layer.cornerRadius = button1.bounds.height / 2
-        button2.layer.cornerRadius = button2.bounds.height / 2
-        button3.layer.cornerRadius = button2.bounds.height / 2
-        button4.layer.cornerRadius = button3.bounds.height / 2
-        button5.layer.cornerRadius = button4.bounds.height / 2
-        button6.layer.cornerRadius = button5.bounds.height / 2
-        button7.layer.cornerRadius = button6.bounds.height / 2
-        button8.layer.cornerRadius = button7.bounds.height / 2
+        
+        innerView1.layer.shadowColor = UIColor.black.cgColor
+        innerView1.layer.shadowOpacity = 1
+        innerView1.layer.shadowOffset = .zero
+        innerView1.layer.shadowRadius = 1
+        innerView1.layer.cornerRadius = 24
+        innerView1.layer.borderColor = UIColor.black.cgColor
+        innerView1.layer.borderWidth = 1
+        
+        innerView2.layer.shadowColor = UIColor.black.cgColor
+        innerView2.layer.shadowOpacity = 1
+        innerView2.layer.shadowOffset = .zero
+        innerView2.layer.shadowRadius = 1
+        innerView2.layer.cornerRadius = 24
+        innerView2.layer.borderColor = UIColor.black.cgColor
+        innerView2.layer.borderWidth = 1
+        
+        
+        bottomView1.layer.shadowColor = UIColor.black.cgColor
+        bottomView1.layer.shadowOpacity = 1
+        bottomView1.layer.shadowOffset = .zero
+        bottomView1.layer.shadowRadius = 1
+        bottomView1.layer.cornerRadius = 24
+        bottomView1.layer.borderColor = UIColor.black.cgColor
+        bottomView1.layer.borderWidth = 0.8
+        
+        bottomView2.layer.shadowColor = UIColor.black.cgColor
+        bottomView2.layer.shadowOpacity = 1
+        bottomView2.layer.shadowOffset = .zero
+        bottomView2.layer.shadowRadius = 1
+        bottomView2.layer.cornerRadius = 24
+        bottomView2.layer.borderColor = UIColor.black.cgColor
+        bottomView2.layer.borderWidth = 0.8
+        
+        
+        let buttons = [
+            button1, button2, button3,
+            button4, button5, button6,
+            button7, button8
+        ]
+        
+        for index in 0...7 {
+            buttons[index]?.layer.shadowColor = UIColor.black.cgColor
+            buttons[index]?.layer.shadowOpacity = 1
+            buttons[index]?.layer.shadowOffset = .zero
+            buttons[index]?.layer.shadowRadius = 1
+            buttons[index]?.layer.cornerRadius = (buttons[index]?.bounds.height)! / 2
+            buttons[index]?.layer.borderColor = UIColor.black.cgColor
+            buttons[index]?.layer.borderWidth = 0.80
+        }
+        
+            
     }
 
 }
