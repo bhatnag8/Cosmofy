@@ -119,7 +119,6 @@ class HomeViewController: // multiple inheritance
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let width = scrollView.frame.width
         currentCellIndex = Int(scrollView.contentOffset.x / width)
-        pageControl.currentPage = currentCellIndex
 
         if (currentCellIndex == 0) { // 3
             label1.text = "Hubble's Top 100" // 21
@@ -137,6 +136,8 @@ class HomeViewController: // multiple inheritance
             label1.text = "Hubble's Top 100" // 15
             label2.text = "Stellar Spire in the Eagle Nebula"
         }
+        pageControl.currentPage = currentCellIndex
+
         timer?.invalidate()
         startTimer(time: 4.5)
     }
