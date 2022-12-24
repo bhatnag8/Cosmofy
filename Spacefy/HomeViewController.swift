@@ -78,7 +78,7 @@ class HomeViewController: // multiple inheritance
         }
         
         collectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
-//        pageControl.currentPage = currentCellIndex
+        pageControl.currentPage = currentCellIndex
         
         if (currentCellIndex == 0) { // 3
             label1.text = "Hubble's Top 100" // 21
@@ -119,7 +119,8 @@ class HomeViewController: // multiple inheritance
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let width = scrollView.frame.width
         currentCellIndex = Int(scrollView.contentOffset.x / width)
-        
+        pageControl.currentPage = currentCellIndex
+
         if (currentCellIndex == 0) { // 3
             label1.text = "Hubble's Top 100" // 21
             label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
@@ -140,10 +141,6 @@ class HomeViewController: // multiple inheritance
         startTimer(time: 4.5)
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        pageControl.currentPage = currentCellIndex
-    }
-
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
     }
