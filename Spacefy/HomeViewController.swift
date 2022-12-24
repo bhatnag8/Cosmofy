@@ -48,18 +48,17 @@ class HomeViewController: // multiple inheritance
         bottomView.layer.borderColor = UIColor.black.cgColor
         bottomView.layer.borderWidth = 1
         
-        topView.layer.shadowColor = UIColor.black.cgColor
+        topView.layer.shadowColor = UIColor.white.cgColor
         topView.layer.shadowOpacity = 1
         topView.layer.shadowOffset = .zero
         topView.layer.shadowRadius = 1
         
-        bottomView.layer.shadowColor = UIColor.black.cgColor
+        bottomView.layer.shadowColor = UIColor.white.cgColor
         bottomView.layer.shadowOpacity = 1
         bottomView.layer.shadowOffset = .zero
         bottomView.layer.shadowRadius = 1
     
-        startTimer(time: 7.5)
-        
+        startTimer(time: 6.0)
     }
     
     override func viewDidLayoutSubviews() {
@@ -71,7 +70,6 @@ class HomeViewController: // multiple inheritance
         timer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
     }
     
-    
     @objc func moveToNextIndex() {
         if (currentCellIndex < arrProductPhotos.count - 1) {
             currentCellIndex += 1
@@ -80,7 +78,7 @@ class HomeViewController: // multiple inheritance
         }
         
         collectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
-        pageControl.currentPage = currentCellIndex
+//        pageControl.currentPage = currentCellIndex
         
         if (currentCellIndex == 0) { // 3
             label1.text = "Hubble's Top 100" // 21
@@ -138,11 +136,14 @@ class HomeViewController: // multiple inheritance
             label1.text = "Hubble's Top 100" // 15
             label2.text = "Stellar Spire in the Eagle Nebula"
         }
-        pageControl.currentPage = currentCellIndex
         timer?.invalidate()
-        startTimer(time: 5.0)
+        startTimer(time: 4.5)
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        pageControl.currentPage = currentCellIndex
+    }
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
     }

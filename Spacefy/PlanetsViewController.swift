@@ -30,7 +30,7 @@ class PlanetsViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        view1.layer.shadowColor = UIColor.black.cgColor
+        view1.layer.shadowColor = UIColor.white.cgColor
         view1.layer.shadowOpacity = 1
         view1.layer.shadowOffset = .zero
         view1.layer.shadowRadius = 1
@@ -38,20 +38,19 @@ class PlanetsViewController: UIViewController {
         view1.layer.borderColor = UIColor.black.cgColor
         view1.layer.borderWidth = 1
         
-        view2.layer.shadowColor = UIColor.black.cgColor
+        view2.layer.shadowColor = UIColor.white.cgColor
         view2.layer.shadowOpacity = 1
         view2.layer.shadowOffset = .zero
         view2.layer.shadowRadius = 1
         view2.layer.cornerRadius = 24
         view2.layer.borderColor = UIColor.black.cgColor
         view2.layer.borderWidth = 1
-    
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
-        innerView1.layer.shadowColor = UIColor.black.cgColor
+        innerView1.layer.shadowColor = UIColor.white.cgColor
         innerView1.layer.shadowOpacity = 1
         innerView1.layer.shadowOffset = .zero
         innerView1.layer.shadowRadius = 1
@@ -59,7 +58,7 @@ class PlanetsViewController: UIViewController {
         innerView1.layer.borderColor = UIColor.black.cgColor
         innerView1.layer.borderWidth = 1
         
-        innerView2.layer.shadowColor = UIColor.black.cgColor
+        innerView2.layer.shadowColor = UIColor.white.cgColor
         innerView2.layer.shadowOpacity = 1
         innerView2.layer.shadowOffset = .zero
         innerView2.layer.shadowRadius = 1
@@ -67,8 +66,7 @@ class PlanetsViewController: UIViewController {
         innerView2.layer.borderColor = UIColor.black.cgColor
         innerView2.layer.borderWidth = 1
         
-        
-        bottomView1.layer.shadowColor = UIColor.black.cgColor
+        bottomView1.layer.shadowColor = UIColor.white.cgColor
         bottomView1.layer.shadowOpacity = 1
         bottomView1.layer.shadowOffset = .zero
         bottomView1.layer.shadowRadius = 1
@@ -76,14 +74,13 @@ class PlanetsViewController: UIViewController {
         bottomView1.layer.borderColor = UIColor.black.cgColor
         bottomView1.layer.borderWidth = 0.8
         
-        bottomView2.layer.shadowColor = UIColor.black.cgColor
+        bottomView2.layer.shadowColor = UIColor.white.cgColor
         bottomView2.layer.shadowOpacity = 1
         bottomView2.layer.shadowOffset = .zero
         bottomView2.layer.shadowRadius = 1
         bottomView2.layer.cornerRadius = 24
         bottomView2.layer.borderColor = UIColor.black.cgColor
         bottomView2.layer.borderWidth = 0.8
-        
         
         let buttons = [
             button1, button2, button3,
@@ -92,7 +89,7 @@ class PlanetsViewController: UIViewController {
         ]
         
         for index in 0...7 {
-            buttons[index]?.layer.shadowColor = UIColor.black.cgColor
+            buttons[index]?.layer.shadowColor = UIColor.white.cgColor
             buttons[index]?.layer.shadowOpacity = 1
             buttons[index]?.layer.shadowOffset = .zero
             buttons[index]?.layer.shadowRadius = 1
@@ -100,8 +97,5 @@ class PlanetsViewController: UIViewController {
             buttons[index]?.layer.borderColor = UIColor.black.cgColor
             buttons[index]?.layer.borderWidth = 0.80
         }
-        
-            
     }
-
 }
