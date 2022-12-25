@@ -30,6 +30,28 @@ class HomeViewController: // multiple inheritance
         
     }
     
+    
+    @IBAction func dynamicButton(_ sender: Any) {
+        
+        if (currentCellIndex == 0) {
+            UIApplication.shared.open(URL(string: "https://esahubble.org/images/heic0206c/")! as URL, options: [:], completionHandler: nil)
+        } else if (currentCellIndex == 1) {
+            UIApplication.shared.open(URL(string: "https://esahubble.org/images/heic0601a/")! as URL, options: [:], completionHandler: nil)
+        }
+        else if (currentCellIndex == 2) {
+            UIApplication.shared.open(URL(string: "https://esahubble.org/images/potw1345a/")! as URL, options: [:], completionHandler: nil)
+        }
+        else if (currentCellIndex == 3) {
+            UIApplication.shared.open(URL(string: "https://esahubble.org/images/heic1107a/")! as URL, options: [:], completionHandler: nil)
+        }
+        else if (currentCellIndex == 4) {
+            UIApplication.shared.open(URL(string: "https://esahubble.org/images/heic0506b/")! as URL, options: [:], completionHandler: nil)
+        }
+
+    }
+    
+    
+    
     var arrProductPhotos = [UIImage(named: "20221211_HomeBanner8")!, // 0
                             UIImage(named: "20221211_HomeBanner6")!, // 1
                             UIImage(named: "20221211_HomeBanner5")!, // 2
@@ -62,6 +84,7 @@ class HomeViewController: // multiple inheritance
         bottomView.layer.shadowRadius = 1
     
         startTimer(time: 6.0)
+        
     }
     
     override func viewDidLayoutSubviews() {

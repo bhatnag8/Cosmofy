@@ -20,7 +20,8 @@ class SplashScreenNoMemory: UIViewController {
         performSegue(withIdentifier: "showMemory", sender: self)
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
+
 }
