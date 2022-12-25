@@ -62,7 +62,6 @@ class HomeViewController: // multiple inheritance
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         collectionView.delegate = self
         collectionView.dataSource = self
         pageControl.numberOfPages = arrProductPhotos.count

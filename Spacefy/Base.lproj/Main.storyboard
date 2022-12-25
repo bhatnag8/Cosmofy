@@ -672,11 +672,11 @@
                                 <rect key="frame" x="16" y="416.66666666666674" width="361" height="336.33333333333326"/>
                                 <color key="backgroundColor" name="AppColorDarker"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKm-9U-x5u">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HO5-KX-Jad">
                                 <rect key="frame" x="0.0" y="102.99999999999999" width="393" height="209.66666666666663"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Images Here, December 26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTu-rb-F8J">
-                                        <rect key="frame" x="92" y="94.333333333333343" width="209" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Images Here, 12 26/27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9U-yK-x6x">
+                                        <rect key="frame" x="111.33333333333333" y="94.333333333333343" width="170.66666666666669" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -684,25 +684,25 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="aTu-rb-F8J" firstAttribute="centerY" secondItem="hKm-9U-x5u" secondAttribute="centerY" id="7ZS-Lt-pUp"/>
-                                    <constraint firstAttribute="width" secondItem="hKm-9U-x5u" secondAttribute="height" multiplier="15:8" id="Kyr-Ze-RwH"/>
-                                    <constraint firstItem="aTu-rb-F8J" firstAttribute="centerX" secondItem="hKm-9U-x5u" secondAttribute="centerX" id="WAO-SB-74C"/>
+                                    <constraint firstItem="y9U-yK-x6x" firstAttribute="centerX" secondItem="HO5-KX-Jad" secondAttribute="centerX" id="7ia-h5-X2b"/>
+                                    <constraint firstItem="y9U-yK-x6x" firstAttribute="centerY" secondItem="HO5-KX-Jad" secondAttribute="centerY" id="Qb2-58-gkm"/>
+                                    <constraint firstAttribute="width" secondItem="HO5-KX-Jad" secondAttribute="height" multiplier="15:8" id="TUQ-R3-aYx"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WI8-7j-2eF"/>
                         <color key="backgroundColor" name="AppColor"/>
                         <constraints>
-                            <constraint firstItem="SJj-3e-u3G" firstAttribute="top" secondItem="hKm-9U-x5u" secondAttribute="bottom" constant="16" id="BZX-lI-ILG"/>
+                            <constraint firstItem="HO5-KX-Jad" firstAttribute="leading" secondItem="WI8-7j-2eF" secondAttribute="leading" id="4hT-Z6-DZc"/>
                             <constraint firstItem="WI8-7j-2eF" firstAttribute="trailing" secondItem="SJj-3e-u3G" secondAttribute="trailing" constant="16" id="Faz-mG-xPH"/>
+                            <constraint firstItem="HO5-KX-Jad" firstAttribute="top" secondItem="WI8-7j-2eF" secondAttribute="top" id="Fjg-kT-aOo"/>
                             <constraint firstItem="fOy-Ep-bVC" firstAttribute="leading" secondItem="WI8-7j-2eF" secondAttribute="leading" constant="16" id="Kq3-Nr-4FS"/>
                             <constraint firstItem="SJj-3e-u3G" firstAttribute="leading" secondItem="WI8-7j-2eF" secondAttribute="leading" constant="16" id="VHm-HO-qJq"/>
                             <constraint firstItem="WI8-7j-2eF" firstAttribute="bottom" secondItem="fOy-Ep-bVC" secondAttribute="bottom" constant="16" id="YMr-gn-lga"/>
                             <constraint firstItem="WI8-7j-2eF" firstAttribute="trailing" secondItem="fOy-Ep-bVC" secondAttribute="trailing" constant="16" id="f7g-n4-dWX"/>
                             <constraint firstItem="fOy-Ep-bVC" firstAttribute="top" secondItem="SJj-3e-u3G" secondAttribute="bottom" constant="16" id="gMD-fG-cYb"/>
-                            <constraint firstItem="hKm-9U-x5u" firstAttribute="top" secondItem="WI8-7j-2eF" secondAttribute="top" id="meq-TA-MCw"/>
-                            <constraint firstItem="WI8-7j-2eF" firstAttribute="trailing" secondItem="hKm-9U-x5u" secondAttribute="trailing" id="q5E-0o-PUy"/>
-                            <constraint firstItem="hKm-9U-x5u" firstAttribute="leading" secondItem="WI8-7j-2eF" secondAttribute="leading" id="rLx-15-1Mj"/>
+                            <constraint firstItem="SJj-3e-u3G" firstAttribute="top" secondItem="HO5-KX-Jad" secondAttribute="bottom" constant="16" id="iqQ-K1-keb"/>
+                            <constraint firstItem="WI8-7j-2eF" firstAttribute="trailing" secondItem="HO5-KX-Jad" secondAttribute="trailing" id="tOc-Yk-lGA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mercury" largeTitleDisplayMode="never" id="RXT-od-fcq"/>
@@ -821,7 +821,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="f2B-Qc-m41"/>
                     <connections>
-                        <segue destination="4L4-Tn-4q4" kind="presentation" identifier="showSplashScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="MLb-AP-DLg"/>
+                        <segue destination="4L4-Tn-4q4" kind="presentation" identifier="showSplashScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="MLb-AP-DLg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apR-DX-zuK" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -12,7 +12,6 @@ class SplashScreenMemory: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.view.isUserInteractionEnabled = false
         perform(#selector(self.showNavController), with: nil, afterDelay: 1.5)
     }
     
