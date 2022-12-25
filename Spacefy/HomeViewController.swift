@@ -22,18 +22,21 @@ class HomeViewController: // multiple inheritance
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
+    var currentCellIndex = 0
     
     @IBAction func linkButton(_ sender: UIButton) {
-        UIApplication.shared.open(URL(string: "https://www.rocketstem.org/2015/04/23/the-top-100-images-of-the-universe-captured-by-the-hubble-space-telescope/")! as URL, options: [:], completionHandler: nil)
+        
+        UIApplication.shared.open(URL(string: "https://bit.ly/SpacefyArticle")! as URL, options: [:], completionHandler: nil)
+        
     }
     
-    var arrProductPhotos = [UIImage(named: "20221211_HomeBanner8")!,
-                            UIImage(named: "20221211_HomeBanner4")!,
-                            UIImage(named: "20221211_HomeBanner5")!,
-                            UIImage(named: "20221211_HomeBanner6")!,
-                            UIImage(named: "20221211_HomeBanner7")!]
+    var arrProductPhotos = [UIImage(named: "20221211_HomeBanner8")!, // 0
+                            UIImage(named: "20221211_HomeBanner6")!, // 1
+                            UIImage(named: "20221211_HomeBanner5")!, // 2
+                            UIImage(named: "20221211_HomeBanner4")!, // 3
+                            UIImage(named: "20221211_HomeBanner7")!] // 4
     var timer : Timer?
-    var currentCellIndex = 0
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,13 +88,13 @@ class HomeViewController: // multiple inheritance
             label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
         } else if (currentCellIndex == 1) { // 4
             label1.text = "Hubble's Top 100" // 2
-            label2.text = "A Rose Made of Galaxies"
+            label2.text = "Hubble’s Sharpest View of the Orion Nebula"
         } else if (currentCellIndex == 2) { // 5
             label1.text = "Hubble's Top 100" // 4
             label2.text = "Antennae Galaxies Reloaded"
         } else if (currentCellIndex == 3) { // 6
             label1.text = "Hubble's Top 100" // 12
-            label2.text = "Hubble’s Sharpest View of the Orion Nebula"
+            label2.text = "A Rose Made of Galaxies"
         } else if (currentCellIndex == 4) { // 7
             label1.text = "Hubble's Top 100" // 15
             label2.text = "Stellar Spire in the Eagle Nebula"
@@ -125,13 +128,13 @@ class HomeViewController: // multiple inheritance
             label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
         } else if (currentCellIndex == 1) { // 4
             label1.text = "Hubble's Top 100" // 2
-            label2.text = "A Rose Made of Galaxies"
+            label2.text = "Hubble’s Sharpest View of the Orion Nebula"
         } else if (currentCellIndex == 2) { // 5
             label1.text = "Hubble's Top 100" // 4
             label2.text = "Antennae Galaxies Reloaded"
         } else if (currentCellIndex == 3) { // 6
             label1.text = "Hubble's Top 100" // 12
-            label2.text = "Hubble’s Sharpest View of the Orion Nebula"
+            label2.text = "A Rose Made of Galaxies"
         } else if (currentCellIndex == 4) { // 7
             label1.text = "Hubble's Top 100" // 15
             label2.text = "Stellar Spire in the Eagle Nebula"
@@ -145,6 +148,5 @@ class HomeViewController: // multiple inheritance
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
     }
-    
 
 }

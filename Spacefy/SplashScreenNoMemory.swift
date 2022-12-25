@@ -12,11 +12,15 @@ class SplashScreenNoMemory: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        perform(#selector(self.showNavController), with: nil, afterDelay: 1)
+        self.view.isUserInteractionEnabled = false
+        perform(#selector(self.showNavController), with: nil, afterDelay: 0.75)
     }
     
     @objc func showNavController() {
         performSegue(withIdentifier: "showMemory", sender: self)
     }
-
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 }

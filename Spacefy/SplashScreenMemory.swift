@@ -12,11 +12,16 @@ class SplashScreenMemory: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.view.isUserInteractionEnabled = false
         perform(#selector(self.showNavController), with: nil, afterDelay: 1.5)
     }
     
     @objc func showNavController() {
         performSegue(withIdentifier: "showSplashScreen", sender: self)
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 
 }
