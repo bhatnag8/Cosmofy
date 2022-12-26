@@ -679,7 +679,9 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="AR"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="AR">
+                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                        </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiM-tU-4hE">
                                         <rect key="frame" x="240.66666666666669" y="12" width="48" height="48"/>
@@ -689,7 +691,9 @@
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="3D"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="3D">
+                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                        </buttonConfiguration>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6LW-vM-ktz">
                                         <rect key="frame" x="72.333333333333329" y="15.666666666666625" width="156.33333333333337" height="40.666666666666657"/>
@@ -880,12 +884,13 @@
                                 </subviews>
                                 <color key="backgroundColor" name="AppColorDarker"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="gBY-j2-tbR" secondAttribute="trailing" constant="40" id="12j-6w-CH2"/>
                                     <constraint firstItem="9ll-nm-nLW" firstAttribute="top" secondItem="fOy-Ep-bVC" secondAttribute="top" constant="16" id="Ai1-ft-z6d"/>
                                     <constraint firstAttribute="trailing" secondItem="9ll-nm-nLW" secondAttribute="trailing" constant="16" id="CQh-Vm-hyD"/>
+                                    <constraint firstItem="gBY-j2-tbR" firstAttribute="top" secondItem="fOy-Ep-bVC" secondAttribute="top" id="DFa-BI-Xd7"/>
                                     <constraint firstItem="gBY-j2-tbR" firstAttribute="top" secondItem="fOy-Ep-bVC" secondAttribute="top" id="LFX-Qa-6wJ"/>
                                     <constraint firstAttribute="bottom" secondItem="9ll-nm-nLW" secondAttribute="bottom" constant="16" id="Uhr-Rw-xiz"/>
                                     <constraint firstItem="9ll-nm-nLW" firstAttribute="leading" secondItem="fOy-Ep-bVC" secondAttribute="leading" constant="16" id="by7-1B-68X"/>
+                                    <constraint firstAttribute="trailing" secondItem="gBY-j2-tbR" secondAttribute="trailing" constant="40" id="irq-PL-8hX"/>
                                     <constraint firstAttribute="bottom" secondItem="gBY-j2-tbR" secondAttribute="bottom" id="o9H-4j-sqp"/>
                                 </constraints>
                             </view>
