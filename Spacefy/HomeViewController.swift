@@ -81,9 +81,7 @@ class HomeViewController: // multiple inheritance
         bottomView.layer.shadowOpacity = 1
         bottomView.layer.shadowOffset = .zero
         bottomView.layer.shadowRadius = 1
-    
-        startTimer(time: 6.0)
-        
+            
     }
     
     override func viewDidLayoutSubviews() {
@@ -165,6 +163,14 @@ class HomeViewController: // multiple inheritance
 
         timer?.invalidate()
         startTimer(time: 4.5)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        timer?.invalidate()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        startTimer(time: 6.0)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

@@ -11,11 +11,10 @@ class MercuryViewController: UIViewController {
     
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var view2: UIView!
+    @IBOutlet weak var view3: UIView!
     
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
-    
-    @IBOutlet weak var view3: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +36,14 @@ class MercuryViewController: UIViewController {
         view2.layer.borderColor = UIColor.black.cgColor
         view2.layer.borderWidth = 1
         
+        view3.layer.shadowColor = UIColor.white.cgColor
+        view3.layer.shadowOpacity = 1
+        view3.layer.shadowOffset = .zero
+        view3.layer.shadowRadius = 1
+        view3.layer.cornerRadius = 24
+        view3.layer.borderColor = UIColor.black.cgColor
+        view3.layer.borderWidth = 1
+        
         button1.layer.shadowColor = UIColor.white.cgColor
         button1.layer.shadowOpacity = 1
         button1.layer.shadowOffset = .zero
@@ -52,14 +59,6 @@ class MercuryViewController: UIViewController {
         button2.layer.cornerRadius = button2.bounds.height / 2
         button2.layer.borderColor = UIColor.black.cgColor
         button2.layer.borderWidth = 1
-        
-        view3.layer.shadowColor = UIColor.white.cgColor
-        view3.layer.shadowOpacity = 1
-        view3.layer.shadowOffset = .zero
-        view3.layer.shadowRadius = 1
-        view3.layer.cornerRadius = view3.bounds.height / 2
-        view3.layer.borderColor = UIColor.black.cgColor
-        view3.layer.borderWidth = 1
         
     }
 }
