@@ -705,9 +705,9 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4PE-5f-B4l">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4PE-5f-B4l">
                                         <rect key="frame" x="272.66666666666669" y="45" width="20" height="18.666666666666671"/>
-                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="4PE-5f-B4l" secondAttribute="height" multiplier="1:1" id="81K-9t-eHi"/>
                                             <constraint firstAttribute="height" constant="20" id="nAD-Mm-OAC"/>
@@ -1000,36 +1000,27 @@
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y45-eS-M88">
                                 <rect key="frame" x="0.0" y="103" width="393" height="602"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </sceneKitView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xvm-mj-QPz">
                                 <rect key="frame" x="0.0" y="705" width="393" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Controls" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMU-o8-BXS">
-                                        <rect key="frame" x="24" y="22" width="137" height="20.333333333333329"/>
+                                        <rect key="frame" x="24" y="22" width="245" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gt5-ox-jPv">
-                                        <rect key="frame" x="161" y="12" width="208" height="40"/>
+                                        <rect key="frame" x="269" y="12" width="100" height="40"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBK-Al-ntZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="EBK-Al-ntZ" secondAttribute="height" multiplier="5:2" id="c9X-2J-EO7"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Pause"/>
-                                                <connections>
-                                                    <action selector="pauseButton:" destination="Dqa-Js-vxB" eventType="touchUpInside" id="59D-Yy-7Ti"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMb-Xo-g8T">
-                                                <rect key="frame" x="108" y="0.0" width="100" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                                <color key="backgroundColor" name="colorMercury"/>
+                                                <color key="tintColor" name="AppColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Play"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="pause.fill" catalog="system"/>
                                                 <connections>
-                                                    <action selector="pauseButton:" destination="Dqa-Js-vxB" eventType="touchUpInside" id="0VK-6w-83K"/>
                                                     <action selector="playButton:" destination="Dqa-Js-vxB" eventType="touchUpInside" id="rQW-ek-kxr"/>
                                                 </connections>
                                             </button>
@@ -1064,8 +1055,9 @@
                             <constraint firstItem="7NU-sz-n1J" firstAttribute="trailing" secondItem="Y45-eS-M88" secondAttribute="trailing" id="vwN-qk-KBP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Mercury in 3D" id="aC9-je-S9J"/>
+                    <navigationItem key="navigationItem" title="Mercury in 3D" customizationIdentifier="" id="aC9-je-S9J"/>
                     <connections>
+                        <outlet property="playButton" destination="OMb-Xo-g8T" id="vgy-Ci-jDt"/>
                         <outlet property="sceneView" destination="Y45-eS-M88" id="ZBJ-3u-RLo"/>
                     </connections>
                 </viewController>
@@ -1236,7 +1228,9 @@
         <image name="20221226_PlanetIcons_Temperature" width="512" height="512"/>
         <image name="20221226_SmilingMercury" width="512" height="512"/>
         <image name="20221227_PlanetIcons_Moon" width="512" height="512"/>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="link.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="pause.fill" catalog="system" width="117" height="128"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="AppColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1279,6 +1273,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
