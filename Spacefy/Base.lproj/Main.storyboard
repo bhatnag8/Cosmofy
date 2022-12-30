@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tLQ-zy-Hs2">
-    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -684,6 +684,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="3D">
                                             <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="Dqa-Js-vxB" kind="show" id="Hjd-Sd-rmZ"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6LW-vM-ktz">
                                         <rect key="frame" x="72.333333333333329" y="15.666666666666625" width="156.33333333333337" height="40.666666666666657"/>
@@ -986,6 +989,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ClP-Pe-kP8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2333.5877862595421" y="-283.0985915492958"/>
+        </scene>
+        <!--Mercury in 3D-->
+        <scene sceneID="HSE-vi-fz6">
+            <objects>
+                <viewController id="Dqa-Js-vxB" customClass="Mercury3D" customModule="Spacefy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JQA-p5-Fk7">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y45-eS-M88">
+                                <rect key="frame" x="0.0" y="103" width="393" height="602"/>
+                            </sceneKitView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xvm-mj-QPz">
+                                <rect key="frame" x="0.0" y="705" width="393" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Controls" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMU-o8-BXS">
+                                        <rect key="frame" x="24" y="22" width="137" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gt5-ox-jPv">
+                                        <rect key="frame" x="161" y="12" width="208" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bu-Vc-Ehq">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="2bu-Vc-Ehq" secondAttribute="height" multiplier="2.5:1" id="gbd-59-ho9"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Pause"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzh-gw-NpJ">
+                                                <rect key="frame" x="108" y="0.0" width="100" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="xzh-gw-NpJ" secondAttribute="height" multiplier="2.5:1" id="e1v-Uh-Oiv"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Play"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Gt5-ox-jPv" firstAttribute="centerY" secondItem="Xvm-mj-QPz" secondAttribute="centerY" id="0Ff-qH-A7d"/>
+                                    <constraint firstItem="FMU-o8-BXS" firstAttribute="leading" secondItem="Xvm-mj-QPz" secondAttribute="leading" constant="24" id="1up-qZ-1B9"/>
+                                    <constraint firstItem="FMU-o8-BXS" firstAttribute="centerY" secondItem="Xvm-mj-QPz" secondAttribute="centerY" id="Cz7-Pp-f2g"/>
+                                    <constraint firstItem="Gt5-ox-jPv" firstAttribute="leading" secondItem="FMU-o8-BXS" secondAttribute="trailing" id="bvf-3d-pfR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gt5-ox-jPv" secondAttribute="trailing" constant="24" id="kSb-eI-K9h"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gt5-ox-jPv" secondAttribute="bottom" constant="12" id="uRE-em-hSK"/>
+                                    <constraint firstItem="Gt5-ox-jPv" firstAttribute="top" secondItem="Xvm-mj-QPz" secondAttribute="top" constant="12" id="zgM-Ff-lt7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7NU-sz-n1J"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7NU-sz-n1J" firstAttribute="trailing" secondItem="Xvm-mj-QPz" secondAttribute="trailing" id="6Uf-qY-VFV"/>
+                            <constraint firstItem="Xvm-mj-QPz" firstAttribute="top" secondItem="Y45-eS-M88" secondAttribute="bottom" id="NgD-Y6-hOL"/>
+                            <constraint firstItem="Y45-eS-M88" firstAttribute="leading" secondItem="7NU-sz-n1J" secondAttribute="leading" id="Wdx-XC-jfE"/>
+                            <constraint firstItem="Y45-eS-M88" firstAttribute="top" secondItem="7NU-sz-n1J" secondAttribute="top" id="WpA-Cn-XXf"/>
+                            <constraint firstItem="Xvm-mj-QPz" firstAttribute="bottom" secondItem="7NU-sz-n1J" secondAttribute="bottom" id="irs-MP-i7K"/>
+                            <constraint firstItem="7NU-sz-n1J" firstAttribute="bottom" secondItem="Y45-eS-M88" secondAttribute="bottom" constant="64" id="shZ-Ds-r54"/>
+                            <constraint firstItem="Xvm-mj-QPz" firstAttribute="leading" secondItem="7NU-sz-n1J" secondAttribute="leading" id="uyz-KL-Dsx"/>
+                            <constraint firstItem="7NU-sz-n1J" firstAttribute="trailing" secondItem="Y45-eS-M88" secondAttribute="trailing" id="vwN-qk-KBP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mercury in 3D" id="aC9-je-S9J"/>
+                    <connections>
+                        <outlet property="sceneView" destination="Y45-eS-M88" id="ZBJ-3u-RLo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="11c-a2-tZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2981" y="-283"/>
         </scene>
         <!--Solar System-->
         <scene sceneID="gUI-r2-2Nb">
