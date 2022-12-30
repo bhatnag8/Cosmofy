@@ -11,6 +11,15 @@ import SceneKit
 class Mercury3D: UIViewController {
     
     @IBOutlet weak var sceneView: SCNView!
+    var planetNode = MercuryNode(rotation: 1)
+    
+    @IBAction func pauseButton(_ sender: UIButton) {
+        planetNode.stopRotation()
+    }
+    
+    @IBAction func playButton(_ sender: Any) {
+        planetNode.startRotation()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,23 +30,16 @@ class Mercury3D: UIViewController {
         let starsParticleSystem = SCNParticleSystem(named: "StarsParticleSystem.scnp", inDirectory: nil)!
         
         node.camera = camera
+        node.position = SCNVector3(0, 0, 5)
         scene.rootNode.addChildNode(node)
         scene.rootNode.addParticleSystem(starsParticleSystem)
+        scene.rootNode.addChildNode(planetNode)
+        
         sceneView.scene = scene
         sceneView.backgroundColor = UIColor.black
         sceneView.allowsCameraControl = true
+        sceneView.showsStatistics = true
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

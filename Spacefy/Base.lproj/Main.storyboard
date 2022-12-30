@@ -685,7 +685,7 @@
                                             <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="Dqa-Js-vxB" kind="show" id="Hjd-Sd-rmZ"/>
+                                            <segue destination="Dqa-Js-vxB" kind="show" id="KP5-07-XF9"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6LW-vM-ktz">
@@ -1013,23 +1013,30 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gt5-ox-jPv">
                                         <rect key="frame" x="161" y="12" width="208" height="40"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bu-Vc-Ehq">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBK-Al-ntZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="2bu-Vc-Ehq" secondAttribute="height" multiplier="2.5:1" id="gbd-59-ho9"/>
+                                                    <constraint firstAttribute="width" secondItem="EBK-Al-ntZ" secondAttribute="height" multiplier="5:2" id="c9X-2J-EO7"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Pause"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Pause"/>
+                                                <connections>
+                                                    <action selector="pauseButton:" destination="Dqa-Js-vxB" eventType="touchUpInside" id="59D-Yy-7Ti"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzh-gw-NpJ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMb-Xo-g8T">
                                                 <rect key="frame" x="108" y="0.0" width="100" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="xzh-gw-NpJ" secondAttribute="height" multiplier="2.5:1" id="e1v-Uh-Oiv"/>
-                                                </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Play"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Play"/>
+                                                <connections>
+                                                    <action selector="pauseButton:" destination="Dqa-Js-vxB" eventType="touchUpInside" id="0VK-6w-83K"/>
+                                                    <action selector="playButton:" destination="Dqa-Js-vxB" eventType="touchUpInside" id="rQW-ek-kxr"/>
+                                                </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="OMb-Xo-g8T" firstAttribute="width" secondItem="OMb-Xo-g8T" secondAttribute="height" multiplier="5:2" id="dHT-JJ-VsJ"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
