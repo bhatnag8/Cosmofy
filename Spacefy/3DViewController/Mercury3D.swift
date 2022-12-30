@@ -11,6 +11,11 @@ import SceneKit
 class Mercury3D: UIViewController {
     
     @IBOutlet weak var sceneView: SCNView!
+    let scene = SCNScene()
+    let node = SCNNode()
+    let camera = SCNCamera()
+    let starsParticleSystem = SCNParticleSystem(named: "StarsParticleSystem.scnp", inDirectory: nil)!
+    
     var planetNode = MercuryNode(rotation: 16)
     
     
@@ -33,11 +38,6 @@ class Mercury3D: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let scene = SCNScene()
-        let node = SCNNode()
-        let camera = SCNCamera()
-        let starsParticleSystem = SCNParticleSystem(named: "StarsParticleSystem.scnp", inDirectory: nil)!
-        
         node.camera = camera
         node.position = SCNVector3(0, 0, 5)
         scene.rootNode.addChildNode(node)
@@ -47,11 +47,13 @@ class Mercury3D: UIViewController {
         sceneView.scene = scene
         sceneView.backgroundColor = UIColor.black
         sceneView.allowsCameraControl = true
+        sceneView.cameraControlConfiguration.autoSwitchToFreeCamera = true
+        sceneView.cameraControlConfiguration.allowsTranslation = true
+        sceneView.cameraControlConfiguration.rotationSensitivity = 0.4
         
         playButton.layer.cornerRadius = 12
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "8K", style: .plain, target: self, action: nil)
         navigationItem.rightBarButtonItem?.tintColor = UIColor.red
-        
 
     }
     

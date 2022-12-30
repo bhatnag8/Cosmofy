@@ -18,6 +18,7 @@ class MercuryNode : SCNNode {
         global = rotation
 
         sphere.firstMaterial?.diffuse.contents = UIImage(named: "20221230_MercuryMap")
+        sphere.segmentCount = 72
         self.geometry = sphere
         
         startRotation()

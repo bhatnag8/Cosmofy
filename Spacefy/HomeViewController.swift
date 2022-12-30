@@ -67,20 +67,20 @@ class HomeViewController: // multiple inheritance
         pageControl.numberOfPages = arrProductPhotos.count
         
         topView.layer.borderColor = UIColor.black.cgColor
-        topView.layer.borderWidth = 2
+        topView.layer.borderWidth = 1
         
         bottomView.layer.borderColor = UIColor.black.cgColor
-        bottomView.layer.borderWidth = 2
+        bottomView.layer.borderWidth = 1
         
         topView.layer.shadowColor = UIColor.white.cgColor
         topView.layer.shadowOpacity = 1
         topView.layer.shadowOffset = .zero
-        topView.layer.shadowRadius = 2
+        topView.layer.shadowRadius = 1
         
         bottomView.layer.shadowColor = UIColor.white.cgColor
         bottomView.layer.shadowOpacity = 1
         bottomView.layer.shadowOffset = .zero
-        bottomView.layer.shadowRadius = 2
+        bottomView.layer.shadowRadius = 1
             
     }
     
