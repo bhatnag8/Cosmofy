@@ -14,10 +14,11 @@ class MercuryNode : SCNNode {
     
     init(rotation : Double) {
         super.init()
-        let sphere = SCNSphere(radius: 1.25)
+        let sphere = SCNSphere(radius: 1.2)
         global = rotation
 
         sphere.firstMaterial?.diffuse.contents = UIImage(named: "20221230_MercuryMap")
+        sphere.firstMaterial?.diffuse.mipFilter = SCNFilterMode.linear
         sphere.segmentCount = 72
         self.geometry = sphere
         
@@ -33,9 +34,6 @@ class MercuryNode : SCNNode {
         let repeatAction = SCNAction.repeatForever(action)
         self.runAction(repeatAction)
     }
-    
-    
-    
     
     
     required init?(coder x: NSCoder) {

@@ -16,6 +16,9 @@ class MercuryViewController: UIViewController {
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     
+    @IBOutlet weak var status1: UIImageView!
+    @IBOutlet weak var status2: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -48,7 +51,7 @@ class MercuryViewController: UIViewController {
         button1.layer.shadowOpacity = 1
         button1.layer.shadowOffset = .zero
         button1.layer.shadowRadius = 1
-        button1.layer.cornerRadius = button1.bounds.height / 2
+        button1.layer.cornerRadius = button1.frame.height / 2
         button1.layer.borderColor = UIColor.black.cgColor
         button1.layer.borderWidth = 1
         
@@ -56,10 +59,13 @@ class MercuryViewController: UIViewController {
         button2.layer.shadowOpacity = 1
         button2.layer.shadowOffset = .zero
         button2.layer.shadowRadius = 1
-        button2.layer.cornerRadius = button2.bounds.height / 2
+        button2.layer.cornerRadius = button2.frame.height / 2
         button2.layer.borderColor = UIColor.black.cgColor
         button2.layer.borderWidth = 1
         
+        status1.layer.cornerRadius = status1.frame.height / 2
+        
+        status2.layer.cornerRadius = status2.frame.height / 2
     }
 }
 
