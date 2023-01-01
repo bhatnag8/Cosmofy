@@ -23,6 +23,16 @@ class MercuryViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        
+        
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        status1.layer.cornerRadius = status1.frame.height / 2
+        
+        status2.layer.cornerRadius = status2.frame.height / 2
+        
         view1.layer.shadowColor = UIColor.white.cgColor
         view1.layer.shadowOpacity = 1
         view1.layer.shadowOffset = .zero
@@ -62,10 +72,6 @@ class MercuryViewController: UIViewController {
         button2.layer.cornerRadius = button2.frame.height / 2
         button2.layer.borderColor = UIColor.black.cgColor
         button2.layer.borderWidth = 1
-        
-        status1.layer.cornerRadius = status1.frame.height / 2
-        
-        status2.layer.cornerRadius = status2.frame.height / 2
     }
 }
 

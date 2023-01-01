@@ -1060,16 +1060,30 @@
                                 <rect key="frame" x="0.0" y="705" width="393" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Controls" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMU-o8-BXS">
-                                        <rect key="frame" x="24" y="22" width="245" height="20.333333333333329"/>
+                                        <rect key="frame" x="24" y="22" width="129" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gt5-ox-jPv">
-                                        <rect key="frame" x="269" y="12" width="100" height="40"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gt5-ox-jPv">
+                                        <rect key="frame" x="153" y="12" width="216" height="40"/>
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mut-Ph-7TG">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="40"/>
+                                                <color key="backgroundColor" name="colorMercury"/>
+                                                <color key="tintColor" name="AppColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="gobackward.minus" catalog="system"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLv-49-ynq">
+                                                <rect key="frame" x="68" y="0.0" width="60" height="40"/>
+                                                <color key="backgroundColor" name="colorMercury"/>
+                                                <color key="tintColor" name="AppColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="goforward.plus" catalog="system"/>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMb-Xo-g8T">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                                <rect key="frame" x="136" y="0.0" width="80" height="40"/>
                                                 <color key="backgroundColor" name="colorMercury"/>
                                                 <color key="tintColor" name="AppColor"/>
                                                 <state key="normal" title="Button"/>
@@ -1080,7 +1094,9 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="OMb-Xo-g8T" firstAttribute="width" secondItem="OMb-Xo-g8T" secondAttribute="height" multiplier="5:2" id="dHT-JJ-VsJ"/>
+                                            <constraint firstItem="Mut-Ph-7TG" firstAttribute="width" secondItem="Mut-Ph-7TG" secondAttribute="height" multiplier="3:2" id="8CO-ZM-nuB"/>
+                                            <constraint firstItem="OMb-Xo-g8T" firstAttribute="width" secondItem="OMb-Xo-g8T" secondAttribute="height" multiplier="4:2" id="dHT-JJ-VsJ"/>
+                                            <constraint firstItem="qLv-49-ynq" firstAttribute="width" secondItem="qLv-49-ynq" secondAttribute="height" multiplier="3:2" id="kff-3c-PJJ"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -1283,6 +1299,8 @@
         <image name="20221226_SmilingMercury" width="512" height="512"/>
         <image name="20221227_PlanetIcons_Moon" width="512" height="512"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="gobackward.minus" catalog="system" width="119" height="128"/>
+        <image name="goforward.plus" catalog="system" width="119" height="128"/>
         <image name="link.circle.fill" catalog="system" width="128" height="123"/>
         <image name="pause" catalog="system" width="88" height="128"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="123"/>
