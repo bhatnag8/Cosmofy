@@ -34,6 +34,43 @@ class Mercury3D: UIViewController {
         }
     }
     
+    @IBOutlet weak var speed1: UIButton!
+    @IBOutlet weak var speed2: UIButton!
+    @IBOutlet weak var speed3: UIButton!
+    
+    
+    @IBAction func speed1(_ sender: Any) {
+        planetNode.stopRotation()
+        planetNode.setRotation(r: 6)
+        planetNode.startRotation()
+        playButton.setImage(UIImage(systemName: "pause"), for: .normal)
+        speed1.layer.borderColor = UIColor.tintColor.cgColor
+        speed2.layer.borderColor = UIColor.black.cgColor
+        speed3.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    @IBAction func speed2(_ sender: Any) {
+        planetNode.stopRotation()
+        planetNode.setRotation(r: 3)
+        planetNode.startRotation()
+        playButton.setImage(UIImage(systemName: "pause"), for: .normal)
+        speed1.layer.borderColor = UIColor.black.cgColor
+        speed2.layer.borderColor = UIColor.tintColor.cgColor
+        speed3.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    @IBAction func speed3(_ sender: Any) {
+        planetNode.stopRotation()
+        planetNode.setRotation(r: 1.5)
+        planetNode.startRotation()
+        playButton.setImage(UIImage(systemName: "pause"), for: .normal)
+        speed1.layer.borderColor = UIColor.black.cgColor
+        speed2.layer.borderColor = UIColor.black.cgColor
+        speed3.layer.borderColor = UIColor.tintColor.cgColor
+
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +102,31 @@ class Mercury3D: UIViewController {
         playButton.layer.borderWidth = 0.8
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "8K HDR", style: .plain, target: self, action: nil)
-        navigationItem.rightBarButtonItem?.tintColor = UIColor.green
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.cyan
+        
+        speed1.layer.shadowColor = UIColor.white.cgColor
+        speed1.layer.shadowOpacity = 1
+        speed1.layer.shadowOffset = .zero
+        speed1.layer.shadowRadius = 1
+        speed1.layer.cornerRadius = speed1.frame.height / 2
+        speed1.layer.borderColor = UIColor.tintColor.cgColor
+        speed1.layer.borderWidth = 0.8
+        
+        speed2.layer.shadowColor = UIColor.white.cgColor
+        speed2.layer.shadowOpacity = 1
+        speed2.layer.shadowOffset = .zero
+        speed2.layer.shadowRadius = 1
+        speed2.layer.cornerRadius = speed2.frame.height / 2
+        speed2.layer.borderColor = UIColor.black.cgColor
+        speed2.layer.borderWidth = 0.8
+        
+        speed3.layer.shadowColor = UIColor.white.cgColor
+        speed3.layer.shadowOpacity = 1
+        speed3.layer.shadowOffset = .zero
+        speed3.layer.shadowRadius = 1
+        speed3.layer.cornerRadius = speed3.frame.height / 2
+        speed3.layer.borderColor = UIColor.black.cgColor
+        speed3.layer.borderWidth = 0.8
 
     }
     

@@ -120,6 +120,8 @@ class HomeViewController: // multiple inheritance
             label2.text = "Stellar Spire in the Eagle Nebula"
         }
     }
+    
+    
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrProductPhotos.count

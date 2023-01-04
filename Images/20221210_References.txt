@@ -19,3 +19,5 @@
 10. <a href="https://www.flaticon.com/free-icons/venus" title="venus icons">Venus icons created by Freepik - Flaticon</a>
 
 11. <a href="https://www.flaticon.com/free-icons/neptune" title="neptune icons">Neptune icons created by Freepik - Flaticon</a>
+
+12. <a href="https://www.flaticon.com/free-icons/sun" title="sun icons">Sun icons created by Freepik - Flaticon</a>

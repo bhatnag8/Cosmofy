@@ -35,6 +35,9 @@ class MercuryNode : SCNNode {
         self.runAction(repeatAction)
     }
     
+    func setRotation(r : Double) {
+        global = r
+    }
     
     required init?(coder x: NSCoder) {
         super.init(coder: x)

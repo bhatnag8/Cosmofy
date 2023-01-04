@@ -19,11 +19,11 @@ class MercuryViewController: UIViewController {
     @IBOutlet weak var status1: UIImageView!
     @IBOutlet weak var status2: UIImageView!
     
+    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        
         
         
     }

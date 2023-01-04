@@ -89,7 +89,7 @@ class PlanetsViewController: UIViewController {
         ]
         
         for index in 0...7 {
-            buttons[index]?.layer.shadowColor = UIColor.white.cgColor
+            buttons[index]?.layer.shadowColor = UIColor.black.cgColor
             buttons[index]?.layer.shadowOpacity = 1
             buttons[index]?.layer.shadowOffset = .zero
             buttons[index]?.layer.shadowRadius = 1
