@@ -18,7 +18,6 @@ class Mercury3D: UIViewController {
     
     var planetNode = MercuryNode(rotation: 6)
     
-    
     @IBOutlet weak var playButton: UIButton!
     var pause = false
     @IBAction func playButton(_ sender: Any) {
@@ -30,14 +29,12 @@ class Mercury3D: UIViewController {
             pause = false
             planetNode.startRotation()
             playButton.setImage(UIImage(systemName: "pause"), for: .normal)
-
         }
     }
     
     @IBOutlet weak var speed1: UIButton!
     @IBOutlet weak var speed2: UIButton!
     @IBOutlet weak var speed3: UIButton!
-    
     
     @IBAction func speed1(_ sender: Any) {
         planetNode.stopRotation()
@@ -67,10 +64,7 @@ class Mercury3D: UIViewController {
         speed1.layer.borderColor = UIColor.black.cgColor
         speed2.layer.borderColor = UIColor.black.cgColor
         speed3.layer.borderColor = UIColor.tintColor.cgColor
-
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

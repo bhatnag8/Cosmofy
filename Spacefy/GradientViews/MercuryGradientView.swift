@@ -1,16 +1,16 @@
 //  ========================================
-//  GradientView.swift
+//  MercuryGradientView.swift
 //  Spacefy
 //  4th Edition
-//  Created by Arryan Bhatnagar on 1/2/23.
+//  Created by Arryan Bhatnagar on 1/4/23.
 //  ========================================
 
 import UIKit
 
-class GradientView : UIView {
+class MercuryGradientView : UIView {
     
     var color1 = UIColor(named: "GradientTop") { didSet { updateColors() }}
-    var color2 =  UIColor(named: "GradientBot") { didSet { updateColors() }}
+    var color2 =  UIColor(named: "GradientMercury") { didSet { updateColors() }}
     var diagonalMode: Bool =  true { didSet { updatePoints() }}
     var myLayer = CAGradientLayer()
     
@@ -40,4 +40,5 @@ class GradientView : UIView {
     }
 
 }
+
 
