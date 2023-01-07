@@ -23,7 +23,6 @@ class GradientView : UIView {
         self.clipsToBounds = true
         self.layer.masksToBounds = true
     }
-
     
     func updatePoints() {
         myLayer.startPoint = diagonalMode ? .init(x: 0, y: 0) : .init(x: 0.5, y: 0)
