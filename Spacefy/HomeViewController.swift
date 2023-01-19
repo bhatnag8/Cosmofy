@@ -50,16 +50,13 @@ class HomeViewController: // multiple inheritance
 
     }
     
-    
-    
     var arrProductPhotos = [UIImage(named: "20221211_HomeBanner8")!, // 0
                             UIImage(named: "20221211_HomeBanner6")!, // 1
                             UIImage(named: "20221211_HomeBanner5")!, // 2
                             UIImage(named: "20221211_HomeBanner4")!, // 3
                             UIImage(named: "20221211_HomeBanner7")!] // 4
     var timer : Timer?
-    
-        
+           
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
