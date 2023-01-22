@@ -26,11 +26,11 @@ class GradientView : UIView {
     
     func updatePoints() {
         myLayer.startPoint = diagonalMode ? .init(x: 0, y: 0) : .init(x: 0.5, y: 0)
-        myLayer.endPoint = diagonalMode ? .init(x: 1, y: 1) : .init(x: 0.5, y: 1)
+        myLayer.endPoint = diagonalMode ? .init(x: 1, y: 0) : .init(x: 0.5, y: 0)
     }
     
     func updateColors() {
-        myLayer.colors = [color1?.cgColor as Any, color2?.cgColor as Any]
+        myLayer.colors = [color1?.cgColor as Any, color2?.cgColor as Any, color1?.cgColor as Any]
     }
     
     override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
