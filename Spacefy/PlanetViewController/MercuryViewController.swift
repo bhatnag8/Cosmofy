@@ -26,52 +26,32 @@ class MercuryViewController: UIViewController {
     var timer2 : Timer?
     var currentLabel = 1
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    
-        
-
-        
-    }
-    
     @objc func addPulse () {
         let newTap1 = view1.convert(button1.center, to: view)
         let newTap2 = view1.convert(button2.center, to: view)
-        
         let newTap3 = view1.convert(status1.center, to: view)
         let newTap4 = view1.convert(status2.center, to: view)
         
+        let pulse1 = Pulse(num: 1, rad: 40, pos: newTap1, duration: 1)
+        let pulse2 = Pulse(num: 1, rad: 40, pos: newTap2, duration: 1)
+        let pulse3 = Pulse(num: 1, rad: 12, pos: newTap3, duration: 1)
+        let pulse4 = Pulse(num: 1, rad: 12, pos: newTap4, duration: 1)
         
-        let pulse1 = Pulsing(numPulses: 1, radius: 32, position: newTap1)
-        pulse1.animationDuration = 0.8
         pulse1.backgroundColor = UIColor(named: "colorMercury")?.cgColor
-        
-        let pulse2 = Pulsing(numPulses: 1, radius: 32, position: newTap2)
-        pulse2.animationDuration = 0.8
         pulse2.backgroundColor = UIColor(named: "colorMercury")?.cgColor
-        
-        let pulse3 = Pulsing(numPulses: 1, radius: 10, position: newTap3)
-        pulse3.animationDuration = 0.8
         pulse3.backgroundColor = UIColor.green.cgColor
-        
-        let pulse4 = Pulsing(numPulses: 1, radius: 10, position: newTap4)
-        pulse4.animationDuration = 0.8
         pulse4.backgroundColor = UIColor.red.cgColor
         
         self.view.layer.insertSublayer(pulse1, below: button1.layer)
         self.view.layer.insertSublayer(pulse2, below: button2.layer)
         self.view.layer.insertSublayer(pulse3, below: status1.layer)
         self.view.layer.insertSublayer(pulse4, below: status2.layer)
-        
-        
     }
     
     override func viewDidLayoutSubviews() {
         status1.layer.cornerRadius = status1.frame.height / 2
         status2.layer.cornerRadius = status2.frame.height / 2
 
-        
         view1.layer.shadowColor = UIColor.white.cgColor
         view1.layer.shadowOpacity = 1
         view1.layer.shadowOffset = .zero
@@ -153,7 +133,7 @@ class MercuryViewController: UIViewController {
                           duration: 0.25,
                               options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel1.text = "Mercury's Core is"
+                self?.coreLabel1.text = "Mercury's core is"
                      }, completion: nil)
             
             UIView.transition(with: coreLabel2,
@@ -170,14 +150,14 @@ class MercuryViewController: UIViewController {
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel1.text = "Radius: 1,289 miles"
+                self?.coreLabel1.text = "Solid Inner Core"
                      }, completion: nil)
             
             UIView.transition(with: coreLabel2,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel2.text = "2,074 kilometers"
+                self?.coreLabel2.text = "Iron Sulfide Outer Core"
                      }, completion: nil)
             
         }

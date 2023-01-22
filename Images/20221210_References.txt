@@ -21,3 +21,9 @@
 11. <a href="https://www.flaticon.com/free-icons/neptune" title="neptune icons">Neptune icons created by Freepik - Flaticon</a>
 
 12. <a href="https://www.flaticon.com/free-icons/sun" title="sun icons">Sun icons created by Freepik - Flaticon</a>
+
+13. <a href="https://www.flaticon.com/free-icons/pi" title="Pi icons">Pi icons created by Metami septiana - Flaticon</a>
+
+14. <a href="https://www.flaticon.com/free-icons/density" title="density icons">Density icons created by Freepik - Flaticon</a>
+
+15. <a href="https://www.flaticon.com/free-icons/measuring-cup" title="measuring cup icons">Measuring cup icons created by Freepik - Flaticon</a>
