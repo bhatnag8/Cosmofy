@@ -21,6 +21,7 @@ class MercuryViewController: UIViewController {
     
     @IBOutlet weak var coreLabel1: UILabel!
     @IBOutlet weak var coreLabel2: UILabel!
+    @IBOutlet weak var cuteImage: UIImageView!
     
     var timer : Timer?
     var timer2 : Timer?
@@ -31,21 +32,25 @@ class MercuryViewController: UIViewController {
         let newTap2 = view1.convert(button2.center, to: view)
         let newTap3 = view1.convert(status1.center, to: view)
         let newTap4 = view1.convert(status2.center, to: view)
+        let newTap5 = view1.convert(cuteImage.center, to: view)
         
         let pulse1 = Pulse(num: 1, rad: 40, pos: newTap1, duration: 1)
         let pulse2 = Pulse(num: 1, rad: 40, pos: newTap2, duration: 1)
         let pulse3 = Pulse(num: 1, rad: 12, pos: newTap3, duration: 1)
         let pulse4 = Pulse(num: 1, rad: 12, pos: newTap4, duration: 1)
+        let pulse5 = Pulse(num: 1, rad: 40, pos: newTap5, duration: 1)
         
         pulse1.backgroundColor = UIColor(named: "colorMercury")?.cgColor
         pulse2.backgroundColor = UIColor(named: "colorMercury")?.cgColor
         pulse3.backgroundColor = UIColor.green.cgColor
         pulse4.backgroundColor = UIColor.red.cgColor
+        pulse5.backgroundColor = UIColor(named: "colorMercury")?.cgColor
         
         self.view.layer.insertSublayer(pulse1, below: button1.layer)
         self.view.layer.insertSublayer(pulse2, below: button2.layer)
         self.view.layer.insertSublayer(pulse3, below: status1.layer)
         self.view.layer.insertSublayer(pulse4, below: status2.layer)
+        self.view.layer.insertSublayer(pulse5, below: cuteImage.layer)
     }
     
     override func viewDidLayoutSubviews() {
@@ -123,7 +128,7 @@ class MercuryViewController: UIViewController {
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel2.text = "smaller than Earth"
+                self?.coreLabel2.text = "Smaller than Earth"
                      }, completion: nil)
             currentLabel = currentLabel + 1
         } else if (currentLabel == 1) {
@@ -133,14 +138,14 @@ class MercuryViewController: UIViewController {
                           duration: 0.25,
                               options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel1.text = "Mercury's core is"
+                self?.coreLabel1.text = "Mercury's Core is"
                      }, completion: nil)
             
             UIView.transition(with: coreLabel2,
                           duration: 0.25,
                               options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel2.text = "85% of the radius"
+                self?.coreLabel2.text = "85% of its Radius"
                      }, completion: nil)
             currentLabel = currentLabel + 1
         } else if (currentLabel == 2) {
