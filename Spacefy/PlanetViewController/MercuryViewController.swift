@@ -7,7 +7,10 @@
 
 import UIKit
 
-class MercuryViewController: UIViewController {
+class MercuryViewController: UIViewController,
+                             UICollectionViewDelegate,
+                             UICollectionViewDataSource,
+                             UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var view2: UIView!
@@ -23,9 +26,71 @@ class MercuryViewController: UIViewController {
     @IBOutlet weak var coreLabel2: UILabel!
     @IBOutlet weak var cuteImage: UIImageView!
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
+    var arrayPhotos =
+    [
+        UIImage(named: "20230123_Mercury_1")!,
+        UIImage(named: "20230123_Mercury_2")!,
+        UIImage(named: "20230123_Mercury_3")!
+    ]
+     
     var timer : Timer?
     var timer2 : Timer?
+    var timer3 : Timer?
     var currentLabel = 1
+    var currentCellIndex = 0
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        pageControl.numberOfPages = arrayPhotos.count
+        startTimer2()
+    }
+    
+    func startTimer2() {
+        timer3 = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(moveNext), userInfo: nil, repeats: true)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let width = scrollView.frame.width
+        currentCellIndex = Int(scrollView.contentOffset.x / width)
+        pageControl.currentPage = currentCellIndex
+        timer3?.invalidate()
+        startTimer2()
+    }
+    
+    @objc func moveNext() {
+        
+        if (currentCellIndex < arrayPhotos.count - 1) {
+            currentCellIndex += 1
+        } else {
+            currentCellIndex = 0
+        }
+        
+        collectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
+        pageControl.currentPage = currentCellIndex
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrayPhotos.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "planetCell", for: indexPath) as! MercuryCollectionViewCell
+        cell.image.image = arrayPhotos[indexPath.row]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
     
     @objc func addPulse () {
         let newTap1 = view1.convert(button1.center, to: view)
@@ -54,9 +119,7 @@ class MercuryViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        status1.layer.cornerRadius = status1.frame.height / 2
-        status2.layer.cornerRadius = status2.frame.height / 2
-
+        
         view1.layer.shadowColor = UIColor.white.cgColor
         view1.layer.shadowOpacity = 1
         view1.layer.shadowOffset = .zero
@@ -86,6 +149,7 @@ class MercuryViewController: UIViewController {
         button1.layer.shadowOffset = .zero
         button1.layer.shadowRadius = 1
         button1.layer.cornerRadius = button1.frame.height / 2
+        button1.clipsToBounds = true
         button1.layer.borderColor = UIColor.black.cgColor
         button1.layer.borderWidth = 1
         
@@ -94,19 +158,25 @@ class MercuryViewController: UIViewController {
         button2.layer.shadowOffset = .zero
         button2.layer.shadowRadius = 1
         button2.layer.cornerRadius = button2.frame.height / 2
+        button2.clipsToBounds = true
         button2.layer.borderColor = UIColor.black.cgColor
         button2.layer.borderWidth = 1
+        
+        status1.layer.cornerRadius = status1.frame.height / 2
+        status2.layer.cornerRadius = status2.frame.height / 2
+
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        startTimer(time: 7.0)
-        timer2 = Timer.scheduledTimer(timeInterval: 7, target: self, selector: #selector(self.addPulse), userInfo: nil, repeats: true)
+        startTimer(time: 6.0)
+        timer2 = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(self.addPulse), userInfo: nil, repeats: true)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         timer?.invalidate()
         timer2?.invalidate()
+        timer3?.invalidate()
     }
     
     func startTimer(time: Double) {
