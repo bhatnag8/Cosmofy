@@ -28,6 +28,7 @@ class MercuryViewController: UIViewController,
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var imageCaption: UILabel!
     
     var arrayPhotos =
     [
@@ -36,9 +37,9 @@ class MercuryViewController: UIViewController,
         UIImage(named: "20230123_Mercury_3")!
     ]
      
-    var timer : Timer?
-    var timer2 : Timer?
-    var timer3 : Timer?
+    var timer1 : Timer? // text
+    var timer2 : Timer? // pulse
+    var timer3 : Timer? // images
     var currentLabel = 1
     var currentCellIndex = 0
     
@@ -47,19 +48,33 @@ class MercuryViewController: UIViewController,
         collectionView.delegate = self
         collectionView.dataSource = self
         pageControl.numberOfPages = arrayPhotos.count
-        startTimer2()
+        startTimers()
     }
     
-    func startTimer2() {
+    func startTimers() {
+        timer1 = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
+        timer2 = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(self.addPulse), userInfo: nil, repeats: true)
         timer3 = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(moveNext), userInfo: nil, repeats: true)
+    }
+    
+    func invalidateTimers() {
+        timer1?.invalidate()
+        timer2?.invalidate()
+        timer3?.invalidate()
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let width = scrollView.frame.width
         currentCellIndex = Int(scrollView.contentOffset.x / width)
         pageControl.currentPage = currentCellIndex
-        timer3?.invalidate()
-        startTimer2()
+        startTimers()
+        invalidateTimers()
+        
+        if (currentCellIndex == 2) {
+            imageCaption.text = ":qeiyug"
+        } else {
+            imageCaption.text = ""
+        }
     }
     
     @objc func moveNext() {
@@ -72,6 +87,11 @@ class MercuryViewController: UIViewController,
         
         collectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
         pageControl.currentPage = currentCellIndex
+        if (currentCellIndex == 2) {
+            imageCaption.text = ":qeiyug"
+        } else {
+            imageCaption.text = ""
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -164,23 +184,10 @@ class MercuryViewController: UIViewController,
         
         status1.layer.cornerRadius = status1.frame.height / 2
         status2.layer.cornerRadius = status2.frame.height / 2
-
-
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        startTimer(time: 6.0)
-        timer2 = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(self.addPulse), userInfo: nil, repeats: true)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        timer?.invalidate()
-        timer2?.invalidate()
-        timer3?.invalidate()
-    }
-    
-    func startTimer(time: Double) {
-        timer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
+        invalidateTimers()
     }
     
     @objc func moveToNextIndex() {

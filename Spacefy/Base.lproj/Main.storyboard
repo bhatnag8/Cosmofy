@@ -1163,13 +1163,21 @@
                                         <color key="pageIndicatorTintColor" name="MercuryColor"/>
                                         <color key="currentPageIndicatorTintColor" name="colorMercury"/>
                                     </pageControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOU-88-49S">
+                                        <rect key="frame" x="196.66666666666666" y="8" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="kOU-88-49S" firstAttribute="top" secondItem="HO5-KX-Jad" secondAttribute="top" constant="8" id="4S6-uD-aF8"/>
                                     <constraint firstAttribute="trailing" secondItem="Slv-gd-giU" secondAttribute="trailing" constant="8" id="G2S-Ke-nfQ"/>
                                     <constraint firstItem="cqi-uE-CUb" firstAttribute="centerX" secondItem="Slv-gd-giU" secondAttribute="centerX" id="Jfi-fL-U29"/>
                                     <constraint firstItem="cqi-uE-CUb" firstAttribute="bottom" secondItem="Slv-gd-giU" secondAttribute="bottom" id="PJP-Fb-e4L"/>
                                     <constraint firstAttribute="width" secondItem="HO5-KX-Jad" secondAttribute="height" multiplier="15:8" id="TUQ-R3-aYx"/>
+                                    <constraint firstItem="kOU-88-49S" firstAttribute="centerX" secondItem="HO5-KX-Jad" secondAttribute="centerX" id="d8s-t1-rtQ"/>
                                     <constraint firstItem="Slv-gd-giU" firstAttribute="leading" secondItem="HO5-KX-Jad" secondAttribute="leading" constant="8" id="eom-sj-gd7"/>
                                     <constraint firstAttribute="bottom" secondItem="Slv-gd-giU" secondAttribute="bottom" id="oh8-fu-9kc"/>
                                     <constraint firstItem="Slv-gd-giU" firstAttribute="top" secondItem="HO5-KX-Jad" secondAttribute="top" constant="8" id="qVe-Wn-YKP"/>
@@ -1199,6 +1207,7 @@
                         <outlet property="coreLabel1" destination="o5W-nF-HBu" id="BZT-DG-pNy"/>
                         <outlet property="coreLabel2" destination="rHa-UL-ZNF" id="Ggk-mP-BQn"/>
                         <outlet property="cuteImage" destination="27S-WR-MLC" id="EvC-Ve-PXn"/>
+                        <outlet property="imageCaption" destination="kOU-88-49S" id="K5c-GS-GIv"/>
                         <outlet property="pageControl" destination="cqi-uE-CUb" id="QVD-HC-sHc"/>
                         <outlet property="status1" destination="4PE-5f-B4l" id="jba-kG-GM2"/>
                         <outlet property="status2" destination="2m2-8T-5Q1" id="KQe-HW-3XQ"/>
