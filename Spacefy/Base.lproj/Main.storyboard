@@ -59,7 +59,7 @@
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="FSp-XR-xks">
                                 <rect key="frame" x="138.66666666666666" y="576" width="115.66666666666666" height="26"/>
                                 <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="currentPageIndicatorTintColor" name="GreenColor"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemGreenColor"/>
                             </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacefy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQe-vs-Ngb">
                                 <rect key="frame" x="16" y="527.66666666666663" width="322.66666666666669" height="38.333333333333371"/>
@@ -70,7 +70,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="link.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0yx-Jp-eFU">
                                 <rect key="frame" x="338.66666666666669" y="528.66666666666663" width="38.333333333333314" height="37.000000000000057"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="GreenColor"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0yx-Jp-eFU" secondAttribute="height" multiplier="1:1" id="u7O-qp-EaQ"/>
                                 </constraints>
@@ -1164,7 +1164,7 @@
                                         <color key="currentPageIndicatorTintColor" name="colorMercury"/>
                                     </pageControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOU-88-49S">
-                                        <rect key="frame" x="196.66666666666666" y="8" width="0.0" height="0.0"/>
+                                        <rect key="frame" x="196.66666666666666" y="22" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1172,7 +1172,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="kOU-88-49S" firstAttribute="top" secondItem="HO5-KX-Jad" secondAttribute="top" constant="8" id="4S6-uD-aF8"/>
+                                    <constraint firstItem="kOU-88-49S" firstAttribute="top" secondItem="HO5-KX-Jad" secondAttribute="top" constant="22" id="4S6-uD-aF8"/>
                                     <constraint firstAttribute="trailing" secondItem="Slv-gd-giU" secondAttribute="trailing" constant="8" id="G2S-Ke-nfQ"/>
                                     <constraint firstItem="cqi-uE-CUb" firstAttribute="centerX" secondItem="Slv-gd-giU" secondAttribute="centerX" id="Jfi-fL-U29"/>
                                     <constraint firstItem="cqi-uE-CUb" firstAttribute="bottom" secondItem="Slv-gd-giU" secondAttribute="bottom" id="PJP-Fb-e4L"/>
@@ -1513,9 +1513,6 @@
         </namedColor>
         <namedColor name="AppColorDarker">
             <color red="0.98500001430511475" green="0.97500002384185791" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="GreenColor">
-            <color red="0.40400001406669617" green="0.80400002002716064" blue="0.40400001406669617" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="LabelColorMod">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

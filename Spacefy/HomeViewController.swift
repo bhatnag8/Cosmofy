@@ -50,7 +50,8 @@ class HomeViewController: // multiple inheritance
 
     }
     
-    var arrProductPhotos = [UIImage(named: "20221211_HomeBanner8")!, // 0
+    var arrProductPhotos = [UIImage(named: "20230124_HomeBanner1")!,
+                            UIImage(named: "20221211_HomeBanner8")!, // 0
                             UIImage(named: "20221211_HomeBanner6")!, // 1
                             UIImage(named: "20221211_HomeBanner5")!, // 2
                             UIImage(named: "20221211_HomeBanner4")!, // 3
@@ -69,12 +70,12 @@ class HomeViewController: // multiple inheritance
         bottomView.layer.borderColor = UIColor.black.cgColor
         bottomView.layer.borderWidth = 1
         
-        topView.layer.shadowColor = UIColor.white.cgColor
+        topView.layer.shadowColor = UIColor.black.cgColor
         topView.layer.shadowOpacity = 1
         topView.layer.shadowOffset = .zero
         topView.layer.shadowRadius = 1
         
-        bottomView.layer.shadowColor = UIColor.white.cgColor
+        bottomView.layer.shadowColor = UIColor.black.cgColor
         bottomView.layer.shadowOpacity = 1
         bottomView.layer.shadowOffset = .zero
         bottomView.layer.shadowRadius = 1
@@ -102,17 +103,20 @@ class HomeViewController: // multiple inheritance
         
         if (currentCellIndex == 0) { // 3
             label1.text = "Hubble's Top 100" // 21
-            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
+            label2.text = "New Stars Shed Light on the Past"
         } else if (currentCellIndex == 1) { // 4
+            label1.text = "Hubble's Top 100" // 21
+            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
+        } else if (currentCellIndex == 2) { // 4
             label1.text = "Hubble's Top 100" // 2
             label2.text = "Hubble’s Sharpest View of the Orion Nebula"
-        } else if (currentCellIndex == 2) { // 5
+        } else if (currentCellIndex == 3) { // 5
             label1.text = "Hubble's Top 100" // 4
             label2.text = "Antennae Galaxies Reloaded"
-        } else if (currentCellIndex == 3) { // 6
+        } else if (currentCellIndex == 4) { // 6
             label1.text = "Hubble's Top 100" // 12
             label2.text = "A Rose Made of Galaxies"
-        } else if (currentCellIndex == 4) { // 7
+        } else if (currentCellIndex == 5) { // 7
             label1.text = "Hubble's Top 100" // 15
             label2.text = "Stellar Spire in the Eagle Nebula"
         }
@@ -144,17 +148,20 @@ class HomeViewController: // multiple inheritance
 
         if (currentCellIndex == 0) { // 3
             label1.text = "Hubble's Top 100" // 21
-            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
+            label2.text = "New Stars Shed Light on the Past"
         } else if (currentCellIndex == 1) { // 4
+            label1.text = "Hubble's Top 100" // 21
+            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
+        } else if (currentCellIndex == 2) { // 4
             label1.text = "Hubble's Top 100" // 2
             label2.text = "Hubble’s Sharpest View of the Orion Nebula"
-        } else if (currentCellIndex == 2) { // 5
+        } else if (currentCellIndex == 3) { // 5
             label1.text = "Hubble's Top 100" // 4
             label2.text = "Antennae Galaxies Reloaded"
-        } else if (currentCellIndex == 3) { // 6
+        } else if (currentCellIndex == 4) { // 6
             label1.text = "Hubble's Top 100" // 12
             label2.text = "A Rose Made of Galaxies"
-        } else if (currentCellIndex == 4) { // 7
+        } else if (currentCellIndex == 5) { // 7
             label1.text = "Hubble's Top 100" // 15
             label2.text = "Stellar Spire in the Eagle Nebula"
         }

@@ -48,12 +48,20 @@ class MercuryViewController: UIViewController,
         collectionView.delegate = self
         collectionView.dataSource = self
         pageControl.numberOfPages = arrayPhotos.count
-        startTimers()
+        startTimer1()
+        startTimer2()
+        startTimer3()
     }
     
-    func startTimers() {
+    func startTimer1() {
         timer1 = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
+    }
+    
+    func startTimer2() {
         timer2 = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(self.addPulse), userInfo: nil, repeats: true)
+    }
+    
+    func startTimer3() {
         timer3 = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(moveNext), userInfo: nil, repeats: true)
     }
     
@@ -67,11 +75,11 @@ class MercuryViewController: UIViewController,
         let width = scrollView.frame.width
         currentCellIndex = Int(scrollView.contentOffset.x / width)
         pageControl.currentPage = currentCellIndex
-        startTimers()
-        invalidateTimers()
+        timer3?.invalidate()
+        startTimer3()
         
         if (currentCellIndex == 2) {
-            imageCaption.text = ":qeiyug"
+            imageCaption.text = "The Abedin Crater"
         } else {
             imageCaption.text = ""
         }
@@ -86,9 +94,10 @@ class MercuryViewController: UIViewController,
         }
         
         collectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
+        
         pageControl.currentPage = currentCellIndex
         if (currentCellIndex == 2) {
-            imageCaption.text = ":qeiyug"
+            imageCaption.text = "The Abedin Crater"
         } else {
             imageCaption.text = ""
         }
@@ -119,11 +128,11 @@ class MercuryViewController: UIViewController,
         let newTap4 = view1.convert(status2.center, to: view)
         let newTap5 = view1.convert(cuteImage.center, to: view)
         
-        let pulse1 = Pulse(num: 1, rad: 40, pos: newTap1, duration: 1)
-        let pulse2 = Pulse(num: 1, rad: 40, pos: newTap2, duration: 1)
+        let pulse1 = Pulse(num: 1, rad: 32, pos: newTap1, duration: 1)
+        let pulse2 = Pulse(num: 1, rad: 32, pos: newTap2, duration: 1)
         let pulse3 = Pulse(num: 1, rad: 12, pos: newTap3, duration: 1)
         let pulse4 = Pulse(num: 1, rad: 12, pos: newTap4, duration: 1)
-        let pulse5 = Pulse(num: 1, rad: 40, pos: newTap5, duration: 1)
+        let pulse5 = Pulse(num: 1, rad: 32, pos: newTap5, duration: 1)
         
         pulse1.backgroundColor = UIColor(named: "colorMercury")?.cgColor
         pulse2.backgroundColor = UIColor(named: "colorMercury")?.cgColor
@@ -140,7 +149,7 @@ class MercuryViewController: UIViewController,
     
     override func viewDidLayoutSubviews() {
         
-        view1.layer.shadowColor = UIColor.white.cgColor
+        view1.layer.shadowColor = UIColor.black.cgColor
         view1.layer.shadowOpacity = 1
         view1.layer.shadowOffset = .zero
         view1.layer.shadowRadius = 1
@@ -148,7 +157,7 @@ class MercuryViewController: UIViewController,
         view1.layer.borderColor = UIColor.black.cgColor
         view1.layer.borderWidth = 1
         
-        view2.layer.shadowColor = UIColor.white.cgColor
+        view2.layer.shadowColor = UIColor.black.cgColor
         view2.layer.shadowOpacity = 1
         view2.layer.shadowOffset = .zero
         view2.layer.shadowRadius = 1
@@ -156,7 +165,7 @@ class MercuryViewController: UIViewController,
         view2.layer.borderColor = UIColor.black.cgColor
         view2.layer.borderWidth = 1
         
-        view3.layer.shadowColor = UIColor.white.cgColor
+        view3.layer.shadowColor = UIColor.black.cgColor
         view3.layer.shadowOpacity = 1
         view3.layer.shadowOffset = .zero
         view3.layer.shadowRadius = 1

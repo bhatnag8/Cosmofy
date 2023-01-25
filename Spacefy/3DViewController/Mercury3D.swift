@@ -96,8 +96,8 @@ class Mercury3D: UIViewController {
         playButton.layer.borderWidth = 0.8
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "8K HDR", style: .plain, target: self, action: nil)
-        navigationItem.rightBarButtonItem?.tintColor = UIColor.cyan
-        
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.systemBlue
+
         speed1.layer.shadowColor = UIColor.white.cgColor
         speed1.layer.shadowOpacity = 1
         speed1.layer.shadowOffset = .zero
