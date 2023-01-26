@@ -48,6 +48,10 @@ class MercuryViewController: UIViewController,
         collectionView.delegate = self
         collectionView.dataSource = self
         pageControl.numberOfPages = arrayPhotos.count
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         startTimer1()
         startTimer2()
         startTimer3()
