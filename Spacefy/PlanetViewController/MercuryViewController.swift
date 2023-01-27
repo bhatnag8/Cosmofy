@@ -112,7 +112,7 @@ class MercuryViewController: UIViewController,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "planetCell", for: indexPath) as! MercuryCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "planetCell", for: indexPath) as! MercuryCell
         cell.image.image = arrayPhotos[indexPath.row]
         return cell
     }
@@ -132,11 +132,11 @@ class MercuryViewController: UIViewController,
         let newTap4 = view1.convert(status2.center, to: view)
         let newTap5 = view1.convert(cuteImage.center, to: view)
         
-        let pulse1 = Pulse(num: 1, rad: 32, pos: newTap1, duration: 1)
-        let pulse2 = Pulse(num: 1, rad: 32, pos: newTap2, duration: 1)
+        let pulse1 = Pulse(num: 1, rad: 40, pos: newTap1, duration: 1)
+        let pulse2 = Pulse(num: 1, rad: 40, pos: newTap2, duration: 1)
         let pulse3 = Pulse(num: 1, rad: 12, pos: newTap3, duration: 1)
         let pulse4 = Pulse(num: 1, rad: 12, pos: newTap4, duration: 1)
-        let pulse5 = Pulse(num: 1, rad: 32, pos: newTap5, duration: 1)
+        let pulse5 = Pulse(num: 1, rad: 40, pos: newTap5, duration: 1)
         
         pulse1.backgroundColor = UIColor(named: "colorMercury")?.cgColor
         pulse2.backgroundColor = UIColor(named: "colorMercury")?.cgColor

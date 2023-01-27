@@ -15,10 +15,11 @@
 		2F4F8FC2295EBC5100F7EE98 /* StarsParticleSystem.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F8FC0295EBC5100F7EE98 /* StarsParticleSystem.scnp */; };
 		2F4F8FC3295EBC5100F7EE98 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F8FC1295EBC5100F7EE98 /* star.png */; };
 		2F4F8FC5295EC08100F7EE98 /* MercuryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F8FC4295EC08100F7EE98 /* MercuryNode.swift */; };
-		2F52B488297F209F00A92FF7 /* MercuryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F52B487297F209F00A92FF7 /* MercuryCollectionViewCell.swift */; };
+		2F52B488297F209F00A92FF7 /* MercuryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F52B487297F209F00A92FF7 /* MercuryCell.swift */; };
 		2F542ED1297CF0110067C26B /* Pulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F542ED0297CF0110067C26B /* Pulse.swift */; };
 		2F587A2B294D49490028225E /* MercuryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F587A2A294D49490028225E /* MercuryViewController.swift */; };
 		2F7DCBA0294835A20015073C /* SplashScreenNoMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DCB9F294835A20015073C /* SplashScreenNoMemory.swift */; };
+		2F98598829838ECD007271B1 /* MercuryAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98598729838ECD007271B1 /* MercuryAR.swift */; };
 		2FBBB6592945531500BBB072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBB6582945531500BBB072 /* AppDelegate.swift */; };
 		2FBBB65B2945531500BBB072 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBB65A2945531500BBB072 /* SceneDelegate.swift */; };
 		2FBBB6602945531500BBB072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB65E2945531500BBB072 /* Main.storyboard */; };
@@ -36,10 +37,11 @@
 		2F4F8FC0295EBC5100F7EE98 /* StarsParticleSystem.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = StarsParticleSystem.scnp; sourceTree = "<group>"; };
 		2F4F8FC1295EBC5100F7EE98 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		2F4F8FC4295EC08100F7EE98 /* MercuryNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryNode.swift; sourceTree = "<group>"; };
-		2F52B487297F209F00A92FF7 /* MercuryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F52B487297F209F00A92FF7 /* MercuryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryCell.swift; sourceTree = "<group>"; };
 		2F542ED0297CF0110067C26B /* Pulse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pulse.swift; sourceTree = "<group>"; };
 		2F587A2A294D49490028225E /* MercuryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryViewController.swift; sourceTree = "<group>"; };
 		2F7DCB9F294835A20015073C /* SplashScreenNoMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenNoMemory.swift; sourceTree = "<group>"; };
+		2F98598729838ECD007271B1 /* MercuryAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryAR.swift; sourceTree = "<group>"; };
 		2FBBB6552945531500BBB072 /* Spacefy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spacefy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FBBB6582945531500BBB072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FBBB65A2945531500BBB072 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,22 @@
 			path = PlanetViewController;
 			sourceTree = "<group>";
 		};
+		2F98598529838E5B007271B1 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				2F52B487297F209F00A92FF7 /* MercuryCell.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		2F98598629838EA0007271B1 /* ARViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2F98598729838ECD007271B1 /* MercuryAR.swift */,
+			);
+			path = ARViewControllers;
+			sourceTree = "<group>";
+		};
 		2FBBB64C2945531500BBB072 = {
 			isa = PBXGroup;
 			children = (
@@ -104,12 +122,13 @@
 		2FBBB6572945531500BBB072 /* Spacefy */ = {
 			isa = PBXGroup;
 			children = (
-				2F52B487297F209F00A92FF7 /* MercuryCollectionViewCell.swift */,
 				2F4F8FC1295EBC5100F7EE98 /* star.png */,
 				2F4F8FC0295EBC5100F7EE98 /* StarsParticleSystem.scnp */,
 				2F4F8FC6295EC08700F7EE98 /* Nodes */,
 				2F0ACC21295DBC9F00B3D0DB /* 3DViewController */,
+				2F98598629838EA0007271B1 /* ARViewControllers */,
 				2F587A29294D48FE0028225E /* PlanetViewController */,
+				2F98598529838E5B007271B1 /* CollectionViewCells */,
 				2FBBB6582945531500BBB072 /* AppDelegate.swift */,
 				2FBBB65A2945531500BBB072 /* SceneDelegate.swift */,
 				2FBBB65E2945531500BBB072 /* Main.storyboard */,
@@ -200,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F98598829838ECD007271B1 /* MercuryAR.swift in Sources */,
 				2F542ED1297CF0110067C26B /* Pulse.swift in Sources */,
 				2F587A2B294D49490028225E /* MercuryViewController.swift in Sources */,
 				2F0B04D62945A576001FAAE6 /* HomeCollectionViewCell.swift in Sources */,
@@ -209,7 +229,7 @@
 				2FBBB6592945531500BBB072 /* AppDelegate.swift in Sources */,
 				2FBBB65B2945531500BBB072 /* SceneDelegate.swift in Sources */,
 				2F0ACC23295DBCB800B3D0DB /* Mercury3D.swift in Sources */,
-				2F52B488297F209F00A92FF7 /* MercuryCollectionViewCell.swift in Sources */,
+				2F52B488297F209F00A92FF7 /* MercuryCell.swift in Sources */,
 				2F4F8FC5295EC08100F7EE98 /* MercuryNode.swift in Sources */,
 				2F0B04D22945A522001FAAE6 /* HomeViewController.swift in Sources */,
 				2FDD8BAC29557A2D00865CB0 /* SplashScreenMemory.swift in Sources */,
@@ -359,7 +379,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Spacefy/Info.plist;
@@ -395,7 +415,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Spacefy/Info.plist;

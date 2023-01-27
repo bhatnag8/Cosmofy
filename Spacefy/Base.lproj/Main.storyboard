@@ -699,6 +699,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="AR">
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="tn1-ys-a7v" kind="show" id="BEX-LK-tEM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiM-tU-4hE">
                                         <rect key="frame" x="240.66666666666669" y="12" width="48" height="48"/>
@@ -1336,7 +1339,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11c-a2-tZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3198" y="-227"/>
+            <point key="canvasLocation" x="3268" y="-227"/>
         </scene>
         <!--Solar System-->
         <scene sceneID="gUI-r2-2Nb">
@@ -1479,6 +1482,110 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dho-JF-7lo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1740" y="-227"/>
+        </scene>
+        <!--Mercury in AR-->
+        <scene sceneID="Ad2-Mj-nih">
+            <objects>
+                <viewController id="tn1-ys-a7v" customClass="MercuryAR" customModule="Spacefy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ynf-0d-HhM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCa-pL-LFd">
+                                <rect key="frame" x="0.0" y="705" width="393" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOk-3O-Qec">
+                                        <rect key="frame" x="297" y="12" width="80" height="40"/>
+                                        <color key="backgroundColor" name="colorMercury"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="LOk-3O-Qec" secondAttribute="height" multiplier="2:1" id="OzS-f3-cg5"/>
+                                        </constraints>
+                                        <color key="tintColor" name="AppColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="pause" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NmM-fJ-hWd">
+                                        <rect key="frame" x="16" y="12" width="40" height="40"/>
+                                        <color key="backgroundColor" name="colorMercury"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="NmM-fJ-hWd" secondAttribute="height" multiplier="1:1" id="THy-mK-oqc"/>
+                                        </constraints>
+                                        <color key="tintColor" name="AppColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="1x">
+                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleFootnote"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkP-Qq-Lb0">
+                                        <rect key="frame" x="64" y="12" width="40" height="40"/>
+                                        <color key="backgroundColor" name="colorMercury"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="DkP-Qq-Lb0" secondAttribute="height" multiplier="1:1" id="UFA-wq-o7B"/>
+                                        </constraints>
+                                        <color key="tintColor" name="AppColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="2x">
+                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleFootnote"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBA-Z7-lFD">
+                                        <rect key="frame" x="112" y="12" width="40" height="40"/>
+                                        <color key="backgroundColor" name="colorMercury"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="iBA-Z7-lFD" secondAttribute="height" multiplier="1:1" id="Mjd-ll-kH1"/>
+                                        </constraints>
+                                        <color key="tintColor" name="AppColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="4x">
+                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleFootnote"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="iBA-Z7-lFD" firstAttribute="top" secondItem="PCa-pL-LFd" secondAttribute="top" constant="12" id="5H4-Jt-ir1"/>
+                                    <constraint firstAttribute="bottom" secondItem="iBA-Z7-lFD" secondAttribute="bottom" constant="12" id="65k-3e-lDY"/>
+                                    <constraint firstItem="NmM-fJ-hWd" firstAttribute="leading" secondItem="PCa-pL-LFd" secondAttribute="leading" constant="16" id="7y4-X4-a0V"/>
+                                    <constraint firstItem="DkP-Qq-Lb0" firstAttribute="centerY" secondItem="NmM-fJ-hWd" secondAttribute="centerY" id="8kb-ji-dyh"/>
+                                    <constraint firstAttribute="bottom" secondItem="DkP-Qq-Lb0" secondAttribute="bottom" constant="12" id="AL7-mU-TvF"/>
+                                    <constraint firstAttribute="bottom" secondItem="LOk-3O-Qec" secondAttribute="bottom" constant="12" id="Jcl-UG-Vgt"/>
+                                    <constraint firstItem="DkP-Qq-Lb0" firstAttribute="leading" secondItem="NmM-fJ-hWd" secondAttribute="trailing" constant="8" id="Jgr-Va-8YY"/>
+                                    <constraint firstItem="LOk-3O-Qec" firstAttribute="top" secondItem="PCa-pL-LFd" secondAttribute="top" constant="12" id="Jqc-Ar-VaQ"/>
+                                    <constraint firstItem="iBA-Z7-lFD" firstAttribute="centerY" secondItem="DkP-Qq-Lb0" secondAttribute="centerY" id="KAk-Cm-MAF"/>
+                                    <constraint firstAttribute="trailing" secondItem="LOk-3O-Qec" secondAttribute="trailing" constant="16" id="LXv-pV-5WJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="NmM-fJ-hWd" secondAttribute="bottom" constant="12" id="XyE-r0-bBl"/>
+                                    <constraint firstItem="NmM-fJ-hWd" firstAttribute="top" secondItem="PCa-pL-LFd" secondAttribute="top" constant="12" id="dkW-06-ByF"/>
+                                    <constraint firstItem="DkP-Qq-Lb0" firstAttribute="top" secondItem="PCa-pL-LFd" secondAttribute="top" constant="12" id="m2Y-Sf-niq"/>
+                                    <constraint firstItem="iBA-Z7-lFD" firstAttribute="leading" secondItem="DkP-Qq-Lb0" secondAttribute="trailing" constant="8" id="oGR-N4-ZlV"/>
+                                </constraints>
+                            </view>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OhS-nr-Lxq">
+                                <rect key="frame" x="0.0" y="103" width="393" height="602"/>
+                            </arscnView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CRs-Ia-T1w"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PCa-pL-LFd" firstAttribute="bottom" secondItem="CRs-Ia-T1w" secondAttribute="bottom" id="5Ew-Uc-2Zj"/>
+                            <constraint firstItem="OhS-nr-Lxq" firstAttribute="top" secondItem="CRs-Ia-T1w" secondAttribute="top" id="7LU-46-WPc"/>
+                            <constraint firstItem="PCa-pL-LFd" firstAttribute="top" secondItem="OhS-nr-Lxq" secondAttribute="bottom" id="7cE-J4-itr"/>
+                            <constraint firstItem="PCa-pL-LFd" firstAttribute="bottom" secondItem="CRs-Ia-T1w" secondAttribute="bottom" id="Kp0-6d-5MF"/>
+                            <constraint firstItem="PCa-pL-LFd" firstAttribute="leading" secondItem="CRs-Ia-T1w" secondAttribute="leading" id="MAp-B5-a6A"/>
+                            <constraint firstItem="CRs-Ia-T1w" firstAttribute="trailing" secondItem="OhS-nr-Lxq" secondAttribute="trailing" id="cTr-GK-bhp"/>
+                            <constraint firstItem="PCa-pL-LFd" firstAttribute="leading" secondItem="CRs-Ia-T1w" secondAttribute="leading" id="fV4-LI-suY"/>
+                            <constraint firstItem="CRs-Ia-T1w" firstAttribute="bottom" secondItem="OhS-nr-Lxq" secondAttribute="bottom" constant="64" id="xua-wB-LHf"/>
+                            <constraint firstItem="CRs-Ia-T1w" firstAttribute="trailing" secondItem="PCa-pL-LFd" secondAttribute="trailing" id="xza-is-ZtR"/>
+                            <constraint firstItem="OhS-nr-Lxq" firstAttribute="leading" secondItem="CRs-Ia-T1w" secondAttribute="leading" id="ygr-TZ-CAE"/>
+                            <constraint firstItem="PCa-pL-LFd" firstAttribute="trailing" secondItem="CRs-Ia-T1w" secondAttribute="trailing" id="zqA-Vw-9jG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mercury in AR" customizationIdentifier="" id="5g2-ka-VX3"/>
+                    <connections>
+                        <outlet property="sceneView" destination="OhS-nr-Lxq" id="GRL-iR-IeZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7H7-IO-tf9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3938" y="-227"/>
         </scene>
     </scenes>
     <resources>
