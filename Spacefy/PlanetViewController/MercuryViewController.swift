@@ -141,7 +141,7 @@ class MercuryViewController: UIViewController,
         pulse1.backgroundColor = UIColor(named: "colorMercury")?.cgColor
         pulse2.backgroundColor = UIColor(named: "colorMercury")?.cgColor
         pulse3.backgroundColor = UIColor.green.cgColor
-        pulse4.backgroundColor = UIColor.red.cgColor
+        pulse4.backgroundColor = UIColor.green.cgColor
         pulse5.backgroundColor = UIColor(named: "colorMercury")?.cgColor
         
         self.view.layer.insertSublayer(pulse1, below: button1.layer)

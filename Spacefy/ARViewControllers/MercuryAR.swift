@@ -1,9 +1,9 @@
-//
+//  ========================================
 //  MercuryAR.swift
 //  Spacefy
-//
+//  4th Edition
 //  Created by Arryan Bhatnagar on 1/26/23.
-//
+//  ========================================
 
 import UIKit
 import SceneKit
@@ -55,7 +55,7 @@ class MercuryAR: UIViewController, ARSCNViewDelegate {
         if let result = results.first {
             let transform = result.worldTransform
             let position = SCNVector3(x: transform.columns.3.x, y: transform.columns.3.y, z: transform.columns.3.z)
-            
+
             let node = MercuryNode(rotation: 6)
             node.position = position
             sceneView.scene.rootNode.addChildNode(node)

@@ -8,6 +8,7 @@ import UIKit
 
 class MercuryCell: UICollectionViewCell {
     
+    
     @IBOutlet weak var image: UIImageView!
     
 }
