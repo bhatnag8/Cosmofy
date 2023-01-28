@@ -747,7 +747,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2m2-8T-5Q1">
                                         <rect key="frame" x="333" y="45" width="20" height="18.666666666666671"/>
                                         <color key="backgroundColor" name="AppColorDarker"/>
-                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="mdi-qW-YAZ"/>
                                         </constraints>
