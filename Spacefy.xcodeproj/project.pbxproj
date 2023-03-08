@@ -12,6 +12,8 @@
 		2F0B04D22945A522001FAAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B04D12945A522001FAAE6 /* HomeViewController.swift */; };
 		2F0B04D62945A576001FAAE6 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B04D52945A576001FAAE6 /* HomeCollectionViewCell.swift */; };
 		2F1236382962B5ED00E2850D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1236372962B5ED00E2850D /* GradientView.swift */; };
+		2F1E60AA29B83D31006AD8F9 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E60A929B83D31006AD8F9 /* SwiftUIView.swift */; };
+		2F40331629B8474E00463AE6 /* Home2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F40331529B8474E00463AE6 /* Home2ViewController.swift */; };
 		2F4F8FC2295EBC5100F7EE98 /* StarsParticleSystem.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F8FC0295EBC5100F7EE98 /* StarsParticleSystem.scnp */; };
 		2F4F8FC3295EBC5100F7EE98 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F8FC1295EBC5100F7EE98 /* star.png */; };
 		2F4F8FC5295EC08100F7EE98 /* MercuryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F8FC4295EC08100F7EE98 /* MercuryNode.swift */; };
@@ -34,6 +36,8 @@
 		2F0B04D12945A522001FAAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2F0B04D52945A576001FAAE6 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F1236372962B5ED00E2850D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		2F1E60A929B83D31006AD8F9 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		2F40331529B8474E00463AE6 /* Home2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home2ViewController.swift; sourceTree = "<group>"; };
 		2F4F8FC0295EBC5100F7EE98 /* StarsParticleSystem.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = StarsParticleSystem.scnp; sourceTree = "<group>"; };
 		2F4F8FC1295EBC5100F7EE98 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		2F4F8FC4295EC08100F7EE98 /* MercuryNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryNode.swift; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				2FDD8BAB29557A2D00865CB0 /* SplashScreenMemory.swift */,
 				2F1236372962B5ED00E2850D /* GradientView.swift */,
 				2F542ED0297CF0110067C26B /* Pulse.swift */,
+				2F1E60A929B83D31006AD8F9 /* SwiftUIView.swift */,
+				2F40331529B8474E00463AE6 /* Home2ViewController.swift */,
 			);
 			path = Spacefy;
 			sourceTree = "<group>";
@@ -233,6 +239,8 @@
 				2F4F8FC5295EC08100F7EE98 /* MercuryNode.swift in Sources */,
 				2F0B04D22945A522001FAAE6 /* HomeViewController.swift in Sources */,
 				2FDD8BAC29557A2D00865CB0 /* SplashScreenMemory.swift in Sources */,
+				2F40331629B8474E00463AE6 /* Home2ViewController.swift in Sources */,
+				2F1E60AA29B83D31006AD8F9 /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
