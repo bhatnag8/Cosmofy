@@ -25,14 +25,17 @@ class HomeViewController: // multiple inheritance
     var currentCellIndex = 0
     
     let gradient = CAGradientLayer()
+    var gradientSet = [[CGColor]]()
+    var currentGradient: Int = 0
     let shape = CAShapeLayer()
     
-    @IBAction func linkButton(_ sender: UIButton) {
-        
-        UIApplication.shared.open(URL(string: "https://bit.ly/SpacefyArticle")! as URL, options: [:], completionHandler: nil)
-        
-    }
+    let gradientOne = UIColor.systemTeal.cgColor
+    let gradientTwo = UIColor.systemPurple.cgColor
+    let gradientThree = UIColor.systemOrange.cgColor
     
+    @IBAction func linkButton(_ sender: UIButton) {
+        UIApplication.shared.open(URL(string: "https://bit.ly/SpacefyArticle")! as URL, options: [:], completionHandler: nil)
+    }
     
     @IBAction func dynamicButton(_ sender: Any) {
         
@@ -67,28 +70,18 @@ class HomeViewController: // multiple inheritance
         collectionView.dataSource = self
         pageControl.numberOfPages = arrProductPhotos.count
         
-        
-
-        
-//        topView.layer.borderColor = UIColor.black.cgColor
-//        topView.layer.borderWidth = 1
-        
         bottomView.layer.borderColor = UIColor.black.cgColor
         bottomView.layer.borderWidth = 1
         
-//        topView.layer.shadowColor = UIColor.black.cgColor
-//        topView.layer.shadowOpacity = 1
-//        topView.layer.shadowOffset = .zero
-//        topView.layer.shadowRadius = 1
+        topView.layer.shadowColor = UIColor.black.cgColor
+        topView.layer.shadowOpacity = 1
+        topView.layer.shadowOffset = .zero
+        topView.layer.shadowRadius = 1
         
         bottomView.layer.shadowColor = UIColor.black.cgColor
         bottomView.layer.shadowOpacity = 1
         bottomView.layer.shadowOffset = .zero
         bottomView.layer.shadowRadius = 1
-        
-        
-        // GRADIENT
-        
         
     }
     
@@ -101,30 +94,44 @@ class HomeViewController: // multiple inheritance
         self.topView.clipsToBounds = true
         self.bottomView.clipsToBounds = true
 
+//        gradient.colors =  [UIColor.systemTeal.cgColor, UIColor.systemPurple.cgColor, UIColor.systemOrange.cgColor, UIColor.systemPurple.cgColor, UIColor.systemTeal.cgColor]
+        
+        
+        gradientSet.append([gradientOne, gradientTwo])
+        gradientSet.append([gradientTwo, gradientThree])
+        gradientSet.append([gradientThree, gradientOne])
+
         gradient.frame =  CGRect(origin: CGPoint.zero, size: self.topView.frame.size)
-        gradient.colors =  [UIColor.systemTeal.cgColor, UIColor.systemPurple.cgColor, UIColor.systemOrange.cgColor, UIColor.systemPurple.cgColor, UIColor.systemTeal.cgColor]
+        gradient.colors = gradientSet[currentGradient]
         gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+        gradient.drawsAsynchronously = true
 
         
         shape.lineWidth = 3
-
         shape.path = UIBezierPath(roundedRect: topView.bounds.insetBy(dx: 2, dy: 2), byRoundingCorners: [.topLeft, .bottomLeft, .topRight, .bottomRight], cornerRadii: CGSize(width: 24, height: 24)).cgPath
         shape.strokeColor = UIColor.black.cgColor
         shape.fillColor = UIColor.clear.cgColor
         gradient.mask = shape
         self.topView.layer.addSublayer(gradient)
-        
-        let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
-        gradientChangeAnimation.duration = 5.0
-        gradientChangeAnimation.toValue = [
-            UIColor(red: 244/255, green: 88/255, blue: 53/255, alpha: 1).cgColor,
-            UIColor(red: 196/255, green: 70/255, blue: 107/255, alpha: 1).cgColor
-            ]
-        gradientChangeAnimation.fillMode = CAMediaTimingFillMode.forwards
-        gradientChangeAnimation.isRemovedOnCompletion = false
-        gradient.add(gradientChangeAnimation, forKey: "colorChange")
+        animateGradient()
 
+
+    }
+    
+    func animateGradient() {
+            if currentGradient < gradientSet.count - 1 {
+                currentGradient += 1
+            } else {
+                currentGradient = 0
+            }
+            
+            let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
+            gradientChangeAnimation.duration = 5.0
+            gradientChangeAnimation.toValue = gradientSet[currentGradient]
+            gradientChangeAnimation.fillMode = CAMediaTimingFillMode.forwards
+            gradientChangeAnimation.isRemovedOnCompletion = false
+            gradient.add(gradientChangeAnimation, forKey: "colorChange")
     }
     
     
@@ -225,3 +232,14 @@ class HomeViewController: // multiple inheritance
     }
 
 }
+
+extension HomeViewController: CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        if flag {
+            gradient.colors = gradientSet[currentGradient]
+            animateGradient()
+        }
+    }
+}
+
+
