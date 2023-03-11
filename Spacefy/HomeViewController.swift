@@ -87,15 +87,10 @@ class HomeViewController: // multiple inheritance
     
     override func viewDidLayoutSubviews() {
         bottomView.layer.cornerRadius = 24
-        topView.layer.cornerRadius = 24
+        topView.layer.cornerRadius = topView.bounds.height / 2
         
-        
-//        self.topView.layer.cornerRadius = 24
         self.topView.clipsToBounds = true
         self.bottomView.clipsToBounds = true
-
-//        gradient.colors =  [UIColor.systemTeal.cgColor, UIColor.systemPurple.cgColor, UIColor.systemOrange.cgColor, UIColor.systemPurple.cgColor, UIColor.systemTeal.cgColor]
-        
         
         gradientSet.append([gradientOne, gradientTwo])
         gradientSet.append([gradientTwo, gradientThree])
@@ -107,16 +102,14 @@ class HomeViewController: // multiple inheritance
         gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
         gradient.drawsAsynchronously = true
 
-        
         shape.lineWidth = 3
-        shape.path = UIBezierPath(roundedRect: topView.bounds.insetBy(dx: 2, dy: 2), byRoundingCorners: [.topLeft, .bottomLeft, .topRight, .bottomRight], cornerRadii: CGSize(width: 24, height: 24)).cgPath
+        shape.path = UIBezierPath(roundedRect: topView.bounds.insetBy(dx: 2, dy: 2), byRoundingCorners: [.topLeft, .bottomLeft, .topRight, .bottomRight], cornerRadii: CGSize(width: topView.layer.cornerRadius, height: topView.layer.cornerRadius)).cgPath
+        
         shape.strokeColor = UIColor.black.cgColor
         shape.fillColor = UIColor.clear.cgColor
         gradient.mask = shape
         self.topView.layer.addSublayer(gradient)
         animateGradient()
-
-
     }
     
     func animateGradient() {
@@ -125,7 +118,6 @@ class HomeViewController: // multiple inheritance
             } else {
                 currentGradient = 0
             }
-            
             let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
             gradientChangeAnimation.duration = 5.0
             gradientChangeAnimation.toValue = gradientSet[currentGradient]
@@ -170,8 +162,6 @@ class HomeViewController: // multiple inheritance
         }
     }
     
-    
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrProductPhotos.count
     }
@@ -241,5 +231,3 @@ extension HomeViewController: CAAnimationDelegate {
         }
     }
 }
-
-
