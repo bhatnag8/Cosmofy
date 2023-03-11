@@ -11,7 +11,6 @@
 		2F0ACC23295DBCB800B3D0DB /* Mercury3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0ACC22295DBCB800B3D0DB /* Mercury3D.swift */; };
 		2F0B04D22945A522001FAAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B04D12945A522001FAAE6 /* HomeViewController.swift */; };
 		2F0B04D62945A576001FAAE6 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B04D52945A576001FAAE6 /* HomeCollectionViewCell.swift */; };
-		2F1236382962B5ED00E2850D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1236372962B5ED00E2850D /* GradientView.swift */; };
 		2F4F8FC2295EBC5100F7EE98 /* StarsParticleSystem.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F8FC0295EBC5100F7EE98 /* StarsParticleSystem.scnp */; };
 		2F4F8FC3295EBC5100F7EE98 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F8FC1295EBC5100F7EE98 /* star.png */; };
 		2F4F8FC5295EC08100F7EE98 /* MercuryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F8FC4295EC08100F7EE98 /* MercuryNode.swift */; };
@@ -33,7 +32,6 @@
 		2F0ACC22295DBCB800B3D0DB /* Mercury3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mercury3D.swift; sourceTree = "<group>"; };
 		2F0B04D12945A522001FAAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2F0B04D52945A576001FAAE6 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
-		2F1236372962B5ED00E2850D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		2F4F8FC0295EBC5100F7EE98 /* StarsParticleSystem.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = StarsParticleSystem.scnp; sourceTree = "<group>"; };
 		2F4F8FC1295EBC5100F7EE98 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		2F4F8FC4295EC08100F7EE98 /* MercuryNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryNode.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 				2F0B04D52945A576001FAAE6 /* HomeCollectionViewCell.swift */,
 				2F7DCB9F294835A20015073C /* SplashScreenNoMemory.swift */,
 				2FDD8BAB29557A2D00865CB0 /* SplashScreenMemory.swift */,
-				2F1236372962B5ED00E2850D /* GradientView.swift */,
 				2F542ED0297CF0110067C26B /* Pulse.swift */,
 			);
 			path = Spacefy;
@@ -223,7 +220,6 @@
 				2F542ED1297CF0110067C26B /* Pulse.swift in Sources */,
 				2F587A2B294D49490028225E /* MercuryViewController.swift in Sources */,
 				2F0B04D62945A576001FAAE6 /* HomeCollectionViewCell.swift in Sources */,
-				2F1236382962B5ED00E2850D /* GradientView.swift in Sources */,
 				2F7DCBA0294835A20015073C /* SplashScreenNoMemory.swift in Sources */,
 				2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */,
 				2FBBB6592945531500BBB072 /* AppDelegate.swift in Sources */,

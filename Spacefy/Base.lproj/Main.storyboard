@@ -1367,7 +1367,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cnp-Zd-vkE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="644" y="530"/>
+            <point key="canvasLocation" x="688" y="530"/>
         </scene>
         <!--Moons-->
         <scene sceneID="zud-xC-A9P">

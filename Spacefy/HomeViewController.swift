@@ -24,6 +24,9 @@ class HomeViewController: // multiple inheritance
     @IBOutlet weak var label3: UILabel!
     var currentCellIndex = 0
     
+    let gradient = CAGradientLayer()
+    let shape = CAShapeLayer()
+    
     @IBAction func linkButton(_ sender: UIButton) {
         
         UIApplication.shared.open(URL(string: "https://bit.ly/SpacefyArticle")! as URL, options: [:], completionHandler: nil)
@@ -64,28 +67,66 @@ class HomeViewController: // multiple inheritance
         collectionView.dataSource = self
         pageControl.numberOfPages = arrProductPhotos.count
         
-        topView.layer.borderColor = UIColor.black.cgColor
-        topView.layer.borderWidth = 1
+        
+
+        
+//        topView.layer.borderColor = UIColor.black.cgColor
+//        topView.layer.borderWidth = 1
         
         bottomView.layer.borderColor = UIColor.black.cgColor
         bottomView.layer.borderWidth = 1
         
-        topView.layer.shadowColor = UIColor.black.cgColor
-        topView.layer.shadowOpacity = 1
-        topView.layer.shadowOffset = .zero
-        topView.layer.shadowRadius = 1
+//        topView.layer.shadowColor = UIColor.black.cgColor
+//        topView.layer.shadowOpacity = 1
+//        topView.layer.shadowOffset = .zero
+//        topView.layer.shadowRadius = 1
         
         bottomView.layer.shadowColor = UIColor.black.cgColor
         bottomView.layer.shadowOpacity = 1
         bottomView.layer.shadowOffset = .zero
         bottomView.layer.shadowRadius = 1
-            
+        
+        
+        // GRADIENT
+        
+        
     }
     
     override func viewDidLayoutSubviews() {
         bottomView.layer.cornerRadius = 24
         topView.layer.cornerRadius = 24
+        
+        
+//        self.topView.layer.cornerRadius = 24
+        self.topView.clipsToBounds = true
+        self.bottomView.clipsToBounds = true
+
+        gradient.frame =  CGRect(origin: CGPoint.zero, size: self.topView.frame.size)
+        gradient.colors =  [UIColor.systemTeal.cgColor, UIColor.systemPurple.cgColor, UIColor.systemOrange.cgColor, UIColor.systemPurple.cgColor, UIColor.systemTeal.cgColor]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+
+        
+        shape.lineWidth = 3
+
+        shape.path = UIBezierPath(roundedRect: topView.bounds.insetBy(dx: 2, dy: 2), byRoundingCorners: [.topLeft, .bottomLeft, .topRight, .bottomRight], cornerRadii: CGSize(width: 24, height: 24)).cgPath
+        shape.strokeColor = UIColor.black.cgColor
+        shape.fillColor = UIColor.clear.cgColor
+        gradient.mask = shape
+        self.topView.layer.addSublayer(gradient)
+        
+        let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
+        gradientChangeAnimation.duration = 5.0
+        gradientChangeAnimation.toValue = [
+            UIColor(red: 244/255, green: 88/255, blue: 53/255, alpha: 1).cgColor,
+            UIColor(red: 196/255, green: 70/255, blue: 107/255, alpha: 1).cgColor
+            ]
+        gradientChangeAnimation.fillMode = CAMediaTimingFillMode.forwards
+        gradientChangeAnimation.isRemovedOnCompletion = false
+        gradient.add(gradientChangeAnimation, forKey: "colorChange")
+
     }
+    
     
     func startTimer(time: Double) {
         timer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
