@@ -36,7 +36,7 @@ class HomeViewController: // multiple inheritance
     
     let gradientOne = UIColor.systemTeal.cgColor
     let gradientTwo = UIColor.systemPurple.cgColor
-    let gradientThree = UIColor.systemOrange.cgColor
+    let gradientThree = UIColor.systemRed.cgColor
     
     @IBAction func linkButton(_ sender: UIButton) {
         UIApplication.shared.open(URL(string: "https://bit.ly/SpacefyArticle")! as URL, options: [:], completionHandler: nil)
@@ -97,13 +97,23 @@ class HomeViewController: // multiple inheritance
         self.topView.clipsToBounds = true
         self.bottomView.clipsToBounds = true
         
-        gradientSet.append([gradientOne, gradientTwo])
-        gradientSet.append([gradientTwo, gradientThree])
-        gradientSet.append([gradientThree, gradientOne])
+        gradientSet.append([gradientOne, gradientOne, gradientTwo])
+        gradientSet.append([gradientOne, gradientTwo, gradientTwo])
+        gradientSet.append([gradientTwo, gradientTwo, gradientThree])
+        gradientSet.append([gradientTwo, gradientThree, gradientThree])
+        gradientSet.append([gradientThree, gradientThree, gradientOne])
+        gradientSet.append([gradientThree, gradientOne, gradientOne])
         
-        gradientSet2.append([gradientOne, gradientTwo])
-        gradientSet2.append([gradientTwo, gradientThree])
-        gradientSet2.append([gradientThree, gradientOne])
+        gradientSet2.append([gradientOne, gradientTwo, gradientTwo])
+        gradientSet2.append([gradientTwo, gradientTwo, gradientThree])
+        gradientSet2.append([gradientTwo, gradientThree, gradientThree])
+        gradientSet2.append([gradientThree, gradientThree, gradientOne])
+        gradientSet2.append([gradientThree, gradientOne, gradientOne])
+        gradientSet2.append([gradientOne, gradientOne, gradientTwo])
+
+
+//        gradientSet2.append([gradientTwo, gradientTwo, gradientThree])
+//        gradientSet2.append([gradientOne, gradientOne, gradientTwo])
 
         gradient.frame =  CGRect(origin: CGPoint.zero, size: self.topView.frame.size)
         gradient.colors = gradientSet[currentGradient]
@@ -113,18 +123,18 @@ class HomeViewController: // multiple inheritance
         
         gradient2.frame =  CGRect(origin: CGPoint.zero, size: self.bottomView.frame.size)
         gradient2.colors = gradientSet2[currentGradient2]
-        gradient2.startPoint = CGPoint(x: 1.0, y: 0.5)
-        gradient2.endPoint = CGPoint(x: 0.0, y: 0.5)
+        gradient2.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradient2.endPoint = CGPoint(x: 1.0, y: 0.5)
         gradient2.drawsAsynchronously = true
 
-        shape.lineWidth = 3
+        shape.lineWidth = 2.5
         shape.path = UIBezierPath(roundedRect: topView.bounds.insetBy(dx: 2, dy: 2), byRoundingCorners: [.topLeft, .bottomLeft, .topRight, .bottomRight], cornerRadii: CGSize(width: topView.layer.cornerRadius, height: topView.layer.cornerRadius)).cgPath
         
         shape.strokeColor = UIColor.black.cgColor
         shape.fillColor = UIColor.clear.cgColor
         gradient.mask = shape
         
-        shape2.lineWidth = 3
+        shape2.lineWidth = 2.5
         shape2.path = UIBezierPath(roundedRect: bottomView.bounds.insetBy(dx: 2, dy: 2), byRoundingCorners: [.topLeft, .bottomLeft, .topRight, .bottomRight], cornerRadii: CGSize(width: bottomView.layer.cornerRadius, height: bottomView.layer.cornerRadius)).cgPath
         
         shape2.strokeColor = UIColor.black.cgColor
@@ -156,12 +166,12 @@ class HomeViewController: // multiple inheritance
         gradientChangeAnimation.isRemovedOnCompletion = false
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
         
-        let gradientChangeAnimation2 = CABasicAnimation(keyPath: "colors2")
+        let gradientChangeAnimation2 = CABasicAnimation(keyPath: "colors")
         gradientChangeAnimation2.duration = 5.0
         gradientChangeAnimation2.toValue = gradientSet2[currentGradient2]
         gradientChangeAnimation2.fillMode = CAMediaTimingFillMode.forwards
         gradientChangeAnimation2.isRemovedOnCompletion = false
-        gradient2.add(gradientChangeAnimation2, forKey: "colorChange2")
+        gradient2.add(gradientChangeAnimation2, forKey: "colorChange")
     }
     
     
