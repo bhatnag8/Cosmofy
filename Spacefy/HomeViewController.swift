@@ -29,6 +29,11 @@ class HomeViewController: // multiple inheritance
     var currentGradient: Int = 0
     let shape = CAShapeLayer()
     
+    let gradient2 = CAGradientLayer()
+    var gradientSet2 = [[CGColor]]()
+    var currentGradient2: Int = 0
+    let shape2 = CAShapeLayer()
+    
     let gradientOne = UIColor.systemTeal.cgColor
     let gradientTwo = UIColor.systemPurple.cgColor
     let gradientThree = UIColor.systemOrange.cgColor
@@ -70,8 +75,8 @@ class HomeViewController: // multiple inheritance
         collectionView.dataSource = self
         pageControl.numberOfPages = arrProductPhotos.count
         
-        bottomView.layer.borderColor = UIColor.black.cgColor
-        bottomView.layer.borderWidth = 1
+//        bottomView.layer.borderColor = UIColor.black.cgColor
+//        bottomView.layer.borderWidth = 1
         
         topView.layer.shadowColor = UIColor.black.cgColor
         topView.layer.shadowOpacity = 1
@@ -86,7 +91,7 @@ class HomeViewController: // multiple inheritance
     }
     
     override func viewDidLayoutSubviews() {
-        bottomView.layer.cornerRadius = 24
+        bottomView.layer.cornerRadius = topView.bounds.height / 2
         topView.layer.cornerRadius = topView.bounds.height / 2
         
         self.topView.clipsToBounds = true
@@ -95,12 +100,22 @@ class HomeViewController: // multiple inheritance
         gradientSet.append([gradientOne, gradientTwo])
         gradientSet.append([gradientTwo, gradientThree])
         gradientSet.append([gradientThree, gradientOne])
+        
+        gradientSet2.append([gradientOne, gradientTwo])
+        gradientSet2.append([gradientTwo, gradientThree])
+        gradientSet2.append([gradientThree, gradientOne])
 
         gradient.frame =  CGRect(origin: CGPoint.zero, size: self.topView.frame.size)
         gradient.colors = gradientSet[currentGradient]
         gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
         gradient.drawsAsynchronously = true
+        
+        gradient2.frame =  CGRect(origin: CGPoint.zero, size: self.bottomView.frame.size)
+        gradient2.colors = gradientSet2[currentGradient2]
+        gradient2.startPoint = CGPoint(x: 1.0, y: 0.5)
+        gradient2.endPoint = CGPoint(x: 0.0, y: 0.5)
+        gradient2.drawsAsynchronously = true
 
         shape.lineWidth = 3
         shape.path = UIBezierPath(roundedRect: topView.bounds.insetBy(dx: 2, dy: 2), byRoundingCorners: [.topLeft, .bottomLeft, .topRight, .bottomRight], cornerRadii: CGSize(width: topView.layer.cornerRadius, height: topView.layer.cornerRadius)).cgPath
@@ -108,22 +123,45 @@ class HomeViewController: // multiple inheritance
         shape.strokeColor = UIColor.black.cgColor
         shape.fillColor = UIColor.clear.cgColor
         gradient.mask = shape
+        
+        shape2.lineWidth = 3
+        shape2.path = UIBezierPath(roundedRect: bottomView.bounds.insetBy(dx: 2, dy: 2), byRoundingCorners: [.topLeft, .bottomLeft, .topRight, .bottomRight], cornerRadii: CGSize(width: bottomView.layer.cornerRadius, height: bottomView.layer.cornerRadius)).cgPath
+        
+        shape2.strokeColor = UIColor.black.cgColor
+        shape2.fillColor = UIColor.clear.cgColor
+        gradient2.mask = shape2
+        
         self.topView.layer.addSublayer(gradient)
+        self.bottomView.layer.addSublayer(gradient2)
         animateGradient()
     }
     
     func animateGradient() {
-            if currentGradient < gradientSet.count - 1 {
-                currentGradient += 1
-            } else {
-                currentGradient = 0
-            }
-            let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
-            gradientChangeAnimation.duration = 5.0
-            gradientChangeAnimation.toValue = gradientSet[currentGradient]
-            gradientChangeAnimation.fillMode = CAMediaTimingFillMode.forwards
-            gradientChangeAnimation.isRemovedOnCompletion = false
-            gradient.add(gradientChangeAnimation, forKey: "colorChange")
+        if currentGradient < gradientSet.count - 1 {
+            currentGradient += 1
+        } else {
+            currentGradient = 0
+        }
+        
+        if currentGradient2 < gradientSet2.count - 1 {
+            currentGradient2 += 1
+        } else {
+            currentGradient2 = 0
+        }
+        
+        let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
+        gradientChangeAnimation.duration = 5.0
+        gradientChangeAnimation.toValue = gradientSet[currentGradient]
+        gradientChangeAnimation.fillMode = CAMediaTimingFillMode.forwards
+        gradientChangeAnimation.isRemovedOnCompletion = false
+        gradient.add(gradientChangeAnimation, forKey: "colorChange")
+        
+        let gradientChangeAnimation2 = CABasicAnimation(keyPath: "colors2")
+        gradientChangeAnimation2.duration = 5.0
+        gradientChangeAnimation2.toValue = gradientSet2[currentGradient2]
+        gradientChangeAnimation2.fillMode = CAMediaTimingFillMode.forwards
+        gradientChangeAnimation2.isRemovedOnCompletion = false
+        gradient2.add(gradientChangeAnimation2, forKey: "colorChange2")
     }
     
     
@@ -227,6 +265,7 @@ extension HomeViewController: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if flag {
             gradient.colors = gradientSet[currentGradient]
+            gradient2.colors = gradientSet2[currentGradient2]
             animateGradient()
         }
     }
