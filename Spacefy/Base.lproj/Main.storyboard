@@ -1428,12 +1428,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20221211_HomeBanner3" translatesAutoresizingMaskIntoConstraints="NO" id="WwA-bp-sIN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Test" translatesAutoresizingMaskIntoConstraints="NO" id="WwA-bp-sIN">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacefy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJi-eb-N4X">
-                                <rect key="frame" x="146" y="422.33333333333331" width="101" height="32.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                <rect key="frame" x="138.66666666666666" y="657" width="116" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1443,9 +1443,9 @@
                         <constraints>
                             <constraint firstItem="WwA-bp-sIN" firstAttribute="top" secondItem="bfS-0l-QFj" secondAttribute="top" id="BWz-ch-2yS"/>
                             <constraint firstItem="WwA-bp-sIN" firstAttribute="trailing" secondItem="eup-24-ZrR" secondAttribute="trailing" id="Srh-R3-pLb"/>
+                            <constraint firstItem="eup-24-ZrR" firstAttribute="bottom" secondItem="rJi-eb-N4X" secondAttribute="bottom" constant="125" id="aTn-5m-HvT"/>
                             <constraint firstItem="rJi-eb-N4X" firstAttribute="centerX" secondItem="eup-24-ZrR" secondAttribute="centerX" id="du4-FS-1ij"/>
                             <constraint firstItem="WwA-bp-sIN" firstAttribute="leading" secondItem="eup-24-ZrR" secondAttribute="leading" id="kPG-ab-q2G"/>
-                            <constraint firstItem="rJi-eb-N4X" firstAttribute="centerY" secondItem="eup-24-ZrR" secondAttribute="centerY" id="mTa-Oc-stW"/>
                             <constraint firstAttribute="bottom" secondItem="WwA-bp-sIN" secondAttribute="bottom" id="ud4-1x-085"/>
                         </constraints>
                     </view>
@@ -1467,8 +1467,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacefy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URK-Oz-8nt">
-                                <rect key="frame" x="146" y="422.33333333333331" width="101" height="32.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                <rect key="frame" x="138.66666666666666" y="657" width="116" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1476,7 +1476,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="URK-Oz-8nt" firstAttribute="centerX" secondItem="uCo-cT-4uA" secondAttribute="centerX" id="61U-hu-5yL"/>
-                            <constraint firstItem="URK-Oz-8nt" firstAttribute="centerY" secondItem="uCo-cT-4uA" secondAttribute="centerY" id="PgX-uA-sOJ"/>
+                            <constraint firstItem="uCo-cT-4uA" firstAttribute="bottom" secondItem="URK-Oz-8nt" secondAttribute="bottom" constant="125" id="Rcz-Kk-T8S"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1598,7 +1598,6 @@
         <image name="20221210_TabBarMoon" width="25" height="25"/>
         <image name="20221210_TabBarPlanet" width="25" height="25"/>
         <image name="20221210_TabBarSettings" width="25" height="25"/>
-        <image name="20221211_HomeBanner3" width="706" height="1024"/>
         <image name="20221215_PlanetsViewIcon2" width="512" height="512"/>
         <image name="20221223_PlanetsViewIcon1" width="512" height="512"/>
         <image name="20221223_PlanetsViewIcon2" width="512" height="512"/>
@@ -1613,6 +1612,7 @@
         <image name="20230122_PlanetIcons_Density" width="512" height="512"/>
         <image name="20230122_PlanetIcons_Radius" width="512" height="512"/>
         <image name="20230122_PlanetIcons_Volume" width="512" height="512"/>
+        <image name="Test" width="3400" height="3382"/>
         <image name="arrow.down" catalog="system" width="118" height="128"/>
         <image name="arrow.up" catalog="system" width="118" height="128"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>

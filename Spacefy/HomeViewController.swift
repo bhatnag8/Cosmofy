@@ -111,10 +111,6 @@ class HomeViewController: // multiple inheritance
         gradientSet2.append([gradientThree, gradientOne, gradientOne])
         gradientSet2.append([gradientOne, gradientOne, gradientTwo])
 
-
-//        gradientSet2.append([gradientTwo, gradientTwo, gradientThree])
-//        gradientSet2.append([gradientOne, gradientOne, gradientTwo])
-
         gradient.frame =  CGRect(origin: CGPoint.zero, size: self.topView.frame.size)
         gradient.colors = gradientSet[currentGradient]
         gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
@@ -160,14 +156,14 @@ class HomeViewController: // multiple inheritance
         }
         
         let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
-        gradientChangeAnimation.duration = 5.0
+        gradientChangeAnimation.duration = 6.0
         gradientChangeAnimation.toValue = gradientSet[currentGradient]
         gradientChangeAnimation.fillMode = CAMediaTimingFillMode.forwards
         gradientChangeAnimation.isRemovedOnCompletion = false
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
         
         let gradientChangeAnimation2 = CABasicAnimation(keyPath: "colors")
-        gradientChangeAnimation2.duration = 5.0
+        gradientChangeAnimation2.duration = 6.0
         gradientChangeAnimation2.toValue = gradientSet2[currentGradient2]
         gradientChangeAnimation2.fillMode = CAMediaTimingFillMode.forwards
         gradientChangeAnimation2.isRemovedOnCompletion = false
