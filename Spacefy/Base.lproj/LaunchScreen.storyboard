@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacefy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTe-99-9bB">
-                                <rect key="frame" x="138.66666666666666" y="657" width="116" height="36"/>
+                                <rect key="frame" x="138.66666666666666" y="707" width="116" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -25,7 +25,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wTe-99-9bB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GH1-IQ-qUR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wTe-99-9bB" secondAttribute="bottom" constant="125" id="bc2-2f-oHe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wTe-99-9bB" secondAttribute="bottom" constant="75" id="bc2-2f-oHe"/>
                         </constraints>
                     </view>
                 </viewController>

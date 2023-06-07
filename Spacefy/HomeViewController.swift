@@ -36,7 +36,7 @@ class HomeViewController: // multiple inheritance
     
     let gradientOne = UIColor.systemTeal.cgColor
     let gradientTwo = UIColor.systemPurple.cgColor
-    let gradientThree = UIColor.systemOrange.cgColor
+    let gradientThree = UIColor.systemRed.cgColor
     
     @IBAction func linkButton(_ sender: UIButton) {
         UIApplication.shared.open(URL(string: "https://bit.ly/SpacefyArticle")! as URL, options: [:], completionHandler: nil)
@@ -61,7 +61,7 @@ class HomeViewController: // multiple inheritance
 
     }
     
-    var arrProductPhotos = [UIImage(named: "SplashScreen")!,
+    var arrProductPhotos = [UIImage(named: "20230124_HomeBanner1")!,
                             UIImage(named: "20221211_HomeBanner8")!, // 0
                             UIImage(named: "20221211_HomeBanner6")!, // 1
                             UIImage(named: "20221211_HomeBanner5")!, // 2
@@ -156,14 +156,14 @@ class HomeViewController: // multiple inheritance
         }
         
         let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
-        gradientChangeAnimation.duration = 4.0
+        gradientChangeAnimation.duration = 6.0
         gradientChangeAnimation.toValue = gradientSet[currentGradient]
         gradientChangeAnimation.fillMode = CAMediaTimingFillMode.forwards
         gradientChangeAnimation.isRemovedOnCompletion = false
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
         
         let gradientChangeAnimation2 = CABasicAnimation(keyPath: "colors")
-        gradientChangeAnimation2.duration = 4.0
+        gradientChangeAnimation2.duration = 6.0
         gradientChangeAnimation2.toValue = gradientSet2[currentGradient2]
         gradientChangeAnimation2.fillMode = CAMediaTimingFillMode.forwards
         gradientChangeAnimation2.isRemovedOnCompletion = false
@@ -187,7 +187,7 @@ class HomeViewController: // multiple inheritance
         
         if (currentCellIndex == 0) { // 3
             label1.text = "Hubble's Top 100" // 21
-            label2.text = "The Bubble Nebula"
+            label2.text = "New Stars Shed Light on the Past"
         } else if (currentCellIndex == 1) { // 4
             label1.text = "Hubble's Top 100" // 21
             label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
@@ -230,7 +230,7 @@ class HomeViewController: // multiple inheritance
 
         if (currentCellIndex == 0) { // 3
             label1.text = "Hubble's Top 100" // 21
-            label2.text = "The Bubble Nebula"
+            label2.text = "New Stars Shed Light on the Past"
         } else if (currentCellIndex == 1) { // 4
             label1.text = "Hubble's Top 100" // 21
             label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
