@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tLQ-zy-Hs2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22113.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tLQ-zy-Hs2">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22089"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -57,7 +58,7 @@
                                 </cells>
                             </collectionView>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="FSp-XR-xks">
-                                <rect key="frame" x="138.66666666666666" y="574" width="115.66666666666666" height="26"/>
+                                <rect key="frame" x="138.66666666666666" y="574.33333333333337" width="115.66666666666666" height="25.666666666666629"/>
                                 <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" systemColor="systemGreenColor"/>
                             </pageControl>
@@ -115,7 +116,7 @@
                                         <rect key="frame" x="0.0" y="69.333333333333371" width="361" height="57.666666666666657"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Q81-Xj-lCz">
-                                                <rect key="frame" x="48" y="6.6666666666666288" width="265" height="44.666666666666664"/>
+                                                <rect key="frame" x="48" y="6.6666666666666288" width="265" height="44.666666666666671"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Article of the Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDk-wc-cvd">
                                                         <rect key="frame" x="0.0" y="0.0" width="265" height="20.333333333333332"/>
@@ -218,7 +219,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/14/23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYE-z4-2Hh">
-                                <rect key="frame" x="163.66666666666666" y="451.66666666666669" width="66" height="21"/>
+                                <rect key="frame" x="163.66666666666666" y="476" width="66" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yYE-z4-2Hh" secondAttribute="height" multiplier="22:7" id="5x8-9X-aOP"/>
                                 </constraints>
@@ -248,7 +249,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02/14/23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZG-kx-KOW">
-                                <rect key="frame" x="162.66666666666666" y="451.66666666666669" width="67.666666666666657" height="21"/>
+                                <rect key="frame" x="162.66666666666666" y="476" width="67.666666666666657" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -275,7 +276,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Development" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lb-YN-9vg">
-                                <rect key="frame" x="137" y="451.66666666666669" width="119.33333333333331" height="21"/>
+                                <rect key="frame" x="137" y="476" width="119.33333333333331" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -292,28 +293,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFj-EN-4q9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1424" y="1842"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="wIt-NY-bWj">
-            <objects>
-                <tabBarController id="4L4-Tn-4q4" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="IHr-WS-x7v"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cpz-ND-2Hg">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="selectedImageTintColor" systemColor="labelColor"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Q6w-r6-G07" kind="relationship" relationship="viewControllers" id="qdc-zB-TMH"/>
-                        <segue destination="ON5-hv-n7d" kind="relationship" relationship="viewControllers" id="a3Q-XZ-1Yv"/>
-                        <segue destination="WSK-Uq-SSu" kind="relationship" relationship="viewControllers" id="6Te-EZ-bNa"/>
-                        <segue destination="Rp1-fq-fud" kind="relationship" relationship="viewControllers" id="KSX-sg-QZA"/>
-                        <segue destination="ngh-gc-kvT" kind="relationship" relationship="viewControllers" id="RvS-5M-rs9"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Bf-RX-MfB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-274" y="-227"/>
         </scene>
         <!--Planets-->
         <scene sceneID="kpZ-yu-EAu">
@@ -1163,7 +1142,7 @@
                                         </cells>
                                     </collectionView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="cqi-uE-CUb">
-                                        <rect key="frame" x="138.66666666666666" y="183.66666666666669" width="115.66666666666666" height="26"/>
+                                        <rect key="frame" x="138.66666666666666" y="184" width="115.66666666666666" height="25.666666666666657"/>
                                         <color key="pageIndicatorTintColor" name="MercuryColor"/>
                                         <color key="currentPageIndicatorTintColor" name="colorMercury"/>
                                     </pageControl>
@@ -1342,6 +1321,24 @@
             </objects>
             <point key="canvasLocation" x="3268" y="-227"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="mZr-kG-zFt">
+            <objects>
+                <tabBarController id="aTE-Kv-bqB" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZAL-0Z-DAk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Q6w-r6-G07" kind="relationship" relationship="viewControllers" id="6dY-ia-hJi"/>
+                        <segue destination="ON5-hv-n7d" kind="relationship" relationship="viewControllers" id="QTl-tG-cSN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IZ0-cN-Qtv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-123" y="-213"/>
+        </scene>
         <!--Solar System-->
         <scene sceneID="gUI-r2-2Nb">
             <objects>
@@ -1429,7 +1426,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacefy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJi-eb-N4X">
-                                <rect key="frame" x="138.66666666666666" y="707" width="116" height="36"/>
+                                <rect key="frame" x="138.66666666666666" y="741" width="116" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1447,9 +1444,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f2B-Qc-m41"/>
-                    <connections>
-                        <segue destination="4L4-Tn-4q4" kind="presentation" identifier="showSplashScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="MLb-AP-DLg"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apR-DX-zuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
