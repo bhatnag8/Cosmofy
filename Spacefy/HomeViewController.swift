@@ -61,8 +61,8 @@ class HomeViewController: // multiple inheritance
 
     }
     
-    var arrProductPhotos = [UIImage(named: "20230124_HomeBanner1")!,
-                            UIImage(named: "20221211_HomeBanner8")!, // 0
+    var arrProductPhotos = [UIImage(named: "20221211_HomeBanner3")!,
+                            UIImage(named: "20221211_HomeBanner3")!, // 0
                             UIImage(named: "20221211_HomeBanner6")!, // 1
                             UIImage(named: "20221211_HomeBanner5")!, // 2
                             UIImage(named: "20221211_HomeBanner4")!, // 3
