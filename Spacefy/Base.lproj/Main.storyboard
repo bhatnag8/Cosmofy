@@ -62,29 +62,29 @@
                                 <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" systemColor="systemGreenColor"/>
                             </pageControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacefy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQe-vs-Ngb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacefy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQe-vs-Ngb">
                                 <rect key="frame" x="16" y="444.33333333333331" width="302.33333333333331" height="40.666666666666686"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="U3E-c5-147">
-                                <rect key="frame" x="16" y="489" width="323.33333333333331" height="44.666666666666629"/>
+                                <rect key="frame" x="16" y="489" width="264" height="44.666666666666629"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Hubble Space Telescope" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97j-ma-yeM">
-                                        <rect key="frame" x="0.0" y="0.0" width="323.33333333333331" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="264" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GHOSTLY STAR-FORMING PILLAR OF GAS AND DUST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJl-XE-PA6">
-                                        <rect key="frame" x="0.0" y="24.333333333333371" width="323.33333333333331" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ghostly Star-Forming Pillar of Gas and Dust" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJl-XE-PA6">
+                                        <rect key="frame" x="0.0" y="24.333333333333371" width="264" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0yx-Jp-eFU">
-                                <rect key="frame" x="318.33333333333331" y="445.33333333333331" width="40.666666666666686" height="39.333333333333314"/>
+                                <rect key="frame" x="318.33333333333331" y="492" width="40.666666666666686" height="39.333333333333258"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <constraints>
@@ -148,7 +148,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXE-aU-Irl">
-                                <rect key="frame" x="318.33333333333331" y="444.33333333333331" width="40.666666666666686" height="40.666666666666686"/>
+                                <rect key="frame" x="318.33333333333331" y="491" width="40.666666666666686" height="40.666666666666629"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="GXE-aU-Irl" secondAttribute="height" multiplier="1:1" id="h5W-qJ-Fsi"/>
@@ -165,10 +165,8 @@
                         <color key="backgroundColor" name="AppColor"/>
                         <constraints>
                             <constraint firstItem="ov3-cV-Dwp" firstAttribute="trailing" secondItem="fcd-fE-6qF" secondAttribute="trailing" id="1Hj-zB-0le"/>
-                            <constraint firstItem="U3E-c5-147" firstAttribute="top" secondItem="aQe-vs-Ngb" secondAttribute="bottom" constant="4" id="1LG-ha-QjT"/>
                             <constraint firstItem="0yx-Jp-eFU" firstAttribute="height" secondItem="aQe-vs-Ngb" secondAttribute="height" id="3TT-hN-dRR"/>
                             <constraint firstItem="GXE-aU-Irl" firstAttribute="height" secondItem="0yx-Jp-eFU" secondAttribute="height" id="89J-Nq-IlG"/>
-                            <constraint firstItem="aQe-vs-Ngb" firstAttribute="leading" secondItem="fcd-fE-6qF" secondAttribute="leading" constant="16" id="8P0-Nv-IjH"/>
                             <constraint firstAttribute="bottom" secondItem="ov3-cV-Dwp" secondAttribute="bottom" id="9wy-Bx-ify"/>
                             <constraint firstItem="U3E-c5-147" firstAttribute="leading" secondItem="XLD-56-E3w" secondAttribute="leadingMargin" id="AGK-c6-D91"/>
                             <constraint firstItem="aQe-vs-Ngb" firstAttribute="leading" secondItem="XLD-56-E3w" secondAttribute="leadingMargin" id="G4R-St-7cd"/>
@@ -178,14 +176,15 @@
                             <constraint firstItem="Rir-Sb-YO9" firstAttribute="top" secondItem="XLD-56-E3w" secondAttribute="top" id="YJJ-8P-Gqd"/>
                             <constraint firstItem="fcd-fE-6qF" firstAttribute="trailing" secondItem="0yx-Jp-eFU" secondAttribute="trailing" constant="16" id="ZqP-sO-g6V"/>
                             <constraint firstItem="fcd-fE-6qF" firstAttribute="trailing" secondItem="GXE-aU-Irl" secondAttribute="trailing" constant="16" id="atG-ia-45M"/>
+                            <constraint firstItem="GXE-aU-Irl" firstAttribute="centerY" secondItem="U3E-c5-147" secondAttribute="centerY" id="bIe-GS-hxH"/>
+                            <constraint firstItem="0yx-Jp-eFU" firstAttribute="centerY" secondItem="U3E-c5-147" secondAttribute="centerY" id="cET-RL-iBi"/>
                             <constraint firstItem="ov3-cV-Dwp" firstAttribute="leading" secondItem="fcd-fE-6qF" secondAttribute="leading" id="eon-3b-DJS"/>
                             <constraint firstItem="FSp-XR-xks" firstAttribute="bottom" secondItem="Rir-Sb-YO9" secondAttribute="bottom" constant="-2" id="j6A-uN-ZzC"/>
                             <constraint firstItem="FSp-XR-xks" firstAttribute="top" secondItem="U3E-c5-147" secondAttribute="bottom" constant="12" id="mF1-sr-cOQ"/>
                             <constraint firstItem="FSp-XR-xks" firstAttribute="centerX" secondItem="Rir-Sb-YO9" secondAttribute="centerX" id="nIh-u6-MzW"/>
                             <constraint firstItem="ov3-cV-Dwp" firstAttribute="top" secondItem="Rir-Sb-YO9" secondAttribute="bottom" id="wcf-LK-mag"/>
-                            <constraint firstItem="0yx-Jp-eFU" firstAttribute="centerY" secondItem="aQe-vs-Ngb" secondAttribute="centerY" id="yPk-ex-kYk"/>
                             <constraint firstItem="GXE-aU-Irl" firstAttribute="leading" secondItem="aQe-vs-Ngb" secondAttribute="trailing" id="yeG-8s-ufN"/>
-                            <constraint firstItem="GXE-aU-Irl" firstAttribute="centerY" secondItem="aQe-vs-Ngb" secondAttribute="centerY" id="z0j-pb-40D"/>
+                            <constraint firstItem="U3E-c5-147" firstAttribute="top" secondItem="aQe-vs-Ngb" secondAttribute="bottom" constant="4" id="zlZ-ZB-KrE"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="20221210_TabBarHome" id="yAI-Zn-rYX"/>

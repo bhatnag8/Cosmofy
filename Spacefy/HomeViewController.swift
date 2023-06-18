@@ -6,6 +6,7 @@
 //  ========================================
 
 import UIKit
+let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
 
 class HomeViewController: // multiple inheritance
     UIViewController,
@@ -56,8 +57,8 @@ class HomeViewController: // multiple inheritance
 
     }
     
-    var arrProductPhotos = [UIImage(named: "20221211_HomeBanner8")!,
-                            UIImage(named: "20221211_HomeBanner3")!, // 0
+    var arrProductPhotos = [UIImage(named: "20221211_HomeBanner8")!, // Red One
+                            UIImage(named: "20230618_HomeBanner2")!, // Blue One
                             UIImage(named: "20221211_HomeBanner6")!, // 1
                             UIImage(named: "20221211_HomeBanner5")!, // 2
                             UIImage(named: "20221211_HomeBanner4")!, // 3
@@ -126,7 +127,7 @@ class HomeViewController: // multiple inheritance
             currentGradient = 0
         }
 
-        let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
+        
         gradientChangeAnimation.delegate = self
         gradientChangeAnimation.duration = 6.0
         gradientChangeAnimation.toValue = gradientSet[currentGradient]
@@ -152,12 +153,12 @@ class HomeViewController: // multiple inheritance
         collectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
         pageControl.currentPage = currentCellIndex
         
-        if (currentCellIndex == 0) { // 3
-            label1.text = "Hubble's Top 100" // 21
+        if (currentCellIndex == 0) {
+            label1.text = "Hubble Space Telescope"
             label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
-        } else if (currentCellIndex == 1) { // 4
-            label1.text = "Hubble's Top 100" // 21
-            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
+        } else if (currentCellIndex == 1) {
+            label1.text = "Hubble Space Telescope"
+            label2.text = "The Bubble Nebula"
         } else if (currentCellIndex == 2) { // 4
             label1.text = "Hubble's Top 100" // 2
             label2.text = "Hubble’s Sharpest View of the Orion Nebula"
@@ -195,12 +196,12 @@ class HomeViewController: // multiple inheritance
         let width = scrollView.frame.width
         currentCellIndex = Int(scrollView.contentOffset.x / width)
 
-        if (currentCellIndex == 0) { // 3
-            label1.text = "Hubble's Top 100" // 21
+        if (currentCellIndex == 0) {
+            label1.text = "Hubble Space Telescope"
             label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
-        } else if (currentCellIndex == 1) { // 4
-            label1.text = "Hubble's Top 100" // 21
-            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
+        } else if (currentCellIndex == 1) {
+            label1.text = "Hubble Space Telescope"
+            label2.text = "The Bubble Nebula"
         } else if (currentCellIndex == 2) { // 4
             label1.text = "Hubble's Top 100" // 2
             label2.text = "Hubble’s Sharpest View of the Orion Nebula"
@@ -225,7 +226,7 @@ class HomeViewController: // multiple inheritance
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        startTimer(time: 6.0)
+        startTimer(time: 6.0)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
