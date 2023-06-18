@@ -16,7 +16,6 @@ class HomeViewController: // multiple inheritance
     // variables
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var topView: UIView!
-    @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
 
     @IBOutlet weak var label1: UILabel!
@@ -29,14 +28,10 @@ class HomeViewController: // multiple inheritance
     var currentGradient: Int = 0
     let shape = CAShapeLayer()
     
-    let gradient2 = CAGradientLayer()
-    var gradientSet2 = [[CGColor]]()
-    var currentGradient2: Int = 0
-    let shape2 = CAShapeLayer()
-    
     let gradientOne = UIColor.systemTeal.cgColor
     let gradientTwo = UIColor.systemPurple.cgColor
     let gradientThree = UIColor.systemRed.cgColor
+    let gradientFour = UIColor.systemIndigo.cgColor
     
     @IBAction func linkButton(_ sender: UIButton) {
         UIApplication.shared.open(URL(string: "https://bit.ly/SpacefyArticle")! as URL, options: [:], completionHandler: nil)
@@ -61,55 +56,49 @@ class HomeViewController: // multiple inheritance
 
     }
     
-    var arrProductPhotos = [UIImage(named: "20221211_HomeBanner3")!,
+    var arrProductPhotos = [UIImage(named: "20221211_HomeBanner8")!,
                             UIImage(named: "20221211_HomeBanner3")!, // 0
                             UIImage(named: "20221211_HomeBanner6")!, // 1
                             UIImage(named: "20221211_HomeBanner5")!, // 2
                             UIImage(named: "20221211_HomeBanner4")!, // 3
                             UIImage(named: "20221211_HomeBanner7")!] // 4
     var timer : Timer?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        animateGradient()
+    }
            
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
         pageControl.numberOfPages = arrProductPhotos.count
-        
-//        bottomView.layer.borderColor = UIColor.black.cgColor
-//        bottomView.layer.borderWidth = 1
-        
+                
         topView.layer.shadowColor = UIColor.black.cgColor
         topView.layer.shadowOpacity = 1
         topView.layer.shadowOffset = .zero
         topView.layer.shadowRadius = 1
-        
-        bottomView.layer.shadowColor = UIColor.black.cgColor
-        bottomView.layer.shadowOpacity = 1
-        bottomView.layer.shadowOffset = .zero
-        bottomView.layer.shadowRadius = 1
-        
     }
     
     override func viewDidLayoutSubviews() {
-        bottomView.layer.cornerRadius = topView.bounds.height / 2
-        topView.layer.cornerRadius = topView.bounds.height / 2
-        
+
+        topView.layer.cornerRadius = 28+2
+            
         self.topView.clipsToBounds = true
-        self.bottomView.clipsToBounds = true
+//
+//        gradientSet.append([gradientOne, gradientTwo, gradientTwo])
+//        gradientSet.append([gradientTwo, gradientTwo, gradientThree])
+//        gradientSet.append([gradientTwo, gradientThree, gradientThree])
+//        gradientSet.append([gradientThree, gradientThree, gradientFour])
+//        gradientSet.append([gradientThree, gradientFour, gradientFour])
+//        gradientSet.append([gradientFour, gradientFour, gradientOne])
+//        gradientSet.append([gradientFour, gradientOne, gradientOne])
+//        gradientSet.append([gradientOne, gradientOne, gradientTwo])
         
-        gradientSet.append([gradientOne, gradientOne, gradientTwo])
-        gradientSet.append([gradientOne, gradientTwo, gradientTwo])
-        gradientSet.append([gradientTwo, gradientTwo, gradientThree])
-        gradientSet.append([gradientTwo, gradientThree, gradientThree])
-        gradientSet.append([gradientThree, gradientThree, gradientOne])
-        gradientSet.append([gradientThree, gradientOne, gradientOne])
-        
-        gradientSet2.append([gradientOne, gradientTwo, gradientTwo])
-        gradientSet2.append([gradientTwo, gradientTwo, gradientThree])
-        gradientSet2.append([gradientTwo, gradientThree, gradientThree])
-        gradientSet2.append([gradientThree, gradientThree, gradientOne])
-        gradientSet2.append([gradientThree, gradientOne, gradientOne])
-        gradientSet2.append([gradientOne, gradientOne, gradientTwo])
+        gradientSet.append([gradientOne, gradientTwo])
+        gradientSet.append([gradientTwo, gradientThree])
+        gradientSet.append([gradientThree, gradientFour])
+        gradientSet.append([gradientFour, gradientOne])
 
         gradient.frame =  CGRect(origin: CGPoint.zero, size: self.topView.frame.size)
         gradient.colors = gradientSet[currentGradient]
@@ -117,12 +106,7 @@ class HomeViewController: // multiple inheritance
         gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
         gradient.drawsAsynchronously = true
         
-        gradient2.frame =  CGRect(origin: CGPoint.zero, size: self.bottomView.frame.size)
-        gradient2.colors = gradientSet2[currentGradient2]
-        gradient2.startPoint = CGPoint(x: 0.0, y: 0.5)
-        gradient2.endPoint = CGPoint(x: 1.0, y: 0.5)
-        gradient2.drawsAsynchronously = true
-
+    
         shape.lineWidth = 2.5
         shape.path = UIBezierPath(roundedRect: topView.bounds.insetBy(dx: 2, dy: 2), byRoundingCorners: [.topLeft, .bottomLeft, .topRight, .bottomRight], cornerRadii: CGSize(width: topView.layer.cornerRadius, height: topView.layer.cornerRadius)).cgPath
         
@@ -130,16 +114,9 @@ class HomeViewController: // multiple inheritance
         shape.fillColor = UIColor.clear.cgColor
         gradient.mask = shape
         
-        shape2.lineWidth = 2.5
-        shape2.path = UIBezierPath(roundedRect: bottomView.bounds.insetBy(dx: 2, dy: 2), byRoundingCorners: [.topLeft, .bottomLeft, .topRight, .bottomRight], cornerRadii: CGSize(width: bottomView.layer.cornerRadius, height: bottomView.layer.cornerRadius)).cgPath
         
-        shape2.strokeColor = UIColor.black.cgColor
-        shape2.fillColor = UIColor.clear.cgColor
-        gradient2.mask = shape2
-        
+//        
         self.topView.layer.addSublayer(gradient)
-        self.bottomView.layer.addSublayer(gradient2)
-        animateGradient()
     }
     
     func animateGradient() {
@@ -148,29 +125,19 @@ class HomeViewController: // multiple inheritance
         } else {
             currentGradient = 0
         }
-        
-        if currentGradient2 < gradientSet2.count - 1 {
-            currentGradient2 += 1
-        } else {
-            currentGradient2 = 0
-        }
-        
+
         let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
+        gradientChangeAnimation.delegate = self
         gradientChangeAnimation.duration = 6.0
         gradientChangeAnimation.toValue = gradientSet[currentGradient]
         gradientChangeAnimation.fillMode = CAMediaTimingFillMode.forwards
         gradientChangeAnimation.isRemovedOnCompletion = false
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
         
-        let gradientChangeAnimation2 = CABasicAnimation(keyPath: "colors")
-        gradientChangeAnimation2.duration = 6.0
-        gradientChangeAnimation2.toValue = gradientSet2[currentGradient2]
-        gradientChangeAnimation2.fillMode = CAMediaTimingFillMode.forwards
-        gradientChangeAnimation2.isRemovedOnCompletion = false
-        gradient2.add(gradientChangeAnimation2, forKey: "colorChange")
+
     }
     
-    
+
     func startTimer(time: Double) {
         timer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
     }
@@ -187,7 +154,7 @@ class HomeViewController: // multiple inheritance
         
         if (currentCellIndex == 0) { // 3
             label1.text = "Hubble's Top 100" // 21
-            label2.text = "New Stars Shed Light on the Past"
+            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
         } else if (currentCellIndex == 1) { // 4
             label1.text = "Hubble's Top 100" // 21
             label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
@@ -230,7 +197,7 @@ class HomeViewController: // multiple inheritance
 
         if (currentCellIndex == 0) { // 3
             label1.text = "Hubble's Top 100" // 21
-            label2.text = "New Stars Shed Light on the Past"
+            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
         } else if (currentCellIndex == 1) { // 4
             label1.text = "Hubble's Top 100" // 21
             label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
@@ -258,7 +225,7 @@ class HomeViewController: // multiple inheritance
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        startTimer(time: 6.0)
+//        startTimer(time: 6.0)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -271,7 +238,6 @@ extension HomeViewController: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if flag {
             gradient.colors = gradientSet[currentGradient]
-            gradient2.colors = gradientSet2[currentGradient2]
             animateGradient()
         }
     }
