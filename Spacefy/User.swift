@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - Struct
+
 struct User {
     let id : String
     let firstName : String
