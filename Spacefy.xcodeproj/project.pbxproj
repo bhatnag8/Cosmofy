@@ -17,6 +17,8 @@
 		2F52B488297F209F00A92FF7 /* MercuryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F52B487297F209F00A92FF7 /* MercuryCell.swift */; };
 		2F542ED1297CF0110067C26B /* Pulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F542ED0297CF0110067C26B /* Pulse.swift */; };
 		2F587A2B294D49490028225E /* MercuryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F587A2A294D49490028225E /* MercuryViewController.swift */; };
+		2F6427CE2A4FA3CD00CC503D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6427CD2A4FA3CD00CC503D /* User.swift */; };
+		2F6427D12A4FB90300CC503D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6427D02A4FB90300CC503D /* TestViewController.swift */; };
 		2F98598829838ECD007271B1 /* MercuryAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98598729838ECD007271B1 /* MercuryAR.swift */; };
 		2FBBB6592945531500BBB072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBB6582945531500BBB072 /* AppDelegate.swift */; };
 		2FBBB65B2945531500BBB072 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBB65A2945531500BBB072 /* SceneDelegate.swift */; };
@@ -37,6 +39,9 @@
 		2F52B487297F209F00A92FF7 /* MercuryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryCell.swift; sourceTree = "<group>"; };
 		2F542ED0297CF0110067C26B /* Pulse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pulse.swift; sourceTree = "<group>"; };
 		2F587A2A294D49490028225E /* MercuryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryViewController.swift; sourceTree = "<group>"; };
+		2F6427CD2A4FA3CD00CC503D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2F6427CF2A4FA4EF00CC503D /* Spacefy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spacefy.entitlements; sourceTree = "<group>"; };
+		2F6427D02A4FB90300CC503D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		2F98598729838ECD007271B1 /* MercuryAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryAR.swift; sourceTree = "<group>"; };
 		2FBBB6552945531500BBB072 /* Spacefy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spacefy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FBBB6582945531500BBB072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +123,7 @@
 		2FBBB6572945531500BBB072 /* Spacefy */ = {
 			isa = PBXGroup;
 			children = (
+				2F6427CF2A4FA4EF00CC503D /* Spacefy.entitlements */,
 				2F4F8FC1295EBC5100F7EE98 /* star.png */,
 				2F4F8FC0295EBC5100F7EE98 /* StarsParticleSystem.scnp */,
 				2F4F8FC6295EC08700F7EE98 /* Nodes */,
@@ -136,6 +142,8 @@
 				2F0B04D52945A576001FAAE6 /* HomeCollectionViewCell.swift */,
 				2F542ED0297CF0110067C26B /* Pulse.swift */,
 				2FC4C0082A3635FA00DBA12D /* ShowSplashScreen.swift */,
+				2F6427CD2A4FA3CD00CC503D /* User.swift */,
+				2F6427D02A4FB90300CC503D /* TestViewController.swift */,
 			);
 			path = Spacefy;
 			sourceTree = "<group>";
@@ -213,6 +221,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F6427D12A4FB90300CC503D /* TestViewController.swift in Sources */,
+				2F6427CE2A4FA3CD00CC503D /* User.swift in Sources */,
 				2F98598829838ECD007271B1 /* MercuryAR.swift in Sources */,
 				2F542ED1297CF0110067C26B /* Pulse.swift in Sources */,
 				2F587A2B294D49490028225E /* MercuryViewController.swift in Sources */,
@@ -374,6 +384,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = Spacefy/Spacefy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
@@ -410,6 +421,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = Spacefy/Spacefy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
