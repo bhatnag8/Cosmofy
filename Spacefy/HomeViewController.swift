@@ -67,10 +67,15 @@ class HomeViewController: // multiple inheritance
     
     override func viewDidAppear(_ animated: Bool) {
         animateGradient()
+
     }
+    
+    
            
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+
         collectionView.delegate = self
         collectionView.dataSource = self
         pageControl.numberOfPages = arrProductPhotos.count
@@ -79,23 +84,14 @@ class HomeViewController: // multiple inheritance
         topView.layer.shadowOpacity = 1
         topView.layer.shadowOffset = .zero
         topView.layer.shadowRadius = 1
+
     }
     
     override func viewDidLayoutSubviews() {
+        
 
         topView.layer.cornerRadius = 28+2
-            
         self.topView.clipsToBounds = true
-//
-//        gradientSet.append([gradientOne, gradientTwo, gradientTwo])
-//        gradientSet.append([gradientTwo, gradientTwo, gradientThree])
-//        gradientSet.append([gradientTwo, gradientThree, gradientThree])
-//        gradientSet.append([gradientThree, gradientThree, gradientFour])
-//        gradientSet.append([gradientThree, gradientFour, gradientFour])
-//        gradientSet.append([gradientFour, gradientFour, gradientOne])
-//        gradientSet.append([gradientFour, gradientOne, gradientOne])
-//        gradientSet.append([gradientOne, gradientOne, gradientTwo])
-        
         gradientSet.append([gradientOne, gradientTwo])
         gradientSet.append([gradientTwo, gradientThree])
         gradientSet.append([gradientThree, gradientFour])
@@ -134,8 +130,6 @@ class HomeViewController: // multiple inheritance
         gradientChangeAnimation.fillMode = CAMediaTimingFillMode.forwards
         gradientChangeAnimation.isRemovedOnCompletion = false
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
-        
-
     }
     
 
@@ -172,6 +166,7 @@ class HomeViewController: // multiple inheritance
             label1.text = "Hubble's Top 100" // 15
             label2.text = "Stellar Spire in the Eagle Nebula"
         }
+
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -215,18 +210,25 @@ class HomeViewController: // multiple inheritance
             label1.text = "Hubble's Top 100" // 15
             label2.text = "Stellar Spire in the Eagle Nebula"
         }
+        gradient.removeAnimation(forKey: "colorChange")
         pageControl.currentPage = currentCellIndex
-
+        gradient.add(gradientChangeAnimation, forKey: "colorChange")
         timer?.invalidate()
         startTimer(time: 4.5)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         timer?.invalidate()
+        gradient.removeAnimation(forKey: "colorChange")
+        gradient.add(gradientChangeAnimation, forKey: "colorChange")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        
         startTimer(time: 6.0)
+
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
