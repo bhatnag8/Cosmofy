@@ -17,9 +17,10 @@ class TestViewController: UIViewController {
         
         
         let hour = Calendar.current.component(.hour, from: Date())
+        print(hour)
         switch hour {
-            case 4..<11 : goodLabel.text = "Good Morning"
-            case 12..<16 : goodLabel.text = "Good Afternoon"
+            case 4...11 : goodLabel.text = "Good Morning"
+            case 12...16 : goodLabel.text = "Good Afternoon"
             case 17..<24 : goodLabel.text = "Good Evening"
             default: goodLabel.text = "Hello"
         }
