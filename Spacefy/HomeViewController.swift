@@ -65,11 +65,7 @@ class HomeViewController: // multiple inheritance
                             UIImage(named: "20221211_HomeBanner7")!] // 4
     var timer : Timer?
     
-    override func viewDidAppear(_ animated: Bool) {
-        animateGradient()
-
-    }
-    
+ 
     
            
     override func viewDidLoad() {
@@ -84,7 +80,12 @@ class HomeViewController: // multiple inheritance
         topView.layer.shadowOpacity = 1
         topView.layer.shadowOffset = .zero
         topView.layer.shadowRadius = 1
-
+        
+        gradientSet.append([gradientOne, gradientTwo])
+        gradientSet.append([gradientTwo, gradientThree])
+        gradientSet.append([gradientThree, gradientFour])
+        gradientSet.append([gradientFour, gradientOne])
+        animateGradient()
     }
     
     override func viewDidLayoutSubviews() {
@@ -92,10 +93,7 @@ class HomeViewController: // multiple inheritance
 
         topView.layer.cornerRadius = 28+2
         self.topView.clipsToBounds = true
-        gradientSet.append([gradientOne, gradientTwo])
-        gradientSet.append([gradientTwo, gradientThree])
-        gradientSet.append([gradientThree, gradientFour])
-        gradientSet.append([gradientFour, gradientOne])
+        
 
         gradient.frame =  CGRect(origin: CGPoint.zero, size: self.topView.frame.size)
         gradient.colors = gradientSet[currentGradient]
@@ -117,11 +115,21 @@ class HomeViewController: // multiple inheritance
     }
     
     func animateGradient() {
-        if currentGradient < gradientSet.count - 1 {
-            currentGradient += 1
-        } else {
+//        if currentGradient < gradientSet.count - 1 {
+//            currentGradient += 1
+//        } else {
+//            currentGradient -= 1
+//        }
+//        
+        switch (currentGradient) {
+        case 0: currentGradient = 1
+        case 1: currentGradient = 2
+        case 2: currentGradient = 3
+        case 3: currentGradient = 0
+        default:
             currentGradient = 0
         }
+        
 
         
         gradientChangeAnimation.delegate = self
@@ -131,6 +139,7 @@ class HomeViewController: // multiple inheritance
         gradientChangeAnimation.isRemovedOnCompletion = false
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
     }
+    
     
 
     func startTimer(time: Double) {
@@ -187,6 +196,11 @@ class HomeViewController: // multiple inheritance
         return 0
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        gradient.removeAnimation(forKey: "colorChange")
+
+    }
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let width = scrollView.frame.width
         currentCellIndex = Int(scrollView.contentOffset.x / width)
@@ -210,9 +224,7 @@ class HomeViewController: // multiple inheritance
             label1.text = "Hubble's Top 100" // 15
             label2.text = "Stellar Spire in the Eagle Nebula"
         }
-        gradient.removeAnimation(forKey: "colorChange")
         pageControl.currentPage = currentCellIndex
-        gradient.add(gradientChangeAnimation, forKey: "colorChange")
         timer?.invalidate()
         startTimer(time: 4.5)
     }
@@ -220,15 +232,13 @@ class HomeViewController: // multiple inheritance
     override func viewDidDisappear(_ animated: Bool) {
         timer?.invalidate()
         gradient.removeAnimation(forKey: "colorChange")
-        gradient.add(gradientChangeAnimation, forKey: "colorChange")
+        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        
-        startTimer(time: 6.0)
-
+        //startTimer(time: 6.0)
+        gradient.add(gradientChangeAnimation, forKey: "colorChange")
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
