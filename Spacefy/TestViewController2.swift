@@ -1,30 +1,16 @@
 //  ========================================
-//  TestViewController.swift
+//  TestViewController2.swift
 //  Spacefy
 //  4th Edition
-//  Created by Arryan Bhatnagar on 6/30/23.
+//  Created by Arryan Bhatnagar on 7/4/23.
 //  ========================================
 
 import UIKit
 
-class TestViewController: UIViewController {
+class TestViewController2: UIViewController {
 
-    @IBOutlet weak var goodLabel: UILabel!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        let hour = Calendar.current.component(.hour, from: Date())
-        print(hour)
-        switch hour {
-            case 4...11 : goodLabel.text = "Good Morning"
-            case 12...16 : goodLabel.text = "Good Afternoon"
-            case 17..<24 : goodLabel.text = "Good Evening"
-            default: goodLabel.text = "Hello"
-        }
-        
         
 
         // Do any additional setup after loading the view.
