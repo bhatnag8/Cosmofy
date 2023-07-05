@@ -9,11 +9,15 @@ import UIKit
 
 class TestViewController2: UIViewController {
 
+    @IBOutlet weak var SignIn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
 
         // Do any additional setup after loading the view.
+        
+        SignIn.layer.cornerRadius = SignIn.bounds.height / 2
     }
     
 

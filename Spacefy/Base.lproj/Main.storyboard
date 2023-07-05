@@ -1356,7 +1356,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient2" translatesAutoresizingMaskIntoConstraints="NO" id="amQ-e5-pPx">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gra" translatesAutoresizingMaskIntoConstraints="NO" id="amQ-e5-pPx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacefy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rk2-9a-ST4">
@@ -1392,6 +1392,9 @@
                             <constraint firstItem="r72-Ir-IXp" firstAttribute="leading" secondItem="Gul-KH-fAs" secondAttribute="leading" constant="64" id="ywA-C6-Kq4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="SignIn" destination="r72-Ir-IXp" id="5TF-CP-TR3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWm-HX-oZn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1613,7 +1616,7 @@
         <image name="20230122_PlanetIcons_Density" width="512" height="512"/>
         <image name="20230122_PlanetIcons_Radius" width="512" height="512"/>
         <image name="20230122_PlanetIcons_Volume" width="512" height="512"/>
-        <image name="Gradient2" width="390" height="844"/>
+        <image name="Gra" width="390" height="844"/>
         <image name="arrow.down" catalog="system" width="118" height="128"/>
         <image name="arrow.up" catalog="system" width="118" height="128"/>
         <image name="book.circle.fill" catalog="system" width="128" height="123"/>
