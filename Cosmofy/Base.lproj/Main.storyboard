@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22113.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tLQ-zy-Hs2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22113.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bxy-76-wAW">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -817,7 +817,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="29.666666666666668" height="29.666666666666668"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20230122_PlanetIcons_Atmosphere" translatesAutoresizingMaskIntoConstraints="NO" id="Gea-XZ-7cJ">
-                                                                <rect key="frame" x="4" y="4" width="21.666666666666664" height="21.666666666666671"/>
+                                                                <rect key="frame" x="4" y="4" width="21.666666666666668" height="21.666666666666668"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Gea-XZ-7cJ" secondAttribute="height" multiplier="1:1" id="yHI-Sq-zIy"/>
                                                                 </constraints>
@@ -850,7 +850,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="29.666666666666668" height="29.666666666666668"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20230122_PlanetIcons_Radius" translatesAutoresizingMaskIntoConstraints="NO" id="tQY-bN-kME">
-                                                                <rect key="frame" x="4" y="4" width="21.666666666666664" height="21.666666666666664"/>
+                                                                <rect key="frame" x="4" y="4" width="21.666666666666668" height="21.666666666666668"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="tQY-bN-kME" secondAttribute="height" multiplier="1:1" id="uf2-Ic-dbR"/>
                                                                 </constraints>
@@ -880,7 +880,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="29.666666666666668" height="29.666666666666668"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20230122_PlanetIcons_Density" translatesAutoresizingMaskIntoConstraints="NO" id="JJx-bJ-MQL">
-                                                                <rect key="frame" x="4" y="4" width="21.666666666666664" height="21.666666666666664"/>
+                                                                <rect key="frame" x="4" y="4" width="21.666666666666668" height="21.666666666666668"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="JJx-bJ-MQL" secondAttribute="height" multiplier="1:1" id="qQ2-QI-l36"/>
                                                                 </constraints>
@@ -913,7 +913,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="29.666666666666668" height="30"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20230122_PlanetIcons_Volume" translatesAutoresizingMaskIntoConstraints="NO" id="KWh-6b-pCG">
-                                                                <rect key="frame" x="4" y="4" width="21.666666666666664" height="22"/>
+                                                                <rect key="frame" x="4" y="4" width="21.666666666666668" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="KWh-6b-pCG" secondAttribute="height" multiplier="1:1" id="m5S-Qd-zLl"/>
                                                                 </constraints>
@@ -947,7 +947,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="29.666666666666668" height="29.666666666666668"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20221226_PlanetIcons_Mass" translatesAutoresizingMaskIntoConstraints="NO" id="VSG-ue-Zg2">
-                                                                <rect key="frame" x="2" y="2" width="25.666666666666664" height="25.666666666666664"/>
+                                                                <rect key="frame" x="2" y="2" width="25.666666666666668" height="25.666666666666668"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="VSG-ue-Zg2" secondAttribute="height" multiplier="1:1" id="2AH-mT-Sxt"/>
                                                                 </constraints>
@@ -1388,8 +1388,11 @@
                                 <buttonConfiguration key="configuration" style="plain" title="  Sign in with Apple">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="20"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="aTE-Kv-bqB" kind="show" id="KWH-9i-ZnF"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20230705_AppIcon_Version1" translatesAutoresizingMaskIntoConstraints="NO" id="niU-dy-VAa">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIcon_Mod" translatesAutoresizingMaskIntoConstraints="NO" id="niU-dy-VAa">
                                 <rect key="frame" x="147.66666666666666" y="165" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="DOV-2Q-nRe"/>
@@ -1429,6 +1432,7 @@
                             <constraint firstItem="r72-Ir-IXp" firstAttribute="leading" secondItem="Gul-KH-fAs" secondAttribute="leading" constant="48" id="ywA-C6-Kq4"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="IQe-fL-WdC"/>
                     <connections>
                         <outlet property="Logo" destination="niU-dy-VAa" id="iaM-Bc-bwV"/>
                         <outlet property="SignIn" destination="r72-Ir-IXp" id="5TF-CP-TR3"/>
@@ -1436,7 +1440,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWm-HX-oZn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1716" y="-893"/>
+            <point key="canvasLocation" x="1652" y="-228"/>
         </scene>
         <!--Show Splash Screen-->
         <scene sceneID="7j0-2p-8Gd">
@@ -1473,12 +1477,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="Zg0-zF-Mc7"/>
                     <connections>
-                        <segue destination="aTE-Kv-bqB" kind="show" identifier="showSplashScreen" id="3qY-en-NpM"/>
+                        <segue destination="Bxy-76-wAW" kind="show" id="ib1-Nh-Aq8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dho-JF-7lo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1716" y="-228.32512315270938"/>
+            <point key="canvasLocation" x="780" y="-228"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="f6B-NS-MUw">
@@ -1509,7 +1513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MLc-lv-arE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1716" y="479"/>
+            <point key="canvasLocation" x="2521" y="-893"/>
         </scene>
         <!--Mercury in AR-->
         <scene sceneID="Ad2-Mj-nih">
@@ -1631,7 +1635,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kUq-CU-bYp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773.60000000000002" y="-228.32512315270938"/>
+            <point key="canvasLocation" x="-25" y="-228"/>
         </scene>
     </scenes>
     <resources>
@@ -1654,7 +1658,7 @@
         <image name="20230122_PlanetIcons_Density" width="512" height="512"/>
         <image name="20230122_PlanetIcons_Radius" width="512" height="512"/>
         <image name="20230122_PlanetIcons_Volume" width="512" height="512"/>
-        <image name="20230705_AppIcon_Version1" width="1024" height="1024"/>
+        <image name="AppIcon_Mod" width="1024" height="1024"/>
         <image name="Gradient3" width="390" height="844"/>
         <image name="arrow.down" catalog="system" width="118" height="128"/>
         <image name="arrow.up" catalog="system" width="118" height="128"/>

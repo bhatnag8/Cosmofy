@@ -6,7 +6,6 @@
 //  ========================================
 
 import UIKit
-let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
 
 class HomeViewController: // multiple inheritance
     UIViewController,
@@ -33,6 +32,8 @@ class HomeViewController: // multiple inheritance
     let gradientTwo = UIColor.systemPurple.cgColor
     let gradientThree = UIColor.systemRed.cgColor
     let gradientFour = UIColor.systemIndigo.cgColor
+    let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
+
     
     @IBAction func linkButton(_ sender: UIButton) {
         UIApplication.shared.open(URL(string: "https://bit.ly/SpacefyArticle")! as URL, options: [:], completionHandler: nil)
@@ -196,10 +197,6 @@ class HomeViewController: // multiple inheritance
         return 0
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        gradient.removeAnimation(forKey: "colorChange")
-
-    }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let width = scrollView.frame.width
