@@ -1360,25 +1360,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Cosmofy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rk2-9a-ST4">
-                                <rect key="frame" x="32" y="269" width="311" height="28.666666666666686"/>
+                                <rect key="frame" x="32" y="267.66666666666669" width="311" height="28.666666666666686"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account to get started on your space journey." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3H-ld-3CA">
-                                <rect key="frame" x="32" y="309.66666666666669" width="311" height="35"/>
+                                <rect key="frame" x="32" y="308.33333333333331" width="311" height="35"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By creating an account, you agree with Spacefy's" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dT-u6-z2z">
-                                <rect key="frame" x="32" y="674" width="311" height="15.666666666666629"/>
+                                <rect key="frame" x="32" y="672.66666666666663" width="311" height="15.666666666666629"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r72-Ir-IXp">
-                                <rect key="frame" x="48" y="600.66666666666663" width="279" height="49.333333333333371"/>
+                                <rect key="frame" x="48" y="599.33333333333337" width="279" height="49.333333333333371"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="r72-Ir-IXp" secondAttribute="height" multiplier="17:3" id="Hn6-4P-y6T"/>
@@ -1393,14 +1393,14 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIcon_Mod" translatesAutoresizingMaskIntoConstraints="NO" id="niU-dy-VAa">
-                                <rect key="frame" x="147.66666666666666" y="165" width="80" height="80"/>
+                                <rect key="frame" x="147.66666666666666" y="163.66666666666666" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="DOV-2Q-nRe"/>
                                     <constraint firstAttribute="width" secondItem="niU-dy-VAa" secondAttribute="height" multiplier="1:1" id="Jcq-aa-xx3"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms &amp; Conditions and Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8p-4O-2eW">
-                                <rect key="frame" x="32" y="691.66666666666663" width="311" height="15.666666666666629"/>
+                                <rect key="frame" x="32" y="690.33333333333337" width="311" height="15.666666666666629"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
                                 <color key="textColor" systemColor="tintColor"/>
                                 <nil key="highlightedColor"/>
@@ -1420,11 +1420,11 @@
                             <constraint firstItem="O3H-ld-3CA" firstAttribute="top" secondItem="rk2-9a-ST4" secondAttribute="bottom" constant="12" id="LgS-Kk-ZFc"/>
                             <constraint firstItem="amQ-e5-pPx" firstAttribute="top" secondItem="6pF-M8-2pO" secondAttribute="top" id="MRp-jb-oV4"/>
                             <constraint firstItem="6dT-u6-z2z" firstAttribute="top" secondItem="r72-Ir-IXp" secondAttribute="bottom" constant="24" id="QZp-NT-DdJ"/>
+                            <constraint firstItem="Gul-KH-fAs" firstAttribute="bottom" secondItem="T8p-4O-2eW" secondAttribute="bottom" constant="72" id="WBQ-r2-3uI"/>
                             <constraint firstItem="O3H-ld-3CA" firstAttribute="leading" secondItem="6pF-M8-2pO" secondAttribute="leading" constant="32" id="Wh3-Yn-vMW"/>
                             <constraint firstItem="rk2-9a-ST4" firstAttribute="leading" secondItem="Gul-KH-fAs" secondAttribute="leading" constant="32" id="Wq9-jU-tEB"/>
                             <constraint firstItem="T8p-4O-2eW" firstAttribute="top" secondItem="6dT-u6-z2z" secondAttribute="bottom" constant="2" id="XLN-WK-r95"/>
                             <constraint firstItem="Gul-KH-fAs" firstAttribute="trailing" secondItem="amQ-e5-pPx" secondAttribute="trailing" id="hf7-JS-YgE"/>
-                            <constraint firstItem="Gul-KH-fAs" firstAttribute="bottom" secondItem="r72-Ir-IXp" secondAttribute="bottom" constant="128" id="hkG-Ej-BoX"/>
                             <constraint firstItem="Gul-KH-fAs" firstAttribute="trailing" secondItem="6dT-u6-z2z" secondAttribute="trailing" constant="32" id="lyG-EB-9Sz"/>
                             <constraint firstItem="6dT-u6-z2z" firstAttribute="leading" secondItem="Gul-KH-fAs" secondAttribute="leading" constant="32" id="mvo-gd-8dd"/>
                             <constraint firstAttribute="trailing" secondItem="O3H-ld-3CA" secondAttribute="trailing" constant="32" id="ojQ-NM-lwD"/>
