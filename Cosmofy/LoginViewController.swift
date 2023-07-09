@@ -18,6 +18,12 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Logo.layer.cornerRadius = 12
+        setupProviderLoginView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        performExistingAccountSetupFlows()
     }
     
     func setupProviderLoginView() {
@@ -136,7 +142,7 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
     }
 }
 
-extension LoginViewController {
+extension UIViewController {
     
     func showLoginViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

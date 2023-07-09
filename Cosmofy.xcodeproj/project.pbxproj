@@ -21,7 +21,6 @@
 		2F7494EF2A5B35C4004C63B7 /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7494EE2A5B35C4004C63B7 /* KeychainItem.swift */; };
 		2F98598829838ECD007271B1 /* MercuryAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98598729838ECD007271B1 /* MercuryAR.swift */; };
 		2FBBB6592945531500BBB072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBB6582945531500BBB072 /* AppDelegate.swift */; };
-		2FBBB65B2945531500BBB072 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBB65A2945531500BBB072 /* SceneDelegate.swift */; };
 		2FBBB6602945531500BBB072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB65E2945531500BBB072 /* Main.storyboard */; };
 		2FBBB6622945531700BBB072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
 		2FBBB6652945531700BBB072 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6632945531700BBB072 /* LaunchScreen.storyboard */; };
@@ -46,7 +45,6 @@
 		2F98598729838ECD007271B1 /* MercuryAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryAR.swift; sourceTree = "<group>"; };
 		2FBBB6552945531500BBB072 /* Cosmofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosmofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FBBB6582945531500BBB072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2FBBB65A2945531500BBB072 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2FBBB65F2945531500BBB072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2FBBB6612945531700BBB072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FBBB6642945531700BBB072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				2F587A29294D48FE0028225E /* PlanetViewController */,
 				2F98598529838E5B007271B1 /* CollectionViewCells */,
 				2FBBB6582945531500BBB072 /* AppDelegate.swift */,
-				2FBBB65A2945531500BBB072 /* SceneDelegate.swift */,
 				2FBBB65E2945531500BBB072 /* Main.storyboard */,
 				2FBBB6632945531700BBB072 /* LaunchScreen.storyboard */,
 				2FBBB6612945531700BBB072 /* Assets.xcassets */,
@@ -234,7 +231,6 @@
 				2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */,
 				2FC4C0092A3635FA00DBA12D /* ShowSplashScreen.swift in Sources */,
 				2FBBB6592945531500BBB072 /* AppDelegate.swift in Sources */,
-				2FBBB65B2945531500BBB072 /* SceneDelegate.swift in Sources */,
 				2F0ACC23295DBCB800B3D0DB /* Mercury3D.swift in Sources */,
 				2F52B488297F209F00A92FF7 /* MercuryCell.swift in Sources */,
 				2F4F8FC5295EC08100F7EE98 /* MercuryNode.swift in Sources */,
