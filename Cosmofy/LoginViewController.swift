@@ -74,18 +74,17 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             
             // Create an account in your system.
             let userIdentifier = appleIDCredential.user
-                
-                print("hitting 1")
-                
-                
+            
             if let firstname = appleIDCredential.fullName?.givenName,
                let lastname = appleIDCredential.fullName?.familyName,
                let email = appleIDCredential.email
             {
-                let record = CKRecord(recordType: "Users", recordID: CKRecord.ID(recordName: userIdentifier))
-                record["firstName"] = firstname
-                record["lastName"] = lastname
-                record["emailAddress"] = email
+                let record = CKRecord(recordType: "UserInfo", recordID: CKRecord.ID(recordName: userIdentifier))
+                record["firstName"] = firstname as String
+                record["lastName"] = lastname as String
+                record["emailAddress"] = email as String
+                
+                
                 privateDatabase.save(record) { (_, _) in
                     UserDefaults.standard.set(record.recordID.recordName, forKey: "userProfileID")
                 }
@@ -100,7 +99,8 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 }
                 print("not now")
             }
-                
+            
+        
             // Store the 'userIdentifier' in the keychain.
             self.saveUserInKeychain(userIdentifier)
                 
