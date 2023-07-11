@@ -1,11 +1,14 @@
 //  ========================================
-//  TestViewController2.swift
+//  LoginViewController.swift
 //  Cosmofy
 //  4th Edition
 //  Created by Arryan Bhatnagar on 7/4/23.
+//  Abstract: A view controller for registering an account onto the back-end.
 //  ========================================
 
 import UIKit
+import CloudKit
+import Foundation
 import AuthenticationServices
 
 
@@ -23,7 +26,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        performExistingAccountSetupFlows()
     }
     
     func setupProviderLoginView() {
@@ -65,19 +67,52 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     
     // Did Complete Authorization
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        let privateDatabase = CKContainer(identifier: "iCloud.com.snape447.Cosmofy.users").privateCloudDatabase
+        
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
             
             // Create an account in your system.
             let userIdentifier = appleIDCredential.user
-            let fullName = appleIDCredential.fullName
-            let email = appleIDCredential.email
-            
+                
+                print("hitting 1")
+                
+                
+            if let firstname = appleIDCredential.fullName?.givenName,
+               let lastname = appleIDCredential.fullName?.familyName,
+               let email = appleIDCredential.email
+            {
+                let record = CKRecord(recordType: "Users", recordID: CKRecord.ID(recordName: userIdentifier))
+                record["firstName"] = firstname
+                record["lastName"] = lastname
+                record["emailAddress"] = email
+                privateDatabase.save(record) { (_, _) in
+                    UserDefaults.standard.set(record.recordID.recordName, forKey: "userProfileID")
+                }
+                print("made account")
+                
+            } else {
+                privateDatabase.fetch(withRecordID: CKRecord.ID(recordName: userIdentifier)) {
+                    (record, error) in
+                    if record != nil {
+                        UserDefaults.standard.set(userIdentifier, forKey: "userProfileID")
+                    }
+                }
+                print("not now")
+            }
+                
             // Store the 'userIdentifier' in the keychain.
             self.saveUserInKeychain(userIdentifier)
-            
-            // Show the Apple ID credential information in the `ResultViewController`.
-            self.showResultViewController(userIdentifier: userIdentifier, fullName: fullName, email: email)
+                
+            print("ok")
+                
+            let final_firstName = appleIDCredential.fullName?.givenName
+            let final_lastName = appleIDCredential.fullName?.familyName
+            let final_email = appleIDCredential.email
+                
+            self.showResultViewController(firstName: final_firstName, lastName: final_lastName, email: final_email)
+            print("done")
+   
         
         case let passwordCredential as ASPasswordCredential:
         
@@ -103,18 +138,18 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
         }
     }
     
-    private func showResultViewController(userIdentifier: String, fullName: PersonNameComponents?, email: String?) {
-
+    private func showResultViewController(firstName: String?, lastName: String?, email: String?) {
+        
+        // storing the user credentials [not password] into the
         DispatchQueue.main.async {
-            UserDefaults.standard.set(userIdentifier, forKey: "s0")
-            if let givenName = fullName?.givenName {
+            if let givenName = firstName {
                 UserDefaults.standard.set(givenName, forKey: "s1")
             }
-            if let familyName = fullName?.familyName {
+            if let familyName = lastName {
                 UserDefaults.standard.set(familyName, forKey: "s2")
             }
-            if let email = email {
-                UserDefaults.standard.set(email, forKey: "s3")
+            if let email2 = email {
+                UserDefaults.standard.set(email2, forKey: "s3")
             }
             self.dismiss(animated: true, completion: nil)
         }

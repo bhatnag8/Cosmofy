@@ -1,9 +1,10 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A struct for accessing generic password keychain items.
-*/
+//  ========================================
+//  KeychainItem.swift
+//  Cosmofy
+//  4th Edition
+//  Sampled from Apple on 7/9/23.
+//  Abstract: A struct for accessing generic password keychain items.
+//  ========================================
 
 import Foundation
 
