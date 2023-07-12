@@ -17,7 +17,6 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         signOutButton.layer.cornerRadius = signOutButton.frame.height / 2
         
-
     }
  
     @IBAction func signOutButtonPressed() {

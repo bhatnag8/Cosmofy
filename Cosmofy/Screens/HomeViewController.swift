@@ -3,6 +3,7 @@
 //  Cosmofy
 //  4th Edition
 //  Created by Arryan Bhatnagar on 12/11/22.
+//  Abstract: The main view controller user first see when they launch the app.
 //  ========================================
 
 import UIKit
@@ -18,7 +19,7 @@ class HomeViewController: // multiple inheritance
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
 
-    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var goodLabel: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
     var currentCellIndex = 0
@@ -26,17 +27,20 @@ class HomeViewController: // multiple inheritance
     let gradient = CAGradientLayer()
     var gradientSet = [[CGColor]]()
     var currentGradient: Int = 0
+    var name = ""
     let shape = CAShapeLayer()
+    let hour = Calendar.current.component(.hour, from: Date())
+    
     
     let gradientOne = UIColor.systemTeal.cgColor
     let gradientTwo = UIColor.systemPurple.cgColor
     let gradientThree = UIColor.systemRed.cgColor
     let gradientFour = UIColor.systemIndigo.cgColor
     let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
-
+    
     
     @IBAction func linkButton(_ sender: UIButton) {
-        UIApplication.shared.open(URL(string: "https://bit.ly/SpacefyArticle")! as URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL(string: "https://www.quantamagazine.org/what-is-the-geometry-of-the-universe-20200316?ref=refind")! as URL, options: [:], completionHandler: nil)
     }
     
     @IBAction func dynamicButton(_ sender: Any) {
@@ -66,11 +70,8 @@ class HomeViewController: // multiple inheritance
                             UIImage(named: "20221211_HomeBanner7")!] // 4
     var timer : Timer?
     
- 
-    
-           
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
-        
         super.viewDidLoad()
 
         collectionView.delegate = self
@@ -89,50 +90,55 @@ class HomeViewController: // multiple inheritance
         animateGradient()
     }
     
+    // MARK: - viewDidAppear
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        name = UserDefaults.standard.object(forKey: "s1") as! String
+        
+        switch hour {
+            case 4...11 : goodLabel.text = "Good Morning ".uppercased()
+            case 12...16 : goodLabel.text = "Good Afternoon ".uppercased()
+            case 17..<24 : goodLabel.text = "Good Evening ".uppercased()
+            default: goodLabel.text = "Good Evening ".uppercased()
+        }
+        
+        goodLabel.text! += name.uppercased()
+    }
+    
+    // MARK: - viewDidLayoutSubviews
     override func viewDidLayoutSubviews() {
         
 
         topView.layer.cornerRadius = 28+2
         self.topView.clipsToBounds = true
         
-
         gradient.frame =  CGRect(origin: CGPoint.zero, size: self.topView.frame.size)
         gradient.colors = gradientSet[currentGradient]
         gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
         gradient.drawsAsynchronously = true
         
-    
         shape.lineWidth = 2.5
         shape.path = UIBezierPath(roundedRect: topView.bounds.insetBy(dx: 2, dy: 2), byRoundingCorners: [.topLeft, .bottomLeft, .topRight, .bottomRight], cornerRadii: CGSize(width: topView.layer.cornerRadius, height: topView.layer.cornerRadius)).cgPath
         
         shape.strokeColor = UIColor.black.cgColor
         shape.fillColor = UIColor.clear.cgColor
         gradient.mask = shape
-        
-        
-//        
+
         self.topView.layer.addSublayer(gradient)
     }
     
     func animateGradient() {
-//        if currentGradient < gradientSet.count - 1 {
-//            currentGradient += 1
-//        } else {
-//            currentGradient -= 1
-//        }
-//        
-        switch (currentGradient) {
-        case 0: currentGradient = 1
-        case 1: currentGradient = 2
-        case 2: currentGradient = 3
-        case 3: currentGradient = 0
-        default:
-            currentGradient = 0
-        }
-        
 
-        
+        switch (currentGradient) {
+            case 0: currentGradient = 1
+            case 1: currentGradient = 2
+            case 2: currentGradient = 3
+            case 3: currentGradient = 0
+            default: currentGradient = 0
+        }
+ 
         gradientChangeAnimation.delegate = self
         gradientChangeAnimation.duration = 6.0
         gradientChangeAnimation.toValue = gradientSet[currentGradient]
@@ -141,8 +147,6 @@ class HomeViewController: // multiple inheritance
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
     }
     
-    
-
     func startTimer(time: Double) {
         timer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
     }
@@ -157,26 +161,29 @@ class HomeViewController: // multiple inheritance
         collectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
         pageControl.currentPage = currentCellIndex
         
-        if (currentCellIndex == 0) {
-            label1.text = "Hubble Space Telescope"
-            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
-        } else if (currentCellIndex == 1) {
-            label1.text = "Hubble Space Telescope"
-            label2.text = "The Bubble Nebula"
-        } else if (currentCellIndex == 2) { // 4
-            label1.text = "Hubble's Top 100" // 2
-            label2.text = "Hubble’s Sharpest View of the Orion Nebula"
-        } else if (currentCellIndex == 3) { // 5
-            label1.text = "Hubble's Top 100" // 4
-            label2.text = "Antennae Galaxies Reloaded"
-        } else if (currentCellIndex == 4) { // 6
-            label1.text = "Hubble's Top 100" // 12
-            label2.text = "A Rose Made of Galaxies"
-        } else if (currentCellIndex == 5) { // 7
-            label1.text = "Hubble's Top 100" // 15
-            label2.text = "Stellar Spire in the Eagle Nebula"
+        
+        switch (currentCellIndex) {
+                
+            case 0: label2.text = "Hubble Space Telescope"
+            case 1: label2.text = "Hubble Space Telescope"
+            case 2: label2.text = "Hubble Space Telescope"
+            case 3: label2.text = "Hubble Space Telescope"
+            case 4: label2.text = "Hubble Space Telescope"
+            case 5: label2.text = "Hubble Space Telescope"
+            default: label2.text = "Hubble Space Telescope"
         }
-
+        
+        switch (currentCellIndex) {
+                
+            case 0: label3.text = "Ghostly Star-Forming Pillar of Gas and Dust"
+            case 1: label3.text = "The Bubble Nebula"
+            case 2: label3.text = "Hubble’s Sharpest View of the Orion Nebula"
+            case 3: label3.text = "Antennae Galaxies Reloaded"
+            case 4: label3.text = "A Rose Made of Galaxies"
+            case 5: label3.text = "Stellar Spire in the Eagle Nebula"
+            default: label3.text = ""
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -202,30 +209,34 @@ class HomeViewController: // multiple inheritance
         let width = scrollView.frame.width
         currentCellIndex = Int(scrollView.contentOffset.x / width)
 
-        if (currentCellIndex == 0) {
-            label1.text = "Hubble Space Telescope"
-            label2.text = "Ghostly Star-Forming Pillar of Gas and Dust"
-        } else if (currentCellIndex == 1) {
-            label1.text = "Hubble Space Telescope"
-            label2.text = "The Bubble Nebula"
-        } else if (currentCellIndex == 2) { // 4
-            label1.text = "Hubble's Top 100" // 2
-            label2.text = "Hubble’s Sharpest View of the Orion Nebula"
-        } else if (currentCellIndex == 3) { // 5
-            label1.text = "Hubble's Top 100" // 4
-            label2.text = "Antennae Galaxies Reloaded"
-        } else if (currentCellIndex == 4) { // 6
-            label1.text = "Hubble's Top 100" // 12
-            label2.text = "A Rose Made of Galaxies"
-        } else if (currentCellIndex == 5) { // 7
-            label1.text = "Hubble's Top 100" // 15
-            label2.text = "Stellar Spire in the Eagle Nebula"
+        switch (currentCellIndex) {
+                
+            case 0: label2.text = "Hubble Space Telescope"
+            case 1: label2.text = "Hubble Space Telescope"
+            case 2: label2.text = "Hubble Space Telescope"
+            case 3: label2.text = "Hubble Space Telescope"
+            case 4: label2.text = "Hubble Space Telescope"
+            case 5: label2.text = "Hubble Space Telescope"
+            default: label2.text = "Hubble Space Telescope"
         }
+        
+        switch (currentCellIndex) {
+                
+            case 0: label3.text = "Ghostly Star-Forming Pillar of Gas and Dust"
+            case 1: label3.text = "The Bubble Nebula"
+            case 2: label3.text = "Hubble’s Sharpest View of the Orion Nebula"
+            case 3: label3.text = "Antennae Galaxies Reloaded"
+            case 4: label3.text = "A Rose Made of Galaxies"
+            case 5: label3.text = "Stellar Spire in the Eagle Nebula"
+            default: label3.text = ""
+        }
+        
         pageControl.currentPage = currentCellIndex
         timer?.invalidate()
         startTimer(time: 4.5)
     }
     
+    // MARK: - viewDidDisappear
     override func viewDidDisappear(_ animated: Bool) {
         timer?.invalidate()
         gradient.removeAnimation(forKey: "colorChange")
@@ -233,6 +244,7 @@ class HomeViewController: // multiple inheritance
         
     }
     
+    // MARK: - viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         startTimer(time: 6.0)
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
@@ -244,6 +256,7 @@ class HomeViewController: // multiple inheritance
 
 }
 
+// MARK: - extension
 extension HomeViewController: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if flag {
