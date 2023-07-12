@@ -23,13 +23,11 @@ class LoginViewController: UIViewController {
         Logo.layer.cornerRadius = 12
         setupProviderLoginView()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
+
     func setupProviderLoginView() {
-        let authorizationButton = ASAuthorizationAppleIDButton()
+        let authorizationButton = ASAuthorizationAppleIDButton(authorizationButtonType: .continue, authorizationButtonStyle: .black)
+        authorizationButton.cornerRadius = authorizationButton.bounds.height / 2
+        authorizationButton.layer.cornerCurve = .continuous
         authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
         self.loginProviderStackView.addArrangedSubview(authorizationButton)
     }
@@ -80,15 +78,14 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                let email = appleIDCredential.email
             {
                 let record = CKRecord(recordType: "UserInfo", recordID: CKRecord.ID(recordName: userIdentifier))
+                
                 record["firstName"] = firstname as String
                 record["lastName"] = lastname as String
                 record["emailAddress"] = email as String
                 
-                
                 privateDatabase.save(record) { (_, _) in
                     UserDefaults.standard.set(record.recordID.recordName, forKey: "userProfileID")
                 }
-                print("made account")
                 
             } else {
                 privateDatabase.fetch(withRecordID: CKRecord.ID(recordName: userIdentifier)) {
@@ -97,21 +94,16 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                         UserDefaults.standard.set(userIdentifier, forKey: "userProfileID")
                     }
                 }
-                print("not now")
             }
             
-        
             // Store the 'userIdentifier' in the keychain.
             self.saveUserInKeychain(userIdentifier)
-                
-            print("ok")
-                
+                                
             let final_firstName = appleIDCredential.fullName?.givenName
             let final_lastName = appleIDCredential.fullName?.familyName
             let final_email = appleIDCredential.email
                 
             self.showResultViewController(firstName: final_firstName, lastName: final_lastName, email: final_email)
-            print("done")
    
         
         case let passwordCredential as ASPasswordCredential:
@@ -169,7 +161,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
         // Handle error.
     }
 }
-
+// MARK: - ASAuthorizationControllerPresentationContextProviding
 extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
     /// - Tag: provide_presentation_anchor
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
@@ -177,12 +169,14 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
     }
 }
 
+
+// MARK: - extension
 extension UIViewController {
     
     func showLoginViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController") as? LoginViewController {
-            loginViewController.modalPresentationStyle = .formSheet
+            loginViewController.modalPresentationStyle = .fullScreen
             loginViewController.isModalInPresentation = true
             self.present(loginViewController, animated: true, completion: nil)
         }
