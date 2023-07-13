@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22138.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cc0-1j-xTL">
-    <device id="retina5_9" orientation="portrait" appearance="dark"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22138.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aTE-Kv-bqB">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22113"/>
@@ -94,7 +94,7 @@
                                         <rect key="frame" x="12" y="16.000000000000007" width="351" height="123.66666666666669"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2pq-wH-QwL">
-                                                <rect key="frame" x="16" y="16" width="319" height="91.666666666666671"/>
+                                                <rect key="frame" x="16" y="16" width="319" height="91.666666666666657"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-h5-XI6">
                                                         <rect key="frame" x="0.0" y="0.0" width="319" height="42"/>
@@ -201,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qFs-N1-fEZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3512.8000000000002" y="-808.37438423645324"/>
+            <point key="canvasLocation" x="4455.1999999999998" y="-808.37438423645324"/>
         </scene>
         <!--Solar System-->
         <scene sceneID="SNn-b2-nLL">
@@ -217,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hh-Wq-4DT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4250" y="552"/>
+            <point key="canvasLocation" x="5193" y="600"/>
         </scene>
         <!--Moons-->
         <scene sceneID="cm2-cp-L33">
@@ -233,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5m-vK-CbO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4249" y="1255"/>
+            <point key="canvasLocation" x="5193" y="1340"/>
         </scene>
         <!--Settings-->
         <scene sceneID="tFi-lf-54H">
@@ -272,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFj-EN-4q9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4249" y="1934"/>
+            <point key="canvasLocation" x="5193" y="2025"/>
         </scene>
         <!--Planets-->
         <scene sceneID="kpZ-yu-EAu">
@@ -297,7 +297,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="snz-3j-tTN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3514.4000000000001" y="-135.22167487684729"/>
+            <point key="canvasLocation" x="4456.8000000000002" y="-135.22167487684729"/>
         </scene>
         <!--Planets-->
         <scene sceneID="0l9-P5-8Hg">
@@ -604,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y61-YI-Uvp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4250.3999999999996" y="-135.22167487684729"/>
+            <point key="canvasLocation" x="5192.8000000000002" y="-135.22167487684729"/>
         </scene>
         <!--Mercury-->
         <scene sceneID="0IH-NU-Ngl">
@@ -636,7 +636,7 @@
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiM-tU-4hE">
-                                        <rect key="frame" x="226.33333333333334" y="11.999999999999996" width="48.000000000000028" height="44.666666666666657"/>
+                                        <rect key="frame" x="229.66666666666666" y="11.999999999999996" width="44.666666666666657" height="44.666666666666657"/>
                                         <color key="backgroundColor" name="colorMercury"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="EiM-tU-4hE" secondAttribute="height" multiplier="1:1" id="Pim-oS-Avp"/>
@@ -651,60 +651,37 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="6LW-vM-ktz">
-                                        <rect key="frame" x="68.666666666666671" y="12.999999999999996" width="145.66666666666663" height="42.666666666666657"/>
+                                        <rect key="frame" x="68.666666666666686" y="12.999999999999996" width="149" height="42.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercury is 2.6x" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5W-nF-HBu">
-                                                <rect key="frame" x="0.0" y="0.0" width="145.66666666666666" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="149" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smaller than Earth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHa-UL-ZNF">
-                                                <rect key="frame" x="0.0" y="22.333333333333314" width="145.66666666666666" height="20.333333333333329"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <rect key="frame" x="0.0" y="22.333333333333314" width="149" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <color key="textColor" systemColor="systemOrangeColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4PE-5f-B4l">
-                                        <rect key="frame" x="258.33333333333331" y="41.666666666666686" width="20" height="18.666666666666671"/>
-                                        <color key="backgroundColor" name="AppColorDarker"/>
-                                        <color key="tintColor" systemColor="systemGreenColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="4PE-5f-B4l" secondAttribute="height" multiplier="1:1" id="81K-9t-eHi"/>
-                                            <constraint firstAttribute="height" constant="20" id="nAD-Mm-OAC"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multiply.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2m2-8T-5Q1">
-                                        <rect key="frame" x="315" y="41.666666666666686" width="20" height="18.666666666666671"/>
-                                        <color key="backgroundColor" name="AppColorDarker"/>
-                                        <color key="tintColor" systemColor="systemRedColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="mdi-qW-YAZ"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" name="AppColorDarker"/>
                                 <constraints>
                                     <constraint firstItem="SyU-sY-7U0" firstAttribute="top" secondItem="SJj-3e-u3G" secondAttribute="top" constant="12" id="65I-Ux-vA3"/>
                                     <constraint firstAttribute="trailing" secondItem="SyU-sY-7U0" secondAttribute="trailing" constant="12" id="6uJ-MS-lN9"/>
-                                    <constraint firstItem="4PE-5f-B4l" firstAttribute="leading" secondItem="6LW-vM-ktz" secondAttribute="trailing" constant="44" id="7ZG-Fc-Fy7"/>
                                     <constraint firstItem="6LW-vM-ktz" firstAttribute="leading" secondItem="27S-WR-MLC" secondAttribute="trailing" constant="12" id="HBz-MF-QVy"/>
                                     <constraint firstItem="EiM-tU-4hE" firstAttribute="top" secondItem="SJj-3e-u3G" secondAttribute="top" constant="12" id="Hk0-bd-vaO"/>
                                     <constraint firstItem="6LW-vM-ktz" firstAttribute="centerY" secondItem="27S-WR-MLC" secondAttribute="centerY" id="Ko5-JE-QNt"/>
                                     <constraint firstItem="27S-WR-MLC" firstAttribute="leading" secondItem="SJj-3e-u3G" secondAttribute="leading" constant="12" id="QD1-bg-cR0"/>
                                     <constraint firstItem="SyU-sY-7U0" firstAttribute="leading" secondItem="EiM-tU-4hE" secondAttribute="trailing" constant="12" id="QzV-8S-KCx"/>
                                     <constraint firstItem="EiM-tU-4hE" firstAttribute="leading" secondItem="6LW-vM-ktz" secondAttribute="trailing" constant="12" id="T1C-z8-edk"/>
-                                    <constraint firstItem="2m2-8T-5Q1" firstAttribute="width" secondItem="2m2-8T-5Q1" secondAttribute="height" multiplier="1:1" id="XmC-9f-uua"/>
-                                    <constraint firstItem="SyU-sY-7U0" firstAttribute="leading" secondItem="4PE-5f-B4l" secondAttribute="trailing" constant="8" id="c6Z-L3-PbK"/>
-                                    <constraint firstAttribute="bottom" secondItem="2m2-8T-5Q1" secondAttribute="bottom" constant="8" id="d2N-UQ-YMG"/>
                                     <constraint firstAttribute="width" secondItem="SJj-3e-u3G" secondAttribute="height" multiplier="5:1" id="fLX-ym-h99"/>
-                                    <constraint firstAttribute="trailing" secondItem="2m2-8T-5Q1" secondAttribute="trailing" constant="8" id="q1u-hN-3SD"/>
                                     <constraint firstAttribute="bottom" secondItem="27S-WR-MLC" secondAttribute="bottom" constant="12" id="saa-4Z-l9s"/>
                                     <constraint firstAttribute="bottom" secondItem="EiM-tU-4hE" secondAttribute="bottom" constant="12" id="ukB-wo-OcV"/>
                                     <constraint firstAttribute="bottom" secondItem="SyU-sY-7U0" secondAttribute="bottom" constant="12" id="yd1-Xp-bHM"/>
-                                    <constraint firstAttribute="bottom" secondItem="4PE-5f-B4l" secondAttribute="bottom" constant="8" id="yfL-xJ-dvk"/>
                                     <constraint firstItem="27S-WR-MLC" firstAttribute="top" secondItem="SJj-3e-u3G" secondAttribute="top" constant="12" id="yk1-f1-YcT"/>
                                 </constraints>
                             </view>
@@ -841,7 +818,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="29.666666666666668" height="29.666666666666668"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20230122_PlanetIcons_Atmosphere" translatesAutoresizingMaskIntoConstraints="NO" id="Gea-XZ-7cJ">
-                                                                <rect key="frame" x="4" y="4" width="21.666666666666664" height="21.666666666666671"/>
+                                                                <rect key="frame" x="4" y="4" width="21.666666666666668" height="21.666666666666668"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Gea-XZ-7cJ" secondAttribute="height" multiplier="1:1" id="yHI-Sq-zIy"/>
                                                                 </constraints>
@@ -874,7 +851,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="29.666666666666668" height="29.666666666666668"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20230122_PlanetIcons_Radius" translatesAutoresizingMaskIntoConstraints="NO" id="tQY-bN-kME">
-                                                                <rect key="frame" x="4" y="4" width="21.666666666666664" height="21.666666666666664"/>
+                                                                <rect key="frame" x="4" y="4" width="21.666666666666668" height="21.666666666666668"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="tQY-bN-kME" secondAttribute="height" multiplier="1:1" id="uf2-Ic-dbR"/>
                                                                 </constraints>
@@ -904,7 +881,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="29.666666666666668" height="29.666666666666668"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20230122_PlanetIcons_Density" translatesAutoresizingMaskIntoConstraints="NO" id="JJx-bJ-MQL">
-                                                                <rect key="frame" x="4" y="4" width="21.666666666666664" height="21.666666666666664"/>
+                                                                <rect key="frame" x="4" y="4" width="21.666666666666668" height="21.666666666666668"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="JJx-bJ-MQL" secondAttribute="height" multiplier="1:1" id="qQ2-QI-l36"/>
                                                                 </constraints>
@@ -937,7 +914,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="29.666666666666668" height="30"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20230122_PlanetIcons_Volume" translatesAutoresizingMaskIntoConstraints="NO" id="KWh-6b-pCG">
-                                                                <rect key="frame" x="4" y="4" width="21.666666666666664" height="22"/>
+                                                                <rect key="frame" x="4" y="4" width="21.666666666666668" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="KWh-6b-pCG" secondAttribute="height" multiplier="1:1" id="m5S-Qd-zLl"/>
                                                                 </constraints>
@@ -971,7 +948,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="29.666666666666668" height="29.666666666666668"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20221226_PlanetIcons_Mass" translatesAutoresizingMaskIntoConstraints="NO" id="VSG-ue-Zg2">
-                                                                <rect key="frame" x="2" y="2" width="25.666666666666664" height="25.666666666666664"/>
+                                                                <rect key="frame" x="2" y="2" width="25.666666666666668" height="25.666666666666668"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="VSG-ue-Zg2" secondAttribute="height" multiplier="1:1" id="2AH-mT-Sxt"/>
                                                                 </constraints>
@@ -1145,8 +1122,6 @@
                         <outlet property="cuteImage" destination="27S-WR-MLC" id="EvC-Ve-PXn"/>
                         <outlet property="imageCaption" destination="kOU-88-49S" id="K5c-GS-GIv"/>
                         <outlet property="pageControl" destination="cqi-uE-CUb" id="QVD-HC-sHc"/>
-                        <outlet property="status1" destination="4PE-5f-B4l" id="jba-kG-GM2"/>
-                        <outlet property="status2" destination="2m2-8T-5Q1" id="KQe-HW-3XQ"/>
                         <outlet property="view1" destination="SJj-3e-u3G" id="pYy-3v-OHe"/>
                         <outlet property="view2" destination="fOy-Ep-bVC" id="QpI-YG-ZdX"/>
                         <outlet property="view3" destination="gBY-j2-tbR" id="cyi-4t-60K"/>
@@ -1154,7 +1129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ClP-Pe-kP8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5298.3999999999996" y="-227.58620689655174"/>
+            <point key="canvasLocation" x="6260" y="-135"/>
         </scene>
         <!--Mercury in 3D-->
         <scene sceneID="HSE-vi-fz6">
@@ -1272,7 +1247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11c-a2-tZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6095.1999999999998" y="-227.58620689655174"/>
+            <point key="canvasLocation" x="7334" y="-135"/>
         </scene>
         <!--HomeVCTabBar-->
         <scene sceneID="mZr-kG-zFt">
@@ -1295,7 +1270,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZ0-cN-Qtv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2520.8000000000002" y="-228.32512315270938"/>
+            <point key="canvasLocation" x="3463.1999999999998" y="-228.32512315270938"/>
         </scene>
         <!--Solar System-->
         <scene sceneID="gUI-r2-2Nb">
@@ -1320,7 +1295,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cnp-Zd-vkE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3514" y="552"/>
+            <point key="canvasLocation" x="4455" y="600"/>
         </scene>
         <!--Moons-->
         <scene sceneID="zud-xC-A9P">
@@ -1345,7 +1320,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yIS-3h-zRm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3513" y="1255"/>
+            <point key="canvasLocation" x="4454" y="1341"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Z6F-Td-idU">
@@ -1370,7 +1345,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZa-kK-qNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3514" y="1934"/>
+            <point key="canvasLocation" x="4454" y="2025"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="jls-TU-JHn">
@@ -1455,9 +1430,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWm-HX-oZn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1225" y="-899"/>
+            <point key="canvasLocation" x="2649" y="-228"/>
         </scene>
-        <!--Show Splash Screen-->
+        <!--Item-->
         <scene sceneID="7j0-2p-8Gd">
             <objects>
                 <viewController id="tLQ-zy-Hs2" customClass="ShowSplashScreen" customModule="Cosmofy" customModuleProvider="target" sceneMemberID="viewController">
@@ -1492,14 +1467,12 @@
                             <constraint firstItem="uCo-cT-4uA" firstAttribute="bottom" secondItem="iYv-Sg-MqM" secondAttribute="bottom" constant="32" id="s1M-lR-NJK"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="ZhG-vV-7vO"/>
                     <navigationItem key="navigationItem" id="Zg0-zF-Mc7"/>
-                    <connections>
-                        <segue destination="aTE-Kv-bqB" kind="show" identifier="showSplashScreen" id="6Hl-41-PnN"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dho-JF-7lo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1751" y="-228"/>
+            <point key="canvasLocation" x="1849" y="-228"/>
         </scene>
         <!--Mercury in AR-->
         <scene sceneID="Ad2-Mj-nih">
@@ -1603,25 +1576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7H7-IO-tf9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6764" y="-227.58620689655174"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="7jW-To-Asy">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="cc0-1j-xTL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="tjc-g9-Sdb"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vy6-Fb-iw4">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="tLQ-zy-Hs2" kind="relationship" relationship="rootViewController" id="0Db-9y-jA3"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kUq-CU-bYp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="977" y="-228"/>
+            <point key="canvasLocation" x="8079" y="-135"/>
         </scene>
     </scenes>
     <resources>
@@ -1648,9 +1603,7 @@
         <image name="Gradient3" width="390" height="844"/>
         <image name="arrow.down" catalog="system" width="118" height="128"/>
         <image name="arrow.up" catalog="system" width="118" height="128"/>
-        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="link.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="multiply.circle.fill" catalog="system" width="128" height="123"/>
         <image name="pause" catalog="system" width="88" height="128"/>
         <namedColor name="AppColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1692,22 +1645,22 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
