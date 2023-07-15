@@ -17,10 +17,26 @@ final class Haptics {
     }
     
     public func selectionVibrate() {
-        
+        DispatchQueue.main.async {
+            let selectionFG = UISelectionFeedbackGenerator()
+            selectionFG.prepare()
+            selectionFG.selectionChanged()
+        }
     }
     
-    public func vibrate(for type: String) {
-        
+    public func vibrate(for type: UINotificationFeedbackGenerator.FeedbackType) {
+        DispatchQueue.main.async {
+            let notificationFG = UINotificationFeedbackGenerator()
+            notificationFG.prepare()
+            notificationFG.notificationOccurred(type)
+        }
+    }
+    
+    public func impact(for style: UIImpactFeedbackGenerator.FeedbackStyle) {
+        DispatchQueue.main.async {
+            let impactFG = UIImpactFeedbackGenerator(style)
+            impactFG.prepare()
+            impactFG.impactOccurred()
+        }
     }
 }

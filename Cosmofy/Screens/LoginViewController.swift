@@ -86,12 +86,17 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 privateDatabase.save(record) { (_, _) in
                     UserDefaults.standard.set(record.recordID.recordName, forKey: "userProfileID")
                 }
+                print("hit")
                 
             } else {
                 privateDatabase.fetch(withRecordID: CKRecord.ID(recordName: userIdentifier)) {
                     (record, error) in
                     if record != nil {
                         UserDefaults.standard.set(userIdentifier, forKey: "userProfileID")
+                        print("hit2")
+                    }
+                    else {
+                        print("hit3")
                     }
                 }
             }

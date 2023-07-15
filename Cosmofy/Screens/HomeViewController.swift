@@ -7,6 +7,8 @@
 //  ========================================
 
 import UIKit
+import CloudKit
+import AuthenticationServices
 
 class HomeViewController: // multiple inheritance
     UIViewController,
@@ -73,7 +75,19 @@ class HomeViewController: // multiple inheritance
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let privateDatabase = CKContainer(identifier: "iCloud.com.snape447.Cosmofy.users").privateCloudDatabase
+        
+        let userIdentifier = UserDefaults.standard.object(forKey: "userProfileID") as! String
+        privateDatabase.fetch(withRecordID: CKRecord.ID(recordName: userIdentifier)) {
+            (record, error) in
+            if record != nil {
+                self.name += record?.value(forKey: "firstName") as! String
+            } else {
+                self.name += "record?.value(forKey:)"
+            }
+        }
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         pageControl.numberOfPages = arrProductPhotos.count
@@ -93,8 +107,7 @@ class HomeViewController: // multiple inheritance
     // MARK: - viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        name = UserDefaults.standard.object(forKey: "s1") as! String
+        Haptics.shared.vibrate(for: .warning)
         
         switch hour {
             case 4...11 : goodLabel.text = "Good Morning ".uppercased()
