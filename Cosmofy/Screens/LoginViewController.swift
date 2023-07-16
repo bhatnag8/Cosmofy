@@ -11,7 +11,6 @@ import CloudKit
 import Foundation
 import AuthenticationServices
 
-
 // MARK: - UIViewController
 class LoginViewController: UIViewController {
 
@@ -86,7 +85,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 privateDatabase.save(record) { (_, _) in
                     UserDefaults.standard.set(record.recordID.recordName, forKey: "userProfileID")
                 }
-                print("hit")
+            
                 
             } else {
                 privateDatabase.fetch(withRecordID: CKRecord.ID(recordName: userIdentifier)) {

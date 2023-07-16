@@ -20,9 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appleIDProvider.getCredentialState(forUserID: KeychainItem.currentUserIdentifier) { (credentialState, error) in
             switch credentialState {
             case .authorized:
+                    KeychainItem.deleteUserIdentifierFromKeychain()
+                    DispatchQueue.main.async {
+                        self.window?.rootViewController?.showLoginViewController()
+                    }
                 break
             case .revoked, .notFound:
                 // The Apple ID credential is either revoked or was not found, so show the sign-in UI.
+                    
+                KeychainItem.deleteUserIdentifierFromKeychain()
                 DispatchQueue.main.async {
                     self.window?.rootViewController?.showLoginViewController()
                 }

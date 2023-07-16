@@ -66,7 +66,7 @@ class Pulse: CALayer {
             let oa = CAKeyframeAnimation(keyPath: "opacity")
             oa.duration = animationDuration
             oa.values = [0.85, 0.45, 0.35, 0.1]
-            oa.keyTimes = [0, 0.8, 0.9, 1]
+            oa.keyTimes = [0, 0.6, 0.8, 1]
             return oa
         }
 }
