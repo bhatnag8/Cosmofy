@@ -34,7 +34,7 @@ final class Haptics {
     
     public func impact(for style: UIImpactFeedbackGenerator.FeedbackStyle) {
         DispatchQueue.main.async {
-            let impactFG = UIImpactFeedbackGenerator(style)
+            let impactFG = UIImpactFeedbackGenerator(style: style)
             impactFG.prepare()
             impactFG.impactOccurred()
         }

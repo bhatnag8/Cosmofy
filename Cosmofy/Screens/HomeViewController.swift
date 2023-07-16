@@ -22,6 +22,8 @@ class HomeViewController: // multiple inheritance
     @IBOutlet weak var collectionView: UICollectionView!
 
     @IBOutlet weak var goodLabel: UILabel!
+    
+    @IBOutlet weak var nameButton: UIButton!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
     var currentCellIndex = 0
@@ -42,10 +44,12 @@ class HomeViewController: // multiple inheritance
     
     
     @IBAction func linkButton(_ sender: UIButton) {
+        Haptics.shared.impact(for: .medium)
         UIApplication.shared.open(URL(string: "https://www.quantamagazine.org/what-is-the-geometry-of-the-universe-20200316?ref=refind")! as URL, options: [:], completionHandler: nil)
     }
     
     @IBAction func dynamicButton(_ sender: Any) {
+        Haptics.shared.impact(for: .medium)
         
         if (currentCellIndex == 0) {
             UIApplication.shared.open(URL(string: "https://esahubble.org/images/heic0206c/")! as URL, options: [:], completionHandler: nil)
@@ -75,7 +79,7 @@ class HomeViewController: // multiple inheritance
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print()
         let privateDatabase = CKContainer(identifier: "iCloud.com.snape447.Cosmofy.users").privateCloudDatabase
         
         let userIdentifier = UserDefaults.standard.object(forKey: "userProfileID") as! String
@@ -87,11 +91,16 @@ class HomeViewController: // multiple inheritance
                 self.name += "record?.value(forKey:)"
             }
         }
+        nameButton.setTitle(UserDefaults.standard.string(forKey: "s1")!, for: nameButton.state)
+        
+        nameButton.showsMenuAsPrimaryAction = true
+        nameButton.menu = addMenuItems()
+        nameButton.layer.cornerRadius = nameButton.bounds.height / 2
         
         collectionView.delegate = self
         collectionView.dataSource = self
         pageControl.numberOfPages = arrProductPhotos.count
-                
+        
         topView.layer.shadowColor = UIColor.black.cgColor
         topView.layer.shadowOpacity = 1
         topView.layer.shadowOffset = .zero
@@ -102,21 +111,21 @@ class HomeViewController: // multiple inheritance
         gradientSet.append([gradientThree, gradientFour])
         gradientSet.append([gradientFour, gradientOne])
         animateGradient()
+        
     }
     
     // MARK: - viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        Haptics.shared.vibrate(for: .warning)
+        Haptics.shared.impact(for: .rigid)
         
         switch hour {
-            case 4...11 : goodLabel.text = "Good Morning ".uppercased()
-            case 12...16 : goodLabel.text = "Good Afternoon ".uppercased()
-            case 17..<24 : goodLabel.text = "Good Evening ".uppercased()
-            default: goodLabel.text = "Good Evening ".uppercased()
+            case 3...11 : goodLabel.text = "Good Morning"
+            case 12...15 : goodLabel.text = "Good Afternoon"
+            case 16..<24 : goodLabel.text = "Good Evening"
+            default: goodLabel.text = "Good Evening"
         }
         
-        goodLabel.text! += name.uppercased()
     }
     
     // MARK: - viewDidLayoutSubviews
@@ -140,6 +149,29 @@ class HomeViewController: // multiple inheritance
         gradient.mask = shape
 
         self.topView.layer.addSublayer(gradient)
+    }
+    
+    func addMenuItems() -> UIMenu {
+        
+        let menuItems = UIMenu(title: "", options: .displayInline, children: [
+            
+            UIAction(title: "Logout", image: UIImage(systemName: "person.crop.circle.fill.badge.minus"), attributes: .destructive, handler: { (_) in
+                Haptics.shared.vibrate(for: .success)
+                KeychainItem.deleteUserIdentifierFromKeychain()
+                DispatchQueue.main.async {
+                        self.showLoginViewController()
+                }
+            }),
+            
+            UIAction(title: "Privacy Policy", image: UIImage(systemName: "book.closed.fill"), handler: { (_) in
+                Haptics.shared.vibrate(for: .success)
+                print("Working")
+                
+            })
+    
+        
+        ])
+        return menuItems
     }
     
     func animateGradient() {
@@ -246,7 +278,7 @@ class HomeViewController: // multiple inheritance
         
         pageControl.currentPage = currentCellIndex
         timer?.invalidate()
-        startTimer(time: 4.5)
+        startTimer(time: 6.0)
     }
     
     // MARK: - viewDidDisappear
@@ -259,7 +291,7 @@ class HomeViewController: // multiple inheritance
     
     // MARK: - viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
-        startTimer(time: 6.0)
+        startTimer(time: 10.0)
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
     }
     

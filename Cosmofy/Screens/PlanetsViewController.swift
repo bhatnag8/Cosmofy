@@ -49,6 +49,7 @@ class PlanetsViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        Haptics.shared.impact(for: .rigid)
         
         innerView1.layer.shadowColor = UIColor.black.cgColor
         innerView1.layer.shadowOpacity = 1

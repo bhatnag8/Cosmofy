@@ -93,10 +93,8 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                     (record, error) in
                     if record != nil {
                         UserDefaults.standard.set(userIdentifier, forKey: "userProfileID")
-                        print("hit2")
                     }
                     else {
-                        print("hit3")
                     }
                 }
             }
