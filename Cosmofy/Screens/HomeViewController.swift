@@ -81,7 +81,7 @@ class HomeViewController: // multiple inheritance
         super.viewDidLoad()
         
         
-        
+
         collectionView.delegate = self
         collectionView.dataSource = self
         pageControl.numberOfPages = arrProductPhotos.count

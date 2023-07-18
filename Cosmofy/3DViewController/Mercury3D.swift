@@ -70,6 +70,7 @@ class Mercury3D: UIViewController {
         super.viewDidLoad()
         camera.wantsHDR = true
         camera.wantsExposureAdaptation = false
+        camera.
         node.camera = camera
     
         node.position = SCNVector3(0, 0, 5)
