@@ -17,9 +17,12 @@ class Mercury3D: UIViewController {
     let starsParticleSystem = SCNParticleSystem(named: "StarsParticleSystem.scnp", inDirectory: nil)!
     
     var planetNode = MercuryNode(rotation: 6)
+    var pause = false
     
     @IBOutlet weak var playButton: UIButton!
-    var pause = false
+
+    @IBOutlet weak var axisSwitch: UISwitch!
+    
     @IBAction func playButton(_ sender: Any) {
         if (pause == false) {
             pause = true
@@ -66,16 +69,35 @@ class Mercury3D: UIViewController {
         speed3.layer.borderColor = UIColor.tintColor.cgColor
     }
     
+    let tilt = -0.034
+    let tiltNode = SCNNode()
+    
+    let poleNode = SCNNode()
+    let pole = SCNCylinder(radius: 0.01, height: 2.8)
+    let poleMaterial = SCNMaterial()
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        tiltNode.eulerAngles = SCNVector3(x: 0, y: 0, z: Float(tilt * (.pi/180.0)))
+        tiltNode.addChildNode(planetNode)
+        
+        poleNode.geometry = pole
+
+        poleMaterial.diffuse.contents = UIColor.white
+        
+        pole.firstMaterial = poleMaterial
+        
         camera.wantsHDR = true
         camera.wantsExposureAdaptation = false
+        
         node.camera = camera
-    
         node.position = SCNVector3(0, 0, 5)
+        
         scene.rootNode.addChildNode(node)
         scene.rootNode.addParticleSystem(starsParticleSystem)
-        scene.rootNode.addChildNode(planetNode)
+        scene.rootNode.addChildNode(tiltNode)
         
         sceneView.scene = scene
         sceneView.backgroundColor = UIColor.black
@@ -86,7 +108,6 @@ class Mercury3D: UIViewController {
         sceneView.cameraControlConfiguration.allowsTranslation = true
         sceneView.cameraControlConfiguration.rotationSensitivity = 0.4
         
-        
         playButton.layer.shadowColor = UIColor.white.cgColor
         playButton.layer.shadowOpacity = 1
         playButton.layer.shadowOffset = .zero
@@ -95,7 +116,7 @@ class Mercury3D: UIViewController {
         playButton.layer.borderColor = UIColor.black.cgColor
         playButton.layer.borderWidth = 0.8
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "8K HDR", style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "More...", style: .plain, target: self, action: nil)
         navigationItem.rightBarButtonItem?.tintColor = UIColor.systemBlue
 
         speed1.layer.shadowColor = UIColor.white.cgColor
@@ -124,5 +145,11 @@ class Mercury3D: UIViewController {
 
     }
     
-
+    @IBAction func switchDidChange(_ sender: UISwitch) {
+        if sender.isOn {
+            planetNode.addChildNode(poleNode)
+        } else {
+            poleNode.removeFromParentNode()
+        }
+    }
 }

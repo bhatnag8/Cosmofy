@@ -3,6 +3,7 @@
 //  Cosmofy
 //  4th Edition
 //  Created by Arryan Bhatnagar on 12/30/22.
+//  Abstract: A SCNNode class which gets attached into Mercury3D
 //  ========================================
 
 import UIKit
@@ -14,10 +15,12 @@ class MercuryNode : SCNNode {
     
     init(rotation : Double) {
         super.init()
+        
         let sphere = SCNSphere(radius: 1.2)
+        
         global = rotation
 
-        sphere.firstMaterial?.diffuse.contents = UIImage(named: "20221230_EarthMap_1")
+        sphere.firstMaterial?.diffuse.contents = UIImage(named: "20221230_MercuryMap")
         sphere.firstMaterial?.diffuse.mipFilter = SCNFilterMode.linear
         sphere.segmentCount = 72
         
@@ -43,6 +46,5 @@ class MercuryNode : SCNNode {
     required init?(coder x: NSCoder) {
         super.init(coder: x)
     }
-   
-    
+
 }

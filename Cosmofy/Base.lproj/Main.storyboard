@@ -1193,6 +1193,33 @@
                                             <action selector="speed3:" destination="Dqa-Js-vxB" eventType="touchUpInside" id="cQe-Tq-gie"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeA-j3-HjN">
+                                        <rect key="frame" x="152" y="0.0" width="127" height="64"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WF8-n6-6tx">
+                                                <rect key="frame" x="19.333333333333343" y="16.666666666666629" width="88.666666666666671" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Axis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNj-J9-u1d">
+                                                        <rect key="frame" x="0.0" y="0.0" width="31.666666666666668" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5gB-L3-ZQa">
+                                                        <rect key="frame" x="39.666666666666657" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="switchDidChange:" destination="Dqa-Js-vxB" eventType="valueChanged" id="jAY-z2-B5J"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="WF8-n6-6tx" firstAttribute="centerY" secondItem="TeA-j3-HjN" secondAttribute="centerY" id="9AL-GY-lWg"/>
+                                            <constraint firstItem="WF8-n6-6tx" firstAttribute="centerX" secondItem="TeA-j3-HjN" secondAttribute="centerX" id="uXU-Sw-Xsk"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Hus-gm-uiY" firstAttribute="leading" secondItem="7BI-YI-7Jp" secondAttribute="trailing" constant="8" id="01F-6M-sOZ"/>
@@ -1201,12 +1228,16 @@
                                     <constraint firstAttribute="bottom" secondItem="36w-3Q-kf8" secondAttribute="bottom" constant="12" id="9be-OE-IIK"/>
                                     <constraint firstItem="36w-3Q-kf8" firstAttribute="centerY" secondItem="Hus-gm-uiY" secondAttribute="centerY" id="BJC-fw-wLt"/>
                                     <constraint firstAttribute="bottom" secondItem="7BI-YI-7Jp" secondAttribute="bottom" constant="12" id="JDT-Gu-FAq"/>
+                                    <constraint firstItem="TeA-j3-HjN" firstAttribute="top" secondItem="Xvm-mj-QPz" secondAttribute="top" id="ME9-Jo-3iD"/>
                                     <constraint firstItem="36w-3Q-kf8" firstAttribute="top" secondItem="Xvm-mj-QPz" secondAttribute="top" constant="12" id="O2y-Ak-TH7"/>
                                     <constraint firstItem="36w-3Q-kf8" firstAttribute="leading" secondItem="Hus-gm-uiY" secondAttribute="trailing" constant="8" id="SeS-GT-iDg"/>
+                                    <constraint firstAttribute="bottom" secondItem="TeA-j3-HjN" secondAttribute="bottom" id="VB9-uK-8ib"/>
                                     <constraint firstItem="Hus-gm-uiY" firstAttribute="centerY" secondItem="7BI-YI-7Jp" secondAttribute="centerY" id="VxW-K9-Hy1"/>
                                     <constraint firstItem="7BI-YI-7Jp" firstAttribute="top" secondItem="Xvm-mj-QPz" secondAttribute="top" constant="12" id="XTC-JZ-sQV"/>
+                                    <constraint firstItem="TeA-j3-HjN" firstAttribute="leading" secondItem="36w-3Q-kf8" secondAttribute="trailing" id="dGl-hn-0CN"/>
                                     <constraint firstAttribute="bottom" secondItem="Hus-gm-uiY" secondAttribute="bottom" constant="12" id="kNA-6O-wLF"/>
                                     <constraint firstItem="Hus-gm-uiY" firstAttribute="top" secondItem="Xvm-mj-QPz" secondAttribute="top" constant="12" id="ly8-9v-WpB"/>
+                                    <constraint firstItem="OMb-Xo-g8T" firstAttribute="leading" secondItem="TeA-j3-HjN" secondAttribute="trailing" id="r9j-TU-NKZ"/>
                                     <constraint firstItem="OMb-Xo-g8T" firstAttribute="top" secondItem="Xvm-mj-QPz" secondAttribute="top" constant="12" id="vE5-dJ-9aA"/>
                                     <constraint firstItem="7BI-YI-7Jp" firstAttribute="leading" secondItem="Xvm-mj-QPz" secondAttribute="leading" constant="16" id="xF2-fQ-ZaV"/>
                                 </constraints>
@@ -1227,6 +1258,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Mercury in 3D" customizationIdentifier="" id="aC9-je-S9J"/>
                     <connections>
+                        <outlet property="axisSwitch" destination="5gB-L3-ZQa" id="NmS-EY-Rbc"/>
                         <outlet property="playButton" destination="OMb-Xo-g8T" id="vgy-Ci-jDt"/>
                         <outlet property="sceneView" destination="Y45-eS-M88" id="ZBJ-3u-RLo"/>
                         <outlet property="speed1" destination="7BI-YI-7Jp" id="TUw-pq-eHj"/>
@@ -1236,7 +1268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11c-a2-tZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7334" y="-135"/>
+            <point key="canvasLocation" x="7333.6000000000004" y="-135.22167487684729"/>
         </scene>
         <!--HomeVCTabBar-->
         <scene sceneID="mZr-kG-zFt">
