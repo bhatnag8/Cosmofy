@@ -1,9 +1,9 @@
-//
+//  ========================================
 //  Haptics.swift
 //  Cosmofy
-//
+//  4th Edition
 //  Created by Arryan Bhatnagar on 7/13/23.
-//
+//  ========================================
 
 import Foundation
 import UIKit

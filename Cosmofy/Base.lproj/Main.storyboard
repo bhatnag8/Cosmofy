@@ -231,33 +231,10 @@
                     <view key="view" contentMode="scaleToFill" id="2hw-6S-aKG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VpD-Bl-t4W">
-                                <rect key="frame" x="48" y="655.66666666666663" width="279" height="49.333333333333371"/>
-                                <color key="backgroundColor" name="AppColorDarker"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="VpD-Bl-t4W" secondAttribute="height" multiplier="17:3" id="z01-Yp-Q8x"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="systemRedColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
-                                <connections>
-                                    <action selector="signOutButtonPressed" destination="7iD-uX-sMN" eventType="touchUpInside" id="1hT-10-efs"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="phi-CT-TD2"/>
                         <color key="backgroundColor" name="AppColor"/>
-                        <constraints>
-                            <constraint firstItem="phi-CT-TD2" firstAttribute="bottom" secondItem="VpD-Bl-t4W" secondAttribute="bottom" constant="24" id="40J-pp-cmJ"/>
-                            <constraint firstItem="phi-CT-TD2" firstAttribute="trailing" secondItem="VpD-Bl-t4W" secondAttribute="trailing" constant="48" id="QQQ-lj-O6f"/>
-                            <constraint firstItem="VpD-Bl-t4W" firstAttribute="leading" secondItem="phi-CT-TD2" secondAttribute="leading" constant="48" id="gQg-H6-IUC"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="ieP-vV-UUG"/>
-                    <connections>
-                        <outlet property="signOutButton" destination="VpD-Bl-t4W" id="AnJ-8c-Ga3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFj-EN-4q9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1675,9 +1652,6 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

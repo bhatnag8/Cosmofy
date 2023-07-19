@@ -20,7 +20,7 @@ class MercuryNode : SCNNode {
         
         global = rotation
 
-        sphere.firstMaterial?.diffuse.contents = UIImage(named: "20221230_MercuryMap")
+        sphere.firstMaterial?.diffuse.contents = UIImage(named: "20221230_EarthMap_1")
         sphere.firstMaterial?.diffuse.mipFilter = SCNFilterMode.linear
         sphere.segmentCount = 72
         

@@ -8,6 +8,7 @@
 import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var homeImage: UIImageView!
     
 }
