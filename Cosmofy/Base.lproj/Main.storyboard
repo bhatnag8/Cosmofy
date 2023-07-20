@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22138.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aTE-Kv-bqB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22138.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lpm-iz-as5">
     <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -71,7 +71,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Cosmofy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8g-BV-jTf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Cosmofy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8g-BV-jTf">
                                         <rect key="frame" x="0.0" y="20.333333333333318" width="135.33333333333334" height="38.333333333333343"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -190,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qFs-N1-fEZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4455.1999999999998" y="-808.37438423645324"/>
+            <point key="canvasLocation" x="5397.6000000000004" y="-808.37438423645324"/>
         </scene>
         <!--Solar System-->
         <scene sceneID="SNn-b2-nLL">
@@ -263,7 +263,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="snz-3j-tTN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4456.8000000000002" y="-135.22167487684729"/>
+            <point key="canvasLocation" x="5399.1999999999998" y="-135.22167487684729"/>
         </scene>
         <!--Planets-->
         <scene sceneID="0l9-P5-8Hg">
@@ -570,7 +570,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y61-YI-Uvp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5192.8000000000002" y="-135.22167487684729"/>
+            <point key="canvasLocation" x="6135.1999999999998" y="-135.22167487684729"/>
         </scene>
         <!--Mercury-->
         <scene sceneID="0IH-NU-Ngl">
@@ -1095,7 +1095,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ClP-Pe-kP8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6260" y="-135"/>
+            <point key="canvasLocation" x="7202.3999999999996" y="-135.22167487684729"/>
         </scene>
         <!--Mercury in 3D-->
         <scene sceneID="HSE-vi-fz6">
@@ -1245,7 +1245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11c-a2-tZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7333.6000000000004" y="-135.22167487684729"/>
+            <point key="canvasLocation" x="8276" y="-135.22167487684729"/>
         </scene>
         <!--HomeVCTabBar-->
         <scene sceneID="mZr-kG-zFt">
@@ -1268,7 +1268,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZ0-cN-Qtv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3463.1999999999998" y="-228.32512315270938"/>
+            <point key="canvasLocation" x="4405.6000000000004" y="-228.32512315270938"/>
         </scene>
         <!--Solar System-->
         <scene sceneID="gUI-r2-2Nb">
@@ -1428,9 +1428,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWm-HX-oZn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2649" y="-228"/>
+            <point key="canvasLocation" x="1353" y="-228"/>
         </scene>
-        <!--Item-->
+        <!--Show Splash Screen-->
         <scene sceneID="7j0-2p-8Gd">
             <objects>
                 <viewController id="tLQ-zy-Hs2" customClass="ShowSplashScreen" customModule="Cosmofy" customModuleProvider="target" sceneMemberID="viewController">
@@ -1439,14 +1439,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cosmofy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URK-Oz-8nt">
-                                <rect key="frame" x="32" y="392" width="311" height="44"/>
+                                <rect key="frame" x="32" y="414" width="311" height="44"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-  0.2.1  -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYv-Sg-MqM">
-                                <rect key="frame" x="154" y="725" width="67.333333333333314" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-  0.2.1  -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYv-Sg-MqM">
+                                <rect key="frame" x="32" y="725" width="311" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1457,20 +1457,22 @@
                         <viewLayoutGuide key="safeArea" id="uCo-cT-4uA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="URK-Oz-8nt" firstAttribute="centerX" secondItem="uCo-cT-4uA" secondAttribute="centerX" id="61U-hu-5yL"/>
                             <constraint firstItem="URK-Oz-8nt" firstAttribute="centerY" secondItem="uCo-cT-4uA" secondAttribute="centerY" id="9kB-Ig-1VW"/>
-                            <constraint firstItem="iYv-Sg-MqM" firstAttribute="centerX" secondItem="URK-Oz-8nt" secondAttribute="centerX" id="DwT-on-vhH"/>
                             <constraint firstItem="URK-Oz-8nt" firstAttribute="leading" secondItem="uCo-cT-4uA" secondAttribute="leading" constant="32" id="Ye8-S0-dpk"/>
                             <constraint firstItem="uCo-cT-4uA" firstAttribute="trailing" secondItem="URK-Oz-8nt" secondAttribute="trailing" constant="32" id="alw-y9-fUb"/>
+                            <constraint firstItem="uCo-cT-4uA" firstAttribute="trailing" secondItem="iYv-Sg-MqM" secondAttribute="trailing" constant="32" id="hse-dr-poH"/>
+                            <constraint firstItem="iYv-Sg-MqM" firstAttribute="leading" secondItem="uCo-cT-4uA" secondAttribute="leading" constant="32" id="n8l-fX-NJj"/>
                             <constraint firstItem="uCo-cT-4uA" firstAttribute="bottom" secondItem="iYv-Sg-MqM" secondAttribute="bottom" constant="32" id="s1M-lR-NJK"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ZhG-vV-7vO"/>
                     <navigationItem key="navigationItem" id="Zg0-zF-Mc7"/>
+                    <connections>
+                        <segue destination="aTE-Kv-bqB" kind="show" identifier="showSplashScreen" id="64n-cY-xOn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dho-JF-7lo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1849" y="-228"/>
+            <point key="canvasLocation" x="3570" y="-228"/>
         </scene>
         <!--Mercury in AR-->
         <scene sceneID="Ad2-Mj-nih">
@@ -1574,7 +1576,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7H7-IO-tf9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8079" y="-135"/>
+            <point key="canvasLocation" x="9020" y="-135.22167487684729"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Y2s-I5-bJZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lpm-iz-as5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ZhG-vV-7vO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i44-Di-Msm">
+                        <rect key="frame" x="0.0" y="50" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tLQ-zy-Hs2" kind="relationship" relationship="rootViewController" id="ET5-9O-MIj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Klk-Wt-6I2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2720.8000000000002" y="-228.32512315270938"/>
         </scene>
     </scenes>
     <resources>
