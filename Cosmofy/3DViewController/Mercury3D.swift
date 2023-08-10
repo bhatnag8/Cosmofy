@@ -69,7 +69,7 @@ class Mercury3D: UIViewController {
         speed3.layer.borderColor = UIColor.tintColor.cgColor
     }
     
-    let tilt = -23.26
+    let tilt = -0.03
     let tiltNode = SCNNode()
     
     let poleNode = SCNNode()

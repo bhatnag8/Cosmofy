@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1B223F2A850C3E0098329B /* VenusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B223E2A850C3E0098329B /* VenusNode.swift */; };
 		0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688262A84D1F300CD2B7E /* VenusViewController.swift */; };
 		0B6688292A84D81600CD2B7E /* VenusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688282A84D81600CD2B7E /* VenusCell.swift */; };
 		0BBF4B9D2A6049F100A9DC4D /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */; };
+		0BC1F2842A85151300600232 /* Venus3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1F2832A85151300600232 /* Venus3D.swift */; };
+		0BC1F2862A8520E900600232 /* EarthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1F2852A8520E900600232 /* EarthViewController.swift */; };
+		0BC1F2882A85216800600232 /* EarthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1F2872A85216800600232 /* EarthCell.swift */; };
 		0BC797B32A5DE66B005B9E45 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC797B22A5DE66B005B9E45 /* SettingsViewController.swift */; };
 		2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F073A122946BE4000F024B8 /* PlanetsViewController.swift */; };
 		2F0ACC23295DBCB800B3D0DB /* Mercury3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0ACC22295DBCB800B3D0DB /* Mercury3D.swift */; };
@@ -31,9 +35,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B1B223E2A850C3E0098329B /* VenusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusNode.swift; sourceTree = "<group>"; };
 		0B6688262A84D1F300CD2B7E /* VenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusViewController.swift; sourceTree = "<group>"; };
 		0B6688282A84D81600CD2B7E /* VenusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusCell.swift; sourceTree = "<group>"; };
 		0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		0BC1F2832A85151300600232 /* Venus3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venus3D.swift; sourceTree = "<group>"; };
+		0BC1F2852A8520E900600232 /* EarthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthViewController.swift; sourceTree = "<group>"; };
+		0BC1F2872A85216800600232 /* EarthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthCell.swift; sourceTree = "<group>"; };
 		0BC797B22A5DE66B005B9E45 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2F073A122946BE4000F024B8 /* PlanetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewController.swift; sourceTree = "<group>"; };
 		2F0ACC22295DBCB800B3D0DB /* Mercury3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mercury3D.swift; sourceTree = "<group>"; };
@@ -94,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				2F0ACC22295DBCB800B3D0DB /* Mercury3D.swift */,
+				0BC1F2832A85151300600232 /* Venus3D.swift */,
 			);
 			path = 3DViewController;
 			sourceTree = "<group>";
@@ -102,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				2F4F8FC4295EC08100F7EE98 /* MercuryNode.swift */,
+				0B1B223E2A850C3E0098329B /* VenusNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -111,6 +121,7 @@
 			children = (
 				2F587A2A294D49490028225E /* MercuryViewController.swift */,
 				0B6688262A84D1F300CD2B7E /* VenusViewController.swift */,
+				0BC1F2852A8520E900600232 /* EarthViewController.swift */,
 			);
 			path = PlanetViewController;
 			sourceTree = "<group>";
@@ -121,6 +132,7 @@
 				2F0B04D52945A576001FAAE6 /* HomeCollectionViewCell.swift */,
 				2F52B487297F209F00A92FF7 /* MercuryCell.swift */,
 				0B6688282A84D81600CD2B7E /* VenusCell.swift */,
+				0BC1F2872A85216800600232 /* EarthCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -246,6 +258,7 @@
 				2F7494EF2A5B35C4004C63B7 /* KeychainItem.swift in Sources */,
 				2F542ED1297CF0110067C26B /* Pulse.swift in Sources */,
 				2F587A2B294D49490028225E /* MercuryViewController.swift in Sources */,
+				0BC1F2862A8520E900600232 /* EarthViewController.swift in Sources */,
 				0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */,
 				0B6688292A84D81600CD2B7E /* VenusCell.swift in Sources */,
 				2F0B04D62945A576001FAAE6 /* HomeCollectionViewCell.swift in Sources */,
@@ -255,7 +268,10 @@
 				2FC4C0092A3635FA00DBA12D /* ShowSplashScreen.swift in Sources */,
 				2FBBB6592945531500BBB072 /* AppDelegate.swift in Sources */,
 				2F0ACC23295DBCB800B3D0DB /* Mercury3D.swift in Sources */,
+				0B1B223F2A850C3E0098329B /* VenusNode.swift in Sources */,
+				0BC1F2882A85216800600232 /* EarthCell.swift in Sources */,
 				2F52B488297F209F00A92FF7 /* MercuryCell.swift in Sources */,
+				0BC1F2842A85151300600232 /* Venus3D.swift in Sources */,
 				0BBF4B9D2A6049F100A9DC4D /* Haptics.swift in Sources */,
 				2F4F8FC5295EC08100F7EE98 /* MercuryNode.swift in Sources */,
 				2F0B04D22945A522001FAAE6 /* HomeViewController.swift in Sources */,
@@ -410,7 +426,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Cosmofy/Cosmofy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmofy/Info.plist;
@@ -427,7 +443,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -447,7 +463,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Cosmofy/Cosmofy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmofy/Info.plist;
@@ -464,7 +480,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
