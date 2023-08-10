@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688262A84D1F300CD2B7E /* VenusViewController.swift */; };
+		0B6688292A84D81600CD2B7E /* VenusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688282A84D81600CD2B7E /* VenusCell.swift */; };
 		0BBF4B9D2A6049F100A9DC4D /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */; };
 		0BC797B32A5DE66B005B9E45 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC797B22A5DE66B005B9E45 /* SettingsViewController.swift */; };
 		2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F073A122946BE4000F024B8 /* PlanetsViewController.swift */; };
@@ -20,7 +22,6 @@
 		2F542ED1297CF0110067C26B /* Pulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F542ED0297CF0110067C26B /* Pulse.swift */; };
 		2F587A2B294D49490028225E /* MercuryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F587A2A294D49490028225E /* MercuryViewController.swift */; };
 		2F7494EF2A5B35C4004C63B7 /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7494EE2A5B35C4004C63B7 /* KeychainItem.swift */; };
-		2F98598829838ECD007271B1 /* MercuryAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98598729838ECD007271B1 /* MercuryAR.swift */; };
 		2FBBB6592945531500BBB072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBB6582945531500BBB072 /* AppDelegate.swift */; };
 		2FBBB6602945531500BBB072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB65E2945531500BBB072 /* Main.storyboard */; };
 		2FBBB6622945531700BBB072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
@@ -30,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B6688262A84D1F300CD2B7E /* VenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusViewController.swift; sourceTree = "<group>"; };
+		0B6688282A84D81600CD2B7E /* VenusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusCell.swift; sourceTree = "<group>"; };
 		0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		0BC797B22A5DE66B005B9E45 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2F073A122946BE4000F024B8 /* PlanetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewController.swift; sourceTree = "<group>"; };
@@ -44,7 +47,6 @@
 		2F587A2A294D49490028225E /* MercuryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryViewController.swift; sourceTree = "<group>"; };
 		2F6427CF2A4FA4EF00CC503D /* Cosmofy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cosmofy.entitlements; sourceTree = "<group>"; };
 		2F7494EE2A5B35C4004C63B7 /* KeychainItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
-		2F98598729838ECD007271B1 /* MercuryAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryAR.swift; sourceTree = "<group>"; };
 		2FBBB6552945531500BBB072 /* Cosmofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosmofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FBBB6582945531500BBB072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FBBB65F2945531500BBB072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				2F587A2A294D49490028225E /* MercuryViewController.swift */,
+				0B6688262A84D1F300CD2B7E /* VenusViewController.swift */,
 			);
 			path = PlanetViewController;
 			sourceTree = "<group>";
@@ -117,6 +120,7 @@
 			children = (
 				2F0B04D52945A576001FAAE6 /* HomeCollectionViewCell.swift */,
 				2F52B487297F209F00A92FF7 /* MercuryCell.swift */,
+				0B6688282A84D81600CD2B7E /* VenusCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -124,7 +128,6 @@
 		2F98598629838EA0007271B1 /* ARViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2F98598729838ECD007271B1 /* MercuryAR.swift */,
 			);
 			path = ARViewControllers;
 			sourceTree = "<group>";
@@ -240,10 +243,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F98598829838ECD007271B1 /* MercuryAR.swift in Sources */,
 				2F7494EF2A5B35C4004C63B7 /* KeychainItem.swift in Sources */,
 				2F542ED1297CF0110067C26B /* Pulse.swift in Sources */,
 				2F587A2B294D49490028225E /* MercuryViewController.swift in Sources */,
+				0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */,
+				0B6688292A84D81600CD2B7E /* VenusCell.swift in Sources */,
 				2F0B04D62945A576001FAAE6 /* HomeCollectionViewCell.swift in Sources */,
 				2FDBA47C2A54F0A200598EC6 /* LoginViewController.swift in Sources */,
 				2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */,

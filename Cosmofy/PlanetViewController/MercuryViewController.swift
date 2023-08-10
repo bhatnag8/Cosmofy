@@ -76,7 +76,10 @@ class MercuryViewController: UIViewController,
         let width = scrollView.frame.width
         currentCellIndex = Int(scrollView.contentOffset.x / width)
         pageControl.currentPage = currentCellIndex
-        timer3?.invalidate()
+        
+        invalidateTimers()
+        startTimer1()
+        startTimer2()
         startTimer3()
         
         if (currentCellIndex == 2) {
@@ -109,7 +112,7 @@ class MercuryViewController: UIViewController,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "planetCell", for: indexPath) as! MercuryCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mercuryCell", for: indexPath) as! MercuryCell
         cell.image.image = arrayPhotos[indexPath.row]
         return cell
     }
