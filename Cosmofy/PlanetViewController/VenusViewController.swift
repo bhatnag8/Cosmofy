@@ -175,7 +175,7 @@ class VenusViewController: UIViewController,
         button1.layer.shadowRadius = 1
         button1.layer.cornerRadius = button1.frame.height / 2
         button1.clipsToBounds = true
-        button1.layer.borderColor = UIColor.systemGreen.cgColor
+        button1.layer.borderColor = UIColor.black.cgColor
         button1.layer.borderWidth = 2
         
         button2.layer.shadowColor = UIColor.white.cgColor
@@ -184,7 +184,7 @@ class VenusViewController: UIViewController,
         button2.layer.shadowRadius = 1
         button2.layer.cornerRadius = button2.frame.height / 2
         button2.clipsToBounds = true
-        button2.layer.borderColor = UIColor.systemRed.cgColor
+        button2.layer.borderColor = UIColor.black.cgColor
         button2.layer.borderWidth = 2
         
 
