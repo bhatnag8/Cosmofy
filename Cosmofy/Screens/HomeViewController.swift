@@ -277,6 +277,10 @@ class HomeViewController: // multiple inheritance
         startTimer(time: 6.0)
     }
     
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        Haptics.shared.impact(for: .soft)
+    }
+    
     // MARK: - viewDidDisappear
     override func viewDidDisappear(_ animated: Bool) {
         timer?.invalidate()

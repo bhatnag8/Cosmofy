@@ -82,7 +82,6 @@ class MercuryViewController: UIViewController,
         let width = scrollView.frame.width
         currentCellIndex = Int(scrollView.contentOffset.x / width)
         pageControl.currentPage = currentCellIndex
-        Haptics.shared.impact(for: .soft)
         invalidateTimers()
         startTimer1()
         startTimer2()
@@ -93,6 +92,10 @@ class MercuryViewController: UIViewController,
         } else {
             imageCaption.text = ""
         }
+    }
+    
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        Haptics.shared.impact(for: .soft)
     }
     
     @objc func moveNext() {

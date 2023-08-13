@@ -79,7 +79,6 @@ class EarthViewController: UIViewController,
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        Haptics.shared.impact(for: .soft)
         let width = scrollView.frame.width
         currentCellIndex = Int(scrollView.contentOffset.x / width)
         pageControl.currentPage = currentCellIndex
@@ -90,10 +89,14 @@ class EarthViewController: UIViewController,
         startTimer3()
         
         if (currentCellIndex == 2) {
-            imageCaption.text = "The Crater Farm"
+            imageCaption.text = ""
         } else {
             imageCaption.text = ""
         }
+    }
+    
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        Haptics.shared.impact(for: .soft)
     }
     
     @objc func moveNext() {
@@ -199,6 +202,13 @@ class EarthViewController: UIViewController,
     
     override func viewDidDisappear(_ animated: Bool) {
         invalidateTimers()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.isMovingFromParent {
+            Haptics.shared.impact(for: .soft)
+        }
     }
     
     @objc func moveToNextIndex() {
