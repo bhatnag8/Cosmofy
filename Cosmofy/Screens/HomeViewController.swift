@@ -26,6 +26,11 @@ class HomeViewController: // multiple inheritance
     @IBOutlet weak var nameButton: UIButton!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
+    
+    @IBAction func nameButtonTapped(_ sender: Any) {
+        Haptics.shared.impact(for: .medium)
+    }
+    
     var currentCellIndex = 0
     
     let gradient = CAGradientLayer()
@@ -108,8 +113,7 @@ class HomeViewController: // multiple inheritance
         
         nameButton.showsMenuAsPrimaryAction = true
         nameButton.menu = addMenuItems()
-        nameButton.layer.cornerRadius = nameButton.bounds.height / 2
-        Haptics.shared.impact(for: .rigid)
+        
         
         switch hour {
             case 3...11 : goodLabel.text = "Good Morning"
@@ -123,6 +127,8 @@ class HomeViewController: // multiple inheritance
     // MARK: - viewDidLayoutSubviews
     override func viewDidLayoutSubviews() {
         
+        
+        nameButton.layer.cornerRadius = nameButton.bounds.height / 2
 
         topView.layer.cornerRadius = 28+2
         self.topView.clipsToBounds = true
@@ -157,7 +163,6 @@ class HomeViewController: // multiple inheritance
             
             UIAction(title: "Privacy Policy", image: UIImage(systemName: "book.closed.fill"), handler: { (_) in
                 Haptics.shared.vibrate(for: .success)
-                print("Working")
                 
             })
     
@@ -167,7 +172,6 @@ class HomeViewController: // multiple inheritance
     }
     
     func animateGradient() {
-        print("animateGradient")
         switch (currentGradient) {
             case 0: currentGradient = 1
             case 1: currentGradient = 2
@@ -277,7 +281,6 @@ class HomeViewController: // multiple inheritance
     override func viewDidDisappear(_ animated: Bool) {
         timer?.invalidate()
         gradient.removeAnimation(forKey: "colorChange")
-        print("viewDidDisappear")
         
     }
     
@@ -285,7 +288,6 @@ class HomeViewController: // multiple inheritance
     override func viewWillAppear(_ animated: Bool) {
         startTimer(time: 10.0)
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
-        print("viewWillAppear")
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -298,7 +300,6 @@ class HomeViewController: // multiple inheritance
 extension HomeViewController: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if flag {
-            print("hittin")
             gradient.colors = gradientSet[currentGradient]
             animateGradient()
         }

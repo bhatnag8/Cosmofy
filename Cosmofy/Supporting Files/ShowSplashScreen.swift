@@ -13,7 +13,7 @@ class ShowSplashScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        perform(#selector(showController), with: AnyObject.self, afterDelay: 3)
+        perform(#selector(showController), with: AnyObject.self, afterDelay: 0)
     }
     
     @objc func showController() {

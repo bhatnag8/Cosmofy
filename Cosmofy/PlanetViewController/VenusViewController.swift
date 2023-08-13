@@ -27,6 +27,10 @@ class VenusViewController: UIViewController,
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var imageCaption: UILabel!
     
+    @IBAction func buttons_tapped(_ sender: Any) {
+        Haptics.shared.vibrate(for: .success)
+    }
+    
     var arrayPhotos =
     [
         UIImage(named: "20230810_Venus_1")!,
@@ -45,13 +49,15 @@ class VenusViewController: UIViewController,
         collectionView.delegate = self
         collectionView.dataSource = self
         pageControl.numberOfPages = arrayPhotos.count
+        
+        startTimer1()
+        startTimer2()
+        startTimer3()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        startTimer1()
-        startTimer2()
-        startTimer3()
+        
     }
     
     func startTimer1() {
@@ -76,7 +82,7 @@ class VenusViewController: UIViewController,
         let width = scrollView.frame.width
         currentCellIndex = Int(scrollView.contentOffset.x / width)
         pageControl.currentPage = currentCellIndex
-        
+        Haptics.shared.impact(for: .soft)
         invalidateTimers()
         startTimer1()
         startTimer2()
@@ -100,6 +106,7 @@ class VenusViewController: UIViewController,
         collectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
         
         pageControl.currentPage = currentCellIndex
+        Haptics.shared.impact(for: .soft)
         if (currentCellIndex == 2) {
             imageCaption.text = "The Crater Farm"
         } else {

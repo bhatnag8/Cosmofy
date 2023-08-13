@@ -24,6 +24,7 @@ class Venus3D: UIViewController {
     @IBOutlet weak var axisSwitch: UISwitch!
     
     @IBAction func playButton(_ sender: Any) {
+        Haptics.shared.impact(for: .soft)
         if (pause == false) {
             pause = true
             planetNode.stopRotation()
@@ -40,6 +41,7 @@ class Venus3D: UIViewController {
     @IBOutlet weak var speed3: UIButton!
     
     @IBAction func speed1(_ sender: Any) {
+        Haptics.shared.impact(for: .medium)
         planetNode.stopRotation()
         planetNode.setRotation(r: 6)
         planetNode.startRotation()
@@ -50,6 +52,7 @@ class Venus3D: UIViewController {
     }
     
     @IBAction func speed2(_ sender: Any) {
+        Haptics.shared.impact(for: .medium)
         planetNode.stopRotation()
         planetNode.setRotation(r: 3)
         planetNode.startRotation()
@@ -60,6 +63,7 @@ class Venus3D: UIViewController {
     }
     
     @IBAction func speed3(_ sender: Any) {
+        Haptics.shared.impact(for: .medium)
         planetNode.stopRotation()
         planetNode.setRotation(r: 1.5)
         planetNode.startRotation()
@@ -146,6 +150,7 @@ class Venus3D: UIViewController {
     }
     
     @IBAction func switchDidChange(_ sender: UISwitch) {
+        Haptics.shared.vibrate(for: .success)
         if sender.isOn {
             planetNode.addChildNode(poleNode)
         } else {

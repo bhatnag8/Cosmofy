@@ -27,13 +27,17 @@ class EarthViewController: UIViewController,
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var imageCaption: UILabel!
     
+    @IBAction func buttons_tapped(_ sender: Any) {
+        Haptics.shared.vibrate(for: .success)
+    }
+    
     var arrayPhotos =
     [
-        UIImage(named: "20230810_Venus_1")!,
-        UIImage(named: "20230810_Venus_2")!,
-        UIImage(named: "20230810_Venus_3")!
+        UIImage(named: "20230811_Earth_1")!,
+        UIImage(named: "20230811_Earth_2")!,
+        UIImage(named: "20230811_Earth_3")!
     ]
-     
+    
     var timer1 : Timer? // text
     var timer2 : Timer? // pulse
     var timer3 : Timer? // images
@@ -45,13 +49,15 @@ class EarthViewController: UIViewController,
         collectionView.delegate = self
         collectionView.dataSource = self
         pageControl.numberOfPages = arrayPhotos.count
+        
+        startTimer1()
+        startTimer2()
+        startTimer3()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        startTimer1()
-        startTimer2()
-        startTimer3()
+        
     }
     
     func startTimer1() {
@@ -73,6 +79,7 @@ class EarthViewController: UIViewController,
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        Haptics.shared.impact(for: .soft)
         let width = scrollView.frame.width
         currentCellIndex = Int(scrollView.contentOffset.x / width)
         pageControl.currentPage = currentCellIndex
@@ -96,7 +103,7 @@ class EarthViewController: UIViewController,
         } else {
             currentCellIndex = 0
         }
-        
+        Haptics.shared.impact(for: .soft)
         collectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
         
         pageControl.currentPage = currentCellIndex
@@ -202,14 +209,14 @@ class EarthViewController: UIViewController,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel1.text = "Venus is 1.1x"
+                self?.coreLabel1.text = "Every Time You"
                      }, completion: nil)
             
             UIView.transition(with: coreLabel2,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel2.text = "Smaller than Earth"
+                self?.coreLabel2.text = "Open this Earth Page"
                      }, completion: nil)
             currentLabel = currentLabel + 1
         } else if (currentLabel == 1) {
@@ -219,14 +226,14 @@ class EarthViewController: UIViewController,
                           duration: 0.25,
                               options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel1.text = "Venus' Core is"
+                self?.coreLabel1.text = "$0.25 is Donated"
                      }, completion: nil)
             
             UIView.transition(with: coreLabel2,
                           duration: 0.25,
                               options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel2.text = "52% of its Radius"
+                self?.coreLabel2.text = "to a Special Foundation"
                      }, completion: nil)
             currentLabel = currentLabel + 1
         } else if (currentLabel == 2) {

@@ -10,6 +10,7 @@
 		0B1B223F2A850C3E0098329B /* VenusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B223E2A850C3E0098329B /* VenusNode.swift */; };
 		0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688262A84D1F300CD2B7E /* VenusViewController.swift */; };
 		0B6688292A84D81600CD2B7E /* VenusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688282A84D81600CD2B7E /* VenusCell.swift */; };
+		0B7CDD932A875C29006307D1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7CDD922A875C29006307D1 /* TabBarController.swift */; };
 		0BBF4B9D2A6049F100A9DC4D /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */; };
 		0BC1F2842A85151300600232 /* Venus3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1F2832A85151300600232 /* Venus3D.swift */; };
 		0BC1F2862A8520E900600232 /* EarthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1F2852A8520E900600232 /* EarthViewController.swift */; };
@@ -38,6 +39,7 @@
 		0B1B223E2A850C3E0098329B /* VenusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusNode.swift; sourceTree = "<group>"; };
 		0B6688262A84D1F300CD2B7E /* VenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusViewController.swift; sourceTree = "<group>"; };
 		0B6688282A84D81600CD2B7E /* VenusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusCell.swift; sourceTree = "<group>"; };
+		0B7CDD922A875C29006307D1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		0BC1F2832A85151300600232 /* Venus3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venus3D.swift; sourceTree = "<group>"; };
 		0BC1F2852A8520E900600232 /* EarthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				2FC4C0082A3635FA00DBA12D /* ShowSplashScreen.swift */,
 				2F7494EE2A5B35C4004C63B7 /* KeychainItem.swift */,
 				0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */,
+				0B7CDD922A875C29006307D1 /* TabBarController.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -120,8 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				2F587A2A294D49490028225E /* MercuryViewController.swift */,
-				0B6688262A84D1F300CD2B7E /* VenusViewController.swift */,
 				0BC1F2852A8520E900600232 /* EarthViewController.swift */,
+				0B6688262A84D1F300CD2B7E /* VenusViewController.swift */,
 			);
 			path = PlanetViewController;
 			sourceTree = "<group>";
@@ -163,10 +166,10 @@
 		2FBBB6572945531500BBB072 /* Cosmofy */ = {
 			isa = PBXGroup;
 			children = (
-				0BC797B12A5DE62D005B9E45 /* Screens */,
 				2F6427CF2A4FA4EF00CC503D /* Cosmofy.entitlements */,
 				2F4F8FC1295EBC5100F7EE98 /* star.png */,
 				2F4F8FC0295EBC5100F7EE98 /* StarsParticleSystem.scnp */,
+				0BC797B12A5DE62D005B9E45 /* Screens */,
 				2F4F8FC6295EC08700F7EE98 /* Nodes */,
 				2F0ACC21295DBC9F00B3D0DB /* 3DViewController */,
 				2F98598629838EA0007271B1 /* ARViewControllers */,
@@ -273,6 +276,7 @@
 				2F52B488297F209F00A92FF7 /* MercuryCell.swift in Sources */,
 				0BC1F2842A85151300600232 /* Venus3D.swift in Sources */,
 				0BBF4B9D2A6049F100A9DC4D /* Haptics.swift in Sources */,
+				0B7CDD932A875C29006307D1 /* TabBarController.swift in Sources */,
 				2F4F8FC5295EC08100F7EE98 /* MercuryNode.swift in Sources */,
 				2F0B04D22945A522001FAAE6 /* HomeViewController.swift in Sources */,
 			);
@@ -443,7 +447,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.2;
+				MARKETING_VERSION = 0.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -480,7 +484,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.2;
+				MARKETING_VERSION = 0.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -26,6 +26,11 @@ class PlanetsViewController: UIViewController {
     @IBOutlet weak var button7: UIButton!
     @IBOutlet weak var button8: UIButton!
     
+    
+    @IBAction func buttons_tapped(_ sender: Any) {
+        Haptics.shared.vibrate(for: .success)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -49,7 +54,7 @@ class PlanetsViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        Haptics.shared.impact(for: .rigid)
+//        Haptics.shared.impact(for: .rigid)
         
         innerView1.layer.shadowColor = UIColor.black.cgColor
         innerView1.layer.shadowOpacity = 1
