@@ -36,6 +36,13 @@ class Venus3D: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.isMovingFromParent {
+            Haptics.shared.impact(for: .soft)
+        }
+    }
+    
     @IBOutlet weak var speed1: UIButton!
     @IBOutlet weak var speed2: UIButton!
     @IBOutlet weak var speed3: UIButton!
@@ -120,8 +127,8 @@ class Venus3D: UIViewController {
         playButton.layer.borderColor = UIColor.black.cgColor
         playButton.layer.borderWidth = 0.8
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "More...", style: .plain, target: self, action: nil)
-        navigationItem.rightBarButtonItem?.tintColor = UIColor.systemBlue
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "More...", style: .plain, target: self, action: nil)
+//        navigationItem.rightBarButtonItem?.tintColor = UIColor.systemBlue
 
         speed1.layer.shadowColor = UIColor.white.cgColor
         speed1.layer.shadowOpacity = 1
@@ -150,7 +157,7 @@ class Venus3D: UIViewController {
     }
     
     @IBAction func switchDidChange(_ sender: UISwitch) {
-        Haptics.shared.vibrate(for: .success)
+        Haptics.shared.impact(for: .medium)
         if sender.isOn {
             planetNode.addChildNode(poleNode)
         } else {

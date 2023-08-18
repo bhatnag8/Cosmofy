@@ -1,13 +1,13 @@
 //  ========================================
-//  EarthViewController.swift
+//  MarsViewController.swift
 //  Cosmofy
 //  4th Edition
-//  Created by Arryan Bhatnagar on 8/10/23.
+//  Created by Arryan Bhatnagar on 8/18/23.
 //  ========================================
 
 import UIKit
 
-class EarthViewController: UIViewController,
+class MarsViewController: UIViewController,
                              UICollectionViewDelegate,
                              UICollectionViewDataSource,
                              UICollectionViewDelegateFlowLayout {
@@ -33,11 +33,11 @@ class EarthViewController: UIViewController,
     
     var arrayPhotos =
     [
-        UIImage(named: "20230811_Earth_1")!,
-        UIImage(named: "20230811_Earth_2")!,
-        UIImage(named: "20230811_Earth_3")!
+        UIImage(named: "20230818_Mars_1")!,
+        UIImage(named: "20230818_Mars_2")!,
+        UIImage(named: "20230818_Mars_3")!
     ]
-    
+     
     var timer1 : Timer? // text
     var timer2 : Timer? // pulse
     var timer3 : Timer? // images
@@ -82,7 +82,6 @@ class EarthViewController: UIViewController,
         let width = scrollView.frame.width
         currentCellIndex = Int(scrollView.contentOffset.x / width)
         pageControl.currentPage = currentCellIndex
-        
         invalidateTimers()
         startTimer1()
         startTimer2()
@@ -106,12 +105,13 @@ class EarthViewController: UIViewController,
         } else {
             currentCellIndex = 0
         }
-        Haptics.shared.impact(for: .soft)
+        
         collectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
         
         pageControl.currentPage = currentCellIndex
+        Haptics.shared.impact(for: .soft)
         if (currentCellIndex == 2) {
-            imageCaption.text = "The Crater Farm"
+            imageCaption.text = ""
         } else {
             imageCaption.text = ""
         }
@@ -122,7 +122,7 @@ class EarthViewController: UIViewController,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "earthCell", for: indexPath) as! EarthCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "marsCell", for: indexPath) as! MarsCell
         cell.image.image = arrayPhotos[indexPath.row]
         return cell
     }
@@ -144,9 +144,9 @@ class EarthViewController: UIViewController,
         let pulse2 = Pulse(num: 1, rad: 32, pos: newTap2, duration: 1)
         let pulse5 = Pulse(num: 1, rad: 32, pos: newTap5, duration: 1)
         
-        pulse1.backgroundColor = UIColor(named: "colorEarth")?.cgColor
-        pulse2.backgroundColor = UIColor(named: "colorEarth")?.cgColor
-        pulse5.backgroundColor = UIColor(named: "colorEarth")?.cgColor
+        pulse1.backgroundColor = UIColor(named: "colorMars")?.cgColor
+        pulse2.backgroundColor = UIColor(named: "colorMars")?.cgColor
+        pulse5.backgroundColor = UIColor(named: "colorMars")?.cgColor
         
         self.view.layer.insertSublayer(pulse1, below: button1.layer)
         self.view.layer.insertSublayer(pulse2, below: button2.layer)
@@ -219,14 +219,14 @@ class EarthViewController: UIViewController,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel1.text = "Every Time You"
+                self?.coreLabel1.text = "Mars is 1.9x"
                      }, completion: nil)
             
             UIView.transition(with: coreLabel2,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel2.text = "Open this Earth Page"
+                self?.coreLabel2.text = "Smaller than Earth"
                      }, completion: nil)
             currentLabel = currentLabel + 1
         } else if (currentLabel == 1) {
@@ -236,14 +236,14 @@ class EarthViewController: UIViewController,
                           duration: 0.25,
                               options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel1.text = "$0.25 is Donated"
+                self?.coreLabel1.text = "Mars' Core is"
                      }, completion: nil)
             
             UIView.transition(with: coreLabel2,
                           duration: 0.25,
                               options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel2.text = "to a Special Foundation"
+                self?.coreLabel2.text = "53% of its Radius"
                      }, completion: nil)
             currentLabel = currentLabel + 1
         } else if (currentLabel == 2) {
@@ -253,7 +253,7 @@ class EarthViewController: UIViewController,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel1.text = "Solid Inner Core"
+                self?.coreLabel1.text = "Possible Solid Inner Core"
                      }, completion: nil)
             
             UIView.transition(with: coreLabel2,
@@ -267,4 +267,5 @@ class EarthViewController: UIViewController,
         
     }
 }
+
 

@@ -18,7 +18,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        Haptics.shared.impact(for: .heavy)
+        Haptics.shared.impact(for: .rigid)
     }
 
 }

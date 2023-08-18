@@ -28,7 +28,7 @@ class MercuryViewController: UIViewController,
     @IBOutlet weak var imageCaption: UILabel!
     
     @IBAction func buttons_tapped(_ sender: Any) {
-        Haptics.shared.vibrate(for: .success)
+        Haptics.shared.impact(for: .medium)
     }
     
     var arrayPhotos =

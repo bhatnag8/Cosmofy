@@ -94,6 +94,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                         UserDefaults.standard.set(userIdentifier, forKey: "userProfileID")
                     }
                     else {
+                        print("this is happeing")
                     }
                 }
             }
