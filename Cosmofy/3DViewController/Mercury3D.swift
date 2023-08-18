@@ -118,7 +118,8 @@ class Mercury3D: UIViewController {
         sceneView.cameraControlConfiguration.autoSwitchToFreeCamera = true
         sceneView.cameraControlConfiguration.allowsTranslation = true
         sceneView.cameraControlConfiguration.rotationSensitivity = 0.4
-        
+        sceneView.gestureRecognizers[0]
+        pint
         playButton.layer.shadowColor = UIColor.white.cgColor
         playButton.layer.shadowOpacity = 1
         playButton.layer.shadowOffset = .zero
