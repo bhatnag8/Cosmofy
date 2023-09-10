@@ -274,17 +274,65 @@
             </objects>
             <point key="canvasLocation" x="5193" y="600"/>
         </scene>
-        <!--Moons-->
+        <!--Canada-->
         <scene sceneID="cm2-cp-L33">
             <objects>
-                <viewController id="YeA-9C-bJG" sceneMemberID="viewController">
+                <viewController id="YeA-9C-bJG" customClass="CanadaViewController" customModule="Cosmofy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nUb-if-s6y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aI-Ga-ttq">
+                                <rect key="frame" x="16" y="162" width="343" height="171.66666666666663"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lNS-k4-UET">
+                                        <rect key="frame" x="16" y="16" width="311" height="139.66666666666666"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Greetings from Canada! 🇨🇦🍁🏒🏔️🐻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s55-9j-5yd">
+                                                <rect key="frame" x="0.0" y="0.0" width="311" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvg-hH-DZT">
+                                                <rect key="frame" x="0.0" y="80" width="311" height="0.0"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="668-sC-4Vy">
+                                                <rect key="frame" x="0.0" y="139.66666666666669" width="311" height="0.0"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <color key="textColor" red="0.40041077200000003" green="0.7891027706" blue="0.52896417480000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="AppColorDarker"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9aI-Ga-ttq" secondAttribute="height" multiplier="4:2" id="2LI-yZ-gRI"/>
+                                    <constraint firstAttribute="bottom" secondItem="lNS-k4-UET" secondAttribute="bottom" constant="16" id="AZb-Qj-8lz"/>
+                                    <constraint firstItem="lNS-k4-UET" firstAttribute="top" secondItem="9aI-Ga-ttq" secondAttribute="top" constant="16" id="BMC-kL-zHz"/>
+                                    <constraint firstItem="lNS-k4-UET" firstAttribute="leading" secondItem="9aI-Ga-ttq" secondAttribute="leading" constant="16" id="GzG-eg-ixF"/>
+                                    <constraint firstAttribute="trailing" secondItem="lNS-k4-UET" secondAttribute="trailing" constant="16" id="sqf-sY-tq5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="oU3-JC-zdF"/>
                         <color key="backgroundColor" name="AppColor"/>
+                        <constraints>
+                            <constraint firstItem="oU3-JC-zdF" firstAttribute="trailing" secondItem="9aI-Ga-ttq" secondAttribute="trailing" constant="16" id="BxY-9i-jvu"/>
+                            <constraint firstItem="9aI-Ga-ttq" firstAttribute="leading" secondItem="oU3-JC-zdF" secondAttribute="leading" constant="16" id="GZB-62-RBS"/>
+                            <constraint firstItem="9aI-Ga-ttq" firstAttribute="top" secondItem="oU3-JC-zdF" secondAttribute="top" constant="16" id="mDW-46-6Zb"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Moons" id="Pzj-t1-fsU"/>
+                    <navigationItem key="navigationItem" title="Canada" id="Pzj-t1-fsU"/>
+                    <connections>
+                        <outlet property="greetingLabel" destination="s55-9j-5yd" id="dQC-s8-5Xc"/>
+                        <outlet property="messageLabel" destination="Zvg-hH-DZT" id="5hc-Hx-ZoI"/>
+                        <outlet property="statusLabel" destination="668-sC-4Vy" id="S94-2z-yOc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5m-vK-CbO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1376,11 +1424,11 @@
             </objects>
             <point key="canvasLocation" x="4455" y="600"/>
         </scene>
-        <!--Moons-->
+        <!--Canada-->
         <scene sceneID="zud-xC-A9P">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WSK-Uq-SSu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Moons" image="20221210_TabBarMoon" id="PIi-ix-fhi"/>
+                    <tabBarItem key="tabBarItem" title="Canada" image="20230909_TabBarSpacefy" id="PIi-ix-fhi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="R5L-Mb-iK8">
                         <rect key="frame" x="0.0" y="50" width="375" height="96"/>
@@ -3303,7 +3351,6 @@
     <resources>
         <image name="20221210_TabBarGalaxy" width="25" height="25"/>
         <image name="20221210_TabBarHome" width="25" height="25"/>
-        <image name="20221210_TabBarMoon" width="25" height="25"/>
         <image name="20221210_TabBarPlanet" width="25" height="25"/>
         <image name="20221210_TabBarSettings" width="25" height="25"/>
         <image name="20221215_PlanetsViewIcon2" width="512" height="512"/>
@@ -3322,6 +3369,7 @@
         <image name="20230122_PlanetIcons_Radius" width="512" height="512"/>
         <image name="20230122_PlanetIcons_Volume" width="512" height="512"/>
         <image name="20230818_SmilingMars" width="512" height="512"/>
+        <image name="20230909_TabBarSpacefy" width="25" height="25"/>
         <image name="AppIcon_Mod" width="1024" height="1024"/>
         <image name="Gradient3" width="390" height="844"/>
         <image name="HomeIcon1" width="512" height="512"/>
