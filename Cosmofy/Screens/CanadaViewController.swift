@@ -16,20 +16,25 @@ class CanadaViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     
+    @IBOutlet weak var view1: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        greetingLabel.animate(newText: greetingLabel.text ?? "Greetings from Canada! 🇨🇦🍁🏒🏔️🐻", characterDelay: 0.075)
+        greetingLabel.animate(newText: greetingLabel.text ?? "Greetings from Canada! 🇨🇦🍁🏒🏔️🐻", characterDelay: 0.05)
         
-        let seconds = 2.5
+        let seconds = 1.5
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
-            self.messageLabel.animate(newText: "We've harnessed the power of AI for all your space related quiries.", characterDelay: 0.03)
+            self.messageLabel.animate(newText: "We've harnessed the power of AI for all your space related quiries.", characterDelay: 0.02)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
             // Put your code which should be executed with a delay here
-            self.statusLabel.animate(newText: "Status: Online", characterDelay: 0.075)
+            self.statusLabel.animate(newText: "Status: Online", characterDelay: 0.05)
         }
+        
+        view1.layer.cornerRadius = 16
         
         
         

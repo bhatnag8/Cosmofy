@@ -332,6 +332,7 @@
                         <outlet property="greetingLabel" destination="s55-9j-5yd" id="dQC-s8-5Xc"/>
                         <outlet property="messageLabel" destination="Zvg-hH-DZT" id="5hc-Hx-ZoI"/>
                         <outlet property="statusLabel" destination="668-sC-4Vy" id="S94-2z-yOc"/>
+                        <outlet property="view1" destination="9aI-Ga-ttq" id="Zux-zD-0bh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5m-vK-CbO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
