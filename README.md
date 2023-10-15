@@ -1,6 +1,6 @@
 # Cosmofy
-## Expected Code Completion : October 15, 2023 - October 30, 2023
-## Target Release Date : November 28, 2023
+# Expected Code Completion : October 15, 2023 - October 30, 2023
+# Target Release Date : November 28, 2023
 
 Working on : Canada Begins <br />
 Current Version : 0.3.0 (1) [Coming September 10th, 2023]  <br />
