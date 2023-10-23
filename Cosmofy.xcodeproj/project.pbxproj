@@ -12,6 +12,8 @@
 		0B294B5D2A8FB46400E755B3 /* MarsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B294B5C2A8FB46400E755B3 /* MarsCell.swift */; };
 		0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688262A84D1F300CD2B7E /* VenusViewController.swift */; };
 		0B6688292A84D81600CD2B7E /* VenusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688282A84D81600CD2B7E /* VenusCell.swift */; };
+		0B7671932AE47E22008E57B2 /* SwiftAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671922AE47E22008E57B2 /* SwiftAPI.swift */; };
+		0B7671972AE4C3FE008E57B2 /* SwiftAPIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671962AE4C3FE008E57B2 /* SwiftAPIModels.swift */; };
 		0B7CDD932A875C29006307D1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7CDD922A875C29006307D1 /* TabBarController.swift */; };
 		0B7D0C482AAD65EC003FB763 /* CanadaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D0C472AAD65EC003FB763 /* CanadaViewController.swift */; };
 		0BBF4B9D2A6049F100A9DC4D /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */; };
@@ -44,6 +46,8 @@
 		0B294B5C2A8FB46400E755B3 /* MarsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsCell.swift; sourceTree = "<group>"; };
 		0B6688262A84D1F300CD2B7E /* VenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusViewController.swift; sourceTree = "<group>"; };
 		0B6688282A84D81600CD2B7E /* VenusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusCell.swift; sourceTree = "<group>"; };
+		0B7671922AE47E22008E57B2 /* SwiftAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAPI.swift; sourceTree = "<group>"; };
+		0B7671962AE4C3FE008E57B2 /* SwiftAPIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAPIModels.swift; sourceTree = "<group>"; };
 		0B7CDD922A875C29006307D1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0B7D0C472AAD65EC003FB763 /* CanadaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaViewController.swift; sourceTree = "<group>"; };
 		0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				2FBBB6632945531700BBB072 /* LaunchScreen.storyboard */,
 				2FBBB6612945531700BBB072 /* Assets.xcassets */,
 				2FBBB6662945531700BBB072 /* Info.plist */,
+				0B7671922AE47E22008E57B2 /* SwiftAPI.swift */,
+				0B7671962AE4C3FE008E57B2 /* SwiftAPIModels.swift */,
 			);
 			path = Cosmofy;
 			sourceTree = "<group>";
@@ -286,8 +292,10 @@
 				0B1B223F2A850C3E0098329B /* VenusNode.swift in Sources */,
 				0BC1F2882A85216800600232 /* EarthCell.swift in Sources */,
 				2F52B488297F209F00A92FF7 /* MercuryCell.swift in Sources */,
+				0B7671932AE47E22008E57B2 /* SwiftAPI.swift in Sources */,
 				0BC1F2842A85151300600232 /* Venus3D.swift in Sources */,
 				0BBF4B9D2A6049F100A9DC4D /* Haptics.swift in Sources */,
+				0B7671972AE4C3FE008E57B2 /* SwiftAPIModels.swift in Sources */,
 				0B7CDD932A875C29006307D1 /* TabBarController.swift in Sources */,
 				2F4F8FC5295EC08100F7EE98 /* MercuryNode.swift in Sources */,
 				2F0B04D22945A522001FAAE6 /* HomeViewController.swift in Sources */,
