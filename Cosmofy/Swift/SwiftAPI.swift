@@ -19,6 +19,7 @@ class SwiftAPI: @unchecked Sendable {
     private var urlRequest: URLRequest {
         let url = URL(string: "https://api.openai.com/v1/chat/completions" )!
         var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
         headers.forEach {
             urlRequest.setValue($1, forHTTPHeaderField: $0)
         }
