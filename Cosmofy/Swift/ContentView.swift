@@ -10,8 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @Environment(\.colorScheme) var colorScheme
-    
-
+    @StateObject var vm = SwiftViewModel(api: SwiftAPI(apiKey: Secrets.apiKey))
     
     @FocusState var isTextFieldFocused: Bool
     
@@ -41,7 +40,7 @@ struct ContentView: View {
                 }
                 
                 Divider()
-                bottomView(image: "profile", proxy: proxy)
+                bottomView(image: "user", proxy: proxy)
                 Spacer()
                 
             }
