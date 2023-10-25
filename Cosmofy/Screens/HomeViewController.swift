@@ -109,6 +109,7 @@ class HomeViewController: // multiple inheritance
         super.viewDidAppear(animated)
 //        let TITLE = UserDefaults.standard.object(forKey: "s1") as! String
 //        nameButton.setTitle(TITLE, for: nameButton.state)
+
         
         nameButton.showsMenuAsPrimaryAction = true
         nameButton.menu = addMenuItems()

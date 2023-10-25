@@ -6,5 +6,7 @@
 	<false/>
 	<key>UIUserInterfaceStyle</key>
 	<string>Dark</string>
+	<key>API_KEY_DEBUG</key>
+	<string></string>
 </dict>
 </plist>
