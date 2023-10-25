@@ -201,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				0B1BAD562AE97736001CFC35 /* .gitignore */,
+				0B1BAD502AE96FE7001CFC35 /* ci_scripts */,
 				2FBBB6572945531500BBB072 /* Cosmofy */,
 				2FBBB6562945531500BBB072 /* Products */,
 			);
@@ -217,7 +218,6 @@
 		2FBBB6572945531500BBB072 /* Cosmofy */ = {
 			isa = PBXGroup;
 			children = (
-				0B1BAD502AE96FE7001CFC35 /* ci_scripts */,
 				2F6427CF2A4FA4EF00CC503D /* Cosmofy.entitlements */,
 				2F4F8FC1295EBC5100F7EE98 /* star.png */,
 				2F4F8FC0295EBC5100F7EE98 /* StarsParticleSystem.scnp */,

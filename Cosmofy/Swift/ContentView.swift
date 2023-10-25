@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @Environment(\.colorScheme) var colorScheme
-    @StateObject var vm = SwiftViewModel(api: SwiftAPI(apiKey: Secrets.apiKey))
+    @StateObject var vm = SwiftViewModel(api: SwiftAPI(apiKey: ProcessInfo.processInfo.environment["API_KEY"]!))
     
     @FocusState var isTextFieldFocused: Bool
     
