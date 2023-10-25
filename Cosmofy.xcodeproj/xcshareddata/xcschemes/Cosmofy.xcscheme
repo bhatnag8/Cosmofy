@@ -49,13 +49,6 @@
             ReferencedContainer = "container:Cosmofy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OPENAI_KEY"
-            value = "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"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
