@@ -15,7 +15,7 @@ struct Secrets {
             return try! JSONSerialization.jsonObject(with: data) as! [String: Any]
         } else {
             // Handle the case when the file is not found
-            fatalError("secrets.json not found in the app bundle.")
+            fatalError("Secrets.json not found in the app bundle.")
         }
 
     }
