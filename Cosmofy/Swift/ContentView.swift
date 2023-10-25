@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     
     @Environment(\.colorScheme) var colorScheme
-    @StateObject var vm = SwiftViewModel(api: SwiftAPI(apiKey: ProcessInfo.processInfo.environment["OPENAI_KEY"]!))
     
 
     

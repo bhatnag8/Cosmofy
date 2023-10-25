@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0B1B223F2A850C3E0098329B /* VenusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B223E2A850C3E0098329B /* VenusNode.swift */; };
+		0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD502AE96FE7001CFC35 /* ci_scripts */; };
+		0B1BAD552AE974A8001CFC35 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1BAD542AE974A8001CFC35 /* Secrets.swift */; };
+		0B1BAD572AE97736001CFC35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD562AE97736001CFC35 /* .gitignore */; };
+		0B1BAD592AE97811001CFC35 /* Secrets.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD582AE97811001CFC35 /* Secrets.json */; };
 		0B294B5B2A8FB34400E755B3 /* MarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B294B5A2A8FB34400E755B3 /* MarsViewController.swift */; };
 		0B294B5D2A8FB46400E755B3 /* MarsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B294B5C2A8FB46400E755B3 /* MarsCell.swift */; };
 		0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688262A84D1F300CD2B7E /* VenusViewController.swift */; };
@@ -48,6 +52,10 @@
 
 /* Begin PBXFileReference section */
 		0B1B223E2A850C3E0098329B /* VenusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusNode.swift; sourceTree = "<group>"; };
+		0B1BAD502AE96FE7001CFC35 /* ci_scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ci_scripts; sourceTree = "<group>"; };
+		0B1BAD542AE974A8001CFC35 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		0B1BAD562AE97736001CFC35 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0B1BAD582AE97811001CFC35 /* Secrets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Secrets.json; sourceTree = "<group>"; };
 		0B294B5A2A8FB34400E755B3 /* MarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsViewController.swift; sourceTree = "<group>"; };
 		0B294B5C2A8FB46400E755B3 /* MarsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsCell.swift; sourceTree = "<group>"; };
 		0B6688262A84D1F300CD2B7E /* VenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +122,7 @@
 			path = Swift;
 			sourceTree = "<group>";
 		};
-		0BBF4B9B2A6049BA00A9DC4D /* Supporting Files */ = {
+		0BBF4B9B2A6049BA00A9DC4D /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
 				2F542ED0297CF0110067C26B /* Pulse.swift */,
@@ -122,8 +130,10 @@
 				2F7494EE2A5B35C4004C63B7 /* KeychainItem.swift */,
 				0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */,
 				0B7CDD922A875C29006307D1 /* TabBarController.swift */,
+				0B1BAD542AE974A8001CFC35 /* Secrets.swift */,
+				0B1BAD582AE97811001CFC35 /* Secrets.json */,
 			);
-			path = "Supporting Files";
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		0BC797B12A5DE62D005B9E45 /* Screens */ = {
@@ -190,6 +200,8 @@
 		2FBBB64C2945531500BBB072 = {
 			isa = PBXGroup;
 			children = (
+				0B1BAD562AE97736001CFC35 /* .gitignore */,
+				0B1BAD502AE96FE7001CFC35 /* ci_scripts */,
 				2FBBB6572945531500BBB072 /* Cosmofy */,
 				2FBBB6562945531500BBB072 /* Products */,
 			);
@@ -215,7 +227,7 @@
 				2F0ACC21295DBC9F00B3D0DB /* 3DViewController */,
 				2F98598629838EA0007271B1 /* ARViewControllers */,
 				2F587A29294D48FE0028225E /* PlanetViewController */,
-				0BBF4B9B2A6049BA00A9DC4D /* Supporting Files */,
+				0BBF4B9B2A6049BA00A9DC4D /* SupportingFiles */,
 				2F98598529838E5B007271B1 /* CollectionViewCells */,
 				2FBBB6582945531500BBB072 /* AppDelegate.swift */,
 				2FBBB65E2945531500BBB072 /* Main.storyboard */,
@@ -285,8 +297,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FBBB6652945531700BBB072 /* LaunchScreen.storyboard in Resources */,
+				0B1BAD572AE97736001CFC35 /* .gitignore in Resources */,
 				2F4F8FC3295EBC5100F7EE98 /* star.png in Resources */,
 				2F4F8FC2295EBC5100F7EE98 /* StarsParticleSystem.scnp in Resources */,
+				0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */,
+				0B1BAD592AE97811001CFC35 /* Secrets.json in Resources */,
 				2FBBB6622945531700BBB072 /* Assets.xcassets in Resources */,
 				2FBBB6602945531500BBB072 /* Main.storyboard in Resources */,
 			);
@@ -309,6 +324,7 @@
 				0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */,
 				0B6688292A84D81600CD2B7E /* VenusCell.swift in Sources */,
 				2F0B04D62945A576001FAAE6 /* HomeCollectionViewCell.swift in Sources */,
+				0B1BAD552AE974A8001CFC35 /* Secrets.swift in Sources */,
 				2FDBA47C2A54F0A200598EC6 /* LoginViewController.swift in Sources */,
 				2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */,
 				0B7D18CA2AE8B5AF009C2317 /* SwiftViewController.swift in Sources */,

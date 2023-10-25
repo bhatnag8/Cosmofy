@@ -107,7 +107,6 @@ class HomeViewController: // multiple inheritance
     // MARK: - viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
 //        let TITLE = UserDefaults.standard.object(forKey: "s1") as! String
 //        nameButton.setTitle(TITLE, for: nameButton.state)
         
