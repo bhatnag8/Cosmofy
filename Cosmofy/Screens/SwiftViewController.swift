@@ -19,6 +19,7 @@ class SwiftViewController: UIViewController {
         addChild(childView)
         childView.view.frame = container.bounds
         container.addSubview(childView.view)
+        
 
     }
     

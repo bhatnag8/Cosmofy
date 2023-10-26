@@ -38,7 +38,7 @@ class SwiftViewModel: ObservableObject {
     }
     
     @MainActor
-    private func send(text: String) async {
+    func send(text: String) async {
         isInteractingWithChatGPT = true
         var streamText = ""
         var messageRow = SwiftMessageRow(

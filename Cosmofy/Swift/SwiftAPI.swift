@@ -45,7 +45,7 @@ class SwiftAPI: @unchecked Sendable {
         ]
     }
     
-    init(model: String = "gpt-3.5-turbo", systemPrompt: String = "You are a helpful assistant", temperature: Double = 0.5) {
+    init(model: String = "gpt-3.5-turbo", systemPrompt: String = "You are a helpful assistant who will answer space-related queries. Your name is Swift.", temperature: Double = 0.5) {
         self.model = model
         self.systemMessage = .init(role: "system", content: systemPrompt)
         self.temperature = temperature
@@ -139,6 +139,12 @@ class SwiftAPI: @unchecked Sendable {
     }
     
     private func jsonBody(text: String, stream: Bool = true) throws -> Data {
+        print(text.count)
+        if (text.count > 10000) {
+            throw "Long Response: Max char limit of 10000"
+        }
+        
+        
         let request = Request(model: model, temperature: temperature, messages: generateMessages(from: text), stream: stream)
         return try JSONEncoder().encode(request)
     }
