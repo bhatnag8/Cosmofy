@@ -37,8 +37,6 @@ class CanadaViewController: UIViewController {
         view1.layer.cornerRadius = 16
         
         
-        
-        
     }
 
 }

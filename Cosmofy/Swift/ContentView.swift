@@ -11,20 +11,20 @@ struct ContentView: View {
 
     @Environment(\.colorScheme) var colorScheme
     @StateObject var vm = SwiftViewModel(api: SwiftAPI())
-    
+    @State private var userTouched = false
     @FocusState var isTextFieldFocused: Bool
     @State private var hasAppeared = false
     
     var body: some View {
         chatListView
-            .onAppear {
-                if !hasAppeared {
-                    Task {
-                        @MainActor in await vm.send(text: "Hi, who are you?")
-                    }
-                    hasAppeared = true
-                }
-            }
+//            .onAppear {
+//                if !hasAppeared {
+//                    Task {
+//                        @MainActor in await vm.send(text: "Hi, who are you?")
+//                    }
+//                    hasAppeared = true
+//                }
+//            }
     }
     
     var chatListView: some View {
@@ -42,6 +42,13 @@ struct ContentView: View {
                                 }
                             }
                         }
+                        .gesture(
+                           DragGesture()
+                            .onChanged { _ in
+                                 print("Touch")
+                                userTouched = true
+                           }
+                        )
                     }
                     .onTapGesture {
                         isTextFieldFocused = false
@@ -53,10 +60,15 @@ struct ContentView: View {
                 Spacer()
                 
             }
+            
             .onChange(of: vm.messages.last?.responseText) {
-                _ in scrollToBottom(proxy: proxy)
+                _ in 
+                if !userTouched {
+                    scrollToBottom(proxy: proxy)
+                }
             }
         }
+        
         .background(colorScheme == .light ? .white : Color(red: 26/255, green: 23/255, blue: 27/255, opacity: 1))
     }
     
@@ -93,6 +105,7 @@ struct ContentView: View {
                         Task {
                             @MainActor in
                             isTextFieldFocused = false
+                            userTouched = false
                             scrollToBottom(proxy: proxy)
                             await vm.sendTapped()
                             
@@ -112,8 +125,6 @@ struct ContentView: View {
             .padding()
             .background(Color.black)
             .cornerRadius(10)
-            
-            
         }
         .padding(.horizontal, 16)
         .padding(.top, 12)
@@ -124,7 +135,7 @@ struct ContentView: View {
             return
         }
         
-        proxy.scrollTo(id, anchor: .bottomTrailing)
+        proxy.scrollTo(id, anchor: .bottom)
     }
 }
 
