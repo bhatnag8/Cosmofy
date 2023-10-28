@@ -13,11 +13,12 @@ struct MessageRowView: View {
     let retryCallback: (SwiftMessageRow) -> Void
     var body: some View {
         VStack(spacing: 0) {
-            messageRow(text: message.sendText, image: message.sendImage, color: colorScheme == .light ? .white : Color(red: 52/255, green: 53/255, blue: 62/255, opacity: 0.5))
+            messageRow(text: message.sendText, image: message.sendImage, color: colorScheme == .light ? .white : Color(red: 20/255, green: 20/255, blue: 25/255, opacity: 1))
+            
             
             if let text = message.responseText {
                 Divider()
-                messageRow(text: text, image: message.responseImage, color: colorScheme == .light ? .white : Color(red: 52/255, green: 53/255, blue: 65/255, opacity: 1), responseError: message.responseError, showDotLoading: message.isInteractingWithChatGPT)
+                messageRow(text: text, image: message.responseImage, color: colorScheme == .light ? .white : Color(red: 24/255, green: 24/255, blue: 27/255, opacity: 1), responseError: message.responseError, showDotLoading: message.isInteractingWithChatGPT)
                 Divider()
             }
         }

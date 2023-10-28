@@ -288,7 +288,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oU3-JC-zdF"/>
-                        <color key="backgroundColor" red="0.20392156862745098" green="0.20784313725490194" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="AppColor"/>
                         <constraints>
                             <constraint firstItem="hsB-He-8wc" firstAttribute="leading" secondItem="oU3-JC-zdF" secondAttribute="leading" id="76O-6p-wCC"/>
                             <constraint firstItem="hsB-He-8wc" firstAttribute="top" secondItem="oU3-JC-zdF" secondAttribute="top" id="AWB-iF-yKi"/>
@@ -296,7 +296,7 @@
                             <constraint firstItem="oU3-JC-zdF" firstAttribute="trailing" secondItem="hsB-He-8wc" secondAttribute="trailing" id="wwy-7Q-GUp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Swift" id="Pzj-t1-fsU"/>
+                    <navigationItem key="navigationItem" title="Swift" largeTitleDisplayMode="always" id="Pzj-t1-fsU"/>
                     <connections>
                         <outlet property="container" destination="hsB-He-8wc" id="Mja-gh-aGl"/>
                     </connections>
@@ -1357,8 +1357,8 @@
                     <connections>
                         <segue destination="Q6w-r6-G07" kind="relationship" relationship="viewControllers" id="6dY-ia-hJi"/>
                         <segue destination="ON5-hv-n7d" kind="relationship" relationship="viewControllers" id="QTl-tG-cSN"/>
-                        <segue destination="Rp1-fq-fud" kind="relationship" relationship="viewControllers" id="waO-Cj-qRQ"/>
                         <segue destination="WSK-Uq-SSu" kind="relationship" relationship="viewControllers" id="aKF-ZT-AXx"/>
+                        <segue destination="Rp1-fq-fud" kind="relationship" relationship="viewControllers" id="waO-Cj-qRQ"/>
                         <segue destination="ngh-gc-kvT" kind="relationship" relationship="viewControllers" id="esH-sY-Mf3"/>
                     </connections>
                 </tabBarController>
@@ -1391,11 +1391,11 @@
             </objects>
             <point key="canvasLocation" x="4455" y="600"/>
         </scene>
-        <!--Canada-->
+        <!--Swift-->
         <scene sceneID="zud-xC-A9P">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WSK-Uq-SSu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Canada" image="20230909_TabBarSpacefy" id="PIi-ix-fhi"/>
+                    <tabBarItem key="tabBarItem" title="Swift" image="swift-bar" id="PIi-ix-fhi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="R5L-Mb-iK8">
                         <rect key="frame" x="0.0" y="50" width="375" height="96"/>
@@ -3336,7 +3336,6 @@
         <image name="20230122_PlanetIcons_Radius" width="512" height="512"/>
         <image name="20230122_PlanetIcons_Volume" width="512" height="512"/>
         <image name="20230818_SmilingMars" width="512" height="512"/>
-        <image name="20230909_TabBarSpacefy" width="25" height="25"/>
         <image name="AppIcon_Mod" width="1024" height="1024"/>
         <image name="Gradient3" width="390" height="844"/>
         <image name="HomeIcon1" width="512" height="512"/>
@@ -3345,6 +3344,7 @@
         <image name="arrow.up" catalog="system" width="118" height="128"/>
         <image name="leaf.circle.fill" catalog="system" width="128" height="123"/>
         <image name="pause" catalog="system" width="88" height="128"/>
+        <image name="swift-bar" width="25" height="25"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

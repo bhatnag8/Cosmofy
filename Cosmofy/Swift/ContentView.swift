@@ -8,17 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    
 
-    
-    
     @Environment(\.colorScheme) var colorScheme
     @StateObject var vm = SwiftViewModel(api: SwiftAPI())
-    
+    @State private var userTouched = false
     @FocusState var isTextFieldFocused: Bool
+    @State private var hasAppeared = false
     
     var body: some View {
         chatListView
+//            .onAppear {
+//                if !hasAppeared {
+//                    Task {
+//                        @MainActor in await vm.send(text: "Hi, who are you?")
+//                    }
+//                    hasAppeared = true
+//                }
+//            }
     }
     
     var chatListView: some View {
@@ -36,6 +42,13 @@ struct ContentView: View {
                                 }
                             }
                         }
+                        .gesture(
+                           DragGesture()
+                            .onChanged { _ in
+                                 print("Touch")
+                                userTouched = true
+                           }
+                        )
                     }
                     .onTapGesture {
                         isTextFieldFocused = false
@@ -47,62 +60,71 @@ struct ContentView: View {
                 Spacer()
                 
             }
+            
             .onChange(of: vm.messages.last?.responseText) {
-                _ in scrollToBottom(proxy: proxy)
+                _ in 
+                if !userTouched {
+                    scrollToBottom(proxy: proxy)
+                }
             }
         }
-        .background(colorScheme == .light ? .white : Color(red: 52/255, green: 53/255, blue: 65/255, opacity: 1))
+        
+        .background(colorScheme == .light ? .white : Color(red: 26/255, green: 23/255, blue: 27/255, opacity: 1))
     }
     
     func bottomView(image: String, proxy: ScrollViewProxy) -> some View {
         HStack(alignment: .top, spacing: 8) {
             
-            if image.hasPrefix("http"), let url = URL(string: image) {
-                AsyncImage(url: url) {
-                    image in image
+            HStack {
+                if image.hasPrefix("http"), let url = URL(string: image) {
+                    AsyncImage(url: url) {
+                        image in image
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                } else {
+                    Image(image)
                         .resizable()
                         .frame(width: 30, height: 30)
-                } placeholder: {
-                    ProgressView()
                 }
-            } else {
-                Image(image)
-                    .resizable()
-                    .frame(width: 30, height: 30)
-            }
-            
-            TextField("Send message", text: $vm.inputMessage, axis: .vertical)
-                .textFieldStyle(.roundedBorder)
-                .focused($isTextFieldFocused)
-                .disabled(vm.isInteractingWithChatGPT)
-            
-            if vm.isInteractingWithChatGPT {
-                LoadingView().frame(width: 60, height: 30)
-            } else {
-                Button {
+                
+                TextField("Send message", text: $vm.inputMessage, axis: .vertical)
+//                    .textFieldStyle(.roundedBorder)
+                    .border(Color.black, width: 0)
                     
-                    Task {
-                        @MainActor in
-                        isTextFieldFocused = false
-                        scrollToBottom(proxy: proxy)
-                        await vm.sendTapped()
+                    .focused($isTextFieldFocused)
+                    .disabled(vm.isInteractingWithChatGPT)
+                
+                if vm.isInteractingWithChatGPT {
+                    LoadingView().frame(width: 60, height: 30)
+                } else {
+                    Button {
                         
+                        Task {
+                            @MainActor in
+                            isTextFieldFocused = false
+                            userTouched = false
+                            scrollToBottom(proxy: proxy)
+                            await vm.sendTapped()
+                            
+
+                        }
                         
+                    } label: {
+                        Image(systemName: "arrow.up.circle.fill")
+                            .font(.system(size: 30))
                     }
-                    
-                    
-                    
-                } label: {
-                    Image(systemName: "paperplane.circle.fill")
-                        .rotationEffect(.degrees(45))
-                        .font(.system(size: 30))
+                    .disabled(vm.inputMessage
+                        .trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                    )
                 }
-                .disabled(vm.inputMessage
-                    .trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-                )
+                
             }
-            
-            
+            .padding()
+            .background(Color.black)
+            .cornerRadius(10)
         }
         .padding(.horizontal, 16)
         .padding(.top, 12)
@@ -113,7 +135,7 @@ struct ContentView: View {
             return
         }
         
-        proxy.scrollTo(id, anchor: .bottomTrailing)
+        proxy.scrollTo(id, anchor: .bottom)
     }
 }
 
