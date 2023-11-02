@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        /*
+        
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         appleIDProvider.getCredentialState(forUserID: KeychainItem.currentUserIdentifier) { (credentialState, error) in
             switch credentialState {
@@ -28,17 +28,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 break
             case .revoked, .notFound:
                 // The Apple ID credential is either revoked or was not found, so show the sign-in UI.
-                    
                 KeychainItem.deleteUserIdentifierFromKeychain()
                 DispatchQueue.main.async {
                     self.window?.rootViewController?.showLoginViewController()
                 }
+                    
             default:
                 break
             }
         }
-         */
-
         return true
     }
 

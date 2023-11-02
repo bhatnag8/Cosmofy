@@ -1,14 +1,16 @@
-//
-//  SwiftMessageRow.swift
+//  ========================================
+//  MessageRow.swift
 //  Cosmofy
-//
+//  4th Edition
 //  Created by Arryan Bhatnagar on 10/24/23.
-//
+//  Abstract: Each VStack of the chat.
+//  ========================================
+
 
 import Foundation
 import SwiftUI
 
-struct SwiftMessageRow: Identifiable {
+struct MessageRow: Identifiable {
     
     let id = UUID()
     var isInteractingWithChatGPT: Bool
@@ -18,7 +20,6 @@ struct SwiftMessageRow: Identifiable {
     
     let responseImage: String
     var responseText: String?
-    
     var responseError: String?
     
 }

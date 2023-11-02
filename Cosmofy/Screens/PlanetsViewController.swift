@@ -6,9 +6,14 @@
 //  ========================================
 
 import UIKit
+import SwiftUI
 
 class PlanetsViewController: UIViewController {
-
+    
+    
+    @IBOutlet var mainView: UIView!
+    
+    @IBOutlet weak var stack: UIStackView!
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var innerView1: UIView!
     @IBOutlet weak var bottomView1: UIView!
@@ -35,6 +40,13 @@ class PlanetsViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        let childView = UIHostingController(rootView: GradientView())
+        addChild(childView)
+        childView.view.frame = mainView.bounds
+        mainView.addSubview(childView.view)
+        mainView.bringSubviewToFront(stack)
+//        mainView.bringSubviewToFront(view2)
+        
         view1.layer.shadowColor = UIColor.black.cgColor
         view1.layer.shadowOpacity = 1
         view1.layer.shadowOffset = .zero
@@ -51,6 +63,15 @@ class PlanetsViewController: UIViewController {
         view2.layer.borderColor = UIColor.black.cgColor
         view2.layer.borderWidth = 0.25
 
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+            
+        // Update the frame of the SwiftUI view to match the container's bounds
+        if let childView = children.first {
+            childView.view.frame = mainView.bounds
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

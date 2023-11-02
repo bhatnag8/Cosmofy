@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tLQ-zy-Hs2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aTE-Kv-bqB">
     <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -166,7 +166,7 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What Is the Geometry of the Universe?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQk-aA-OFG">
                                                                         <rect key="frame" x="0.0" y="22.666666666666629" width="269.33333333333331" height="23"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                                        <color key="textColor" name="AccentColor"/>
+                                                                        <color key="textColor" name="SOUR"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
@@ -186,7 +186,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mic-eX-WBV" userLabel="articleButton">
                                         <rect key="frame" x="77.666666666666657" y="104.66666666666663" width="269.33333333333337" height="23"/>
-                                        <color key="tintColor" systemColor="linkColor"/>
+                                        <color key="tintColor" name="SOUR"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
                                         <connections>
@@ -658,6 +658,8 @@
                         <outlet property="button8" destination="IZh-Sh-Ddu" id="XEN-gT-Xbz"/>
                         <outlet property="innerView1" destination="qrw-dw-0wp" id="Zv2-v0-YNv"/>
                         <outlet property="innerView2" destination="WMi-8c-vIU" id="t04-KK-Rxb"/>
+                        <outlet property="mainView" destination="HSZ-QI-MiW" id="WVf-3s-zfn"/>
+                        <outlet property="stack" destination="dZh-6U-ySF" id="P8A-07-pUA"/>
                         <outlet property="view1" destination="kQ6-CA-0RI" id="noy-0G-gTm"/>
                         <outlet property="view2" destination="rxr-g8-LIB" id="LBY-dA-25s"/>
                     </connections>
@@ -1525,49 +1527,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWm-HX-oZn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4727" y="-1100"/>
-        </scene>
-        <!--Show Splash Screen-->
-        <scene sceneID="7j0-2p-8Gd">
-            <objects>
-                <viewController id="tLQ-zy-Hs2" customClass="ShowSplashScreen" customModule="Cosmofy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mLQ-Qx-bYh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cosmofy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URK-Oz-8nt">
-                                <rect key="frame" x="113.66666666666667" y="392.66666666666669" width="147.66666666666663" height="42.666666666666686"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <size key="shadowOffset" width="0.5" height="0.5"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-  0.3.0  -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYv-Sg-MqM">
-                                <rect key="frame" x="32" y="725" width="311" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <size key="shadowOffset" width="0.5" height="0.51000000000000001"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="uCo-cT-4uA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="URK-Oz-8nt" firstAttribute="centerY" secondItem="uCo-cT-4uA" secondAttribute="centerY" id="CBG-VB-fiY"/>
-                            <constraint firstItem="uCo-cT-4uA" firstAttribute="trailing" secondItem="iYv-Sg-MqM" secondAttribute="trailing" constant="32" id="hse-dr-poH"/>
-                            <constraint firstItem="iYv-Sg-MqM" firstAttribute="leading" secondItem="uCo-cT-4uA" secondAttribute="leading" constant="32" id="n8l-fX-NJj"/>
-                            <constraint firstItem="uCo-cT-4uA" firstAttribute="bottom" secondItem="iYv-Sg-MqM" secondAttribute="bottom" constant="32" id="s1M-lR-NJK"/>
-                            <constraint firstItem="URK-Oz-8nt" firstAttribute="centerX" secondItem="uCo-cT-4uA" secondAttribute="centerX" id="wP9-nr-joe"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Zg0-zF-Mc7"/>
-                    <connections>
-                        <segue destination="aTE-Kv-bqB" kind="show" identifier="showSplashScreen" id="64n-cY-xOn"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dho-JF-7lo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4511.1999999999998" y="-228.32512315270938"/>
         </scene>
         <!--Venus-->
         <scene sceneID="PkF-lM-o6a">
@@ -2781,7 +2740,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="tLQ-zy-Hs2" kind="relationship" relationship="rootViewController" id="ix2-n2-3kt"/>
+                        <segue destination="aTE-Kv-bqB" kind="relationship" relationship="rootViewController" id="cAA-DL-cDB"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCl-EL-ZBx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3363,6 +3322,9 @@
         <namedColor name="MercuryColor">
             <color red="0.125" green="0.125" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <namedColor name="SOUR">
+            <color red="0.98799997568130493" green="0.98000001907348633" blue="0.99099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="VenusColor">
             <color red="0.12099999934434891" green="0.10199999809265137" blue="0.070000000298023224" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -3392,9 +3354,6 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

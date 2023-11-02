@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Logo.layer.cornerRadius = 12
+        UserDefaults.standard.set("Hello", forKey: "s1")
+
         setupProviderLoginView()
     }
 
@@ -71,11 +73,17 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             
             // Create an account in your system.
             let userIdentifier = appleIDCredential.user
+                print("entering")
+                print(userIdentifier)
+                print(appleIDCredential.fullName?.givenName)
+                print(appleIDCredential.fullName?.familyName)
+                print(appleIDCredential.email)
             
             if let firstname = appleIDCredential.fullName?.givenName,
                let lastname = appleIDCredential.fullName?.familyName,
                let email = appleIDCredential.email
             {
+                print("if successful")
                 let record = CKRecord(recordType: "UserInfo", recordID: CKRecord.ID(recordName: userIdentifier))
                 
                 record["firstName"] = firstname as String
@@ -83,11 +91,13 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 record["emailAddress"] = email as String
                 
                 privateDatabase.save(record) { (_, _) in
+                    print("creating record")
                     UserDefaults.standard.set(record.recordID.recordName, forKey: "userProfileID")
                 }
             
                 
             } else {
+                print("fetching record")
                 privateDatabase.fetch(withRecordID: CKRecord.ID(recordName: userIdentifier)) {
                     (record, error) in
                     if record != nil {

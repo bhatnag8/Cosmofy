@@ -84,8 +84,15 @@ class HomeViewController: // multiple inheritance
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
+
+        switch hour {
+            case 3...11 : goodLabel.text = "Good Morning"
+            case 12...15 : goodLabel.text = "Good Afternoon"
+            case 16..<24 : goodLabel.text = "Good Evening"
+            default: goodLabel.text = "Good Evening"
+        }
+    
 
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -101,28 +108,22 @@ class HomeViewController: // multiple inheritance
         gradientSet.append([gradientThree, gradientFour])
         gradientSet.append([gradientFour, gradientOne])
         animateGradient()
-        
+
+    
     }
     
     // MARK: - viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        let TITLE = UserDefaults.standard.object(forKey: "s1") as! String
-//        nameButton.setTitle(TITLE, for: nameButton.state)
 
-        
-        nameButton.showsMenuAsPrimaryAction = true
-        nameButton.menu = addMenuItems()
-        
-        
-        switch hour {
-            case 3...11 : goodLabel.text = "Good Morning"
-            case 12...15 : goodLabel.text = "Good Afternoon"
-            case 16..<24 : goodLabel.text = "Good Evening"
-            default: goodLabel.text = "Good Evening"
-        }
+//        let TITLE = UserDefaults.standard.string(forKey: "s1")! as String
+//        print(TITLE)
+        self.nameButton.setTitle("hello", for: self.nameButton.state)
+        self.nameButton.showsMenuAsPrimaryAction = true
+        self.nameButton.menu = self.addMenuItems()
         
     }
+    
     
     // MARK: - viewDidLayoutSubviews
     override func viewDidLayoutSubviews() {
@@ -290,6 +291,8 @@ class HomeViewController: // multiple inheritance
     
     // MARK: - viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
+        
+
         startTimer(time: 10.0)
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
     }
@@ -309,3 +312,4 @@ extension HomeViewController: CAAnimationDelegate {
         }
     }
 }
+
