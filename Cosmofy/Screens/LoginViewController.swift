@@ -75,9 +75,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             let userIdentifier = appleIDCredential.user
                 print("entering")
                 print(userIdentifier)
-                print(appleIDCredential.fullName?.givenName)
-                print(appleIDCredential.fullName?.familyName)
-                print(appleIDCredential.email)
+
             
             if let firstname = appleIDCredential.fullName?.givenName,
                let lastname = appleIDCredential.fullName?.familyName,
@@ -92,6 +90,8 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 
                 privateDatabase.save(record) { (_, _) in
                     print("creating record")
+                    print(record.recordID)
+                    print(record.recordID.recordName)
                     UserDefaults.standard.set(record.recordID.recordName, forKey: "userProfileID")
                 }
             
@@ -102,8 +102,13 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                     (record, error) in
                     if record != nil {
                         UserDefaults.standard.set(userIdentifier, forKey: "userProfileID")
+                        UserDefaults.standard.set(record?.value(forKey: "firstName")! ?? "Hello" , forKey: "s1")
+                        print("hitting the record")
+                        print(record?.value(forKey: "firstName")! ?? "Hello")
                     }
                     else {
+                        let record2 = CKRecord(recordType: "UserInfo", recordID: CKRecord.ID(recordName: userIdentifier))
+                        print(userIdentifier)
                         print("this is happeing")
                     }
                 }

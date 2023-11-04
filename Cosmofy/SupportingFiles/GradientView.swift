@@ -11,7 +11,7 @@ struct GradientView: View {
     @State private var animateGradient: Bool = false
         
     private var startColor: Color = .appColorDarker
-    private var endColor: Color = .SOUR
+    private var endColor: Color = .GUTS
         
         
         var body: some View {

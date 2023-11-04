@@ -45,7 +45,6 @@ class PlanetsViewController: UIViewController {
         childView.view.frame = mainView.bounds
         mainView.addSubview(childView.view)
         mainView.bringSubviewToFront(stack)
-//        mainView.bringSubviewToFront(view2)
         
         view1.layer.shadowColor = UIColor.black.cgColor
         view1.layer.shadowOpacity = 1
