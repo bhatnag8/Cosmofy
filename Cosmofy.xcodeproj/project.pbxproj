@@ -14,12 +14,12 @@
 		0B294B5D2A8FB46400E755B3 /* MarsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B294B5C2A8FB46400E755B3 /* MarsCell.swift */; };
 		0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688262A84D1F300CD2B7E /* VenusViewController.swift */; };
 		0B6688292A84D81600CD2B7E /* VenusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688282A84D81600CD2B7E /* VenusCell.swift */; };
-		0B7671932AE47E22008E57B2 /* SwiftAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671922AE47E22008E57B2 /* SwiftAPI.swift */; };
-		0B7671972AE4C3FE008E57B2 /* SwiftAPIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671962AE4C3FE008E57B2 /* SwiftAPIModels.swift */; };
+		0B7671932AE47E22008E57B2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671922AE47E22008E57B2 /* API.swift */; };
+		0B7671972AE4C3FE008E57B2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671962AE4C3FE008E57B2 /* Models.swift */; };
 		0B7CDD932A875C29006307D1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7CDD922A875C29006307D1 /* TabBarController.swift */; };
 		0B7D0C482AAD65EC003FB763 /* CanadaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D0C472AAD65EC003FB763 /* CanadaViewController.swift */; };
-		0B7D18BF2AE8A482009C2317 /* SwiftMessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18BE2AE8A482009C2317 /* SwiftMessageRow.swift */; };
-		0B7D18C32AE8A526009C2317 /* SwiftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18C22AE8A526009C2317 /* SwiftViewModel.swift */; };
+		0B7D18BF2AE8A482009C2317 /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18BE2AE8A482009C2317 /* MessageRow.swift */; };
+		0B7D18C32AE8A526009C2317 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18C22AE8A526009C2317 /* ViewModel.swift */; };
 		0B7D18C62AE8A9DD009C2317 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18C52AE8A9DD009C2317 /* LoadingView.swift */; };
 		0B7D18C82AE8AB97009C2317 /* MessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18C72AE8AB97009C2317 /* MessageRowView.swift */; };
 		0B7D18CA2AE8B5AF009C2317 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18C92AE8B5AF009C2317 /* SwiftViewController.swift */; };
@@ -29,6 +29,7 @@
 		0BC1F2862A8520E900600232 /* EarthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1F2852A8520E900600232 /* EarthViewController.swift */; };
 		0BC1F2882A85216800600232 /* EarthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1F2872A85216800600232 /* EarthCell.swift */; };
 		0BC797B32A5DE66B005B9E45 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC797B22A5DE66B005B9E45 /* SettingsViewController.swift */; };
+		0BF8630C2AF1A58400379905 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF8630B2AF1A58400379905 /* GradientView.swift */; };
 		2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F073A122946BE4000F024B8 /* PlanetsViewController.swift */; };
 		2F0ACC23295DBCB800B3D0DB /* Mercury3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0ACC22295DBCB800B3D0DB /* Mercury3D.swift */; };
 		2F0B04D22945A522001FAAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B04D12945A522001FAAE6 /* HomeViewController.swift */; };
@@ -44,7 +45,6 @@
 		2FBBB6602945531500BBB072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB65E2945531500BBB072 /* Main.storyboard */; };
 		2FBBB6622945531700BBB072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
 		2FBBB6652945531700BBB072 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6632945531700BBB072 /* LaunchScreen.storyboard */; };
-		2FC4C0092A3635FA00DBA12D /* ShowSplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC4C0082A3635FA00DBA12D /* ShowSplashScreen.swift */; };
 		2FDBA47C2A54F0A200598EC6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDBA47B2A54F0A200598EC6 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,12 +56,12 @@
 		0B294B5C2A8FB46400E755B3 /* MarsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsCell.swift; sourceTree = "<group>"; };
 		0B6688262A84D1F300CD2B7E /* VenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusViewController.swift; sourceTree = "<group>"; };
 		0B6688282A84D81600CD2B7E /* VenusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusCell.swift; sourceTree = "<group>"; };
-		0B7671922AE47E22008E57B2 /* SwiftAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAPI.swift; sourceTree = "<group>"; };
-		0B7671962AE4C3FE008E57B2 /* SwiftAPIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAPIModels.swift; sourceTree = "<group>"; };
+		0B7671922AE47E22008E57B2 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		0B7671962AE4C3FE008E57B2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		0B7CDD922A875C29006307D1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0B7D0C472AAD65EC003FB763 /* CanadaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaViewController.swift; sourceTree = "<group>"; };
-		0B7D18BE2AE8A482009C2317 /* SwiftMessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMessageRow.swift; sourceTree = "<group>"; };
-		0B7D18C22AE8A526009C2317 /* SwiftViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftViewModel.swift; sourceTree = "<group>"; };
+		0B7D18BE2AE8A482009C2317 /* MessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
+		0B7D18C22AE8A526009C2317 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		0B7D18C52AE8A9DD009C2317 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		0B7D18C72AE8AB97009C2317 /* MessageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRowView.swift; sourceTree = "<group>"; };
 		0B7D18C92AE8B5AF009C2317 /* SwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +71,7 @@
 		0BC1F2852A8520E900600232 /* EarthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthViewController.swift; sourceTree = "<group>"; };
 		0BC1F2872A85216800600232 /* EarthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthCell.swift; sourceTree = "<group>"; };
 		0BC797B22A5DE66B005B9E45 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0BF8630B2AF1A58400379905 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		2F073A122946BE4000F024B8 /* PlanetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewController.swift; sourceTree = "<group>"; };
 		2F0ACC22295DBCB800B3D0DB /* Mercury3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mercury3D.swift; sourceTree = "<group>"; };
 		2F0B04D12945A522001FAAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +90,6 @@
 		2FBBB6612945531700BBB072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FBBB6642945531700BBB072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FBBB6662945531700BBB072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2FC4C0082A3635FA00DBA12D /* ShowSplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSplashScreen.swift; sourceTree = "<group>"; };
 		2FDBA47B2A54F0A200598EC6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,11 +107,11 @@
 		0B7D18C42AE8A5E7009C2317 /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				0B7671922AE47E22008E57B2 /* SwiftAPI.swift */,
+				0B7671922AE47E22008E57B2 /* API.swift */,
 				0B7D18CB2AE8B655009C2317 /* ContentView.swift */,
-				0B7671962AE4C3FE008E57B2 /* SwiftAPIModels.swift */,
-				0B7D18BE2AE8A482009C2317 /* SwiftMessageRow.swift */,
-				0B7D18C22AE8A526009C2317 /* SwiftViewModel.swift */,
+				0B7671962AE4C3FE008E57B2 /* Models.swift */,
+				0B7D18BE2AE8A482009C2317 /* MessageRow.swift */,
+				0B7D18C22AE8A526009C2317 /* ViewModel.swift */,
 				0B7D18C52AE8A9DD009C2317 /* LoadingView.swift */,
 				0B7D18C72AE8AB97009C2317 /* MessageRowView.swift */,
 			);
@@ -122,10 +122,10 @@
 			isa = PBXGroup;
 			children = (
 				2F542ED0297CF0110067C26B /* Pulse.swift */,
-				2FC4C0082A3635FA00DBA12D /* ShowSplashScreen.swift */,
 				2F7494EE2A5B35C4004C63B7 /* KeychainItem.swift */,
 				0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */,
 				0B7CDD922A875C29006307D1 /* TabBarController.swift */,
+				0BF8630B2AF1A58400379905 /* GradientView.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -312,7 +312,7 @@
 				0B7D18CC2AE8B655009C2317 /* ContentView.swift in Sources */,
 				2F587A2B294D49490028225E /* MercuryViewController.swift in Sources */,
 				0BC1F2862A8520E900600232 /* EarthViewController.swift in Sources */,
-				0B7D18C32AE8A526009C2317 /* SwiftViewModel.swift in Sources */,
+				0B7D18C32AE8A526009C2317 /* ViewModel.swift in Sources */,
 				0B7D0C482AAD65EC003FB763 /* CanadaViewController.swift in Sources */,
 				0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */,
 				0B6688292A84D81600CD2B7E /* VenusCell.swift in Sources */,
@@ -322,19 +322,19 @@
 				0B7D18CA2AE8B5AF009C2317 /* SwiftViewController.swift in Sources */,
 				0B294B5D2A8FB46400E755B3 /* MarsCell.swift in Sources */,
 				0BC797B32A5DE66B005B9E45 /* SettingsViewController.swift in Sources */,
-				2FC4C0092A3635FA00DBA12D /* ShowSplashScreen.swift in Sources */,
 				2FBBB6592945531500BBB072 /* AppDelegate.swift in Sources */,
 				2F0ACC23295DBCB800B3D0DB /* Mercury3D.swift in Sources */,
 				0B294B5B2A8FB34400E755B3 /* MarsViewController.swift in Sources */,
 				0B1B223F2A850C3E0098329B /* VenusNode.swift in Sources */,
 				0BC1F2882A85216800600232 /* EarthCell.swift in Sources */,
 				2F52B488297F209F00A92FF7 /* MercuryCell.swift in Sources */,
-				0B7671932AE47E22008E57B2 /* SwiftAPI.swift in Sources */,
+				0B7671932AE47E22008E57B2 /* API.swift in Sources */,
+				0BF8630C2AF1A58400379905 /* GradientView.swift in Sources */,
 				0B7D18C82AE8AB97009C2317 /* MessageRowView.swift in Sources */,
 				0BC1F2842A85151300600232 /* Venus3D.swift in Sources */,
-				0B7D18BF2AE8A482009C2317 /* SwiftMessageRow.swift in Sources */,
+				0B7D18BF2AE8A482009C2317 /* MessageRow.swift in Sources */,
 				0BBF4B9D2A6049F100A9DC4D /* Haptics.swift in Sources */,
-				0B7671972AE4C3FE008E57B2 /* SwiftAPIModels.swift in Sources */,
+				0B7671972AE4C3FE008E57B2 /* Models.swift in Sources */,
 				0B7D18C62AE8A9DD009C2317 /* LoadingView.swift in Sources */,
 				0B7CDD932A875C29006307D1 /* TabBarController.swift in Sources */,
 				2F4F8FC5295EC08100F7EE98 /* MercuryNode.swift in Sources */,
@@ -490,7 +490,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Cosmofy/Cosmofy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmofy/Info.plist;
@@ -507,7 +507,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -527,7 +527,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Cosmofy/Cosmofy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmofy/Info.plist;
@@ -544,7 +544,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

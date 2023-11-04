@@ -111,7 +111,7 @@ class EarthViewController: UIViewController,
         
         pageControl.currentPage = currentCellIndex
         if (currentCellIndex == 2) {
-            imageCaption.text = "The Crater Farm"
+            imageCaption.text = ""
         } else {
             imageCaption.text = ""
         }
@@ -219,14 +219,14 @@ class EarthViewController: UIViewController,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel1.text = "Every Time You"
+                self?.coreLabel1.text = "The number of"
                      }, completion: nil)
             
             UIView.transition(with: coreLabel2,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel2.text = "Open this Earth Page"
+                self?.coreLabel2.text = "clicks on this page"
                      }, completion: nil)
             currentLabel = currentLabel + 1
         } else if (currentLabel == 1) {
@@ -236,7 +236,7 @@ class EarthViewController: UIViewController,
                           duration: 0.25,
                               options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel1.text = "$0.25 is Donated"
+                self?.coreLabel1.text = "$0.15 is Donated"
                      }, completion: nil)
             
             UIView.transition(with: coreLabel2,

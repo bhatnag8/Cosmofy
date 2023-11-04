@@ -1,9 +1,10 @@
-//
+//  ========================================
 //  LoadingView.swift
 //  Cosmofy
-//
+//  4th Edition
 //  Created by Arryan Bhatnagar on 10/24/23.
-//
+//  Abstract: Simple animation occuring when the API request is being handled.
+//  ========================================
 
 import SwiftUI
 

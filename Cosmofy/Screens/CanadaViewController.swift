@@ -21,7 +21,7 @@ class CanadaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        greetingLabel.animate(newText: greetingLabel.text ?? "Greetings from Canada! 🇨🇦🍁🏒🏔️🐻", characterDelay: 0.05)
+        greetingLabel.animate(newText: greetingLabel.text ?? "Greetings from Swift! 🇨🇦🍁🏒🏔️🐻", characterDelay: 0.05)
         
         let seconds = 1.5
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {

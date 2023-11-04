@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Logo.layer.cornerRadius = 12
+        UserDefaults.standard.set("Hello", forKey: "s1")
+
         setupProviderLoginView()
     }
 
@@ -71,11 +73,15 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             
             // Create an account in your system.
             let userIdentifier = appleIDCredential.user
+                print("entering")
+                print(userIdentifier)
+
             
             if let firstname = appleIDCredential.fullName?.givenName,
                let lastname = appleIDCredential.fullName?.familyName,
                let email = appleIDCredential.email
             {
+                print("if successful")
                 let record = CKRecord(recordType: "UserInfo", recordID: CKRecord.ID(recordName: userIdentifier))
                 
                 record["firstName"] = firstname as String
@@ -83,17 +89,26 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 record["emailAddress"] = email as String
                 
                 privateDatabase.save(record) { (_, _) in
+                    print("creating record")
+                    print(record.recordID)
+                    print(record.recordID.recordName)
                     UserDefaults.standard.set(record.recordID.recordName, forKey: "userProfileID")
                 }
             
                 
             } else {
+                print("fetching record")
                 privateDatabase.fetch(withRecordID: CKRecord.ID(recordName: userIdentifier)) {
                     (record, error) in
                     if record != nil {
                         UserDefaults.standard.set(userIdentifier, forKey: "userProfileID")
+                        UserDefaults.standard.set(record?.value(forKey: "firstName")! ?? "Hello" , forKey: "s1")
+                        print("hitting the record")
+                        print(record?.value(forKey: "firstName")! ?? "Hello")
                     }
                     else {
+                        let record2 = CKRecord(recordType: "UserInfo", recordID: CKRecord.ID(recordName: userIdentifier))
+                        print(userIdentifier)
                         print("this is happeing")
                     }
                 }

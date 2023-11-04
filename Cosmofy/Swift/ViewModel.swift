@@ -1,22 +1,23 @@
-//
-//  SwiftViewModel.swift
+//  ========================================
+//  ViewModel.swift
 //  Cosmofy
-//
+//  4th Edition
 //  Created by Arryan Bhatnagar on 10/24/23.
-//
+//  Abstract: How the UI initializes the API.
+//  ========================================
 
 import Foundation
 import SwiftUI
 
-class SwiftViewModel: ObservableObject {
+class ViewModel: ObservableObject {
     
     @Published var isInteractingWithChatGPT = false
-    @Published var messages: [SwiftMessageRow] = []
+    @Published var messages: [MessageRow] = []
     @Published var inputMessage: String = ""
     
-    private let api: SwiftAPI
+    private let api: API
     
-    init(api: SwiftAPI) {
+    init(api: API) {
         self.api = api
     }
     
@@ -28,7 +29,7 @@ class SwiftViewModel: ObservableObject {
     }
     
     @MainActor
-    func retry(message: SwiftMessageRow) async {
+    func retry(message: MessageRow) async {
         guard let index = messages.firstIndex(where: {$0.id == message.id}) else {
             return
         }
@@ -41,7 +42,7 @@ class SwiftViewModel: ObservableObject {
     func send(text: String) async {
         isInteractingWithChatGPT = true
         var streamText = ""
-        var messageRow = SwiftMessageRow(
+        var messageRow = MessageRow(
             isInteractingWithChatGPT: true, sendImage: "user", sendText: text, responseImage: "swift", responseText: streamText, responseError: nil
         )
         
@@ -53,7 +54,6 @@ class SwiftViewModel: ObservableObject {
                 streamText += text
                 messageRow.responseText = streamText.trimmingCharacters(in: .whitespacesAndNewlines)
                 self.messages[self.messages.count - 1] = messageRow
-                
             }
         } catch {
             messageRow.responseError = error.localizedDescription
@@ -62,9 +62,5 @@ class SwiftViewModel: ObservableObject {
         messageRow.isInteractingWithChatGPT = false
         self.messages[self.messages.count - 1] = messageRow
         isInteractingWithChatGPT = false;
-
-        
     }
-    
-    
 }

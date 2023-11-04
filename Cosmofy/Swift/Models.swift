@@ -1,9 +1,10 @@
-//
-//  SwiftAPIModels.swift
+//  ========================================
+//  Models.swift
 //  Cosmofy
-//
+//  4th Edition
 //  Created by Arryan Bhatnagar on 10/21/23.
-//
+//  Abstract: Models of the API request.
+//  ========================================
 
 import Foundation
 

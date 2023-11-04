@@ -7,6 +7,7 @@
 //  ========================================
 
 import UIKit
+import SwiftUI
 import CloudKit
 import AuthenticationServices
 
@@ -43,18 +44,19 @@ class HomeViewController: // multiple inheritance
     
     let gradientOne = UIColor.systemTeal.cgColor
     let gradientTwo = UIColor.systemPurple.cgColor
-    let gradientThree = UIColor.systemRed.cgColor
-    let gradientFour = UIColor.systemIndigo.cgColor
+    let gradientThree = UIColor.systemIndigo.cgColor
     let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
     
     
     @IBAction func linkButton(_ sender: UIButton) {
         Haptics.shared.impact(for: .medium)
-        UIApplication.shared.open(URL(string: "https://www.quantamagazine.org/what-is-the-geometry-of-the-universe-20200316?ref=refind")! as URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL(string: "https://www.quantamagazine.org/what-is-the-geometry-of-the-universe-20200316/")! as URL, options: [:], completionHandler: nil)
     }
     
     @IBAction func dynamicButton(_ sender: Any) {
         Haptics.shared.impact(for: .medium)
+        
+        
         
         if (currentCellIndex == 0) {
             UIApplication.shared.open(URL(string: "https://esahubble.org/images/heic0206c/")! as URL, options: [:], completionHandler: nil)
@@ -73,20 +75,36 @@ class HomeViewController: // multiple inheritance
 
     }
     
-    var arrProductPhotos = [UIImage(named: "20221211_HomeBanner8")!, // Red One
-                            UIImage(named: "20230618_HomeBanner2")!, // Blue One
-                            UIImage(named: "20221211_HomeBanner6")!, // 1
-                            UIImage(named: "20221211_HomeBanner5")!, // 2
-                            UIImage(named: "20221211_HomeBanner4")!, // 3
-                            UIImage(named: "20221211_HomeBanner7")!] // 4
+    var arrProductPhotos = [UIImage(named: "20230618_HomeBanner2")!, // Red One
+                            UIImage(named: "20221211_HomeBanner8")!, // Blue One
+                            UIImage(named: "20221211_HomeBanner6")!] // 1
+
     var timer : Timer?
+    
+    
+    // MARK: - viewWillAppear
+    override func viewWillAppear(_ animated: Bool) {
+        let x2 = (UserDefaults.standard.string(forKey: "s1") ?? "Hello") as String
+        self.nameButton.setTitle(x2, for: self.nameButton.state)
+        self.nameButton.showsMenuAsPrimaryAction = true
+        self.nameButton.menu = self.addMenuItems()
+
+    }
+    
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var stack: UIView!
     
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
 
+        switch hour {
+            case 3...11 : goodLabel.text = "Good Morning"
+            case 12...15 : goodLabel.text = "Good Afternoon"
+            case 16..<24 : goodLabel.text = "Good Evening"
+            default: goodLabel.text = ""
+        }
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         pageControl.numberOfPages = arrProductPhotos.count
@@ -95,39 +113,36 @@ class HomeViewController: // multiple inheritance
         topView.layer.shadowOpacity = 1
         topView.layer.shadowOffset = .zero
         topView.layer.shadowRadius = 1
-        
+              
         gradientSet.append([gradientOne, gradientTwo])
         gradientSet.append([gradientTwo, gradientThree])
-        gradientSet.append([gradientThree, gradientFour])
-        gradientSet.append([gradientFour, gradientOne])
+        gradientSet.append([gradientThree, gradientOne])
         animateGradient()
-        
+       
     }
     
     // MARK: - viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        let TITLE = UserDefaults.standard.object(forKey: "s1") as! String
-//        nameButton.setTitle(TITLE, for: nameButton.state)
-
+        timer?.invalidate()
+        startTimer(time: 10)
         
-        nameButton.showsMenuAsPrimaryAction = true
-        nameButton.menu = addMenuItems()
-        
-        
-        switch hour {
-            case 3...11 : goodLabel.text = "Good Morning"
-            case 12...15 : goodLabel.text = "Good Afternoon"
-            case 16..<24 : goodLabel.text = "Good Evening"
-            default: goodLabel.text = "Good Evening"
-        }
-        
+        gradient.removeAnimation(forKey: "colorChange")
+        gradient.removeAllAnimations()
+        gradient.add(gradientChangeAnimation, forKey: "colorChange")
     }
+    
     
     // MARK: - viewDidLayoutSubviews
     override func viewDidLayoutSubviews() {
         
+        let childView = UIHostingController(rootView: GradientView())
+        addChild(childView)
+        childView.view.frame = mainView.bounds
         
+        mainView.addSubview(childView.view)
+        mainView.bringSubviewToFront(stack)
+    
         nameButton.layer.cornerRadius = nameButton.bounds.height / 2
 
         topView.layer.cornerRadius = 28+2
@@ -175,17 +190,17 @@ class HomeViewController: // multiple inheritance
         switch (currentGradient) {
             case 0: currentGradient = 1
             case 1: currentGradient = 2
-            case 2: currentGradient = 3
-            case 3: currentGradient = 0
+            case 2: currentGradient = 0
             default: currentGradient = 0
         }
- 
+                
         gradientChangeAnimation.delegate = self
         gradientChangeAnimation.duration = 6.0
         gradientChangeAnimation.toValue = gradientSet[currentGradient]
         gradientChangeAnimation.fillMode = CAMediaTimingFillMode.forwards
         gradientChangeAnimation.isRemovedOnCompletion = false
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
+        
     }
     
     func startTimer(time: Double) {
@@ -193,6 +208,14 @@ class HomeViewController: // multiple inheritance
     }
     
     @objc func moveToNextIndex() {
+        
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//        let currentTime = Date()
+//        let formattedTime = dateFormatter.string(from: currentTime)
+//        print("Move time: \(formattedTime)")
+        
+        
         if (currentCellIndex < arrProductPhotos.count - 1) {
             currentCellIndex += 1
         } else {
@@ -215,9 +238,8 @@ class HomeViewController: // multiple inheritance
         }
         
         switch (currentCellIndex) {
-                
-            case 0: label3.text = "Ghostly Star-Forming Pillar of Gas and Dust"
-            case 1: label3.text = "The Bubble Nebula"
+            case 0: label3.text = "The Bubble Nebula"
+            case 1: label3.text = "Ghostly Star-Forming Pillar of Gas and Dust"
             case 2: label3.text = "Hubble’s Sharpest View of the Orion Nebula"
             case 3: label3.text = "Antennae Galaxies Reloaded"
             case 4: label3.text = "A Rose Made of Galaxies"
@@ -262,9 +284,8 @@ class HomeViewController: // multiple inheritance
         }
         
         switch (currentCellIndex) {
-                
-            case 0: label3.text = "Ghostly Star-Forming Pillar of Gas and Dust"
-            case 1: label3.text = "The Bubble Nebula"
+            case 0: label3.text = "The Bubble Nebula"
+            case 1: label3.text = "Ghostly Star-Forming Pillar of Gas and Dust"
             case 2: label3.text = "Hubble’s Sharpest View of the Orion Nebula"
             case 3: label3.text = "Antennae Galaxies Reloaded"
             case 4: label3.text = "A Rose Made of Galaxies"
@@ -279,6 +300,7 @@ class HomeViewController: // multiple inheritance
     
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         Haptics.shared.impact(for: .soft)
+        timer?.invalidate()
     }
     
     // MARK: - viewDidDisappear
@@ -286,12 +308,6 @@ class HomeViewController: // multiple inheritance
         timer?.invalidate()
         gradient.removeAnimation(forKey: "colorChange")
         
-    }
-    
-    // MARK: - viewWillAppear
-    override func viewWillAppear(_ animated: Bool) {
-        startTimer(time: 10.0)
-        gradient.add(gradientChangeAnimation, forKey: "colorChange")
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -309,3 +325,4 @@ extension HomeViewController: CAAnimationDelegate {
         }
     }
 }
+

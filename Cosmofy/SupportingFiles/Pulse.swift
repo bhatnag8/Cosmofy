@@ -56,7 +56,7 @@ class Pulse: CALayer {
   
         func createScaleAnimation () -> CABasicAnimation {
             let sa = CABasicAnimation(keyPath: "transform.scale.xy")
-            sa.fromValue = NSNumber(value: scale)
+            sa.fromValue = NSNumber(value: 0.5)
             sa.toValue = NSNumber(value: 1)
             sa.duration = animationDuration
             return sa
@@ -65,8 +65,8 @@ class Pulse: CALayer {
         func createOpacityAnimation() -> CAKeyframeAnimation {
             let oa = CAKeyframeAnimation(keyPath: "opacity")
             oa.duration = animationDuration
-            oa.values = [0.15, 0.95, 0.2]
-            oa.keyTimes = [0, 0.3, 0.9]
+            oa.values = [0.6, 0.3, 0.0] // Adjusted values for a water drop effect
+            oa.keyTimes = [0, 0.7, 1.0] // Adjusted keyTimes
             return oa
         }
 }

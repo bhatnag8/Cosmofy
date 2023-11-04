@@ -1,16 +1,17 @@
-//
+//  ========================================
 //  MessageRowView.swift
 //  Cosmofy
-//
+//  4th Edition
 //  Created by Arryan Bhatnagar on 10/24/23.
-//
+//  Abstract: UI for each row of the Chat VStack.
+//  ========================================
 
 import SwiftUI
 
 struct MessageRowView: View {
     @Environment(\.colorScheme) private var colorScheme
-    let message: SwiftMessageRow
-    let retryCallback: (SwiftMessageRow) -> Void
+    let message: MessageRow
+    let retryCallback: (MessageRow) -> Void
     var body: some View {
         VStack(spacing: 0) {
             messageRow(text: message.sendText, image: message.sendImage, color: colorScheme == .light ? .white : Color(red: 20/255, green: 20/255, blue: 25/255, opacity: 1))

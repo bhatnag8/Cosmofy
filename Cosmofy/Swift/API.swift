@@ -1,13 +1,14 @@
-//
-//  SwiftAPI.swift
+//  ========================================
+//  API.swift
 //  Cosmofy
-//
+//  4th Edition
 //  Created by Arryan Bhatnagar on 10/21/23.
-//
+//  Abstract: Configures the request to OpenAI API.
+//  ========================================
 
 import Foundation
 
-class SwiftAPI: @unchecked Sendable {
+class API: @unchecked Sendable {
         
     private let systemMessage: Message
     private let temperature: Double
