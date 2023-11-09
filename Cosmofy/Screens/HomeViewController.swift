@@ -24,6 +24,7 @@ class HomeViewController: // multiple inheritance
 
     @IBOutlet weak var goodLabel: UILabel!
     
+    @IBOutlet weak var linkButton: UIButton!
     @IBOutlet weak var nameButton: UIButton!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
@@ -49,6 +50,7 @@ class HomeViewController: // multiple inheritance
     
     
     @IBAction func linkButton(_ sender: UIButton) {
+        print("tapped")
         Haptics.shared.impact(for: .medium)
         UIApplication.shared.open(URL(string: "https://www.quantamagazine.org/what-is-the-geometry-of-the-universe-20200316/")! as URL, options: [:], completionHandler: nil)
     }
@@ -142,6 +144,7 @@ class HomeViewController: // multiple inheritance
         
         mainView.addSubview(childView.view)
         mainView.bringSubviewToFront(stack)
+        mainView.bringSubviewToFront(linkButton)
     
         nameButton.layer.cornerRadius = nameButton.bounds.height / 2
 

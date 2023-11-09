@@ -16,7 +16,7 @@ class PlanetNode : SCNNode {
     init(radius: Double, planet: String, rotation : Double) {
         super.init()
         
-        let sphere = SCNSphere(radius: radius)
+        var shape = SCNSphere(radius: radius)
         
         global = rotation
         var image = UIImage()
@@ -31,17 +31,44 @@ class PlanetNode : SCNNode {
                 self.geometry?.firstMaterial?.normal.contents = UIImage(named:"20221230_EarthMap_2")
                 break
             case "mars": image = UIImage(named: "MarsMap")!; break
-            case "jupiter": image = UIImage(named: "")!; break
+            case "jupiter": 
+                // Define the dimensions of the ellipsoid
+                let semiMajorAxis = 1.0 // Scale factor along the x-axis
+                let semiMinorAxis = 0.935 // Scale factor along the y-axis
+                let height = 1.0 // Scale factor along the z-axis
+                            
+                // Create an empty node to hold the ellipsoid
+                let jupiterNode = SCNNode()
+                
+                // Create a sphere with a uniform radius
+                let sphereGeometry = SCNSphere(radius: 1.0)
+                let sphereNode = SCNNode(geometry: sphereGeometry)
+                
+                // Apply scaling to the sphere node to deform it into an ellipsoid
+                sphereNode.scale = SCNVector3(x: Float(semiMajorAxis), y: Float(semiMinorAxis), z: Float(height))
+                
+                // Apply textures or materials as needed
+                let jupiterMaterial = SCNMaterial()
+                jupiterMaterial.diffuse.contents = UIImage(named: "JupiterMap")
+                sphereGeometry.materials = [jupiterMaterial]
+                
+                // Add the ellipsoidal sphere to the jupiterNode
+                jupiterNode.addChildNode(sphereNode)
+                
+                // Add the jupiterNode to the PlanetNode
+                self.addChildNode(jupiterNode)
+                return
+                
             case "saturn": SaturnInterrupt(); break;
             case "uranus": image = UIImage(named: "")!; break
             case "neptune": image = UIImage(named: "")!; break
             default: break
         }
-        sphere.firstMaterial?.diffuse.contents = image
-        sphere.firstMaterial?.diffuse.mipFilter = SCNFilterMode.linear
-        sphere.segmentCount = 72
+        shape.firstMaterial?.diffuse.contents = image
+        shape.firstMaterial?.diffuse.mipFilter = SCNFilterMode.linear
+        shape.segmentCount = 72
         
-        self.geometry = sphere
+        self.geometry = shape
         
         startRotation()
     }

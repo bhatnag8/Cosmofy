@@ -1,13 +1,13 @@
 //  ========================================
-//  MarsViewController.swift
+//  JupiterViewController.swift
 //  Cosmofy
 //  4th Edition
-//  Created by Arryan Bhatnagar on 8/18/23.
+//  Created by Arryan Bhatnagar on 11/8/23.
 //  ========================================
 
 import UIKit
 
-class MarsViewController: UIViewController,
+class JupiterViewController: UIViewController,
                              UICollectionViewDelegate,
                              UICollectionViewDataSource,
                              UICollectionViewDelegateFlowLayout {
@@ -33,9 +33,9 @@ class MarsViewController: UIViewController,
     
     var arrayPhotos =
     [
-        UIImage(named: "20230818_Mars_1")!,
-        UIImage(named: "20230818_Mars_2")!,
-        UIImage(named: "20230818_Mars_3")!
+        UIImage(named: "20231108_Jupiter_4")!,
+        UIImage(named: "20231108_Jupiter_2")!,
+        UIImage(named: "20231108_Jupiter_1")!
     ]
      
     var timer1 : Timer? // text
@@ -122,7 +122,7 @@ class MarsViewController: UIViewController,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "marsCell", for: indexPath) as! MarsCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "jupiterCell", for: indexPath) as! JupiterCell
         cell.image.image = arrayPhotos[indexPath.row]
         return cell
     }
@@ -144,9 +144,9 @@ class MarsViewController: UIViewController,
         let pulse2 = Pulse(num: 1, rad: 32, pos: newTap2, duration: 1)
         let pulse5 = Pulse(num: 1, rad: 32, pos: newTap5, duration: 1)
         
-        pulse1.backgroundColor = UIColor(named: "colorMars")?.cgColor
-        pulse2.backgroundColor = UIColor(named: "colorMars")?.cgColor
-        pulse5.backgroundColor = UIColor(named: "colorMars")?.cgColor
+        pulse1.backgroundColor = UIColor(named: "colorJupiter")?.cgColor
+        pulse2.backgroundColor = UIColor(named: "colorJupiter")?.cgColor
+        pulse5.backgroundColor = UIColor(named: "colorJupiter")?.cgColor
         
         self.view.layer.insertSublayer(pulse1, below: button1.layer)
         self.view.layer.insertSublayer(pulse2, below: button2.layer)
@@ -219,14 +219,14 @@ class MarsViewController: UIViewController,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel1.text = "Mars is 1.9x"
+                self?.coreLabel1.text = "The Red Spot is"
                      }, completion: nil)
             
             UIView.transition(with: coreLabel2,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel2.text = "Smaller than Earth"
+                self?.coreLabel2.text = "the same size as Earth"
                      }, completion: nil)
             currentLabel = currentLabel + 1
         } else if (currentLabel == 1) {
@@ -236,14 +236,14 @@ class MarsViewController: UIViewController,
                           duration: 0.25,
                               options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel1.text = "Mars' Core is"
+                self?.coreLabel1.text = "Jupiter's Day"
                      }, completion: nil)
             
             UIView.transition(with: coreLabel2,
                           duration: 0.25,
                               options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel2.text = "53% of its Radius"
+                self?.coreLabel2.text = "lasts 10 Earth Hours"
                      }, completion: nil)
             currentLabel = currentLabel + 1
         } else if (currentLabel == 2) {
@@ -253,14 +253,14 @@ class MarsViewController: UIViewController,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel1.text = "Mars Rover images"
+                self?.coreLabel1.text = "Jupiter's Year"
                      }, completion: nil)
             
             UIView.transition(with: coreLabel2,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel2.text = "will be added soon"
+                self?.coreLabel2.text = "lasts 12 Earth Years"
                      }, completion: nil)
             
         }
