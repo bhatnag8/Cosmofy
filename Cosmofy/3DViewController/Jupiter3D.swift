@@ -16,7 +16,7 @@ class Jupiter3D: UIViewController {
     let camera = SCNCamera()
     let starsParticleSystem = SCNParticleSystem(named: "StarsParticleSystem.scnp", inDirectory: nil)!
     
-    var planetNode = PlanetNode(radius: 1.1, planet: "jupiter", rotation: 6)
+    var planetNode = PlanetNode(radius: 1, planet: "jupiter", rotation: 6)
     var pause = false
     
     @IBOutlet weak var playButton: UIButton!

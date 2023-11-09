@@ -50,7 +50,6 @@ class HomeViewController: // multiple inheritance
     
     
     @IBAction func linkButton(_ sender: UIButton) {
-        print("tapped")
         Haptics.shared.impact(for: .medium)
         UIApplication.shared.open(URL(string: "https://www.quantamagazine.org/what-is-the-geometry-of-the-universe-20200316/")! as URL, options: [:], completionHandler: nil)
     }

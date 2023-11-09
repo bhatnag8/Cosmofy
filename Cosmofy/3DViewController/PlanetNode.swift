@@ -42,6 +42,7 @@ class PlanetNode : SCNNode {
                 
                 // Create a sphere with a uniform radius
                 let sphereGeometry = SCNSphere(radius: 1.0)
+                sphereGeometry.segmentCount = 72
                 let sphereNode = SCNNode(geometry: sphereGeometry)
                 
                 // Apply scaling to the sphere node to deform it into an ellipsoid
@@ -50,6 +51,8 @@ class PlanetNode : SCNNode {
                 // Apply textures or materials as needed
                 let jupiterMaterial = SCNMaterial()
                 jupiterMaterial.diffuse.contents = UIImage(named: "JupiterMap")
+                jupiterMaterial.diffuse.mipFilter = SCNFilterMode.linear
+
                 sphereGeometry.materials = [jupiterMaterial]
                 
                 // Add the ellipsoidal sphere to the jupiterNode
@@ -57,6 +60,7 @@ class PlanetNode : SCNNode {
                 
                 // Add the jupiterNode to the PlanetNode
                 self.addChildNode(jupiterNode)
+                startRotation()
                 return
                 
             case "saturn": SaturnInterrupt(); break;

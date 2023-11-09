@@ -35,7 +35,7 @@ class JupiterViewController: UIViewController,
     [
         UIImage(named: "20231108_Jupiter_4")!,
         UIImage(named: "20231108_Jupiter_2")!,
-        UIImage(named: "20231108_Jupiter_1")!
+        UIImage(named: "20231108_Jupiter_5")!
     ]
      
     var timer1 : Timer? // text
