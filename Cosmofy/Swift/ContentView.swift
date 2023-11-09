@@ -56,7 +56,8 @@ struct ContentView: View {
                 }
             }
         }
-        .background(colorScheme == .light ? .white : Color(red: 26/255, green: 23/255, blue: 27/255, opacity: 1))
+        .background(colorScheme == .light ? .white : Color(.appColorDarker2))
+        
     }
     
     func bottomView(image: String, proxy: ScrollViewProxy) -> some View {
@@ -96,6 +97,7 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "arrow.up.circle.fill")
                             .font(.system(size: 30))
+                            .tint(.SOUR)
                     }
                     .disabled(vm.inputMessage
                         .trimmingCharacters(in: .whitespacesAndNewlines).isEmpty

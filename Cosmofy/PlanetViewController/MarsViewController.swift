@@ -253,14 +253,14 @@ class MarsViewController: UIViewController,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel1.text = "Possible Solid Inner Core"
+                self?.coreLabel1.text = "Mars Rover images"
                      }, completion: nil)
             
             UIView.transition(with: coreLabel2,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel2.text = "Liquid Outer Core"
+                self?.coreLabel2.text = "will be added soon"
                      }, completion: nil)
             
         }

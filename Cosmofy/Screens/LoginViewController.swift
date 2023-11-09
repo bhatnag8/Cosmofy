@@ -107,7 +107,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                         print(record?.value(forKey: "firstName")! ?? "Hello")
                     }
                     else {
-                        let record2 = CKRecord(recordType: "UserInfo", recordID: CKRecord.ID(recordName: userIdentifier))
+                        let _ = CKRecord(recordType: "UserInfo", recordID: CKRecord.ID(recordName: userIdentifier))
                         print(userIdentifier)
                         print("this is happeing")
                     }
