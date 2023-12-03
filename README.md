@@ -1,6 +1,6 @@
 # Cosmofy
-### Expected Code Completion : November 1, 2023 - November 15, 2023
-### Target Release Date : November 28, 2023
+### Expected Code Completion : December 15, 2023 - December 31, 2023
+### Target Release Date : January 1, 2024
 
 Working on : Saturn 3D and Controller Page  <br />
 Current Version : 0.3.3(1) [Coming November 10th, 2023]  <br />
