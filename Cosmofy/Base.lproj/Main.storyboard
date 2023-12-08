@@ -262,17 +262,65 @@
             </objects>
             <point key="canvasLocation" x="6340" y="-808.37438423645324"/>
         </scene>
-        <!--Solar System-->
+        <!--News-->
         <scene sceneID="SNn-b2-nLL">
             <objects>
-                <viewController id="gQn-wP-iVq" sceneMemberID="viewController">
+                <viewController id="gQn-wP-iVq" customClass="NewsViewController" customModule="Cosmofy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sdW-HC-HkP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHn-dH-Iig">
+                                <rect key="frame" x="16" y="162" width="343" height="343"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news-controller" translatesAutoresizingMaskIntoConstraints="NO" id="k5Q-kz-Buq">
+                                        <rect key="frame" x="0.0" y="49.999999999999986" width="343" height="171.66666666666663"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="k5Q-kz-Buq" secondAttribute="height" multiplier="2:1" id="7II-pV-2p3"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stay tuned 🚀 for the latest updates on space discoveries 🌠, celestial wonders, and more. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rU-CD-aYF">
+                                        <rect key="frame" x="24" y="245.66666666666671" width="295" height="73.333333333333343"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gex-WI-lIa">
+                                        <rect key="frame" x="108.66666666666666" y="0.0" width="125.66666666666666" height="50"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" name="SOUR"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="AppColorDarker"/>
+                                <constraints>
+                                    <constraint firstItem="9rU-CD-aYF" firstAttribute="top" secondItem="k5Q-kz-Buq" secondAttribute="bottom" constant="24" id="1Ab-ZI-jUT"/>
+                                    <constraint firstItem="9rU-CD-aYF" firstAttribute="leading" secondItem="dHn-dH-Iig" secondAttribute="leading" constant="24" id="2MP-cF-DYI"/>
+                                    <constraint firstItem="k5Q-kz-Buq" firstAttribute="top" secondItem="dHn-dH-Iig" secondAttribute="top" constant="50" id="6gc-hh-1wk"/>
+                                    <constraint firstItem="gex-WI-lIa" firstAttribute="centerX" secondItem="dHn-dH-Iig" secondAttribute="centerX" id="8dk-OG-gRI"/>
+                                    <constraint firstItem="k5Q-kz-Buq" firstAttribute="top" secondItem="gex-WI-lIa" secondAttribute="bottom" id="L7o-TM-yjo"/>
+                                    <constraint firstAttribute="width" secondItem="dHn-dH-Iig" secondAttribute="height" multiplier="1:1" id="hmF-wt-ie9"/>
+                                    <constraint firstAttribute="bottom" secondItem="9rU-CD-aYF" secondAttribute="bottom" constant="24" id="ilE-d9-Trh"/>
+                                    <constraint firstAttribute="trailing" secondItem="9rU-CD-aYF" secondAttribute="trailing" constant="24" id="riT-hc-zI5"/>
+                                    <constraint firstAttribute="trailing" secondItem="k5Q-kz-Buq" secondAttribute="trailing" id="sa5-GR-sed"/>
+                                    <constraint firstItem="gex-WI-lIa" firstAttribute="top" secondItem="dHn-dH-Iig" secondAttribute="top" id="uzp-Ug-PnH"/>
+                                    <constraint firstItem="k5Q-kz-Buq" firstAttribute="leading" secondItem="dHn-dH-Iig" secondAttribute="leading" id="vns-DL-B7H"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="z37-Vc-5et"/>
                         <color key="backgroundColor" name="AppColor"/>
+                        <constraints>
+                            <constraint firstItem="dHn-dH-Iig" firstAttribute="leading" secondItem="z37-Vc-5et" secondAttribute="leading" constant="16" id="KVD-xM-0Po"/>
+                            <constraint firstItem="z37-Vc-5et" firstAttribute="trailing" secondItem="dHn-dH-Iig" secondAttribute="trailing" constant="16" id="UTm-dA-20v"/>
+                            <constraint firstItem="dHn-dH-Iig" firstAttribute="top" secondItem="z37-Vc-5et" secondAttribute="top" constant="16" id="jgb-ds-wgy"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Solar System" id="LHg-4c-rgF"/>
+                    <navigationItem key="navigationItem" title="News" id="LHg-4c-rgF"/>
+                    <connections>
+                        <outlet property="newsView" destination="dHn-dH-Iig" id="dgV-3L-zZA"/>
+                        <outlet property="spaceImage" destination="k5Q-kz-Buq" id="YRU-KA-JP0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hh-Wq-4DT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -666,7 +714,7 @@
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gas &amp; Ice Giants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3x-H8-YXt">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jovian" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3x-H8-YXt">
                                                                 <rect key="frame" x="0.0" y="19.666666666666629" width="151.66666666666666" height="20"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                 <color key="textColor" name="SOUR"/>
@@ -717,7 +765,7 @@
                                                                             <segue destination="Pfr-6V-3I4" kind="show" id="5xy-aM-s5e"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XW-Kh-E2J">
+                                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XW-Kh-E2J">
                                                                         <rect key="frame" x="131.66666666666666" y="0.0" width="115.33333333333334" height="43.666666666666664"/>
                                                                         <color key="backgroundColor" name="AppColorDarker"/>
                                                                         <color key="tintColor" name="colorSaturn"/>
@@ -731,7 +779,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Soa-Rh-UZ6">
                                                                 <rect key="frame" x="0.0" y="59.666666666666629" width="247" height="44"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8o-ox-65h">
+                                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8o-ox-65h">
                                                                         <rect key="frame" x="0.0" y="0.0" width="115.66666666666667" height="44"/>
                                                                         <color key="backgroundColor" name="AppColorDarker"/>
                                                                         <color key="tintColor" name="colorUranus"/>
@@ -740,7 +788,7 @@
                                                                             <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
                                                                         </buttonConfiguration>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZh-Sh-Ddu">
+                                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZh-Sh-Ddu">
                                                                         <rect key="frame" x="131.66666666666666" y="0.0" width="115.33333333333334" height="44"/>
                                                                         <color key="backgroundColor" name="AppColorDarker"/>
                                                                         <color key="tintColor" name="colorNeptune"/>
@@ -1510,7 +1558,7 @@
                         <segue destination="Q6w-r6-G07" kind="relationship" relationship="viewControllers" id="6dY-ia-hJi"/>
                         <segue destination="ON5-hv-n7d" kind="relationship" relationship="viewControllers" id="QTl-tG-cSN"/>
                         <segue destination="WSK-Uq-SSu" kind="relationship" relationship="viewControllers" id="aKF-ZT-AXx"/>
-                        <segue destination="Rp1-fq-fud" kind="relationship" relationship="viewControllers" id="waO-Cj-qRQ"/>
+                        <segue destination="Rp1-fq-fud" kind="relationship" relationship="viewControllers" id="mBr-X3-ogC"/>
                         <segue destination="ngh-gc-kvT" kind="relationship" relationship="viewControllers" id="esH-sY-Mf3"/>
                     </connections>
                 </tabBarController>
@@ -1518,11 +1566,11 @@
             </objects>
             <point key="canvasLocation" x="5348" y="-228.32512315270938"/>
         </scene>
-        <!--Solar System-->
+        <!--News-->
         <scene sceneID="gUI-r2-2Nb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rp1-fq-fud" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Solar System" image="20221210_TabBarGalaxy" id="qfD-zt-Xfm"/>
+                    <tabBarItem key="tabBarItem" title="News" image="news-bar" id="qfD-zt-Xfm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="uB1-w5-szJ">
                         <rect key="frame" x="0.0" y="50" width="375" height="96"/>
@@ -4403,7 +4451,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="20221210_TabBarGalaxy" width="25" height="25"/>
         <image name="20221210_TabBarHome" width="25" height="25"/>
         <image name="20221210_TabBarPlanet" width="25" height="25"/>
         <image name="20221210_TabBarSettings" width="25" height="25"/>
@@ -4433,6 +4480,8 @@
         <image name="arrow.right.circle.fill" catalog="system" width="128" height="123"/>
         <image name="arrow.up" catalog="system" width="118" height="128"/>
         <image name="leaf.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="news-bar" width="25" height="25"/>
+        <image name="news-controller" width="700" height="524"/>
         <image name="pause" catalog="system" width="88" height="128"/>
         <image name="swift-bar" width="25" height="25"/>
         <namedColor name="AccentColor">
@@ -4445,13 +4494,13 @@
             <color red="0.98799997568130493" green="0.98000001907348633" blue="0.99099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="JupiterColor">
-            <color red="0.1715216035554622" green="0.15224129074871418" blue="0.14123727230529332" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.17200000584125519" green="0.15199999511241913" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="LabelColorMod">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MarsColor">
-            <color red="0.2470588235" green="0.15686274510000001" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.24699999392032623" green="0.15700000524520874" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MercuryColor">
             <color red="0.125" green="0.125" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -4466,10 +4515,10 @@
             <color red="0.40799999237060547" green="0.3919999897480011" blue="0.9660000205039978" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="colorJupiter">
-            <color red="0.56078433989999998" green="0.49803921579999999" blue="0.4588235021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.56099998950958252" green="0.49799999594688416" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="colorMars">
-            <color red="0.56346660151201133" green="0.38783781836665437" blue="0.35237178539038261" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.56300002336502075" green="0.3880000114440918" blue="0.35199999809265137" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="colorMercury">
             <color red="0.40099999308586121" green="0.39599999785423279" blue="0.9100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

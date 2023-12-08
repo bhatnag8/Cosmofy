@@ -25,10 +25,10 @@ class PlanetNode : SCNNode {
             case "mercury": image = UIImage(named: "MercuryMap")!; break
             case "venus": image = UIImage(named: "VenusMap")!; break
             case "earth": 
-                image = UIImage(named:"e19")!
-                self.geometry?.firstMaterial?.specular.contents = UIImage(named:"20221230_EarthMap_4")
-                self.geometry?.firstMaterial?.emission.contents = UIImage(named:"20221230_EarthMap_3")
-                self.geometry?.firstMaterial?.normal.contents = UIImage(named:"20221230_EarthMap_2")
+                image = UIImage(named:"map-earth")!
+                self.geometry?.firstMaterial?.specular.contents = UIImage(named:"map-earth-specular")
+                self.geometry?.firstMaterial?.emission.contents = UIImage(named:"map-earth-emission")
+                self.geometry?.firstMaterial?.normal.contents = UIImage(named:"map-earth-normal")
                 break
             case "mars": image = UIImage(named: "MarsMap")!; break
             case "jupiter": 
@@ -70,6 +70,7 @@ class PlanetNode : SCNNode {
         }
         shape.firstMaterial?.diffuse.contents = image
         shape.firstMaterial?.diffuse.mipFilter = SCNFilterMode.linear
+        shape.firstMaterial?.shininess = 50
         shape.segmentCount = 72
         
         self.geometry = shape
