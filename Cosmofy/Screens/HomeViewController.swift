@@ -9,6 +9,7 @@
 import UIKit
 import SwiftUI
 import CloudKit
+import SafariServices
 import AuthenticationServices
 
 class HomeViewController: // multiple inheritance
@@ -50,43 +51,23 @@ class HomeViewController: // multiple inheritance
     
     
     @IBAction func linkButton(_ sender: UIButton) {
-        Haptics.shared.impact(for: .medium)
+        Haptics.shared.vibrate(for: .success)
         UIApplication.shared.open(URL(string: "https://www.quantamagazine.org/what-is-the-geometry-of-the-universe-20200316/")! as URL, options: [:], completionHandler: nil)
     }
     
-    @IBAction func dynamicButton(_ sender: Any) {
-        Haptics.shared.impact(for: .medium)
-        
-        
-        
-        if (currentCellIndex == 0) {
-            UIApplication.shared.open(URL(string: "https://esahubble.org/images/heic0206c/")! as URL, options: [:], completionHandler: nil)
-        } else if (currentCellIndex == 1) {
-            UIApplication.shared.open(URL(string: "https://esahubble.org/images/heic0601a/")! as URL, options: [:], completionHandler: nil)
-        }
-        else if (currentCellIndex == 2) {
-            UIApplication.shared.open(URL(string: "https://esahubble.org/images/potw1345a/")! as URL, options: [:], completionHandler: nil)
-        }
-        else if (currentCellIndex == 3) {
-            UIApplication.shared.open(URL(string: "https://esahubble.org/images/heic1107a/")! as URL, options: [:], completionHandler: nil)
-        }
-        else if (currentCellIndex == 4) {
-            UIApplication.shared.open(URL(string: "https://esahubble.org/images/heic0506b/")! as URL, options: [:], completionHandler: nil)
-        }
-
-    }
     
-    var arrProductPhotos = [UIImage(named: "20230618_HomeBanner2")!, // Red One
-                            UIImage(named: "20221211_HomeBanner8")!, // Blue One
-                            UIImage(named: "20221211_HomeBanner6")!] // 1
+    var arrProductPhotos = [UIImage(named: "home-banner-1")!,
+                            UIImage(named: "home-banner-2")!,
+                            UIImage(named: "home-banner-3")!,
+                            UIImage(named: "home-banner-4")!]
 
     var timer : Timer?
     
     
     // MARK: - viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
-        let x2 = (UserDefaults.standard.string(forKey: "s1") ?? "Hello") as String
-        self.nameButton.setTitle(x2, for: self.nameButton.state)
+//        let x2 = (UserDefaults.standard.string(forKey: "s1") ?? "Hello") as String
+        self.nameButton.setTitle("View", for: self.nameButton.state)
         self.nameButton.showsMenuAsPrimaryAction = true
         self.nameButton.menu = self.addMenuItems()
 
@@ -170,11 +151,35 @@ class HomeViewController: // multiple inheritance
         
         let menuItems = UIMenu(title: "", options: .displayInline, children: [
             
-            UIAction(title: "Logout", image: UIImage(systemName: "person.crop.circle.fill.badge.minus"), attributes: .destructive, handler: { (_) in
+//            UIAction(title: "Logout", image: UIImage(systemName: "person.crop.circle.fill.badge.minus"), attributes: .destructive, handler: { (_) in
+//                Haptics.shared.vibrate(for: .success)
+//                KeychainItem.deleteUserIdentifierFromKeychain()
+//                DispatchQueue.main.async {
+//                        self.showLoginViewController()
+//                }
+//            }),
+            
+            UIAction(title: "Image Info.", image: UIImage(systemName: "info.circle.fill"), handler: { (_) in
                 Haptics.shared.vibrate(for: .success)
-                KeychainItem.deleteUserIdentifierFromKeychain()
-                DispatchQueue.main.async {
-                        self.showLoginViewController()
+                
+                var urlString: String?
+                
+                switch self.currentCellIndex {
+                case 0:
+                    urlString = "https://esahubble.org/images/heic1808a/"
+                case 1:
+                    urlString = "https://esahubble.org/images/heic1608a/"
+                case 2:
+                    urlString = "https://esahubble.org/images/heic0206c/"
+                case 3:
+                    urlString = "https://esahubble.org/images/heic0601a/"
+                default:
+                    break
+                }
+                
+                if let urlString = urlString, let url = URL(string: urlString) {
+                    let safariViewController = SFSafariViewController(url: url)
+                    self.present(safariViewController, animated: true, completion: nil)
                 }
             }),
             
@@ -182,7 +187,6 @@ class HomeViewController: // multiple inheritance
                 Haptics.shared.vibrate(for: .success)
                 
             })
-    
         
         ])
         return menuItems
@@ -233,19 +237,14 @@ class HomeViewController: // multiple inheritance
             case 0: label2.text = "Hubble Space Telescope"
             case 1: label2.text = "Hubble Space Telescope"
             case 2: label2.text = "Hubble Space Telescope"
-            case 3: label2.text = "Hubble Space Telescope"
-            case 4: label2.text = "Hubble Space Telescope"
-            case 5: label2.text = "Hubble Space Telescope"
             default: label2.text = "Hubble Space Telescope"
         }
         
         switch (currentCellIndex) {
-            case 0: label3.text = "The Bubble Nebula"
-            case 1: label3.text = "Ghostly Star-Forming Pillar of Gas and Dust"
-            case 2: label3.text = "Hubble’s Sharpest View of the Orion Nebula"
-            case 3: label3.text = "Antennae Galaxies Reloaded"
-            case 4: label3.text = "A Rose Made of Galaxies"
-            case 5: label3.text = "Stellar Spire in the Eagle Nebula"
+            case 0: label3.text = "The Lagoon Nebula"
+            case 1: label3.text = "The Bubble Nebula"
+            case 2: label3.text = "The Cone Nebula"
+            case 3: label3.text = "The Orion Nebula"
             default: label3.text = ""
         }
         
@@ -279,19 +278,14 @@ class HomeViewController: // multiple inheritance
             case 0: label2.text = "Hubble Space Telescope"
             case 1: label2.text = "Hubble Space Telescope"
             case 2: label2.text = "Hubble Space Telescope"
-            case 3: label2.text = "Hubble Space Telescope"
-            case 4: label2.text = "Hubble Space Telescope"
-            case 5: label2.text = "Hubble Space Telescope"
             default: label2.text = "Hubble Space Telescope"
         }
         
         switch (currentCellIndex) {
-            case 0: label3.text = "The Bubble Nebula"
-            case 1: label3.text = "Ghostly Star-Forming Pillar of Gas and Dust"
-            case 2: label3.text = "Hubble’s Sharpest View of the Orion Nebula"
-            case 3: label3.text = "Antennae Galaxies Reloaded"
-            case 4: label3.text = "A Rose Made of Galaxies"
-            case 5: label3.text = "Stellar Spire in the Eagle Nebula"
+            case 0: label3.text = "The Lagoon Nebula"
+            case 1: label3.text = "The Bubble Nebula"
+            case 2: label3.text = "The Cone Nebula"
+            case 3: label3.text = "The Orion Nebula"
             default: label3.text = ""
         }
         

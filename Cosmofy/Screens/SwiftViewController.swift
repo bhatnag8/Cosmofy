@@ -61,7 +61,7 @@ class SwiftViewController: UIViewController {
             self.stateLabel.animate(newText: "Please note that Swift's responses haven't been fully trained as it's still a beta feature.", characterDelay: 0.025)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
             UIView.animate(withDuration: 1.0) {
                 self.view3.alpha = 1.0
             }
@@ -75,6 +75,7 @@ class SwiftViewController: UIViewController {
         view3.layer.borderWidth = 2
     }
     @IBAction func fade(_ sender: Any) {
+        Haptics.shared.vibrate(for: .success)
         UIView.animate(withDuration: 0.5) {
             self.view3.alpha = 0
             self.view2.alpha = 0

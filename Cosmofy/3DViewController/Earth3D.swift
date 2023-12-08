@@ -114,7 +114,7 @@ class Earth3D: UIViewController {
         sceneView.backgroundColor = UIColor.black
         sceneView.allowsCameraControl = true
         sceneView.showsStatistics = true
-        sceneView.autoenablesDefaultLighting = true
+//        sceneView.autoenablesDefaultLighting = true
         sceneView.cameraControlConfiguration.autoSwitchToFreeCamera = true
         sceneView.cameraControlConfiguration.allowsTranslation = true
         sceneView.cameraControlConfiguration.rotationSensitivity = 0.4

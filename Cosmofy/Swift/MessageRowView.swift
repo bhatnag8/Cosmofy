@@ -43,9 +43,21 @@ struct MessageRowView: View {
             
             VStack(alignment: .leading) {
                 if !text.isEmpty {
-                    Text(text)
-                        .multilineTextAlignment(.leading)
-                        .textSelection(.enabled)
+    
+                    if text.contains("```") {
+                        let cleanedText = text.replacingOccurrences(of: "```", with: "")
+                        Text(cleanedText)
+                            .multilineTextAlignment(.leading)
+                            .textSelection(.enabled)
+                            .font(.system(.footnote, design: .monospaced))
+                    }
+                    else {
+                        Text(text)
+                            .multilineTextAlignment(.leading)
+                            .textSelection(.enabled)
+                            
+                    }
+                    
                 }
                 
                 if let error = responseError {

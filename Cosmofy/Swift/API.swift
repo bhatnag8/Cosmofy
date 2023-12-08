@@ -46,7 +46,7 @@ class API: @unchecked Sendable {
         ]
     }
     
-    init(model: String = "gpt-3.5-turbo-0301", systemPrompt: String = "You are a helpful assistant who will answer space/astronomy questions. Your name is Swift. You don't have information about other stuff to give advice so try not to do that. However, it's okay to give out the other information from time to time.", temperature: Double = 0.6) {
+    init(model: String = "gpt-3.5-turbo-1106", systemPrompt: String = "You are a helpful assistant who will answer space/astronomy questions. Your name is Swift.", temperature: Double = 0.6) {
         self.model = model
         self.systemMessage = .init(role: "system", content: systemPrompt)
         self.temperature = temperature
@@ -55,8 +55,8 @@ class API: @unchecked Sendable {
     private func generateMessages(from text: String) -> [Message] {
         var messages = [systemMessage] + historyList + [Message(role: "user", content: text)]
         
-        if messages.contentCount > (4000 * 4) {
-            _ = historyList.dropFirst()
+        if messages.contentCount > (16000 * 4) {
+            _ = historyList.removeFirst()
             messages = generateMessages(from: text)
         }
         return messages
@@ -92,14 +92,16 @@ class API: @unchecked Sendable {
                 guard let self else { return }
                 do {
                     var responseText = ""
+                    var accumulatedText = ""
                     for try await line in result.lines {
                         if line.hasPrefix("data: "),
                            let data = line.dropFirst(6).data(using: .utf8),
                            let response = try? self.jsonDecoder.decode(StreamCompletionResponse.self, from: data),
                            let text = response.choices.first?.delta.content {
-                            Haptics.shared.impact(for: .heavy)
+                            Haptics.shared.impact(for: .light)
                             responseText += text
                             continuation.yield(text)
+                            try await Task.sleep(nanoseconds: 2 * 10000000)  // 2 seconds in nanoseconds
                         }
                     }
                     self.appendToHistoryList(userText: text, responseText: responseText)
@@ -140,9 +142,8 @@ class API: @unchecked Sendable {
     }
     
     private func jsonBody(text: String, stream: Bool = true) throws -> Data {
-        print(text.count)
-        if (text.count > 10000) {
-            throw "Long Response: Max char limit of 10000"
+        if (text.count > 40000) {
+            throw "Long Response: Max character limit of 40000"
         }
         
         

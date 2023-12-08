@@ -45,6 +45,9 @@ struct ContentView: View {
                         isTextFieldFocused = false
                     }
                 }
+                .onTapGesture {
+                    isTextFieldFocused = false
+                }
                 
                 Divider()
                 bottomView(image: "user", proxy: proxy)
@@ -78,7 +81,7 @@ struct ContentView: View {
                         .frame(width: 30, height: 30)
                 }
                 
-                TextField("Send message", text: $vm.inputMessage, axis: .vertical)
+                TextField("Send a message", text: $vm.inputMessage, axis: .vertical)
                     .border(Color.black, width: 0)
                     .focused($isTextFieldFocused)
                     .disabled(vm.isInteractingWithChatGPT)
@@ -116,7 +119,9 @@ struct ContentView: View {
         guard let id = vm.messages.last?.id else {
             return
         }
-        proxy.scrollTo(id, anchor: .bottom)
+        withAnimation {
+            proxy.scrollTo(id, anchor: .bottomTrailing)
+        }
     }
 }
 
