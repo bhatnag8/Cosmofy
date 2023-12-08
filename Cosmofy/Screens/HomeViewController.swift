@@ -84,7 +84,7 @@ class HomeViewController: // multiple inheritance
             case 3...11 : goodLabel.text = "Good Morning"
             case 12...15 : goodLabel.text = "Good Afternoon"
             case 16..<24 : goodLabel.text = "Good Evening"
-            default: goodLabel.text = ""
+            default: goodLabel.text = "Hello"
         }
         
         collectionView.delegate = self

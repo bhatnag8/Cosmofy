@@ -212,21 +212,21 @@ class EarthViewController: UIViewController,
     }
     
     @objc func moveToNextIndex() {
-        
+        /*
         if (currentLabel == 0) {
             
             UIView.transition(with: coreLabel1,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel1.text = "The number of"
+                self?.coreLabel1.text = "The moon is 30"
                      }, completion: nil)
             
             UIView.transition(with: coreLabel2,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                self?.coreLabel2.text = "clicks on this page"
+                self?.coreLabel2.text = "earth-sized planets away"
                      }, completion: nil)
             currentLabel = currentLabel + 1
         } else if (currentLabel == 1) {
@@ -264,6 +264,7 @@ class EarthViewController: UIViewController,
                      }, completion: nil)
             
         }
+        */
         
     }
 }
