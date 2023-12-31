@@ -82,7 +82,8 @@ struct ContentView: View {
                 }
                 
                 TextField("Send a message", text: $vm.inputMessage, axis: .vertical)
-                    .border(Color.black, width: 0)
+//                    .border(Color.black, width: 0)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .focused($isTextFieldFocused)
                     .disabled(vm.isInteractingWithChatGPT)
                 

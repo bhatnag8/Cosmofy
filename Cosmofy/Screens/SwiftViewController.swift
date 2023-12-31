@@ -43,26 +43,26 @@ class SwiftViewController: UIViewController {
             self.view1.alpha = 1.0
         }
         
-        self.greetingLabel.animate(newText: "Greetings from Swift! 🌌 🚀 🌠 🏔️ 🌟", characterDelay: 0.06)
+        self.greetingLabel.animate(newText: "Greetings from Swift! 🌌 🚀 🌠 🏔️ 🌟", characterDelay: 0.03)
          
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
-            self.messageLabel.animate(newText: "I'm powered by OpenAI, providing you with in-depth knowledge and insights about space like never before.", characterDelay: 0.025)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+            self.messageLabel.animate(newText: "I'm powered by OpenAI, providing you with in-depth knowledge and insights about space like never before.", characterDelay: 0.015)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4.25) {
-            self.statusLabel.animate(newText: "Status: Online (Beta)", characterDelay: 0.025)
-            UIView.animate(withDuration: 1.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.25) {
+            self.statusLabel.animate(newText: "Status: Online (Beta)", characterDelay: 0.015)
+            UIView.animate(withDuration: 0.7) {
                 self.view2.alpha = 1.0
             }
             
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4.75) {
-            self.stateLabel.animate(newText: "Please note that Swift's responses haven't been fully trained as it's still a beta feature.", characterDelay: 0.025)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+            self.stateLabel.animate(newText: "Please note that Swift's responses haven't been fully trained as it's still a beta feature.", characterDelay: 0.015)
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
-            UIView.animate(withDuration: 1.0) {
+            UIView.animate(withDuration: 0.70) {
                 self.view3.alpha = 1.0
             }
         }

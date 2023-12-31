@@ -90,7 +90,8 @@ class Venus3D: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        modelTip.invalidate(reason: .actionPerformed)
+
         tiltNode.eulerAngles = SCNVector3(x: 0, y: 0, z: Float(tilt * (.pi/180.0)))
         tiltNode.addChildNode(planetNode)
         
@@ -113,7 +114,6 @@ class Venus3D: UIViewController {
         sceneView.scene = scene
         sceneView.backgroundColor = UIColor.black
         sceneView.allowsCameraControl = true
-        sceneView.showsStatistics = true
         sceneView.autoenablesDefaultLighting = true
         sceneView.cameraControlConfiguration.autoSwitchToFreeCamera = true
         sceneView.cameraControlConfiguration.allowsTranslation = true
@@ -126,9 +126,6 @@ class Venus3D: UIViewController {
         playButton.layer.cornerRadius = 12
         playButton.layer.borderColor = UIColor.black.cgColor
         playButton.layer.borderWidth = 0.8
-        
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "More...", style: .plain, target: self, action: nil)
-//        navigationItem.rightBarButtonItem?.tintColor = UIColor.systemBlue
 
         speed1.layer.shadowColor = UIColor.white.cgColor
         speed1.layer.shadowOpacity = 1

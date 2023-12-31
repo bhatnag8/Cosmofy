@@ -14,6 +14,7 @@
 		0B3EF4292AFC51EE00F0CECA /* Jupiter3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EF4282AFC51EE00F0CECA /* Jupiter3D.swift */; };
 		0B4005682AF9970400D515EE /* Earth3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4005672AF9970400D515EE /* Earth3D.swift */; };
 		0B42A1912B22B1B0007F3B57 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B42A1902B22B1B0007F3B57 /* NewsViewController.swift */; };
+		0B4573522B408ED400E8E6FF /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4573512B408ED400E8E6FF /* Tips.swift */; };
 		0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688262A84D1F300CD2B7E /* VenusViewController.swift */; };
 		0B6688292A84D81600CD2B7E /* VenusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688282A84D81600CD2B7E /* VenusCell.swift */; };
 		0B7671932AE47E22008E57B2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671922AE47E22008E57B2 /* API.swift */; };
@@ -28,6 +29,7 @@
 		0B8BCDDF2AF9545600DB54CF /* Mars3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BCDDE2AF9545600DB54CF /* Mars3D.swift */; };
 		0B9883682AFBF7800044C9A8 /* JupiterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9883672AFBF7800044C9A8 /* JupiterViewController.swift */; };
 		0B98836A2AFC0D490044C9A8 /* JupiterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9883692AFC0D490044C9A8 /* JupiterCell.swift */; };
+		0BA285B12B24450100DDEE39 /* EarthAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA285B02B24450100DDEE39 /* EarthAR.swift */; };
 		0BBF4B9D2A6049F100A9DC4D /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */; };
 		0BC1F2842A85151300600232 /* Venus3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1F2832A85151300600232 /* Venus3D.swift */; };
 		0BC1F2862A8520E900600232 /* EarthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1F2852A8520E900600232 /* EarthViewController.swift */; };
@@ -60,6 +62,7 @@
 		0B3EF4282AFC51EE00F0CECA /* Jupiter3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jupiter3D.swift; sourceTree = "<group>"; };
 		0B4005672AF9970400D515EE /* Earth3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earth3D.swift; sourceTree = "<group>"; };
 		0B42A1902B22B1B0007F3B57 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		0B4573512B408ED400E8E6FF /* Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
 		0B6688262A84D1F300CD2B7E /* VenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusViewController.swift; sourceTree = "<group>"; };
 		0B6688282A84D81600CD2B7E /* VenusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusCell.swift; sourceTree = "<group>"; };
 		0B7671922AE47E22008E57B2 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 		0B8BCDDE2AF9545600DB54CF /* Mars3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mars3D.swift; sourceTree = "<group>"; };
 		0B9883672AFBF7800044C9A8 /* JupiterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JupiterViewController.swift; sourceTree = "<group>"; };
 		0B9883692AFC0D490044C9A8 /* JupiterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JupiterCell.swift; sourceTree = "<group>"; };
+		0BA285B02B24450100DDEE39 /* EarthAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthAR.swift; sourceTree = "<group>"; };
 		0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		0BC1F2832A85151300600232 /* Venus3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venus3D.swift; sourceTree = "<group>"; };
 		0BC1F2852A8520E900600232 /* EarthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				2F542ED0297CF0110067C26B /* Pulse.swift */,
+				0B4573512B408ED400E8E6FF /* Tips.swift */,
 				2F7494EE2A5B35C4004C63B7 /* KeychainItem.swift */,
 				0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */,
 				0B7CDD922A875C29006307D1 /* TabBarController.swift */,
@@ -192,6 +197,7 @@
 		2F98598629838EA0007271B1 /* ARViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0BA285B02B24450100DDEE39 /* EarthAR.swift */,
 			);
 			path = ARViewControllers;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 				0B7D18C32AE8A526009C2317 /* ViewModel.swift in Sources */,
 				0B7D0C482AAD65EC003FB763 /* SwiftViewController.swift in Sources */,
 				0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */,
+				0BA285B12B24450100DDEE39 /* EarthAR.swift in Sources */,
 				0B3EF4292AFC51EE00F0CECA /* Jupiter3D.swift in Sources */,
 				0B6688292A84D81600CD2B7E /* VenusCell.swift in Sources */,
 				2F0B04D62945A576001FAAE6 /* HomeCollectionViewCell.swift in Sources */,
@@ -332,6 +339,7 @@
 				0B8BCDDF2AF9545600DB54CF /* Mars3D.swift in Sources */,
 				0B294B5B2A8FB34400E755B3 /* MarsViewController.swift in Sources */,
 				0BC1F2882A85216800600232 /* EarthCell.swift in Sources */,
+				0B4573522B408ED400E8E6FF /* Tips.swift in Sources */,
 				2F52B488297F209F00A92FF7 /* MercuryCell.swift in Sources */,
 				0B7671932AE47E22008E57B2 /* API.swift in Sources */,
 				0B9883682AFBF7800044C9A8 /* JupiterViewController.swift in Sources */,
@@ -498,7 +506,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Cosmofy/Cosmofy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmofy/Info.plist;
@@ -510,12 +518,12 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.3;
+				MARKETING_VERSION = 0.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -535,7 +543,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Cosmofy/Cosmofy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmofy/Info.plist;
@@ -547,12 +555,12 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.3;
+				MARKETING_VERSION = 0.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

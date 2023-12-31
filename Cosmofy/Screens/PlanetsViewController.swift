@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import TipKit
 
 class PlanetsViewController: UIViewController {
     
@@ -34,6 +35,7 @@ class PlanetsViewController: UIViewController {
     
     @IBAction func buttons_tapped(_ sender: Any) {
         Haptics.shared.vibrate(for: .success)
+        planetTip.invalidate(reason: .actionPerformed)
     }
     
     override func viewDidLoad() {
@@ -75,6 +77,17 @@ class PlanetsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
 //        Haptics.shared.impact(for: .rigid)
+        Task { @MainActor in
+        for await shouldDisplay in planetTip.shouldDisplayUpdates {
+            if shouldDisplay {
+                let controller = TipUIPopoverViewController(planetTip, sourceItem: button1)
+                present(controller, animated: true)
+            } else if presentedViewController is TipUIPopoverViewController {
+                dismiss(animated: true)
+                
+            }
+        }
+        }
         
         innerView1.layer.shadowColor = UIColor.black.cgColor
         innerView1.layer.shadowOpacity = 1
@@ -120,8 +133,22 @@ class PlanetsViewController: UIViewController {
             buttons[index]?.layer.shadowOffset = .zero
             buttons[index]?.layer.shadowRadius = 0.5
             buttons[index]?.layer.cornerRadius = (buttons[index]?.bounds.height)! / 2
-            buttons[index]?.layer.borderColor = UIColor.black.cgColor
-            buttons[index]?.layer.borderWidth = 0.25
+//            buttons[index]?.layer.borderColor = UIColor.black.cgColor
+            buttons[index]?.layer.borderWidth = 2
         }
+        
+        button1.layer.borderColor = UIColor(named: "colorMercury")?.cgColor
+        button2.layer.borderColor = UIColor(named: "colorVenus")?.cgColor
+        button3.layer.borderColor = UIColor(named: "miami-blue")?.cgColor
+        button4.layer.borderColor = UIColor(named: "colorMars")?.cgColor
+        button5.layer.borderColor = UIColor(named: "colorJupiter")?.cgColor
+//        button6.layer.borderColor = UIColor(named: "colorSaturn")?.cgColor
+//        button7.layer.borderColor = UIColor(named: "colorUranus")?.cgColor
+//        button8.layer.borderColor = UIColor(named: "colorNeptune")?.cgColor
+        
+        button6.layer.borderColor = UIColor.black.cgColor
+        button7.layer.borderColor = UIColor.black.cgColor
+        button8.layer.borderColor = UIColor.black.cgColor
+
     }
 }
