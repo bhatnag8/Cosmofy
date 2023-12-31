@@ -90,7 +90,7 @@ class Mercury3D: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        modelTip.invalidate(reason: .actionPerformed)
         tiltNode.eulerAngles = SCNVector3(x: 0, y: 0, z: Float(tilt * (.pi/180.0)))
         tiltNode.addChildNode(planetNode)
         
@@ -113,12 +113,10 @@ class Mercury3D: UIViewController {
         sceneView.scene = scene
         sceneView.backgroundColor = UIColor.black
         sceneView.allowsCameraControl = true
-        sceneView.showsStatistics = true
         sceneView.autoenablesDefaultLighting = true
         sceneView.cameraControlConfiguration.autoSwitchToFreeCamera = true
         sceneView.cameraControlConfiguration.allowsTranslation = true
         sceneView.cameraControlConfiguration.rotationSensitivity = 0.4
-//        sceneView.gestureRecognizers[0]
         
         playButton.layer.shadowColor = UIColor.white.cgColor
         playButton.layer.shadowOpacity = 1

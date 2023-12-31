@@ -115,7 +115,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-h5-XI6">
                                                                 <rect key="frame" x="49.666666666666657" y="0.0" width="269.33333333333337" height="46"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hubble Space Telescope" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pi-KT-kpS">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Captured by Hubble Space Telescope" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pi-KT-kpS">
                                                                         <rect key="frame" x="0.0" y="0.0" width="269.33333333333331" height="23"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                         <nil key="textColor"/>
@@ -262,7 +262,7 @@
             </objects>
             <point key="canvasLocation" x="6340" y="-808.37438423645324"/>
         </scene>
-        <!--News-->
+        <!--Coming Soon-->
         <scene sceneID="SNn-b2-nLL">
             <objects>
                 <viewController id="gQn-wP-iVq" customClass="NewsViewController" customModule="Cosmofy" customModuleProvider="target" sceneMemberID="viewController">
@@ -316,7 +316,7 @@
                             <constraint firstItem="dHn-dH-Iig" firstAttribute="top" secondItem="z37-Vc-5et" secondAttribute="top" constant="16" id="jgb-ds-wgy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="News" id="LHg-4c-rgF"/>
+                    <navigationItem key="navigationItem" title="Coming Soon" id="LHg-4c-rgF"/>
                     <connections>
                         <outlet property="newsView" destination="dHn-dH-Iig" id="dgV-3L-zZA"/>
                         <outlet property="spaceImage" destination="k5Q-kz-Buq" id="YRU-KA-JP0"/>
@@ -497,22 +497,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbx-vH-Zcv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5193" y="1340"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="tFi-lf-54H">
-            <objects>
-                <viewController id="7iD-uX-sMN" customClass="SettingsViewController" customModule="Cosmofy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2hw-6S-aKG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="phi-CT-TD2"/>
-                        <color key="backgroundColor" name="AppColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Settings" id="ieP-vV-UUG"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zFj-EN-4q9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5193" y="2025"/>
         </scene>
         <!--Planets-->
         <scene sceneID="kpZ-yu-EAu">
@@ -884,21 +868,6 @@
                                             <constraint firstAttribute="width" secondItem="27S-WR-MLC" secondAttribute="height" multiplier="1:1" id="BBg-oM-Fcw"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyU-sY-7U0">
-                                        <rect key="frame" x="286.33333333333331" y="11.999999999999996" width="44.666666666666686" height="44.666666666666657"/>
-                                        <color key="backgroundColor" name="colorMercury"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="SyU-sY-7U0" secondAttribute="height" multiplier="1:1" id="a1K-AI-Syf"/>
-                                        </constraints>
-                                        <color key="tintColor" name="LabelColorMod"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="AR">
-                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="buttons_tapped:" destination="hJl-8Y-Xg9" eventType="touchUpInside" id="FOE-Dj-Vz6"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiM-tU-4hE">
                                         <rect key="frame" x="229.66666666666666" y="11.999999999999996" width="44.666666666666657" height="44.666666666666657"/>
                                         <color key="backgroundColor" name="colorMercury"/>
@@ -913,6 +882,21 @@
                                         <connections>
                                             <action selector="buttons_tapped:" destination="hJl-8Y-Xg9" eventType="touchUpInside" id="eVQ-1y-IED"/>
                                             <segue destination="Dqa-Js-vxB" kind="show" id="KP5-07-XF9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyU-sY-7U0">
+                                        <rect key="frame" x="286.33333333333331" y="11.999999999999996" width="44.666666666666686" height="44.666666666666657"/>
+                                        <color key="backgroundColor" name="colorMercury"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="SyU-sY-7U0" secondAttribute="height" multiplier="1:1" id="a1K-AI-Syf"/>
+                                        </constraints>
+                                        <color key="tintColor" name="LabelColorMod"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="AR">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="buttons_tapped:" destination="hJl-8Y-Xg9" eventType="touchUpInside" id="FOE-Dj-Vz6"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="6LW-vM-ktz">
@@ -935,18 +919,19 @@
                                 </subviews>
                                 <color key="backgroundColor" name="AppColorDarker"/>
                                 <constraints>
-                                    <constraint firstItem="SyU-sY-7U0" firstAttribute="top" secondItem="SJj-3e-u3G" secondAttribute="top" constant="12" id="65I-Ux-vA3"/>
-                                    <constraint firstAttribute="trailing" secondItem="SyU-sY-7U0" secondAttribute="trailing" constant="12" id="6uJ-MS-lN9"/>
+                                    <constraint firstItem="SyU-sY-7U0" firstAttribute="leading" secondItem="EiM-tU-4hE" secondAttribute="trailing" constant="12" id="Gxm-x4-s3Z"/>
                                     <constraint firstItem="6LW-vM-ktz" firstAttribute="leading" secondItem="27S-WR-MLC" secondAttribute="trailing" constant="12" id="HBz-MF-QVy"/>
-                                    <constraint firstItem="EiM-tU-4hE" firstAttribute="top" secondItem="SJj-3e-u3G" secondAttribute="top" constant="12" id="Hk0-bd-vaO"/>
                                     <constraint firstItem="6LW-vM-ktz" firstAttribute="centerY" secondItem="27S-WR-MLC" secondAttribute="centerY" id="Ko5-JE-QNt"/>
+                                    <constraint firstAttribute="bottom" secondItem="SyU-sY-7U0" secondAttribute="bottom" constant="12" id="N68-hH-HPc"/>
                                     <constraint firstItem="27S-WR-MLC" firstAttribute="leading" secondItem="SJj-3e-u3G" secondAttribute="leading" constant="12" id="QD1-bg-cR0"/>
-                                    <constraint firstItem="SyU-sY-7U0" firstAttribute="leading" secondItem="EiM-tU-4hE" secondAttribute="trailing" constant="12" id="QzV-8S-KCx"/>
-                                    <constraint firstItem="EiM-tU-4hE" firstAttribute="leading" secondItem="6LW-vM-ktz" secondAttribute="trailing" constant="12" id="T1C-z8-edk"/>
+                                    <constraint firstItem="SyU-sY-7U0" firstAttribute="top" secondItem="SJj-3e-u3G" secondAttribute="top" constant="12" id="Zth-PJ-Uzy"/>
+                                    <constraint firstAttribute="trailing" secondItem="SyU-sY-7U0" secondAttribute="trailing" constant="12" id="aT4-G1-irE"/>
                                     <constraint firstAttribute="width" secondItem="SJj-3e-u3G" secondAttribute="height" multiplier="5:1" id="fLX-ym-h99"/>
+                                    <constraint firstAttribute="bottom" secondItem="EiM-tU-4hE" secondAttribute="bottom" constant="12" id="lur-i4-dav"/>
+                                    <constraint firstItem="EiM-tU-4hE" firstAttribute="top" secondItem="SJj-3e-u3G" secondAttribute="top" constant="12" id="nfE-hi-380"/>
                                     <constraint firstAttribute="bottom" secondItem="27S-WR-MLC" secondAttribute="bottom" constant="12" id="saa-4Z-l9s"/>
-                                    <constraint firstAttribute="bottom" secondItem="EiM-tU-4hE" secondAttribute="bottom" constant="12" id="ukB-wo-OcV"/>
-                                    <constraint firstAttribute="bottom" secondItem="SyU-sY-7U0" secondAttribute="bottom" constant="12" id="yd1-Xp-bHM"/>
+                                    <constraint firstItem="EiM-tU-4hE" firstAttribute="leading" secondItem="6LW-vM-ktz" secondAttribute="trailing" constant="12" id="vWt-Zg-Sxb"/>
+                                    <constraint firstItem="SyU-sY-7U0" firstAttribute="leading" secondItem="EiM-tU-4hE" secondAttribute="trailing" constant="12" id="ydJ-lu-Y1E"/>
                                     <constraint firstItem="27S-WR-MLC" firstAttribute="top" secondItem="SJj-3e-u3G" secondAttribute="top" constant="12" id="yk1-f1-YcT"/>
                                 </constraints>
                             </view>
@@ -1560,18 +1545,17 @@
                         <segue destination="ON5-hv-n7d" kind="relationship" relationship="viewControllers" id="QTl-tG-cSN"/>
                         <segue destination="WSK-Uq-SSu" kind="relationship" relationship="viewControllers" id="aKF-ZT-AXx"/>
                         <segue destination="Rp1-fq-fud" kind="relationship" relationship="viewControllers" id="mBr-X3-ogC"/>
-                        <segue destination="ngh-gc-kvT" kind="relationship" relationship="viewControllers" id="esH-sY-Mf3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZ0-cN-Qtv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5348" y="-228.32512315270938"/>
         </scene>
-        <!--News-->
+        <!--What's Next?-->
         <scene sceneID="gUI-r2-2Nb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rp1-fq-fud" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" image="news-bar" id="qfD-zt-Xfm"/>
+                    <tabBarItem key="tabBarItem" title="What's Next?" image="soon-bar" id="qfD-zt-Xfm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="uB1-w5-szJ">
                         <rect key="frame" x="0.0" y="50" width="375" height="96"/>
@@ -1616,31 +1600,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yIS-3h-zRm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4454" y="1341"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="Z6F-Td-idU">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ngh-gc-kvT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="20221210_TabBarSettings" id="4XO-Kb-lyH"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="e9e-vz-yla">
-                        <rect key="frame" x="0.0" y="50" width="375" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" systemColor="labelColor"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" systemColor="labelColor"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="7iD-uX-sMN" kind="relationship" relationship="rootViewController" id="oTD-mB-nSA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JZa-kK-qNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4454" y="2025"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="jls-TU-JHn">
@@ -2465,7 +2424,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="earth-sized planets away" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIW-El-jtN">
                                                 <rect key="frame" x="0.0" y="20" width="149" height="18"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                                <color key="textColor" systemColor="systemGreenColor"/>
+                                                <color key="textColor" name="miami-blue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -2782,7 +2741,7 @@
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KBC-en-bo5">
                                                 <rect key="frame" x="0.0" y="47.000000000000014" width="29.333333333333332" height="27"/>
-                                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                                <color key="tintColor" name="miami-blue"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="KBC-en-bo5" secondAttribute="height" multiplier="1:1" id="CBz-eX-rzU"/>
                                                 </constraints>
@@ -2795,14 +2754,14 @@
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iBT-4h-OC4">
                                                 <rect key="frame" x="0.0" y="145.00000000000003" width="29.333333333333332" height="27.333333333333343"/>
-                                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                                <color key="tintColor" name="miami-blue"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="iBT-4h-OC4" secondAttribute="height" multiplier="1:1" id="Qvs-8i-gdQ"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leaf.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ijk-xT-Y3m">
                                                 <rect key="frame" x="0.0" y="190.33333333333331" width="29.333333333333332" height="28"/>
-                                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                                <color key="tintColor" name="miami-blue"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ijk-xT-Y3m" secondAttribute="height" multiplier="1:1" id="6OA-Ri-SVc"/>
                                                 </constraints>
@@ -2870,7 +2829,7 @@
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9WW-ax-2vh">
                                         <rect key="frame" x="129.66666666666666" y="174.33333333333331" width="115.66666666666666" height="25.666666666666657"/>
                                         <color key="pageIndicatorTintColor" name="VenusColor"/>
-                                        <color key="currentPageIndicatorTintColor" systemColor="systemGreenColor"/>
+                                        <color key="currentPageIndicatorTintColor" name="miami-blue"/>
                                     </pageControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e06-Nr-BE7">
                                         <rect key="frame" x="187.66666666666666" y="22" width="0.0" height="0.0"/>
@@ -4454,7 +4413,6 @@
     <resources>
         <image name="20221210_TabBarHome" width="25" height="25"/>
         <image name="20221210_TabBarPlanet" width="25" height="25"/>
-        <image name="20221210_TabBarSettings" width="25" height="25"/>
         <image name="20221215_PlanetsViewIcon2" width="512" height="512"/>
         <image name="20221223_PlanetsViewIcon1" width="512" height="512"/>
         <image name="20221223_PlanetsViewIcon2" width="512" height="512"/>
@@ -4481,9 +4439,9 @@
         <image name="arrow.right.circle.fill" catalog="system" width="128" height="123"/>
         <image name="arrow.up" catalog="system" width="118" height="128"/>
         <image name="leaf.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="news-bar" width="25" height="25"/>
         <image name="news-controller" width="700" height="524"/>
         <image name="pause" catalog="system" width="88" height="128"/>
+        <image name="soon-bar" width="25" height="25"/>
         <image name="swift-bar" width="25" height="25"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4525,7 +4483,7 @@
             <color red="0.40099999308586121" green="0.39599999785423279" blue="0.9100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="colorNeptune">
-            <color red="0.31400001049041748" green="0.45500001311302185" blue="0.9649999737739563" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.4196078479" green="0.52549022440000004" blue="0.96470588450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="colorSaturn">
             <color red="0.80800002813339233" green="0.72500002384185791" blue="0.50199997425079346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -4535,6 +4493,9 @@
         </namedColor>
         <namedColor name="colorVenus">
             <color red="0.68999999761581421" green="0.57999998331069946" blue="0.39599999785423279" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="miami-blue">
+            <color red="0.38400000333786011" green="0.81599998474121094" blue="0.74500000476837158" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -100,7 +100,7 @@ class HomeViewController: // multiple inheritance
         gradientSet.append([gradientTwo, gradientThree])
         gradientSet.append([gradientThree, gradientOne])
         animateGradient()
-       
+        Haptics.shared.vibrate(for: .success)
     }
     
     // MARK: - viewDidAppear
@@ -234,10 +234,10 @@ class HomeViewController: // multiple inheritance
         
         switch (currentCellIndex) {
                 
-            case 0: label2.text = "Hubble Space Telescope"
-            case 1: label2.text = "Hubble Space Telescope"
-            case 2: label2.text = "Hubble Space Telescope"
-            default: label2.text = "Hubble Space Telescope"
+            case 0: label2.text = "Capture by Hubble Space Telescope"
+            case 1: label2.text = "Capture by Hubble Space Telescope"
+            case 2: label2.text = "Capture by Hubble Space Telescope"
+            default: label2.text = "Captured by Hubble Space Telescope"
         }
         
         switch (currentCellIndex) {
@@ -275,10 +275,10 @@ class HomeViewController: // multiple inheritance
 
         switch (currentCellIndex) {
                 
-            case 0: label2.text = "Hubble Space Telescope"
-            case 1: label2.text = "Hubble Space Telescope"
-            case 2: label2.text = "Hubble Space Telescope"
-            default: label2.text = "Hubble Space Telescope"
+            case 0: label2.text = "Captured by Hubble Space Telescope"
+            case 1: label2.text = "Captured by Hubble Space Telescope"
+            case 2: label2.text = "Captured by Hubble Space Telescope"
+            default: label2.text = "Captured by Hubble Space Telescope"
         }
         
         switch (currentCellIndex) {

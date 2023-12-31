@@ -101,7 +101,7 @@ class API: @unchecked Sendable {
                             Haptics.shared.impact(for: .light)
                             responseText += text
                             continuation.yield(text)
-                            try await Task.sleep(nanoseconds: 2 * 10000000)  // 2 seconds in nanoseconds
+//                            try await Task.sleep(nanoseconds: 2 * 10000000)  // 2 seconds in nanoseconds
                         }
                     }
                     self.appendToHistoryList(userText: text, responseText: responseText)
