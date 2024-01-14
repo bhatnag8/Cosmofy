@@ -1,9 +1,9 @@
 # Cosmofy
-### Expected Code Completion : December 15, 2023 - December 31, 2023
+### Expected Code Completion : January 15, 2024
 ### Target Release Date : January 15, 2024
 
 Working on : Completion  <br />
-Current Version : 0.3.4 (1) [Release of December 31st, 2023]  <br />
+Current Version : 0.3.6 (1) [Release of January 14th, 2023]  <br />
 External Testing: [testflight.apple.com/join/vUxDefrb ](https://testflight.apple.com/join/vUxDefrb) <br />
 Number of Testers : 4 (Internal)  <br />
 

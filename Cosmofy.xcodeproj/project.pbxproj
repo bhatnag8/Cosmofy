@@ -13,6 +13,10 @@
 		0B294B5D2A8FB46400E755B3 /* MarsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B294B5C2A8FB46400E755B3 /* MarsCell.swift */; };
 		0B3EF4292AFC51EE00F0CECA /* Jupiter3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EF4282AFC51EE00F0CECA /* Jupiter3D.swift */; };
 		0B4005682AF9970400D515EE /* Earth3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4005672AF9970400D515EE /* Earth3D.swift */; };
+		0B40B0C02B5465E4000F43D5 /* UranusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B40B0BF2B5465E4000F43D5 /* UranusViewController.swift */; };
+		0B40B0C22B5465EE000F43D5 /* NeptuneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B40B0C12B5465EE000F43D5 /* NeptuneViewController.swift */; };
+		0B40B0C42B54683E000F43D5 /* UranusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B40B0C32B54683E000F43D5 /* UranusCell.swift */; };
+		0B40B0C62B546DCC000F43D5 /* Uranus3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B40B0C52B546DCC000F43D5 /* Uranus3D.swift */; };
 		0B42A1912B22B1B0007F3B57 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B42A1902B22B1B0007F3B57 /* NewsViewController.swift */; };
 		0B4573522B408ED400E8E6FF /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4573512B408ED400E8E6FF /* Tips.swift */; };
 		0B5140B02B544C750048D3D1 /* SaturnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5140AF2B544C750048D3D1 /* SaturnViewController.swift */; };
@@ -63,6 +67,10 @@
 		0B294B5C2A8FB46400E755B3 /* MarsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsCell.swift; sourceTree = "<group>"; };
 		0B3EF4282AFC51EE00F0CECA /* Jupiter3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jupiter3D.swift; sourceTree = "<group>"; };
 		0B4005672AF9970400D515EE /* Earth3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earth3D.swift; sourceTree = "<group>"; };
+		0B40B0BF2B5465E4000F43D5 /* UranusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UranusViewController.swift; sourceTree = "<group>"; };
+		0B40B0C12B5465EE000F43D5 /* NeptuneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeptuneViewController.swift; sourceTree = "<group>"; };
+		0B40B0C32B54683E000F43D5 /* UranusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UranusCell.swift; sourceTree = "<group>"; };
+		0B40B0C52B546DCC000F43D5 /* Uranus3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uranus3D.swift; sourceTree = "<group>"; };
 		0B42A1902B22B1B0007F3B57 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		0B4573512B408ED400E8E6FF /* Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
 		0B5140AF2B544C750048D3D1 /* SaturnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturnViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +174,7 @@
 				2F4F8FC4295EC08100F7EE98 /* PlanetNode.swift */,
 				2F0ACC22295DBCB800B3D0DB /* Mercury3D.swift */,
 				0B4005672AF9970400D515EE /* Earth3D.swift */,
+				0B40B0C52B546DCC000F43D5 /* Uranus3D.swift */,
 				0BC1F2832A85151300600232 /* Venus3D.swift */,
 				0B8BCDDE2AF9545600DB54CF /* Mars3D.swift */,
 				0B3EF4282AFC51EE00F0CECA /* Jupiter3D.swift */,
@@ -180,6 +189,8 @@
 				0BC1F2852A8520E900600232 /* EarthViewController.swift */,
 				0B6688262A84D1F300CD2B7E /* VenusViewController.swift */,
 				0B294B5A2A8FB34400E755B3 /* MarsViewController.swift */,
+				0B40B0BF2B5465E4000F43D5 /* UranusViewController.swift */,
+				0B40B0C12B5465EE000F43D5 /* NeptuneViewController.swift */,
 				0B9883672AFBF7800044C9A8 /* JupiterViewController.swift */,
 				0B5140AF2B544C750048D3D1 /* SaturnViewController.swift */,
 			);
@@ -196,6 +207,7 @@
 				0B294B5C2A8FB46400E755B3 /* MarsCell.swift */,
 				0B9883692AFC0D490044C9A8 /* JupiterCell.swift */,
 				0B5140B12B5457560048D3D1 /* SaturnCell.swift */,
+				0B40B0C32B54683E000F43D5 /* UranusCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -324,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F7494EF2A5B35C4004C63B7 /* KeychainItem.swift in Sources */,
+				0B40B0C02B5465E4000F43D5 /* UranusViewController.swift in Sources */,
 				2F542ED1297CF0110067C26B /* Pulse.swift in Sources */,
 				0B7D18CC2AE8B655009C2317 /* ContentView.swift in Sources */,
 				2F587A2B294D49490028225E /* MercuryViewController.swift in Sources */,
@@ -337,15 +350,18 @@
 				2F0B04D62945A576001FAAE6 /* HomeCollectionViewCell.swift in Sources */,
 				2FDBA47C2A54F0A200598EC6 /* LoginViewController.swift in Sources */,
 				2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */,
+				0B40B0C42B54683E000F43D5 /* UranusCell.swift in Sources */,
 				0B294B5D2A8FB46400E755B3 /* MarsCell.swift in Sources */,
 				0BC797B32A5DE66B005B9E45 /* SettingsViewController.swift in Sources */,
 				0B42A1912B22B1B0007F3B57 /* NewsViewController.swift in Sources */,
+				0B40B0C22B5465EE000F43D5 /* NeptuneViewController.swift in Sources */,
 				2FBBB6592945531500BBB072 /* AppDelegate.swift in Sources */,
 				2F0ACC23295DBCB800B3D0DB /* Mercury3D.swift in Sources */,
 				0B8BCDDF2AF9545600DB54CF /* Mars3D.swift in Sources */,
 				0B294B5B2A8FB34400E755B3 /* MarsViewController.swift in Sources */,
 				0BC1F2882A85216800600232 /* EarthCell.swift in Sources */,
 				0B4573522B408ED400E8E6FF /* Tips.swift in Sources */,
+				0B40B0C62B546DCC000F43D5 /* Uranus3D.swift in Sources */,
 				2F52B488297F209F00A92FF7 /* MercuryCell.swift in Sources */,
 				0B5140B22B5457560048D3D1 /* SaturnCell.swift in Sources */,
 				0B7671932AE47E22008E57B2 /* API.swift in Sources */,
@@ -523,15 +539,17 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.5;
+				MARKETING_VERSION = 0.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -560,15 +578,17 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.5;
+				MARKETING_VERSION = 0.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

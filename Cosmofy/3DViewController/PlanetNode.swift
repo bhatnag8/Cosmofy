@@ -64,7 +64,7 @@ class PlanetNode : SCNNode {
                 return
                 
             case "saturn": SaturnInterrupt(); break;
-            case "uranus": image = UIImage(named: "")!; break
+            case "uranus": image = UIImage(named: "map-uranus")!; break
             case "neptune": image = UIImage(named: "")!; break
             default: break
         }

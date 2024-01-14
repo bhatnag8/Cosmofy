@@ -15,7 +15,7 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         newsView.layer.cornerRadius = 24
-        spaceImage.layer.cornerRadius = 10
+        spaceImage.layer.cornerRadius = 24
         spaceImage.layer.masksToBounds = true
         
         // Do any additional setup after loading the view.
