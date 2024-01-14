@@ -159,7 +159,7 @@ class HomeViewController: // multiple inheritance
 //                }
 //            }),
             
-            UIAction(title: "Image Info.", image: UIImage(systemName: "info.circle.fill"), handler: { (_) in
+            UIAction(title: "About the Image", image: UIImage(systemName: "info.circle.fill"), handler: { (_) in
                 Haptics.shared.vibrate(for: .success)
                 
                 var urlString: String?
@@ -183,10 +183,26 @@ class HomeViewController: // multiple inheritance
                 }
             }),
             
-            UIAction(title: "Privacy Policy", image: UIImage(systemName: "book.closed.fill"), handler: { (_) in
+            UIAction(title: "What is a Nebula?", image: UIImage(systemName: "cloud.fog.fill"), handler: { (_) in
                 Haptics.shared.vibrate(for: .success)
                 
-            })
+                var urlString: String?
+                urlString = "https://www.space.com/nebula-definition-types"
+                
+                if let urlString = urlString, let url = URL(string: urlString) {
+                    let safariViewController = SFSafariViewController(url: url)
+                    self.present(safariViewController, animated: true, completion: nil)
+                }
+            }),
+            
+            
+            
+//            UIAction(title: "Privacy Policy", image: UIImage(systemName: "book.closed.fill"), handler: { (_) in
+//                Haptics.shared.vibrate(for: .success)
+//                
+//            }),
+            
+            
         
         ])
         return menuItems

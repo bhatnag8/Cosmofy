@@ -142,13 +142,10 @@ class PlanetsViewController: UIViewController {
         button3.layer.borderColor = UIColor(named: "miami-blue")?.cgColor
         button4.layer.borderColor = UIColor(named: "colorMars")?.cgColor
         button5.layer.borderColor = UIColor(named: "colorJupiter")?.cgColor
-//        button6.layer.borderColor = UIColor(named: "colorSaturn")?.cgColor
-//        button7.layer.borderColor = UIColor(named: "colorUranus")?.cgColor
-//        button8.layer.borderColor = UIColor(named: "colorNeptune")?.cgColor
+        button6.layer.borderColor = UIColor(named: "colorSaturn")?.cgColor
+        button7.layer.borderColor = UIColor(named: "colorUranus")?.cgColor
+        button8.layer.borderColor = UIColor(named: "colorNeptune")?.cgColor
         
-        button6.layer.borderColor = UIColor.black.cgColor
-        button7.layer.borderColor = UIColor.black.cgColor
-        button8.layer.borderColor = UIColor.black.cgColor
 
     }
 }

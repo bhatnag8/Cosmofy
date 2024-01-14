@@ -10,11 +10,13 @@ import UIKit
 class NewsViewController: UIViewController {
 
     @IBOutlet weak var newsView: UIView!
-    @IBOutlet weak var spaceImage: RoundedTopCornersImageView!
+    @IBOutlet weak var spaceImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         newsView.layer.cornerRadius = 24
+        spaceImage.layer.cornerRadius = 10
+        spaceImage.layer.masksToBounds = true
         
         // Do any additional setup after loading the view.
     }
@@ -34,19 +36,4 @@ class NewsViewController: UIViewController {
 
 }
 
-class RoundedTopCornersImageView: UIImageView {
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        // Create a mask layer with rounded top corners
-        let maskLayer = CAShapeLayer()
-        maskLayer.path = UIBezierPath(
-            roundedRect: bounds,
-            byRoundingCorners: [.topLeft, .topRight],
-            cornerRadii: CGSize(width: 24, height: 24)
-        ).cgPath
-        
-        // Apply the mask to the image view's layer
-        layer.mask = maskLayer
-    }
-}
+

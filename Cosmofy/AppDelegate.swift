@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Task {
-//            try? Tips.resetDatastore()
+            try? Tips.resetDatastore()
             try? Tips.configure()
         }
         
@@ -28,11 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             case .authorized:
                 break
             case .revoked, .notFound:
-                // The Apple ID credential is either revoked or was not found, so show the sign-in UI.
-                KeychainItem.deleteUserIdentifierFromKeychain()
-                DispatchQueue.main.async {
-                    self.window?.rootViewController?.showLoginViewController()
-                }
+//                // The Apple ID credential is either revoked or was not found, so show the sign-in UI.
+//                KeychainItem.deleteUserIdentifierFromKeychain()
+//                DispatchQueue.main.async {
+//                    self.window?.rootViewController?.showLoginViewController()
+//                }
+                break;
                     
             default:
                 break

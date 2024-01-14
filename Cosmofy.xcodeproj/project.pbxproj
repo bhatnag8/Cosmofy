@@ -15,6 +15,8 @@
 		0B4005682AF9970400D515EE /* Earth3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4005672AF9970400D515EE /* Earth3D.swift */; };
 		0B42A1912B22B1B0007F3B57 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B42A1902B22B1B0007F3B57 /* NewsViewController.swift */; };
 		0B4573522B408ED400E8E6FF /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4573512B408ED400E8E6FF /* Tips.swift */; };
+		0B5140B02B544C750048D3D1 /* SaturnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5140AF2B544C750048D3D1 /* SaturnViewController.swift */; };
+		0B5140B22B5457560048D3D1 /* SaturnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5140B12B5457560048D3D1 /* SaturnCell.swift */; };
 		0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688262A84D1F300CD2B7E /* VenusViewController.swift */; };
 		0B6688292A84D81600CD2B7E /* VenusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688282A84D81600CD2B7E /* VenusCell.swift */; };
 		0B7671932AE47E22008E57B2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671922AE47E22008E57B2 /* API.swift */; };
@@ -63,6 +65,8 @@
 		0B4005672AF9970400D515EE /* Earth3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earth3D.swift; sourceTree = "<group>"; };
 		0B42A1902B22B1B0007F3B57 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		0B4573512B408ED400E8E6FF /* Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
+		0B5140AF2B544C750048D3D1 /* SaturnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturnViewController.swift; sourceTree = "<group>"; };
+		0B5140B12B5457560048D3D1 /* SaturnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturnCell.swift; sourceTree = "<group>"; };
 		0B6688262A84D1F300CD2B7E /* VenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusViewController.swift; sourceTree = "<group>"; };
 		0B6688282A84D81600CD2B7E /* VenusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusCell.swift; sourceTree = "<group>"; };
 		0B7671922AE47E22008E57B2 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 				0B6688262A84D1F300CD2B7E /* VenusViewController.swift */,
 				0B294B5A2A8FB34400E755B3 /* MarsViewController.swift */,
 				0B9883672AFBF7800044C9A8 /* JupiterViewController.swift */,
+				0B5140AF2B544C750048D3D1 /* SaturnViewController.swift */,
 			);
 			path = PlanetViewController;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				0BC1F2872A85216800600232 /* EarthCell.swift */,
 				0B294B5C2A8FB46400E755B3 /* MarsCell.swift */,
 				0B9883692AFC0D490044C9A8 /* JupiterCell.swift */,
+				0B5140B12B5457560048D3D1 /* SaturnCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 				0BC1F2882A85216800600232 /* EarthCell.swift in Sources */,
 				0B4573522B408ED400E8E6FF /* Tips.swift in Sources */,
 				2F52B488297F209F00A92FF7 /* MercuryCell.swift in Sources */,
+				0B5140B22B5457560048D3D1 /* SaturnCell.swift in Sources */,
 				0B7671932AE47E22008E57B2 /* API.swift in Sources */,
 				0B9883682AFBF7800044C9A8 /* JupiterViewController.swift in Sources */,
 				0BF8630C2AF1A58400379905 /* GradientView.swift in Sources */,
@@ -351,6 +358,7 @@
 				0B7671972AE4C3FE008E57B2 /* Models.swift in Sources */,
 				0B4005682AF9970400D515EE /* Earth3D.swift in Sources */,
 				0B7D18C62AE8A9DD009C2317 /* LoadingView.swift in Sources */,
+				0B5140B02B544C750048D3D1 /* SaturnViewController.swift in Sources */,
 				0B7CDD932A875C29006307D1 /* TabBarController.swift in Sources */,
 				2F4F8FC5295EC08100F7EE98 /* PlanetNode.swift in Sources */,
 				2F0B04D22945A522001FAAE6 /* HomeViewController.swift in Sources */,
@@ -523,7 +531,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.4;
+				MARKETING_VERSION = 0.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -560,7 +568,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.4;
+				MARKETING_VERSION = 0.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

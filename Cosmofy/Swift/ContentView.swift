@@ -7,6 +7,7 @@
 //  ========================================
 
 import SwiftUI
+import TipKit
 
 struct ContentView: View {
 
@@ -15,6 +16,7 @@ struct ContentView: View {
     @State private var userTouched = false
     @FocusState var isTextFieldFocused: Bool
     @State private var hasAppeared = false
+    let tip = SwiftTip()
     
     var body: some View {
         chatListView
@@ -40,17 +42,25 @@ struct ContentView: View {
                                 userTouched = true
                            }
                         )
+                        
                     }
                     .onTapGesture {
                         isTextFieldFocused = false
                     }
                 }
+
                 .onTapGesture {
                     isTextFieldFocused = false
                 }
                 
                 Divider()
+                TipView(tip)
+                    .onTapGesture {
+                    tip.invalidate(reason: .actionPerformed)
+                }
+
                 bottomView(image: "user", proxy: proxy)
+
                 Spacer()
             }
             .onChange(of: vm.messages.last?.responseText) { _ in
@@ -80,21 +90,32 @@ struct ContentView: View {
                         .resizable()
                         .frame(width: 30, height: 30)
                 }
-                
+
                 TextField("Send a message", text: $vm.inputMessage, axis: .vertical)
 //                    .border(Color.black, width: 0)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .focused($isTextFieldFocused)
                     .disabled(vm.isInteractingWithChatGPT)
                 
+
+                
                 if vm.isInteractingWithChatGPT {
-                    LoadingView().frame(width: 60, height: 30)
+                    Button {
+                    } label: {
+                        Image(systemName: "arrow.up.circle.fill")
+                            .font(.system(size: 30))
+                            .tint(.red)
+                    }
+
+
                 } else {
+                    
                     Button {
                         Task {
                             @MainActor in
                             isTextFieldFocused = false
                             userTouched = false
+                            tip.invalidate(reason: .actionPerformed)
                             scrollToBottom(proxy: proxy)
                             await vm.sendTapped()
                         }
@@ -103,6 +124,7 @@ struct ContentView: View {
                             .font(.system(size: 30))
                             .tint(.SOUR)
                     }
+
                     .disabled(vm.inputMessage
                         .trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
                     )

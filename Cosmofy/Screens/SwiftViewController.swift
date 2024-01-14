@@ -13,100 +13,23 @@ import SwiftUI
 class SwiftViewController: UIViewController {
     
     @IBOutlet var mainView: UIView!
-    
-    @IBOutlet weak var greetingLabel: UILabel!
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var stateLabel: UILabel!
-    
-    @IBOutlet weak var view1: UIView!
-    @IBOutlet weak var view2: UIView!
-    @IBOutlet weak var view3: UIView!
-
-    @IBOutlet weak var clearView: UIView!
-    
     @IBOutlet weak var backView: UIView!
     
-    
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mainView.bringSubviewToFront(view1)
-        mainView.bringSubviewToFront(view2)
-        mainView.bringSubviewToFront(clearView)
-
-        view1.alpha = 0.0
-        view2.alpha = 0.0
-        view3.alpha = 0.0
-        
-        UIView.animate(withDuration: 1.0) {
-            self.view1.alpha = 1.0
-        }
-        
-        self.greetingLabel.animate(newText: "Greetings from Swift! 🌌 🚀 🌠 🏔️ 🌟", characterDelay: 0.03)
-         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
-            self.messageLabel.animate(newText: "I'm powered by OpenAI, providing you with in-depth knowledge and insights about space like never before.", characterDelay: 0.015)
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.25) {
-            self.statusLabel.animate(newText: "Status: Online (Beta)", characterDelay: 0.015)
-            UIView.animate(withDuration: 0.7) {
-                self.view2.alpha = 1.0
-            }
-            
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
-            self.stateLabel.animate(newText: "Please note that Swift's responses haven't been fully trained as it's still a beta feature.", characterDelay: 0.015)
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
-            UIView.animate(withDuration: 0.70) {
-                self.view3.alpha = 1.0
-            }
-        }
-        
-        view1.layer.cornerRadius = 32
-        view2.layer.cornerRadius = 32
-        view3.layer.cornerRadius = 32
-                
-        view3.layer.borderColor = UIColor(named: "SOUR")?.cgColor
-        view3.layer.borderWidth = 2
+        let childView = UIHostingController(rootView: ContentView())
+        addChild(childView)
+        childView.view.frame = backView.bounds
+        backView.addSubview(childView.view)
+        mainView.bringSubviewToFront(backView)
     }
-    @IBAction func fade(_ sender: Any) {
-        Haptics.shared.vibrate(for: .success)
-        UIView.animate(withDuration: 0.5) {
-            self.view3.alpha = 0
-            self.view2.alpha = 0
-            self.view1.alpha = 0
-        }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            let cv = UIHostingController(rootView: ContentView())
-            self.addChild(cv)
-            cv.view.frame = self.backView.bounds
-            self.mainView.alpha = 0
     
-            self.backView.addSubview(cv.view)
-            self.mainView.bringSubviewToFront(self.backView)
-            UIView.animate(withDuration: 0.5) {
-                self.mainView.alpha = 1
-            }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // Update the frame of the SwiftUI view to match the container's bounds
+        if let childView = children.first {
+            childView.view.frame = backView.bounds
         }
     }
 }
-
-extension UILabel {
-    func animate(newText: String, characterDelay: TimeInterval) {
-        DispatchQueue.main.async {
-            self.text = ""
-            for (index, character) in newText.enumerated() {
-                DispatchQueue.main.asyncAfter(deadline: .now() + characterDelay * Double(index)) {
-                    self.text?.append(character)
-                }
-            }
-        }
-    }
-}
-
