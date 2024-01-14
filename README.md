@@ -4,7 +4,7 @@
 
 Working on : Completion  <br />
 Current Version : 0.3.4 (1) [Release of December 31st, 2023]  <br />
-External Testing: testflight.apple.com/join/vUxDefrb
+External Testing: [testflight.apple.com/join/vUxDefrb ](https://testflight.apple.com/join/vUxDefrb) <br />
 Number of Testers : 4 (Internal)  <br />
 
 Email me at bhatnag8@purdue.edu to join testing.
