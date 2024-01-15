@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1269592B5494820086CA83 /* NeptuneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1269582B5494820086CA83 /* NeptuneCell.swift */; };
+		0B12695B2B54A3D70086CA83 /* Neptune3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B12695A2B54A3D70086CA83 /* Neptune3D.swift */; };
 		0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD502AE96FE7001CFC35 /* ci_scripts */; };
 		0B1BAD572AE97736001CFC35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD562AE97736001CFC35 /* .gitignore */; };
 		0B294B5B2A8FB34400E755B3 /* MarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B294B5A2A8FB34400E755B3 /* MarsViewController.swift */; };
@@ -61,6 +63,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B1269582B5494820086CA83 /* NeptuneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeptuneCell.swift; sourceTree = "<group>"; };
+		0B12695A2B54A3D70086CA83 /* Neptune3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neptune3D.swift; sourceTree = "<group>"; };
 		0B1BAD502AE96FE7001CFC35 /* ci_scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ci_scripts; sourceTree = "<group>"; };
 		0B1BAD562AE97736001CFC35 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0B294B5A2A8FB34400E755B3 /* MarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 				0BC1F2832A85151300600232 /* Venus3D.swift */,
 				0B8BCDDE2AF9545600DB54CF /* Mars3D.swift */,
 				0B3EF4282AFC51EE00F0CECA /* Jupiter3D.swift */,
+				0B12695A2B54A3D70086CA83 /* Neptune3D.swift */,
 			);
 			path = 3DViewController;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 				0B9883692AFC0D490044C9A8 /* JupiterCell.swift */,
 				0B5140B12B5457560048D3D1 /* SaturnCell.swift */,
 				0B40B0C32B54683E000F43D5 /* UranusCell.swift */,
+				0B1269582B5494820086CA83 /* NeptuneCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -338,6 +344,7 @@
 				2F7494EF2A5B35C4004C63B7 /* KeychainItem.swift in Sources */,
 				0B40B0C02B5465E4000F43D5 /* UranusViewController.swift in Sources */,
 				2F542ED1297CF0110067C26B /* Pulse.swift in Sources */,
+				0B1269592B5494820086CA83 /* NeptuneCell.swift in Sources */,
 				0B7D18CC2AE8B655009C2317 /* ContentView.swift in Sources */,
 				2F587A2B294D49490028225E /* MercuryViewController.swift in Sources */,
 				0BC1F2862A8520E900600232 /* EarthViewController.swift in Sources */,
@@ -366,6 +373,7 @@
 				0B5140B22B5457560048D3D1 /* SaturnCell.swift in Sources */,
 				0B7671932AE47E22008E57B2 /* API.swift in Sources */,
 				0B9883682AFBF7800044C9A8 /* JupiterViewController.swift in Sources */,
+				0B12695B2B54A3D70086CA83 /* Neptune3D.swift in Sources */,
 				0BF8630C2AF1A58400379905 /* GradientView.swift in Sources */,
 				0B7D18C82AE8AB97009C2317 /* MessageRowView.swift in Sources */,
 				0BC1F2842A85151300600232 /* Venus3D.swift in Sources */,
@@ -549,7 +557,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.6;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -588,7 +596,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.6;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

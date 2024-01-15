@@ -65,7 +65,7 @@ class PlanetNode : SCNNode {
                 
             case "saturn": SaturnInterrupt(); break;
             case "uranus": image = UIImage(named: "map-uranus")!; break
-            case "neptune": image = UIImage(named: "")!; break
+            case "neptune": image = UIImage(named: "map-neptune")!; break
             default: break
         }
         shape.firstMaterial?.diffuse.contents = image
