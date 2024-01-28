@@ -48,16 +48,18 @@ class UranusViewController: UIViewController,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Task { @MainActor in
-        for await shouldDisplay in modelTip.shouldDisplayUpdates {
-            if shouldDisplay {
-                let controller = TipUIPopoverViewController(modelTip, sourceItem: button1)
-                present(controller, animated: true)
-            } else if presentedViewController is TipUIPopoverViewController {
-                dismiss(animated: true)
-                
+        if #available(iOS 17.0, *) {
+            Task { @MainActor in
+                for await shouldDisplay in modelTip.shouldDisplayUpdates {
+                    if shouldDisplay {
+                        let controller = TipUIPopoverViewController(modelTip, sourceItem: button1)
+                        present(controller, animated: true)
+                    } else if presentedViewController is TipUIPopoverViewController {
+                        dismiss(animated: true)
+                        
+                    }
+                }
             }
-        }
         }
         collectionView.delegate = self
         collectionView.dataSource = self

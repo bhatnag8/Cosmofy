@@ -8,10 +8,13 @@
 import Foundation
 import TipKit
 
+@available(iOS 17, *)
 let planetTip = PlanetTip()
+
+@available(iOS 17, *)
 let modelTip = ModelTip()
 
-
+@available(iOS 17, *)
 struct PlanetTip: Tip {
     var title: Text {
         Text("Visit a Planet:")
@@ -25,10 +28,11 @@ struct PlanetTip: Tip {
     
     var image: Image? {
         Image(systemName: "globe.americas")
-
+        
     }
 }
 
+@available(iOS 17, *)
 struct SwiftTip: Tip {
     var title: Text {
         Text("Send a Message")
@@ -39,12 +43,10 @@ struct SwiftTip: Tip {
         Text("and expect a *Swift* response")
             .foregroundStyle(.white)
     }
-//    
-//    var image: Image? {
-//        Image("swift")
-//    }
+    
 }
 
+@available(iOS 17, *)
 struct ModelTip: Tip {
     var title: Text {
         Text("Explore Planet:")
@@ -60,3 +62,4 @@ struct ModelTip: Tip {
         Image(systemName: "move.3d")
     }
 }
+

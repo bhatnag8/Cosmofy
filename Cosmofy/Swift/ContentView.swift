@@ -9,6 +9,8 @@
 import SwiftUI
 import TipKit
 
+
+
 struct ContentView: View {
 
     @Environment(\.colorScheme) var colorScheme
@@ -16,7 +18,9 @@ struct ContentView: View {
     @State private var userTouched = false
     @FocusState var isTextFieldFocused: Bool
     @State private var hasAppeared = false
-    let tip = SwiftTip()
+    
+//    let tip = SwiftTip()
+
     
     var body: some View {
         chatListView
@@ -54,10 +58,10 @@ struct ContentView: View {
                 }
                 
                 Divider()
-                TipView(tip)
-                    .onTapGesture {
-                    tip.invalidate(reason: .actionPerformed)
-                }
+//                TipView(tip)
+//                    .onTapGesture {
+//                    tip.invalidate(reason: .actionPerformed)
+//                }
 
                 bottomView(image: "user", proxy: proxy)
 
@@ -115,7 +119,7 @@ struct ContentView: View {
                             @MainActor in
                             isTextFieldFocused = false
                             userTouched = false
-                            tip.invalidate(reason: .actionPerformed)
+//                            tip.invalidate(reason: .actionPerformed)
                             scrollToBottom(proxy: proxy)
                             await vm.sendTapped()
                         }

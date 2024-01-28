@@ -18,7 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Task {
 //            try? Tips.resetDatastore()
-            try? Tips.configure()
+            if #available(iOS 17.0, *) {
+                try? Tips.configure()
+            } else {
+                // Fallback on earlier versions
+            }
         }
         
         

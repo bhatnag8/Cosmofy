@@ -90,7 +90,11 @@ class Venus3D: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        modelTip.invalidate(reason: .actionPerformed)
+        if #available(iOS 17.0, *) {
+            modelTip.invalidate(reason: .actionPerformed)
+        } else {
+            // Fallback on earlier versions
+        }
 
         tiltNode.eulerAngles = SCNVector3(x: 0, y: 0, z: Float(tilt * (.pi/180.0)))
         tiltNode.addChildNode(planetNode)

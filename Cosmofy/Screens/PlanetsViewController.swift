@@ -35,7 +35,11 @@ class PlanetsViewController: UIViewController {
     
     @IBAction func buttons_tapped(_ sender: Any) {
         Haptics.shared.vibrate(for: .success)
-        planetTip.invalidate(reason: .actionPerformed)
+        if #available(iOS 17.0, *) {
+            planetTip.invalidate(reason: .actionPerformed)
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     override func viewDidLoad() {
@@ -77,16 +81,18 @@ class PlanetsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
 //        Haptics.shared.impact(for: .rigid)
-        Task { @MainActor in
-        for await shouldDisplay in planetTip.shouldDisplayUpdates {
-            if shouldDisplay {
-                let controller = TipUIPopoverViewController(planetTip, sourceItem: button1)
-                present(controller, animated: true)
-            } else if presentedViewController is TipUIPopoverViewController {
-                dismiss(animated: true)
-                
+        
+        if #available(iOS 17.0, *) {
+            Task { @MainActor in
+                for await shouldDisplay in planetTip.shouldDisplayUpdates {
+                    if shouldDisplay {
+                        let controller = TipUIPopoverViewController(planetTip, sourceItem: button1)
+                        present(controller, animated: true)
+                    } else if presentedViewController is TipUIPopoverViewController {
+                        dismiss(animated: true)
+                    }
+                }
             }
-        }
         }
         
         innerView1.layer.shadowColor = UIColor.black.cgColor
