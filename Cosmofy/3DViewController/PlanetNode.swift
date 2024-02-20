@@ -17,7 +17,7 @@ class PlanetNode : SCNNode {
         super.init()
         
         var shape = SCNSphere(radius: radius)
-        
+        self.position = SCNVector3(0, 0, 0)
         global = rotation
         var image = UIImage()
         

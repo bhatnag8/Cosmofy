@@ -11,6 +11,7 @@
 		0B12695B2B54A3D70086CA83 /* Neptune3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B12695A2B54A3D70086CA83 /* Neptune3D.swift */; };
 		0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD502AE96FE7001CFC35 /* ci_scripts */; };
 		0B1BAD572AE97736001CFC35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD562AE97736001CFC35 /* .gitignore */; };
+		0B20657C2B84363300BB071D /* PlanetsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B20657B2B84363300BB071D /* PlanetsTab.swift */; };
 		0B294B5B2A8FB34400E755B3 /* MarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B294B5A2A8FB34400E755B3 /* MarsViewController.swift */; };
 		0B294B5D2A8FB46400E755B3 /* MarsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B294B5C2A8FB46400E755B3 /* MarsCell.swift */; };
 		0B3EF4292AFC51EE00F0CECA /* Jupiter3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EF4282AFC51EE00F0CECA /* Jupiter3D.swift */; };
@@ -37,6 +38,15 @@
 		0B8BCDDF2AF9545600DB54CF /* Mars3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BCDDE2AF9545600DB54CF /* Mars3D.swift */; };
 		0B9883682AFBF7800044C9A8 /* JupiterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9883672AFBF7800044C9A8 /* JupiterViewController.swift */; };
 		0B98836A2AFC0D490044C9A8 /* JupiterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9883692AFC0D490044C9A8 /* JupiterCell.swift */; };
+		0B9F02782B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */; };
+		0B9F02792B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02702B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf */; };
+		0B9F027A2B75E5B200CB5543 /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02712B75E5B200CB5543 /* SF-Pro-Rounded-Semibold.otf */; };
+		0B9F027B2B75E5B200CB5543 /* SF-Pro-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02722B75E5B200CB5543 /* SF-Pro-Rounded-Ultralight.otf */; };
+		0B9F027C2B75E5B200CB5543 /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02732B75E5B200CB5543 /* SF-Pro-Rounded-Black.otf */; };
+		0B9F027D2B75E5B200CB5543 /* SF-Pro-Rounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02742B75E5B200CB5543 /* SF-Pro-Rounded-Light.otf */; };
+		0B9F027E2B75E5B200CB5543 /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02752B75E5B200CB5543 /* SF-Pro-Rounded-Thin.otf */; };
+		0B9F027F2B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02762B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf */; };
+		0B9F02802B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02772B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf */; };
 		0BA285B12B24450100DDEE39 /* EarthAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA285B02B24450100DDEE39 /* EarthAR.swift */; };
 		0BBF4B9D2A6049F100A9DC4D /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */; };
 		0BC1F2842A85151300600232 /* Venus3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1F2832A85151300600232 /* Venus3D.swift */; };
@@ -44,6 +54,8 @@
 		0BC1F2882A85216800600232 /* EarthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1F2872A85216800600232 /* EarthCell.swift */; };
 		0BC797B32A5DE66B005B9E45 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC797B22A5DE66B005B9E45 /* SettingsViewController.swift */; };
 		0BF8630C2AF1A58400379905 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF8630B2AF1A58400379905 /* GradientView.swift */; };
+		0BFF74672B76FE0B0079A71A /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF74662B76FE0B0079A71A /* Planet.swift */; };
+		0BFF74692B7703630079A71A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF74682B7703630079A71A /* Data.swift */; };
 		2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F073A122946BE4000F024B8 /* PlanetsViewController.swift */; };
 		2F0ACC23295DBCB800B3D0DB /* Mercury3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0ACC22295DBCB800B3D0DB /* Mercury3D.swift */; };
 		2F0B04D22945A522001FAAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B04D12945A522001FAAE6 /* HomeViewController.swift */; };
@@ -67,6 +79,7 @@
 		0B12695A2B54A3D70086CA83 /* Neptune3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neptune3D.swift; sourceTree = "<group>"; };
 		0B1BAD502AE96FE7001CFC35 /* ci_scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ci_scripts; sourceTree = "<group>"; };
 		0B1BAD562AE97736001CFC35 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0B20657B2B84363300BB071D /* PlanetsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsTab.swift; sourceTree = "<group>"; };
 		0B294B5A2A8FB34400E755B3 /* MarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsViewController.swift; sourceTree = "<group>"; };
 		0B294B5C2A8FB46400E755B3 /* MarsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsCell.swift; sourceTree = "<group>"; };
 		0B3EF4282AFC51EE00F0CECA /* Jupiter3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jupiter3D.swift; sourceTree = "<group>"; };
@@ -93,6 +106,15 @@
 		0B8BCDDE2AF9545600DB54CF /* Mars3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mars3D.swift; sourceTree = "<group>"; };
 		0B9883672AFBF7800044C9A8 /* JupiterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JupiterViewController.swift; sourceTree = "<group>"; };
 		0B9883692AFC0D490044C9A8 /* JupiterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JupiterCell.swift; sourceTree = "<group>"; };
+		0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Heavy.otf"; sourceTree = "<group>"; };
+		0B9F02702B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
+		0B9F02712B75E5B200CB5543 /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
+		0B9F02722B75E5B200CB5543 /* SF-Pro-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
+		0B9F02732B75E5B200CB5543 /* SF-Pro-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Black.otf"; sourceTree = "<group>"; };
+		0B9F02742B75E5B200CB5543 /* SF-Pro-Rounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Light.otf"; sourceTree = "<group>"; };
+		0B9F02752B75E5B200CB5543 /* SF-Pro-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Thin.otf"; sourceTree = "<group>"; };
+		0B9F02762B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Medium.otf"; sourceTree = "<group>"; };
+		0B9F02772B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
 		0BA285B02B24450100DDEE39 /* EarthAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthAR.swift; sourceTree = "<group>"; };
 		0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		0BC1F2832A85151300600232 /* Venus3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venus3D.swift; sourceTree = "<group>"; };
@@ -100,6 +122,8 @@
 		0BC1F2872A85216800600232 /* EarthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthCell.swift; sourceTree = "<group>"; };
 		0BC797B22A5DE66B005B9E45 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0BF8630B2AF1A58400379905 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		0BFF74662B76FE0B0079A71A /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		0BFF74682B7703630079A71A /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		2F073A122946BE4000F024B8 /* PlanetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewController.swift; sourceTree = "<group>"; };
 		2F0ACC22295DBCB800B3D0DB /* Mercury3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mercury3D.swift; sourceTree = "<group>"; };
 		2F0B04D12945A522001FAAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +170,22 @@
 			path = Swift;
 			sourceTree = "<group>";
 		};
+		0B9F026E2B75E56000CB5543 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0B9F02732B75E5B200CB5543 /* SF-Pro-Rounded-Black.otf */,
+				0B9F02702B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf */,
+				0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */,
+				0B9F02742B75E5B200CB5543 /* SF-Pro-Rounded-Light.otf */,
+				0B9F02762B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf */,
+				0B9F02772B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf */,
+				0B9F02712B75E5B200CB5543 /* SF-Pro-Rounded-Semibold.otf */,
+				0B9F02752B75E5B200CB5543 /* SF-Pro-Rounded-Thin.otf */,
+				0B9F02722B75E5B200CB5543 /* SF-Pro-Rounded-Ultralight.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		0BBF4B9B2A6049BA00A9DC4D /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +199,13 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		0BC5C9322B818C180046014D /* PlanetViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PlanetViewControllers;
+			sourceTree = "<group>";
+		};
 		0BC797B12A5DE62D005B9E45 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +215,9 @@
 				0BC797B22A5DE66B005B9E45 /* SettingsViewController.swift */,
 				0B42A1902B22B1B0007F3B57 /* NewsViewController.swift */,
 				0B7D0C472AAD65EC003FB763 /* SwiftViewController.swift */,
+				0B20657B2B84363300BB071D /* PlanetsTab.swift */,
+				0BFF74662B76FE0B0079A71A /* Planet.swift */,
+				0BFF74682B7703630079A71A /* Data.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -247,6 +297,8 @@
 		2FBBB6572945531500BBB072 /* Cosmofy */ = {
 			isa = PBXGroup;
 			children = (
+				0BC5C9322B818C180046014D /* PlanetViewControllers */,
+				0B9F026E2B75E56000CB5543 /* Fonts */,
 				2F6427CF2A4FA4EF00CC503D /* Cosmofy.entitlements */,
 				2F4F8FC1295EBC5100F7EE98 /* star.png */,
 				2F4F8FC0295EBC5100F7EE98 /* StarsParticleSystem.scnp */,
@@ -310,6 +362,8 @@
 				Base,
 			);
 			mainGroup = 2FBBB64C2945531500BBB072;
+			packageReferences = (
+			);
 			productRefGroup = 2FBBB6562945531500BBB072 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -324,13 +378,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B9F027D2B75E5B200CB5543 /* SF-Pro-Rounded-Light.otf in Resources */,
+				0B9F027E2B75E5B200CB5543 /* SF-Pro-Rounded-Thin.otf in Resources */,
 				2FBBB6652945531700BBB072 /* LaunchScreen.storyboard in Resources */,
 				0B1BAD572AE97736001CFC35 /* .gitignore in Resources */,
+				0B9F027C2B75E5B200CB5543 /* SF-Pro-Rounded-Black.otf in Resources */,
+				0B9F02802B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf in Resources */,
 				2F4F8FC3295EBC5100F7EE98 /* star.png in Resources */,
+				0B9F027F2B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf in Resources */,
+				0B9F027B2B75E5B200CB5543 /* SF-Pro-Rounded-Ultralight.otf in Resources */,
 				2F4F8FC2295EBC5100F7EE98 /* StarsParticleSystem.scnp in Resources */,
 				0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */,
 				2FBBB6622945531700BBB072 /* Assets.xcassets in Resources */,
+				0B9F02792B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf in Resources */,
+				0B9F02782B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf in Resources */,
 				2FBBB6602945531500BBB072 /* Main.storyboard in Resources */,
+				0B9F027A2B75E5B200CB5543 /* SF-Pro-Rounded-Semibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +406,7 @@
 			files = (
 				2F7494EF2A5B35C4004C63B7 /* KeychainItem.swift in Sources */,
 				0B40B0C02B5465E4000F43D5 /* UranusViewController.swift in Sources */,
+				0BFF74672B76FE0B0079A71A /* Planet.swift in Sources */,
 				2F542ED1297CF0110067C26B /* Pulse.swift in Sources */,
 				0B1269592B5494820086CA83 /* NeptuneCell.swift in Sources */,
 				0B7D18CC2AE8B655009C2317 /* ContentView.swift in Sources */,
@@ -371,6 +435,7 @@
 				0B40B0C62B546DCC000F43D5 /* Uranus3D.swift in Sources */,
 				2F52B488297F209F00A92FF7 /* MercuryCell.swift in Sources */,
 				0B5140B22B5457560048D3D1 /* SaturnCell.swift in Sources */,
+				0BFF74692B7703630079A71A /* Data.swift in Sources */,
 				0B7671932AE47E22008E57B2 /* API.swift in Sources */,
 				0B9883682AFBF7800044C9A8 /* JupiterViewController.swift in Sources */,
 				0B12695B2B54A3D70086CA83 /* Neptune3D.swift in Sources */,
@@ -382,6 +447,7 @@
 				0B7671972AE4C3FE008E57B2 /* Models.swift in Sources */,
 				0B4005682AF9970400D515EE /* Earth3D.swift in Sources */,
 				0B7D18C62AE8A9DD009C2317 /* LoadingView.swift in Sources */,
+				0B20657C2B84363300BB071D /* PlanetsTab.swift in Sources */,
 				0B5140B02B544C750048D3D1 /* SaturnViewController.swift in Sources */,
 				0B7CDD932A875C29006307D1 /* TabBarController.swift in Sources */,
 				2F4F8FC5295EC08100F7EE98 /* PlanetNode.swift in Sources */,
@@ -557,7 +623,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -596,7 +662,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

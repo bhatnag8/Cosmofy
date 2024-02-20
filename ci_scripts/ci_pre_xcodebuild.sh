@@ -3,7 +3,7 @@
 echo "Stage: PRE-Xcode Build is activated .... "
 
 # for future reference
-# https://developer.apple.com/documentation/xcode/environment-variable-reference
+# 
 
 cd ../Cosmofy/
 

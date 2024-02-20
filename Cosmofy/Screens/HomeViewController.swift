@@ -52,7 +52,15 @@ class HomeViewController: // multiple inheritance
     
     @IBAction func linkButton(_ sender: UIButton) {
         Haptics.shared.vibrate(for: .success)
-        UIApplication.shared.open(URL(string: "https://www.quantamagazine.org/what-is-the-geometry-of-the-universe-20200316/")! as URL, options: [:], completionHandler: nil)
+//        UIApplication.shared.open(URL(string: "https://www.quantamagazine.org/what-is-the-geometry-of-the-universe-20200316/")! as URL, options: [:], completionHandler: nil)
+        
+        var urlString: String?
+        urlString = "https://www.quantamagazine.org/what-is-the-geometry-of-the-universe-20200316/"
+        
+        if let urlString = urlString, let url = URL(string: urlString) {
+            let safariViewController = SFSafariViewController(url: url)
+            self.present(safariViewController, animated: true, completion: nil)
+        }
     }
     
     
@@ -250,10 +258,10 @@ class HomeViewController: // multiple inheritance
         
         switch (currentCellIndex) {
                 
-            case 0: label2.text = "Capture by Hubble Space Telescope"
-            case 1: label2.text = "Capture by Hubble Space Telescope"
-            case 2: label2.text = "Capture by Hubble Space Telescope"
-            default: label2.text = "Captured by Hubble Space Telescope"
+            case 0: label2.text = "From the Hubble Space Telescope"
+            case 1: label2.text = "From the Hubble Space Telescope"
+            case 2: label2.text = "From the Hubble Space Telescope"
+            default: label2.text = "From the Hubble Space Telescope"
         }
         
         switch (currentCellIndex) {
@@ -291,10 +299,10 @@ class HomeViewController: // multiple inheritance
 
         switch (currentCellIndex) {
                 
-            case 0: label2.text = "Captured by Hubble Space Telescope"
-            case 1: label2.text = "Captured by Hubble Space Telescope"
-            case 2: label2.text = "Captured by Hubble Space Telescope"
-            default: label2.text = "Captured by Hubble Space Telescope"
+            case 0: label2.text = "From the Hubble Space Telescope"
+            case 1: label2.text = "From the Hubble Space Telescope"
+            case 2: label2.text = "From the Hubble Space Telescope"
+            default: label2.text = "From the Hubble Space Telescope"
         }
         
         switch (currentCellIndex) {
