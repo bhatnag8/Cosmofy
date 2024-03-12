@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B00383B2B9F89E100DAD175 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B00383A2B9F89E000DAD175 /* Tab.swift */; };
+		0B00383D2B9F8B7900DAD175 /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B00383C2B9F8B7900DAD175 /* Planets.swift */; };
 		0B1269592B5494820086CA83 /* NeptuneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1269582B5494820086CA83 /* NeptuneCell.swift */; };
 		0B12695B2B54A3D70086CA83 /* Neptune3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B12695A2B54A3D70086CA83 /* Neptune3D.swift */; };
+		0B161A692B9FF30B008F3D0F /* View+OffsetX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A682B9FF30B008F3D0F /* View+OffsetX.swift */; };
 		0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD502AE96FE7001CFC35 /* ci_scripts */; };
 		0B1BAD572AE97736001CFC35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD562AE97736001CFC35 /* .gitignore */; };
 		0B20657C2B84363300BB071D /* PlanetsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B20657B2B84363300BB071D /* PlanetsTab.swift */; };
@@ -36,6 +39,7 @@
 		0B7D18C82AE8AB97009C2317 /* MessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18C72AE8AB97009C2317 /* MessageRowView.swift */; };
 		0B7D18CC2AE8B655009C2317 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18CB2AE8B655009C2317 /* ContentView.swift */; };
 		0B8BCDDF2AF9545600DB54CF /* Mars3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BCDDE2AF9545600DB54CF /* Mars3D.swift */; };
+		0B923B6E2B9CBBEE009B8D45 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */; };
 		0B9883682AFBF7800044C9A8 /* JupiterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9883672AFBF7800044C9A8 /* JupiterViewController.swift */; };
 		0B98836A2AFC0D490044C9A8 /* JupiterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9883692AFC0D490044C9A8 /* JupiterCell.swift */; };
 		0B9F02782B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */; };
@@ -48,12 +52,18 @@
 		0B9F027F2B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02762B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf */; };
 		0B9F02802B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02772B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf */; };
 		0BA285B12B24450100DDEE39 /* EarthAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA285B02B24450100DDEE39 /* EarthAR.swift */; };
+		0BB14A432B9C2B1100476F3C /* CosmofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A422B9C2B1100476F3C /* CosmofyApp.swift */; };
+		0BB14A472B9C2B5F00476F3C /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A462B9C2B5F00476F3C /* SplashScreen.swift */; };
+		0BB14A4A2B9C2CF000476F3C /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A492B9C2CF000476F3C /* SplashScreenView.swift */; };
+		0BB14A4D2B9C2EB000476F3C /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */; };
+		0BB14A532B9C339800476F3C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A522B9C339800476F3C /* Card.swift */; };
 		0BBF4B9D2A6049F100A9DC4D /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */; };
 		0BC1F2842A85151300600232 /* Venus3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1F2832A85151300600232 /* Venus3D.swift */; };
 		0BC1F2862A8520E900600232 /* EarthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1F2852A8520E900600232 /* EarthViewController.swift */; };
 		0BC1F2882A85216800600232 /* EarthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1F2872A85216800600232 /* EarthCell.swift */; };
 		0BC797B32A5DE66B005B9E45 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC797B22A5DE66B005B9E45 /* SettingsViewController.swift */; };
 		0BF8630C2AF1A58400379905 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF8630B2AF1A58400379905 /* GradientView.swift */; };
+		0BFB21052B9CEB1400C84FD8 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB21042B9CEB1400C84FD8 /* Home.swift */; };
 		0BFF74672B76FE0B0079A71A /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF74662B76FE0B0079A71A /* Planet.swift */; };
 		0BFF74692B7703630079A71A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF74682B7703630079A71A /* Data.swift */; };
 		2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F073A122946BE4000F024B8 /* PlanetsViewController.swift */; };
@@ -70,13 +80,15 @@
 		2FBBB6592945531500BBB072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBB6582945531500BBB072 /* AppDelegate.swift */; };
 		2FBBB6602945531500BBB072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB65E2945531500BBB072 /* Main.storyboard */; };
 		2FBBB6622945531700BBB072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
-		2FBBB6652945531700BBB072 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6632945531700BBB072 /* LaunchScreen.storyboard */; };
 		2FDBA47C2A54F0A200598EC6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDBA47B2A54F0A200598EC6 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B00383A2B9F89E000DAD175 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		0B00383C2B9F8B7900DAD175 /* Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
 		0B1269582B5494820086CA83 /* NeptuneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeptuneCell.swift; sourceTree = "<group>"; };
 		0B12695A2B54A3D70086CA83 /* Neptune3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neptune3D.swift; sourceTree = "<group>"; };
+		0B161A682B9FF30B008F3D0F /* View+OffsetX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+OffsetX.swift"; sourceTree = "<group>"; };
 		0B1BAD502AE96FE7001CFC35 /* ci_scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ci_scripts; sourceTree = "<group>"; };
 		0B1BAD562AE97736001CFC35 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0B20657B2B84363300BB071D /* PlanetsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsTab.swift; sourceTree = "<group>"; };
@@ -104,6 +116,7 @@
 		0B7D18C72AE8AB97009C2317 /* MessageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRowView.swift; sourceTree = "<group>"; };
 		0B7D18CB2AE8B655009C2317 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0B8BCDDE2AF9545600DB54CF /* Mars3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mars3D.swift; sourceTree = "<group>"; };
+		0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		0B9883672AFBF7800044C9A8 /* JupiterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JupiterViewController.swift; sourceTree = "<group>"; };
 		0B9883692AFC0D490044C9A8 /* JupiterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JupiterCell.swift; sourceTree = "<group>"; };
 		0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Heavy.otf"; sourceTree = "<group>"; };
@@ -116,12 +129,18 @@
 		0B9F02762B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Medium.otf"; sourceTree = "<group>"; };
 		0B9F02772B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
 		0BA285B02B24450100DDEE39 /* EarthAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthAR.swift; sourceTree = "<group>"; };
+		0BB14A422B9C2B1100476F3C /* CosmofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmofyApp.swift; sourceTree = "<group>"; };
+		0BB14A462B9C2B5F00476F3C /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		0BB14A492B9C2CF000476F3C /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		0BB14A522B9C339800476F3C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		0BC1F2832A85151300600232 /* Venus3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venus3D.swift; sourceTree = "<group>"; };
 		0BC1F2852A8520E900600232 /* EarthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthViewController.swift; sourceTree = "<group>"; };
 		0BC1F2872A85216800600232 /* EarthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthCell.swift; sourceTree = "<group>"; };
 		0BC797B22A5DE66B005B9E45 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0BF8630B2AF1A58400379905 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		0BFB21042B9CEB1400C84FD8 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		0BFF74662B76FE0B0079A71A /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		0BFF74682B7703630079A71A /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		2F073A122946BE4000F024B8 /* PlanetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewController.swift; sourceTree = "<group>"; };
@@ -140,7 +159,6 @@
 		2FBBB6582945531500BBB072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FBBB65F2945531500BBB072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2FBBB6612945531700BBB072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2FBBB6642945531700BBB072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FBBB6662945531700BBB072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FDBA47B2A54F0A200598EC6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +202,67 @@
 				0B9F02722B75E5B200CB5543 /* SF-Pro-Rounded-Ultralight.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0BB14A272B9C27BC00476F3C /* v1.0 */ = {
+			isa = PBXGroup;
+			children = (
+				0BC5C9322B818C180046014D /* PlanetViewControllers */,
+				0B7D18C42AE8A5E7009C2317 /* Swift */,
+				0BC797B12A5DE62D005B9E45 /* Screens */,
+				2F0ACC21295DBC9F00B3D0DB /* 3DViewController */,
+				2F98598629838EA0007271B1 /* ARViewControllers */,
+				2F587A29294D48FE0028225E /* PlanetViewController */,
+				0BBF4B9B2A6049BA00A9DC4D /* SupportingFiles */,
+				2F98598529838E5B007271B1 /* CollectionViewCells */,
+			);
+			path = v1.0;
+			sourceTree = "<group>";
+		};
+		0BB14A482B9C2B6C00476F3C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0BB14A462B9C2B5F00476F3C /* SplashScreen.swift */,
+				0BB14A492B9C2CF000476F3C /* SplashScreenView.swift */,
+				0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */,
+				0BFB21042B9CEB1400C84FD8 /* Home.swift */,
+				0B00383C2B9F8B7900DAD175 /* Planets.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0BB14A4B2B9C2E9300476F3C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */,
+				0B161A682B9FF30B008F3D0F /* View+OffsetX.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0BB14A4E2B9C334F00476F3C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0BB14A4F2B9C335700476F3C /* TabHome */,
+				0BB14A512B9C336E00476F3C /* TabPlanets */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0BB14A4F2B9C335700476F3C /* TabHome */ = {
+			isa = PBXGroup;
+			children = (
+				0BB14A522B9C339800476F3C /* Card.swift */,
+			);
+			path = TabHome;
+			sourceTree = "<group>";
+		};
+		0BB14A512B9C336E00476F3C /* TabPlanets */ = {
+			isa = PBXGroup;
+			children = (
+				0B00383A2B9F89E000DAD175 /* Tab.swift */,
+			);
+			path = TabPlanets;
 			sourceTree = "<group>";
 		};
 		0BBF4B9B2A6049BA00A9DC4D /* SupportingFiles */ = {
@@ -297,23 +376,19 @@
 		2FBBB6572945531500BBB072 /* Cosmofy */ = {
 			isa = PBXGroup;
 			children = (
-				0BC5C9322B818C180046014D /* PlanetViewControllers */,
+				0BB14A4E2B9C334F00476F3C /* Models */,
+				0BB14A482B9C2B6C00476F3C /* Views */,
+				0BB14A4B2B9C2E9300476F3C /* Extensions */,
+				0BB14A272B9C27BC00476F3C /* v1.0 */,
 				0B9F026E2B75E56000CB5543 /* Fonts */,
 				2F6427CF2A4FA4EF00CC503D /* Cosmofy.entitlements */,
 				2F4F8FC1295EBC5100F7EE98 /* star.png */,
 				2F4F8FC0295EBC5100F7EE98 /* StarsParticleSystem.scnp */,
-				0B7D18C42AE8A5E7009C2317 /* Swift */,
-				0BC797B12A5DE62D005B9E45 /* Screens */,
-				2F0ACC21295DBC9F00B3D0DB /* 3DViewController */,
-				2F98598629838EA0007271B1 /* ARViewControllers */,
-				2F587A29294D48FE0028225E /* PlanetViewController */,
-				0BBF4B9B2A6049BA00A9DC4D /* SupportingFiles */,
-				2F98598529838E5B007271B1 /* CollectionViewCells */,
 				2FBBB6582945531500BBB072 /* AppDelegate.swift */,
 				2FBBB65E2945531500BBB072 /* Main.storyboard */,
-				2FBBB6632945531700BBB072 /* LaunchScreen.storyboard */,
 				2FBBB6612945531700BBB072 /* Assets.xcassets */,
 				2FBBB6662945531700BBB072 /* Info.plist */,
+				0BB14A422B9C2B1100476F3C /* CosmofyApp.swift */,
 			);
 			path = Cosmofy;
 			sourceTree = "<group>";
@@ -380,7 +455,6 @@
 			files = (
 				0B9F027D2B75E5B200CB5543 /* SF-Pro-Rounded-Light.otf in Resources */,
 				0B9F027E2B75E5B200CB5543 /* SF-Pro-Rounded-Thin.otf in Resources */,
-				2FBBB6652945531700BBB072 /* LaunchScreen.storyboard in Resources */,
 				0B1BAD572AE97736001CFC35 /* .gitignore in Resources */,
 				0B9F027C2B75E5B200CB5543 /* SF-Pro-Rounded-Black.otf in Resources */,
 				0B9F02802B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf in Resources */,
@@ -410,25 +484,32 @@
 				2F542ED1297CF0110067C26B /* Pulse.swift in Sources */,
 				0B1269592B5494820086CA83 /* NeptuneCell.swift in Sources */,
 				0B7D18CC2AE8B655009C2317 /* ContentView.swift in Sources */,
+				0BFB21052B9CEB1400C84FD8 /* Home.swift in Sources */,
+				0BB14A432B9C2B1100476F3C /* CosmofyApp.swift in Sources */,
 				2F587A2B294D49490028225E /* MercuryViewController.swift in Sources */,
 				0BC1F2862A8520E900600232 /* EarthViewController.swift in Sources */,
 				0B7D18C32AE8A526009C2317 /* ViewModel.swift in Sources */,
 				0B7D0C482AAD65EC003FB763 /* SwiftViewController.swift in Sources */,
 				0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */,
+				0B00383D2B9F8B7900DAD175 /* Planets.swift in Sources */,
 				0BA285B12B24450100DDEE39 /* EarthAR.swift in Sources */,
 				0B3EF4292AFC51EE00F0CECA /* Jupiter3D.swift in Sources */,
 				0B6688292A84D81600CD2B7E /* VenusCell.swift in Sources */,
 				2F0B04D62945A576001FAAE6 /* HomeCollectionViewCell.swift in Sources */,
 				2FDBA47C2A54F0A200598EC6 /* LoginViewController.swift in Sources */,
+				0BB14A472B9C2B5F00476F3C /* SplashScreen.swift in Sources */,
 				2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */,
 				0B40B0C42B54683E000F43D5 /* UranusCell.swift in Sources */,
 				0B294B5D2A8FB46400E755B3 /* MarsCell.swift in Sources */,
 				0BC797B32A5DE66B005B9E45 /* SettingsViewController.swift in Sources */,
 				0B42A1912B22B1B0007F3B57 /* NewsViewController.swift in Sources */,
+				0B923B6E2B9CBBEE009B8D45 /* TabBarView.swift in Sources */,
 				0B40B0C22B5465EE000F43D5 /* NeptuneViewController.swift in Sources */,
 				2FBBB6592945531500BBB072 /* AppDelegate.swift in Sources */,
 				2F0ACC23295DBCB800B3D0DB /* Mercury3D.swift in Sources */,
 				0B8BCDDF2AF9545600DB54CF /* Mars3D.swift in Sources */,
+				0BB14A4A2B9C2CF000476F3C /* SplashScreenView.swift in Sources */,
+				0B00383B2B9F89E100DAD175 /* Tab.swift in Sources */,
 				0B294B5B2A8FB34400E755B3 /* MarsViewController.swift in Sources */,
 				0BC1F2882A85216800600232 /* EarthCell.swift in Sources */,
 				0B4573522B408ED400E8E6FF /* Tips.swift in Sources */,
@@ -438,9 +519,12 @@
 				0BFF74692B7703630079A71A /* Data.swift in Sources */,
 				0B7671932AE47E22008E57B2 /* API.swift in Sources */,
 				0B9883682AFBF7800044C9A8 /* JupiterViewController.swift in Sources */,
+				0BB14A532B9C339800476F3C /* Card.swift in Sources */,
 				0B12695B2B54A3D70086CA83 /* Neptune3D.swift in Sources */,
 				0BF8630C2AF1A58400379905 /* GradientView.swift in Sources */,
 				0B7D18C82AE8AB97009C2317 /* MessageRowView.swift in Sources */,
+				0BB14A4D2B9C2EB000476F3C /* Color+Hex.swift in Sources */,
+				0B161A692B9FF30B008F3D0F /* View+OffsetX.swift in Sources */,
 				0BC1F2842A85151300600232 /* Venus3D.swift in Sources */,
 				0B7D18BF2AE8A482009C2317 /* MessageRow.swift in Sources */,
 				0BBF4B9D2A6049F100A9DC4D /* Haptics.swift in Sources */,
@@ -465,14 +549,6 @@
 				2FBBB65F2945531500BBB072 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2FBBB6632945531700BBB072 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2FBBB6642945531700BBB072 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -614,11 +690,10 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -653,11 +728,10 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

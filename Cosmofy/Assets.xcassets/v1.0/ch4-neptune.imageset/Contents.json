@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ch4-neptune.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
