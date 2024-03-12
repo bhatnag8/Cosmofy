@@ -8,7 +8,7 @@
 import SwiftUI
 import SceneKit
 
-struct Planet: View {
+struct PlanetSwiftUI: View {
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -322,5 +322,5 @@ struct CustomListItem: View {
 
 
 #Preview {
-    Planet()
+    PlanetSwiftUI()
 }

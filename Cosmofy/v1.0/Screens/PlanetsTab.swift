@@ -15,13 +15,13 @@ class PlanetsTab: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var backView: UIView!
     
-    var childView: UIHostingController<Planet>?
+    var childView: UIHostingController<PlanetSwiftUI>?
     
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
-        childView = UIHostingController(rootView: Planet())
+        childView = UIHostingController(rootView: PlanetSwiftUI())
         addChild(childView!)
         childView!.view.frame = backView.bounds
         backView.addSubview(childView!.view)

@@ -12,6 +12,8 @@
 		0B1269592B5494820086CA83 /* NeptuneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1269582B5494820086CA83 /* NeptuneCell.swift */; };
 		0B12695B2B54A3D70086CA83 /* Neptune3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B12695A2B54A3D70086CA83 /* Neptune3D.swift */; };
 		0B161A692B9FF30B008F3D0F /* View+OffsetX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A682B9FF30B008F3D0F /* View+OffsetX.swift */; };
+		0B161A6B2BA014DC008F3D0F /* View+TabMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6A2BA014DC008F3D0F /* View+TabMask.swift */; };
+		0B161A6D2BA02123008F3D0F /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6C2BA02123008F3D0F /* Planet.swift */; };
 		0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD502AE96FE7001CFC35 /* ci_scripts */; };
 		0B1BAD572AE97736001CFC35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD562AE97736001CFC35 /* .gitignore */; };
 		0B20657C2B84363300BB071D /* PlanetsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B20657B2B84363300BB071D /* PlanetsTab.swift */; };
@@ -64,7 +66,7 @@
 		0BC797B32A5DE66B005B9E45 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC797B22A5DE66B005B9E45 /* SettingsViewController.swift */; };
 		0BF8630C2AF1A58400379905 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF8630B2AF1A58400379905 /* GradientView.swift */; };
 		0BFB21052B9CEB1400C84FD8 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB21042B9CEB1400C84FD8 /* Home.swift */; };
-		0BFF74672B76FE0B0079A71A /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF74662B76FE0B0079A71A /* Planet.swift */; };
+		0BFF74672B76FE0B0079A71A /* PlanetSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF74662B76FE0B0079A71A /* PlanetSwiftUI.swift */; };
 		0BFF74692B7703630079A71A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF74682B7703630079A71A /* Data.swift */; };
 		2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F073A122946BE4000F024B8 /* PlanetsViewController.swift */; };
 		2F0ACC23295DBCB800B3D0DB /* Mercury3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0ACC22295DBCB800B3D0DB /* Mercury3D.swift */; };
@@ -89,6 +91,8 @@
 		0B1269582B5494820086CA83 /* NeptuneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeptuneCell.swift; sourceTree = "<group>"; };
 		0B12695A2B54A3D70086CA83 /* Neptune3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neptune3D.swift; sourceTree = "<group>"; };
 		0B161A682B9FF30B008F3D0F /* View+OffsetX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+OffsetX.swift"; sourceTree = "<group>"; };
+		0B161A6A2BA014DC008F3D0F /* View+TabMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TabMask.swift"; sourceTree = "<group>"; };
+		0B161A6C2BA02123008F3D0F /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		0B1BAD502AE96FE7001CFC35 /* ci_scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ci_scripts; sourceTree = "<group>"; };
 		0B1BAD562AE97736001CFC35 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0B20657B2B84363300BB071D /* PlanetsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsTab.swift; sourceTree = "<group>"; };
@@ -141,7 +145,7 @@
 		0BC797B22A5DE66B005B9E45 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0BF8630B2AF1A58400379905 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		0BFB21042B9CEB1400C84FD8 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		0BFF74662B76FE0B0079A71A /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		0BFF74662B76FE0B0079A71A /* PlanetSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetSwiftUI.swift; sourceTree = "<group>"; };
 		0BFF74682B7703630079A71A /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		2F073A122946BE4000F024B8 /* PlanetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewController.swift; sourceTree = "<group>"; };
 		2F0ACC22295DBCB800B3D0DB /* Mercury3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mercury3D.swift; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 			children = (
 				0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */,
 				0B161A682B9FF30B008F3D0F /* View+OffsetX.swift */,
+				0B161A6A2BA014DC008F3D0F /* View+TabMask.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				0B00383A2B9F89E000DAD175 /* Tab.swift */,
+				0B161A6C2BA02123008F3D0F /* Planet.swift */,
 			);
 			path = TabPlanets;
 			sourceTree = "<group>";
@@ -271,7 +277,6 @@
 				2F542ED0297CF0110067C26B /* Pulse.swift */,
 				0B4573512B408ED400E8E6FF /* Tips.swift */,
 				2F7494EE2A5B35C4004C63B7 /* KeychainItem.swift */,
-				0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */,
 				0B7CDD922A875C29006307D1 /* TabBarController.swift */,
 				0BF8630B2AF1A58400379905 /* GradientView.swift */,
 			);
@@ -295,7 +300,7 @@
 				0B42A1902B22B1B0007F3B57 /* NewsViewController.swift */,
 				0B7D0C472AAD65EC003FB763 /* SwiftViewController.swift */,
 				0B20657B2B84363300BB071D /* PlanetsTab.swift */,
-				0BFF74662B76FE0B0079A71A /* Planet.swift */,
+				0BFF74662B76FE0B0079A71A /* PlanetSwiftUI.swift */,
 				0BFF74682B7703630079A71A /* Data.swift */,
 			);
 			path = Screens;
@@ -376,6 +381,7 @@
 		2FBBB6572945531500BBB072 /* Cosmofy */ = {
 			isa = PBXGroup;
 			children = (
+				0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */,
 				0BB14A4E2B9C334F00476F3C /* Models */,
 				0BB14A482B9C2B6C00476F3C /* Views */,
 				0BB14A4B2B9C2E9300476F3C /* Extensions */,
@@ -480,7 +486,8 @@
 			files = (
 				2F7494EF2A5B35C4004C63B7 /* KeychainItem.swift in Sources */,
 				0B40B0C02B5465E4000F43D5 /* UranusViewController.swift in Sources */,
-				0BFF74672B76FE0B0079A71A /* Planet.swift in Sources */,
+				0B161A6D2BA02123008F3D0F /* Planet.swift in Sources */,
+				0BFF74672B76FE0B0079A71A /* PlanetSwiftUI.swift in Sources */,
 				2F542ED1297CF0110067C26B /* Pulse.swift in Sources */,
 				0B1269592B5494820086CA83 /* NeptuneCell.swift in Sources */,
 				0B7D18CC2AE8B655009C2317 /* ContentView.swift in Sources */,
@@ -500,6 +507,7 @@
 				0BB14A472B9C2B5F00476F3C /* SplashScreen.swift in Sources */,
 				2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */,
 				0B40B0C42B54683E000F43D5 /* UranusCell.swift in Sources */,
+				0B161A6B2BA014DC008F3D0F /* View+TabMask.swift in Sources */,
 				0B294B5D2A8FB46400E755B3 /* MarsCell.swift in Sources */,
 				0BC797B32A5DE66B005B9E45 /* SettingsViewController.swift in Sources */,
 				0B42A1912B22B1B0007F3B57 /* NewsViewController.swift in Sources */,

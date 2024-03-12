@@ -52,7 +52,6 @@ struct Home: View {
                 .padding(.horizontal, -15)
                 
                 Divider()
-            
                 
                 VStack {
                     
@@ -91,10 +90,6 @@ struct Home: View {
                         Image(systemName: "chevron.right")
                     }
                     
-                    Divider()
-                    
-                    
-                    
                 }
                 .padding()
             }
@@ -126,7 +121,7 @@ struct Home: View {
             let dayOfWeek = calendar.component(.weekday, from: currentDate)
             let hourOfDay = calendar.component(.hour, from: currentDate)
             
-            let dayString = dayOfWeekString(dayOfWeek)
+            _ = dayOfWeekString(dayOfWeek)
             let timeOfDayString = timeOfDay(hourOfDay)
             
             return "\(timeOfDayString)"

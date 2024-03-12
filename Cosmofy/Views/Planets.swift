@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Planets: View {
+
     
     @State private var selectedTab: Tab?
     @Environment(\.colorScheme) private var scheme
@@ -25,42 +26,52 @@ struct Planets: View {
                     ScrollView(.horizontal) {
                         LazyHStack(spacing: 0) {
                             ScrollView(.vertical) {
-                                VStack {
-                                    Text("Inner Planets")
-                                    Text("Inner Planets")
-                                    Text("Inner Planets")
-                                    Text("Inner Planets")
-                                    Text("Inner Planets")
+                                ForEach(innerPlanets) { planet in
+                                    PlanetView(planet: planet)
+                                }
+                                .onTapGesture {
+                                    Haptics.shared.vibrate(for: .success)
                                 }
                             }
+                            .listStyle(PlainListStyle())  // Use PlainListStyle here
                             .id(Tab.inner)
                             .containerRelativeFrame(.horizontal)
+                            .onAppear(perform: {Haptics.shared.impact(for: .light)})
                             
                             ScrollView(.vertical) {
-                                VStack {
-                                    Text("Outer Planets")
-                                    Text("Outer Planets")
-                                    Text("Outer Planets")
-                                    Text("Outer Planets")
-                                    Text("Outer Planets")
+                                ForEach(outerPlanets) { planet in
+                                    PlanetView(planet: planet)
+                                }
+                                .onTapGesture {
+                                    Haptics.shared.vibrate(for: .success)
                                 }
                             }
                             .id(Tab.outer)
                             .containerRelativeFrame(.horizontal)
+                            .onAppear(perform: {Haptics.shared.impact(for: .light)})
                             
                             ScrollView(.vertical) {
                                 VStack {
-                                    Text("Solar System")
-                                    Text("Solar System")
-                                    Text("Solar System")
-                                    Text("Solar System")
-                                    Text("Solar System")
-
+                                    Image("solar-system")
+                                        .resizable()
+                                        .frame(width: 45, height: 45)
+                                        .padding(.bottom, 8)
                                     
+                                    Text("Coming Soon!")
+                                        .font(Font.custom("SF Pro Rounded Semibold", size: 24))
+
+                                    Text("Get ready to explore the solar system like never before with our upcoming 3D and AR model for the whole solar system. Stay tuned!")
+                                        .font(Font.custom("SF Pro Rounded Regular", size: 18))
+                                        .foregroundStyle(.secondary)
+                                        .padding([.leading, .trailing])
+                                        .padding(.top, 8)
                                 }
+                                .padding()
+                                .padding(.top, 32)
                             }
                             .id(Tab.solar)
                             .containerRelativeFrame(.horizontal)
+                            .onAppear(perform: {Haptics.shared.impact(for: .light)})
                         }
                         .scrollTargetLayout()
                         .offsetX { value in
@@ -105,6 +116,7 @@ struct Planets: View {
                 }
             }
         }
+        .tabMask(tabProgress)
         .background {
             GeometryReader {
                 let size = $0.size
@@ -121,6 +133,44 @@ struct Planets: View {
     }
         
 }
+
+struct PlanetView: View {
+    var planet: Planet
+    
+    var body: some View {
+        HStack(spacing: 16) {
+            Image(planet.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 50, height: 50)
+                .padding(.leading, 4)
+                
+            
+            VStack() {
+                HStack {
+                    Text(planet.name)
+                        .font(Font.custom("SF Pro Rounded Medium", size: 20))
+                    Spacer()
+                }
+                
+                HStack {
+                    Text(planet.description)
+                        .font(Font.custom("SF Pro Rounded Regular", size: 16))
+                        .foregroundColor(.secondary)
+                    Spacer()
+                }
+                
+            }
+            
+            Image(systemName: "chevron.right")
+                .padding()
+                
+            
+        }
+        .padding()
+    }
+}
+
 
 #Preview {
     Planets()
