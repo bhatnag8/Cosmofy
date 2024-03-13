@@ -23,7 +23,6 @@ struct Planet: Identifiable {
     var mass: String
     var volume: String
     var images: [String]?
-    var maps: [String]?
     var atmosphere: [String]
 }
 
@@ -59,13 +58,45 @@ let mercuryPlanet = Planet(
     atmosphere: ["atmosphere-mercury-1", "atmosphere-mercury-2", "atmosphere-mercury-3", "atmosphere-mercury-4", "atmosphere-mercury-5", "atmosphere-mercury-6"]
 )
 
+let venusPlanet = Planet(
+    name: "Venus",
+    imageName: "smiling-venus",
+    description: "Known for its thick, toxic atmosphere and scorching heat.",
+    visual: "Sometime between 1610s and 1630s",
+    color: .colorVenus,
+    moons: 0,
+    rings: 0,
+    gravity: 8.87,
+    density: 5.243,
+    radius: "6.0518 x 10³",
+    mass: "4.8673 x 10²⁴",
+    volume: "9.28415 x 10¹¹",
+    atmosphere: ["atmosphere-venus-1", "atmosphere-venus-2"]
+)
+
+let earthPlanet = Planet(
+    name: "Earth",
+    imageName: "smiling-earth",
+    description: "Blue planet teeming with life and diverse ecosystems.",
+    visual: "After the 16th century",
+    color: .miamiBlue,
+    moons: 1,
+    rings: 0,
+    gravity: 9.80665,
+    density: 5.513,
+    radius: "6.3710 x 10³",
+    mass: "5.9722 x 10²⁴",
+    volume: "1.08321 x 10¹²",
+    atmosphere: ["atmosphere-venus-1", "atmosphere-venus-2"]
+)
+
 
 let innerPlanets = [
 //    Planet(imageName: "smiling-mercury", name: "Mercury", description: "Closest planet to the Sun, with extreme temperatures.", color: .innerPlanets),
 //    Planet(imageName: "smiling-venus", name: "Venus", description: "Known for its thick, toxic atmosphere and scorching heat.", color: .innerPlanets),
 //    Planet(imageName: "smiling-earth", name: "Earth", description: "Blue planet teeming with life and diverse ecosystems.", color: .innerPlanets),
 //    Planet(imageName: "smiling-mars", name: "Mars", description: "The red planet, with intriguing geological features.", color: .innerPlanets),
-    mercuryPlanet
+    mercuryPlanet, venusPlanet, earthPlanet
         
 ]
 

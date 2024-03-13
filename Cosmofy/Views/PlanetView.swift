@@ -8,18 +8,43 @@
 import SwiftUI
 import SceneKit
 
+struct SomeView: View {
+    @Environment (\.presentationMode) var presentationMode
+    var body: some View {
+        VStack {
+            Text("HIIII")
+            Text("HIIII")
+            Text("HIIII")
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .edgesIgnoringSafeArea(.all)
+        .onTapGesture {
+            presentationMode.wrappedValue.dismiss()
+        }
+    }
+    
+}
+
 struct PlanetView: View {
     
     var planet: Planet
+    @State private var isPresented = false
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack {
                     HStack {
-                        Text("First Human Visual Observation")
-                            .font(Font.custom("SF Pro Rounded Medium", size: 15))
-                            .foregroundColor(.secondary)
+                        if !(planet.name == "Earth") {
+                            Text("First Human Visual Observation")
+                                .font(Font.custom("SF Pro Rounded Medium", size: 15))
+                                .foregroundColor(.secondary)
+                        } else {
+                            Text("Earth was perceived as a planet")
+                                .font(Font.custom("SF Pro Rounded Medium", size: 15))
+                                .foregroundColor(.secondary)
+                        }
+                        
                         Spacer()
                     }
                     HStack {
@@ -31,7 +56,7 @@ struct PlanetView: View {
 
                     Spacer(minLength: 20)
                     ZStack {
-                        SceneKitView()
+                        SceneKitView(planet: planet.name.lowercased())
                             .frame(height: 300)
                             .background(Color.black)
                             .cornerRadius(30)
@@ -42,6 +67,7 @@ struct PlanetView: View {
                             HStack {
                                 Spacer()
                                 Button(action: {
+                                    self.isPresented.toggle()
                                     
                                 }) {
                                     HStack {
@@ -53,6 +79,7 @@ struct PlanetView: View {
                                     .padding(.top, 16)
                                     .padding([.trailing], 16)
                                 }
+                                .fullScreenCover(isPresented: $isPresented, content: SomeView.init)
                             }
                             Spacer()
                         }
@@ -230,6 +257,7 @@ struct PlanetView: View {
 // This would be your actual implementation with data binding, MapKit integration, etc.
 
 struct SceneKitView: UIViewControllerRepresentable {
+    var planet: String
     
     let width: CGFloat = 300
     let height: CGFloat = 300
@@ -251,7 +279,7 @@ struct SceneKitView: UIViewControllerRepresentable {
         sceneView.backgroundColor = UIColor.black
         
         // Assuming you have a PlanetNode for Neptune
-        let neptune = PlanetNode(radius: 1, planet: "neptune", rotation: 10)
+        let neptune = PlanetNode(radius: 1, planet: planet, rotation: 10)
         neptune.position = SCNVector3(0, 0, 0) // Center the node
         scene.rootNode.addChildNode(neptune)
         
