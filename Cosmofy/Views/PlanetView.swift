@@ -8,20 +8,22 @@
 import SwiftUI
 import SceneKit
 
-struct PlanetSwiftUI: View {
+struct PlanetView: View {
+    
+    var planet: Planet
+    
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack {
-                    
-                    HStack{
+                    HStack {
                         Text("First Human Visual Observation")
                             .font(Font.custom("SF Pro Rounded Medium", size: 15))
                             .foregroundColor(.secondary)
                         Spacer()
                     }
                     HStack {
-                        Text("Wednesday, September 23, 1846")
+                        Text(planet.visual)
                             .font(Font.custom("SF Pro Rounded Medium", size: 15))
                             .foregroundColor(.secondary)
                         Spacer()
@@ -34,6 +36,7 @@ struct PlanetSwiftUI: View {
                             .background(Color.black)
                             .cornerRadius(30)
                             .padding(8)
+
                         
                         VStack {
                             HStack {
@@ -83,8 +86,8 @@ struct PlanetSwiftUI: View {
                                     .font(Font.custom("SF Pro Rounded Medium", size: 16))
                                     .foregroundColor(.secondary)
                                 HStack(alignment: .firstTextBaseline) {
-                                    Text("14").font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                                    Text("moons").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(.colorNeptune)
+                                    Text(String(planet.moons)).font(Font.custom("SF Pro Rounded Semibold", size: 20))
+                                    Text("moons").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(planet.color)
                                 }
                             }
                         }
@@ -97,8 +100,8 @@ struct PlanetSwiftUI: View {
                                     .font(Font.custom("SF Pro Rounded Medium", size: 16))
                                     .foregroundColor(.secondary)
                                 HStack(alignment: .firstTextBaseline) {
-                                    Text("5").font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                                    Text("rings").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(.colorNeptune)
+                                    Text(String(planet.rings)).font(Font.custom("SF Pro Rounded Semibold", size: 20))
+                                    Text("rings").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(planet.color)
                                 }
                             }
                         }
@@ -114,8 +117,8 @@ struct PlanetSwiftUI: View {
                                     .font(Font.custom("SF Pro Rounded Medium", size: 16))
                                     .foregroundColor(.secondary)
                                 HStack(alignment: .firstTextBaseline) {
-                                    Text("11.15").font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                                    Text("m/s²").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(.colorNeptune)
+                                    Text(String(planet.gravity)).font(Font.custom("SF Pro Rounded Semibold", size: 20))
+                                    Text("m/s²").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(planet.color)
                                 }
                             }
                         }
@@ -128,8 +131,8 @@ struct PlanetSwiftUI: View {
                                     .font(Font.custom("SF Pro Rounded Medium", size: 16))
                                     .foregroundColor(.secondary)
                                 HStack(alignment: .firstTextBaseline) {
-                                    Text("1.638").font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                                    Text("g/cm³").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(.colorNeptune)
+                                    Text(String(planet.density)).font(Font.custom("SF Pro Rounded Semibold", size: 20))
+                                    Text("g/cm³").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(planet.color)
                                 }
                             }
                         }
@@ -144,8 +147,8 @@ struct PlanetSwiftUI: View {
                                 .font(Font.custom("SF Pro Rounded Medium", size: 16))
                                 .foregroundColor(.secondary)
                             HStack(alignment: .firstTextBaseline) {
-                                Text("2.4622 × 10⁴").font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                                Text("km").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(.colorNeptune)
+                                Text(planet.radius).font(Font.custom("SF Pro Rounded Semibold", size: 20))
+                                Text("km").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(planet.color)
                             }
                         }
                         Spacer()
@@ -160,8 +163,8 @@ struct PlanetSwiftUI: View {
                                 .font(Font.custom("SF Pro Rounded Medium", size: 16))
                                 .foregroundColor(.secondary)
                             HStack(alignment: .firstTextBaseline) {
-                                Text("1.0241 × 10²⁶").font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                                Text("kg").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(.colorNeptune)
+                                Text(planet.mass).font(Font.custom("SF Pro Rounded Semibold", size: 20))
+                                Text("kg").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(planet.color)
                             }
                         }
                         Spacer()
@@ -174,8 +177,8 @@ struct PlanetSwiftUI: View {
                                 .font(Font.custom("SF Pro Rounded Medium", size: 16))
                                 .foregroundColor(.secondary)
                             HStack(alignment: .firstTextBaseline) {
-                                Text("6.2526 × 10¹³").font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                                Text("km³").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(.colorNeptune)
+                                Text(planet.volume).font(Font.custom("SF Pro Rounded Semibold", size: 20))
+                                Text("km³").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(planet.color)
                             }
                         }
                         Spacer()
@@ -188,19 +191,14 @@ struct PlanetSwiftUI: View {
                                 .font(Font.custom("SF Pro Rounded Medium", size: 16))
                                 .foregroundColor(.secondary)
                             HStack(alignment: .firstTextBaseline) {
+                                
+                                ForEach(Array(planet.atmosphere.enumerated()), id: \.element) { index, image in
+                                    Image(image)
+                                        .resizable()
+                                        .frame(width: 40, height: 40)
+                                        .cornerRadius(8)
+                                }
 
-                                Image("ch4-neptune")
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
-                                    .cornerRadius(8)
-                                Image("h2-neptune")
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
-                                    .cornerRadius(8)
-                                Image("he-neptune")
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
-                                    .cornerRadius(6)
                             }
                         }
                         Spacer()
@@ -210,39 +208,22 @@ struct PlanetSwiftUI: View {
                 }
                 .padding()
             }
-            .navigationTitle("Neptune")
+            .navigationTitle(planet.name)
             .onAppear {
                 UINavigationBar.appearance().largeTitleTextAttributes = [
                     .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 32),
                 ]
             }
             .navigationBarItems(
-                leading: Button(action: {
-                    // Add your leading button action here
-                }) {
-                    Image(systemName: "chevron.left")
-                        .font(Font.custom("SF Pro Rounded", size: 20))
-                        .foregroundStyle(.colorNeptune)
-                },
                 trailing: Button(action: {
                     // Add your second trailing button action here
                 }) {
                     Image(systemName: "square.and.arrow.up")
                         .font(Font.custom("SF Pro Rounded", size: 20))
-                        .foregroundStyle(.colorNeptune)
+                        .foregroundColor(planet.color)
                 }
             )
         }
-    }
-}
-
-
-struct MapView: View {
-    var body: some View {
-        // Placeholder view to represent the map
-        Rectangle()
-            .fill(Color.black)
-            .cornerRadius(10)
     }
 }
 
@@ -295,32 +276,6 @@ struct SceneKitView: UIViewControllerRepresentable {
 }
 
 
-struct CustomListItem: View {
-    var label: String
-    var action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            HStack {
-                Text(label)
-                    .font(Font.custom("SF Pro Rounded Medium", size: 16))
-                    .foregroundStyle(.black)
-                
-                Spacer()
-
-                Image(systemName: "chevron.right")
-                    .font(Font.custom("SF Pro Rounded", size: 16))
-                    .foregroundStyle(.colorNeptune)
-            }
-            .padding(.vertical, 8)
-        }
-        .background(Color(.lightText))
-        .cornerRadius(8)
-        .padding(.horizontal)
-    }
-}
-
-
 #Preview {
-    PlanetSwiftUI()
+    PlanetView(planet: neptunePlanet)
 }

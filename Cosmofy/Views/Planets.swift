@@ -27,7 +27,7 @@ struct Planets: View {
                         LazyHStack(spacing: 0) {
                             ScrollView(.vertical) {
                                 ForEach(innerPlanets) { planet in
-                                    PlanetView(planet: planet)
+                                    PlanetBlock(planet: planet)
                                 }
                                 .onTapGesture {
                                     Haptics.shared.vibrate(for: .success)
@@ -40,7 +40,7 @@ struct Planets: View {
                             
                             ScrollView(.vertical) {
                                 ForEach(outerPlanets) { planet in
-                                    PlanetView(planet: planet)
+                                    PlanetBlock(planet: planet)
                                 }
                                 .onTapGesture {
                                     Haptics.shared.vibrate(for: .success)
@@ -134,40 +134,39 @@ struct Planets: View {
         
 }
 
-struct PlanetView: View {
+struct PlanetBlock: View {
     var planet: Planet
     
     var body: some View {
-        HStack(spacing: 16) {
-            Image(planet.imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 50, height: 50)
-                .padding(.leading, 4)
+        NavigationLink(destination: PlanetView(planet: planet)) {
+            HStack(spacing: 16) {
+                Image(planet.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 50, height: 50)
+                    .padding(.leading, 4)
                 
-            
-            VStack() {
-                HStack {
-                    Text(planet.name)
-                        .font(Font.custom("SF Pro Rounded Medium", size: 20))
-                    Spacer()
+                VStack() {
+                    HStack {
+                        Text(planet.name)
+                            .font(Font.custom("SF Pro Rounded Medium", size: 20))
+                        Spacer()
+                    }
+
+                    HStack {
+                        Text(planet.description)
+                            .font(Font.custom("SF Pro Rounded Regular", size: 16))
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.leading)
+                        Spacer()
+                    }
                 }
                 
-                HStack {
-                    Text(planet.description)
-                        .font(Font.custom("SF Pro Rounded Regular", size: 16))
-                        .foregroundColor(.secondary)
-                    Spacer()
-                }
-                
+                Image(systemName: "chevron.right")
+                    .padding()
             }
-            
-            Image(systemName: "chevron.right")
-                .padding()
-                
-            
+            .padding()
         }
-        .padding()
     }
 }
 
