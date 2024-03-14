@@ -53,6 +53,8 @@
 		0B9F027E2B75E5B200CB5543 /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02752B75E5B200CB5543 /* SF-Pro-Rounded-Thin.otf */; };
 		0B9F027F2B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02762B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf */; };
 		0B9F02802B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02772B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf */; };
+		0BA159852BA26998003D7E72 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA159842BA26998003D7E72 /* ChartView.swift */; };
+		0BA159872BA27F34003D7E72 /* RotationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA159862BA27F34003D7E72 /* RotationData.swift */; };
 		0BA285B12B24450100DDEE39 /* EarthAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA285B02B24450100DDEE39 /* EarthAR.swift */; };
 		0BB14A432B9C2B1100476F3C /* CosmofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A422B9C2B1100476F3C /* CosmofyApp.swift */; };
 		0BB14A472B9C2B5F00476F3C /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A462B9C2B5F00476F3C /* SplashScreen.swift */; };
@@ -132,6 +134,8 @@
 		0B9F02752B75E5B200CB5543 /* SF-Pro-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Thin.otf"; sourceTree = "<group>"; };
 		0B9F02762B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Medium.otf"; sourceTree = "<group>"; };
 		0B9F02772B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
+		0BA159842BA26998003D7E72 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		0BA159862BA27F34003D7E72 /* RotationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationData.swift; sourceTree = "<group>"; };
 		0BA285B02B24450100DDEE39 /* EarthAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthAR.swift; sourceTree = "<group>"; };
 		0BB14A422B9C2B1100476F3C /* CosmofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmofyApp.swift; sourceTree = "<group>"; };
 		0BB14A462B9C2B5F00476F3C /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 				0BFB21042B9CEB1400C84FD8 /* Home.swift */,
 				0B00383C2B9F8B7900DAD175 /* Planets.swift */,
 				0BFF74662B76FE0B0079A71A /* PlanetView.swift */,
+				0BA159842BA26998003D7E72 /* ChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 			children = (
 				0B00383A2B9F89E000DAD175 /* Tab.swift */,
 				0B161A6C2BA02123008F3D0F /* Planet.swift */,
+				0BA159862BA27F34003D7E72 /* RotationData.swift */,
 			);
 			path = TabPlanets;
 			sourceTree = "<group>";
@@ -493,6 +499,7 @@
 				0B7D18CC2AE8B655009C2317 /* ContentView.swift in Sources */,
 				0BFB21052B9CEB1400C84FD8 /* Home.swift in Sources */,
 				0BB14A432B9C2B1100476F3C /* CosmofyApp.swift in Sources */,
+				0BA159852BA26998003D7E72 /* ChartView.swift in Sources */,
 				2F587A2B294D49490028225E /* MercuryViewController.swift in Sources */,
 				0BC1F2862A8520E900600232 /* EarthViewController.swift in Sources */,
 				0B7D18C32AE8A526009C2317 /* ViewModel.swift in Sources */,
@@ -505,6 +512,7 @@
 				2F0B04D62945A576001FAAE6 /* HomeCollectionViewCell.swift in Sources */,
 				2FDBA47C2A54F0A200598EC6 /* LoginViewController.swift in Sources */,
 				0BB14A472B9C2B5F00476F3C /* SplashScreen.swift in Sources */,
+				0BA159872BA27F34003D7E72 /* RotationData.swift in Sources */,
 				2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */,
 				0B40B0C42B54683E000F43D5 /* UranusCell.swift in Sources */,
 				0B161A6B2BA014DC008F3D0F /* View+TabMask.swift in Sources */,

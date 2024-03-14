@@ -55,6 +55,10 @@ struct PlanetView: View {
                     }
 
                     Spacer(minLength: 20)
+                    
+                    ChartView()
+                        .padding()
+                    
                     ZStack {
                         SceneKitView(planet: planet.name.lowercased())
                             .frame(height: 300)
@@ -232,6 +236,9 @@ struct PlanetView: View {
                     }
                     .padding(.horizontal)
                     Divider()
+                    
+                    ChartView()
+                        .padding()
                 }
                 .padding()
             }
@@ -305,5 +312,5 @@ struct SceneKitView: UIViewControllerRepresentable {
 
 
 #Preview {
-    PlanetView(planet: neptunePlanet)
+    PlanetView(planet: mercuryPlanet)
 }
