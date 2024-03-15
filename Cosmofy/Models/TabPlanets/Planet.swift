@@ -24,6 +24,15 @@ struct Planet: Identifiable {
     var volume: String
     var images: [String]?
     var atmosphere: [String]
+    var data: [ChartData]
+}
+
+struct ChartData: Identifiable, Equatable {
+    let type: String
+    let count: Float
+    let color: Color
+    let original: Color
+    var id: String { return type }
 }
 
 let neptunePlanet = Planet(
@@ -39,7 +48,17 @@ let neptunePlanet = Planet(
     radius: "2.4622 × 10⁴",
     mass: "1.0241 × 10²⁶",
     volume: "6.2526 × 10¹³",
-    atmosphere: ["ch4-neptune", "h2-neptune", "he-neptune"]
+    atmosphere: ["ch4-neptune", "h2-neptune", "he-neptune"],
+    data: [
+        ChartData(type: "Mercury", count: 5.427, color: .primary, original: .colorMercury),
+        ChartData(type: "Venus", count: 5.243, color: .primary, original: .colorVenus),
+        ChartData(type: "Earth", count: 5.513, color: .primary, original: .miamiBlue),
+        ChartData(type: "Mars", count: 3.934, color: .primary, original: .colorMars),
+        ChartData(type: "Jupiter", count: 1.326, color: .primary, original: .colorJupiter),
+        ChartData(type: "Saturn", count: 0.687, color: .primary, original: .colorSaturn),
+        ChartData(type: "Uranus", count: 1.270, color: .primary, original: .colorUranus),
+        ChartData(type: "Neptune", count: 1.638, color: .colorNeptune, original: .colorNeptune),
+    ]
 )
 
 let mercuryPlanet = Planet(
@@ -55,7 +74,17 @@ let mercuryPlanet = Planet(
     radius: "2.4397 x 10³",
     mass: "3.3010 x 10²³",
     volume: "6.08272 x 10¹⁰",
-    atmosphere: ["atmosphere-mercury-1", "atmosphere-mercury-2", "atmosphere-mercury-3", "atmosphere-mercury-4", "atmosphere-mercury-5", "atmosphere-mercury-6"]
+    atmosphere: ["atmosphere-mercury-1", "atmosphere-mercury-2", "atmosphere-mercury-3", "atmosphere-mercury-4", "atmosphere-mercury-5", "atmosphere-mercury-6"],
+    data: [
+        ChartData(type: "Mercury", count: 5.427, color: .colorMercury, original: .colorMercury),
+        ChartData(type: "Venus", count: 5.243, color: .primary, original: .colorVenus),
+        ChartData(type: "Earth", count: 5.513, color: .primary, original: .miamiBlue),
+        ChartData(type: "Mars", count: 3.934, color: .primary, original: .colorMars),
+        ChartData(type: "Jupiter", count: 1.326, color: .primary, original: .colorJupiter),
+        ChartData(type: "Saturn", count: 0.687, color: .primary, original: .colorSaturn),
+        ChartData(type: "Uranus", count: 1.270, color: .primary, original: .colorUranus),
+        ChartData(type: "Neptune", count: 1.638, color: .primary, original: .colorNeptune),
+    ]
 )
 
 let venusPlanet = Planet(
@@ -71,7 +100,17 @@ let venusPlanet = Planet(
     radius: "6.0518 x 10³",
     mass: "4.8673 x 10²⁴",
     volume: "9.28415 x 10¹¹",
-    atmosphere: ["atmosphere-venus-1", "atmosphere-venus-2"]
+    atmosphere: ["atmosphere-venus-1", "atmosphere-venus-2"],
+    data: [
+        ChartData(type: "Mercury", count: 5.427, color: .primary, original: .colorMercury),
+        ChartData(type: "Venus", count: 5.243, color: .colorVenus, original: .colorVenus),
+        ChartData(type: "Earth", count: 5.513, color: .primary, original: .miamiBlue),
+        ChartData(type: "Mars", count: 3.934, color: .primary, original: .colorMars),
+        ChartData(type: "Jupiter", count: 1.326, color: .primary, original: .colorJupiter),
+        ChartData(type: "Saturn", count: 0.687, color: .primary, original: .colorSaturn),
+        ChartData(type: "Uranus", count: 1.270, color: .primary, original: .colorUranus),
+        ChartData(type: "Neptune", count: 1.638, color: .primary, original: .colorNeptune),
+    ]
 )
 
 let earthPlanet = Planet(
@@ -87,7 +126,17 @@ let earthPlanet = Planet(
     radius: "6.3710 x 10³",
     mass: "5.9722 x 10²⁴",
     volume: "1.08321 x 10¹²",
-    atmosphere: ["atmosphere-venus-1", "atmosphere-venus-2"]
+    atmosphere: ["atmosphere-venus-1", "atmosphere-venus-2"],
+    data: [
+        ChartData(type: "Mercury", count: 5.427, color: .primary, original: .colorMercury),
+        ChartData(type: "Venus", count: 5.243, color: .primary, original: .colorVenus),
+        ChartData(type: "Earth", count: 5.513, color: .miamiBlue, original: .miamiBlue),
+        ChartData(type: "Mars", count: 3.934, color: .primary, original: .colorMars),
+        ChartData(type: "Jupiter", count: 1.326, color: .primary, original: .colorJupiter),
+        ChartData(type: "Saturn", count: 0.687, color: .primary, original: .colorSaturn),
+        ChartData(type: "Uranus", count: 1.270, color: .primary, original: .colorUranus),
+        ChartData(type: "Neptune", count: 1.638, color: .primary, original: .colorNeptune),
+    ]
 )
 
 

@@ -232,6 +232,8 @@ struct PlanetView: View {
                     }
                     .padding(.horizontal)
                     Divider()
+                    ChartView(planet: planet)
+                        .padding(.horizontal, 12)
                 }
                 .padding()
             }

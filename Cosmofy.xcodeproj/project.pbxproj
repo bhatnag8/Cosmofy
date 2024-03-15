@@ -29,6 +29,8 @@
 		0B4573522B408ED400E8E6FF /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4573512B408ED400E8E6FF /* Tips.swift */; };
 		0B5140B02B544C750048D3D1 /* SaturnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5140AF2B544C750048D3D1 /* SaturnViewController.swift */; };
 		0B5140B22B5457560048D3D1 /* SaturnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5140B12B5457560048D3D1 /* SaturnCell.swift */; };
+		0B5CC34C2BA2C43100A7A55F /* RotationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CC34B2BA2C43100A7A55F /* RotationData.swift */; };
+		0B5CC34E2BA2C84E00A7A55F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CC34D2BA2C84E00A7A55F /* ChartView.swift */; };
 		0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688262A84D1F300CD2B7E /* VenusViewController.swift */; };
 		0B6688292A84D81600CD2B7E /* VenusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688282A84D81600CD2B7E /* VenusCell.swift */; };
 		0B7671932AE47E22008E57B2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671922AE47E22008E57B2 /* API.swift */; };
@@ -108,6 +110,8 @@
 		0B4573512B408ED400E8E6FF /* Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
 		0B5140AF2B544C750048D3D1 /* SaturnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturnViewController.swift; sourceTree = "<group>"; };
 		0B5140B12B5457560048D3D1 /* SaturnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturnCell.swift; sourceTree = "<group>"; };
+		0B5CC34B2BA2C43100A7A55F /* RotationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationData.swift; sourceTree = "<group>"; };
+		0B5CC34D2BA2C84E00A7A55F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		0B6688262A84D1F300CD2B7E /* VenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusViewController.swift; sourceTree = "<group>"; };
 		0B6688282A84D81600CD2B7E /* VenusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusCell.swift; sourceTree = "<group>"; };
 		0B7671922AE47E22008E57B2 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 				0BFB21042B9CEB1400C84FD8 /* Home.swift */,
 				0B00383C2B9F8B7900DAD175 /* Planets.swift */,
 				0BFF74662B76FE0B0079A71A /* PlanetView.swift */,
+				0B5CC34D2BA2C84E00A7A55F /* ChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 			children = (
 				0BB14A4F2B9C335700476F3C /* TabHome */,
 				0BB14A512B9C336E00476F3C /* TabPlanets */,
+				0B5CC34B2BA2C43100A7A55F /* RotationData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -505,6 +511,7 @@
 				2F0B04D62945A576001FAAE6 /* HomeCollectionViewCell.swift in Sources */,
 				2FDBA47C2A54F0A200598EC6 /* LoginViewController.swift in Sources */,
 				0BB14A472B9C2B5F00476F3C /* SplashScreen.swift in Sources */,
+				0B5CC34C2BA2C43100A7A55F /* RotationData.swift in Sources */,
 				2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */,
 				0B40B0C42B54683E000F43D5 /* UranusCell.swift in Sources */,
 				0B161A6B2BA014DC008F3D0F /* View+TabMask.swift in Sources */,
@@ -542,6 +549,7 @@
 				0B20657C2B84363300BB071D /* PlanetsTab.swift in Sources */,
 				0B5140B02B544C750048D3D1 /* SaturnViewController.swift in Sources */,
 				0B7CDD932A875C29006307D1 /* TabBarController.swift in Sources */,
+				0B5CC34E2BA2C84E00A7A55F /* ChartView.swift in Sources */,
 				2F4F8FC5295EC08100F7EE98 /* PlanetNode.swift in Sources */,
 				2F0B04D22945A522001FAAE6 /* HomeViewController.swift in Sources */,
 				0B98836A2AFC0D490044C9A8 /* JupiterCell.swift in Sources */,
