@@ -9,7 +9,7 @@ import SwiftUI
 import Charts
 
 struct ChartView: View {
-    @State private var isTapped = false
+    @State private var isTapped = true
     var planet: Planet
     var body: some View {
         
@@ -18,6 +18,7 @@ struct ChartView: View {
                 .font(Font.custom("SF Pro Rounded Medium", size: 20))
             Spacer()
         }
+
         
         Chart(planet.data) { dataPoint in
             let color: Color = isTapped ? dataPoint.original : dataPoint.color
@@ -31,6 +32,7 @@ struct ChartView: View {
             }
         }
         .onTapGesture {
+            Haptics.shared.vibrate(for: .success)
             isTapped.toggle()
         }
         .chartLegend(.hidden)
@@ -41,7 +43,31 @@ struct ChartView: View {
             }
         }
         .aspectRatio(1, contentMode: .fit)
+        
+        VStack(spacing: 2) {
+            HStack {
+                Text("Rocky planets are denser due to solid compositions.")
+                    .font(Font.custom("SF Pro Rounded Regular", size: 12))
+                    .foregroundStyle(.secondary)
+                Spacer()
+            }
+            HStack {
+                Text("Gas giants have lower densities owing to gaseous atmospheres.")
+                    .font(Font.custom("SF Pro Rounded Regular", size: 12))
+                    .foregroundStyle(.secondary)
+
+                Spacer()
+            }
+            HStack {
+                Text("Ice giants are closer to 1.0, the density of water.")
+                    .font(Font.custom("SF Pro Rounded Regular", size: 12))
+                    .foregroundStyle(.secondary)
+
+                Spacer()
+            }
+        }
     }
+    
 }
 
 

@@ -126,7 +126,7 @@ let earthPlanet = Planet(
     radius: "6.3710 x 10³",
     mass: "5.9722 x 10²⁴",
     volume: "1.08321 x 10¹²",
-    atmosphere: ["atmosphere-venus-1", "atmosphere-venus-2"],
+    atmosphere: ["atmosphere-earth-1", "atmosphere-earth-2"],
     data: [
         ChartData(type: "Mercury", count: 5.427, color: .primary, original: .colorMercury),
         ChartData(type: "Venus", count: 5.243, color: .primary, original: .colorVenus),

@@ -253,6 +253,7 @@ struct PlanetView: View {
                 }
             )
         }
+        .onAppear(perform: {Haptics.shared.vibrate(for: .success)})
     }
 }
 
