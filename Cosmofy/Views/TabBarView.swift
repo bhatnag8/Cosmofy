@@ -14,6 +14,7 @@ struct TabBarView: View {
                 .tabItem {
                     Label("Home", image: "tab-bar-home")
                 }
+                .onAppear(perform: {Haptics.shared.impact(for: .light)})
             
             Planets()
                 .tabItem {
@@ -24,11 +25,13 @@ struct TabBarView: View {
                 .tabItem {
                     Label("Swift", image: "tab-bar-swift")
                 }
+                .onAppear(perform: {Haptics.shared.impact(for: .light)})
         
             Text("Roadmap")
                 .tabItem {
                     Label("Roadmap", image: "tab-bar-roadmap")
                 }
+                .onAppear(perform: {Haptics.shared.impact(for: .light)})
             
         }
         .tint(.primary)

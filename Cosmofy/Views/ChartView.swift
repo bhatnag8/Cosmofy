@@ -32,7 +32,7 @@ struct ChartView: View {
             }
         }
         .onTapGesture {
-            Haptics.shared.vibrate(for: .success)
+            Haptics.shared.impact(for: .medium)
             isTapped.toggle()
         }
         .chartLegend(.hidden)
