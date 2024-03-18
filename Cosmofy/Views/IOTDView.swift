@@ -28,7 +28,7 @@ struct IOTDView: View {
                     
 
 
-                    ImageView.init(viewModel.apod!.url)
+                    ImageView.init(viewModel.apod!.hdurl ?? viewModel.apod!.url)
                         .padding(.horizontal)
                     
                     
