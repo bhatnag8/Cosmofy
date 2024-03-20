@@ -37,12 +37,12 @@ struct IOTDView: View {
                         .padding()
                         .font(Font.custom("SF Pro Rounded Regular", size: 16))
                     
-                    Spacer(minLength: 48    )
+                    Spacer(minLength: 48)
                     
                     Text("Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. The information is provided by NASA.")
                         .foregroundStyle(.secondary)
                         .font(Font.custom("SF Pro Rounded Regular", size: 14))
-                        .padding(.vertical, 8)
+                        .padding()
                 }
             }
             .onAppear(perform: {Haptics.shared.vibrate(for: .success)})

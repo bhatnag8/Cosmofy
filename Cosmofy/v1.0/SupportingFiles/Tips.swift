@@ -18,7 +18,7 @@ let modelTip = ModelTip()
 struct PlanetTip: Tip {
     var title: Text {
         Text("Visit a Planet:")
-            .foregroundStyle(.SOUR)
+            .foregroundStyle(.launchScreenBackground)
     }
     
     var message: Text? {
@@ -36,7 +36,7 @@ struct PlanetTip: Tip {
 struct SwiftTip: Tip {
     var title: Text {
         Text("Send a Message")
-            .foregroundStyle(.SOUR)
+            .foregroundStyle(.launchScreenBackground)
     }
     
     var message: Text? {
@@ -50,7 +50,7 @@ struct SwiftTip: Tip {
 struct ModelTip: Tip {
     var title: Text {
         Text("Explore Planet:")
-            .foregroundStyle(.SOUR)
+            .foregroundStyle(.launchScreenBackground)
     }
     
     var message: Text? {

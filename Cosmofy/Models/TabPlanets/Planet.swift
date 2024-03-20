@@ -18,7 +18,7 @@ struct Planet: Identifiable {
     var moons: Int
     var rings: Int
     var gravity: Float
-    var density: Float
+    var escapeVelocity: String
     var radius: String
     var mass: String
     var volume: String
@@ -44,7 +44,7 @@ let neptunePlanet = Planet(
     moons: 14,
     rings: 5,
     gravity: 11.15,
-    density: 1.638,
+    escapeVelocity: "84,816",
     radius: "2.4622 × 10⁴",
     mass: "1.0241 × 10²⁶",
     volume: "6.2526 × 10¹³",
@@ -70,7 +70,7 @@ let mercuryPlanet = Planet(
     moons: 0,
     rings: 0,
     gravity: 3.7,
-    density: 5.427,
+    escapeVelocity: "15,300",
     radius: "2.4397 x 10³",
     mass: "3.3010 x 10²³",
     volume: "6.08272 x 10¹⁰",
@@ -96,7 +96,7 @@ let venusPlanet = Planet(
     moons: 0,
     rings: 0,
     gravity: 8.87,
-    density: 5.243,
+    escapeVelocity: "37,296",
     radius: "6.0518 x 10³",
     mass: "4.8673 x 10²⁴",
     volume: "9.28415 x 10¹¹",
@@ -122,7 +122,7 @@ let earthPlanet = Planet(
     moons: 1,
     rings: 0,
     gravity: 9.80665,
-    density: 5.513,
+    escapeVelocity: "40,284",
     radius: "6.3710 x 10³",
     mass: "5.9722 x 10²⁴",
     volume: "1.08321 x 10¹²",
@@ -139,10 +139,63 @@ let earthPlanet = Planet(
     ]
 )
 
+let marsPlanet = Planet(
+    name: "Mars",
+    imageName: "smiling-mars",
+    description: "The red planet, with intriguing geological features.",
+    visual: "After the 16th century",
+    color: .colorMars,
+    moons: 2,
+    rings: 0,
+    gravity: 3.71,
+    escapeVelocity: "18,108",
+    radius: "3.3895 x 10³",
+    mass: "3.3895 x 10²³",
+    volume: "1.63116 x 10¹¹",
+    atmosphere: ["atmosphere-mars-1", "atmosphere-mars-2", "atmosphere-mars-3"],
+    data: [
+        ChartData(type: "Mercury", count: 5.427, color: .primary, original: .colorMercury),
+        ChartData(type: "Venus", count: 5.243, color: .primary, original: .colorVenus),
+        ChartData(type: "Earth", count: 5.513, color: .primary, original: .miamiBlue),
+        ChartData(type: "Mars", count: 3.934, color: .colorMars, original: .colorMars),
+        ChartData(type: "Jupiter", count: 1.326, color: .primary, original: .colorJupiter),
+        ChartData(type: "Saturn", count: 0.687, color: .primary, original: .colorSaturn),
+        ChartData(type: "Uranus", count: 1.270, color: .primary, original: .colorUranus),
+        ChartData(type: "Neptune", count: 1.638, color: .primary, original: .colorNeptune),
+    ]
+)
+
+let jupiterPlanet = Planet(
+    name: "Jupiter",
+    imageName: "smiling-jupiter",
+    description: "The largest planet, famous for its massive storm, the Great Red Spot.",
+    visual: "After the 16th century",
+    color: .colorJupiter,
+    moons: 95,
+    rings: 4,
+    gravity: 24.79,
+    escapeVelocity: "216,720",
+    radius: "6.9911 x 10⁴",
+    mass: "1.8981 x 10²⁷",
+    volume: "1.43128 x 10¹⁵",
+    atmosphere: ["atmosphere-jupiter-1", "atmosphere-jupiter-2"],
+    data: [
+        ChartData(type: "Mercury", count: 5.427, color: .primary, original: .colorMercury),
+        ChartData(type: "Venus", count: 5.243, color: .primary, original: .colorVenus),
+        ChartData(type: "Earth", count: 5.513, color: .primary, original: .miamiBlue),
+        ChartData(type: "Mars", count: 3.934, color: .primary, original: .colorMars),
+        ChartData(type: "Jupiter", count: 1.326, color: .colorJupiter, original: .colorJupiter),
+        ChartData(type: "Saturn", count: 0.687, color: .primary, original: .colorSaturn),
+        ChartData(type: "Uranus", count: 1.270, color: .primary, original: .colorUranus),
+        ChartData(type: "Neptune", count: 1.638, color: .primary, original: .colorNeptune),
+    ]
+)
+
+
 
 let innerPlanets = [
 //    Planet(imageName: "smiling-mars", name: "Mars", description: "The red planet, with intriguing geological features.", color: .innerPlanets),
-    mercuryPlanet, venusPlanet, earthPlanet
+    mercuryPlanet, venusPlanet, earthPlanet, marsPlanet
         
 ]
 
@@ -151,7 +204,7 @@ let outerPlanets = [
 //    Planet(imageName: "smiling-jupiter", name: "Jupiter", description: "The largest planet, famous for its massive storm, the Great Red Spot.", color: .outerPlanets),
 //    Planet(imageName: "smiling-saturn", name: "Saturn", description: "Known for its mesmerizing rings and numerous moons.", color: .outerPlanets),
 //    Planet(imageName: "smiling-uranus", name: "Uranus", description: "An ice giant planet with a unique sideways rotation.", color: .outerPlanets),
-    neptunePlanet
+    jupiterPlanet, neptunePlanet
 ]
 
 

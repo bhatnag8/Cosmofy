@@ -126,7 +126,7 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "arrow.up.circle.fill")
                             .font(.system(size: 30))
-                            .tint(.SOUR)
+                            .tint(.launchScreenBackground)
                     }
 
                     .disabled(vm.inputMessage

@@ -154,12 +154,12 @@ struct PlanetView: View {
                         // Right column
                         VStack(alignment: .leading, spacing: 8) {
                             VStack(alignment: .leading, spacing: 4) {
-                                Text("Density")
+                                Text("Escape Velocity")
                                     .font(Font.custom("SF Pro Rounded Medium", size: 16))
                                     .foregroundColor(.secondary)
                                 HStack(alignment: .firstTextBaseline) {
-                                    Text(String(planet.density)).font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                                    Text("g/cm³").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(planet.color)
+                                    Text(planet.escapeVelocity).font(Font.custom("SF Pro Rounded Semibold", size: 20))
+                                    Text("km/h").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(planet.color)
                                 }
                             }
                         }
