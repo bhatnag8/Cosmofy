@@ -9,12 +9,10 @@
 import SwiftUI
 import TipKit
 
-
-
-struct ContentView: View {
+struct SwiftView: View {
 
     @Environment(\.colorScheme) var colorScheme
-    @StateObject var vm = ViewModel(api: API())
+    @StateObject var vm = InteractingViewModel(api: API())
     @State private var userTouched = false
     @FocusState var isTextFieldFocused: Bool
     @State private var hasAppeared = false
@@ -23,7 +21,15 @@ struct ContentView: View {
 
     
     var body: some View {
-        chatListView
+        NavigationStack {
+            VStack {
+                chatListView
+
+            }
+            .navigationTitle("Swift")
+
+        }
+
     }
     
     var chatListView: some View {
@@ -135,7 +141,7 @@ struct ContentView: View {
                 }
             }
             .padding()
-            .background(Color.black)
+//            .background(Color.black)
             .cornerRadius(10)
         }
         .padding(.horizontal, 16)
@@ -153,5 +159,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    SwiftView()
 }

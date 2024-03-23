@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-struct Planets: View {
+struct PlanetsView: View {
 
-    
     @State private var selectedTab: Tab?
     @Environment(\.colorScheme) private var scheme
     @State private var tabProgress: CGFloat = 0
@@ -89,7 +88,7 @@ struct Planets: View {
             .navigationTitle("Planets")
             .onAppear {
                 UINavigationBar.appearance().largeTitleTextAttributes = [
-                    .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 32),
+                    .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 34, weight: .semibold),
                 ]
             }
         }
@@ -172,5 +171,5 @@ struct PlanetBlock: View {
 
 
 #Preview {
-    Planets()
+    PlanetsView()
 }

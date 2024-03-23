@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-class ViewModel: ObservableObject {
+class InteractingViewModel: ObservableObject {
     
     @Published var isInteractingWithChatGPT = false
     @Published var messages: [MessageRow] = []
@@ -57,7 +57,7 @@ class ViewModel: ObservableObject {
         do {
             let stream = try await api.sendMessageStream(text: text)
             for try await text in stream {
-                streamText += text
+                streamText += text                    
                 messageRow.responseText = streamText.trimmingCharacters(in: .whitespacesAndNewlines)
                 self.messages[self.messages.count - 1] = messageRow
             }

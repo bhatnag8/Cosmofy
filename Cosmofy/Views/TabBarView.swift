@@ -16,12 +16,12 @@ struct TabBarView: View {
                 }
                 .onAppear(perform: {Haptics.shared.impact(for: .light)})
             
-            Planets()
+            PlanetsView()
                 .tabItem {
                     Label("Planets", image: "tab-bar-planets")
                 }
             
-            Text("Swift")
+            SwiftView()
                 .tabItem {
                     Label("Swift", image: "tab-bar-swift")
                 }

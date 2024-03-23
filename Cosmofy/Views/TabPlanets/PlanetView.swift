@@ -240,7 +240,7 @@ struct PlanetView: View {
             .navigationTitle(planet.name)
             .onAppear {
                 UINavigationBar.appearance().largeTitleTextAttributes = [
-                    .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 32),
+                    .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 34, weight: .semibold),
                 ]
             }
             .navigationBarItems(

@@ -29,8 +29,8 @@ struct SplashScreenView: View {
             
             VStack {
                 Spacer()
-                Text("- 1.1 -")
-                    .font(Font.custom("SF Pro Rounded Medium", size: 17))
+                Text("v1.1")
+                    .font(Font.custom("SF Pro Rounded Regular", size: 17))
                     .foregroundColor(.black)
             }
             .padding()

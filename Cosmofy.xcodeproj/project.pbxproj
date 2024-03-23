@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B00383B2B9F89E100DAD175 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B00383A2B9F89E000DAD175 /* Tab.swift */; };
-		0B00383D2B9F8B7900DAD175 /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B00383C2B9F8B7900DAD175 /* Planets.swift */; };
+		0B00383D2B9F8B7900DAD175 /* PlanetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B00383C2B9F8B7900DAD175 /* PlanetsView.swift */; };
 		0B1269592B5494820086CA83 /* NeptuneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1269582B5494820086CA83 /* NeptuneCell.swift */; };
 		0B12695B2B54A3D70086CA83 /* Neptune3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B12695A2B54A3D70086CA83 /* Neptune3D.swift */; };
 		0B161A692B9FF30B008F3D0F /* View+OffsetX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A682B9FF30B008F3D0F /* View+OffsetX.swift */; };
@@ -20,7 +20,7 @@
 		0B294B5B2A8FB34400E755B3 /* MarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B294B5A2A8FB34400E755B3 /* MarsViewController.swift */; };
 		0B294B5D2A8FB46400E755B3 /* MarsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B294B5C2A8FB46400E755B3 /* MarsCell.swift */; };
 		0B3EC2642BA4BAFE004491B7 /* IOTDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2632BA4BAFE004491B7 /* IOTDView.swift */; };
-		0B3EC2662BA4D16F004491B7 /* API_IOTD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2652BA4D16F004491B7 /* API_IOTD.swift */; };
+		0B3EC2662BA4D16F004491B7 /* API_NASA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2652BA4D16F004491B7 /* API_NASA.swift */; };
 		0B3EF4292AFC51EE00F0CECA /* Jupiter3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EF4282AFC51EE00F0CECA /* Jupiter3D.swift */; };
 		0B4005682AF9970400D515EE /* Earth3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4005672AF9970400D515EE /* Earth3D.swift */; };
 		0B40299C2BA4FEC1004B0F43 /* IOTD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B40299B2BA4FEC1004B0F43 /* IOTD.swift */; };
@@ -36,15 +36,15 @@
 		0B5CC34E2BA2C84E00A7A55F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CC34D2BA2C84E00A7A55F /* ChartView.swift */; };
 		0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688262A84D1F300CD2B7E /* VenusViewController.swift */; };
 		0B6688292A84D81600CD2B7E /* VenusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6688282A84D81600CD2B7E /* VenusCell.swift */; };
-		0B7671932AE47E22008E57B2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671922AE47E22008E57B2 /* API.swift */; };
-		0B7671972AE4C3FE008E57B2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671962AE4C3FE008E57B2 /* Models.swift */; };
+		0B7671932AE47E22008E57B2 /* API_OPENAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671922AE47E22008E57B2 /* API_OPENAI.swift */; };
+		0B7671972AE4C3FE008E57B2 /* Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671962AE4C3FE008E57B2 /* Swift.swift */; };
 		0B7CDD932A875C29006307D1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7CDD922A875C29006307D1 /* TabBarController.swift */; };
 		0B7D0C482AAD65EC003FB763 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D0C472AAD65EC003FB763 /* SwiftViewController.swift */; };
 		0B7D18BF2AE8A482009C2317 /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18BE2AE8A482009C2317 /* MessageRow.swift */; };
-		0B7D18C32AE8A526009C2317 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18C22AE8A526009C2317 /* ViewModel.swift */; };
-		0B7D18C62AE8A9DD009C2317 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18C52AE8A9DD009C2317 /* LoadingView.swift */; };
+		0B7D18C32AE8A526009C2317 /* InteractingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18C22AE8A526009C2317 /* InteractingViewModel.swift */; };
 		0B7D18C82AE8AB97009C2317 /* MessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18C72AE8AB97009C2317 /* MessageRowView.swift */; };
-		0B7D18CC2AE8B655009C2317 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18CB2AE8B655009C2317 /* ContentView.swift */; };
+		0B7D18CC2AE8B655009C2317 /* SwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18CB2AE8B655009C2317 /* SwiftView.swift */; };
+		0B8615A82BAF6580008CCD5F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8615A72BAF6580008CCD5F /* LoadingView.swift */; };
 		0B8A7A972BAB570A0051E69A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8A7A962BAB570A0051E69A /* Launch Screen.storyboard */; };
 		0B8BCDDF2AF9545600DB54CF /* Mars3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8BCDDE2AF9545600DB54CF /* Mars3D.swift */; };
 		0B923B6E2B9CBBEE009B8D45 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */; };
@@ -73,7 +73,6 @@
 		0BF8630C2AF1A58400379905 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF8630B2AF1A58400379905 /* GradientView.swift */; };
 		0BFB21052B9CEB1400C84FD8 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB21042B9CEB1400C84FD8 /* Home.swift */; };
 		0BFF74672B76FE0B0079A71A /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF74662B76FE0B0079A71A /* PlanetView.swift */; };
-		0BFF74692B7703630079A71A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF74682B7703630079A71A /* Data.swift */; };
 		2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F073A122946BE4000F024B8 /* PlanetsViewController.swift */; };
 		2F0ACC23295DBCB800B3D0DB /* Mercury3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0ACC22295DBCB800B3D0DB /* Mercury3D.swift */; };
 		2F0B04D22945A522001FAAE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B04D12945A522001FAAE6 /* HomeViewController.swift */; };
@@ -93,7 +92,7 @@
 
 /* Begin PBXFileReference section */
 		0B00383A2B9F89E000DAD175 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
-		0B00383C2B9F8B7900DAD175 /* Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
+		0B00383C2B9F8B7900DAD175 /* PlanetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsView.swift; sourceTree = "<group>"; };
 		0B1269582B5494820086CA83 /* NeptuneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeptuneCell.swift; sourceTree = "<group>"; };
 		0B12695A2B54A3D70086CA83 /* Neptune3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neptune3D.swift; sourceTree = "<group>"; };
 		0B161A682B9FF30B008F3D0F /* View+OffsetX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+OffsetX.swift"; sourceTree = "<group>"; };
@@ -105,7 +104,7 @@
 		0B294B5A2A8FB34400E755B3 /* MarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsViewController.swift; sourceTree = "<group>"; };
 		0B294B5C2A8FB46400E755B3 /* MarsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsCell.swift; sourceTree = "<group>"; };
 		0B3EC2632BA4BAFE004491B7 /* IOTDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTDView.swift; sourceTree = "<group>"; };
-		0B3EC2652BA4D16F004491B7 /* API_IOTD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_IOTD.swift; sourceTree = "<group>"; };
+		0B3EC2652BA4D16F004491B7 /* API_NASA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_NASA.swift; sourceTree = "<group>"; };
 		0B3EF4282AFC51EE00F0CECA /* Jupiter3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jupiter3D.swift; sourceTree = "<group>"; };
 		0B4005672AF9970400D515EE /* Earth3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earth3D.swift; sourceTree = "<group>"; };
 		0B40299B2BA4FEC1004B0F43 /* IOTD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTD.swift; sourceTree = "<group>"; };
@@ -121,15 +120,27 @@
 		0B5CC34D2BA2C84E00A7A55F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		0B6688262A84D1F300CD2B7E /* VenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusViewController.swift; sourceTree = "<group>"; };
 		0B6688282A84D81600CD2B7E /* VenusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusCell.swift; sourceTree = "<group>"; };
-		0B7671922AE47E22008E57B2 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		0B7671962AE4C3FE008E57B2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		0B7671922AE47E22008E57B2 /* API_OPENAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_OPENAI.swift; sourceTree = "<group>"; };
+		0B7671962AE4C3FE008E57B2 /* Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift.swift; sourceTree = "<group>"; };
 		0B7CDD922A875C29006307D1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0B7D0C472AAD65EC003FB763 /* SwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
 		0B7D18BE2AE8A482009C2317 /* MessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
-		0B7D18C22AE8A526009C2317 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		0B7D18C52AE8A9DD009C2317 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		0B7D18C22AE8A526009C2317 /* InteractingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractingViewModel.swift; sourceTree = "<group>"; };
 		0B7D18C72AE8AB97009C2317 /* MessageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRowView.swift; sourceTree = "<group>"; };
-		0B7D18CB2AE8B655009C2317 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0B7D18CB2AE8B655009C2317 /* SwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftView.swift; sourceTree = "<group>"; };
+		0B86159B2BAF5C12008CCD5F /* SF-Mono-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-MediumItalic.otf"; sourceTree = "<group>"; };
+		0B86159C2BAF5C12008CCD5F /* SF-Mono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Regular.otf"; sourceTree = "<group>"; };
+		0B86159D2BAF5C12008CCD5F /* SF-Mono-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Light.otf"; sourceTree = "<group>"; };
+		0B86159E2BAF5C12008CCD5F /* SF-Mono-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Heavy.otf"; sourceTree = "<group>"; };
+		0B86159F2BAF5C12008CCD5F /* SF-Mono-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-RegularItalic.otf"; sourceTree = "<group>"; };
+		0B8615A02BAF5C12008CCD5F /* SF-Mono-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-HeavyItalic.otf"; sourceTree = "<group>"; };
+		0B8615A12BAF5C12008CCD5F /* SF-Mono-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Medium.otf"; sourceTree = "<group>"; };
+		0B8615A22BAF5C13008CCD5F /* SF-Mono-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-BoldItalic.otf"; sourceTree = "<group>"; };
+		0B8615A32BAF5C13008CCD5F /* SF-Mono-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Semibold.otf"; sourceTree = "<group>"; };
+		0B8615A42BAF5C13008CCD5F /* SF-Mono-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		0B8615A52BAF5C13008CCD5F /* SF-Mono-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Bold.otf"; sourceTree = "<group>"; };
+		0B8615A62BAF5C13008CCD5F /* SF-Mono-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-LightItalic.otf"; sourceTree = "<group>"; };
+		0B8615A72BAF6580008CCD5F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		0B8A7A962BAB570A0051E69A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0B8BCDDE2AF9545600DB54CF /* Mars3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mars3D.swift; sourceTree = "<group>"; };
 		0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -158,7 +169,6 @@
 		0BF8630B2AF1A58400379905 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		0BFB21042B9CEB1400C84FD8 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		0BFF74662B76FE0B0079A71A /* PlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetView.swift; sourceTree = "<group>"; };
-		0BFF74682B7703630079A71A /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		2F073A122946BE4000F024B8 /* PlanetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewController.swift; sourceTree = "<group>"; };
 		2F0ACC22295DBCB800B3D0DB /* Mercury3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mercury3D.swift; sourceTree = "<group>"; };
 		2F0B04D12945A522001FAAE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -193,28 +203,67 @@
 		0B3EC2672BA4D22D004491B7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				0B3EC2652BA4D16F004491B7 /* API_IOTD.swift */,
+				0B7671922AE47E22008E57B2 /* API_OPENAI.swift */,
+				0B3EC2652BA4D16F004491B7 /* API_NASA.swift */,
+				0B7D18C22AE8A526009C2317 /* InteractingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		0B7D18C42AE8A5E7009C2317 /* Swift */ = {
+		0B8615962BAF4A64008CCD5F /* TabSwift */ = {
 			isa = PBXGroup;
 			children = (
-				0B7671922AE47E22008E57B2 /* API.swift */,
-				0B7D18CB2AE8B655009C2317 /* ContentView.swift */,
-				0B7671962AE4C3FE008E57B2 /* Models.swift */,
 				0B7D18BE2AE8A482009C2317 /* MessageRow.swift */,
-				0B7D18C22AE8A526009C2317 /* ViewModel.swift */,
-				0B7D18C52AE8A9DD009C2317 /* LoadingView.swift */,
+				0B7671962AE4C3FE008E57B2 /* Swift.swift */,
+			);
+			path = TabSwift;
+			sourceTree = "<group>";
+		};
+		0B8615972BAF4AAA008CCD5F /* TabSwift */ = {
+			isa = PBXGroup;
+			children = (
+				0B7D18CB2AE8B655009C2317 /* SwiftView.swift */,
+				0B8615A72BAF6580008CCD5F /* LoadingView.swift */,
 				0B7D18C72AE8AB97009C2317 /* MessageRowView.swift */,
 			);
-			path = Swift;
+			path = TabSwift;
+			sourceTree = "<group>";
+		};
+		0B8615992BAF4AE0008CCD5F /* TabHome */ = {
+			isa = PBXGroup;
+			children = (
+				0BFB21042B9CEB1400C84FD8 /* Home.swift */,
+				0B3EC2632BA4BAFE004491B7 /* IOTDView.swift */,
+				0B40299D2BA51F0F004B0F43 /* ImageView.swift */,
+			);
+			path = TabHome;
+			sourceTree = "<group>";
+		};
+		0B86159A2BAF4AEC008CCD5F /* TabPlanets */ = {
+			isa = PBXGroup;
+			children = (
+				0B00383C2B9F8B7900DAD175 /* PlanetsView.swift */,
+				0BFF74662B76FE0B0079A71A /* PlanetView.swift */,
+				0B5CC34D2BA2C84E00A7A55F /* ChartView.swift */,
+			);
+			path = TabPlanets;
 			sourceTree = "<group>";
 		};
 		0B9F026E2B75E56000CB5543 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				0B8615A52BAF5C13008CCD5F /* SF-Mono-Bold.otf */,
+				0B8615A22BAF5C13008CCD5F /* SF-Mono-BoldItalic.otf */,
+				0B86159E2BAF5C12008CCD5F /* SF-Mono-Heavy.otf */,
+				0B8615A02BAF5C12008CCD5F /* SF-Mono-HeavyItalic.otf */,
+				0B86159D2BAF5C12008CCD5F /* SF-Mono-Light.otf */,
+				0B8615A62BAF5C13008CCD5F /* SF-Mono-LightItalic.otf */,
+				0B8615A12BAF5C12008CCD5F /* SF-Mono-Medium.otf */,
+				0B86159B2BAF5C12008CCD5F /* SF-Mono-MediumItalic.otf */,
+				0B86159C2BAF5C12008CCD5F /* SF-Mono-Regular.otf */,
+				0B86159F2BAF5C12008CCD5F /* SF-Mono-RegularItalic.otf */,
+				0B8615A32BAF5C13008CCD5F /* SF-Mono-Semibold.otf */,
+				0B8615A42BAF5C13008CCD5F /* SF-Mono-SemiboldItalic.otf */,
 				0B9F02732B75E5B200CB5543 /* SF-Pro-Rounded-Black.otf */,
 				0B9F02702B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf */,
 				0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */,
@@ -231,8 +280,6 @@
 		0BB14A272B9C27BC00476F3C /* v1.0 */ = {
 			isa = PBXGroup;
 			children = (
-				0BC5C9322B818C180046014D /* PlanetViewControllers */,
-				0B7D18C42AE8A5E7009C2317 /* Swift */,
 				0BC797B12A5DE62D005B9E45 /* Screens */,
 				2F0ACC21295DBC9F00B3D0DB /* 3DViewController */,
 				2F98598629838EA0007271B1 /* ARViewControllers */,
@@ -246,15 +293,12 @@
 		0BB14A482B9C2B6C00476F3C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0B8615992BAF4AE0008CCD5F /* TabHome */,
+				0B86159A2BAF4AEC008CCD5F /* TabPlanets */,
+				0B8615972BAF4AAA008CCD5F /* TabSwift */,
 				0BB14A462B9C2B5F00476F3C /* SplashScreen.swift */,
 				0BB14A492B9C2CF000476F3C /* SplashScreenView.swift */,
 				0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */,
-				0BFB21042B9CEB1400C84FD8 /* Home.swift */,
-				0B00383C2B9F8B7900DAD175 /* Planets.swift */,
-				0BFF74662B76FE0B0079A71A /* PlanetView.swift */,
-				0B5CC34D2BA2C84E00A7A55F /* ChartView.swift */,
-				0B3EC2632BA4BAFE004491B7 /* IOTDView.swift */,
-				0B40299D2BA51F0F004B0F43 /* ImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,6 +318,7 @@
 			children = (
 				0BB14A4F2B9C335700476F3C /* TabHome */,
 				0BB14A512B9C336E00476F3C /* TabPlanets */,
+				0B8615962BAF4A64008CCD5F /* TabSwift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -308,13 +353,6 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		0BC5C9322B818C180046014D /* PlanetViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PlanetViewControllers;
-			sourceTree = "<group>";
-		};
 		0BC797B12A5DE62D005B9E45 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,7 +363,6 @@
 				0B42A1902B22B1B0007F3B57 /* NewsViewController.swift */,
 				0B7D0C472AAD65EC003FB763 /* SwiftViewController.swift */,
 				0B20657B2B84363300BB071D /* PlanetsTab.swift */,
-				0BFF74682B7703630079A71A /* Data.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -517,19 +554,19 @@
 				0BFF74672B76FE0B0079A71A /* PlanetView.swift in Sources */,
 				2F542ED1297CF0110067C26B /* Pulse.swift in Sources */,
 				0B1269592B5494820086CA83 /* NeptuneCell.swift in Sources */,
-				0B7D18CC2AE8B655009C2317 /* ContentView.swift in Sources */,
+				0B7D18CC2AE8B655009C2317 /* SwiftView.swift in Sources */,
 				0BFB21052B9CEB1400C84FD8 /* Home.swift in Sources */,
 				0BB14A432B9C2B1100476F3C /* CosmofyApp.swift in Sources */,
 				2F587A2B294D49490028225E /* MercuryViewController.swift in Sources */,
 				0BC1F2862A8520E900600232 /* EarthViewController.swift in Sources */,
-				0B7D18C32AE8A526009C2317 /* ViewModel.swift in Sources */,
+				0B7D18C32AE8A526009C2317 /* InteractingViewModel.swift in Sources */,
 				0B7D0C482AAD65EC003FB763 /* SwiftViewController.swift in Sources */,
 				0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */,
-				0B00383D2B9F8B7900DAD175 /* Planets.swift in Sources */,
+				0B00383D2B9F8B7900DAD175 /* PlanetsView.swift in Sources */,
 				0BA285B12B24450100DDEE39 /* EarthAR.swift in Sources */,
 				0B3EF4292AFC51EE00F0CECA /* Jupiter3D.swift in Sources */,
 				0B6688292A84D81600CD2B7E /* VenusCell.swift in Sources */,
-				0B3EC2662BA4D16F004491B7 /* API_IOTD.swift in Sources */,
+				0B3EC2662BA4D16F004491B7 /* API_NASA.swift in Sources */,
 				2F0B04D62945A576001FAAE6 /* HomeCollectionViewCell.swift in Sources */,
 				0B40299C2BA4FEC1004B0F43 /* IOTD.swift in Sources */,
 				2FDBA47C2A54F0A200598EC6 /* LoginViewController.swift in Sources */,
@@ -555,8 +592,7 @@
 				0B40B0C62B546DCC000F43D5 /* Uranus3D.swift in Sources */,
 				2F52B488297F209F00A92FF7 /* MercuryCell.swift in Sources */,
 				0B5140B22B5457560048D3D1 /* SaturnCell.swift in Sources */,
-				0BFF74692B7703630079A71A /* Data.swift in Sources */,
-				0B7671932AE47E22008E57B2 /* API.swift in Sources */,
+				0B7671932AE47E22008E57B2 /* API_OPENAI.swift in Sources */,
 				0B9883682AFBF7800044C9A8 /* JupiterViewController.swift in Sources */,
 				0BB14A532B9C339800476F3C /* Card.swift in Sources */,
 				0B12695B2B54A3D70086CA83 /* Neptune3D.swift in Sources */,
@@ -567,15 +603,15 @@
 				0BC1F2842A85151300600232 /* Venus3D.swift in Sources */,
 				0B7D18BF2AE8A482009C2317 /* MessageRow.swift in Sources */,
 				0BBF4B9D2A6049F100A9DC4D /* Haptics.swift in Sources */,
-				0B7671972AE4C3FE008E57B2 /* Models.swift in Sources */,
+				0B7671972AE4C3FE008E57B2 /* Swift.swift in Sources */,
 				0B4005682AF9970400D515EE /* Earth3D.swift in Sources */,
-				0B7D18C62AE8A9DD009C2317 /* LoadingView.swift in Sources */,
 				0B20657C2B84363300BB071D /* PlanetsTab.swift in Sources */,
 				0B5140B02B544C750048D3D1 /* SaturnViewController.swift in Sources */,
 				0B7CDD932A875C29006307D1 /* TabBarController.swift in Sources */,
 				0B5CC34E2BA2C84E00A7A55F /* ChartView.swift in Sources */,
 				2F4F8FC5295EC08100F7EE98 /* PlanetNode.swift in Sources */,
 				2F0B04D22945A522001FAAE6 /* HomeViewController.swift in Sources */,
+				0B8615A82BAF6580008CCD5F /* LoadingView.swift in Sources */,
 				0B98836A2AFC0D490044C9A8 /* JupiterCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

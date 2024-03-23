@@ -18,7 +18,7 @@ class SwiftViewController: UIViewController {
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        let childView = UIHostingController(rootView: ContentView())
+        let childView = UIHostingController(rootView: SwiftView())
         addChild(childView)
         childView.view.frame = backView.bounds
         backView.addSubview(childView.view)

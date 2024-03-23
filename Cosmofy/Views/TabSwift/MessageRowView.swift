@@ -16,7 +16,6 @@ struct MessageRowView: View {
         VStack(spacing: 0) {
             messageRow(text: message.sendText, image: message.sendImage, color: colorScheme == .light ? .white : Color(red: 20/255, green: 20/255, blue: 25/255, opacity: 1))
             
-            
             if let text = message.responseText {
                 Divider()
                 messageRow(text: text, image: message.responseImage, color: colorScheme == .light ? .white : Color(red: 24/255, green: 24/255, blue: 27/255, opacity: 1), responseError: message.responseError, showDotLoading: message.isInteractingWithChatGPT)
@@ -26,7 +25,7 @@ struct MessageRowView: View {
     }
     
     func messageRow(text: String, image: String, color: Color, responseError: String? = nil, showDotLoading: Bool = false) -> some View {
-        HStack(alignment: .top, spacing: 24) {
+        HStack(alignment: .top, spacing: 12) {
             if image.hasPrefix("http"), let url = URL(string: image) {
                 AsyncImage(url: url) {
                     image in image
@@ -43,7 +42,7 @@ struct MessageRowView: View {
             
             VStack(alignment: .leading) {
                 if !text.isEmpty {
-    
+                    
                     if text.contains("```") {
                         let cleanedText = text.replacingOccurrences(of: "```", with: "")
                         Text(cleanedText)
@@ -55,7 +54,7 @@ struct MessageRowView: View {
                         Text(text)
                             .multilineTextAlignment(.leading)
                             .textSelection(.enabled)
-                            
+                            .font(Font.custom("SF Pro Rounded Regular", size: 18))
                     }
                     
                 }
@@ -74,7 +73,7 @@ struct MessageRowView: View {
                 
                 if showDotLoading {
                     LoadingView()
-                        .frame(width: 60, height: 30)
+                        .frame(width: 50, height: 25)
                 }
             }
         }
