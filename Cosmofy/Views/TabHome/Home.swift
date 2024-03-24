@@ -34,7 +34,7 @@ struct Home: View {
                                             .clipShape(.rect(cornerRadius: 20))
                                             .shadow(color: card.color, radius: 3)
                                     })
-                                    .frame(width: size.width - 60, height: size.height - 50)
+                                    .frame(width: size.width - 50   , height: size.height - 50)
                                     .scrollTransition(.interactive, axis: .horizontal) { view, phase in
                                         view.scaleEffect(phase.isIdentity ? 1 : 0.95)
                                     }
@@ -48,7 +48,7 @@ struct Home: View {
                         .scrollIndicators(.hidden)
                     })
                     .frame(height: 550)
-                    .padding(.horizontal, -15)
+                    .padding(.horizontal, -8)
                     
                     VStack {
                         HStack {

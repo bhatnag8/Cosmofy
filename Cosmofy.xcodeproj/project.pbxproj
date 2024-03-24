@@ -128,18 +128,6 @@
 		0B7D18C22AE8A526009C2317 /* InteractingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractingViewModel.swift; sourceTree = "<group>"; };
 		0B7D18C72AE8AB97009C2317 /* MessageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRowView.swift; sourceTree = "<group>"; };
 		0B7D18CB2AE8B655009C2317 /* SwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftView.swift; sourceTree = "<group>"; };
-		0B86159B2BAF5C12008CCD5F /* SF-Mono-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-MediumItalic.otf"; sourceTree = "<group>"; };
-		0B86159C2BAF5C12008CCD5F /* SF-Mono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Regular.otf"; sourceTree = "<group>"; };
-		0B86159D2BAF5C12008CCD5F /* SF-Mono-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Light.otf"; sourceTree = "<group>"; };
-		0B86159E2BAF5C12008CCD5F /* SF-Mono-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Heavy.otf"; sourceTree = "<group>"; };
-		0B86159F2BAF5C12008CCD5F /* SF-Mono-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-RegularItalic.otf"; sourceTree = "<group>"; };
-		0B8615A02BAF5C12008CCD5F /* SF-Mono-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-HeavyItalic.otf"; sourceTree = "<group>"; };
-		0B8615A12BAF5C12008CCD5F /* SF-Mono-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Medium.otf"; sourceTree = "<group>"; };
-		0B8615A22BAF5C13008CCD5F /* SF-Mono-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-BoldItalic.otf"; sourceTree = "<group>"; };
-		0B8615A32BAF5C13008CCD5F /* SF-Mono-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Semibold.otf"; sourceTree = "<group>"; };
-		0B8615A42BAF5C13008CCD5F /* SF-Mono-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-SemiboldItalic.otf"; sourceTree = "<group>"; };
-		0B8615A52BAF5C13008CCD5F /* SF-Mono-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Bold.otf"; sourceTree = "<group>"; };
-		0B8615A62BAF5C13008CCD5F /* SF-Mono-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-LightItalic.otf"; sourceTree = "<group>"; };
 		0B8615A72BAF6580008CCD5F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		0B8A7A962BAB570A0051E69A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0B8BCDDE2AF9545600DB54CF /* Mars3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mars3D.swift; sourceTree = "<group>"; };
@@ -252,18 +240,6 @@
 		0B9F026E2B75E56000CB5543 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				0B8615A52BAF5C13008CCD5F /* SF-Mono-Bold.otf */,
-				0B8615A22BAF5C13008CCD5F /* SF-Mono-BoldItalic.otf */,
-				0B86159E2BAF5C12008CCD5F /* SF-Mono-Heavy.otf */,
-				0B8615A02BAF5C12008CCD5F /* SF-Mono-HeavyItalic.otf */,
-				0B86159D2BAF5C12008CCD5F /* SF-Mono-Light.otf */,
-				0B8615A62BAF5C13008CCD5F /* SF-Mono-LightItalic.otf */,
-				0B8615A12BAF5C12008CCD5F /* SF-Mono-Medium.otf */,
-				0B86159B2BAF5C12008CCD5F /* SF-Mono-MediumItalic.otf */,
-				0B86159C2BAF5C12008CCD5F /* SF-Mono-Regular.otf */,
-				0B86159F2BAF5C12008CCD5F /* SF-Mono-RegularItalic.otf */,
-				0B8615A32BAF5C13008CCD5F /* SF-Mono-Semibold.otf */,
-				0B8615A42BAF5C13008CCD5F /* SF-Mono-SemiboldItalic.otf */,
 				0B9F02732B75E5B200CB5543 /* SF-Pro-Rounded-Black.otf */,
 				0B9F02702B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf */,
 				0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */,
@@ -756,7 +732,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Cosmofy/Cosmofy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmofy/Info.plist;
@@ -794,7 +770,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Cosmofy/Cosmofy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 102;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmofy/Info.plist;

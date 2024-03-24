@@ -40,23 +40,24 @@ struct MessageRowView: View {
                     .frame(width: 25, height: 25)
             }
             
-            VStack(alignment: .leading) {
-                if !text.isEmpty {
-                    
-                    if text.contains("```") {
-                        let cleanedText = text.replacingOccurrences(of: "```", with: "")
-                        Text(cleanedText)
+            VStack(alignment: .leading, spacing: 0) {
+                ForEach(splitTextByTripleBackticks(text: text), id: \.self) { segment in
+                    if segment.isCode {
+                        VStack {
+                            Divider()
+                            Text(segment.text)
+                                .multilineTextAlignment(.leading)
+                                .textSelection(.enabled)
+                                .font(.system(.footnote, design: .monospaced))
+                                .bold()
+                            Divider()
+                        }
+                    } else {
+                        Text(segment.text)
                             .multilineTextAlignment(.leading)
                             .textSelection(.enabled)
-                            .font(.system(.footnote, design: .monospaced))
+                            .font(Font.custom("SF Pro Rounded Medium", size: 18))
                     }
-                    else {
-                        Text(text)
-                            .multilineTextAlignment(.leading)
-                            .textSelection(.enabled)
-                            .font(Font.custom("SF Pro Rounded Regular", size: 18))
-                    }
-                    
                 }
                 
                 if let error = responseError {
@@ -81,5 +82,36 @@ struct MessageRowView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(color)
     }
+}
+
+
+// Helper function to split text into segments based on triple backticks
+func splitTextByTripleBackticks(text: String) -> [Segment] {
+    var segments: [Segment] = []
+    var currentText = ""
+    var isCodeBlock = false
+    
+    for char in text {
+        if char == "`" {
+            if currentText.hasSuffix("``") {
+                isCodeBlock = !isCodeBlock
+                segments.append(Segment(text: String(currentText.dropLast(2)), isCode: !isCodeBlock))
+                currentText = ""
+            } else {
+                currentText.append(char)
+            }
+        } else {
+            currentText.append(char)
+        }
+    }
+    
+    segments.append(Segment(text: currentText, isCode: isCodeBlock))
+    return segments
+}
+
+// Struct to represent a text segment with information whether it's a code block or not
+struct Segment: Hashable {
+    let text: String
+    let isCode: Bool
 }
 

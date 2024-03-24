@@ -132,7 +132,7 @@ struct SwiftView: View {
                     } label: {
                         Image(systemName: "arrow.up.circle.fill")
                             .font(.system(size: 30))
-                            .tint(.launchScreenBackground)
+                            .tint(.SOUR)
                     }
 
                     .disabled(vm.inputMessage
