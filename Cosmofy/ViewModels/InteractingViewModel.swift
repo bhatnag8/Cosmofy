@@ -16,12 +16,12 @@ class InteractingViewModel: ObservableObject {
     @Published var inputMessage: String = ""
     
     private let api: API
-    
+    //  🌌 🚀 🌠 🏔️ 🌟
     init(api: API) {
         self.api = api
         messages.append(MessageRow(isInteractingWithChatGPT: false,
                                             sendImage: "openai",
-                                            sendText: "Greetings from Swift! 🌌 🚀 🌠 🏔️ 🌟 I'm powered by OpenAI, providing you with in-depth knowledge and insights about space like never before. Ask away...",
+                                            sendText: "Greetings from Swift! I can provide you with in-depth knowledge and insights about space like never before.",
                                             responseImage: "",
                                             responseText: nil,
                                             responseError: nil))

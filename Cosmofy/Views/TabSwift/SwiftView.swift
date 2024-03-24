@@ -101,14 +101,11 @@ struct SwiftView: View {
                         .frame(width: 30, height: 30)
                 }
 
-                TextField("Send a message", text: $vm.inputMessage, axis: .vertical)
-//                    .border(Color.black, width: 0)
+                TextField("Ask away...", text: $vm.inputMessage, axis: .vertical)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .focused($isTextFieldFocused)
                     .disabled(vm.isInteractingWithChatGPT)
-                
-
-                
+            
                 if vm.isInteractingWithChatGPT {
                     Button {
                     } label: {
@@ -116,10 +113,7 @@ struct SwiftView: View {
                             .font(.system(size: 30))
                             .tint(.red)
                     }
-
-
                 } else {
-                    
                     Button {
                         Task {
                             @MainActor in
@@ -134,18 +128,16 @@ struct SwiftView: View {
                             .font(.system(size: 30))
                             .tint(.SOUR)
                     }
-
                     .disabled(vm.inputMessage
                         .trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
                     )
                 }
             }
             .padding()
-//            .background(Color.black)
             .cornerRadius(10)
         }
-        .padding(.horizontal, 16)
-        .padding(.top, 12)
+//        .padding(.horizontal, 16)
+//        .padding(.top, 12)
     }
     
     private func scrollToBottom(proxy: ScrollViewProxy) {

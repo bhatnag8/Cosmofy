@@ -23,7 +23,7 @@
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>
-		<string>LaunchScreenBackgroundColor</string>
+		<string>SOUR</string>
 		<key>UIImageName</key>
 		<string>appicon-without-gradient</string>
 	</dict>

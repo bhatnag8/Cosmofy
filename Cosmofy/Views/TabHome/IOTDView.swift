@@ -15,7 +15,6 @@ struct IOTDView: View {
         NavigationStack {
             ScrollView {
                 VStack {
-                    
                     HStack {
                         Text(viewModel.apod!.title)
                             .padding(.vertical, 8)
@@ -24,15 +23,10 @@ struct IOTDView: View {
                     }
                     .padding(.horizontal)
                     .padding(.top, 8)
-                    
-                    
 
-
-                    ImageView.init(viewModel.apod!.hdurl ?? viewModel.apod!.url)
+                    ImageView.init(viewModel.apod!.url)
                         .padding(.horizontal)
-                    
-                    
-                    
+            
                     Text(viewModel.apod!.explanation)
                         .padding()
                         .font(Font.custom("SF Pro Rounded Regular", size: 16))
