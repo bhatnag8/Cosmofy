@@ -14,6 +14,7 @@
 		0B161A692B9FF30B008F3D0F /* View+OffsetX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A682B9FF30B008F3D0F /* View+OffsetX.swift */; };
 		0B161A6B2BA014DC008F3D0F /* View+TabMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6A2BA014DC008F3D0F /* View+TabMask.swift */; };
 		0B161A6D2BA02123008F3D0F /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6C2BA02123008F3D0F /* Planet.swift */; };
+		0B18962C2BBBCF6500BCC983 /* RoadMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B18962B2BBBCF6500BCC983 /* RoadMapView.swift */; };
 		0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD502AE96FE7001CFC35 /* ci_scripts */; };
 		0B1BAD572AE97736001CFC35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD562AE97736001CFC35 /* .gitignore */; };
 		0B20657C2B84363300BB071D /* PlanetsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B20657B2B84363300BB071D /* PlanetsTab.swift */; };
@@ -98,6 +99,7 @@
 		0B161A682B9FF30B008F3D0F /* View+OffsetX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+OffsetX.swift"; sourceTree = "<group>"; };
 		0B161A6A2BA014DC008F3D0F /* View+TabMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TabMask.swift"; sourceTree = "<group>"; };
 		0B161A6C2BA02123008F3D0F /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		0B18962B2BBBCF6500BCC983 /* RoadMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadMapView.swift; sourceTree = "<group>"; };
 		0B1BAD502AE96FE7001CFC35 /* ci_scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ci_scripts; sourceTree = "<group>"; };
 		0B1BAD562AE97736001CFC35 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0B20657B2B84363300BB071D /* PlanetsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsTab.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				0BB14A462B9C2B5F00476F3C /* SplashScreen.swift */,
 				0BB14A492B9C2CF000476F3C /* SplashScreenView.swift */,
 				0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */,
+				0B18962B2BBBCF6500BCC983 /* RoadMapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				0BC1F2842A85151300600232 /* Venus3D.swift in Sources */,
 				0B7D18BF2AE8A482009C2317 /* MessageRow.swift in Sources */,
 				0BBF4B9D2A6049F100A9DC4D /* Haptics.swift in Sources */,
+				0B18962C2BBBCF6500BCC983 /* RoadMapView.swift in Sources */,
 				0B7671972AE4C3FE008E57B2 /* Swift.swift in Sources */,
 				0B4005682AF9970400D515EE /* Earth3D.swift in Sources */,
 				0B20657C2B84363300BB071D /* PlanetsTab.swift in Sources */,

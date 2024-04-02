@@ -27,7 +27,7 @@ struct TabBarView: View {
                 }
                 .onAppear(perform: {Haptics.shared.impact(for: .light)})
         
-            Text("Roadmap")
+            RoadMapView()
                 .tabItem {
                     Label("Roadmap", image: "tab-bar-roadmap")
                 }
