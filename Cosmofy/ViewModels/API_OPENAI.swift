@@ -46,7 +46,7 @@ class API: @unchecked Sendable {
         ]
     }
     
-    init(model: String = "gpt-4-0125-preview", systemPrompt: String = "You are a helpful assistant who will answer space/astronomy questions. Your name is Swift.", temperature: Double = 0.6) {
+    init(model: String = "gpt-4-turbo-preview", systemPrompt: String = "You are a helpful assistant who will answer space/astronomy questions. Your name is Swift.", temperature: Double = 0.6) {
         self.model = model
         self.systemMessage = .init(role: "system", content: systemPrompt)
         self.temperature = temperature

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct LoadingView: View {
+    var color: Color
     
     @State private var showCircle1 = false
     @State private var showCircle2 = false
@@ -23,7 +24,7 @@ struct LoadingView: View {
             Circle()
                 .opacity(showCircle3 ? 1 : 0)
         }
-        .foregroundColor(.black)
+        .foregroundColor(color)
         .onAppear { performAnimation() }
     }
     
@@ -55,5 +56,5 @@ struct LoadingView: View {
 }
 
 #Preview {
-    LoadingView()
+    LoadingView(color: .white)
 }

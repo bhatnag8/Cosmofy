@@ -23,7 +23,10 @@ extension ImageLoader {
     
     func imageDataHandler(data: Data?, res: URLResponse?, error: Error?) {
         guard let data = data, error == nil else {
-            fatalError("Unable to get Image Data")
+            DispatchQueue.main.async {
+                print("Unable to load image. Please check your internet connection.")
+            }
+            return
         }
         DispatchQueue.main.async {
             self.downloadedImage = UIImage(data: data)

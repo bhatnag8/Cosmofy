@@ -73,7 +73,7 @@ struct MessageRowView: View {
                 }
                 
                 if showDotLoading {
-                    LoadingView()
+                    LoadingView(color: .labelColorMod)
                         .frame(width: 50, height: 25)
                 }
             }

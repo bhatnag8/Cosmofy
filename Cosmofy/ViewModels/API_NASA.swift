@@ -9,35 +9,42 @@ import Foundation
 
 class ViewModelAPOD: ObservableObject {
     @Published var apod: APOD?
-    init() {
-        self.fetch()
-    }
-}
-
-extension ViewModelAPOD {
+    @Published var errorMessage: String?
+    
     func fetch() {
-        API_IOTD.getImageOfTheDay { apod in
-            self.apod = apod
+        API_IOTD.getImageOfTheDay { apod, error in
+            if let error = error {
+                self.errorMessage = "Failed to fetch data: \(error.localizedDescription)."
+            } else if let apod = apod {
+                self.apod = apod
+            }
         }
     }
 }
 
+
 class API_IOTD {
-    class func getImageOfTheDay(_ onSuccess: @escaping (APOD) -> Void) {
+    class func getImageOfTheDay(_ completion: @escaping (APOD?, Error?) -> Void) {
         Constants.session.dataTask(with: Constants.request) { data, response, error in
             guard let data = data, error == nil else {
-                fatalError()
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+                return
             }
             
             do {
                 let apod = try Constants.decoder.decode(APOD.self, from: data)
                 DispatchQueue.main.async {
-                    onSuccess(apod)
+                    completion(apod, nil)
                 }
             } catch {
-                fatalError(error.localizedDescription)
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
             }
         }
         .resume()
     }
 }
+

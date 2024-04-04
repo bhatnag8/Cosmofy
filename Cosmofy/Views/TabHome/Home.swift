@@ -47,9 +47,8 @@ struct Home: View {
                         .scrollTargetBehavior(.viewAligned)
                         .scrollIndicators(.hidden)
                     })
-                    .frame(height: 550)
+                    .frame(height: UIScreen.main.bounds.height * 0.65)
                     .padding(.horizontal, -8)
-                    
                     VStack {
                         HStack {
                             Text("Cosmofy")
