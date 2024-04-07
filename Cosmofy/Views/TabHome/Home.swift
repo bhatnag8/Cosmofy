@@ -11,6 +11,7 @@ struct Home: View {
     var body: some View {
         
         let phrase = currentDayAndTime()
+        
         NavigationStack {
             ScrollView(.vertical) {
                 VStack(alignment: .leading, spacing: 0) {
@@ -49,14 +50,16 @@ struct Home: View {
                     })
                     .frame(height: UIScreen.main.bounds.height * 0.65)
                     .padding(.horizontal, -8)
+                                        
                     VStack {
                         HStack {
                             Text("Cosmofy")
                                 .font(Font.custom("SF Pro Rounded Semibold", size: 32))
                             Spacer()
-                            Text("Good \(phrase)")
-                                .font(Font.custom("SF Pro Rounded Semibold", size: 18))
-                                .foregroundStyle(.green)
+                            Text("v1.1")
+                                .monospaced()
+                                .foregroundStyle(.red)
+                                .bold()
                         }
 
                         HStack {
@@ -92,6 +95,7 @@ struct Home: View {
                         
                     }
                     .padding(.horizontal)
+                    .padding(.top, -24)
                 }
                 .padding([.leading, .trailing, .bottom])
             }
