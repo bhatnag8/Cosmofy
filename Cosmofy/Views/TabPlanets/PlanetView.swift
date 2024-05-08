@@ -9,19 +9,29 @@ import SwiftUI
 import SceneKit
 
 struct SomeView: View {
+    let backgroundGradient = LinearGradient(
+        colors: [Color.cyan, Color.blue],
+        startPoint: .top, endPoint: .bottom)
     @Environment (\.presentationMode) var presentationMode
     var body: some View {
-        VStack {
-            Text("HIIII")
-            Text("HIIII")
-            Text("HIIII")
+        ZStack {
+            backgroundGradient
+            VStack {
+    //            Text("HIIII")
+    //            Text("HIIII")
+    //            Text("HIIII")
+            }
+            .background(.red)
+//            .edgesIgnoringSafeArea(.all)
+            
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .edgesIgnoringSafeArea(.all)
+        .ignoresSafeArea()
         .onTapGesture {
             presentationMode.wrappedValue.dismiss()
         }
+
     }
+    
     
 }
 
@@ -256,8 +266,6 @@ struct PlanetView: View {
         .onAppear(perform: {Haptics.shared.vibrate(for: .success)})
     }
 }
-
-// This would be your actual implementation with data binding, MapKit integration, etc.
 
 struct SceneKitView: UIViewControllerRepresentable {
     var planet: String

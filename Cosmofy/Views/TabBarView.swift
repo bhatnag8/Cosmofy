@@ -27,9 +27,15 @@ struct TabBarView: View {
                 }
                 .onAppear(perform: {Haptics.shared.impact(for: .light)})
         
-            RoadMapView()
+            RNNMaybach()
                 .tabItem {
-                    Label("Roadmap", image: "tab-bar-roadmap")
+                    Label("Earth Scope", image: "tab-bar-roadmap")
+                }
+                .onAppear(perform: {Haptics.shared.impact(for: .light)})
+            
+            Tester()
+                .tabItem {
+                    Label("Tester", image: "tab-bar-home")
                 }
                 .onAppear(perform: {Haptics.shared.impact(for: .light)})
             

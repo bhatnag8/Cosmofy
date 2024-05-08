@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		0B00383B2B9F89E100DAD175 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B00383A2B9F89E000DAD175 /* Tab.swift */; };
 		0B00383D2B9F8B7900DAD175 /* PlanetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B00383C2B9F8B7900DAD175 /* PlanetsView.swift */; };
+		0B05E3F12BE98AFE007A116E /* RNNMaybach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B05E3F02BE98AFE007A116E /* RNNMaybach.swift */; };
+		0B05E3F42BEA0676007A116E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B05E3F32BEA0676007A116E /* Event.swift */; };
+		0B05E3F62BEA07E8007A116E /* API_EONET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B05E3F52BEA07E8007A116E /* API_EONET.swift */; };
 		0B1269592B5494820086CA83 /* NeptuneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1269582B5494820086CA83 /* NeptuneCell.swift */; };
 		0B12695B2B54A3D70086CA83 /* Neptune3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B12695A2B54A3D70086CA83 /* Neptune3D.swift */; };
 		0B161A692B9FF30B008F3D0F /* View+OffsetX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A682B9FF30B008F3D0F /* View+OffsetX.swift */; };
 		0B161A6B2BA014DC008F3D0F /* View+TabMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6A2BA014DC008F3D0F /* View+TabMask.swift */; };
 		0B161A6D2BA02123008F3D0F /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6C2BA02123008F3D0F /* Planet.swift */; };
 		0B18962C2BBBCF6500BCC983 /* RoadMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B18962B2BBBCF6500BCC983 /* RoadMapView.swift */; };
+		0B1A8B312BDC6788007CBEDB /* Tester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1A8B302BDC6788007CBEDB /* Tester.swift */; };
 		0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD502AE96FE7001CFC35 /* ci_scripts */; };
 		0B1BAD572AE97736001CFC35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD562AE97736001CFC35 /* .gitignore */; };
 		0B20657C2B84363300BB071D /* PlanetsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B20657B2B84363300BB071D /* PlanetsTab.swift */; };
@@ -42,7 +46,6 @@
 		0B7CDD932A875C29006307D1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7CDD922A875C29006307D1 /* TabBarController.swift */; };
 		0B7D0C482AAD65EC003FB763 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D0C472AAD65EC003FB763 /* SwiftViewController.swift */; };
 		0B7D18BF2AE8A482009C2317 /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18BE2AE8A482009C2317 /* MessageRow.swift */; };
-		0B7D18C32AE8A526009C2317 /* InteractingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18C22AE8A526009C2317 /* InteractingViewModel.swift */; };
 		0B7D18C82AE8AB97009C2317 /* MessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18C72AE8AB97009C2317 /* MessageRowView.swift */; };
 		0B7D18CC2AE8B655009C2317 /* SwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18CB2AE8B655009C2317 /* SwiftView.swift */; };
 		0B8615A82BAF6580008CCD5F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8615A72BAF6580008CCD5F /* LoadingView.swift */; };
@@ -94,12 +97,16 @@
 /* Begin PBXFileReference section */
 		0B00383A2B9F89E000DAD175 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		0B00383C2B9F8B7900DAD175 /* PlanetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsView.swift; sourceTree = "<group>"; };
+		0B05E3F02BE98AFE007A116E /* RNNMaybach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNNMaybach.swift; sourceTree = "<group>"; };
+		0B05E3F32BEA0676007A116E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0B05E3F52BEA07E8007A116E /* API_EONET.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_EONET.swift; sourceTree = "<group>"; };
 		0B1269582B5494820086CA83 /* NeptuneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeptuneCell.swift; sourceTree = "<group>"; };
 		0B12695A2B54A3D70086CA83 /* Neptune3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neptune3D.swift; sourceTree = "<group>"; };
 		0B161A682B9FF30B008F3D0F /* View+OffsetX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+OffsetX.swift"; sourceTree = "<group>"; };
 		0B161A6A2BA014DC008F3D0F /* View+TabMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TabMask.swift"; sourceTree = "<group>"; };
 		0B161A6C2BA02123008F3D0F /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		0B18962B2BBBCF6500BCC983 /* RoadMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadMapView.swift; sourceTree = "<group>"; };
+		0B1A8B302BDC6788007CBEDB /* Tester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tester.swift; sourceTree = "<group>"; };
 		0B1BAD502AE96FE7001CFC35 /* ci_scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ci_scripts; sourceTree = "<group>"; };
 		0B1BAD562AE97736001CFC35 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0B20657B2B84363300BB071D /* PlanetsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsTab.swift; sourceTree = "<group>"; };
@@ -127,7 +134,6 @@
 		0B7CDD922A875C29006307D1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0B7D0C472AAD65EC003FB763 /* SwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
 		0B7D18BE2AE8A482009C2317 /* MessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
-		0B7D18C22AE8A526009C2317 /* InteractingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractingViewModel.swift; sourceTree = "<group>"; };
 		0B7D18C72AE8AB97009C2317 /* MessageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRowView.swift; sourceTree = "<group>"; };
 		0B7D18CB2AE8B655009C2317 /* SwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftView.swift; sourceTree = "<group>"; };
 		0B8615A72BAF6580008CCD5F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -190,12 +196,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B05E3F22BEA063F007A116E /* TabEarthScope */ = {
+			isa = PBXGroup;
+			children = (
+				0B05E3F32BEA0676007A116E /* Event.swift */,
+			);
+			path = TabEarthScope;
+			sourceTree = "<group>";
+		};
 		0B3EC2672BA4D22D004491B7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				0B7671922AE47E22008E57B2 /* API_OPENAI.swift */,
 				0B3EC2652BA4D16F004491B7 /* API_NASA.swift */,
-				0B7D18C22AE8A526009C2317 /* InteractingViewModel.swift */,
+				0B05E3F52BEA07E8007A116E /* API_EONET.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -235,6 +249,7 @@
 				0B00383C2B9F8B7900DAD175 /* PlanetsView.swift */,
 				0BFF74662B76FE0B0079A71A /* PlanetView.swift */,
 				0B5CC34D2BA2C84E00A7A55F /* ChartView.swift */,
+				0B1A8B302BDC6788007CBEDB /* Tester.swift */,
 			);
 			path = TabPlanets;
 			sourceTree = "<group>";
@@ -278,6 +293,7 @@
 				0BB14A492B9C2CF000476F3C /* SplashScreenView.swift */,
 				0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */,
 				0B18962B2BBBCF6500BCC983 /* RoadMapView.swift */,
+				0B05E3F02BE98AFE007A116E /* RNNMaybach.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,6 +311,7 @@
 		0BB14A4E2B9C334F00476F3C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0B05E3F22BEA063F007A116E /* TabEarthScope */,
 				0BB14A4F2B9C335700476F3C /* TabHome */,
 				0BB14A512B9C336E00476F3C /* TabPlanets */,
 				0B8615962BAF4A64008CCD5F /* TabSwift */,
@@ -533,12 +550,13 @@
 				0BFF74672B76FE0B0079A71A /* PlanetView.swift in Sources */,
 				2F542ED1297CF0110067C26B /* Pulse.swift in Sources */,
 				0B1269592B5494820086CA83 /* NeptuneCell.swift in Sources */,
+				0B05E3F12BE98AFE007A116E /* RNNMaybach.swift in Sources */,
 				0B7D18CC2AE8B655009C2317 /* SwiftView.swift in Sources */,
+				0B05E3F42BEA0676007A116E /* Event.swift in Sources */,
 				0BFB21052B9CEB1400C84FD8 /* Home.swift in Sources */,
 				0BB14A432B9C2B1100476F3C /* CosmofyApp.swift in Sources */,
 				2F587A2B294D49490028225E /* MercuryViewController.swift in Sources */,
 				0BC1F2862A8520E900600232 /* EarthViewController.swift in Sources */,
-				0B7D18C32AE8A526009C2317 /* InteractingViewModel.swift in Sources */,
 				0B7D0C482AAD65EC003FB763 /* SwiftViewController.swift in Sources */,
 				0B6688272A84D1F300CD2B7E /* VenusViewController.swift in Sources */,
 				0B00383D2B9F8B7900DAD175 /* PlanetsView.swift in Sources */,
@@ -555,6 +573,7 @@
 				0B40B0C42B54683E000F43D5 /* UranusCell.swift in Sources */,
 				0B161A6B2BA014DC008F3D0F /* View+TabMask.swift in Sources */,
 				0B294B5D2A8FB46400E755B3 /* MarsCell.swift in Sources */,
+				0B1A8B312BDC6788007CBEDB /* Tester.swift in Sources */,
 				0BC797B32A5DE66B005B9E45 /* SettingsViewController.swift in Sources */,
 				0B42A1912B22B1B0007F3B57 /* NewsViewController.swift in Sources */,
 				0B923B6E2B9CBBEE009B8D45 /* TabBarView.swift in Sources */,
@@ -569,6 +588,7 @@
 				0BC1F2882A85216800600232 /* EarthCell.swift in Sources */,
 				0B4573522B408ED400E8E6FF /* Tips.swift in Sources */,
 				0B40B0C62B546DCC000F43D5 /* Uranus3D.swift in Sources */,
+				0B05E3F62BEA07E8007A116E /* API_EONET.swift in Sources */,
 				2F52B488297F209F00A92FF7 /* MercuryCell.swift in Sources */,
 				0B5140B22B5457560048D3D1 /* SaturnCell.swift in Sources */,
 				0B7671932AE47E22008E57B2 /* API_OPENAI.swift in Sources */,

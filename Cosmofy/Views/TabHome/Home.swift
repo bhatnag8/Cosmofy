@@ -56,10 +56,10 @@ struct Home: View {
                             Text("Cosmofy")
                                 .font(Font.custom("SF Pro Rounded Semibold", size: 32))
                             Spacer()
-                            Text("v1.1")
-                                .monospaced()
-                                .foregroundStyle(.red)
-                                .bold()
+//                            Text("v1.1")
+//                                .monospaced()
+//                                .foregroundStyle(.red)
+//                                .bold()
                         }
 
                         HStack {
@@ -95,7 +95,7 @@ struct Home: View {
                         
                     }
                     .padding(.horizontal)
-                    .padding(.top, -24)
+                    .padding(.top, -12)
                 }
                 .padding([.leading, .trailing, .bottom])
             }
