@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TabBarView: View {
+    
     var body: some View {
         TabView {
             Home()
@@ -33,11 +34,6 @@ struct TabBarView: View {
                 }
                 .onAppear(perform: {Haptics.shared.impact(for: .light)})
             
-            Tester()
-                .tabItem {
-                    Label("Tester", image: "tab-bar-home")
-                }
-                .onAppear(perform: {Haptics.shared.impact(for: .light)})
             
         }
         .tint(.primary)

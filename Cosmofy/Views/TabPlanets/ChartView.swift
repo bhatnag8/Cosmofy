@@ -21,7 +21,7 @@ struct ChartView: View {
 
         
         Chart(planet.data) { dataPoint in
-            let color: Color = isTapped ? dataPoint.original : dataPoint.color
+            let color: Color = isTapped ? dataPoint.color : dataPoint.original
             BarMark(x: .value("Escape Velocity", dataPoint.count),
                     y: .value("Planet", dataPoint.type))
             .foregroundStyle(color)

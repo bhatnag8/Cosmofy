@@ -13,25 +13,24 @@ struct RNNMaybach: View {
     @State private var errorMessage: String?
     @State private var coors = [CLLocationCoordinate2D]()
     
+    @State private var selectedResult: Event?
+    @State private var showDetails: Bool = false
+        
     var body: some View {
         NavigationView {
-            VStack {
+            Map(selection: $selectedResult) {
                 
-                Map() {
-                    
-                    ForEach(events) { event in
-                        Marker("\(event.title)", systemImage: markerImage(for: event.categories.first?.id ?? "default"),
-                            coordinate: CLLocationCoordinate2D(
-                            latitude: event.geometry.last?.coordinates.last ?? -999,
-                            longitude: event.geometry.last?.coordinates.first ?? -999)
-                        )
-                        .tint(markerTint(for: event.categories.first?.id ?? "default"))
-                        
-                    }
-                    
+                ForEach(events, id: \.self) { event in
+                    Marker("\(event.title)", systemImage: markerImage(for: event.categories.first?.id ?? "default"),
+                        coordinate: CLLocationCoordinate2D(
+                        latitude: event.geometry.last?.coordinates.last ?? -999,
+                        longitude: event.geometry.last?.coordinates.first ?? -999)
+                    )
+                    .tint(markerTint(for: event.categories.first?.id ?? "default"))
                 }
-                .mapStyle(.standard(elevation: .realistic))
+                
             }
+            .mapStyle(.standard(elevation: .realistic))
             .onAppear {
                 NetworkManager().fetchEvents { result in
                     switch result {
@@ -45,8 +44,30 @@ struct RNNMaybach: View {
             .alert(isPresented: .constant(errorMessage != nil), content: {
                 Alert(title: Text("Error"), message: Text(errorMessage ?? "Unknown error"), dismissButton: .default(Text("OK")))
             })
+            .sheet(isPresented: $showDetails) {
+                Haptics.shared.impact(for: .medium)
+            } content: {
+                MapDetails(event: selectedResult)
+                    .presentationDetents([.height(300)])
+                    .presentationBackgroundInteraction(.enabled(upThrough: .height(300)))
+                    .presentationCornerRadius(24)
+            }
+        }
+        .onChange(of: selectedResult) { oldValue, newValue in
+            showDetails = newValue != nil
         }
     }
+    
+    @ViewBuilder
+    func MapDetails(event: Event?) -> some View {
+        VStack(spacing: 16) {
+            HStack {
+                Text("Map Details")
+            }
+            .padding(.horizontal)
+        }
+    }
+    
     
     // Function to determine the marker image based on the event title
     private func markerImage(for title: String) -> String {

@@ -62,16 +62,17 @@ struct Home: View {
 //                                .bold()
                         }
 
-                        HStack {
-                            Image("home-icon-1")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-
-                            Link("Article of the Month", destination: URL(string: "https://www.arryan.xyz/cosmofy/aotm")!)
-                                .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                                .foregroundColor(.primary)
-                            Spacer()
-                            Image(systemName: "chevron.right")
+                        NavigationLink(destination: ArticleView()) {
+                            HStack {
+                                Image("home-icon-1")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                Text("Article of the Month")
+                                    .font(Font.custom("SF Pro Rounded Medium", size: 18))
+                                    .foregroundColor(.primary)
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                            }
                         }
                         .onTapGesture {
                             Haptics.shared.vibrate(for: .success)
@@ -151,6 +152,14 @@ struct Home: View {
             }
         }
     
+}
+
+struct ArticleView: View {
+    var body: some View {
+        WebView(urlString: "https://www.arryan.xyz/cosmofy/aotm")
+            .navigationTitle("Article of the Month")
+            .navigationBarTitleDisplayMode(.inline)
+    }
 }
 
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Event: Identifiable, Decodable {
+struct Event: Identifiable, Decodable, Hashable {
     var id: String
     var title: String
     var description: String?
@@ -17,12 +17,12 @@ struct Event: Identifiable, Decodable {
     var sources: [Source]
     var geometry: [Geometry]
     
-    struct Category: Identifiable, Decodable {
+    struct Category: Identifiable, Decodable, Hashable {
         var id: String
         var title: String
     }
 
-    struct Source: Identifiable, Decodable {
+    struct Source: Identifiable, Decodable, Hashable {
         var id: String
         var url: URL
     }

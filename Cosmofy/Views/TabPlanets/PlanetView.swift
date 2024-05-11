@@ -12,26 +12,27 @@ struct SomeView: View {
     let backgroundGradient = LinearGradient(
         colors: [Color.cyan, Color.blue],
         startPoint: .top, endPoint: .bottom)
+    var planet: Planet
+    
     @Environment (\.presentationMode) var presentationMode
     var body: some View {
         ZStack {
-            backgroundGradient
+//            backgroundGradient
             VStack {
-    //            Text("HIIII")
-    //            Text("HIIII")
-    //            Text("HIIII")
+                SceneKitView(planet: planet.name.lowercased())
+                    .background(Color.black)
+                    .cornerRadius(30)
+                    .padding(8)
+                
             }
-            .background(.red)
-//            .edgesIgnoringSafeArea(.all)
+            .background(.black)
             
         }
         .ignoresSafeArea()
         .onTapGesture {
             presentationMode.wrappedValue.dismiss()
         }
-
     }
-    
     
 }
 
@@ -63,7 +64,7 @@ struct PlanetView: View {
                             .foregroundColor(.secondary)
                         Spacer()
                     }
-
+                    
                     Spacer(minLength: 20)
                     ZStack {
                         SceneKitView(planet: planet.name.lowercased())
@@ -71,7 +72,7 @@ struct PlanetView: View {
                             .background(Color.black)
                             .cornerRadius(30)
                             .padding(8)
-
+                        
                         
                         VStack {
                             HStack {
@@ -89,7 +90,9 @@ struct PlanetView: View {
                                     .padding(.top, 16)
                                     .padding([.trailing], 16)
                                 }
-                                .fullScreenCover(isPresented: $isPresented, content: SomeView.init)
+                                .fullScreenCover(isPresented: $isPresented) {
+                                    SomeView(planet: planet)
+                                }
                             }
                             Spacer()
                         }
@@ -111,116 +114,23 @@ struct PlanetView: View {
                 .padding()
                 
                 
-
+                
                 
                 VStack(spacing: 16) {
                     
                     HStack {
-                        // Left Column
-                        VStack(alignment: .leading, spacing: 8) {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("Natural Satellites")
-                                    .font(Font.custom("SF Pro Rounded Medium", size: 16))
-                                    .foregroundColor(.secondary)
-                                HStack(alignment: .firstTextBaseline) {
-                                    Text(String(planet.moons)).font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                                    Text("moons").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(planet.color)
-                                }
-                            }
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                        // Right column
-                        VStack(alignment: .leading, spacing: 8) {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("Planetary Rings")
-                                    .font(Font.custom("SF Pro Rounded Medium", size: 16))
-                                    .foregroundColor(.secondary)
-                                HStack(alignment: .firstTextBaseline) {
-                                    Text(String(planet.rings)).font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                                    Text("rings").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(planet.color)
-                                }
-                            }
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                        PlanetPropertyView(title: "Natural Satellites", value: String(planet.moons), unit: "moons", color: planet.color)
+                        PlanetPropertyView(title: "Planetary Rings", value: String(planet.rings), unit: "rings", color: planet.color)
                     }
-                    .padding(.horizontal)
                     
                     HStack {
-                        // Left Column
-                        VStack(alignment: .leading, spacing: 8) {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("Gravity")
-                                    .font(Font.custom("SF Pro Rounded Medium", size: 16))
-                                    .foregroundColor(.secondary)
-                                HStack(alignment: .firstTextBaseline) {
-                                    Text(String(planet.gravity)).font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                                    Text("m/s²").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(planet.color)
-                                }
-                            }
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                        // Right column
-                        VStack(alignment: .leading, spacing: 8) {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("Escape Velocity")
-                                    .font(Font.custom("SF Pro Rounded Medium", size: 16))
-                                    .foregroundColor(.secondary)
-                                HStack(alignment: .firstTextBaseline) {
-                                    Text(planet.escapeVelocity).font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                                    Text("km/h").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(planet.color)
-                                }
-                            }
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                        PlanetPropertyView(title: "Gravity", value: String(planet.gravity), unit: "m/s²", color: planet.color)
+                        PlanetPropertyView(title: "Escape Velocity", value: planet.escapeVelocity, unit: "km/h", color: planet.color)
                     }
-                    .padding(.horizontal)
                     
-                    
-                    HStack() {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Equatorial Radius")
-                                .font(Font.custom("SF Pro Rounded Medium", size: 16))
-                                .foregroundColor(.secondary)
-                            HStack(alignment: .firstTextBaseline) {
-                                Text(planet.radius).font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                                Text("km").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(planet.color)
-                            }
-                        }
-                        Spacer()
-                    }
-                    .padding(.horizontal)
-                    
-                    
-                    
-                    HStack() {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Mass")
-                                .font(Font.custom("SF Pro Rounded Medium", size: 16))
-                                .foregroundColor(.secondary)
-                            HStack(alignment: .firstTextBaseline) {
-                                Text(planet.mass).font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                                Text("kg").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(planet.color)
-                            }
-                        }
-                        Spacer()
-                    }
-                    .padding(.horizontal)
-                    
-                    HStack() {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Volume")
-                                .font(Font.custom("SF Pro Rounded Medium", size: 16))
-                                .foregroundColor(.secondary)
-                            HStack(alignment: .firstTextBaseline) {
-                                Text(planet.volume).font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                                Text("km³").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(planet.color)
-                            }
-                        }
-                        Spacer()
-                    }
-                    .padding(.horizontal)
+                    PlanetPropertyView(title: "Equatorial Radius", value: planet.radius, unit: "km", color: planet.color)
+                    PlanetPropertyView(title: "Mass", value: planet.mass, unit: "kg", color: planet.color)
+                    PlanetPropertyView(title: "Volume", value: planet.volume, unit: "km³", color: planet.color)
                     
                     HStack() {
                         VStack(alignment: .leading, spacing: 4) {
@@ -235,7 +145,7 @@ struct PlanetView: View {
                                         .frame(width: 40, height: 40)
                                         .cornerRadius(8)
                                 }
-
+                                
                             }
                         }
                         Spacer()
@@ -317,4 +227,28 @@ struct SceneKitView: UIViewControllerRepresentable {
 
 #Preview {
     PlanetView(planet: neptunePlanet)
+}
+
+
+struct PlanetPropertyView: View {
+    var title: String
+    var value: String
+    var unit: String
+    var color: Color
+    
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .font(Font.custom("SF Pro Rounded Medium", size: 16))
+                    .foregroundColor(.secondary)
+                HStack(alignment: .firstTextBaseline) {
+                    Text(value).font(Font.custom("SF Pro Rounded Semibold", size: 20))
+                    Text(unit).font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(color)
+                }
+            }
+            Spacer()
+        }
+        .padding(.horizontal)
+    }
 }
