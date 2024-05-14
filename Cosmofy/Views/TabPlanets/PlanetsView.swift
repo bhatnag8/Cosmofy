@@ -32,11 +32,11 @@ struct PlanetsView: View {
                                     Haptics.shared.vibrate(for: .success)
                                 }
                             }
-                            .listStyle(PlainListStyle())  // Use PlainListStyle here
+                            .listStyle(PlainListStyle())
                             .id(Tab.inner)
                             .containerRelativeFrame(.horizontal)
-                            .onAppear(perform: {Haptics.shared.impact(for: .light)})
-                            
+                            .onAppear(perform: {Haptics.shared.impact(for: .medium)})
+
                             ScrollView(.vertical) {
                                 ForEach(outerPlanets) { planet in
                                     PlanetBlock(planet: planet)
@@ -47,8 +47,8 @@ struct PlanetsView: View {
                             }
                             .id(Tab.outer)
                             .containerRelativeFrame(.horizontal)
-                            .onAppear(perform: {Haptics.shared.impact(for: .light)})
-                            
+                            .onAppear(perform: {Haptics.shared.impact(for: .medium)})
+
                             ScrollView(.vertical) {
                                 VStack {
                                     Image("solar-system")
@@ -70,7 +70,7 @@ struct PlanetsView: View {
                             }
                             .id(Tab.solar)
                             .containerRelativeFrame(.horizontal)
-                            .onAppear(perform: {Haptics.shared.impact(for: .light)})
+                            .onAppear(perform: {Haptics.shared.impact(for: .medium)})
                         }
                         .scrollTargetLayout()
                         .offsetX { value in

@@ -23,23 +23,41 @@ struct Home: View {
                                     GeometryReader(content: { geometry in
                                         let cardSize = geometry.size
                                         let minX = min(geometry.frame(in: .scrollView).minX * 1.2, geometry.size.width * 1.2)
-                                        Image(card.imageName)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                            .offset(x: -minX)
-                                            .frame(width: cardSize.width * 2)
-                                            .frame(width: cardSize.width, height: cardSize.height)
-                                            .overlay(content: {
-                                                OverlayView(card: card)
-                                            })
-                                            .clipShape(.rect(cornerRadius: 20))
-                                            .shadow(color: card.color, radius: 3)
+                                        if card == imageList.first {
+                                            NavigationLink(destination: ArticleView()) {
+                                                Image(card.imageName)
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fill)
+                                                    .offset(x: -minX)
+                                                    .frame(width: cardSize.width * 2)
+                                                    .frame(width: cardSize.width, height: cardSize.height)
+                                                    .overlay(content: {
+                                                        OverlayView(card: card)
+                                                    })
+                                                    .clipShape(.rect(cornerRadius: 20))
+                                                    .shadow(color: card.color, radius: 3)
+                                            }
+                                        } else {
+                                            Image(card.imageName)
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                                .offset(x: -minX)
+                                                .frame(width: cardSize.width * 2)
+                                                .frame(width: cardSize.width, height: cardSize.height)
+                                                .overlay(content: {
+                                                    OverlayView(card: card)
+                                                })
+                                                .clipShape(.rect(cornerRadius: 20))
+                                                .shadow(color: card.color, radius: 3)
+                                        }
+                                        
                                     })
                                     .frame(width: size.width - 50   , height: size.height - 50)
                                     .scrollTransition(.interactive, axis: .horizontal) { view, phase in
                                         view.scaleEffect(phase.isIdentity ? 1 : 0.95)
                                     }
                                 }
+                                
                             })
                             .padding(12)
                             .scrollTargetLayout()
@@ -84,7 +102,7 @@ struct Home: View {
                                 .resizable()
                                 .frame(width: 30, height: 30)
                             
-                            NavigationLink(destination: IOTDView()) {
+                            NavigationLink(destination: ArticleView()) {
                                 Text("Picture of the Day")
                                     .font(Font.custom("SF Pro Rounded Medium", size: 18))
                                     .foregroundColor(.primary)
@@ -109,16 +127,21 @@ struct Home: View {
         ZStack(alignment: .bottomLeading, content: {
             LinearGradient(colors: [.clear, .clear, .clear, .black.opacity(0.1), .black.opacity(0.5), .black], startPoint: .top, endPoint: .bottom)
             
-            VStack(alignment: .leading, spacing: 4, content: {
-                Text("\(card.title)")
-                    .font(Font.custom("SF Pro Rounded Semibold", size: 24))
+            HStack {
+                VStack(alignment: .leading, spacing: 4, content: {
+                    Text("\(card.title)")
+                        .font(Font.custom("SF Pro Rounded Semibold", size: 24))
+                    
+                    Text("\(card.subtitle)")
+                        .font(Font.custom("SF Pro Rounded Medium", size: 16))
+                })
                 
-                Text("\(card.subtitle)")
-                    .font(Font.custom("SF Pro Rounded Medium", size: 16))
-            })
+            }
+            
             .foregroundColor(.white)
             .padding()
         })
+        
     }
     
     func currentDayAndTime() -> String {

@@ -15,7 +15,7 @@ struct TabBarView: View {
                 .tabItem {
                     Label("Home", image: "tab-bar-home")
                 }
-                .onAppear(perform: {Haptics.shared.impact(for: .light)})
+                .onAppear(perform: {Haptics.shared.impact(for: .medium)})
             
             PlanetsView()
                 .tabItem {
@@ -26,14 +26,14 @@ struct TabBarView: View {
                 .tabItem {
                     Label("Swift", image: "tab-bar-swift")
                 }
-                .onAppear(perform: {Haptics.shared.impact(for: .light)})
-        
+                .onAppear(perform: {Haptics.shared.impact(for: .medium)})
+
             RNNMaybach()
                 .tabItem {
                     Label("Earth Scope", image: "tab-bar-roadmap")
                 }
-                .onAppear(perform: {Haptics.shared.impact(for: .light)})
-            
+                .onAppear(perform: {Haptics.shared.impact(for: .medium)})
+
             
         }
         .tint(.primary)

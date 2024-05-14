@@ -15,23 +15,80 @@ struct SomeView: View {
     var planet: Planet
     
     @Environment (\.presentationMode) var presentationMode
+    @State private var selectedViewType: Int = 0
+    
     var body: some View {
         ZStack {
-//            backgroundGradient
             VStack {
-                SceneKitView(planet: planet.name.lowercased())
-                    .background(Color.black)
-                    .cornerRadius(30)
-                    .padding(8)
-                
+                switch selectedViewType {
+                    case 0:
+                        SceneKitView(planet: planet.name.lowercased(), isFullScreen: true)
+                            .background(Color.black)
+                            .cornerRadius(30)
+                            .onAppear(perform: {
+                                Haptics.shared.impact(for: .light)
+                            })
+                    case 1:
+                        SceneKitView(planet: "earth")
+                            .background(Color.black)
+                            .cornerRadius(30)
+                            .onAppear(perform: {
+                                Haptics.shared.impact(for: .light)
+                            })
+//                    case 2:
+//                        ImagesView(planet: planet)
+//                            .padding(.top, 96)
+//                            .background(Color.black)
+
+                    default:
+                        Text("Selection not available")
+                }
             }
             .background(.black)
             
+            VStack {
+                Picker("View Type", selection: $selectedViewType) {
+                    Text("3D").tag(0)
+                    Text("AR").tag(1)
+                /**
+                    Text("Images").tag(2)
+
+                    Scene becomes laggy with warning:
+                    SCNView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+                    Will fix in v1.2
+                 
+                 **/
+                }
+                .environment(\.colorScheme, .dark)
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(.top, 64)
+                .padding(.horizontal, 96)
+                Spacer()
+            }
+
+            
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "xmark.circle.fill") // The icon
+                            .resizable()
+                            .foregroundStyle(.white.opacity(0.7))
+                            .frame(width: 30, height: 30)
+                            .padding(.top, 64)
+                            .padding(.trailing, 16)
+                    }
+                }
+                Spacer()
+            }
+            
+            
+            
         }
         .ignoresSafeArea()
-        .onTapGesture {
-            presentationMode.wrappedValue.dismiss()
-        }
+
     }
     
 }
@@ -79,10 +136,9 @@ struct PlanetView: View {
                                 Spacer()
                                 Button(action: {
                                     self.isPresented.toggle()
-                                    
                                 }) {
                                     HStack {
-                                        Image(systemName: "arrow.down.left.and.arrow.up.right") // The icon
+                                        Image(systemName: "arrow.down.left.and.arrow.up.right")
                                     }
                                     .foregroundColor(.white)
                                     .padding()
@@ -113,9 +169,7 @@ struct PlanetView: View {
                 }
                 .padding()
                 
-                
-                
-                
+
                 VStack(spacing: 16) {
                     
                     HStack {
@@ -177,38 +231,142 @@ struct PlanetView: View {
     }
 }
 
+struct ImageName: Identifiable, Equatable {
+    let id: UUID = .init()
+    let value: String
+}
+
+struct ImagesView: View {
+    @Namespace var namespace
+    var planet: Planet
+    
+    
+    @State private var selectedItem: ImageName?
+    @State private var position = CGSize.zero
+    
+    var body: some View {
+        let dataList = (1..<5).map { ImageName(value: "\(planet.name.lowercased())_image_\($0)") }
+        ZStack {
+            ScrollView {
+                LazyVGrid(columns: [
+                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 2),
+                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 2),
+                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 2),
+                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 2)
+                ], spacing: 2) {
+                    ForEach(dataList) { data in
+                        Image(data.value)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .matchedGeometryEffect(
+                                id: data.id,
+                                in: namespace,
+                                isSource:  selectedItem == nil
+                            )
+                            .zIndex(selectedItem == data ? 1 : 0)
+                            .onTapGesture {
+                                position = .zero
+                                withAnimation(.spring(response: 0.4, dampingFraction: 0.75)) {
+                                    selectedItem = data
+                                }
+                            }
+                    }
+                }
+                .padding(2)
+            }
+            
+            Color.black
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea()
+                .opacity(selectedItem == nil ? 0 : min(1, max(0, 1 - abs(Double(position.height) / 800))))
+            
+            if let selectedItem {
+                Image(selectedItem.value)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .matchedGeometryEffect(
+                        id: selectedItem.id,
+                        in: namespace,
+                        isSource: self.selectedItem != nil
+                    )
+                    .zIndex(2)
+                    .onTapGesture {
+                        withAnimation(.spring(response: 0.4, dampingFraction: 0.75)) {
+                            self.selectedItem = nil
+                        }
+                    }
+                    .offset(position)
+                    .gesture(
+                        DragGesture()
+                            .onChanged { value in
+                                self.position = value.translation
+                            }
+                            .onEnded { value in
+                                withAnimation(.spring(response: 0.4, dampingFraction: 0.75)) {
+                                    if 200 < abs(self.position.height) {
+                                        self.selectedItem = nil
+                                    } else {
+                                        self.position = .zero
+                                    }
+                                }
+                            }
+                    )
+            }
+        }
+    }
+}
+
 struct SceneKitView: UIViewControllerRepresentable {
     var planet: String
     
-    let width: CGFloat = 300
-    let height: CGFloat = 300
+    var width: CGFloat?
+    var height: CGFloat?
+    var isFullScreen: Bool = false
     
     func makeUIViewController(context: Context) -> UIViewController {
         let viewController = UIViewController()
         let sceneView = SCNView()
         sceneView.translatesAutoresizingMaskIntoConstraints = false
         viewController.view.addSubview(sceneView)
-        NSLayoutConstraint.activate([
-            sceneView.widthAnchor.constraint(equalToConstant: width),
-            sceneView.heightAnchor.constraint(equalToConstant: height),
-            sceneView.centerXAnchor.constraint(equalTo: viewController.view.centerXAnchor),
-            sceneView.centerYAnchor.constraint(equalTo: viewController.view.centerYAnchor)
-        ])
+        
+        if isFullScreen {
+            NSLayoutConstraint.activate([
+                sceneView.leftAnchor.constraint(equalTo: viewController.view.leftAnchor),
+                sceneView.rightAnchor.constraint(equalTo: viewController.view.rightAnchor),
+                sceneView.topAnchor.constraint(equalTo: viewController.view.topAnchor),
+                sceneView.bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor)
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                sceneView.widthAnchor.constraint(equalToConstant: width ?? 300),
+                sceneView.heightAnchor.constraint(equalToConstant: height ?? 300),
+                sceneView.centerXAnchor.constraint(equalTo: viewController.view.centerXAnchor),
+                sceneView.centerYAnchor.constraint(equalTo: viewController.view.centerYAnchor)
+            ])
+        }
         
         let scene = SCNScene()
         sceneView.scene = scene
         sceneView.backgroundColor = UIColor.black
         
-        // Assuming you have a PlanetNode for Neptune
+        
         let neptune = PlanetNode(radius: 1, planet: planet, rotation: 10)
         neptune.position = SCNVector3(0, 0, 0) // Center the node
         scene.rootNode.addChildNode(neptune)
         
-        // Set up the camera, lighting, etc.
+        
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 3.5)
+
+        if isFullScreen {
+            cameraNode.position = SCNVector3(x: 0, y: 0, z: 7)
+        } else {
+            cameraNode.position = SCNVector3(x: 0, y: 0, z: 3.5)
+        }
+
+        let starsParticleSystem = SCNParticleSystem(named: "StarsParticleSystem.scnp", inDirectory: nil)!
         scene.rootNode.addChildNode(cameraNode)
+        scene.rootNode.addParticleSystem(starsParticleSystem)
         sceneView.pointOfView = cameraNode
         
         sceneView.allowsCameraControl = true

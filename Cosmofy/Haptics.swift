@@ -36,7 +36,8 @@ final class Haptics {
     
     public func impact(for style: UIImpactFeedbackGenerator.FeedbackStyle) {
         DispatchQueue.main.async {
-//            print("Haptics for \(style)")
+            let date = Date()
+            print("Haptics for \(style) \(date.timeIntervalSince1970)")
             let impactFG = UIImpactFeedbackGenerator(style: style)
             impactFG.prepare()
             impactFG.impactOccurred()
