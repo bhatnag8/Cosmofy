@@ -18,7 +18,6 @@ final class Haptics {
     
     public func selectionVibrate() {
         DispatchQueue.main.async {
-//            print("Haptics for selectionVibrate")
             let selectionFG = UISelectionFeedbackGenerator()
             selectionFG.prepare()
             selectionFG.selectionChanged()
@@ -27,7 +26,6 @@ final class Haptics {
     
     public func vibrate(for type: UINotificationFeedbackGenerator.FeedbackType) {
         DispatchQueue.main.async {
-//            print("Haptics for \(type)")
             let notificationFG = UINotificationFeedbackGenerator()
             notificationFG.prepare()
             notificationFG.notificationOccurred(type)

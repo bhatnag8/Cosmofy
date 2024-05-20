@@ -72,6 +72,19 @@
 		0BC1F2862A8520E900600232 /* EarthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1F2852A8520E900600232 /* EarthViewController.swift */; };
 		0BC1F2882A85216800600232 /* EarthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1F2872A85216800600232 /* EarthCell.swift */; };
 		0BC797B32A5DE66B005B9E45 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC797B22A5DE66B005B9E45 /* SettingsViewController.swift */; };
+		0BF2A4172BFBF24B007B3E4B /* GarenText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF2A4162BFBF24B007B3E4B /* GarenText.swift */; };
+		0BF2A4242BFBF935007B3E4B /* SF-Mono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF2A41E2BFBF78E007B3E4B /* SF-Mono-Regular.otf */; };
+		0BF2A4252BFBF935007B3E4B /* SF-Mono-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF2A41D2BFBF78E007B3E4B /* SF-Mono-LightItalic.otf */; };
+		0BF2A4262BFBF935007B3E4B /* SF-Mono-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF2A41F2BFBF78E007B3E4B /* SF-Mono-Heavy.otf */; };
+		0BF2A4272BFBF935007B3E4B /* SF-Mono-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF2A4212BFBF78E007B3E4B /* SF-Mono-Medium.otf */; };
+		0BF2A4282BFBF935007B3E4B /* SF-Mono-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF2A4202BFBF78E007B3E4B /* SF-Mono-RegularItalic.otf */; };
+		0BF2A4292BFBF935007B3E4B /* SF-Mono-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF2A4222BFBF78E007B3E4B /* SF-Mono-Semibold.otf */; };
+		0BF2A42A2BFBF935007B3E4B /* SF-Mono-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF2A41B2BFBF78E007B3E4B /* SF-Mono-BoldItalic.otf */; };
+		0BF2A42B2BFBF935007B3E4B /* SF-Mono-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF2A4192BFBF78E007B3E4B /* SF-Mono-Bold.otf */; };
+		0BF2A42C2BFBF935007B3E4B /* SF-Mono-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF2A41A2BFBF78E007B3E4B /* SF-Mono-HeavyItalic.otf */; };
+		0BF2A42D2BFBF935007B3E4B /* SF-Mono-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF2A4182BFBF78D007B3E4B /* SF-Mono-SemiboldItalic.otf */; };
+		0BF2A42E2BFBF935007B3E4B /* SF-Mono-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF2A4232BFBF78E007B3E4B /* SF-Mono-Light.otf */; };
+		0BF2A42F2BFBF935007B3E4B /* SF-Mono-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF2A41C2BFBF78E007B3E4B /* SF-Mono-MediumItalic.otf */; };
 		0BF8630C2AF1A58400379905 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF8630B2AF1A58400379905 /* GradientView.swift */; };
 		0BFB21052B9CEB1400C84FD8 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB21042B9CEB1400C84FD8 /* Home.swift */; };
 		0BFF74672B76FE0B0079A71A /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF74662B76FE0B0079A71A /* PlanetView.swift */; };
@@ -86,8 +99,6 @@
 		2F542ED1297CF0110067C26B /* Pulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F542ED0297CF0110067C26B /* Pulse.swift */; };
 		2F587A2B294D49490028225E /* MercuryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F587A2A294D49490028225E /* MercuryViewController.swift */; };
 		2F7494EF2A5B35C4004C63B7 /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7494EE2A5B35C4004C63B7 /* KeychainItem.swift */; };
-		2FBBB6592945531500BBB072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBB6582945531500BBB072 /* AppDelegate.swift */; };
-		2FBBB6602945531500BBB072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB65E2945531500BBB072 /* Main.storyboard */; };
 		2FBBB6622945531700BBB072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
 		2FDBA47C2A54F0A200598EC6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDBA47B2A54F0A200598EC6 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
@@ -158,6 +169,19 @@
 		0BC1F2852A8520E900600232 /* EarthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthViewController.swift; sourceTree = "<group>"; };
 		0BC1F2872A85216800600232 /* EarthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthCell.swift; sourceTree = "<group>"; };
 		0BC797B22A5DE66B005B9E45 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0BF2A4162BFBF24B007B3E4B /* GarenText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarenText.swift; sourceTree = "<group>"; };
+		0BF2A4182BFBF78D007B3E4B /* SF-Mono-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		0BF2A4192BFBF78E007B3E4B /* SF-Mono-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Bold.otf"; sourceTree = "<group>"; };
+		0BF2A41A2BFBF78E007B3E4B /* SF-Mono-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-HeavyItalic.otf"; sourceTree = "<group>"; };
+		0BF2A41B2BFBF78E007B3E4B /* SF-Mono-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-BoldItalic.otf"; sourceTree = "<group>"; };
+		0BF2A41C2BFBF78E007B3E4B /* SF-Mono-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-MediumItalic.otf"; sourceTree = "<group>"; };
+		0BF2A41D2BFBF78E007B3E4B /* SF-Mono-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-LightItalic.otf"; sourceTree = "<group>"; };
+		0BF2A41E2BFBF78E007B3E4B /* SF-Mono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Regular.otf"; sourceTree = "<group>"; };
+		0BF2A41F2BFBF78E007B3E4B /* SF-Mono-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Heavy.otf"; sourceTree = "<group>"; };
+		0BF2A4202BFBF78E007B3E4B /* SF-Mono-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-RegularItalic.otf"; sourceTree = "<group>"; };
+		0BF2A4212BFBF78E007B3E4B /* SF-Mono-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Medium.otf"; sourceTree = "<group>"; };
+		0BF2A4222BFBF78E007B3E4B /* SF-Mono-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Semibold.otf"; sourceTree = "<group>"; };
+		0BF2A4232BFBF78E007B3E4B /* SF-Mono-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Light.otf"; sourceTree = "<group>"; };
 		0BF8630B2AF1A58400379905 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		0BFB21042B9CEB1400C84FD8 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		0BFF74662B76FE0B0079A71A /* PlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetView.swift; sourceTree = "<group>"; };
@@ -174,8 +198,6 @@
 		2F6427CF2A4FA4EF00CC503D /* Cosmofy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cosmofy.entitlements; sourceTree = "<group>"; };
 		2F7494EE2A5B35C4004C63B7 /* KeychainItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
 		2FBBB6552945531500BBB072 /* Cosmofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosmofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FBBB6582945531500BBB072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2FBBB65F2945531500BBB072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2FBBB6612945531700BBB072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FBBB6662945531700BBB072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FDBA47B2A54F0A200598EC6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +273,18 @@
 		0B9F026E2B75E56000CB5543 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				0BF2A4192BFBF78E007B3E4B /* SF-Mono-Bold.otf */,
+				0BF2A41B2BFBF78E007B3E4B /* SF-Mono-BoldItalic.otf */,
+				0BF2A41F2BFBF78E007B3E4B /* SF-Mono-Heavy.otf */,
+				0BF2A41A2BFBF78E007B3E4B /* SF-Mono-HeavyItalic.otf */,
+				0BF2A4232BFBF78E007B3E4B /* SF-Mono-Light.otf */,
+				0BF2A41D2BFBF78E007B3E4B /* SF-Mono-LightItalic.otf */,
+				0BF2A4212BFBF78E007B3E4B /* SF-Mono-Medium.otf */,
+				0BF2A41C2BFBF78E007B3E4B /* SF-Mono-MediumItalic.otf */,
+				0BF2A41E2BFBF78E007B3E4B /* SF-Mono-Regular.otf */,
+				0BF2A4202BFBF78E007B3E4B /* SF-Mono-RegularItalic.otf */,
+				0BF2A4222BFBF78E007B3E4B /* SF-Mono-Semibold.otf */,
+				0BF2A4182BFBF78D007B3E4B /* SF-Mono-SemiboldItalic.otf */,
 				0B9F02732B75E5B200CB5543 /* SF-Pro-Rounded-Black.otf */,
 				0B9F02702B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf */,
 				0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */,
@@ -357,6 +391,17 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		0BF2A4152BFBEEFC007B3E4B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2F4F8FC0295EBC5100F7EE98 /* StarsParticleSystem.scnp */,
+				2F4F8FC1295EBC5100F7EE98 /* star.png */,
+				0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */,
+				0BF2A4162BFBF24B007B3E4B /* GarenText.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		2F0ACC21295DBC9F00B3D0DB /* 3DViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,17 +478,13 @@
 			isa = PBXGroup;
 			children = (
 				0B3EC2672BA4D22D004491B7 /* ViewModels */,
-				0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */,
+				0BF2A4152BFBEEFC007B3E4B /* Helpers */,
 				0BB14A4E2B9C334F00476F3C /* Models */,
 				0BB14A482B9C2B6C00476F3C /* Views */,
 				0BB14A4B2B9C2E9300476F3C /* Extensions */,
 				0BB14A272B9C27BC00476F3C /* v1.0 */,
 				0B9F026E2B75E56000CB5543 /* Fonts */,
 				2F6427CF2A4FA4EF00CC503D /* Cosmofy.entitlements */,
-				2F4F8FC1295EBC5100F7EE98 /* star.png */,
-				2F4F8FC0295EBC5100F7EE98 /* StarsParticleSystem.scnp */,
-				2FBBB6582945531500BBB072 /* AppDelegate.swift */,
-				2FBBB65E2945531500BBB072 /* Main.storyboard */,
 				2FBBB6612945531700BBB072 /* Assets.xcassets */,
 				2FBBB6662945531700BBB072 /* Info.plist */,
 				0BB14A422B9C2B1100476F3C /* CosmofyApp.swift */,
@@ -512,21 +553,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF2A4282BFBF935007B3E4B /* SF-Mono-RegularItalic.otf in Resources */,
 				0B9F027D2B75E5B200CB5543 /* SF-Pro-Rounded-Light.otf in Resources */,
+				0BF2A42A2BFBF935007B3E4B /* SF-Mono-BoldItalic.otf in Resources */,
 				0B9F027E2B75E5B200CB5543 /* SF-Pro-Rounded-Thin.otf in Resources */,
 				0B1BAD572AE97736001CFC35 /* .gitignore in Resources */,
+				0BF2A42C2BFBF935007B3E4B /* SF-Mono-HeavyItalic.otf in Resources */,
 				0B9F027C2B75E5B200CB5543 /* SF-Pro-Rounded-Black.otf in Resources */,
+				0BF2A4272BFBF935007B3E4B /* SF-Mono-Medium.otf in Resources */,
+				0BF2A42B2BFBF935007B3E4B /* SF-Mono-Bold.otf in Resources */,
 				0B9F02802B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf in Resources */,
+				0BF2A4252BFBF935007B3E4B /* SF-Mono-LightItalic.otf in Resources */,
 				2F4F8FC3295EBC5100F7EE98 /* star.png in Resources */,
 				0B9F027F2B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf in Resources */,
 				0B9F027B2B75E5B200CB5543 /* SF-Pro-Rounded-Ultralight.otf in Resources */,
+				0BF2A4242BFBF935007B3E4B /* SF-Mono-Regular.otf in Resources */,
 				2F4F8FC2295EBC5100F7EE98 /* StarsParticleSystem.scnp in Resources */,
+				0BF2A4262BFBF935007B3E4B /* SF-Mono-Heavy.otf in Resources */,
 				0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */,
 				0B8A7A972BAB570A0051E69A /* Launch Screen.storyboard in Resources */,
 				2FBBB6622945531700BBB072 /* Assets.xcassets in Resources */,
 				0B9F02792B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf in Resources */,
 				0B9F02782B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf in Resources */,
-				2FBBB6602945531500BBB072 /* Main.storyboard in Resources */,
+				0BF2A42D2BFBF935007B3E4B /* SF-Mono-SemiboldItalic.otf in Resources */,
+				0BF2A4292BFBF935007B3E4B /* SF-Mono-Semibold.otf in Resources */,
+				0BF2A42F2BFBF935007B3E4B /* SF-Mono-MediumItalic.otf in Resources */,
+				0BF2A42E2BFBF935007B3E4B /* SF-Mono-Light.otf in Resources */,
 				0B9F027A2B75E5B200CB5543 /* SF-Pro-Rounded-Semibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,6 +615,7 @@
 				2FDBA47C2A54F0A200598EC6 /* LoginViewController.swift in Sources */,
 				0BB14A472B9C2B5F00476F3C /* SplashScreen.swift in Sources */,
 				0B3EC2642BA4BAFE004491B7 /* ImageView.swift in Sources */,
+				0BF2A4172BFBF24B007B3E4B /* GarenText.swift in Sources */,
 				2F073A132946BE4000F024B8 /* PlanetsViewController.swift in Sources */,
 				0B40B0C42B54683E000F43D5 /* UranusCell.swift in Sources */,
 				0B161A6B2BA014DC008F3D0F /* View+TabMask.swift in Sources */,
@@ -571,7 +624,6 @@
 				0B42A1912B22B1B0007F3B57 /* NewsViewController.swift in Sources */,
 				0B923B6E2B9CBBEE009B8D45 /* TabBarView.swift in Sources */,
 				0B40B0C22B5465EE000F43D5 /* NeptuneViewController.swift in Sources */,
-				2FBBB6592945531500BBB072 /* AppDelegate.swift in Sources */,
 				2F0ACC23295DBCB800B3D0DB /* Mercury3D.swift in Sources */,
 				0B8BCDDF2AF9545600DB54CF /* Mars3D.swift in Sources */,
 				0BB14A4A2B9C2CF000476F3C /* SplashScreenView.swift in Sources */,
@@ -609,17 +661,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		2FBBB65E2945531500BBB072 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2FBBB65F2945531500BBB072 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2FBBB6672945531700BBB072 /* Debug */ = {
@@ -756,7 +797,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -794,7 +835,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

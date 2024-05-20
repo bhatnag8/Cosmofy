@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Home: View {
+    @State private var trigger: Bool = false
+
     var body: some View {
         
         NavigationStack {
@@ -21,20 +23,19 @@ struct Home: View {
                                     GeometryReader { geometry in
                                         let cardSize = geometry.size
                                         let minX = min(geometry.frame(in: .scrollView).minX * 1.2, geometry.size.width * 1.2)
-                                        NavigationLink(destination: ChangelogView()) {
-                                            
-                                            Image(card.imageName)
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fill)
-                                                .offset(x: -minX)
-                                                .frame(width: cardSize.width * 2)
-                                                .frame(width: cardSize.width, height: cardSize.height)
-                                                .overlay {
-                                                    OverlayView(card: card)
-                                                }
-                                                .clipShape(RoundedRectangle(cornerRadius: 20))
-                                                .shadow(color: card.color, radius: 3)
-                                        }
+                                        
+                                        Image(card.imageName)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .offset(x: -minX)
+                                            .frame(width: cardSize.width * 2)
+                                            .frame(width: cardSize.width, height: cardSize.height)
+                                            .overlay {
+                                                OverlayView(card: card)
+                                            }
+                                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                                            .shadow(color: card.color, radius: 3)
+                                        
                                     }
                                     .frame(width: size.width - 50, height: size.height - 50)
                                     .scrollTransition(.interactive, axis: .horizontal) { view, phase in
@@ -52,11 +53,17 @@ struct Home: View {
                     .frame(height: UIScreen.main.bounds.height * 0.65)
                     .padding(.horizontal, -8)
                     
-                    VStack {
+                    VStack() {
                         HStack {
-                            Text("Cosmofy")
-                                .font(Font.custom("SF Pro Rounded Semibold", size: 32))
+                            GarenText(text: "Cosmofy", trigger: trigger, transition: .interpolate)
+                                .font(Font.custom("SF Mono Semibold Italic", size: 32))
+
+//                            Text("Cosmofy")
+//                                .font(Font.custom("SF Pro Rounded Semibold", size: 32))
                             Spacer()
+                            GarenText(text: "v1.1", trigger: trigger, transition: .interpolate)
+                                .font(Font.custom("SF Mono Semibold Italic", size: 20))
+                                .foregroundStyle(.blue)
                         }
                         
                         NavigationLink(destination: ArticleView()) {
@@ -89,6 +96,23 @@ struct Home: View {
                                     .foregroundStyle(.black)
                             }
                         }
+                        .onTapGesture {
+                            Haptics.shared.vibrate(for: .success)
+                        }
+                        
+//                        NavigationLink(destination: ChangelogView()) {
+//                            HStack {
+//                                Image("home-icon-3")
+//                                    .resizable()
+//                                    .frame(width: 30, height: 30)
+//                                Text("v1.1 Change Log")
+//                                    .font(Font.custom("SF Pro Rounded Medium", size: 18))
+//                                    .foregroundColor(.primary)
+//                                Spacer()
+//                                Image(systemName: "chevron.right")
+//                                    .foregroundStyle(.black)
+//                            }
+//                        }
                         .onTapGesture {
                             Haptics.shared.vibrate(for: .success)
                         }
