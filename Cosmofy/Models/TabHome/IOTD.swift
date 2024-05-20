@@ -52,7 +52,7 @@ class Constants {
     }
 
     static var url: URL {
-        guard let url  = URL(string: "https://api.nasa.gov/planetary/apod?api_key=\(apiKey)") else {
+        guard let url  = URL(string: "https://apod.ellanan.com/api") else {
             fatalError()
         }
         return url

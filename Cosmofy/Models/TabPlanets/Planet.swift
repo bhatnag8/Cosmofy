@@ -191,20 +191,69 @@ let jupiterPlanet = Planet(
     ]
 )
 
+let saturnPlanet = Planet(
+    name: "Saturn",
+    imageName: "smiling-saturn",
+    description: "Iconic for its stunning ring system and gas giant composition.",
+    visual: "Sometime in the 1600s",
+    color: .colorSaturn,
+    moons: 83,
+    rings: 7,
+    gravity: 10.44,
+    escapeVelocity: "35,500",
+    radius: "5.8232 × 10⁴",
+    mass: "5.6834 × 10²⁶",
+    volume: "8.2713 × 10¹⁴",
+    atmosphere: ["h2-saturn", "he-saturn"],
+    data: [
+        ChartData(type: "Mercury", count: 5.427, color: .primary, original: .colorMercury),
+        ChartData(type: "Venus", count: 5.243, color: .primary, original: .colorVenus),
+        ChartData(type: "Earth", count: 5.513, color: .primary, original: .miamiBlue),
+        ChartData(type: "Mars", count: 3.934, color: .primary, original: .colorMars),
+        ChartData(type: "Jupiter", count: 1.326, color: .primary, original: .colorJupiter),
+        ChartData(type: "Saturn", count: 0.687, color: .colorSaturn, original: .colorSaturn),
+        ChartData(type: "Uranus", count: 1.270, color: .primary, original: .colorUranus),
+        ChartData(type: "Neptune", count: 1.638, color: .primary, original: .colorNeptune),
+    ]
+)
+
+
+let uranusPlanet = Planet(
+    name: "Uranus",
+    imageName: "smiling-uranus",
+    description: "Unique for its tilted axis and pale blue-green hue.",
+    visual: "March 13, 1781",
+    color: .colorUranus,
+    moons: 27,
+    rings: 13,
+    gravity: 8.87,
+    escapeVelocity: "21,300",
+    radius: "2.5362 × 10⁴",
+    mass: "8.6810 × 10²⁵",
+    volume: "6.833 × 10¹³",
+    atmosphere: ["h2-uranus", "he-uranus", "ch4-uranus"],
+    data: [
+        ChartData(type: "Mercury", count: 5.427, color: .primary, original: .colorMercury),
+        ChartData(type: "Venus", count: 5.243, color: .primary, original: .colorVenus),
+        ChartData(type: "Earth", count: 5.513, color: .primary, original: .miamiBlue),
+        ChartData(type: "Mars", count: 3.934, color: .primary, original: .colorMars),
+        ChartData(type: "Jupiter", count: 1.326, color: .primary, original: .colorJupiter),
+        ChartData(type: "Saturn", count: 0.687, color: .primary, original: .colorSaturn),
+        ChartData(type: "Uranus", count: 1.270, color: .colorUranus, original: .colorUranus),
+        ChartData(type: "Neptune", count: 1.638, color: .primary, original: .colorNeptune),
+    ]
+)
+
+
 
 
 let innerPlanets = [
-//    Planet(imageName: "smiling-mars", name: "Mars", description: "The red planet, with intriguing geological features.", color: .innerPlanets),
     mercuryPlanet, venusPlanet, earthPlanet, marsPlanet
-        
 ]
 
 
 let outerPlanets = [
-//    Planet(imageName: "smiling-jupiter", name: "Jupiter", description: "The largest planet, famous for its massive storm, the Great Red Spot.", color: .outerPlanets),
-//    Planet(imageName: "smiling-saturn", name: "Saturn", description: "Known for its mesmerizing rings and numerous moons.", color: .outerPlanets),
-//    Planet(imageName: "smiling-uranus", name: "Uranus", description: "An ice giant planet with a unique sideways rotation.", color: .outerPlanets),
-    jupiterPlanet, neptunePlanet
+    jupiterPlanet, saturnPlanet, uranusPlanet, neptunePlanet
 ]
 
 
