@@ -75,7 +75,7 @@ struct ActivityView: View {
         VStack() {
 
             HStack(alignment: .firstTextBaseline) {
-                GarenText(text: "483", trigger: trigger)
+                GarenText(text: "457", trigger: trigger)
                     .font(Font.custom("SF Mono Bold", size: 44))
                 Text("files changed")
                     .font(Font.custom("SF Pro Rounded Semibold", size: 24))
@@ -83,7 +83,7 @@ struct ActivityView: View {
             }
             
             HStack(alignment: .firstTextBaseline) {
-                GarenText(text: "3469", trigger: trigger)
+                GarenText(text: "3424", trigger: trigger)
                     .font(Font.custom("SF Mono Bold", size: 44))
                     .foregroundStyle(.green)
                 Text("lines added")
@@ -92,7 +92,7 @@ struct ActivityView: View {
             }
             
             HStack(alignment: .firstTextBaseline) {
-                GarenText(text: "6778", trigger: trigger)
+                GarenText(text: "11921", trigger: trigger)
                     .font(Font.custom("SF Mono Bold", size: 44))
                     .foregroundStyle(.red)
                 Text("lines deleted")

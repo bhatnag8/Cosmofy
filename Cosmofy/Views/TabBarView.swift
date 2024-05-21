@@ -44,7 +44,6 @@ struct TabBarView: View {
                     case .success(let events):
                         fetchedEvents = events
                         isLoading = false
-                        print(events)
                     case .failure(let error):
                         fetchedErrorMessage = error.localizedDescription
                         isLoading = false
