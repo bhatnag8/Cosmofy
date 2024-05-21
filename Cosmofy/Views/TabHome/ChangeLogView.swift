@@ -13,9 +13,8 @@ struct ChangelogView: View {
             ScrollView {
                 VStack {
                     HStack {
-                        Text("1.1")
+                        Text("Version 1.1")
                             .font(Font.custom("SF Pro Rounded Medium", size: 20))
-                            .foregroundStyle(.SOUR)
 
                         Spacer()
                     }
@@ -34,13 +33,19 @@ struct ChangelogView: View {
                     Divider()
                     
                     HStack {
-                        Text("Codebase").textCase(.uppercase)
-                            .padding()
+                        Text("Stats for nerds 🤓").textCase(.uppercase)
+                            .padding([.top, .horizontal])
+                            .padding(.bottom, 2)
                             .foregroundStyle(.secondary)
                         Spacer()
                     }
                     
                     ActivityView()
+                        .padding(.bottom, 2)
+                    
+                    Divider()
+                    
+                    
                     
                 }
             }
@@ -63,32 +68,34 @@ struct ChangelogView: View {
 
 
 struct ActivityView: View {
+    @State private var trigger: Bool = false
+
     
     var body: some View {
         VStack() {
 
             HStack(alignment: .firstTextBaseline) {
-                Text("483")
-                    .font(Font.custom("SF Pro Rounded Bold", size: 40))
+                GarenText(text: "483", trigger: trigger)
+                    .font(Font.custom("SF Mono Bold", size: 44))
                 Text("files changed")
                     .font(Font.custom("SF Pro Rounded Semibold", size: 24))
                 Spacer()
             }
             
             HStack(alignment: .firstTextBaseline) {
-                Text("3,469")
-                    .font(Font.custom("SF Pro Rounded Bold", size: 40))
+                GarenText(text: "3469", trigger: trigger)
+                    .font(Font.custom("SF Mono Bold", size: 44))
                     .foregroundStyle(.green)
-                Text("additions")
+                Text("lines added")
                     .font(Font.custom("SF Pro Rounded Semibold", size: 24))
                 Spacer()
             }
             
             HStack(alignment: .firstTextBaseline) {
-                Text("6,778")
-                    .font(Font.custom("SF Pro Rounded Bold", size: 40))
+                GarenText(text: "6778", trigger: trigger)
+                    .font(Font.custom("SF Mono Bold", size: 44))
                     .foregroundStyle(.red)
-                Text("deletions")
+                Text("lines deleted")
                     .font(Font.custom("SF Pro Rounded Semibold", size: 24))
                 Spacer()
             }
@@ -107,9 +114,9 @@ struct ActivityView: View {
                             ForEach(0..<7) { col in
                                 if (row == 0 && (col < 4)) || (row == 4 && (col == 5 || col == 6)) {
                                     Circle()
-                                        .fill(.white)
+                                        .fill(Color(.BETRAY))
                                         .frame(width: 15, height: 15)
-                                } else if row == 4 && (col == 0 || col == 1 || col == 2) {
+                                } else if (row == 3 && (col == 3 || col == 5)) {
                                     Circle()
                                         .fill(.blue)
                                         .frame(width: 15, height: 15)
@@ -133,12 +140,16 @@ struct ActivityView: View {
                             ForEach(0..<7) { col in
                                 if (row == 0 && (col < 5)) || (row == 4 && (col > 0)) {
                                     Circle()
-                                        .fill(.white)
+                                        .fill(Color(.BETRAY))
                                         .frame(width: 15, height: 15)
-                                } else if row == 4 && (col == 0 || col == 1 || col == 2) {
+                                } else if (row == 2 && (col == 2 || col == 3 || col == 4 || col == 5)) || ((row == 3 || row == 4) && (col == 0)) {
                                     Circle()
-                                        .fill(.blue)
+                                        .fill(.green)
                                         .frame(width: 15, height: 15)
+                                } else if (row == 3 && (col == 2 || col == 3)) {
+                                        Circle()
+                                            .fill(.blue)
+                                            .frame(width: 15, height: 15)
                                 } else {
                                     Circle()
                                         .fill(Color.gray.opacity(0.2))
@@ -162,9 +173,9 @@ struct ActivityView: View {
                             ForEach(0..<7) { col in
                                 if (row == 0 && (col == 0)) || (row == 4 && (col > 2)) {
                                     Circle()
-                                        .fill(.white)
+                                        .fill(Color(.BETRAY))
                                         .frame(width: 15, height: 15)
-                                } else if row == 4 && (col == 0 || col == 1 || col == 2) {
+                                } else if (row == 0 && (col == 2 || col == 4)) || (row == 1 && col == 1) {
                                     Circle()
                                         .fill(.blue)
                                         .frame(width: 15, height: 15)
@@ -188,26 +199,57 @@ struct ActivityView: View {
                             ForEach(0..<7) { col in
                                 if (row == 0 && (col < 3)) || (row == 4 && (col == 6)) {
                                     Circle()
-                                        .fill(.white)
+                                        .fill(Color(.BETRAY))
                                         .frame(width: 15, height: 15)
-                                } else if row == 4 && (col == 0 || col == 1 || col == 2) {
+                                } else if (row == 1 && (col == 3 || col == 6) || (row == 2 && (col == 2)) || (row == 3 && col == 1))
+                                           {
                                     Circle()
                                         .fill(.blue)
+                                        .frame(width: 15, height: 15)
+                                } else if (row == 3 && (col >= 2)) {
+                                    Circle()
+                                        .fill(.yellow)
                                         .frame(width: 15, height: 15)
                                 } else {
                                     Circle()
                                         .fill(Color.gray.opacity(0.2))
                                         .frame(width: 15, height: 15)
                                 }
-                                
                             }
                         }
                     }
                 }
             }
-
             
-
+            Spacer(minLength: 16)
+            
+            HStack(spacing: 16) {
+                
+                HStack {
+                    Circle()
+                        .fill(.blue)
+                        .frame(width: 8, height: 8)
+                    Text("1 Commit")
+                        .font(.caption)
+                }
+                
+                HStack {
+                    Circle()
+                        .fill(.green)
+                        .frame(width: 8, height: 8)
+                    Text("2+ Commits")
+                        .font(.caption)
+                }
+                
+                HStack {
+                    Circle()
+                        .fill(.yellow)
+                        .frame(width: 8, height: 8)
+                    Text("Release Push")
+                        .font(.caption)
+                }
+                
+            }
 
         }
         .padding(.horizontal)
