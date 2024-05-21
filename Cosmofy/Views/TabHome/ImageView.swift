@@ -11,7 +11,7 @@ import WebKit
 struct IOTDView: View {
     
     @ObservedObject var viewModel = ViewModelAPOD()
-    
+    @State var fetched: Bool = false
     var body: some View {
         NavigationStack {
             
@@ -60,7 +60,13 @@ struct IOTDView: View {
                 }
             }
             .navigationTitle("Today's Picture")
-            .onAppear(perform: viewModel.fetch)
+            .onAppear(perform: {
+                if !fetched {
+                    viewModel.fetch()
+                    fetched = true
+                }
+            }
+                        )
             .onAppear(perform: {Haptics.shared.vibrate(for: .success)})
             
         }
@@ -126,11 +132,12 @@ struct WordByWordTextView: View {
     
     var body: some View {
         HStack {
-            
             Text(displayedText)
                 .onAppear {
-                    DispatchQueue.main.async {
-                        self.animateText()
+                    if displayedText == "" {
+                        DispatchQueue.main.async {
+                            self.animateText()
+                        }
                     }
                 }
             Spacer()

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TabBarView: View {
+    @State private var isLoading = true
     
     var body: some View {
         TabView {
@@ -28,7 +29,7 @@ struct TabBarView: View {
                 }
                 .onAppear(perform: {Haptics.shared.impact(for: .medium)})
 
-            RNNMaybach()
+            RNNMaybach(isLoading: $isLoading)
                 .tabItem {
                     Label("Earth Scope", image: "tab-bar-roadmap")
                 }
@@ -37,6 +38,19 @@ struct TabBarView: View {
             
         }
         .tint(.primary)
+        .onAppear {
+            NetworkManager().fetchEvents { result in
+                switch result {
+                    case .success(let events):
+                        fetchedEvents = events
+                        isLoading = false
+                        print(events)
+                    case .failure(let error):
+                        fetchedErrorMessage = error.localizedDescription
+                        isLoading = false
+                }
+            }
+        }
     }
 }
 

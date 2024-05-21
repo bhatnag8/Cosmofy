@@ -14,22 +14,20 @@ struct GarenText: View {
     var trigger: Bool
     var transition: ContentTransition = .interpolate
     var duration: CGFloat = 2.0
-    var speed: CGFloat = 0.1
+    var speed: CGFloat = 0.02
 
     @State private var animatedText: String = ""
     @State private var randomCharacters: [Character] = {
-        // -?/#$%@!^&*()=
-       let string = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUWVXYZ0123456789"
+        let string = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUWVXYZ0123456789-?/#$%@!^&*()=."
         return Array(string)
     }()
     
     @State private var animationID: String = UUID().uuidString
     var body: some View {
         Text(animatedText)
-//            .fontDesign(.monospaced)
             .truncationMode(.tail)
             .contentTransition(transition)
-            .animation(.easeInOut(duration: 0.15), value: animatedText)
+            .animation(.easeInOut(duration: 0.1), value: animatedText)
             .onAppear {
                 guard animatedText.isEmpty else { return }
                 setRandomCharacters()

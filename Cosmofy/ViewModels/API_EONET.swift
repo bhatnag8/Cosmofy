@@ -21,11 +21,6 @@ class NetworkManager {
                 return
             }
             
-            /**
-                let jsonString = String(data: data!, encoding: .utf8)
-                print(jsonString ?? "No valid JSON")
-             */
-            
             guard let data = data else {
                 completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data received"])))
                 return
