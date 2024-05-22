@@ -127,7 +127,7 @@ struct ChangelogView: View {
                     
                     HStack {
                         Text("Stats for nerds 🤓")
-                            .font(Font.custom("SF Pro Rounded Regular", size: 16))
+                            .font(Font.custom("SF Pro Rounded Regular", size: 15))
                             .textCase(.uppercase)
                             .padding([.top, .horizontal])
                             .padding(.bottom, 2)
@@ -154,7 +154,7 @@ struct ChangelogView: View {
                     // Add your second trailing button action here
                 }) {
                     Image(systemName: "square.and.arrow.up")
-                        .foregroundStyle(.black)
+                        .foregroundStyle(.BETRAYED)
                 }
             )
         }
@@ -361,7 +361,7 @@ struct ActivityView: View {
 struct TagsView: View {
 
     @State private var added: [String] = [
-        "Image of the Day", "Nature Scope", "Full Redesign", "Swifter Swift Responses", "New Animations", "AR for all planets", "Saturn in 3D", "Charts", "New Fonts"
+        "Image of the Day", "Nature Scope", "Full Redesign", "Swifter Swift Responses", "New Animations", "AR for all planets", "Saturn in 3D", "Charts", "New Fonts", "Light Mode", "Share Sheets"
     ]
     
     @State private var removed: [String] = [

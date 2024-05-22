@@ -64,7 +64,9 @@ struct Home: View {
                                     .foregroundStyle(.GUTS)
                                 Image(systemName: "chevron.right")
                             }
-                            
+                            .onTapGesture {
+                                Haptics.shared.vibrate(for: .success)
+                            }
                         }
                         
                         
