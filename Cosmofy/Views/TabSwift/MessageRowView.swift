@@ -7,6 +7,7 @@
 //  ========================================
 
 import SwiftUI
+import MarkdownUI
 
 struct MessageRowView: View {
     @Environment(\.colorScheme) private var colorScheme
@@ -41,23 +42,15 @@ struct MessageRowView: View {
             }
             
             VStack(alignment: .leading, spacing: 0) {
-                ForEach(splitTextByTripleBackticks(text: text), id: \.self) { segment in
-                    if segment.isCode {
-                        VStack {
-                            Divider()
-                            Text(segment.text)
-                                .multilineTextAlignment(.leading)
-                                .textSelection(.enabled)
-                                .font(.system(.footnote, design: .monospaced))
-                                .bold()
-                            Divider()
-                        }
-                    } else {
-                        Text(segment.text)
-                            .multilineTextAlignment(.leading)
-                            .textSelection(.enabled)
-                            .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                    }
+
+                if image == "openai" {
+                    WordByWordTextView(text, interval: 0.045)
+                        .multilineTextAlignment(.leading)
+                        .textSelection(.enabled)
+                        .font(Font.custom("SF Pro Rounded Medium", size: 18))
+                } else {
+                    Markdown(text)
+                        .textSelection(.enabled)
                 }
                 
                 if let error = responseError {
@@ -68,7 +61,7 @@ struct MessageRowView: View {
                     Button("Regenerate Response") {
                         retryCallback(message)
                     }
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(.blue)
                     .padding(.top)
                 }
                 
@@ -85,33 +78,4 @@ struct MessageRowView: View {
 }
 
 
-// Helper function to split text into segments based on triple backticks
-func splitTextByTripleBackticks(text: String) -> [Segment] {
-    var segments: [Segment] = []
-    var currentText = ""
-    var isCodeBlock = false
-    
-    for char in text {
-        if char == "`" {
-            if currentText.hasSuffix("``") {
-                isCodeBlock = !isCodeBlock
-                segments.append(Segment(text: String(currentText.dropLast(2)), isCode: !isCodeBlock))
-                currentText = ""
-            } else {
-                currentText.append(char)
-            }
-        } else {
-            currentText.append(char)
-        }
-    }
-    
-    segments.append(Segment(text: currentText, isCode: isCodeBlock))
-    return segments
-}
-
-// Struct to represent a text segment with information whether it's a code block or not
-struct Segment: Hashable {
-    let text: String
-    let isCode: Bool
-}
 

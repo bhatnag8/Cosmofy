@@ -17,19 +17,13 @@ struct SwiftView: View {
     @FocusState var isTextFieldFocused: Bool
     @State private var hasAppeared = false
     
-//    let tip = SwiftTip()
-
-    
     var body: some View {
         NavigationStack {
             VStack {
                 chatListView
-
             }
             .navigationTitle("Swift")
-
         }
-
     }
     
     var chatListView: some View {
@@ -73,13 +67,14 @@ struct SwiftView: View {
 
                 Spacer()
             }
-            .onChange(of: vm.messages.last?.responseText) { _ in
+
+            .onChange(of: vm.messages.last?.responseText) { oldValue, newValue in
                 if !userTouched {
                     scrollToBottom(proxy: proxy)
                 }
             }
         }
-        .background(colorScheme == .light ? .white : Color(.appColorDarker2))
+        .background(colorScheme == .light ? .white : Color(.black))
         
     }
     

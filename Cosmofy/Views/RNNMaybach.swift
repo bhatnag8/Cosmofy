@@ -134,7 +134,7 @@ struct RNNMaybach: View {
         case "watercolor":
             return .black
         case "wildfires":
-            return .darkOrange
+            return .orange
         default:
             return .yellow
         }

@@ -19,6 +19,7 @@
 		0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD502AE96FE7001CFC35 /* ci_scripts */; };
 		0B1BAD572AE97736001CFC35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD562AE97736001CFC35 /* .gitignore */; };
 		0B25FC932BFCD5DE00ED1EA3 /* ChangeLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25FC922BFCD5DE00ED1EA3 /* ChangeLogView.swift */; };
+		0B381A182BFE5461009C1E77 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0B381A172BFE5461009C1E77 /* MarkdownUI */; };
 		0B3EC2642BA4BAFE004491B7 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2632BA4BAFE004491B7 /* ImageView.swift */; };
 		0B3EC2662BA4D16F004491B7 /* API_NASA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2652BA4D16F004491B7 /* API_NASA.swift */; };
 		0B40299C2BA4FEC1004B0F43 /* IOTD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B40299B2BA4FEC1004B0F43 /* IOTD.swift */; };
@@ -136,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B381A182BFE5461009C1E77 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +347,9 @@
 			dependencies = (
 			);
 			name = Cosmofy;
+			packageProductDependencies = (
+				0B381A172BFE5461009C1E77 /* MarkdownUI */,
+			);
 			productName = Spacefy;
 			productReference = 2FBBB6552945531500BBB072 /* Cosmofy.app */;
 			productType = "com.apple.product-type.application";
@@ -374,6 +379,7 @@
 			);
 			mainGroup = 2FBBB64C2945531500BBB072;
 			packageReferences = (
+				0B381A162BFE5461009C1E77 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = 2FBBB6562945531500BBB072 /* Products */;
 			projectDirPath = "";
@@ -679,6 +685,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0B381A162BFE5461009C1E77 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B381A172BFE5461009C1E77 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B381A162BFE5461009C1E77 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2FBBB64D2945531500BBB072 /* Project object */;
 }
