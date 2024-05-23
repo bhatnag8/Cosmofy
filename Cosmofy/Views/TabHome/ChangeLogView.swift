@@ -128,7 +128,7 @@ struct ChangelogView: View {
                 }
             }
             .navigationBarItems(
-                trailing: ShareLink(item: photo, subject: Text("Cosmofy"), message: Text("Check out Cosmofy at the Apple App Store @ https://apple.co/49sCoM0"), preview: SharePreview(photo2.caption, image: photo2.image))
+                trailing: ShareLink(item: photo.image, subject: Text("Cosmofy"), message: Text("Check out Cosmofy at the Apple App Store @ https://apple.co/49sCoM0"), preview: SharePreview(photo2.caption, image: photo2.image))
                 
             )
         }

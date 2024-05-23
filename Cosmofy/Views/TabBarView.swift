@@ -10,6 +10,10 @@ import SwiftUI
 struct TabBarView: View {
     @State private var isLoading = true
     
+    init() {
+            UITabBar.appearance().backgroundColor = UIColor.systemBackground
+        }
+    
     var body: some View {
         TabView {
             Home()
@@ -34,10 +38,9 @@ struct TabBarView: View {
                     Label("Earth Scope", image: "tab-bar-roadmap")
                 }
                 .onAppear(perform: {Haptics.shared.impact(for: .medium)})
-
-            
         }
         .tint(.primary)
+        .background(Color(.systemBackground).edgesIgnoringSafeArea(.all)) // Set the background color of TabView
         .onAppear {
             NetworkManager().fetchEvents { result in
                 switch result {
