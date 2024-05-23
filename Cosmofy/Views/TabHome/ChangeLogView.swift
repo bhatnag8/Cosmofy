@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ChangelogView: View {
     var body: some View {
+        let photo = Photo(image: Image("home-banner-1"), caption: "Check out Cosomfy's New Update")
+        let photo2 = Photo(image: Image("iconApp"), caption: "Check out Cosomfy's New Update")
         NavigationStack {
             ScrollView {
                 VStack {
@@ -39,7 +41,6 @@ struct ChangelogView: View {
                                     .foregroundStyle(.white)
                                     .font(Font.custom("SF Pro Rounded Medium", size: 18))
                                     .padding([.top, .horizontal])
-                                
                                 Spacer()
                             }
                             
@@ -47,11 +48,9 @@ struct ChangelogView: View {
                                 Image(systemName: "1.circle.fill")
                                     .font(.title3)
                                     .foregroundStyle(.white)
-                                
                                 Text("an image associated with the update")
                                     .foregroundStyle(.white)
                                     .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                                
                                 Spacer()
                             }
                             .padding(.horizontal)
@@ -61,27 +60,21 @@ struct ChangelogView: View {
                                 Image(systemName: "2.circle.fill")
                                     .font(.title3)
                                     .foregroundStyle(.white)
-                                
                                 Text("list of new features")
                                     .foregroundStyle(.white)
                                     .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                                
                                 Spacer()
                             }
                             .padding(.horizontal)
                             .padding(.vertical, 2)
                             
-                            
-                            
                             HStack {
                                 Image(systemName: "3.circle.fill")
                                     .font(.title3)
                                     .foregroundStyle(.white)
-                                
                                 Text("list of deprecated features")
                                     .foregroundStyle(.white)
                                     .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                                
                                 Spacer()
                             }
                             .padding(.horizontal)
@@ -91,11 +84,9 @@ struct ChangelogView: View {
                                 Image(systemName: "4.circle.fill")
                                     .font(.title3)
                                     .foregroundStyle(.white)
-                                
                                 Text("list of bug fixes")
                                     .foregroundStyle(.white)
                                     .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                                
                                 Spacer()
                             }
                             .padding(.horizontal)
@@ -105,26 +96,17 @@ struct ChangelogView: View {
                                 Image(systemName: "5.circle.fill")
                                     .font(.title3)
                                     .foregroundStyle(.white)
-                                
                                 Text("some interesting statistics")
                                     .foregroundStyle(.white)
                                     .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                                
                                 Spacer()
                             }
                             .padding(.horizontal)
                             .padding(.vertical, 2)
                             .padding(.bottom, 16)
-
-                            
-                            
-                            
                         }
-                        
                     }
 
-                   
-                    
                     HStack {
                         Text("Stats for nerds 🤓")
                             .font(Font.custom("SF Pro Rounded Regular", size: 15))
@@ -140,25 +122,26 @@ struct ChangelogView: View {
                     
                     Divider()
 
-
                     TagsView()
                         .padding(.bottom)
-                    
-                    
-                    
-                    
+   
                 }
             }
             .navigationBarItems(
-                trailing: Button(action: {
-                    // Add your second trailing button action here
-                }) {
-                    Image(systemName: "square.and.arrow.up")
-                        .foregroundStyle(.BETRAYED)
-                }
+                trailing: ShareLink(item: photo, subject: Text("Cool Photo"), message: Text("Check it out!"), preview: SharePreview(photo2.caption, image: photo2.image))
+                
             )
         }
     }
+}
+
+struct Photo: Transferable {
+    static var transferRepresentation: some TransferRepresentation {
+        ProxyRepresentation(exporting: \.image)
+    }
+
+    public var image: Image
+    public var caption: String
 }
 
 #Preview {
