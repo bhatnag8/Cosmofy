@@ -38,8 +38,6 @@
 	<dict>
 		<key>UIColorName</key>
 		<string>SOUR</string>
-		<key>UIImageName</key>
-		<string>appicon-without-gradient</string>
 	</dict>
 </dict>
 </plist>
