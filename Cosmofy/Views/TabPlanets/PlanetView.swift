@@ -8,90 +8,7 @@
 import SwiftUI
 import SceneKit
 
-struct SomeView: View {
-    let backgroundGradient = LinearGradient(
-        colors: [Color.cyan, Color.blue],
-        startPoint: .top, endPoint: .bottom)
-    var planet: Planet
-    
-    @Environment (\.presentationMode) var presentationMode
-    @State private var selectedViewType: Int = 0
-    
-    var body: some View {
-        ZStack {
-            VStack {
-                switch selectedViewType {
-                    case 0:
-                        SceneKitView(planet: planet.name.lowercased(), isFullScreen: true)
-                            .background(Color.black)
-                            .cornerRadius(30)
-                            .onAppear(perform: {
-                                Haptics.shared.impact(for: .light)
-                            })
-                    case 1:
-                        SceneKitView(planet: "earth")
-                            .background(Color.black)
-                            .cornerRadius(30)
-                            .onAppear(perform: {
-                                Haptics.shared.impact(for: .light)
-                            })
-//                    case 2:
-//                        ImagesView(planet: planet)
-//                            .padding(.top, 96)
-//                            .background(Color.black)
 
-                    default:
-                        Text("Selection not available")
-                }
-            }
-            .background(.black)
-            
-            VStack {
-                Picker("View Type", selection: $selectedViewType) {
-                    Text("3D").tag(0)
-                    Text("AR").tag(1)
-                /**
-                    Text("Images").tag(2)
-
-                    Scene becomes laggy with warning:
-                    SCNView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
-                    Will fix in v1.2
-                 
-                 **/
-                }
-                .environment(\.colorScheme, .dark)
-                .pickerStyle(SegmentedPickerStyle())
-                .padding(.top, 64)
-                .padding(.horizontal, 96)
-                Spacer()
-            }
-
-            
-            VStack {
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Image(systemName: "xmark.circle.fill") // The icon
-                            .resizable()
-                            .foregroundStyle(.white.opacity(0.7))
-                            .frame(width: 30, height: 30)
-                            .padding(.top, 64)
-                            .padding(.trailing, 16)
-                    }
-                }
-                Spacer()
-            }
-            
-            
-            
-        }
-        .ignoresSafeArea()
-
-    }
-    
-}
 
 struct PlanetView: View {
     
@@ -124,7 +41,7 @@ struct PlanetView: View {
                     
                     Spacer(minLength: 20)
                     ZStack {
-                        SceneKitView(planet: planet.name.lowercased())
+                        SceneKitView(planet: planet.name.lowercased(), stars: false)
                             .frame(height: 300)
                             .background(Color.black)
                             .cornerRadius(30)
@@ -218,13 +135,8 @@ struct PlanetView: View {
                 ]
             }
             .navigationBarItems(
-                trailing: Button(action: {
-                    // Add your second trailing button action here
-                }) {
-                    Image(systemName: "square.and.arrow.up")
-                        .font(Font.custom("SF Pro Rounded", size: 20))
-                        .foregroundColor(planet.color)
-                }
+                trailing: ShareLink(item: URL(string: "https://apps.apple.com/app/cosmofy/id6450969556")!, preview: SharePreview("Cosmofy on the Apple App Store", image: Image("iconApp")))
+                    .foregroundStyle(planet.color)
             )
         }
         .onAppear(perform: {Haptics.shared.vibrate(for: .success)})
@@ -316,12 +228,97 @@ struct ImagesView: View {
     }
 }
 
+struct SomeView: View {
+    let backgroundGradient = LinearGradient(
+        colors: [Color.cyan, Color.blue],
+        startPoint: .top, endPoint: .bottom)
+    var planet: Planet
+    
+    @Environment (\.presentationMode) var presentationMode
+    @State private var selectedViewType: Int = 0
+    
+    var body: some View {
+        ZStack {
+            VStack {
+                switch selectedViewType {
+                    case 0:
+                        SceneKitView(planet: planet.name.lowercased(), isFullScreen: true, stars: true)
+                            .background(Color.black)
+                            .cornerRadius(30)
+                            .onAppear(perform: {
+                                Haptics.shared.impact(for: .light)
+                            })
+                    case 1:
+                        SceneKitView(planet: "earth", stars: true)
+                            .background(Color.black)
+                            .cornerRadius(30)
+                            .onAppear(perform: {
+                                Haptics.shared.impact(for: .light)
+                            })
+//                    case 2:
+//                        ImagesView(planet: planet)
+//                            .padding(.top, 96)
+//                            .background(Color.black)
+
+                    default:
+                        Text("Selection not available")
+                }
+            }
+            .background(.black)
+            
+            VStack {
+                Picker("View Type", selection: $selectedViewType) {
+                    Text("3D").tag(0)
+                    Text("AR").tag(1)
+                /**
+                    Text("Images").tag(2)
+
+                    Scene becomes laggy with warning:
+                    SCNView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+                    Will fix in v1.2
+                 **/
+                }
+                .environment(\.colorScheme, .dark)
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(.top, 64)
+                .padding(.horizontal, 96)
+                Spacer()
+            }
+
+            
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "xmark.circle.fill") // The icon
+                            .resizable()
+                            .foregroundStyle(.white.opacity(0.7))
+                            .frame(width: 30, height: 30)
+                            .padding(.top, 64)
+                            .padding(.trailing, 16)
+                    }
+                }
+                Spacer()
+            }
+            
+            
+            
+        }
+        .ignoresSafeArea()
+
+    }
+    
+}
+
 struct SceneKitView: UIViewControllerRepresentable {
     var planet: String
     
     var width: CGFloat?
     var height: CGFloat?
     var isFullScreen: Bool = false
+    var stars: Bool
     
     func makeUIViewController(context: Context) -> UIViewController {
         let viewController = UIViewController()
@@ -364,11 +361,13 @@ struct SceneKitView: UIViewControllerRepresentable {
             cameraNode.position = SCNVector3(x: 0, y: 0, z: 3.5)
         }
 
-        let starsParticleSystem = SCNParticleSystem(named: "StarsParticleSystem.scnp", inDirectory: nil)!
-        scene.rootNode.addChildNode(cameraNode)
-        scene.rootNode.addParticleSystem(starsParticleSystem)
-        sceneView.pointOfView = cameraNode
+        if stars {
+            let starsParticleSystem = SCNParticleSystem(named: "StarsParticleSystem.scnp", inDirectory: nil)!
+            scene.rootNode.addChildNode(cameraNode)
+            scene.rootNode.addParticleSystem(starsParticleSystem)
+        }
         
+        sceneView.pointOfView = cameraNode
         sceneView.allowsCameraControl = true
         sceneView.autoenablesDefaultLighting = true
         

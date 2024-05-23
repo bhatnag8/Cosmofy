@@ -35,7 +35,6 @@ struct SplashScreenView: View {
                     .font(Font.custom("SF Pro Rounded Regular", size: 17))
                     .foregroundColor(.black)
             }
-            .padding(.bottom, 32)
             .padding()
         }
     }

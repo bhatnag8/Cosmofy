@@ -22,7 +22,6 @@ struct SplashScreen: View {
                             }
                         }
                     }
-                    .edgesIgnoringSafeArea(.all)
             } else {
                 TabBarView()
             }

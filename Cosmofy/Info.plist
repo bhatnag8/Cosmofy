@@ -34,10 +34,5 @@
 		<string>SF-Mono-Semibold.otf</string>
 		<string>SF-Mono-SemiboldItalic.otf</string>
 	</array>
-	<key>UILaunchScreen</key>
-	<dict>
-		<key>UIColorName</key>
-		<string>SOUR</string>
-	</dict>
 </dict>
 </plist>
