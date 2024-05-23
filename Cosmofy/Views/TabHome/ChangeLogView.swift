@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChangelogView: View {
     var body: some View {
-        let photo = Photo(image: Image("home-banner-1"), caption: "Check out Cosomfy's New Update")
+        let photo = Photo(image: Image("sharesheet"), caption: "Check out Cosomfy's New Update")
         let photo2 = Photo(image: Image("iconApp"), caption: "Check out Cosomfy's New Update")
         NavigationStack {
             ScrollView {
@@ -128,7 +128,7 @@ struct ChangelogView: View {
                 }
             }
             .navigationBarItems(
-                trailing: ShareLink(item: photo, subject: Text("Cool Photo"), message: Text("Check it out!"), preview: SharePreview(photo2.caption, image: photo2.image))
+                trailing: ShareLink(item: photo, subject: Text("Cosmofy"), message: Text("Check out Cosmofy at the Apple App Store @ https://apple.co/49sCoM0"), preview: SharePreview(photo2.caption, image: photo2.image))
                 
             )
         }
