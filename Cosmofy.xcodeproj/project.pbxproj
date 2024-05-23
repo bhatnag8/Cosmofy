@@ -30,7 +30,6 @@
 		0B7D18C82AE8AB97009C2317 /* MessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18C72AE8AB97009C2317 /* MessageRowView.swift */; };
 		0B7D18CC2AE8B655009C2317 /* SwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18CB2AE8B655009C2317 /* SwiftView.swift */; };
 		0B8615A82BAF6580008CCD5F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8615A72BAF6580008CCD5F /* LoadingView.swift */; };
-		0B8A7A972BAB570A0051E69A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8A7A962BAB570A0051E69A /* Launch Screen.storyboard */; };
 		0B923B6E2B9CBBEE009B8D45 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */; };
 		0B9F02782B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */; };
 		0B9F02792B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02702B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf */; };
@@ -91,7 +90,6 @@
 		0B7D18C72AE8AB97009C2317 /* MessageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRowView.swift; sourceTree = "<group>"; };
 		0B7D18CB2AE8B655009C2317 /* SwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftView.swift; sourceTree = "<group>"; };
 		0B8615A72BAF6580008CCD5F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		0B8A7A962BAB570A0051E69A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Heavy.otf"; sourceTree = "<group>"; };
 		0B9F02702B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
@@ -326,7 +324,6 @@
 				2FBBB6612945531700BBB072 /* Assets.xcassets */,
 				2FBBB6662945531700BBB072 /* Info.plist */,
 				0BB14A422B9C2B1100476F3C /* CosmofyApp.swift */,
-				0B8A7A962BAB570A0051E69A /* Launch Screen.storyboard */,
 			);
 			path = Cosmofy;
 			sourceTree = "<group>";
@@ -413,7 +410,6 @@
 				2F4F8FC2295EBC5100F7EE98 /* StarsParticleSystem.scnp in Resources */,
 				0BF2A4262BFBF935007B3E4B /* SF-Mono-Heavy.otf in Resources */,
 				0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */,
-				0B8A7A972BAB570A0051E69A /* Launch Screen.storyboard in Resources */,
 				2FBBB6622945531700BBB072 /* Assets.xcassets in Resources */,
 				0B9F02792B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf in Resources */,
 				0B9F02782B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf in Resources */,

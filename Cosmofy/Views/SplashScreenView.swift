@@ -22,10 +22,12 @@ struct SplashScreenView: View {
             )
             .edgesIgnoringSafeArea(.all)
             
-            Image("appicon-without-gradient")
+            Image("app-icon-4k")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 60, height: 60)
+                .frame(width: 64, height: 64)
+                .edgesIgnoringSafeArea(.all)
+
             
             VStack {
                 Spacer()
@@ -33,6 +35,7 @@ struct SplashScreenView: View {
                     .font(Font.custom("SF Pro Rounded Regular", size: 17))
                     .foregroundColor(.black)
             }
+            .padding(.bottom, 32)
             .padding()
         }
     }
