@@ -9,11 +9,11 @@
 import UIKit
 import SceneKit
 
-class PlanetNode : SCNNode {
+class PlanetNode: SCNNode {
     
     var global = 0.0
     
-    init(radius: Double, planet: String, rotation : Double) {
+    init(radius: Double, planet: String, rotation: Double) {
         super.init()
         
         let shape = SCNSphere(radius: radius)
@@ -24,46 +24,21 @@ class PlanetNode : SCNNode {
         switch(planet) {
             case "mercury": image = UIImage(named: "MercuryMap")!; break
             case "venus": image = UIImage(named: "VenusMap")!; break
-            case "earth": 
-                image = UIImage(named:"map-earth")!
-                self.geometry?.firstMaterial?.specular.contents = UIImage(named:"map-earth-specular")
-                self.geometry?.firstMaterial?.emission.contents = UIImage(named:"map-earth-emission")
-                self.geometry?.firstMaterial?.normal.contents = UIImage(named:"map-earth-normal")
+            case "earth":
+                image = UIImage(named: "map-earth")!
+                self.geometry?.firstMaterial?.specular.contents = UIImage(named: "map-earth-specular")
+                self.geometry?.firstMaterial?.emission.contents = UIImage(named: "map-earth-emission")
+                self.geometry?.firstMaterial?.normal.contents = UIImage(named: "map-earth-normal")
                 break
             case "mars": image = UIImage(named: "MarsMap")!; break
-            case "jupiter": 
-                // Define the dimensions of the ellipsoid
-                let semiMajorAxis = 1.0 // Scale factor along the x-axis
-                let semiMinorAxis = 0.935 // Scale factor along the y-axis
-                let height = 1.0 // Scale factor along the z-axis
-                            
-                // Create an empty node to hold the ellipsoid
-                let jupiterNode = SCNNode()
-                
-                // Create a sphere with a uniform radius
-                let sphereGeometry = SCNSphere(radius: 1.0)
-                sphereGeometry.segmentCount = 72
-                let sphereNode = SCNNode(geometry: sphereGeometry)
-                
-                // Apply scaling to the sphere node to deform it into an ellipsoid
-                sphereNode.scale = SCNVector3(x: Float(semiMajorAxis), y: Float(semiMinorAxis), z: Float(height))
-                
-                // Apply textures or materials as needed
-                let jupiterMaterial = SCNMaterial()
-                jupiterMaterial.diffuse.contents = UIImage(named: "JupiterMap")
-                jupiterMaterial.diffuse.mipFilter = SCNFilterMode.linear
-
-                sphereGeometry.materials = [jupiterMaterial]
-                
-                // Add the ellipsoidal sphere to the jupiterNode
-                jupiterNode.addChildNode(sphereNode)
-                
-                // Add the jupiterNode to the PlanetNode
-                self.addChildNode(jupiterNode)
+            case "jupiter":
+                createJupiter()
                 startRotation()
                 return
-                
-            case "saturn": SaturnInterrupt(); break;
+            case "saturn":
+                createSaturn()
+                startRotation()
+                return
             case "uranus": image = UIImage(named: "map-uranus")!; break
             case "neptune": image = UIImage(named: "map-neptune")!; break
             default: break
@@ -78,9 +53,66 @@ class PlanetNode : SCNNode {
         startRotation()
     }
     
-    
-    func SaturnInterrupt() {
+    func createJupiter() {
+        // Define the dimensions of the ellipsoid
+        let semiMajorAxis = 1.0 // Scale factor along the x-axis
+        let semiMinorAxis = 0.935 // Scale factor along the y-axis
+        let height = 1.0 // Scale factor along the z-axis
         
+        // Create an empty node to hold the ellipsoid
+        let jupiterNode = SCNNode()
+        
+        // Create a sphere with a uniform radius
+        let sphereGeometry = SCNSphere(radius: 1.0)
+        sphereGeometry.segmentCount = 72
+        let sphereNode = SCNNode(geometry: sphereGeometry)
+        
+        // Apply scaling to the sphere node to deform it into an ellipsoid
+        sphereNode.scale = SCNVector3(x: Float(semiMajorAxis), y: Float(semiMinorAxis), z: Float(height))
+        
+        // Apply textures or materials as needed
+        let jupiterMaterial = SCNMaterial()
+        jupiterMaterial.diffuse.contents = UIImage(named: "map-jupiter")
+        jupiterMaterial.diffuse.mipFilter = SCNFilterMode.linear
+
+        sphereGeometry.materials = [jupiterMaterial]
+        
+        // Add the ellipsoidal sphere to the jupiterNode
+        jupiterNode.addChildNode(sphereNode)
+        
+        // Add the jupiterNode to the PlanetNode
+        self.addChildNode(jupiterNode)
+    }
+    
+    func createSaturn() {
+        // Define the dimensions of the ellipsoid
+        let semiMajorAxis = 1.0 // Scale factor along the x-axis
+        let semiMinorAxis = 0.902 // Scale factor along the y-axis (accurate for Saturn)
+        let height = 1.0 // Scale factor along the z-axis
+        
+        // Create an empty node to hold the ellipsoid
+        let saturnNode = SCNNode()
+        
+        // Create a sphere with a uniform radius
+        let sphereGeometry = SCNSphere(radius: 1.0)
+        sphereGeometry.segmentCount = 72
+        let sphereNode = SCNNode(geometry: sphereGeometry)
+        
+        // Apply scaling to the sphere node to deform it into an ellipsoid
+        sphereNode.scale = SCNVector3(x: Float(semiMajorAxis), y: Float(semiMinorAxis), z: Float(height))
+        
+        // Apply textures or materials as needed
+        let saturnMaterial = SCNMaterial()
+        saturnMaterial.diffuse.contents = UIImage(named: "map-saturn")
+        saturnMaterial.diffuse.mipFilter = SCNFilterMode.linear
+
+        sphereGeometry.materials = [saturnMaterial]
+        
+        // Add the ellipsoidal sphere to the saturnNode
+        saturnNode.addChildNode(sphereNode)
+        
+        // Add the saturnNode to the PlanetNode
+        self.addChildNode(saturnNode)
     }
     
     func stopRotation() {
@@ -93,12 +125,11 @@ class PlanetNode : SCNNode {
         self.runAction(repeatAction)
     }
     
-    func setRotation(r : Double) {
+    func setRotation(r: Double) {
         global = r
     }
     
     required init?(coder x: NSCoder) {
         super.init(coder: x)
     }
-
 }

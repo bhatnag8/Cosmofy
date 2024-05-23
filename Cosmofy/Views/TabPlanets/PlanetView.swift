@@ -248,23 +248,28 @@ struct SomeView: View {
                             .onAppear(perform: {
                                 Haptics.shared.impact(for: .light)
                             })
+                            .background(.black)
+
                     case 1:
-                        SceneKitView(planet: "earth", stars: true)
+                        ZStack {
+                            Color.black
+                            Text("To Be Added")
+                                .foregroundStyle(.white)
+                        }
+                        .ignoresSafeArea(.all)
+                        
+                    /**
+                    case 2:
+                        ImagesView(planet: planet)
+                            .padding(.top, 96)
                             .background(Color.black)
-                            .cornerRadius(30)
-                            .onAppear(perform: {
-                                Haptics.shared.impact(for: .light)
-                            })
-//                    case 2:
-//                        ImagesView(planet: planet)
-//                            .padding(.top, 96)
-//                            .background(Color.black)
+                    */
 
                     default:
                         Text("Selection not available")
+
                 }
             }
-            .background(.black)
             
             VStack {
                 Picker("View Type", selection: $selectedViewType) {
@@ -347,18 +352,40 @@ struct SceneKitView: UIViewControllerRepresentable {
         sceneView.backgroundColor = UIColor.black
         
         
-        let neptune = PlanetNode(radius: 1, planet: planet, rotation: 10)
-        neptune.position = SCNVector3(0, 0, 0) // Center the node
-        scene.rootNode.addChildNode(neptune)
+        let planetNode = PlanetNode(radius: 1.25, planet: planet, rotation: 10)
+        planetNode.position = SCNVector3(0, 0, 0) // Center the node
+        scene.rootNode.addChildNode(planetNode)
+        
+        if planet == "saturn" {
+            let saturnLoop = SCNBox(width: 5.556, height: 0, length: 6.944, chamferRadius: 0)
+            let material = SCNMaterial()
+            material.diffuse.contents = UIImage(named:"map-saturn-ring")
+            saturnLoop.materials = [material]
+            let loopNode = SCNNode(geometry: saturnLoop)
+//            loopNode.rotation = SCNVector4(-0.5,-0.5, 0, 5)
+            loopNode.position = SCNVector3(x:0,y:0,z:0)
+            planetNode.addChildNode(loopNode)
+        }
         
         
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
 
         if isFullScreen {
-            cameraNode.position = SCNVector3(x: 0, y: 0, z: 7)
+            if planet == "saturn" {
+                cameraNode.position = SCNVector3(x: 0, y: 3, z: 10)
+                cameraNode.eulerAngles = SCNVector3(x: -Float.pi / 10, y: 0, z: 0)
+            } else {
+                cameraNode.position = SCNVector3(x: 0, y: 0, z: 7)
+            }
+            
         } else {
-            cameraNode.position = SCNVector3(x: 0, y: 0, z: 3.5)
+            if planet == "saturn" {
+                cameraNode.position = SCNVector3(x: 0, y: 2, z: 7)
+                cameraNode.eulerAngles = SCNVector3(x: -Float.pi / 10, y: 0, z: 0)
+            } else {
+                cameraNode.position = SCNVector3(x: 0, y: 0, z: 3.5)
+            }
         }
 
         if stars {
@@ -383,7 +410,7 @@ struct SceneKitView: UIViewControllerRepresentable {
 
 
 #Preview {
-    PlanetView(planet: neptunePlanet)
+    PlanetView(planet: saturnPlanet)
 }
 
 

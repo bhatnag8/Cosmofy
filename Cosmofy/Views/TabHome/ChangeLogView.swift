@@ -346,7 +346,7 @@ struct TagsView: View {
     ]
     
     @State private var removed: [String] = [
-        "Auto Scrolling Home Screen", "Gradients", "App Roadmap", "Planet Images"
+        "Auto Scrolling Home Screen", "Gradients", "App Roadmap", "Planet Images", "Planet Controls", "Planet Roation Axis"
     ]
     
     @State private var bugs: [String] = [
