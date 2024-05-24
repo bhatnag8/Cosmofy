@@ -16,11 +16,6 @@ struct TabBarView: View {
     
     var body: some View {
         TabView {
-            RNNMaybach(isLoading: $isLoading)
-                .tabItem {
-                    Label("Earth Scope", image: "tab-bar-roadmap")
-                }
-                .onAppear(perform: {Haptics.shared.impact(for: .medium)})
             
             Home()
                 .tabItem {
@@ -36,6 +31,12 @@ struct TabBarView: View {
             SwiftView()
                 .tabItem {
                     Label("Swift", image: "tab-bar-swift")
+                }
+                .onAppear(perform: {Haptics.shared.impact(for: .medium)})
+            
+            RNNMaybach(isLoading: $isLoading)
+                .tabItem {
+                    Label("Nature Scope", image: "tab-bar-roadmap")
                 }
                 .onAppear(perform: {Haptics.shared.impact(for: .medium)})
 

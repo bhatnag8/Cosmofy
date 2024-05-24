@@ -21,6 +21,7 @@ struct RNNMaybach: View {
     @Binding var isLoading: Bool
     @State private var selectedResult: Event?
     @State private var showDetails: Bool = false
+    @StateObject private var weatherViewModel = WeatherViewModel() // Initialize here
     
     var body: some View {
         NavigationView {
@@ -47,7 +48,7 @@ struct RNNMaybach: View {
                 .sheet(isPresented: $showDetails) {
                     ScrollView(.vertical, content: {
                         VStack(alignment: .leading, spacing: 15, content: {
-                            MapDetails(event: selectedResult, visible: $showDetails)
+                            MapDetails(event: selectedResult, visible: $showDetails, weatherViewModel: weatherViewModel) // Pass here
                                 .presentationDetents([.height(300)])
                                 .presentationBackgroundInteraction(.enabled(upThrough: .height(300)))
                                 .presentationCornerRadius(24)
@@ -59,7 +60,6 @@ struct RNNMaybach: View {
                     .presentationCornerRadius(24)
                     .presentationBackground(.regularMaterial)
                     .presentationBackgroundInteraction(.enabled(upThrough: .large))
-//                    .interactiveDismissDisabled()
                     .bottomMaskForSheet(mask: false)
                 }
                 .mapStyle(.standard(elevation: .realistic))
@@ -76,35 +76,16 @@ struct RNNMaybach: View {
             showDetails = newValue != nil
         }
     }
-    
-
 }
 
 #Preview {
-//    RNNMaybach(isLoading: .constant(true))
     TabBarView()
-//    MapDetails(event: sampleEvent)
 }
-
-let sampleEvent = Event(
-    id: "EONET_6518",
-    title: "Tropical Cyclone Ialy",
-    description: nil,
-    link: URL(string: "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_6518")!,
-    closed: nil,
-    categories: [Event.Category(id: "severeStorms", title: "Severe Storms")],
-    sources: [Event.Source(id: "JTWC", url: URL(string: "https://www.metoc.navy.mil/jtwc/products/sh2424.tcw")!)],
-    geometry: [
-        Event.Geometry(magnitudeValue: 35.0, magnitudeUnit: "kts", date: "2024-05-16T06:00:00Z", type: "Point", coordinates: [52.9, -8.6]),
-        Event.Geometry(magnitudeValue: 40.0, magnitudeUnit: "kts", date: "2024-05-16T12:00:00Z", type: "Point", coordinates: [52.5, -9.1])
-        // Add more geometries as needed
-    ]
-)
 
 class WeatherViewModel: ObservableObject {
     @Published var weather: Weather?
     private let weatherService = WeatherService.shared
-    
+
     func fetchWeather(latitude: Double, longitude: Double) {
         Task {
             do {
@@ -119,39 +100,15 @@ class WeatherViewModel: ObservableObject {
         }
     }
 }
-struct WeatherView: View {
-    @StateObject private var viewModel = WeatherViewModel()
-    var latitude: Double
-    var longitude: Double
-    
-    var body: some View {
-        VStack {
-            if let weather = viewModel.weather {
-                HStack {
-                    Text(String(format: "%.1f", weather.currentWeather.temperature.value) + " \(weather.currentWeather.temperature.unit.symbol)")
-                        .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                }
-            } else {
-                ProgressView()
-                    .progressViewStyle(.circular)
-                    .onAppear {
-                        viewModel.fetchWeather(latitude: latitude, longitude: longitude)
-                    }
-            }
-        }
-    }
-}
-
 
 @ViewBuilder
-func MapDetails(event: Event?, visible: Binding<Bool>) -> some View {
+func MapDetails(event: Event?, visible: Binding<Bool>, weatherViewModel: WeatherViewModel) -> some View {
     
-    @State var weather: Weather?
     @State var error: Error?
     
     VStack(spacing: 16) {
         if let event = event {
-            VStack() {
+            VStack {
                 HStack {
                     Text(event.title)
                         .font(Font.custom("SF Pro Rounded Semibold", size: 22))
@@ -176,13 +133,27 @@ func MapDetails(event: Event?, visible: Binding<Bool>) -> some View {
                         .frame(maxHeight: 35)
                         Text(category.title)
                             .font(Font.custom("SF Pro Rounded Medium", size: 18))
+                            
                         Spacer()
                         if category == event.categories.first {
                             let firstCoordinate = event.geometry.first?.coordinates
                             if let firstCoordinate = firstCoordinate {
                                 let latitude = firstCoordinate[1]
                                 let longitude = firstCoordinate[0]
-                                WeatherView(latitude: latitude, longitude: longitude)
+                                VStack {
+                                    if let weather = weatherViewModel.weather {
+                                        HStack {
+                                            Text(String(format: "%.1f", weather.currentWeather.temperature.value) + " \(weather.currentWeather.temperature.unit.symbol)")
+                                                .font(Font.custom("SF Pro Rounded Medium", size: 18))
+                                        }
+                                    } else {
+                                        ProgressView()
+                                            .progressViewStyle(.circular)
+                                            .onAppear {
+                                                weatherViewModel.fetchWeather(latitude: latitude, longitude: longitude)
+                                            }
+                                    }
+                                }
                             }
                         }
                     }
@@ -219,47 +190,56 @@ func MapDetails(event: Event?, visible: Binding<Bool>) -> some View {
                 }
                 .padding(.vertical, 6)
                 
-                Map(coordinateSpan) {
-                    ForEach(event.geometry) { geo in
-                        Annotation(coordinate: CLLocationCoordinate2D(
-                            latitude: geo.coordinates[1],
-                            longitude: geo.coordinates[0]), content: {
-                                Circle()
-                                    .foregroundStyle(.yellow)
-                                    .frame(width: 10, height: 10)
-                            }) {
-                               
-                            }
+                if event.geometry.count == 1 {
+                    Map(coordinateRegion: .constant(MKCoordinateRegion(
+                        center: CLLocationCoordinate2D(
+                            latitude: ((event.geometry.first?.coordinates[1] ?? 0) + (event.geometry.last?.coordinates[1] ?? 0))/2,
+                            longitude: ((event.geometry.first?.coordinates[0] ?? 0) + (event.geometry.last?.coordinates[0] ?? 0))/2),
+                        span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))),
+                        annotationItems: event.geometry) { geom in
+                        MapAnnotation(coordinate: CLLocationCoordinate2D(
+                            latitude: geom.coordinates[1],
+                            longitude: geom.coordinates[0])) {
+                            Circle()
+                                .strokeBorder(Color.yellow, lineWidth: 2)
+                                .frame(width: 7, height: 7)
+                        }
                     }
-                }
-                
-                .frame(height: 256)
-                .mapStyle(.hybrid(showsTraffic: false))
-                
-                
-                Map(coordinateRegion: .constant(MKCoordinateRegion(
-                    center: CLLocationCoordinate2D(
-                        latitude: event.geometry.first?.coordinates[1] ?? 0,
-                        longitude: event.geometry.first?.coordinates[0] ?? 0),
-                    span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))),
-                    annotationItems: event.geometry) { geom in
-                    MapAnnotation(coordinate: CLLocationCoordinate2D(
-                        latitude: geom.coordinates[1],
-                        longitude: geom.coordinates[0])) {
-                        Circle()
-                            .strokeBorder(Color.blue, lineWidth: 2)
-                            .frame(width: 10, height: 10)
+                    .frame(height: 256)
+                    .clipShape(RoundedRectangle(cornerRadius: 15)) // Apply corner radius
+                    .mapStyle(.hybrid(showsTraffic: false))
+                } else {
+                    Map() {
+                        ForEach(event.geometry) { geo in
+                            Annotation(coordinate: CLLocationCoordinate2D(
+                                latitude: geo.coordinates[1],
+                                longitude: geo.coordinates[0]), content: {
+                                    Circle()
+                                        .foregroundStyle(.yellow)
+                                        .frame(width: 7, height: 7)
+                                }) {
+                                   
+                                }
+                        }
                     }
+                    .frame(height: 256)
+                    .clipShape(RoundedRectangle(cornerRadius: 15)) // Apply corner radius
+                    .mapStyle(.hybrid(showsTraffic: false))
                 }
-                .frame(height: 300)
             }
             .padding(.vertical)
+            .onChange(of: event) { oldEvent, newEvent in
+                if let firstCoordinate = newEvent.geometry.first?.coordinates {
+                    let latitude = firstCoordinate[1]
+                    let longitude = firstCoordinate[0]
+                    weatherViewModel.fetchWeather(latitude: latitude, longitude: longitude)
+                }
+            }
         } else {
             Text("No event data available")
         }
     }
 }
-
 
 private func markerImage(for title: String) -> String {
     switch title.lowercased() {
@@ -329,14 +309,12 @@ private func markerTint(for title: String) -> Color {
 
 extension View {
     @ViewBuilder
-    /// Default Tab Bar height = 49.
-    func bottomMaskForSheet(mask: Bool = true, _ height: CGFloat = 49) -> some View {
+    func bottomMaskForSheet(mask: Bool = true, _ height: CGFloat = 50) -> some View {
         self
             .background(SheetRootViewFinder(mask: mask, height: height))
     }
 }
 
-/// Helpers
 fileprivate struct SheetRootViewFinder: UIViewRepresentable {
     var mask: Bool
     var height: CGFloat
@@ -348,7 +326,6 @@ fileprivate struct SheetRootViewFinder: UIViewRepresentable {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             if let rootView = uiView.viewBeforeWindow, let window = rootView.window {
                 let safeArea = window.safeAreaInsets
-                /// Updating it's Height So that it will create a empty space in the bottom
                 rootView.frame = .init(
                     origin: .zero,
                     size: .init(
@@ -359,7 +336,6 @@ fileprivate struct SheetRootViewFinder: UIViewRepresentable {
                 
                 rootView.clipsToBounds = true
                 for view in rootView.subviews {
-                    /// Removing Shadows
                     view.layer.shadowColor = UIColor.clear.cgColor
                     
                     if view.layer.animationKeys() != nil {
@@ -382,7 +358,6 @@ fileprivate extension UIView {
         return superview?.viewBeforeWindow
     }
     
-    /// Retreiving All Subviews from an UIView
     var allSubViews: [UIView] {
         return subviews.flatMap { [$0] + $0.subviews }
     }
