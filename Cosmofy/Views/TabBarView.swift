@@ -16,6 +16,12 @@ struct TabBarView: View {
     
     var body: some View {
         TabView {
+            RNNMaybach(isLoading: $isLoading)
+                .tabItem {
+                    Label("Earth Scope", image: "tab-bar-roadmap")
+                }
+                .onAppear(perform: {Haptics.shared.impact(for: .medium)})
+            
             Home()
                 .tabItem {
                     Label("Home", image: "tab-bar-home")
@@ -33,11 +39,7 @@ struct TabBarView: View {
                 }
                 .onAppear(perform: {Haptics.shared.impact(for: .medium)})
 
-            RNNMaybach(isLoading: $isLoading)
-                .tabItem {
-                    Label("Earth Scope", image: "tab-bar-roadmap")
-                }
-                .onAppear(perform: {Haptics.shared.impact(for: .medium)})
+            
         }
         .tint(.primary)
         .background(Color(.systemBackground).edgesIgnoringSafeArea(.all)) // Set the background color of TabView

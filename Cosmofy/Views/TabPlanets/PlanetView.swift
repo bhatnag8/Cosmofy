@@ -8,12 +8,11 @@
 import SwiftUI
 import SceneKit
 
-
-
 struct PlanetView: View {
     
     var planet: Planet
     @State private var isPresented = false
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         NavigationStack {
@@ -127,7 +126,10 @@ struct PlanetView: View {
                         .padding(.horizontal, 12)
                 }
                 .padding()
+                
             }
+            .background(colorScheme == .dark ? Color.init(hex: 0x0F0F15) : Color.clear) // Apply background only in dark mode
+            // 0F0F15 0x181C22
             .navigationTitle(planet.name)
             .onAppear {
                 UINavigationBar.appearance().largeTitleTextAttributes = [
@@ -351,8 +353,24 @@ struct SceneKitView: UIViewControllerRepresentable {
         sceneView.scene = scene
         sceneView.backgroundColor = UIColor.black
         
+        // Axial tilts for planets
+        let axialTilts: [String: Double] = [
+            "mercury": 0.034,
+            "venus": 177.4,
+            "earth": 23.4,
+            "mars": 25.2,
+            "jupiter": 3.1,
+            "saturn": 26.7,
+            "uranus": 97.8,
+            "neptune": 28.3
+        ]
         
-        let planetNode = PlanetNode(radius: 1, planet: planet, rotation: 10)
+        let planetNode = PlanetNode(
+            radius: 1,
+            planet: planet,
+            rotation: 10,
+            axialTilt: axialTilts[planet.lowercased()] ?? 0.0
+        )
         planetNode.position = SCNVector3(0, 0, 0) // Center the node
         scene.rootNode.addChildNode(planetNode)
         
@@ -362,15 +380,14 @@ struct SceneKitView: UIViewControllerRepresentable {
             material.diffuse.contents = UIImage(named:"map-saturn-ring")
             saturnLoop.materials = [material]
             let loopNode = SCNNode(geometry: saturnLoop)
-//            loopNode.rotation = SCNVector4(-0.5,-0.5, 0, 5)
-            loopNode.position = SCNVector3(x:0,y:0,z:0)
+            loopNode.position = SCNVector3(x: 0, y: 0, z: 0)
+            loopNode.eulerAngles = SCNVector3(x: 0, y: 0, z: Float(26.7 * .pi / 180))
             planetNode.addChildNode(loopNode)
         }
         
-        
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
-
+        
         if isFullScreen {
             if planet == "saturn" {
                 cameraNode.position = SCNVector3(x: 0, y: 3, z: 10)
@@ -378,10 +395,9 @@ struct SceneKitView: UIViewControllerRepresentable {
             } else {
                 cameraNode.position = SCNVector3(x: 0, y: 0, z: 7)
             }
-            
         } else {
             if planet == "saturn" {
-                cameraNode.position = SCNVector3(x: 0, y: 2, z: 5.5)
+                cameraNode.position = SCNVector3(x: 0, y: 1.5, z: 5.5)
                 cameraNode.eulerAngles = SCNVector3(x: -Float.pi / 10, y: 0, z: 0)
             } else {
                 cameraNode.position = SCNVector3(x: 0, y: 0, z: 3.5)

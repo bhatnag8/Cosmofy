@@ -9,7 +9,7 @@ import Foundation
 
 class NetworkManager {
     func fetchEvents(completion: @escaping (Result<[Event], Error>) -> Void) {
-        let urlString = "https://eonet.gsfc.nasa.gov/api/v3/events?start=2024-01-01&end=2024-12-31"
+        let urlString = "https://eonet.gsfc.nasa.gov/api/v3/events?start=2024-01-01&end=2024-12-31&status=all"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return

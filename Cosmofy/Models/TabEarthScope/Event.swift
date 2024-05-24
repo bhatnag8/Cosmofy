@@ -27,7 +27,8 @@ struct Event: Identifiable, Decodable, Hashable {
         var url: URL
     }
 
-    struct Geometry: Hashable, Decodable {
+    struct Geometry: Identifiable, Decodable, Hashable {
+        var id: String { date }  // Using date as a unique identifier
         var magnitudeValue: Double?  // Optional magnitude value
         var magnitudeUnit: String?   // Optional magnitude unit
         var date: String
