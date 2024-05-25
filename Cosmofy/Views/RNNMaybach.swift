@@ -49,14 +49,14 @@ struct RNNMaybach: View {
                     ScrollView(.vertical, content: {
                         VStack(alignment: .leading, spacing: 15, content: {
                             MapDetails(event: selectedResult, visible: $showDetails, weatherViewModel: weatherViewModel) // Pass here
-                                .presentationDetents([.height(300)])
-                                .presentationBackgroundInteraction(.enabled(upThrough: .height(300)))
+                                .presentationDetents([.height(212)])
+                                .presentationBackgroundInteraction(.enabled(upThrough: .height(212)))
                                 .presentationCornerRadius(24)
                         })
                         .padding()
                     })
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                    .presentationDetents([.height(300), .medium, .large])
+                    .presentationDetents([.height(212), .medium, .large])
                     .presentationCornerRadius(24)
                     .presentationBackground(.regularMaterial)
                     .presentationBackgroundInteraction(.enabled(upThrough: .large))
@@ -116,7 +116,6 @@ func MapDetails(event: Event?, visible: Binding<Bool>, weatherViewModel: Weather
                     Image(systemName: "xmark.circle.fill")
                         .resizable()
                         .frame(width: 24, height: 24)
-                        .background(.ultraThinMaterial)
                         .onTapGesture {
                             visible.wrappedValue = false
                         }
@@ -145,6 +144,9 @@ func MapDetails(event: Event?, visible: Binding<Bool>, weatherViewModel: Weather
                                         HStack {
                                             Text(String(format: "%.1f", weather.currentWeather.temperature.value) + " \(weather.currentWeather.temperature.unit.symbol)")
                                                 .font(Font.custom("SF Pro Rounded Medium", size: 18))
+                                        }
+                                        .onAppear {
+                                            weatherViewModel.fetchWeather(latitude: latitude, longitude: longitude)
                                         }
                                     } else {
                                         ProgressView()
@@ -205,7 +207,7 @@ func MapDetails(event: Event?, visible: Binding<Bool>, weatherViewModel: Weather
                                 .frame(width: 7, height: 7)
                         }
                     }
-                    .frame(height: 256)
+                    .frame(height: 200)
                     .clipShape(RoundedRectangle(cornerRadius: 15)) // Apply corner radius
                     .mapStyle(.hybrid(showsTraffic: false))
                 } else {
@@ -215,14 +217,14 @@ func MapDetails(event: Event?, visible: Binding<Bool>, weatherViewModel: Weather
                                 latitude: geo.coordinates[1],
                                 longitude: geo.coordinates[0]), content: {
                                     Circle()
-                                        .foregroundStyle(.yellow)
-                                        .frame(width: 7, height: 7)
+                                        .foregroundStyle(.red)
+                                        .frame(width: 6, height: 6)
                                 }) {
                                    
                                 }
                         }
                     }
-                    .frame(height: 256)
+                    .frame(height: 190)
                     .clipShape(RoundedRectangle(cornerRadius: 15)) // Apply corner radius
                     .mapStyle(.hybrid(showsTraffic: false))
                 }

@@ -156,7 +156,7 @@ struct ActivityView: View {
         VStack() {
 
             HStack(alignment: .firstTextBaseline) {
-                GarenText(text: "457", trigger: trigger)
+                GarenText(text: "475", trigger: trigger)
                     .font(Font.custom("SF Mono Bold", size: 44))
                 Text("files changed")
                     .font(Font.custom("SF Pro Rounded Semibold", size: 24))
@@ -164,7 +164,7 @@ struct ActivityView: View {
             }
             
             HStack(alignment: .firstTextBaseline) {
-                GarenText(text: "3424", trigger: trigger)
+                GarenText(text: "4102", trigger: trigger)
                     .font(Font.custom("SF Mono Bold", size: 44))
                     .foregroundStyle(.green)
                 Text("lines added")
@@ -173,7 +173,7 @@ struct ActivityView: View {
             }
             
             HStack(alignment: .firstTextBaseline) {
-                GarenText(text: "11921", trigger: trigger)
+                GarenText(text: "12848", trigger: trigger)
                     .font(Font.custom("SF Mono Bold", size: 44))
                     .foregroundStyle(.red)
                 Text("lines deleted")
@@ -346,7 +346,7 @@ struct TagsView: View {
     ]
     
     @State private var removed: [String] = [
-        "Auto Scrolling Home Screen", "Gradients", "App Roadmap", "Planet Images", "Planet Controls", "Planet Roation Axis"
+        "Auto Scrolling Home Screen", "Gradients", "App Roadmap", "Planet Images", "Planet Controls", "Planet Rotation Axis"
     ]
     
     @State private var bugs: [String] = [
