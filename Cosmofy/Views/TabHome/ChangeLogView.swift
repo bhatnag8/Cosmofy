@@ -156,7 +156,7 @@ struct ActivityView: View {
         VStack() {
 
             HStack(alignment: .firstTextBaseline) {
-                GarenText(text: "497", trigger: trigger)
+                GarenText(text: "476", trigger: trigger)
                     .font(Font.system(size: 44, weight: .bold, design: .monospaced))
                 Text("files changed")
                     .font(Font.custom("SF Pro Rounded Semibold", size: 24))
