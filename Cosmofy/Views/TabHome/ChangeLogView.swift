@@ -164,7 +164,7 @@ struct ActivityView: View {
             }
             
             HStack(alignment: .firstTextBaseline) {
-                GarenText(text: "4434", trigger: trigger)
+                GarenText(text: "4431", trigger: trigger)
                     .font(Font.system(size: 44, weight: .bold, design: .monospaced))
 
                     .foregroundStyle(.green)
