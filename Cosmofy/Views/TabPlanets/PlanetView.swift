@@ -241,6 +241,7 @@ struct SomeView: View {
     
     var body: some View {
         ZStack {
+            /*
             VStack {
                 switch selectedViewType {
                     case 0:
@@ -251,13 +252,7 @@ struct SomeView: View {
                                 Haptics.shared.impact(for: .light)
                             })
                             .background(.black)
-
-                    case 1:
-                        ARKitView(planet: planet.name.lowercased(), stars: false)
-                            .onAppear(perform: {
-                                Haptics.shared.impact(for: .light)
-                            })
-                            .edgesIgnoringSafeArea(.all)
+                        
                         
                     /**
                     case 2:
@@ -275,7 +270,7 @@ struct SomeView: View {
             VStack {
                 Picker("View Type", selection: $selectedViewType) {
                     Text("3D").tag(0)
-                    Text("AR").tag(1)
+//                    Text("AR").tag(1)
                 /**
                     Text("Images").tag(2)
 
@@ -290,6 +285,15 @@ struct SomeView: View {
                 .padding(.horizontal, 96)
                 Spacer()
             }
+             */
+            
+            SceneKitView(planet: planet.name.lowercased(), isFullScreen: true, stars: true)
+                .background(Color.black)
+                .cornerRadius(30)
+                .onAppear(perform: {
+                    Haptics.shared.impact(for: .light)
+                })
+                .background(.black)
 
             
             VStack {

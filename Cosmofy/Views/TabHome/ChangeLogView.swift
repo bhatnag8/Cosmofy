@@ -107,7 +107,7 @@ struct ChangelogView: View {
                     }
 
                     HStack {
-                        Text("Stats for nerds 🤓")
+                        Text("Stats")
                             .font(Font.custom("SF Pro Rounded Regular", size: 15))
                             .textCase(.uppercase)
                             .padding([.top, .horizontal])
@@ -143,7 +143,7 @@ struct Photo: Transferable {
 }
 
 #Preview {
-    ChangelogView()
+    TabBarView()
 }
 
 
@@ -342,7 +342,7 @@ struct ActivityView: View {
 struct TagsView: View {
 
     @State private var added: [String] = [
-        "Image of the Day", "Nature Scope", "Full Redesign", "Swifter Swift Responses", "New Animations", "AR for all planets", "Saturn in 3D", "Charts", "New Fonts", "Light Mode", "Share Sheets"
+        "Image of the Day", "Nature Scope", "Full Redesign", "Swifter Swift Responses", "New Animations", "Saturn in 3D", "Charts", "New Fonts", "Light Mode", "Share Sheets"
     ]
     
     @State private var removed: [String] = [
@@ -350,7 +350,7 @@ struct TagsView: View {
     ]
     
     @State private var bugs: [String] = [
-        "OpenAI API Key Updated"
+        "OpenAI API Access Updated"
     ]
     
     var body: some View {
@@ -391,6 +391,8 @@ struct TagsView: View {
             
             
         }
+        .navigationTitle("Change Log")
+        .navigationBarTitleDisplayMode(.inline)
     }
     
     @ViewBuilder

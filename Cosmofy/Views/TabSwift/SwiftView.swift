@@ -23,6 +23,11 @@ struct SwiftView: View {
                 chatListView
             }
             .navigationTitle("Swift")
+            .onAppear {
+                UINavigationBar.appearance().largeTitleTextAttributes = [
+                    .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 34, weight: .semibold),
+                ]
+            }
         }
     }
     
