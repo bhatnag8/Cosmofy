@@ -45,6 +45,10 @@ struct TabBarView: View {
         .tint(.primary)
         .background(Color(.systemBackground).edgesIgnoringSafeArea(.all)) // Set the background color of TabView
         .onAppear {
+            UINavigationBar.appearance().largeTitleTextAttributes = [
+                .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 34, weight: .semibold),
+            ]
+            
             NetworkManager().fetchEvents { result in
                 switch result {
                     case .success(let events):
@@ -55,6 +59,8 @@ struct TabBarView: View {
                         isLoading = false
                 }
             }
+            
+            
         }
     }
 }

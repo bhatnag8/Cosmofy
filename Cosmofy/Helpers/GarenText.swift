@@ -13,7 +13,7 @@ struct GarenText: View {
     var text: String
     var trigger: Bool
     var transition: ContentTransition = .interpolate
-    var duration: CGFloat = 2.0
+    var duration: CGFloat = 1.5
     var speed: CGFloat = 0.02
 
     @State private var animatedText: String = ""

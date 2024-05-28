@@ -26,8 +26,6 @@ final class Haptics {
     
     public func vibrate(for type: UINotificationFeedbackGenerator.FeedbackType) {
         DispatchQueue.main.async {
-            let date = Date()
-            print(date.timeIntervalSince1970)
             let notificationFG = UINotificationFeedbackGenerator()
             notificationFG.prepare()
             notificationFG.notificationOccurred(type)
@@ -36,8 +34,6 @@ final class Haptics {
     
     public func impact(for style: UIImpactFeedbackGenerator.FeedbackStyle) {
         DispatchQueue.main.async {
-            let date = Date()
-            print(date.timeIntervalSince1970)
             let impactFG = UIImpactFeedbackGenerator(style: style)
             impactFG.prepare()
             impactFG.impactOccurred()

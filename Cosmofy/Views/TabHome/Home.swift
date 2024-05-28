@@ -60,13 +60,12 @@ struct Home: View {
                             Spacer()
                             NavigationLink(destination: ChangelogView()) {
                                 GarenText(text: "v1.1", trigger: trigger)
-                                    .font(Font.custom("SF Mono Semibold", size: 18))
-                                    .foregroundStyle(.GUTS)
+//                                    .font(Font.custom("SF Mono Semibold", size: 18) ?? .monospaced)
+                                    .font(Font.system(size: 18, weight: .semibold, design: .monospaced))
+                                    .foregroundStyle(.SOUR)
                                 Image(systemName: "chevron.right")
                             }
-                            .onTapGesture {
-                                Haptics.shared.vibrate(for: .success)
-                            }
+                            
                         }
                         
                         
@@ -82,9 +81,7 @@ struct Home: View {
                                 Image(systemName: "chevron.right")
                             }
                         }
-                        .onTapGesture {
-                            Haptics.shared.vibrate(for: .success)
-                        }
+                        
                         
                         NavigationLink(destination: IOTDView()) {
                             HStack {
@@ -98,9 +95,7 @@ struct Home: View {
                                 Image(systemName: "chevron.right")
                             }
                         }
-                        .onTapGesture {
-                            Haptics.shared.vibrate(for: .success)
-                        }
+                        
 
                     }
                     .padding(.horizontal)

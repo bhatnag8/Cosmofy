@@ -285,7 +285,6 @@ func categoryView(category: Category) -> some View {
             Image(systemName: "smallcircle.filled.circle.fill")
                 .font(.caption2)
             Text(category.title)
-                .foregroundStyle(.black)
                 .font(Font.custom("SF Pro Rounded Medium", size: 16))
             Spacer()
         }
