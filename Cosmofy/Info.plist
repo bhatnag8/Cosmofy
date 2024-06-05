@@ -2,11 +2,37 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
-	<key>UIUserInterfaceStyle</key>
-	<string>Dark</string>
 	<key>API_KEY_DEBUG</key>
 	<string></string>
+	<key>API_KEY_NASA</key>
+	<string></string>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SF-Pro-Rounded-Heavy.otf</string>
+		<string>SF-Pro-Rounded-Bold.otf</string>
+		<string>SF-Pro-Rounded-Semibold.otf</string>
+		<string>SF-Pro-Rounded-Regular.otf</string>
+		<string>SF-Pro-Rounded-Black.otf</string>
+		<string>SF-Pro-Rounded-Light.otf</string>
+		<string>SF-Pro-Rounded-Thin.otf</string>
+		<string>SF-Pro-Rounded-Medium.otf</string>
+		<string>SF-Pro-Rounded-Ultralight.otf</string>
+		<string>SF-Mono-Bold.otf</string>
+		<string>SF-Mono-BoldItalic.otf</string>
+		<string>SF-Mono-Heavy.otf</string>
+		<string>SF-Mono-HeavyItalic.otf</string>
+		<string>SF-Mono-Light.otf</string>
+		<string>SF-Mono-LightItalic.otf</string>
+		<string>SF-Mono-Medium.otf</string>
+		<string>SF-Mono-MediumItalic.otf</string>
+		<string>SF-Mono-Regular.otf</string>
+		<string>SF-Mono-RegularItalic.otf</string>
+		<string>SF-Mono-Semibold.otf</string>
+		<string>SF-Mono-SemiboldItalic.otf</string>
+	</array>
 </dict>
 </plist>
