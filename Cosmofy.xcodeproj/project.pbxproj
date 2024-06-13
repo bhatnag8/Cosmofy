@@ -376,7 +376,6 @@
 			);
 			mainGroup = 2FBBB64C2945531500BBB072;
 			packageReferences = (
-				0B63D3A02C1B4D3700D2DA9E /* XCLocalSwiftPackageReference "../../Downloads/swift-markdown-ui-recursive" */,
 			);
 			productRefGroup = 2FBBB6562945531500BBB072 /* Products */;
 			projectDirPath = "";
@@ -682,13 +681,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		0B63D3A02C1B4D3700D2DA9E /* XCLocalSwiftPackageReference "../../Downloads/swift-markdown-ui-recursive" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../Downloads/swift-markdown-ui-recursive";
-		};
-/* End XCLocalSwiftPackageReference section */
 	};
 	rootObject = 2FBBB64D2945531500BBB072 /* Project object */;
 }
