@@ -19,7 +19,6 @@
 		0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD502AE96FE7001CFC35 /* ci_scripts */; };
 		0B1BAD572AE97736001CFC35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD562AE97736001CFC35 /* .gitignore */; };
 		0B25FC932BFCD5DE00ED1EA3 /* ChangeLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25FC922BFCD5DE00ED1EA3 /* ChangeLogView.swift */; };
-		0B381A182BFE5461009C1E77 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0B381A172BFE5461009C1E77 /* MarkdownUI */; };
 		0B3EC2642BA4BAFE004491B7 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2632BA4BAFE004491B7 /* ImageView.swift */; };
 		0B3EC2662BA4D16F004491B7 /* API_NASA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2652BA4D16F004491B7 /* API_NASA.swift */; };
 		0B40299C2BA4FEC1004B0F43 /* IOTD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B40299B2BA4FEC1004B0F43 /* IOTD.swift */; };
@@ -137,7 +136,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B381A182BFE5461009C1E77 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +346,6 @@
 			);
 			name = Cosmofy;
 			packageProductDependencies = (
-				0B381A172BFE5461009C1E77 /* MarkdownUI */,
 			);
 			productName = Spacefy;
 			productReference = 2FBBB6552945531500BBB072 /* Cosmofy.app */;
@@ -379,7 +376,7 @@
 			);
 			mainGroup = 2FBBB64C2945531500BBB072;
 			packageReferences = (
-				0B381A162BFE5461009C1E77 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				0B63D3A02C1B4D3700D2DA9E /* XCLocalSwiftPackageReference "../../Downloads/swift-markdown-ui-recursive" */,
 			);
 			productRefGroup = 2FBBB6562945531500BBB072 /* Products */;
 			projectDirPath = "";
@@ -595,7 +592,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Cosmofy/Cosmofy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1000;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmofy/Info.plist;
@@ -613,7 +610,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -621,7 +618,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -633,7 +630,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Cosmofy/Cosmofy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1000;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmofy/Info.plist;
@@ -651,7 +648,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -659,7 +656,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -686,24 +683,12 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		0B381A162BFE5461009C1E77 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.0;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		0B63D3A02C1B4D3700D2DA9E /* XCLocalSwiftPackageReference "../../Downloads/swift-markdown-ui-recursive" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../Downloads/swift-markdown-ui-recursive";
 		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		0B381A172BFE5461009C1E77 /* MarkdownUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0B381A162BFE5461009C1E77 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
-			productName = MarkdownUI;
-		};
-/* End XCSwiftPackageProductDependency section */
+/* End XCLocalSwiftPackageReference section */
 	};
 	rootObject = 2FBBB64D2945531500BBB072 /* Project object */;
 }

@@ -67,7 +67,7 @@ struct IOTDView: View {
                 }
             }
                         )
-            .onAppear(perform: {Haptics.shared.vibrate(for: .success)})
+//            .onAppear(perform: {Haptics.shared.vibrate(for: .success)})
             
         }
         .navigationTitle("Today's Picture")

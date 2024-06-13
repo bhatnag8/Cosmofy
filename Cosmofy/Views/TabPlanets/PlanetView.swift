@@ -343,7 +343,12 @@ struct PlanetPropertyView: View {
                     .foregroundColor(.secondary)
                 HStack(alignment: .firstTextBaseline) {
                     Text(value).font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                    Text(unit).font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(color)
+                    
+                    if (unit == "moons" && value == "1") {
+                        Text("moon").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(color)
+                    } else {
+                        Text(unit).font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(color)
+                    }
                 }
             }
             Spacer()
