@@ -16,7 +16,7 @@ struct SplashScreen: View {
             if showSplash {
                 SplashScreenView()
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.25) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 6.25) {
                             withAnimation {
                                 showSplash = false
                             }

@@ -8,9 +8,46 @@
 import SwiftUI
 
 struct ContentViewWatch: View {
+    
+    @State private var selectedIndex = 1
+
+    var body: some View {
+        TabView(selection: $selectedIndex) {
+            LeftView()
+                .tag(0)
+
+            CenterView()
+                .tag(1)
+            
+            RightView()
+                .tag(2)
+        }
+    }
+}
+
+#Preview {
+    ContentViewWatch()
+}
+
+struct LeftView: View {
+    var body: some View {
+        VStack {
+            Text("Left")
+        }
+    }
+}
+
+struct CenterView: View {
+    var body: some View {
+        VStack {
+            Text("Center")
+        }
+    }
+}
+
+struct RightView: View {
     var body: some View {
         TabView {
-
             ForEach(allPlanets) { planet in
                 ZStack {
                     PlanetPreview(planet: planet)
@@ -23,13 +60,8 @@ struct ContentViewWatch: View {
     }
 }
 
-#Preview {
-    ContentViewWatch()
-}
-
 
 struct PlanetPreview: View {
-    
     let planet: Planet
     var body: some View {
         VStack {
@@ -50,9 +82,6 @@ struct PlanetPreview: View {
                     .multilineTextAlignment(.leading)
                 Spacer()
             }
-            
-            
-            
         }
         .padding(.horizontal)
     }

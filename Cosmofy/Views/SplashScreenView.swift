@@ -12,10 +12,10 @@ struct SplashScreenView: View {
         ZStack {
             LinearGradient(
                 gradient: Gradient(colors: [
-                    Color(hex: 0xAF9AF9), // Top-left
-                    Color(hex: 0xB3AEEC), // Top-right
-                    Color(hex: 0xA4B2E8), // Bottom-right
-                    Color(hex: 0xA7C5DA)  // Bottom-left
+                    Color(hex: 0xD2DFF7), // Top-left
+                    Color(hex: 0xE1E8F4), // Top-right
+                    Color(hex: 0xC8D5F1), // Bottom-right
+                    Color(hex: 0xB7C5F4)  // Bottom-left
                 ]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing

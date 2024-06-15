@@ -54,7 +54,6 @@
 		0BDBC9D32C1D957000F720F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BDBC9D22C1D957000F720F2 /* Preview Assets.xcassets */; };
 		0BDBC9D62C1D957000F720F2 /* WatchCosmofy Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0BDBC9C92C1D956E00F720F2 /* WatchCosmofy Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0BDBC9DD2C1D95CB00F720F2 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6C2BA02123008F3D0F /* Planet.swift */; };
-		0BDBC9DF2C1DA46700F720F2 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A462B9C2B5F00476F3C /* SplashScreen.swift */; };
 		0BDBC9E02C1DA46A00F720F2 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A492B9C2CF000476F3C /* SplashScreenView.swift */; };
 		0BDBC9E12C1DA48000F720F2 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */; };
 		0BF2A4172BFBF24B007B3E4B /* GarenText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF2A4162BFBF24B007B3E4B /* GarenText.swift */; };
@@ -532,7 +531,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BDBC9DF2C1DA46700F720F2 /* SplashScreen.swift in Sources */,
 				0BDBC9CE2C1D956E00F720F2 /* ContentView.swift in Sources */,
 				0BDBC9E02C1DA46A00F720F2 /* SplashScreenView.swift in Sources */,
 				0BDBC9CC2C1D956E00F720F2 /* WatchCosmofyApp.swift in Sources */,
