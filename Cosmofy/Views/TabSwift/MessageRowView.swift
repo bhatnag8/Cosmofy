@@ -49,6 +49,8 @@ struct MessageRowView: View {
                         .textSelection(.enabled)
                         .font(Font.custom("SF Pro Rounded Medium", size: 18))
                 } else {
+//                    Text(text)
+//                        .textSelection(.enabled)
                     Markdown(text)
                         .textSelection(.enabled)
                 }
@@ -76,6 +78,3 @@ struct MessageRowView: View {
         .background(color)
     }
 }
-
-
-

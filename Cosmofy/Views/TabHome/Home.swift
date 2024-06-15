@@ -59,7 +59,7 @@ struct Home: View {
                                 .font(Font.custom("SF Pro Rounded Semibold", size: 32))
                             Spacer()
                             NavigationLink(destination: ChangelogView()) {
-                                GarenText(text: "v1.1", trigger: trigger)
+                                GarenText(text: "v1.1.1", trigger: trigger)
 //                                    .font(Font.custom("SF Mono Semibold", size: 18) ?? .monospaced)
                                     .font(Font.system(size: 18, weight: .semibold, design: .monospaced))
                                     .foregroundStyle(.SOUR)
