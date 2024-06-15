@@ -7,6 +7,7 @@
 //  ========================================
 
 import SwiftUI
+import MarkdownUI
 
 struct MessageRowView: View {
     @Environment(\.colorScheme) private var colorScheme
@@ -48,10 +49,10 @@ struct MessageRowView: View {
                         .textSelection(.enabled)
                         .font(Font.custom("SF Pro Rounded Medium", size: 18))
                 } else {
-                    Text(text)
-                        .textSelection(.enabled)
-//                    Markdown(text)
+//                    Text(text)
 //                        .textSelection(.enabled)
+                    Markdown(text)
+                        .textSelection(.enabled)
                 }
                 
                 if let error = responseError {
@@ -77,6 +78,3 @@ struct MessageRowView: View {
         .background(color)
     }
 }
-
-
-
