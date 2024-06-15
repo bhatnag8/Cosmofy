@@ -14,7 +14,7 @@ struct ChangelogView: View {
             ScrollView {
                 VStack {
                     HStack {
-                        Text("Version 1.1")
+                        Text("Version 1.1.1")
                             .font(Font.custom("SF Pro Rounded Medium", size: 20))
 
                         Spacer()
@@ -30,6 +30,15 @@ struct ChangelogView: View {
                         Spacer()
                     }
                     .padding(.horizontal)
+                    ZStack {
+                        Color.white
+                        Color.pink.opacity(0.1)
+                        TagsView().padding(.vertical)
+
+                    }
+                    
+                    ActivityView()
+                        .padding(.bottom, 4)
 
                     
                     ZStack {
@@ -106,23 +115,12 @@ struct ChangelogView: View {
                         }
                     }
 
-                    HStack {
-                        Text("Stats")
-                            .font(Font.custom("SF Pro Rounded Regular", size: 15))
-                            .textCase(.uppercase)
-                            .padding([.top, .horizontal])
-                            .padding(.bottom, 2)
-                            .foregroundStyle(.secondary)
-                        Spacer()
-                    }
                     
-                    ActivityView()
-                        .padding(.bottom, 2)
+                    
                     
                     Divider()
 
-                    TagsView()
-                        .padding(.bottom)
+                    
    
                 }
             }
@@ -343,7 +341,7 @@ struct ActivityView: View {
 struct TagsView: View {
 
     @State private var added: [String] = [
-        "Image of the Day", "Nature Scope", "Full Redesign", "Swifter Swift Responses", "New Animations", "Saturn in 3D", "Charts", "New Fonts", "Light Mode", "Share Sheets"
+        "Image of the Day", "Nature Scope", "Full Redesign", "New Animations", "Saturn in 3D", "Charts", "New Fonts", "Light Mode"
     ]
     
     @State private var removed: [String] = [
@@ -360,6 +358,7 @@ struct TagsView: View {
             Text("Added Features")
                 .font(Font.custom("SF Pro Rounded Medium", size: 16))
                 .padding(.vertical, 4)
+                .foregroundStyle(.black)
             
             TagLayout(alignment: .center, spacing: 10) {
                 ForEach(added, id: \.self) { tag in
@@ -372,6 +371,8 @@ struct TagsView: View {
             Text("Removed Features (might be added later)")
                 .font(Font.custom("SF Pro Rounded Medium", size: 16))
                 .padding(.vertical, 4)
+                .foregroundStyle(.black)
+
             TagLayout(alignment: .center, spacing: 10) {
                 ForEach(removed, id: \.self) { tag in
                     TagView(tag, .red)
@@ -383,7 +384,8 @@ struct TagsView: View {
             Text("Bug Fixes")
                 .font(Font.custom("SF Pro Rounded Medium", size: 16))
                 .padding(.vertical, 4)
-            
+                .foregroundStyle(.black)
+
             TagLayout(alignment: .center, spacing: 10) {
                 ForEach(bugs, id: \.self) { tag in
                     TagView(tag, .orange)

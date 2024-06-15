@@ -7,6 +7,7 @@
 //  ========================================
 
 import Foundation
+import CryptoKit
 
 class InteractingViewModel: ObservableObject {
     
@@ -77,7 +78,9 @@ class API: @unchecked Sendable {
     private let temperature: Double
     private let model: String
     
-    private let apiKey = Bundle.main.infoDictionary?["API_KEY_DEBUG"] as! String
+    private let aesKey: SymmetricKey = SymmetricKey(data: Data(base64Encoded: Bundle.main.infoDictionary?["API_KEY_DEBUG"] as! String)!)
+    
+    private var apiKey: String?
     private var historyList = [Message]()
     private let urlSession = URLSession.shared
     private var urlRequest: URLRequest {
@@ -105,14 +108,68 @@ class API: @unchecked Sendable {
     private var headers: [String: String] {
         [
             "Content-Type": "application/json",
-            "Authorization": "Bearer \(apiKey)"
+            "Authorization": "Bearer \(apiKey ?? "")"
         ]
     }
     
-    init(model: String = "gpt-3.5-turbo", systemPrompt: String = "You are a helpful assistant who will answer space/astronomy questions. Your name is Swift.", temperature: Double = 0.6) {
+    init(model: String = "gpt-3.5-turbo", systemPrompt: String = "You are a helpful assistant who will answer space/astronomy questions. Your name is Swift.", temperature: Double = 0.65) {
         self.model = model
         self.systemMessage = .init(role: "system", content: systemPrompt)
         self.temperature = temperature
+
+        fetchApiKey { [weak self] decryptedApiKey in
+            self?.apiKey = decryptedApiKey
+        }
+    }
+    
+    private func fetchApiKey(completion: @escaping (String?) -> Void) {
+        guard let url = URL(string: "https://api.arryan.xyz:6969/get-api-key") else {
+            completion(nil)
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                print("Error fetching API key: \(error?.localizedDescription ?? "Unknown error")")
+                completion(nil)
+                return
+            }
+            
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: String],
+                   let encryptedData = json["encryptedData"],
+                   let iv = json["iv"],
+                   let authTag = json["authTag"] {
+                    let decryptedApiKey = self.decrypt(encryptedData: encryptedData, iv: iv, authTag: authTag)
+                    completion(decryptedApiKey)
+                } else {
+                    print("Invalid response format")
+                    completion(nil)
+                }
+            } catch {
+                print("Error parsing JSON: \(error.localizedDescription)")
+                completion(nil)
+            }
+        }
+        task.resume()
+    }
+    
+    private func decrypt(encryptedData: String, iv: String, authTag: String) -> String? {
+        guard let encryptedData = Data(base64Encoded: encryptedData),
+              let iv = Data(base64Encoded: iv),
+              let authTag = Data(base64Encoded: authTag) else {
+            print("Invalid base64 string")
+            return nil
+        }
+        
+        do {
+            let sealedBox = try AES.GCM.SealedBox(nonce: AES.GCM.Nonce(data: iv), ciphertext: encryptedData, tag: authTag)
+            let decryptedData = try AES.GCM.open(sealedBox, using: aesKey)
+            return String(data: decryptedData, encoding: .utf8)
+        } catch {
+            print("Decryption error: \(error.localizedDescription)")
+            return nil
+        }
     }
     
     private func generateMessages(from text: String) -> [Message] {
@@ -226,5 +283,22 @@ extension String: CustomNSError {
         [
             NSLocalizedDescriptionKey: self
         ]
+    }
+}
+
+extension Data {
+    init?(hexString: String) {
+        let len = hexString.count / 2
+        var data = Data(capacity: len)
+        var byteLiteral = ""
+        for (index, character) in hexString.enumerated() {
+            byteLiteral.append(character)
+            if index % 2 != 0 {
+                guard let byte = UInt8(byteLiteral, radix: 16) else { return nil }
+                data.append(byte)
+                byteLiteral = ""
+            }
+        }
+        self = data
     }
 }

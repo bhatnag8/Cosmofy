@@ -417,8 +417,21 @@ func MapDetails(event: Event?, visible: Binding<Bool>, weatherViewModel: Weather
                         }
                         .foregroundStyle(markerTint(for: category.id) == .white ? .black : .white)
                         .frame(maxHeight: 35)
-                        Text(category.title)
-                            .font(Font.custom("SF Pro Rounded Medium", size: 18))
+                        VStack {
+                            HStack {
+                                Text(category.title)
+                                    .font(Font.custom("SF Pro Rounded Medium", size: 18))
+                                Spacer()
+                            }
+                            
+                            HStack {
+                                Text("Event Category")
+                                    .font(Font.custom("SF Pro Rounded Regular", size: 12))
+                                Spacer()
+                            }
+                            
+                        }
+                        
                             
                         Spacer()
                         if category == event.categories.first {
@@ -428,9 +441,11 @@ func MapDetails(event: Event?, visible: Binding<Bool>, weatherViewModel: Weather
                                 let longitude = firstCoordinate[0]
                                 VStack {
                                     if let weather = weatherViewModel.weather {
-                                        HStack {
+                                        VStack {
                                             Text(String(format: "%.1f", weather.currentWeather.temperature.value) + " \(weather.currentWeather.temperature.unit.symbol)")
                                                 .font(Font.custom("SF Pro Rounded Medium", size: 18))
+                                            Text(" Weather")
+                                                .font(Font.custom("SF Pro Rounded Regular", size: 12))
                                         }
                                         .onAppear {
                                             weatherViewModel.fetchWeather(latitude: latitude, longitude: longitude)
