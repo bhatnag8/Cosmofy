@@ -32,7 +32,9 @@ struct ChartView: View {
             }
         }
         .onTapGesture {
+            #if os(iOS)
             Haptics.shared.impact(for: .medium)
+            #endif
             isTapped.toggle()
         }
         .chartLegend(.hidden)
@@ -69,6 +71,8 @@ struct ChartView: View {
     }
     
 }
+
+
 
 
 
