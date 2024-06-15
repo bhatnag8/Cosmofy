@@ -19,6 +19,7 @@
 		0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD502AE96FE7001CFC35 /* ci_scripts */; };
 		0B1BAD572AE97736001CFC35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD562AE97736001CFC35 /* .gitignore */; };
 		0B25FC932BFCD5DE00ED1EA3 /* ChangeLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25FC922BFCD5DE00ED1EA3 /* ChangeLogView.swift */; };
+		0B298B922C1DB03B0044364E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
 		0B39A33C2C1D5799003159F9 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0B39A33B2C1D5799003159F9 /* MarkdownUI */; };
 		0B3EC2642BA4BAFE004491B7 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2632BA4BAFE004491B7 /* ImageView.swift */; };
 		0B3EC2662BA4D16F004491B7 /* API_NASA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2652BA4D16F004491B7 /* API_NASA.swift */; };
@@ -47,6 +48,15 @@
 		0BB14A4D2B9C2EB000476F3C /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */; };
 		0BB14A532B9C339800476F3C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A522B9C339800476F3C /* Card.swift */; };
 		0BBF4B9D2A6049F100A9DC4D /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */; };
+		0BDBC9CC2C1D956E00F720F2 /* WatchCosmofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBC9CB2C1D956E00F720F2 /* WatchCosmofyApp.swift */; };
+		0BDBC9CE2C1D956E00F720F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBC9CD2C1D956E00F720F2 /* ContentView.swift */; };
+		0BDBC9D02C1D957000F720F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BDBC9CF2C1D957000F720F2 /* Assets.xcassets */; };
+		0BDBC9D32C1D957000F720F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BDBC9D22C1D957000F720F2 /* Preview Assets.xcassets */; };
+		0BDBC9D62C1D957000F720F2 /* WatchCosmofy Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0BDBC9C92C1D956E00F720F2 /* WatchCosmofy Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0BDBC9DD2C1D95CB00F720F2 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6C2BA02123008F3D0F /* Planet.swift */; };
+		0BDBC9DF2C1DA46700F720F2 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A462B9C2B5F00476F3C /* SplashScreen.swift */; };
+		0BDBC9E02C1DA46A00F720F2 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A492B9C2CF000476F3C /* SplashScreenView.swift */; };
+		0BDBC9E12C1DA48000F720F2 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */; };
 		0BF2A4172BFBF24B007B3E4B /* GarenText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF2A4162BFBF24B007B3E4B /* GarenText.swift */; };
 		0BF2A4242BFBF935007B3E4B /* SF-Mono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF2A41E2BFBF78E007B3E4B /* SF-Mono-Regular.otf */; };
 		0BF2A4252BFBF935007B3E4B /* SF-Mono-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF2A41D2BFBF78E007B3E4B /* SF-Mono-LightItalic.otf */; };
@@ -67,6 +77,30 @@
 		2F4F8FC5295EC08100F7EE98 /* PlanetNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F8FC4295EC08100F7EE98 /* PlanetNode.swift */; };
 		2FBBB6622945531700BBB072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0BDBC9D42C1D957000F720F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FBBB64D2945531500BBB072 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0BDBC9C82C1D956E00F720F2;
+			remoteInfo = "WatchCosmofy Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0BDBC9D72C1D957000F720F2 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				0BDBC9D62C1D957000F720F2 /* WatchCosmofy Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0B00383A2B9F89E000DAD175 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
@@ -108,6 +142,11 @@
 		0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		0BB14A522B9C339800476F3C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0BBF4B9C2A6049F100A9DC4D /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		0BDBC9C92C1D956E00F720F2 /* WatchCosmofy Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchCosmofy Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BDBC9CB2C1D956E00F720F2 /* WatchCosmofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCosmofyApp.swift; sourceTree = "<group>"; };
+		0BDBC9CD2C1D956E00F720F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0BDBC9CF2C1D957000F720F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0BDBC9D22C1D957000F720F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0BF2A4162BFBF24B007B3E4B /* GarenText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarenText.swift; sourceTree = "<group>"; };
 		0BF2A4182BFBF78D007B3E4B /* SF-Mono-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		0BF2A4192BFBF78E007B3E4B /* SF-Mono-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Bold.otf"; sourceTree = "<group>"; };
@@ -133,6 +172,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0BDBC9C62C1D956E00F720F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FBBB6522945531500BBB072 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -283,6 +329,25 @@
 			path = TabPlanets;
 			sourceTree = "<group>";
 		};
+		0BDBC9CA2C1D956E00F720F2 /* WatchCosmofy Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				0BDBC9CB2C1D956E00F720F2 /* WatchCosmofyApp.swift */,
+				0BDBC9CD2C1D956E00F720F2 /* ContentView.swift */,
+				0BDBC9CF2C1D957000F720F2 /* Assets.xcassets */,
+				0BDBC9D12C1D957000F720F2 /* Preview Content */,
+			);
+			path = "WatchCosmofy Watch App";
+			sourceTree = "<group>";
+		};
+		0BDBC9D12C1D957000F720F2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0BDBC9D22C1D957000F720F2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		0BF2A4152BFBEEFC007B3E4B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +366,7 @@
 				0B1BAD562AE97736001CFC35 /* .gitignore */,
 				0B1BAD502AE96FE7001CFC35 /* ci_scripts */,
 				2FBBB6572945531500BBB072 /* Cosmofy */,
+				0BDBC9CA2C1D956E00F720F2 /* WatchCosmofy Watch App */,
 				2FBBB6562945531500BBB072 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -309,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				2FBBB6552945531500BBB072 /* Cosmofy.app */,
+				0BDBC9C92C1D956E00F720F2 /* WatchCosmofy Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,6 +401,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0BDBC9C82C1D956E00F720F2 /* WatchCosmofy Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BDBC9DA2C1D957000F720F2 /* Build configuration list for PBXNativeTarget "WatchCosmofy Watch App" */;
+			buildPhases = (
+				0BDBC9C52C1D956E00F720F2 /* Sources */,
+				0BDBC9C62C1D956E00F720F2 /* Frameworks */,
+				0BDBC9C72C1D956E00F720F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchCosmofy Watch App";
+			productName = "WatchCosmofy Watch App";
+			productReference = 0BDBC9C92C1D956E00F720F2 /* WatchCosmofy Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		2FBBB6542945531500BBB072 /* Cosmofy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FBBB6692945531700BBB072 /* Build configuration list for PBXNativeTarget "Cosmofy" */;
@@ -341,10 +425,12 @@
 				2FBBB6512945531500BBB072 /* Sources */,
 				2FBBB6522945531500BBB072 /* Frameworks */,
 				2FBBB6532945531500BBB072 /* Resources */,
+				0BDBC9D72C1D957000F720F2 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0BDBC9D52C1D957000F720F2 /* PBXTargetDependency */,
 			);
 			name = Cosmofy;
 			packageProductDependencies = (
@@ -361,9 +447,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					0BDBC9C82C1D956E00F720F2 = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					2FBBB6542945531500BBB072 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -386,11 +475,22 @@
 			projectRoot = "";
 			targets = (
 				2FBBB6542945531500BBB072 /* Cosmofy */,
+				0BDBC9C82C1D956E00F720F2 /* WatchCosmofy Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0BDBC9C72C1D956E00F720F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BDBC9D32C1D957000F720F2 /* Preview Assets.xcassets in Resources */,
+				0B298B922C1DB03B0044364E /* Assets.xcassets in Resources */,
+				0BDBC9D02C1D957000F720F2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FBBB6532945531500BBB072 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -428,6 +528,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0BDBC9C52C1D956E00F720F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BDBC9DF2C1DA46700F720F2 /* SplashScreen.swift in Sources */,
+				0BDBC9CE2C1D956E00F720F2 /* ContentView.swift in Sources */,
+				0BDBC9E02C1DA46A00F720F2 /* SplashScreenView.swift in Sources */,
+				0BDBC9CC2C1D956E00F720F2 /* WatchCosmofyApp.swift in Sources */,
+				0BDBC9DD2C1D95CB00F720F2 /* Planet.swift in Sources */,
+				0BDBC9E12C1DA48000F720F2 /* Color+Hex.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FBBB6512945531500BBB072 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -468,7 +581,82 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0BDBC9D52C1D957000F720F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0BDBC9C82C1D956E00F720F2 /* WatchCosmofy Watch App */;
+			targetProxy = 0BDBC9D42C1D957000F720F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		0BDBC9D82C1D957000F720F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchCosmofy Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchCosmofy;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.snape447.Cosmofy;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		0BDBC9D92C1D957000F720F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchCosmofy Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchCosmofy;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.snape447.Cosmofy;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
 		2FBBB6672945531700BBB072 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -590,12 +778,13 @@
 		2FBBB66A2945531700BBB072 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Cosmofy/Cosmofy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1000;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmofy/Info.plist;
@@ -613,7 +802,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -628,12 +817,13 @@
 		2FBBB66B2945531700BBB072 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Cosmofy/Cosmofy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1000;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmofy/Info.plist;
@@ -651,7 +841,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -666,6 +856,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0BDBC9DA2C1D957000F720F2 /* Build configuration list for PBXNativeTarget "WatchCosmofy Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BDBC9D82C1D957000F720F2 /* Debug */,
+				0BDBC9D92C1D957000F720F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2FBBB6502945531500BBB072 /* Build configuration list for PBXProject "Cosmofy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

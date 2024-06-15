@@ -265,4 +265,8 @@ let outerPlanets = [
     jupiterPlanet, saturnPlanet, uranusPlanet, neptunePlanet
 ]
 
+let allPlanets = [
+    mercuryPlanet, venusPlanet, earthPlanet, marsPlanet, jupiterPlanet, saturnPlanet, uranusPlanet, neptunePlanet
+]
+
 
