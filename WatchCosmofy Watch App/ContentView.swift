@@ -16,7 +16,7 @@ struct ContentViewWatch: View {
         TabView(selection: $selectedIndex) {
             LeftView()
                 .tag(0)
-
+            
             CenterView()
                 .tag(1)
             
@@ -33,8 +33,7 @@ struct ContentViewWatch: View {
 
 
 struct CenterView: View {
-    @StateObject private var astroService = AstroService()
-
+    
     var body: some View {
         
         NavigationStack {
@@ -57,12 +56,14 @@ struct CenterView: View {
                             VStack {
                                 HStack {
                                     Text("Cosmofy")
-                                        .font(.title3)
+                                        .font(Font.system(size: 28, weight: .medium, design: .rounded))
                                         .foregroundStyle(.black)
                                     Spacer()
                                 }
                                 HStack {
-                                    Text("v1.0").foregroundStyle(.black)
+                                    Text("v1.0")
+                                        .font(Font.system(size: 18, weight: .regular, design: .monospaced))
+                                        .foregroundStyle(.black)
                                     Spacer()
                                 }
                             }
@@ -73,36 +74,11 @@ struct CenterView: View {
                                 .frame(width: 32, height: 32)
                         }
                         .padding(.horizontal)
-
-                        if let astroResponse = astroService.astroResponse {
-                            ForEach(astroResponse.people) { person in
-                                VStack(alignment: .leading) {
-                                    HStack {
-                                        Text(person.name)
-                                            .font(.caption)
-                                            .foregroundStyle(.black)
-
-                                        Spacer()
-                                    }
-                                    HStack {
-                                        Text("Spacecraft: \(person.craft)")
-                                            .font(.caption2)
-                                            .foregroundStyle(.GUTS)
-                                        Spacer()
-                                    }
-                                }
-                                .padding()
-                                .clipShape(.rect(cornerRadius: 12))
-                                .background(.ultraThinMaterial)
-                                .environment(\.colorScheme, .light)
-
-                            }
-                        } else if let errorMessage = astroService.errorMessage {
-                            Text("Error: \(errorMessage)")
-                                .foregroundColor(.red)
-                        } else {
-                            ProgressView().progressViewStyle(.circular)
-                        }
+                        
+                        AstroView()
+                            .environment(\.colorScheme, .light)
+                        
+                            .padding(.vertical)
                         
                     }
                 }
@@ -117,14 +93,79 @@ struct CenterView: View {
             }
             
         }
-        .onAppear {
-            astroService.fetchAstros()
-        }
-
         
         
     }
 }
+
+struct AstroView: View {
+    @StateObject private var astroService = AstroService()
+    @State private var isExpanded = false
+    
+    var body: some View {
+        VStack {
+            
+            
+            if let astroResponse = astroService.astroResponse {
+                
+                HStack {
+                    Text("Live number of people in space right now: \(astroResponse.number)")
+                        .foregroundStyle(.black)
+                        .multilineTextAlignment(.leading)
+                    
+                    Spacer(minLength: 16)
+                    Image(systemName: "chevron.down")
+                        .rotationEffect(.degrees(isExpanded ? 180 : 0))
+                        .foregroundColor(.black)
+                        .animation(.easeInOut, value: isExpanded)
+                }
+                .onTapGesture {
+                    withAnimation {
+                        isExpanded.toggle()
+                    }
+                }
+                
+                if isExpanded {
+                    ForEach(astroResponse.people) { person in
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text(person.name)
+                                    .font(.caption)
+                                    .foregroundColor(.black)
+                                
+                                Spacer()
+                            }
+                            HStack {
+                                Text(person.craft)
+                                    .font(.caption2)
+                                    .foregroundColor(.black)
+                                Spacer()
+                            }
+                        }
+                        .padding()
+                        .background(.ultraThinMaterial)
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                        .transition(.opacity)
+                    }
+                }
+            } else if let errorMessage = astroService.errorMessage {
+                //                Text("Error: \(errorMessage)")
+                //                    .foregroundColor(.red)
+            } else {
+                //                ProgressView()
+                //                    .progressViewStyle(CircularProgressViewStyle())
+            }
+            
+            
+            Spacer()
+        }
+        .padding()
+        .onAppear() {
+            astroService.fetchAstros()
+        }
+    }
+}
+
 
 
 struct AstroResponse: Codable {
@@ -143,15 +184,15 @@ struct Person: Codable, Identifiable {
 class AstroService: ObservableObject {
     @Published var astroResponse: AstroResponse?
     @Published var errorMessage: String?
-
+    
     private var cancellable: AnyCancellable?
-
+    
     func fetchAstros() {
         guard let url = URL(string: "https://api.arryan.xyz:6969/get-astros") else {
             self.errorMessage = "Invalid URL"
             return
         }
-
+        
         cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
             .decode(type: AstroResponse.self, decoder: JSONDecoder())
@@ -171,25 +212,4 @@ class AstroService: ObservableObject {
 }
 
 
-struct ShimmerEffectBox: View {
-    private var gradientColors = [
-        Color(uiColor: UIColor.lightGray),
-        Color(uiColor: UIColor.gray),
-        Color(uiColor: UIColor.darkGray)
-    ]
-    @State var startPoint: UnitPoint = .init(x: -1.8, y: -1.2)
-    @State var endPoint: UnitPoint = .init(x: 0, y: -0.2)
-    var body: some View {
-        LinearGradient (colors: gradientColors,
-                        startPoint: startPoint,
-                        endPoint: endPoint)
-        .onAppear {
-            withAnimation (.easeInOut (duration: 1)
-                .repeatForever (autoreverses: false)) {
-                    startPoint = .init(x: 1, y: 1)
-                    endPoint = .init(x: 2.2, y: 2.2)
-                }
-        }
-    }
-}
 

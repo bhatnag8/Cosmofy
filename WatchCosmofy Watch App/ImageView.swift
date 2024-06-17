@@ -29,14 +29,28 @@ struct IOTDView: View {
                 VStack {
                     HStack {
                         Text("Image of the Day")
-                            .font(.title2)
+                            .font(.headline)
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                    
+                    HStack {
+                        Text("from NASA")
+                            .font(.headline)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                    }
+                    .padding([.bottom, .horizontal])
+                    
+                    
+                    HStack {
+                        Text(apod.title)
+                            .font(.subheadline)
+                            .multilineTextAlignment(.leading)
                         Spacer()
                     }
                     .padding()
                     
-                    Text(apod.title)
-                        .font(.caption)
-                        .padding(.vertical, 8)
                     if apod.media_type == "image" {
                         ImageView(apod.url)
                             .aspectRatio(contentMode: .fit)
@@ -46,6 +60,7 @@ struct IOTDView: View {
                             Text("Video content cannot be displayed on Watch. Please view it on your iPhone.")
                                 .padding()
                                 .font(.caption2)
+//                                .foregroundColor(.red)
                                 .foregroundStyle(.red)
                         }
                         .padding()

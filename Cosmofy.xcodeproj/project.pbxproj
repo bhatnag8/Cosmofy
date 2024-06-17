@@ -26,7 +26,6 @@
 		0B40299C2BA4FEC1004B0F43 /* IOTD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B40299B2BA4FEC1004B0F43 /* IOTD.swift */; };
 		0B4189A52BFF9485006E762C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B4189A42BFF9485006E762C /* Launch Screen.storyboard */; };
 		0B5CC34E2BA2C84E00A7A55F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CC34D2BA2C84E00A7A55F /* ChartView.swift */; };
-		0B6A41F52C1E048800A6F58F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CC34D2BA2C84E00A7A55F /* ChartView.swift */; };
 		0B7671932AE47E22008E57B2 /* API_OPENAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671922AE47E22008E57B2 /* API_OPENAI.swift */; };
 		0B7671972AE4C3FE008E57B2 /* Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671962AE4C3FE008E57B2 /* Swift.swift */; };
 		0B7D18BF2AE8A482009C2317 /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18BE2AE8A482009C2317 /* MessageRow.swift */; };
@@ -551,7 +550,6 @@
 				0B97AE292C2006C1003E96EB /* WatchCosmofyApp.swift in Sources */,
 				0B97AE232C1E90CA003E96EB /* IOTD.swift in Sources */,
 				0BDBC9E12C1DA48000F720F2 /* Color+Hex.swift in Sources */,
-				0B6A41F52C1E048800A6F58F /* ChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,7 +623,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy.watchkitapp;
 				PRODUCT_NAME = Cosmofy;
 				SDKROOT = watchos;
@@ -634,7 +632,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
@@ -659,7 +657,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy.watchkitapp;
 				PRODUCT_NAME = Cosmofy;
 				SDKROOT = watchos;
@@ -667,7 +665,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
