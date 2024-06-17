@@ -27,8 +27,8 @@ struct SplashScreenView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 64, height: 64)
                 .edgesIgnoringSafeArea(.all)
-
             
+            #if !os(watchOS)
             VStack {
                 Spacer()
                 Text("- 1.1.1 -")
@@ -36,6 +36,7 @@ struct SplashScreenView: View {
                     .foregroundColor(.black)
             }
             .padding()
+            #endif
         }
     }
 }

@@ -444,7 +444,7 @@ func MapDetails(event: Event?, visible: Binding<Bool>, weatherViewModel: Weather
                                         VStack {
                                             Text(String(format: "%.1f", weather.currentWeather.temperature.value) + " \(weather.currentWeather.temperature.unit.symbol)")
                                                 .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                                            Text(" Weather")
+                                            Text("Weather")
                                                 .font(Font.custom("SF Pro Rounded Regular", size: 12))
                                         }
                                         .onAppear {

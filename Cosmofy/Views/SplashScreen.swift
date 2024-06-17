@@ -16,14 +16,18 @@ struct SplashScreen: View {
             if showSplash {
                 SplashScreenView()
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 6.25) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.25) {
                             withAnimation {
                                 showSplash = false
                             }
                         }
                     }
             } else {
+                #if os(watchOS)
+                ContentViewWatch()
+                #else
                 TabBarView()
+                #endif
             }
         }
     }
