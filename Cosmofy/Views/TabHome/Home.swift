@@ -3,7 +3,7 @@
 //  Cosmofy
 //
 //  Created by Arryan Bhatnagar on 3/9/24.
-//
+//  173
 
 import SwiftUI
 
@@ -59,15 +59,12 @@ struct Home: View {
                                 .font(Font.custom("SF Pro Rounded Semibold", size: 32))
                             Spacer()
                             NavigationLink(destination: ChangelogView()) {
-                                GarenText(text: "v1.1.1", trigger: trigger)
-//                                    .font(Font.custom("SF Mono Semibold", size: 18) ?? .monospaced)
+                                GarenText(text: "1.2", trigger: trigger)
                                     .font(Font.system(size: 18, weight: .semibold, design: .monospaced))
-                                    .foregroundStyle(.SOUR)
                                 Image(systemName: "chevron.right")
                             }
                             
                         }
-                        
                         
                         NavigationLink(destination: ArticleView()) {
                             HStack {
@@ -82,7 +79,7 @@ struct Home: View {
                             }
                         }
                         
-                        
+
                         NavigationLink(destination: IOTDView()) {
                             HStack {
                                 Image("home-icon-2")
@@ -103,6 +100,8 @@ struct Home: View {
                 }
                 .padding([.leading, .trailing, .bottom])
             }
+            .navigationTitle("")
+            .padding(.top)
         }
     }
     
@@ -133,12 +132,149 @@ struct Home: View {
 
 struct ArticleView: View {
     var body: some View {
-        WebView(urlString: "https://www.quantamagazine.org/what-is-the-geometry-of-the-universe-20200316/")
-            .navigationTitle("Article of the Month")
-            .navigationBarTitleDisplayMode(.inline)
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 16) {
+                    NavigationLink(destination: JulyView()) {
+                        VStack(spacing: 0) {
+                            
+                            Image("July Article")
+                                .resizable()
+                                .frame(height: 180)
+                                .scaledToFit()
+                            HStack {
+                                VStack {
+                                    Text("07")
+                                        .font(.largeTitle)
+                                        .fontDesign(.serif)
+                                    
+                                    Text("2024")
+                                        .fontDesign(.serif)
+                                        .foregroundStyle(.secondary)
+                                }
+                                
+                                
+                                VStack() {
+                                    HStack {
+                                        Text("Astronomers Reimagine the Making of the Planets")
+                                            .multilineTextAlignment(.leading)
+                                            .font(Font.custom("SF Pro Rounded Regular", size: 16))
+                                            .foregroundColor(.primary)
+                                        Spacer()
+                                    }
+                                    
+                                    HStack {
+                                        Text("Rebecca Boyle")
+                                            .multilineTextAlignment(.leading)
+                                            .font(.caption)
+                                            .italic()
+                                                .fontDesign(.serif)
+                                                .foregroundColor(.secondary)
+                                        Spacer()
+                                    }
+                                }
+                                .padding(.leading)
+                                
+                                Spacer()
+                                
+                            }
+                            .padding()
+                            .background(Color.gray.opacity(0.1))
+                        }
+                        .clipShape(RoundedRectangle.init(cornerRadius: 18))
+                        
+                    }
+                    
+                    
+                    
+                    NavigationLink(destination: JuneView()) {
+                        VStack(spacing: 0) {
+                            
+                            Image("June Article")
+                                .resizable()
+                                .frame(height: 180)
+                                .scaledToFit()
+                            HStack {
+                                VStack {
+                                    Text("06")
+                                        .font(.largeTitle)
+                                        .fontDesign(.serif)
+                                    
+                                    Text("2024")
+                                        .fontDesign(.serif)
+                                        .foregroundStyle(.secondary)
+                                }
+                                
+                                
+                                VStack() {
+                                    HStack {
+                                        Text("What Is the Geometry of the Universe?")
+                                            .multilineTextAlignment(.leading)
+                                            .font(Font.custom("SF Pro Rounded Regular", size: 16))
+                                            .foregroundColor(.primary)
+                                        Spacer()
+                                    }
+                                    
+                                    HStack {
+                                        Text("Erica Klarreich & Lucy Reading-Ikkanda")
+                                            .multilineTextAlignment(.leading)
+                                            .font(.caption)
+                                            .italic()
+                                                .fontDesign(.serif)
+                                                .foregroundColor(.secondary)
+                                        Spacer()
+                                    }
+                                }
+                                .padding(.leading)
+                                
+                                Spacer()
+                                
+                            }
+                            .padding()
+                            .background(Color.gray.opacity(0.1))
+                        }
+                        .clipShape(RoundedRectangle.init(cornerRadius: 18))
+                        
+                    }
+                }
+                .padding()
+            }
+        }
+        .navigationTitle("Articles")
+        
     }
 }
 
 #Preview {
+    
     Home()
+    
 }
+
+struct JuneView: View {
+    var body: some View {
+        WebView(urlString: "https://www.quantamagazine.org/what-is-the-geometry-of-the-universe-20200316/")
+            .navigationTitle("Article of the Month")
+            .navigationBarTitleDisplayMode(.inline)
+            
+            .navigationBarItems(
+                trailing: ShareLink(item: URL(string: "https://www.quantamagazine.org/what-is-the-geometry-of-the-universe-20200316/")!, preview: SharePreview("Cosmofy's Article of the Month", image: Image("iconApp")))
+            )
+    }
+}
+
+
+struct JulyView: View {
+    var body: some View {
+        WebView(urlString: "https://www.quantamagazine.org/how-are-planets-made-new-theories-are-taking-shape-20220609/")
+            .navigationTitle("Article of the Month")
+            .navigationBarTitleDisplayMode(.inline)
+            
+            .navigationBarItems(
+                trailing: ShareLink(item: URL(string: "https://www.quantamagazine.org/how-are-planets-made-new-theories-are-taking-shape-20220609/")!, preview: SharePreview("Cosmofy's Article of the Month", image: Image("iconApp")))
+            )
+    }
+}
+
+
+

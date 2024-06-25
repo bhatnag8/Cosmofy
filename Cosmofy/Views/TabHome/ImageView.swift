@@ -1,84 +1,151 @@
-//
-//  IOTD.swift
-//  Cosmofy
-//
-//  Created by Arryan Bhatnagar on 3/15/24.
-//
-
 import SwiftUI
 import WebKit
 
+
+var today = ""
+var done = false
+
 struct IOTDView: View {
-    
     @ObservedObject var viewModel = ViewModelAPOD()
-    @State var fetched: Bool = false
+    @State private var fetched: Bool = false
+    @State private var showDatePicker: Bool = false
+    @State private var selectedDate: Date = Date()
+
     var body: some View {
         NavigationStack {
-            
-            ScrollView {
-                if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage)
+            VStack {
+                if showDatePicker {
+                    DatePicker("Select Date", selection: $selectedDate, in: dateRange, displayedComponents: .date)
+                        .datePickerStyle(GraphicalDatePickerStyle())
                         .padding()
-                        .foregroundStyle(.red)
-                } else if let apod = viewModel.apod {
-                    VStack {
-                        HStack {
-                            Text(apod.title)
-                                .padding(.vertical, 8)
-                                .font(Font.custom("SF Pro Rounded Medium", size: 24))
-                            Spacer()
+                        .onChange(of: selectedDate) { oldDate, newDate in
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "yyyy-MM-dd"
+                            let dateString = dateFormatter.string(from: newDate)
+                            viewModel.fetch(for: dateString)
+                            showDatePicker.toggle()
                         }
-                        .padding(.horizontal)
-                        .padding(.top, 8)
-                        
-                        // Check the media type
-                        if apod.media_type == "video" {
-                            WebView(urlString: apod.url)
-                                .frame(height: 300) // Set a fixed height for the video player
-                                .padding(.horizontal)
-                        } else {
-                            ImageView(apod.url)
-                                .padding(.horizontal)
-                        }
-                        
-                        WordByWordTextView("Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. The information is provided by NASA.", interval: 0.015)
-                            .foregroundStyle(.secondary)
-                            .font(Font.custom("SF Pro Rounded Regular", size: 14))
+                        .tint(.SOUR)
+                        .animation(.easeInOut, value: showDatePicker)
+                }
+                
+                ScrollView {
+                    if let errorMessage = viewModel.errorMessage {
+                        Text(errorMessage)
                             .padding()
-                        
-                        if !apod.explanation.isEmpty {
-                            WordByWordTextView(apod.explanation, interval: 0.015)
-                                .padding(.horizontal)
-                                .font(Font.custom("SF Pro Rounded Regular", size: 16))
+                            .foregroundStyle(.red)
+                    } else if let apod = viewModel.apod {
+                        VStack {
+                            VStack(spacing: 8) {
+                                VStack {
+                                    HStack {
+                                        Text("Astronomy Picture of the Day")
+                                            .font(Font.system(size: 16))
+                                            .textCase(.uppercase)
+                                            .foregroundStyle(.secondary)
+                                            .onAppear(perform: {
+                                                if !done {
+                                                    today = viewModel.apod!.date
+                                                    done = true
+                                                }})
+                                        Spacer()
+                                    }
+                                    Divider()
+                                        .tint(.secondary)
+                                }
+                                
+                                VStack {
+                                    HStack {
+                                        Text(apod.title)
+                                            .font(Font.system(size: 42))
+                                            .bold()
+                                            .fontWidth(.compressed)
+                                        Spacer()
+                                    }
+                                    HStack {
+                                        Text(convertDateString(dateString: apod.date))
+                                            .italic()
+                                            .font(.body)
+                                            .fontDesign(.serif)
+                                        Spacer()
+                                    }
+                                }
+                            }
+                            .padding()
+                            
+                            if apod.media_type == "video" {
+                                WebView(urlString: apod.url)
+                                    .frame(height: 300)
+                                    .padding(.horizontal)
+                            } else {
+                                ImageView(apod.url)
+                                    .padding(.horizontal)
+                            }
+                            
+                            if !apod.explanation.isEmpty {
+                                VStack {
+                                    HStack {
+                                        Text("a brief explanation")
+                                            .font(Font.system(size: 16))
+                                            .textCase(.uppercase)
+                                            .foregroundStyle(.secondary)
+                                        Spacer()
+                                    }
+                                    Divider()
+                                        .tint(.secondary)
+                                }
+                                .padding([.top, .horizontal])
+                                
+                                Text(apod.explanation)
+                                    .italic()
+                                    .font(.body)
+                                    .fontDesign(.serif)
+                                    .padding(.horizontal)
+                            }
                         }
-                        
+                    } else {
+                        ProgressView("Loading...")
+                            .padding()
                     }
-                } else {
-                    LoadingView(color: .labelColorMod)
-                        .frame(width: 50, height: 25)
-                        .padding()
                 }
             }
-            .navigationTitle("Today's Picture")
-            .onAppear(perform: {
+            .navigationBarItems(trailing: Button(action: {
+                selectedDate = convertStringToDate(dateString: viewModel.apod?.date ?? "")
+                withAnimation {
+                    showDatePicker.toggle()
+                }
+            }) {
+                Image(systemName: "calendar.badge.plus")
+                    .imageScale(.large)
+            })
+            .onAppear {
                 if !fetched {
                     viewModel.fetch()
                     fetched = true
                 }
             }
-                        )
-//            .onAppear(perform: {Haptics.shared.vibrate(for: .success)})
-            
         }
-        .navigationTitle("Today's Picture")
-        
     }
     
-    
+    var dateRange: ClosedRange<Date> {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let minDate = dateFormatter.date(from: "1995-06-16")!
+        let maxDate = dateFormatter.date(from: today)!
+        return minDate...maxDate
+    }
 }
 
+func convertStringToDate(dateString: String) -> Date {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+    dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+    return dateFormatter.date(from: dateString) ?? Date()
+}
+
+// View for displaying images
 struct ImageView: View {
-    
     @ObservedObject var imageLoader = ImageLoader()
     
     init(_ url: String) {
@@ -87,12 +154,13 @@ struct ImageView: View {
     
     var body: some View {
         if let image = imageLoader.downloadedImage {
-            return Image(uiImage: image)
+            Image(uiImage: image)
                 .resizable()
-                .aspectRatio(contentMode: .fit) // Or use .fill as per your need
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .aspectRatio(contentMode: .fit)
         } else {
-            return Image("").resizable()
-                .aspectRatio(contentMode: .fit) // Or use .fill as per your need
+            ProgressView("Loading...")
+                .padding()
         }
     }
 }
@@ -116,7 +184,6 @@ struct WebView: UIViewRepresentable {
         // Leave this empty for now
     }
 }
-
 
 struct WordByWordTextView: View {
     let fullText: String
@@ -142,7 +209,6 @@ struct WordByWordTextView: View {
                 }
             Spacer()
         }
-        
     }
     
     private func animateText() {
@@ -158,3 +224,16 @@ struct WordByWordTextView: View {
         }
     }
 }
+
+func convertDateString(dateString: String) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    
+    guard let date = dateFormatter.date(from: dateString) else {
+        return "Invalid date"
+    }
+    
+    dateFormatter.dateStyle = .full
+    return dateFormatter.string(from: date)
+}
+

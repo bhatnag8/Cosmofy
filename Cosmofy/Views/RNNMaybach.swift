@@ -9,370 +9,398 @@ import SwiftUI
 import MapKit
 import WeatherKit
 import CoreLocation
+import VTabView
 
 var fetchedEvents = [Event]()
 var fetchedErrorMessage: String?
 
-struct RNNMaybach: View {
-    @State private var showSheet: Bool = false
-    @State private var events = [Event]()
-    @State private var errorMessage: String?
-    @State private var coors = [CLLocationCoordinate2D]()
-    @Binding var isLoading: Bool
-    @State private var selectedResult: Event?
-    @State private var showDetails: Bool = false
-    @StateObject private var weatherViewModel = WeatherViewModel() // Initialize here
+struct MapWithEvents: View {
+    @State var event: Event?
+    @State var selected: Bool = false
+    @StateObject private var weatherViewModel = WeatherViewModel()
+    
+    var units = ["°C", "°F"]
+    @State private var selectedUnit = "°C"
+    
     
     var body: some View {
-        NavigationView {
-            if isLoading {
-                ScrollView {
-                    VStack {
-//                        HStack {
-//                            Text("Nature")
-//                                .font(Font.custom("SF Pro Rounded Bold", size: 34))
-//                            Text("Scope")
-//                                .font(Font.custom("SF Pro Rounded Bold", size: 34))
-//                                .foregroundStyle(.secondary)
-//                            Spacer()
-//                        }
-//                        .padding([.top, .horizontal])
-                        
-                        HStack {
-                            Text("Overview")
-                                .font(Font.custom("SF Pro Rounded Medium", size: 20))
-                            
-                            Spacer()
-                        }
-                        .padding([.horizontal])
-                        
-                        
-                        ZStack {
-                            Color.mint
-                            
-                            VStack(alignment: .leading) {
-                                Text("Nature Scope offers real-time access to natural events and disasters happening around the world. This data is provided by NASA.")
-                                    .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                                    .foregroundStyle(.white)
-                                    .padding(.vertical)
-                                    .padding(.horizontal, 8)
-                                    .multilineTextAlignment(.leading)
-                                
-                                Text("The events being shown are only for the year 2024.")
-                                    .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                                    .foregroundStyle(.white)
-                                    .padding(.bottom)
-                                    .padding(.horizontal, 8)
-                                    .multilineTextAlignment(.leading)
-                            }
-                            
-                        }
-                        
-                        
-                        
-                        ProgressView("Loading Events...")
-                            .progressViewStyle(CircularProgressViewStyle())
-                            .padding()
-                        
-
-                        
-                        VStack {
-                            HStack {
-                                Text("List of all the available event categories supported:")
-                                    .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                                    .multilineTextAlignment(.leading)
-                                    .padding(.horizontal)
-                                Spacer()
-                            }
-                            
-                            
-                            ForEach(categories) { category in
-                                categoryView(category: category)
-                                    .padding(.horizontal)
-                                    .padding(.vertical, 2)
-                            }
-                        }
-                        .padding(.vertical)
+        NavigationStack {
+            ZStack {
+                Map(selection: $event) {
+                    ForEach(fetchedEvents, id: \.self) { event in
+                        Marker("", systemImage: markerImage(for: event.categories.first?.id ?? "default"),
+                               coordinate: CLLocationCoordinate2D(
+                                latitude: event.geometry.last?.coordinates.last ?? -999,
+                                longitude: event.geometry.last?.coordinates.first ?? -999)
+                        )
+                        .tint(markerTint(for: event.categories.first?.id ?? "default"))
                     }
                 }
-                .navigationTitle("Nature Scope")
-                .onAppear {
-                    UINavigationBar.appearance().largeTitleTextAttributes = [
-                        .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 34, weight: .semibold),
-                    ]
+                .onChange(of: event, {
+                    withAnimation {
+                        selected = true
+                        
+                    }
+                })
+                .mapControls {
+                    MapCompass()
+                    MapScaleView()
+                    MapPitchToggle()
                 }
-
+                .navigationTitle("Map")
+                .navigationBarTitleDisplayMode(.inline)
+                .mapStyle(.standard(elevation: .realistic))
+                .alert(isPresented: .constant(fetchedErrorMessage != nil), content: {
+                    Alert(title: Text("Error"), message: Text(fetchedErrorMessage ?? "Unknown error"), dismissButton: .default(Text("OK")))
+                })
                 
-            } else if errorMessage != nil {
-                Text(errorMessage ?? "Unknown error")
-                    .padding()
-                    .foregroundColor(.red)
-            } else {
-                
-                ScrollView {
+                if selected {
                     VStack {
-//                        HStack {
-//                            Text("Nature")
-//                                .font(Font.custom("SF Pro Rounded Bold", size: 34))
-//                            Text("Scope")
-//                                .font(Font.custom("SF Pro Rounded Bold", size: 34))
-//                                .foregroundStyle(.secondary)
-//                            Spacer()
-//                        }
-//                        .padding([.top, .horizontal])
                         
-                        HStack {
-                            Text("Overview")
-                                .font(Font.custom("SF Pro Rounded Medium", size: 20))
-                            
-                            Spacer()
-                        }
-                        .padding([.horizontal])
+                        Spacer()
                         
                         
-                        ZStack {
-                            Color.mint
-                            
-                            VStack(alignment: .leading) {
-                                Text("Nature Scope offers real-time access to natural events and disasters happening around the world. This data is provided by NASA.")
-                                    .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                                    .foregroundStyle(.white)
-                                    .padding(.vertical)
-                                    .padding(.horizontal, 8)
-                                    .multilineTextAlignment(.leading)
+                        
+                        VTabView(indexPosition: .trailing) {
+                            // View 1
+                            VStack {
+                                HStack {
+                                    VStack {
+                                        HStack {
+                                            Text("Event name")
+                                                .font(.caption)
+                                                .textCase(.uppercase)
+                                                .foregroundStyle(.secondary)
+                                            
+                                            Spacer()
+                                            
+                                        }
+                                        Divider()
+                                    }
+                                    .padding(.trailing, 12)
+                                    
+                                    
+                                    Spacer()
+                                    
+                                    Image(systemName: "xmark.circle.fill")
+                                        .resizable()
+                                        .frame(width: 25, height: 25)
+                                        .padding(.trailing, 12)
+                                        .onTapGesture {
+                                            withAnimation {
+                                                selected = false
+                                            }
+                                        }
+                                    
+                                }
                                 
-                                Text("The events being shown are only for the year 2024.")
-                                    .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                                    .foregroundStyle(.white)
-                                    .padding(.bottom)
-                                    .padding(.horizontal, 8)
-                                    .multilineTextAlignment(.leading)
+                                
+                                
+                                
+                                HStack {
+                                    Text(event?.title ?? "")
+                                        .multilineTextAlignment(.leading)
+                                        .font(Font.custom("SF Pro Rounded Medium", size: 18))
+                                    
+                                    Spacer()
+                                }
+                                .padding(.trailing, 36)
+                                
+                                if event != nil {
+                                    ForEach(event?.categories ?? []) { category in
+                                        HStack(spacing: 8) {
+                                            ZStack {
+                                                Circle().fill(Color(markerTint(for: category.id)).gradient)
+                                                Image(systemName: markerImage(for: category.id))
+                                            }
+                                            .foregroundStyle(markerTint(for: category.id) == .white ? .black : .white)
+                                            .frame(maxHeight: 35)
+                                            
+                                            VStack(spacing: 0) {
+                                                HStack {
+                                                    Text(category.title)
+                                                        .font(Font.custom("SF Pro Rounded Medium", size: 18))
+                                                    Spacer()
+                                                }
+                                                
+                                                HStack {
+                                                    Text("Event Category")
+                                                        .font(.caption)
+                                                        .foregroundStyle(.secondary)
+                                                    Spacer()
+                                                }
+                                                
+                                            }
+                                            
+                                            
+                                            Spacer()
+                                        }
+                                        
+                                        Spacer()
+                                        
+                                        HStack {
+                                            Text("Weather")
+                                                .font(Font.custom("SF Pro Rounded Medium", size: 16))
+                                            
+                                            Spacer()
+                                            
+                                            if category == event?.categories.first {
+                                                let firstCoordinate = event?.geometry.first?.coordinates
+                                                if let firstCoordinate = firstCoordinate {
+                                                    let latitude = firstCoordinate[1]
+                                                    let longitude = firstCoordinate[0]
+                                                    if let weather = weatherViewModel.weather {
+                                                        HStack(spacing: 2) {
+                                                            Image(systemName: weather.currentWeather.symbolName)
+                                                            Text(String(format: "%.1f", weather.currentWeather.temperature.value) + " \(weather.currentWeather.temperature.unit.symbol)")
+                                                                .font(Font.custom("SF Pro Rounded Medium", size: 18))
+                                                        }
+                                                        .onAppear {
+                                                            weatherViewModel.fetchWeather(latitude: latitude, longitude: longitude)
+                                                        }
+                                                        .onChange(of: firstCoordinate, {
+                                                            weatherViewModel.fetchWeather(latitude: latitude, longitude: longitude)
+                                                        })
+                                                    } else {
+                                                        ProgressView()
+                                                            .progressViewStyle(.circular)
+                                                            .onAppear {
+                                                                weatherViewModel.fetchWeather(latitude: latitude, longitude: longitude)
+                                                            }
+                                                    }
+                                                }
+                                            }
+                                            
+                                            
+                                            
+                                            
+                                        }
+                                        
+                                        
+                                    }
+                                }
+                                
+                                
+                                
+                                
+                                
                             }
                             
-                        }
-                        
-                        NavigationLink(destination: ZStack {
-                            Map(selection: $selectedResult) {
-                                ForEach(events, id: \.self) { event in
-                                    Marker("\(event.title)", systemImage: markerImage(for: event.categories.first?.id ?? "default"),
-                                           coordinate: CLLocationCoordinate2D(
-                                            latitude: event.geometry.last?.coordinates.last ?? -999,
-                                            longitude: event.geometry.last?.coordinates.first ?? -999)
-                                    )
-                                    .tint(markerTint(for: event.categories.first?.id ?? "default"))
+                            
+                            // View 2
+                            VStack {
+                                if event?.geometry.count == 1 {
+                                    Map(coordinateRegion: .constant(MKCoordinateRegion(
+                                        center: CLLocationCoordinate2D(
+                                            latitude: ((event?.geometry.first?.coordinates[1] ?? 0) + (event?.geometry.last?.coordinates[1] ?? 0))/2,
+                                            longitude: ((event?.geometry.first?.coordinates[0] ?? 0) + (event?.geometry.last?.coordinates[0] ?? 0))/2),
+                                        span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))),
+                                        interactionModes: [], annotationItems: event?.geometry ?? []) { geom in
+                                        MapAnnotation(coordinate: CLLocationCoordinate2D(
+                                            latitude: geom.coordinates[1],
+                                            longitude: geom.coordinates[0])) {
+                                                Circle()
+                                                    .strokeBorder(Color.yellow, lineWidth: 2)
+                                                    .frame(width: 7, height: 7)
+                                            }
+                                    }
+                                        .frame(height: 168)
+                                    //                                    .clipShape(RoundedRectangle(cornerRadius: 8)) // Apply corner radius
+                                        .mapStyle(.hybrid(showsTraffic: false))
+                                } else {
+                                    Map(interactionModes: []) {
+                                        ForEach(event?.geometry ?? []) { geo in
+                                            Annotation(coordinate: CLLocationCoordinate2D(
+                                                latitude: geo.coordinates[1],
+                                                longitude: geo.coordinates[0]), content: {
+                                                    Circle()
+                                                        .foregroundStyle(.red)
+                                                        .frame(width: 6, height: 6)
+                                                }) {
+                                                    
+                                                }
+                                        }
+                                    }
+                                    
+                                    .frame(height: 168)
+                                    .mapStyle(.hybrid(showsTraffic: false))
                                 }
                             }
-                            .sheet(isPresented: $showDetails) {
-                                ScrollView(.vertical, content: {
-                                    VStack(alignment: .leading, spacing: 15, content: {
-                                        MapDetails(event: selectedResult, visible: $showDetails, weatherViewModel: weatherViewModel) // Pass here
-                                            .presentationDetents([.height(212)])
-                                            .presentationBackgroundInteraction(.enabled(upThrough: .height(212)))
-                                            .presentationCornerRadius(24)
-                                    })
-                                    .padding()
-                                })
-                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                                .presentationDetents([.height(212), .medium, .large])
-                                .presentationCornerRadius(24)
-                                .presentationBackground(.regularMaterial)
-                                .presentationBackgroundInteraction(.enabled(upThrough: .large))
-                                .bottomMaskForSheet(mask: false)
+                            .clipShape(RoundedRectangle(cornerRadius: 12)) // Apply corner radius
+                            
+                            
+                            // View 3
+                            VStack {
+                                VStack(spacing: 4) {
+                                    HStack {
+                                        Text("First Record")
+                                            .font(Font.custom("SF Pro Rounded Regular", size: 15))
+                                            .foregroundStyle(.secondary)
+                                        Spacer()
+                                    }
+                                    HStack {
+                                        Text(formattedDate(from: event?.geometry.first?.date ?? ""))
+                                            .font(Font.custom("SF Pro Rounded Medium", size: 18))
+                                        Spacer()
+                                    }
+                                }
+                                .padding(.top, 6)
+                                
+                                
+                                VStack(spacing: 4) {
+                                    HStack {
+                                        Text("Latest Record")
+                                            .font(Font.custom("SF Pro Rounded Regular", size: 15))
+                                            .foregroundStyle(.secondary)
+                                        Spacer()
+                                    }
+                                    HStack {
+                                        Text(formattedDate(from: event?.geometry.last?.date ?? ""))
+                                            .font(Font.custom("SF Pro Rounded Medium", size: 18))
+                                        Spacer()
+                                    }
+                                }
+                                .padding(.vertical, 6)
                             }
-                            .mapStyle(.standard(elevation: .realistic))
-                            .onAppear {
-                                self.events = fetchedEvents
-                                self.errorMessage = fetchedErrorMessage
-                            }
-                            .alert(isPresented: .constant(fetchedErrorMessage != nil), content: {
-                                Alert(title: Text("Error"), message: Text(fetchedErrorMessage ?? "Unknown error"), dismissButton: .default(Text("OK")))
-                            })
-                             
                             
                         }
-                        .toolbar(.hidden)
-                        ) {
-                            HStack() {
-                                Text("View Events")
-                                    .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                                    .foregroundStyle(.green)
-                                    .padding(.vertical)
-                                    .padding(.horizontal, 16)
+                        .tabViewStyle(PageTabViewStyle())
+                        .padding()
+                        .frame(height: 200)
+                        .frame(maxWidth: .infinity)
+                        .background(.ultraThinMaterial)
+                        .clipShape(RoundedRectangle(cornerRadius: 24))
+                    }
+                    .padding(.horizontal)
+                    .padding(.bottom, 24)
+                    
+                } else {
+                    
+                }
+                
+                
+            }
+        }
+        
+    }
+}
 
-                                
-                                Spacer()
-                                
-                                Image(systemName: "chevron.right")
-                                    .foregroundStyle(.green)
-                                    .padding(.horizontal, 24)
 
-                                
-                            }
-                            .padding(.top, 8)
 
+struct RNNMaybach: View {
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack {
+                    HStack {
+                        Text("from the NASA Earth Observatory")
+                            .font(Font.system(size: 16))
+                            .textCase(.uppercase)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                    }
+                    Divider()
+                    
+                    VStack {
+                        HStack {
+                            Text("Browse the Entire Globe Daily and Look For Natural Events as They Occur")
+                                .textCase(.uppercase)
+                                .font(Font.system(size: 42))
+                                .bold()
+                                .fontWidth(.compressed)
+                            Spacer()
                         }
+                    }
+                    
+                    HStack {
+                        Text("Displaying All Events since \(getFormattedDate14DaysAgo())")
+                            .multilineTextAlignment(.leading)
+                            .foregroundStyle(.secondary)
+                            .fontDesign(.serif)
+                            .italic()
+                        Spacer()
+                    }
+                    .padding(.top, 2)
+                    .padding(.bottom, 8)
+                    
+                    NavigationLink(destination: MapWithEvents()) {
                         
-
+                        HStack {
+                            Text("Enter Nature Scope")
+                                .frame(maxWidth: .infinity)
+                                .fontWeight(.medium)
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(Color.white)
+                        }
+                        .padding()
+                        .background(Color.green.cornerRadius(8))
                         
+                    }
+                    
+                    HStack {
+                        Text("Current categories")
+                            .font(Font.system(size: 16))
+                            .textCase(.uppercase)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                    }
+                    .padding(.top)
+                    Divider()
+                    
+                    ForEach(categories) { category in
                         VStack {
                             HStack {
-                                Text("List of all the available event categories supported:")
-                                    .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                                    .multilineTextAlignment(.leading)
-                                    .padding(.horizontal)
-                                Spacer()
-                            }
-                            
-                            
-                            ForEach(categories) { category in
-                                categoryView(category: category)
-                                    .padding(.horizontal)
-                                    .padding(.vertical, 2)
+                                Text(category.id)
+                                    .font(.largeTitle)
+                                    .fontDesign(.serif)
+                                    .frame(width: 45)
+                                VStack {
+                                    HStack {
+                                        Text(category.title)
+                                            .font(Font.custom("SF Pro Rounded Medium", size: 20))
+                                        
+                                        Spacer()
+                                    }
+                                    
+                                    HStack {
+                                        Text(category.description)
+                                            .multilineTextAlignment(.leading)
+                                            .foregroundStyle(.secondary)
+                                            .fontDesign(.serif)
+                                            .italic()
+                                        Spacer()
+                                    }
+                                }
                             }
                         }
-                        .padding(.vertical)
+                        .padding(.vertical, 8)
+                        
+                        
                     }
+                    Spacer()
                 }
-                .navigationTitle("Nature Scope")
-                .onAppear {
-                    UINavigationBar.appearance().largeTitleTextAttributes = [
-                        .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 34, weight: .semibold),
-                    ]
-                }
-    
-
+                .padding()
             }
+            .navigationTitle("‎‎‏‏‎Nature Scope")
+            .onAppear(perform: {
+                UINavigationBar.appearance().largeTitleTextAttributes = [
+                    .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 34, weight: .semibold),
+                ]
+            })
         }
-        .onChange(of: selectedResult) { oldValue, newValue in
-            showDetails = newValue != nil
-        }
-        .toolbar(.hidden)
+        
     }
 }
-
-
-
-
-
-
-
-struct Category: Identifiable {
-    var id: String
-    var title: String
-    var description: String
-}
-
-let categories: [Category] = [
-    Category(id: "1", title: "Drought", description: "Long lasting absence of precipitation affecting agriculture and livestock, and the overall availability of food and water."),
-    Category(id: "2", title: "Dust and Haze", description: "Related to dust storms, air pollution and other non-volcanic aerosols. Volcano-related plumes shall be included with the originating eruption event."),
-    Category(id: "3", title: "Earthquakes", description: "Related to all manner of shaking and displacement. Certain aftermath of earthquakes may also be found under landslides and floods."),
-    Category(id: "4", title: "Floods", description: "Related to aspects of actual flooding--e.g., inundation, water extending beyond river and lake extents."),
-    Category(id: "5", title: "Landslides", description: "Related to landslides and variations thereof: mudslides, avalanche."),
-    Category(id: "6", title: "Manmade", description: "Events that have been human-induced and are extreme in their extent."),
-    Category(id: "7", title: "Sea and Lake Ice", description: "Related to all ice that resides on oceans and lakes, including sea and lake ice (permanent and seasonal) and icebergs."),
-    Category(id: "8", title: "Severe Storms", description: "Related to the atmospheric aspect of storms (hurricanes, cyclones, tornadoes, etc.). Results of storms may be included under floods, landslides, etc."),
-    Category(id: "9", title: "Snow", description: "Related to snow events, particularly extreme/anomalous snowfall in either timing or extent/depth."),
-    Category(id: "10", title: "Temperature Extremes", description: "Related to anomalous land temperatures, either heat or cold."),
-    Category(id: "11", title: "Volcanoes", description: "Related to both the physical effects of an eruption (rock, ash, lava) and the atmospheric (ash and gas plumes)."),
-    Category(id: "12", title: "Water Color", description: "Related to events that alter the appearance of water: phytoplankton, red tide, algae, sediment, whiting, etc."),
-    Category(id: "13", title: "Wildfires", description: "Wildfires includes all nature of fire, including forest and plains fires, as well as urban and industrial fire events. Fires may be naturally caused or manmade.")
-]
-
-@ViewBuilder
-func categoryView(category: Category) -> some View {
-    VStack(alignment: .leading, spacing: 2) {
-        HStack {
-            Image(systemName: "smallcircle.filled.circle.fill")
-                .font(.caption2)
-            Text(category.title)
-                .font(Font.custom("SF Pro Rounded Medium", size: 16))
-            Spacer()
-        }
-//        Text(category.description)
-//            .foregroundStyle(.secondary)
-//            .font(Font.custom("SF Pro Rounded Regular", size: 14))
-//            .multilineTextAlignment(.leading)
-    }
-}
-
-
-struct EONETInfoView: View {
-    var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            Text("NASA's EONET API")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding(.bottom, 10)
-            
-            Text("Overview")
-                .font(.title2)
-                .fontWeight(.semibold)
-            
-            Text("The Earth Observatory Natural Event Tracker (EONET) API provides access to a curated source of natural event information. This API allows users to obtain real-time data about natural events around the world.")
-                .padding(.bottom, 10)
-            
-            Text("Key Features")
-                .font(.title2)
-                .fontWeight(.semibold)
-            
-            VStack(alignment: .leading, spacing: 10) {
-                HStack(alignment: .top) {
-                    Image(systemName: "circle.fill")
-                        .font(.system(size: 8))
-                        .foregroundColor(.blue)
-                    Text("Real-time data on natural events such as wildfires, volcanic eruptions, and hurricanes.")
-                }
-                
-                HStack(alignment: .top) {
-                    Image(systemName: "circle.fill")
-                        .font(.system(size: 8))
-                        .foregroundColor(.blue)
-                    Text("Categorized data to filter events by type, date, and location.")
-                }
-                
-                HStack(alignment: .top) {
-                    Image(systemName: "circle.fill")
-                        .font(.system(size: 8))
-                        .foregroundColor(.blue)
-                    Text("Geospatial information to visualize event locations on maps.")
-                }
-                
-                HStack(alignment: .top) {
-                    Image(systemName: "circle.fill")
-                        .font(.system(size: 8))
-                        .foregroundColor(.blue)
-                    Text("Access to metadata and links to satellite imagery for detailed analysis.")
-                }
-                
-                HStack(alignment: .top) {
-                    Image(systemName: "circle.fill")
-                        .font(.system(size: 8))
-                        .foregroundColor(.blue)
-                    Text("Historical data archive for tracking the progression and impact of past events.")
-                }
-            }
-            
-            Spacer()
-        }
-        .padding()
-        .background(Color(.systemBackground).opacity(0.9))
-        .cornerRadius(15)
-        .shadow(radius: 10)
-        .padding()
-    }
-}
-
-
 
 
 #Preview {
-    TabBarView()
+    RNNMaybach()
 }
 
 class WeatherViewModel: ObservableObject {
     @Published var weather: Weather?
     private let weatherService = WeatherService.shared
-
+    
     func fetchWeather(latitude: Double, longitude: Double) {
         Task {
             do {
@@ -432,7 +460,7 @@ func MapDetails(event: Event?, visible: Binding<Bool>, weatherViewModel: Weather
                             
                         }
                         
-                            
+                        
                         Spacer()
                         if category == event.categories.first {
                             let firstCoordinate = event.geometry.first?.coordinates
@@ -477,7 +505,7 @@ func MapDetails(event: Event?, visible: Binding<Bool>, weatherViewModel: Weather
                     }
                 }
                 .padding(.top, 6)
-
+                
                 
                 VStack(spacing: 4) {
                     HStack {
@@ -504,14 +532,14 @@ func MapDetails(event: Event?, visible: Binding<Bool>, weatherViewModel: Weather
                         MapAnnotation(coordinate: CLLocationCoordinate2D(
                             latitude: geom.coordinates[1],
                             longitude: geom.coordinates[0])) {
-                            Circle()
-                                .strokeBorder(Color.yellow, lineWidth: 2)
-                                .frame(width: 7, height: 7)
-                        }
+                                Circle()
+                                    .strokeBorder(Color.yellow, lineWidth: 2)
+                                    .frame(width: 7, height: 7)
+                            }
                     }
-                    .frame(height: 200)
-                    .clipShape(RoundedRectangle(cornerRadius: 15)) // Apply corner radius
-                    .mapStyle(.hybrid(showsTraffic: false))
+                        .frame(height: 200)
+                        .clipShape(RoundedRectangle(cornerRadius: 15)) // Apply corner radius
+                        .mapStyle(.hybrid(showsTraffic: false))
                 } else {
                     Map() {
                         ForEach(event.geometry) { geo in
@@ -522,7 +550,7 @@ func MapDetails(event: Event?, visible: Binding<Bool>, weatherViewModel: Weather
                                         .foregroundStyle(.red)
                                         .frame(width: 6, height: 6)
                                 }) {
-                                   
+                                    
                                 }
                         }
                     }
@@ -543,6 +571,22 @@ func MapDetails(event: Event?, visible: Binding<Bool>, weatherViewModel: Weather
             Text("No event data available")
         }
     }
+}
+
+func getFormattedDate14DaysAgo() -> String {
+    // Get the current date
+    let currentDate = Date()
+    
+    // Subtract 14 days from the current date
+    guard let date14DaysAgo = Calendar.current.date(byAdding: .day, value: -13, to: currentDate) else {
+        return "Date calculation error"
+    }
+    
+    // Format the date as "MMMM d"
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "MMMM d"
+    
+    return dateFormatter.string(from: date14DaysAgo)
 }
 
 private func markerImage(for title: String) -> String {
@@ -668,16 +712,38 @@ fileprivate extension UIView {
 }
 
 func formattedDate(from dateString: String) -> String {
-        let inputFormatter = DateFormatter()
-        inputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        
-        let outputFormatter = DateFormatter()
-        outputFormatter.dateStyle = .long
-        outputFormatter.timeStyle = .short
-        
-        if let date = inputFormatter.date(from: dateString) {
-            return outputFormatter.string(from: date)
-        } else {
-            return "Invalid Date"
-        }
+    let inputFormatter = DateFormatter()
+    inputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    
+    let outputFormatter = DateFormatter()
+    outputFormatter.dateStyle = .long
+    outputFormatter.timeStyle = .short
+    
+    if let date = inputFormatter.date(from: dateString) {
+        return outputFormatter.string(from: date)
+    } else {
+        return "Invalid Date"
     }
+}
+
+struct Category: Identifiable {
+    var id: String
+    var title: String
+    var description: String
+}
+
+let categories: [Category] = [
+    Category(id: "1", title: "Drought", description: "Long lasting absence of precipitation affecting agriculture and livestock, and the overall availability of food and water."),
+    Category(id: "2", title: "Dust and Haze", description: "Related to dust storms, air pollution and other non-volcanic aerosols. Volcano-related plumes shall be included with the originating eruption event."),
+    Category(id: "3", title: "Earthquakes", description: "Related to all manner of shaking and displacement. Certain aftermath of earthquakes may also be found under landslides and floods."),
+    Category(id: "4", title: "Floods", description: "Related to aspects of actual flooding--e.g., inundation, water extending beyond river and lake extents."),
+    Category(id: "5", title: "Landslides", description: "Related to landslides and variations thereof: mudslides, avalanche."),
+    Category(id: "6", title: "Manmade", description: "Events that have been human-induced and are extreme in their extent."),
+    Category(id: "7", title: "Sea and Lake Ice", description: "Related to all ice that resides on oceans and lakes, including sea and lake ice (permanent and seasonal) and icebergs."),
+    Category(id: "8", title: "Severe Storms", description: "Related to the atmospheric aspect of storms (hurricanes, cyclones, tornadoes, etc.). Results of storms may be included under floods, landslides, etc."),
+    Category(id: "9", title: "Snow", description: "Related to snow events, particularly extreme/anomalous snowfall in either timing or extent/depth."),
+    Category(id: "10", title: "Temperature Extremes", description: "Related to anomalous land temperatures, either heat or cold."),
+    Category(id: "11", title: "Volcanoes", description: "Related to both the physical effects of an eruption (rock, ash, lava) and the atmospheric (ash and gas plumes)."),
+    Category(id: "12", title: "Water Color", description: "Related to events that alter the appearance of water: phytoplankton, red tide, algae, sediment, whiting, etc."),
+    Category(id: "13", title: "Wildfires", description: "Wildfires includes all nature of fire, including forest and plains fires, as well as urban and industrial fire events. Fires may be naturally caused or manmade.")
+]

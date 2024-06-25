@@ -9,6 +9,8 @@
 import Foundation
 import CryptoKit
 
+var AES_Complete: Bool = false
+
 class InteractingViewModel: ObservableObject {
     
     @Published var isInteractingWithChatGPT = false
@@ -84,7 +86,7 @@ class API: @unchecked Sendable {
     private var historyList = [Message]()
     private let urlSession = URLSession.shared
     private var urlRequest: URLRequest {
-        let url = URL(string: "https://api.openai.com/v1/chat/completions" )!
+        let url = URL(string: "http://api.arryan.xyz:8002/api/providers/openai/v1/chat/completions" )!
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         headers.forEach {
@@ -119,6 +121,8 @@ class API: @unchecked Sendable {
 
         fetchApiKey { [weak self] decryptedApiKey in
             self?.apiKey = decryptedApiKey
+            print("Swift: AES Complete, Successfully Authenticated")
+            AES_Complete = true
         }
     }
     
@@ -218,7 +222,7 @@ class API: @unchecked Sendable {
                            let data = line.dropFirst(6).data(using: .utf8),
                            let response = try? self.jsonDecoder.decode(StreamCompletionResponse.self, from: data),
                            let text = response.choices.first?.delta.content {
-                            Haptics.shared.impact(for: .light)
+                            //Haptics.shared.impact(for: .light)
                             responseText += text
                             continuation.yield(text)
 //                            try await Task.sleep(nanoseconds: 2 * 10000000)  // 2 seconds in nanoseconds
@@ -302,3 +306,4 @@ extension Data {
         self = data
     }
 }
+

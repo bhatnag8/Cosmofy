@@ -28,28 +28,46 @@ struct IOTDView: View {
             } else if let apod = viewModel.apod {
                 VStack {
                     HStack {
-                        Text("Image of the Day")
+                        Text("Astronomy Picture of the Day")
                             .font(.headline)
-                        Spacer()
-                    }
-                    .padding(.horizontal)
-                    
-                    HStack {
-                        Text("from NASA")
-                            .font(.headline)
+                            .textCase(.uppercase)
                             .foregroundStyle(.secondary)
+
                         Spacer()
                     }
                     .padding([.bottom, .horizontal])
+
+//                    HStack {
+//                        Text("from NASA")
+//                            .font(.headline)
+//                            .foregroundStyle(.secondary)
+//                        Spacer()
+//                    }
+//                    .padding([.bottom, .horizontal])
                     
+                    Divider()
                     
-                    HStack {
-                        Text(apod.title)
-                            .font(.subheadline)
-                            .multilineTextAlignment(.leading)
-                        Spacer()
+                    VStack {
+                        HStack {
+                            Text(apod.title)
+                                .bold()
+                                .fontWidth(.compressed)
+                                .font(.title2)
+                                .multilineTextAlignment(.leading)
+                            Spacer()
+                        }
+                        .padding(.horizontal)
+                        HStack {
+                            Text(convertDateString(dateString: apod.date))
+                                .italic()
+                                .font(.body)
+                                .fontDesign(.serif)
+                            Spacer()
+                        }
+                        .padding(.horizontal)
                     }
-                    .padding()
+                    .padding(.vertical)
+                    
                     
                     if apod.media_type == "image" {
                         ImageView(apod.url)
@@ -60,13 +78,28 @@ struct IOTDView: View {
                             Text("Video content cannot be displayed on Watch. Please view it on your iPhone.")
                                 .padding()
                                 .font(.caption2)
-//                                .foregroundColor(.red)
                                 .foregroundStyle(.red)
                         }
                         .padding()
                     }
+                    
+                    VStack {
+                        HStack {
+                            Text("a brief explanation")
+                                .font(.headline)
+                                .textCase(.uppercase)
+                                .foregroundStyle(.secondary)
+                            Spacer()
+                        }
+                        Divider()
+                            .tint(.secondary)
+                    }
+                    .padding([.top, .horizontal])
+                    
                     Text(apod.explanation)
-                        .font(.caption2)
+                        .italic()
+                        .fontDesign(.serif)
+                        .font(.caption)
                         .padding()
                 }
             } else {
@@ -102,4 +135,17 @@ struct ImageView: View {
                 .padding()
         }
     }
+}
+
+
+func convertDateString(dateString: String) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    
+    guard let date = dateFormatter.date(from: dateString) else {
+        return "Invalid date"
+    }
+    
+    dateFormatter.dateStyle = .full
+    return dateFormatter.string(from: date)
 }

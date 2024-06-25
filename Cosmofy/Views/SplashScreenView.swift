@@ -31,7 +31,7 @@ struct SplashScreenView: View {
             #if !os(watchOS)
             VStack {
                 Spacer()
-                Text("- 1.1.1 -")
+                Text("- 1.2 -")
                     .font(Font.custom("SF Pro Rounded Regular", size: 17))
                     .foregroundColor(.black)
             }

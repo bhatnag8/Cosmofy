@@ -2,6 +2,35 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<false/>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSAllowsArbitraryLoadsForMedia</key>
+		<false/>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<false/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>arryan.xyz</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionMinimumTLSVersion</key>
+				<string>TLSv1.2</string>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSRequiresCertificateTransparency</key>
+				<false/>
+			</dict>
+		</dict>
+	</dict>
+	<key>CFBundleIdentifier</key>
+	<string></string>
 	<key>API_KEY_DEBUG</key>
 	<string></string>
 	<key>API_KEY_NASA</key>
@@ -21,18 +50,6 @@
 		<string>SF-Pro-Rounded-Thin.otf</string>
 		<string>SF-Pro-Rounded-Medium.otf</string>
 		<string>SF-Pro-Rounded-Ultralight.otf</string>
-		<string>SF-Mono-Bold.otf</string>
-		<string>SF-Mono-BoldItalic.otf</string>
-		<string>SF-Mono-Heavy.otf</string>
-		<string>SF-Mono-HeavyItalic.otf</string>
-		<string>SF-Mono-Light.otf</string>
-		<string>SF-Mono-LightItalic.otf</string>
-		<string>SF-Mono-Medium.otf</string>
-		<string>SF-Mono-MediumItalic.otf</string>
-		<string>SF-Mono-Regular.otf</string>
-		<string>SF-Mono-RegularItalic.otf</string>
-		<string>SF-Mono-Semibold.otf</string>
-		<string>SF-Mono-SemiboldItalic.otf</string>
 	</array>
 </dict>
 </plist>

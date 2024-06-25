@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct WatchCosmofy_Watch_AppApp: App {
+struct CosmofyCompanionWatchApp: App {
     var body: some Scene {
         WindowGroup {
             ContentViewWatch()

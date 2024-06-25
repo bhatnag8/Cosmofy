@@ -51,22 +51,25 @@ class Constants {
         
     }
 
-    static var url: URL {
-        guard let url  = URL(string: "https://apod.ellanan.com/api") else {
-            fatalError()
+    static func url(for date: String? = nil) -> URL {
+            var urlString = "https://apod.ellanan.com/api"
+            if let date = date {
+                urlString += "?date=\(date)"
+            }
+            guard let url = URL(string: urlString) else {
+                fatalError("Invalid URL")
+            }
+            return url
         }
-        return url
-    }
     
     static var session: URLSession {
         let session  = URLSession(configuration: .default)
         return session
     }
     
-    static var request: URLRequest {
-        let req = URLRequest(url: url)
-        return req
-    }
+    static func request(for date: String? = nil) -> URLRequest {
+            return URLRequest(url: url(for: date))
+        }
     
     static var decoder: JSONDecoder {
         let decoder = JSONDecoder()

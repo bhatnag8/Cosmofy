@@ -42,6 +42,7 @@ struct PlanetDetailView: View {
             VStack {
                 HStack {
                     Text(planet.name)
+                        .fontWeight(.medium)
                         .font(.title2)
                     Spacer()
                 }
@@ -154,9 +155,12 @@ struct PlanetPreview: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: 65)
+            
             Spacer()
+            
             HStack {
                 Text(planet.name)
+                    .fontWeight(.medium)
                     .font(.title2)
                 Spacer()
             }

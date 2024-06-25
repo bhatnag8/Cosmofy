@@ -38,6 +38,7 @@ struct CenterView: View {
         
         NavigationStack {
             ZStack {
+                /*
                 LinearGradient(
                     gradient: Gradient(colors: [
                         Color(hex: 0xD2DFF7), // Top-left
@@ -49,39 +50,45 @@ struct CenterView: View {
                     endPoint: .bottomTrailing
                 )
                 .edgesIgnoringSafeArea(.all)
+                 */
+                
+                Image("home-banner-1")
+                    .resizable()
+                    .ignoresSafeArea(.all)
                 
                 ScrollView {
                     VStack {
-                        HStack {
-                            VStack {
-                                HStack {
-                                    Text("Cosmofy")
-                                        .font(Font.system(size: 28, weight: .medium, design: .rounded))
-                                        .foregroundStyle(.black)
-                                    Spacer()
-                                }
-                                HStack {
-                                    Text("v1.0")
-                                        .font(Font.system(size: 18, weight: .regular, design: .monospaced))
-                                        .foregroundStyle(.black)
-                                    Spacer()
-                                }
+                        VStack {
+                            HStack {
+                                Spacer()
+                                Text("Cosmofy")
+                                    .font(.title2)
+                                    .fontWidth(.standard)
+                                    .fontDesign(.rounded)
+                                    .fontWeight(.semibold)
+                                Spacer()
                             }
-                            Spacer()
-                            Image("app-icon-4k")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 32, height: 32)
+                            
+                            Text("1.2")
+                                .font(.headline)
+                                .textCase(.uppercase)
+                                .foregroundStyle(.secondary)
+
+//                            Text("- 1.2 -")
+//                                .fontDesign(.rounded)
+//                                .italic()
+//                                .fontDesign(.serif)
+//                                .font(.title3)
                         }
-                        .padding(.horizontal)
+                        .padding()
                         
                         AstroView()
-                            .environment(\.colorScheme, .light)
-                        
+//                            .environment(\.colorScheme, .light)
                             .padding(.vertical)
                         
                     }
                 }
+                .background(.ultraThinMaterial)
                 
                 
             }
@@ -109,14 +116,12 @@ struct AstroView: View {
             if let astroResponse = astroService.astroResponse {
                 
                 HStack {
-                    Text("Live number of people in space right now: \(astroResponse.number)")
-                        .foregroundStyle(.black)
+                    Text("There are \(astroResponse.number) in Space at this Very Moment")
                         .multilineTextAlignment(.leading)
                     
-                    Spacer(minLength: 16)
+                    Spacer(minLength: 12)
                     Image(systemName: "chevron.down")
                         .rotationEffect(.degrees(isExpanded ? 180 : 0))
-                        .foregroundColor(.black)
                         .animation(.easeInOut, value: isExpanded)
                 }
                 .onTapGesture {
@@ -124,21 +129,24 @@ struct AstroView: View {
                         isExpanded.toggle()
                     }
                 }
+                .padding(.bottom)
+
                 
                 if isExpanded {
                     ForEach(astroResponse.people) { person in
                         VStack(alignment: .leading) {
                             HStack {
                                 Text(person.name)
+                                    .bold()
+                                    .multilineTextAlignment(.leading)
                                     .font(.caption)
-                                    .foregroundColor(.black)
-                                
                                 Spacer()
                             }
                             HStack {
                                 Text(person.craft)
+                                    .foregroundStyle(.secondary)
+                                    .italic()
                                     .font(.caption2)
-                                    .foregroundColor(.black)
                                 Spacer()
                             }
                         }
