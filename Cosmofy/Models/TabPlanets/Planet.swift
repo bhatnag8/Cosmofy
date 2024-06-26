@@ -144,7 +144,7 @@ let saturnPlanet = Planet(
     description: "Renowned for its stunning rings and gas giant composition.",
     visual: "Sometime in the 1600s",
     color: .colorSaturn,
-    moons: 84,
+    moons: 146,
     rings: 7,
     gravity: 10.44,
     escapeVelocity: "129,924",
