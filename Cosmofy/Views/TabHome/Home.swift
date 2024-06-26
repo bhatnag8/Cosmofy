@@ -58,11 +58,8 @@ struct Home: View {
                             Text("Cosmofy")
                                 .font(Font.custom("SF Pro Rounded Semibold", size: 32))
                             Spacer()
-                            NavigationLink(destination: ChangelogView()) {
-                                GarenText(text: "1.2", trigger: trigger)
-                                    .font(Font.system(size: 18, weight: .semibold, design: .monospaced))
-                                Image(systemName: "chevron.right")
-                            }
+                            GarenText(text: "1.2", trigger: trigger)
+                                .font(Font.system(size: 18, weight: .semibold, design: .monospaced))
                             
                         }
                         

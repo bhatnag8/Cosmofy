@@ -69,8 +69,6 @@ struct PlanetDetailView: View {
                 .padding(.bottom)
                 
                 
-                
-                
                 VStack(spacing: 8) {
                     PlanetPropertyView(title: "Natural Satellites", value: String(planet.moons), unit: "moons", color: planet.color)
                     

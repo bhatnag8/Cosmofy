@@ -17,7 +17,6 @@
 		0B161A6D2BA02123008F3D0F /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6C2BA02123008F3D0F /* Planet.swift */; };
 		0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD502AE96FE7001CFC35 /* ci_scripts */; };
 		0B1BAD572AE97736001CFC35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD562AE97736001CFC35 /* .gitignore */; };
-		0B25FC932BFCD5DE00ED1EA3 /* ChangeLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25FC922BFCD5DE00ED1EA3 /* ChangeLogView.swift */; };
 		0B298B922C1DB03B0044364E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
 		0B39A33C2C1D5799003159F9 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0B39A33B2C1D5799003159F9 /* MarkdownUI */; };
 		0B3EC2642BA4BAFE004491B7 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2632BA4BAFE004491B7 /* ImageView.swift */; };
@@ -104,7 +103,6 @@
 		0B161A6C2BA02123008F3D0F /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		0B1BAD502AE96FE7001CFC35 /* ci_scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ci_scripts; sourceTree = "<group>"; };
 		0B1BAD562AE97736001CFC35 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		0B25FC922BFCD5DE00ED1EA3 /* ChangeLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLogView.swift; sourceTree = "<group>"; };
 		0B3EC2632BA4BAFE004491B7 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		0B3EC2652BA4D16F004491B7 /* API_NASA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_NASA.swift; sourceTree = "<group>"; };
 		0B40299B2BA4FEC1004B0F43 /* IOTD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTD.swift; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				0BFB21042B9CEB1400C84FD8 /* Home.swift */,
-				0B25FC922BFCD5DE00ED1EA3 /* ChangeLogView.swift */,
 				0B3EC2632BA4BAFE004491B7 /* ImageView.swift */,
 			);
 			path = TabHome;
@@ -534,7 +531,6 @@
 				0B7671972AE4C3FE008E57B2 /* Swift.swift in Sources */,
 				0B5CC34E2BA2C84E00A7A55F /* ChartView.swift in Sources */,
 				2F4F8FC5295EC08100F7EE98 /* PlanetNode.swift in Sources */,
-				0B25FC932BFCD5DE00ED1EA3 /* ChangeLogView.swift in Sources */,
 				0B8615A82BAF6580008CCD5F /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

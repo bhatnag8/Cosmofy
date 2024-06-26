@@ -68,7 +68,7 @@ struct MapWithEvents: View {
                                     VStack(spacing: 2) {
                                         HStack {
                                             Text("Event name")
-                                                .font(.subheadline)
+                                                .font(.caption)
                                                 .textCase(.uppercase)
                                                 .foregroundStyle(.secondary)
                                             Spacer()
