@@ -45,7 +45,7 @@ func getDate14DaysAgo() -> String {
     let currentDate = Date()
     
     // Subtract 14 days from the current date
-    guard let date14DaysAgo = Calendar.current.date(byAdding: .day, value: -13, to: currentDate) else {
+    guard let date14DaysAgo = Calendar.current.date(byAdding: .day, value: -15, to: currentDate) else {
         return "Date calculation error"
     }
     

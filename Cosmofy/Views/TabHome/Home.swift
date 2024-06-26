@@ -193,7 +193,8 @@ struct ArticleView: View {
                             Image("June Article")
                                 .resizable()
                                 .frame(height: 180)
-                                .scaledToFit()
+                                .aspectRatio(contentMode: .fit)
+                            
                             HStack {
                                 VStack {
                                     Text("06")

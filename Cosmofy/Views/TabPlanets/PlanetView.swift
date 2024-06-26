@@ -135,21 +135,15 @@ struct PlanetView: View {
                             Text("Atmosphere")
                                 .font(Font.custom("SF Pro Rounded Medium", size: 16))
                                 .foregroundColor(.secondary)
-                            HStack(alignment: .firstTextBaseline) {
-                                
-                                ForEach(Array(planet.atmosphere.enumerated()), id: \.element) { index, image in
-                                    VStack {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack() {
+                                    ForEach(Array(planet.atmosphere.enumerated()), id: \.element) { index, image in
                                         Image(image)
                                             .resizable()
                                             .frame(width: 40, height: 40)
                                             .cornerRadius(8)
-                                        Text("0.01%")
-                                            .font(.caption2)
                                     }
-                                    
                                 }
-
-
                             }
                         }
                         .padding(.horizontal)

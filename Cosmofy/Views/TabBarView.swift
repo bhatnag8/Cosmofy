@@ -13,6 +13,9 @@ struct TabBarView: View {
         UITabBar.appearance().backgroundColor = UIColor.systemBackground
     }
     
+    @State private var fetchComplete = false
+    @State private var fetchFailed = false
+    
     var body: some View {
         TabView {
             
@@ -31,7 +34,7 @@ struct TabBarView: View {
                     Label("Swift", image: "tab-bar-swift")
                 }
             
-            RNNMaybach()
+            RNNMaybach(complete: $fetchComplete, failed: $fetchFailed)
                 .tabItem {
                     Label("Nature Scope", image: "tab-bar-roadmap")
                 }
@@ -42,15 +45,17 @@ struct TabBarView: View {
         //        .background(Color(.systemBackground).edgesIgnoringSafeArea(.all)) // Set the background color of TabView
         .onAppear {
             UINavigationBar.appearance().largeTitleTextAttributes = [
-                .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 34, weight: .semibold),
+                .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont(descriptor: UIFont.systemFont(ofSize: 34, weight: .semibold).fontDescriptor.withDesign(.rounded)!, size: 34),
             ]
             NetworkManager().fetchEvents { result in
                 switch result {
                 case .success(let events):
                     fetchedEvents = events
+                    fetchComplete = true
                     print("Nature Scope: All Events Fetched")
                 case .failure(let error):
                     fetchedErrorMessage = error.localizedDescription
+                    fetchFailed = true
                     print("Nature Scope: Failed to Fetch Events")
                 }
             }
