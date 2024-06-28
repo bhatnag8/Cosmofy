@@ -31,6 +31,7 @@
 		0B7D18CC2AE8B655009C2317 /* SwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18CB2AE8B655009C2317 /* SwiftView.swift */; };
 		0B8615A82BAF6580008CCD5F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8615A72BAF6580008CCD5F /* LoadingView.swift */; };
 		0B923B6E2B9CBBEE009B8D45 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */; };
+		0B9755BA2C2EF9E7002D9C70 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B9755B92C2EF9E7002D9C70 /* Launch Screen.storyboard */; };
 		0B97AE222C1E9078003E96EB /* API_NASA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2652BA4D16F004491B7 /* API_NASA.swift */; };
 		0B97AE232C1E90CA003E96EB /* IOTD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B40299B2BA4FEC1004B0F43 /* IOTD.swift */; };
 		0B97AE2B2C200979003E96EB /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B97AE2A2C200979003E96EB /* ImageView.swift */; };
@@ -116,6 +117,7 @@
 		0B7D18CB2AE8B655009C2317 /* SwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftView.swift; sourceTree = "<group>"; };
 		0B8615A72BAF6580008CCD5F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		0B9755B92C2EF9E7002D9C70 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0B97AE2A2C200979003E96EB /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		0B97AE2C2C2009B3003E96EB /* PlanetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsView.swift; sourceTree = "<group>"; };
 		0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Heavy.otf"; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				2F6427CF2A4FA4EF00CC503D /* Cosmofy.entitlements */,
 				2FBBB6612945531700BBB072 /* Assets.xcassets */,
 				2FBBB6662945531700BBB072 /* Info.plist */,
+				0B9755B92C2EF9E7002D9C70 /* Launch Screen.storyboard */,
 				0BB14A422B9C2B1100476F3C /* CosmofyApp.swift */,
 			);
 			path = Cosmofy;
@@ -470,6 +473,7 @@
 				0B9F027D2B75E5B200CB5543 /* SF-Pro-Rounded-Light.otf in Resources */,
 				0B9F027E2B75E5B200CB5543 /* SF-Pro-Rounded-Thin.otf in Resources */,
 				0B1BAD572AE97736001CFC35 /* .gitignore in Resources */,
+				0B9755BA2C2EF9E7002D9C70 /* Launch Screen.storyboard in Resources */,
 				0B9F027C2B75E5B200CB5543 /* SF-Pro-Rounded-Black.otf in Resources */,
 				0B9F02802B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf in Resources */,
 				2F4F8FC3295EBC5100F7EE98 /* star.png in Resources */,
