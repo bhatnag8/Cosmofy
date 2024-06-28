@@ -19,15 +19,29 @@ struct TabBarView: View {
     var body: some View {
         TabView {
             
-            Home()
-                .tabItem {
-                    Label("Home", image: "tab-bar-home")
-                }
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                Home()
+                    .tabItem {
+                        Label("Home", image: "tab-bar-home")
+                    }
+            } else {
+                iPadHome()
+                    .tabItem {
+                        Label("Home", image: "tab-bar-home")
+                    }
+            }
             
-            PlanetsView()
-                .tabItem {
-                    Label("Planets", image: "tab-bar-planets")
-                }
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                PlanetsView()
+                    .tabItem {
+                        Label("Planets", image: "tab-bar-planets")
+                    }
+            } else {
+                iPadPlanetsView()
+                    .tabItem {
+                        Label("Planets", image: "tab-bar-planets")
+                    }
+            }   
             
             SwiftView()
                 .tabItem {

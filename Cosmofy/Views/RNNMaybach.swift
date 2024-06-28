@@ -116,7 +116,7 @@ struct MapWithEvents: View {
                                             
                                             HStack {
                                                 Text("Weather")
-                                                    .font(.callout)
+                                                    .fontWeight(.medium)
                                                 
                                                 Spacer()
                                                 
@@ -389,24 +389,10 @@ struct MapWithEvents: View {
                             .tabViewStyle(PageTabViewStyle())
                             .padding()
                             .frame(height: 200)
-                            .frame(maxWidth: .infinity)
+                            .frame(maxWidth: 500)
                             .background(.ultraThinMaterial)
                             .clipShape(RoundedRectangle(cornerRadius: 24))
                             
-                            HStack {
-                                Spacer()
-                                Image(systemName: "xmark.circle.fill")
-                                    .resizable()
-                                    .frame(width: 25, height: 25)
-                                    .padding(.top, -72)
-                                    .padding(.trailing, 28)
-                                    .foregroundStyle(.white)
-                                    .onTapGesture {
-                                        withAnimation {
-                                            selected = false
-                                        }
-                                    }
-                            }
                         }
                         
                     }

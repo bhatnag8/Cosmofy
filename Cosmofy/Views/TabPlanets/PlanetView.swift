@@ -43,11 +43,19 @@ struct PlanetView: View {
                     
                     Spacer(minLength: 20)
                     ZStack {
-                        SceneKitView(planet: planet.name.lowercased(), stars: false)
-                            .frame(height: 300)
-                            .background(Color.black)
-                            .cornerRadius(30)
-                            .padding(8)
+//                        SceneKitView(planet: planet.name.lowercased(), stars: false)
+//                            .frame(height: 300)
+//                            .background(Color.black)
+//                            .cornerRadius(30)
+//                            .padding(8)
+                        
+                        SceneView(
+                            scene: createPlanetScene(planetName: planet.name.lowercased(), isFullScreen: false),
+                            options: [.allowsCameraControl, .autoenablesDefaultLighting]
+                        )
+                        .frame(height: 300)
+                        .clipShape(RoundedRectangle(cornerRadius: 30))
+                        .edgesIgnoringSafeArea(.all)
                         
                         
                         VStack {
@@ -94,6 +102,7 @@ struct PlanetView: View {
                         }
                         Spacer()
                     }
+                    .padding(.horizontal, 8)
                 }
                 .padding()
                 
@@ -170,91 +179,6 @@ struct PlanetView: View {
     }
 }
 
-struct ImageName: Identifiable, Equatable {
-    let id: UUID = .init()
-    let value: String
-}
-
-struct ImagesView: View {
-    @Namespace var namespace
-    var planet: Planet
-    
-    
-    @State private var selectedItem: ImageName?
-    @State private var position = CGSize.zero
-    
-    var body: some View {
-        let dataList = (1..<5).map { ImageName(value: "\(planet.name.lowercased())_image_\($0)") }
-        ZStack {
-            ScrollView {
-                LazyVGrid(columns: [
-                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 2),
-                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 2),
-                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 2),
-                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 2)
-                ], spacing: 2) {
-                    ForEach(dataList) { data in
-                        Image(data.value)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .matchedGeometryEffect(
-                                id: data.id,
-                                in: namespace,
-                                isSource:  selectedItem == nil
-                            )
-                            .zIndex(selectedItem == data ? 1 : 0)
-                            .onTapGesture {
-                                position = .zero
-                                withAnimation(.spring(response: 0.4, dampingFraction: 0.75)) {
-                                    selectedItem = data
-                                }
-                            }
-                    }
-                }
-                .padding(2)
-            }
-            
-            Color.black
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .ignoresSafeArea()
-                .opacity(selectedItem == nil ? 0 : min(1, max(0, 1 - abs(Double(position.height) / 800))))
-            
-            if let selectedItem {
-                Image(selectedItem.value)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .matchedGeometryEffect(
-                        id: selectedItem.id,
-                        in: namespace,
-                        isSource: self.selectedItem != nil
-                    )
-                    .zIndex(2)
-                    .onTapGesture {
-                        withAnimation(.spring(response: 0.4, dampingFraction: 0.75)) {
-                            self.selectedItem = nil
-                        }
-                    }
-                    .offset(position)
-                    .gesture(
-                        DragGesture()
-                            .onChanged { value in
-                                self.position = value.translation
-                            }
-                            .onEnded { value in
-                                withAnimation(.spring(response: 0.4, dampingFraction: 0.75)) {
-                                    if 200 < abs(self.position.height) {
-                                        self.selectedItem = nil
-                                    } else {
-                                        self.position = .zero
-                                    }
-                                }
-                            }
-                    )
-            }
-        }
-    }
-}
-
 struct SomeView: View {
     let backgroundGradient = LinearGradient(
         colors: [Color.cyan, Color.blue],
@@ -312,10 +236,16 @@ struct SomeView: View {
             }
              */
             
-            SceneKitView(planet: planet.name.lowercased(), isFullScreen: true, stars: true)
-                .background(Color.black)
-                .cornerRadius(30)
-                .background(.black)
+//            SceneKitView(planet: planet.name.lowercased(), isFullScreen: true, stars: true)
+//                .background(Color.black)
+//                .cornerRadius(30)
+//                .background(.black)
+            
+            SceneView(
+                scene: createPlanetScene(planetName: planet.name.lowercased(), isFullScreen: true),
+                options: [.allowsCameraControl, .autoenablesDefaultLighting]
+            )
+            .edgesIgnoringSafeArea(.all)
 
             
             VStack {

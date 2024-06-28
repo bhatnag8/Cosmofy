@@ -15,6 +15,8 @@ struct SplashScreen: View {
         ZStack {
             if showSplash {
                 SplashScreenView()
+                    .preferredColorScheme(.dark)
+                    .statusBarHidden()
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.25) {
                             withAnimation {
