@@ -18,9 +18,9 @@ struct ImageViewCard: Identifiable, Hashable {
 
 
 var imageList: [ImageViewCard] = [
-    ImageViewCard(title: "June 2024 Update", subtitle: "Out Now - Check Out the Change Log", imageName: "home-banner-1", color: Color(hex: 0x756884)),
-    ImageViewCard(title: "August 2024", subtitle: "Space News, AR, and more...", imageName: "home-banner-3", color: Color(hex: 0x4D3C30)),
-    ImageViewCard(title: "November 2024", subtitle: "Moons, Dwarf Planets, and more...", imageName: "home-banner-4", color: Color(hex: 0x4D3C30))
+    ImageViewCard(title: "July 2024 Update", subtitle: "Now on Apple Watch and iPad", imageName: "home-banner-1", color: Color(hex: 0x756884)),
+    ImageViewCard(title: "August 2024", subtitle: "Space News, Augmented Reality", imageName: "home-banner-3", color: Color(hex: 0x4D3C30)),
+    ImageViewCard(title: "November 2024", subtitle: "Moons, Dwarf Planets", imageName: "home-banner-4", color: Color(hex: 0x4D3C30))
 
     /**
     ImageViewCard(title: "Now Available: v1.1", subtitle: "Explore the change log", imageName: "home-banner-0", color: Color(hex: 0x000000)),

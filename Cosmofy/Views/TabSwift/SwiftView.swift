@@ -46,10 +46,12 @@ struct SwiftView: View {
                             }
                         }
                         .gesture(
+                            
                            DragGesture()
                             .onChanged { _ in
                                 userTouched = true
                            }
+                            
                         )
                         
                     }
@@ -62,7 +64,7 @@ struct SwiftView: View {
                     isTextFieldFocused = false
                 }
                 
-                Divider()
+//                Divider()
 //                TipView(tip)
 //                    .onTapGesture {
 //                    tip.invalidate(reason: .actionPerformed)
@@ -87,6 +89,7 @@ struct SwiftView: View {
         HStack(alignment: .top, spacing: 8) {
             
             HStack {
+                
                 if image.hasPrefix("http"), let url = URL(string: image) {
                     AsyncImage(url: url) {
                         image in image
@@ -100,6 +103,19 @@ struct SwiftView: View {
                         .resizable()
                         .frame(width: 30, height: 30)
                 }
+                 
+                
+//                if AES_Complete {
+//                    Image(systemName: "livephoto")
+//                        .resizable()
+//                        .frame(width: 30, height: 30)
+//                        .foregroundColor(.green)
+//                } else {
+//                    Image(systemName: "livephoto")
+//                        .resizable()
+//                        .frame(width: 30, height: 30)
+//                        .foregroundColor(.red)
+//                }
 
                 TextField("Ask away...", text: $vm.inputMessage, axis: .vertical)
                     .textFieldStyle(RoundedBorderTextFieldStyle())

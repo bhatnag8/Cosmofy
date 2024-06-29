@@ -10,9 +10,9 @@ import Foundation
 class ViewModelAPOD: ObservableObject {
     @Published var apod: APOD?
     @Published var errorMessage: String?
-    
-    func fetch() {
-        API_IOTD.getImageOfTheDay { apod, error in
+
+    func fetch(for date: String? = nil) {
+        API_IOTD.getImageOfTheDay(for: date) { apod, error in
             if let error = error {
                 self.errorMessage = "Failed to fetch data: \(error.localizedDescription)."
             } else if let apod = apod {
@@ -22,10 +22,9 @@ class ViewModelAPOD: ObservableObject {
     }
 }
 
-
 class API_IOTD {
-    class func getImageOfTheDay(_ completion: @escaping (APOD?, Error?) -> Void) {
-        Constants.session.dataTask(with: Constants.request) { data, response, error in
+    class func getImageOfTheDay(for date: String? = nil, _ completion: @escaping (APOD?, Error?) -> Void) {
+        Constants.session.dataTask(with: Constants.request(for: date)) { data, response, error in
             guard let data = data, error == nil else {
                 DispatchQueue.main.async {
                     completion(nil, error)

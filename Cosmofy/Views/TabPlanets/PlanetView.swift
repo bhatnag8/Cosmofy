@@ -21,30 +21,41 @@ struct PlanetView: View {
                     HStack {
                         if !(planet.name == "Earth") {
                             Text("First Human Visual Observation")
-                                .font(Font.custom("SF Pro Rounded Medium", size: 15))
+                                .font(Font.custom("SF Pro Rounded Regular", size: 16))
                                 .foregroundColor(.secondary)
                         } else {
-                            Text("Earth was perceived as a planet")
-                                .font(Font.custom("SF Pro Rounded Medium", size: 15))
+                            Text("Earth was always perceived as a planet")
+                                .font(Font.custom("SF Pro Rounded Regular", size: 16))
                                 .foregroundColor(.secondary)
                         }
                         
                         Spacer()
                     }
+                    
                     HStack {
                         Text(planet.visual)
-                            .font(Font.custom("SF Pro Rounded Medium", size: 15))
+                            .font(Font.custom("SF Pro Rounded Regular", size: 16))
                             .foregroundColor(.secondary)
                         Spacer()
                     }
                     
+                    
+                    
                     Spacer(minLength: 20)
                     ZStack {
-                        SceneKitView(planet: planet.name.lowercased(), stars: false)
-                            .frame(height: 300)
-                            .background(Color.black)
-                            .cornerRadius(30)
-                            .padding(8)
+//                        SceneKitView(planet: planet.name.lowercased(), stars: false)
+//                            .frame(height: 300)
+//                            .background(Color.black)
+//                            .cornerRadius(30)
+//                            .padding(8)
+                        
+                        SceneView(
+                            scene: createPlanetScene(planetName: planet.name.lowercased(), isFullScreen: false),
+                            options: [.allowsCameraControl, .autoenablesDefaultLighting]
+                        )
+                        .frame(height: 300)
+                        .clipShape(RoundedRectangle(cornerRadius: 30))
+                        .edgesIgnoringSafeArea(.all)
                         
                         
                         VStack {
@@ -55,19 +66,27 @@ struct PlanetView: View {
                                 }) {
                                     HStack {
                                         Image(systemName: "arrow.down.left.and.arrow.up.right")
+                                            .foregroundColor(.white)
+                                            .padding(8)
+                                            .background(Color.white.opacity(0.15))
+                                            .clipShape(RoundedRectangle(cornerRadius: 12))
+
                                     }
-                                    .foregroundColor(.white)
                                     .padding()
-                                    .clipShape(RoundedRectangle(cornerRadius: 500))
-                                    .padding(.top, 16)
-                                    .padding([.trailing], 16)
+                                    
                                 }
+                                .padding(8)
+                                
                                 .fullScreenCover(isPresented: $isPresented) {
                                     SomeView(planet: planet)
                                 }
+
                             }
+                            
+                            
                             Spacer()
                         }
+
                         
                         VStack {
                             Spacer()
@@ -79,11 +98,28 @@ struct PlanetView: View {
                                     .padding([.leading], 24)
                                 Spacer()
                             }
+                            
                         }
                         Spacer()
                     }
+                    .padding(.horizontal, 8)
                 }
                 .padding()
+                
+                
+                HStack {
+                    Text(planet.expandedDescription)
+                        .textSelection(.enabled)
+                        .multilineTextAlignment(.leading)
+                        .italic()
+                        .font(.body)
+                        .fontDesign(.serif)
+                        .padding(.horizontal)
+                    Spacer()
+                }
+                .padding(.horizontal)
+                
+
                 
 
                 VStack(spacing: 16) {
@@ -92,6 +128,7 @@ struct PlanetView: View {
                         PlanetPropertyView(title: "Natural Satellites", value: String(planet.moons), unit: "moons", color: planet.color)
                         PlanetPropertyView(title: "Planetary Rings", value: String(planet.rings), unit: "rings", color: planet.color)
                     }
+
                     
                     HStack {
                         PlanetPropertyView(title: "Gravity", value: String(planet.gravity), unit: "m/s²", color: planet.color)
@@ -107,23 +144,21 @@ struct PlanetView: View {
                             Text("Atmosphere")
                                 .font(Font.custom("SF Pro Rounded Medium", size: 16))
                                 .foregroundColor(.secondary)
-                            HStack(alignment: .firstTextBaseline) {
-                                
-                                ForEach(Array(planet.atmosphere.enumerated()), id: \.element) { index, image in
-                                    Image(image)
-                                        .resizable()
-                                        .frame(width: 40, height: 40)
-                                        .cornerRadius(8)
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack() {
+                                    ForEach(Array(planet.atmosphere.enumerated()), id: \.element) { index, image in
+                                        Image(image)
+                                            .resizable()
+                                            .frame(width: 40, height: 40)
+                                            .cornerRadius(8)
+                                    }
                                 }
-                                
                             }
                         }
+                        .padding(.horizontal)
                         Spacer()
                     }
-                    .padding(.horizontal)
-                    Divider()
-                    ChartView(planet: planet)
-                        .padding(.horizontal, 12)
+
                 }
                 .padding()
                 
@@ -140,92 +175,6 @@ struct PlanetView: View {
                 trailing: ShareLink(item: URL(string: "https://apps.apple.com/app/cosmofy/id6450969556")!, preview: SharePreview("Cosmofy on the Apple App Store", image: Image("iconApp")))
                     .foregroundStyle(planet.color)
             )
-        }
-        .onAppear(perform: {Haptics.shared.vibrate(for: .success)})
-    }
-}
-
-struct ImageName: Identifiable, Equatable {
-    let id: UUID = .init()
-    let value: String
-}
-
-struct ImagesView: View {
-    @Namespace var namespace
-    var planet: Planet
-    
-    
-    @State private var selectedItem: ImageName?
-    @State private var position = CGSize.zero
-    
-    var body: some View {
-        let dataList = (1..<5).map { ImageName(value: "\(planet.name.lowercased())_image_\($0)") }
-        ZStack {
-            ScrollView {
-                LazyVGrid(columns: [
-                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 2),
-                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 2),
-                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 2),
-                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 2)
-                ], spacing: 2) {
-                    ForEach(dataList) { data in
-                        Image(data.value)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .matchedGeometryEffect(
-                                id: data.id,
-                                in: namespace,
-                                isSource:  selectedItem == nil
-                            )
-                            .zIndex(selectedItem == data ? 1 : 0)
-                            .onTapGesture {
-                                position = .zero
-                                withAnimation(.spring(response: 0.4, dampingFraction: 0.75)) {
-                                    selectedItem = data
-                                }
-                            }
-                    }
-                }
-                .padding(2)
-            }
-            
-            Color.black
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .ignoresSafeArea()
-                .opacity(selectedItem == nil ? 0 : min(1, max(0, 1 - abs(Double(position.height) / 800))))
-            
-            if let selectedItem {
-                Image(selectedItem.value)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .matchedGeometryEffect(
-                        id: selectedItem.id,
-                        in: namespace,
-                        isSource: self.selectedItem != nil
-                    )
-                    .zIndex(2)
-                    .onTapGesture {
-                        withAnimation(.spring(response: 0.4, dampingFraction: 0.75)) {
-                            self.selectedItem = nil
-                        }
-                    }
-                    .offset(position)
-                    .gesture(
-                        DragGesture()
-                            .onChanged { value in
-                                self.position = value.translation
-                            }
-                            .onEnded { value in
-                                withAnimation(.spring(response: 0.4, dampingFraction: 0.75)) {
-                                    if 200 < abs(self.position.height) {
-                                        self.selectedItem = nil
-                                    } else {
-                                        self.position = .zero
-                                    }
-                                }
-                            }
-                    )
-            }
         }
     }
 }
@@ -287,13 +236,16 @@ struct SomeView: View {
             }
              */
             
-            SceneKitView(planet: planet.name.lowercased(), isFullScreen: true, stars: true)
-                .background(Color.black)
-                .cornerRadius(30)
-                .onAppear(perform: {
-                    Haptics.shared.impact(for: .light)
-                })
-                .background(.black)
+//            SceneKitView(planet: planet.name.lowercased(), isFullScreen: true, stars: true)
+//                .background(Color.black)
+//                .cornerRadius(30)
+//                .background(.black)
+            
+            SceneView(
+                scene: createPlanetScene(planetName: planet.name.lowercased(), isFullScreen: true),
+                options: [.allowsCameraControl, .autoenablesDefaultLighting]
+            )
+            .edgesIgnoringSafeArea(.all)
 
             
             VStack {
@@ -323,9 +275,8 @@ struct SomeView: View {
 }
 
 
-
 #Preview {
-    PlanetView(planet: saturnPlanet)
+    PlanetView(planet: mercuryPlanet)
 }
 
 
@@ -334,6 +285,7 @@ struct PlanetPropertyView: View {
     var value: String
     var unit: String
     var color: Color
+    @State private var topExpanded: Bool = true
     
     var body: some View {
         HStack {
@@ -342,7 +294,8 @@ struct PlanetPropertyView: View {
                     .font(Font.custom("SF Pro Rounded Medium", size: 16))
                     .foregroundColor(.secondary)
                 HStack(alignment: .firstTextBaseline) {
-                    Text(value).font(Font.custom("SF Pro Rounded Semibold", size: 20))
+                    Text(value).foregroundStyle(.BETRAYED)
+                        .font(Font.custom("SF Pro Rounded Semibold", size: 20))
                     
                     if (unit == "moons" && value == "1") {
                         Text("moon").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(color)

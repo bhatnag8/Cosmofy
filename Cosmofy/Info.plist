@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 	<key>API_KEY_DEBUG</key>
 	<string></string>
 	<key>API_KEY_NASA</key>
@@ -10,6 +12,33 @@
 	<string></string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSAllowsArbitraryLoadsForMedia</key>
+		<false/>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<false/>
+		<key>NSAllowsLocalNetworking</key>
+		<false/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>arryan.xyz</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionMinimumTLSVersion</key>
+				<string>TLSv1.2</string>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSRequiresCertificateTransparency</key>
+				<false/>
+			</dict>
+		</dict>
+	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SF-Pro-Rounded-Heavy.otf</string>
@@ -21,18 +50,6 @@
 		<string>SF-Pro-Rounded-Thin.otf</string>
 		<string>SF-Pro-Rounded-Medium.otf</string>
 		<string>SF-Pro-Rounded-Ultralight.otf</string>
-		<string>SF-Mono-Bold.otf</string>
-		<string>SF-Mono-BoldItalic.otf</string>
-		<string>SF-Mono-Heavy.otf</string>
-		<string>SF-Mono-HeavyItalic.otf</string>
-		<string>SF-Mono-Light.otf</string>
-		<string>SF-Mono-LightItalic.otf</string>
-		<string>SF-Mono-Medium.otf</string>
-		<string>SF-Mono-MediumItalic.otf</string>
-		<string>SF-Mono-Regular.otf</string>
-		<string>SF-Mono-RegularItalic.otf</string>
-		<string>SF-Mono-Semibold.otf</string>
-		<string>SF-Mono-SemiboldItalic.otf</string>
 	</array>
 </dict>
 </plist>

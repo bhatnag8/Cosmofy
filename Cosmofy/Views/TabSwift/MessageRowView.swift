@@ -9,48 +9,78 @@
 import SwiftUI
 import MarkdownUI
 
+var complete: Bool = false
+
 struct MessageRowView: View {
     @Environment(\.colorScheme) private var colorScheme
     let message: MessageRow
     let retryCallback: (MessageRow) -> Void
+    
     var body: some View {
         VStack(spacing: 0) {
             messageRow(text: message.sendText, image: message.sendImage, color: colorScheme == .light ? .white : Color(red: 20/255, green: 20/255, blue: 25/255, opacity: 1))
             
             if let text = message.responseText {
-                Divider()
+//                Divider()
                 messageRow(text: text, image: message.responseImage, color: colorScheme == .light ? .white : Color(red: 24/255, green: 24/255, blue: 27/255, opacity: 1), responseError: message.responseError, showDotLoading: message.isInteractingWithChatGPT)
-                Divider()
+                    
+//                Divider()
             }
         }
+        .clipShape(RoundedRectangle(cornerRadius: 24))
+        .padding(.vertical, 4)
+        .padding(.horizontal)
+
     }
     
     func messageRow(text: String, image: String, color: Color, responseError: String? = nil, showDotLoading: Bool = false) -> some View {
-        HStack(alignment: .top, spacing: 12) {
+        VStack(alignment: .leading, spacing: 12) {
             if image.hasPrefix("http"), let url = URL(string: image) {
                 AsyncImage(url: url) {
                     image in image
                         .resizable()
-                        .frame(width: 25, height: 25)
+                        .frame(width: 20, height: 20)
                 } placeholder: {
                     ProgressView()
                 }
             } else {
-                Image(image)
-                    .resizable()
-                    .frame(width: 25, height: 25)
+                HStack {
+                    Image(image)
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                    
+                    if image == "openai" {
+                        Text("swift")
+                            .textCase(.uppercase)
+                            .foregroundStyle(.secondary)
+                            .font(.caption)
+                    } else {
+                        Text(image)
+                            .textCase(.uppercase)
+                            .foregroundStyle(.secondary)
+                            .font(.caption)
+                    }
+                }
             }
             
             VStack(alignment: .leading, spacing: 0) {
 
                 if image == "openai" {
-                    WordByWordTextView(text, interval: 0.045)
-                        .multilineTextAlignment(.leading)
-                        .textSelection(.enabled)
-                        .font(Font.custom("SF Pro Rounded Medium", size: 18))
+                    if !complete {
+                        WordByWordTextView(text, interval: 0.075)
+                            .multilineTextAlignment(.leading)
+                            .textSelection(.enabled)
+                            .onAppear {
+                                complete = true
+                            }
+                    } else {
+                        Text(text)
+                            .multilineTextAlignment(.leading)
+                            .textSelection(.enabled)
+                    }
+                    
+//                        .font(Font.custom("SF Pro Rounded Medium", size: 18))
                 } else {
-//                    Text(text)
-//                        .textSelection(.enabled)
                     Markdown(text)
                         .textSelection(.enabled)
                 }
@@ -69,12 +99,13 @@ struct MessageRowView: View {
                 
                 if showDotLoading {
                     LoadingView(color: .labelColorMod)
-                        .frame(width: 50, height: 25)
+                        .frame(height: 10)
                 }
             }
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(color)
+        .background(.ultraThinMaterial)
+    
     }
 }

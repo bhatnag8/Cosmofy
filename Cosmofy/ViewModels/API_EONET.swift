@@ -9,7 +9,7 @@ import Foundation
 
 class NetworkManager {
     func fetchEvents(completion: @escaping (Result<[Event], Error>) -> Void) {
-        let urlString = "https://eonet.gsfc.nasa.gov/api/v3/events?start=2024-01-01&end=2024-12-31&status=all"
+        let urlString = "https://eonet.gsfc.nasa.gov/api/v3/events?start=\(getDate14DaysAgo())&end=2026-12-31&status=all"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return
@@ -36,4 +36,22 @@ class NetworkManager {
         }
         task.resume()
     }
+    
+
+}
+
+func getDate14DaysAgo() -> String {
+    // Get the current date
+    let currentDate = Date()
+    
+    // Subtract 14 days from the current date
+    guard let date14DaysAgo = Calendar.current.date(byAdding: .day, value: -15, to: currentDate) else {
+        return "Date calculation error"
+    }
+    
+    // Format the date as yyyy-MM-dd
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    print("Nature Scope: Fetching from \(dateFormatter.string(from: date14DaysAgo))")
+    return dateFormatter.string(from: date14DaysAgo)
 }

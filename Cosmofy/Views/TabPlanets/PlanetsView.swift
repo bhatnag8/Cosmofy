@@ -28,26 +28,20 @@ struct PlanetsView: View {
                                 ForEach(innerPlanets) { planet in
                                     PlanetBlock(planet: planet)
                                 }
-                                .onTapGesture {
-                                    Haptics.shared.vibrate(for: .success)
-                                }
+                                
                             }
                             .listStyle(PlainListStyle())
                             .id(Tab.inner)
                             .containerRelativeFrame(.horizontal)
-                            .onAppear(perform: {Haptics.shared.impact(for: .medium)})
 
                             ScrollView(.vertical) {
                                 ForEach(outerPlanets) { planet in
                                     PlanetBlock(planet: planet)
                                 }
-                                .onTapGesture {
-                                    Haptics.shared.vibrate(for: .success)
-                                }
+                                
                             }
                             .id(Tab.outer)
                             .containerRelativeFrame(.horizontal)
-                            .onAppear(perform: {Haptics.shared.impact(for: .medium)})
 
                             ScrollView(.vertical) {
                                 VStack {
@@ -70,7 +64,6 @@ struct PlanetsView: View {
                             }
                             .id(Tab.solar)
                             .containerRelativeFrame(.horizontal)
-                            .onAppear(perform: {Haptics.shared.impact(for: .medium)})
                         }
                         .scrollTargetLayout()
                         .offsetX { value in

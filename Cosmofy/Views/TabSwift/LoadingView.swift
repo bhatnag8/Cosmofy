@@ -55,6 +55,7 @@ struct LoadingView: View {
     }
 }
 
+
 #Preview {
-    LoadingView(color: .white)
+    LoadingView(color: .black)
 }
