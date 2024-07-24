@@ -148,6 +148,8 @@
 		0B1BAD562AE97736001CFC35 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0B2420AF2C511C69005A5958 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B2420B12C511C94005A5958 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B2420B32C512AE6005A5958 /* Cosmofy tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmofy tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B2420B42C51310E005A5958 /* Cosmofy iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmofy iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B3990712C4683DC0000683E /* API_ASTRONAUT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_ASTRONAUT.swift; sourceTree = "<group>"; };
 		0B3EC2632BA4BAFE004491B7 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		0B3EC2652BA4D16F004491B7 /* API_APOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_APOD.swift; sourceTree = "<group>"; };
@@ -177,7 +179,6 @@
 		0B9F02762B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Medium.otf"; sourceTree = "<group>"; };
 		0B9F02772B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
 		0BB07A782C3132750066977E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		0BB07A7E2C31360D0066977E /* Cosmofy tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Cosmofy tvOS.app"; path = "/Users/SOUR/Documents/Cosmofy/build/Debug-appletvos/Cosmofy tvOS.app"; sourceTree = "<absolute>"; };
 		0BB07A802C31360E0066977E /* CosmofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmofyApp.swift; sourceTree = "<group>"; };
 		0BB07A842C3136100066977E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BB07A872C3136100066977E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -202,7 +203,6 @@
 		2F4F8FC1295EBC5100F7EE98 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		2F4F8FC4295EC08100F7EE98 /* PlanetNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetNode.swift; sourceTree = "<group>"; };
 		2F6427CF2A4FA4EF00CC503D /* Cosmofy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cosmofy.entitlements; sourceTree = "<group>"; };
-		2FBBB6552945531500BBB072 /* Cosmofy iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Cosmofy iOS.app"; path = "/Users/SOUR/Documents/Cosmofy/build/Debug-iphoneos/Cosmofy iOS.app"; sourceTree = "<absolute>"; };
 		2FBBB6612945531700BBB072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FBBB6662945531700BBB072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -480,6 +480,8 @@
 				0BDBC9CA2C1D956E00F720F2 /* Cosmofy for Watch */,
 				0BB07A7F2C31360E0066977E /* Cosmofy for TV */,
 				0B0B5CFA2C4027E70097A98D /* Frameworks */,
+				0B2420B32C512AE6005A5958 /* Cosmofy tvOS.app */,
+				0B2420B42C51310E005A5958 /* Cosmofy iOS.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -521,7 +523,7 @@
 				0B87A6732C41303500BF924B /* MarkdownUI */,
 			);
 			productName = "Cosmofy for TV";
-			productReference = 0BB07A7E2C31360D0066977E /* Cosmofy tvOS.app */;
+			productReference = 0B2420B32C512AE6005A5958 /* Cosmofy tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0BDBC9C82C1D956E00F720F2 /* Cosmofy watchOS */ = {
@@ -561,7 +563,7 @@
 				0BD7A7632C2B3D5600D75F1D /* VTabView */,
 			);
 			productName = Spacefy;
-			productReference = 2FBBB6552945531500BBB072 /* Cosmofy iOS.app */;
+			productReference = 0B2420B42C51310E005A5958 /* Cosmofy iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -788,7 +790,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy.tv;
+				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator";
@@ -823,7 +825,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy.tv;
+				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator";
