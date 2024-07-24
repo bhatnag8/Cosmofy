@@ -27,7 +27,7 @@ struct iPadPlanetView: View {
 //                            .padding(8)
                         
                         SceneView(
-                            scene: createPlanetScene(planetName: planet.name.lowercased(), isFullScreen: false),
+                            scene: createPlanetScene(planetName: planet.name.lowercased(), isFullScreen: false, platform: nil).scene,
                             options: [.allowsCameraControl, .autoenablesDefaultLighting]
                         )
                         .frame(maxHeight: .infinity)
@@ -107,7 +107,9 @@ struct iPadPlanetView: View {
                         
                         HStack {
                             Text(planet.expandedDescription)
+                            #if !os(tvOS)
                                 .textSelection(.enabled)
+                            #endif
                                 .multilineTextAlignment(.leading)
                                 .italic()
                                 .font(.body)
@@ -141,11 +143,8 @@ struct iPadPlanetView: View {
                                         .foregroundColor(.secondary)
                                     ScrollView(.horizontal, showsIndicators: false) {
                                         HStack() {
-                                            ForEach(Array(planet.atmosphere.enumerated()), id: \.element) { index, image in
-                                                Image(image)
-                                                    .resizable()
-                                                    .frame(width: 40, height: 40)
-                                                    .cornerRadius(8)
+                                            ForEach(planet.atmosphere) { atmos in
+                                                AtmosphereView(planet: planet, atmosphere: atmos)
                                             }
                                         }
                                     }
@@ -167,20 +166,100 @@ struct iPadPlanetView: View {
             // 0F0F15 0x181C22
             .navigationTitle(planet.name)
             .onAppear {
+#if !os(tvOS)
                 UINavigationBar.appearance().largeTitleTextAttributes = [
                     .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 34, weight: .semibold),
                 ]
+                #endif
             }
+#if !os(tvOS)
             .navigationBarItems(
                 trailing: ShareLink(item: URL(string: "https://apps.apple.com/app/cosmofy/id6450969556")!, preview: SharePreview("Cosmofy on the Apple App Store", image: Image("iconApp")))
                     .foregroundStyle(planet.color)
             )
+#endif
         }
     }
 }
+
 
 
 #Preview {
     iPadPlanetView(planet: neptunePlanet)
 }
 
+struct SomeView: View {
+    let backgroundGradient = LinearGradient(
+        colors: [Color.cyan, Color.blue],
+        startPoint: .top, endPoint: .bottom)
+    var planet: Planet
+    
+    @Environment (\.presentationMode) var presentationMode
+    @State private var selectedViewType: Int = 0
+    
+    var body: some View {
+        ZStack {
+
+            SceneView(
+                scene: createPlanetScene(planetName: planet.name.lowercased(), isFullScreen: true, platform: nil).scene,
+                options: [.allowsCameraControl, .autoenablesDefaultLighting]
+            )
+            .edgesIgnoringSafeArea(.all)
+
+            
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "xmark.circle.fill") // The icon
+                            .resizable()
+                            .foregroundStyle(.white.opacity(0.7))
+                            .frame(width: 30, height: 30)
+                            .padding(.top, 64)
+                            .padding(.trailing, 16)
+                    }
+                }
+                Spacer()
+            }
+            
+            
+            
+        }
+        .ignoresSafeArea()
+
+    }
+    
+}
+
+
+struct PlanetPropertyView: View {
+    var title: String
+    var value: String
+    var unit: String
+    var color: Color
+    @State private var topExpanded: Bool = true
+    
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .font(Font.custom("SF Pro Rounded Medium", size: 16))
+                    .foregroundColor(.secondary)
+                HStack(alignment: .firstTextBaseline) {
+                    Text(value).foregroundStyle(.BETRAYED)
+                        .font(Font.custom("SF Pro Rounded Semibold", size: 20))
+                    
+                    if (unit == "moons" && value == "1") {
+                        Text("moon").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(color)
+                    } else {
+                        Text(unit).font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(color)
+                    }
+                }
+            }
+            Spacer()
+        }
+        .padding(.horizontal)
+    }
+}

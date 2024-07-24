@@ -2,9 +2,10 @@
 
 Dive into the wonders of our solar system with Cosmofy! This app allows you to explore stunning 3D models of planets, discover fascinating planetary facts, stay updated with natural events and disasters, and interact with your very own space assistant. Cosmofy brings the marvels of space right to your fingertips!
 
-### Version 1.1 Out Now
+### Version 1.3 Out Now
 
 [Download Cosmofy on the Apple App Store](https://apple.co/49sCoM0)
+
 [Join External Testing](https://apple.co/49pVuCy)
 
 ### Features:

@@ -64,7 +64,7 @@ struct MessageRowView: View {
             }
             
             VStack(alignment: .leading, spacing: 0) {
-
+                #if !os(tvOS)
                 if image == "openai" {
                     if !complete {
                         WordByWordTextView(text, interval: 0.075)
@@ -84,6 +84,23 @@ struct MessageRowView: View {
                     Markdown(text)
                         .textSelection(.enabled)
                 }
+                #else
+                if image == "openai" {
+                    if !complete {
+                        WordByWordTextView(text, interval: 0.075)
+                            .multilineTextAlignment(.leading)
+                            .onAppear {
+                                complete = true
+                            }
+                    } else {
+                        Text(text)
+                            .multilineTextAlignment(.leading)
+                    }
+                    
+                } else {
+                    Markdown(text)
+                }
+                #endif
                 
                 if let error = responseError {
                     Text("Error: \(error)")

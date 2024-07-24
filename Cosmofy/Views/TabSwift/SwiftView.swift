@@ -22,12 +22,15 @@ struct SwiftView: View {
             VStack {
                 chatListView
             }
+            
+            #if !os(tvOS)
             .navigationTitle("Swift")
             .onAppear {
                 UINavigationBar.appearance().largeTitleTextAttributes = [
                     .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 34, weight: .semibold),
                 ]
             }
+            #endif
         }
     }
     
@@ -45,6 +48,7 @@ struct SwiftView: View {
                                 }
                             }
                         }
+                #if !os(tvOS)
                         .gesture(
                             
                            DragGesture()
@@ -53,6 +57,7 @@ struct SwiftView: View {
                            }
                             
                         )
+                    #endif
                         
                     }
                     .onTapGesture {
@@ -81,7 +86,9 @@ struct SwiftView: View {
                 }
             }
         }
+        #if !os(tvOS)
         .background(colorScheme == .light ? .white : Color(.black))
+        #endif
         
     }
     
@@ -118,7 +125,9 @@ struct SwiftView: View {
 //                }
 
                 TextField("Ask away...", text: $vm.inputMessage, axis: .vertical)
+                #if !os(tvOS)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                #endif
                     .focused($isTextFieldFocused)
                     .disabled(vm.isInteractingWithChatGPT)
             

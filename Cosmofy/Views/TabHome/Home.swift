@@ -56,9 +56,9 @@ struct Home: View {
                     VStack() {
                         HStack {
                             Text("Cosmofy")
-                                .font(Font.custom("SF Pro Rounded Semibold", size: 32))
+                                .font(Font.custom("SF Pro Rounded Bold", size: 32))
                             Spacer()
-                            GarenText(text: "1.2", trigger: trigger)
+                            GarenText(text: "1.3", trigger: trigger)
                                 .font(Font.system(size: 18, weight: .semibold, design: .monospaced))
                             
                         }
@@ -275,4 +275,14 @@ struct JulyView: View {
 }
 
 
-
+struct AugustView: View {
+    var body: some View {
+        WebView(urlString: "https://www.quantamagazine.org/the-best-neighborhoods-for-starting-a-life-in-the-galaxy-20240124")
+            .navigationTitle("Article of the Month")
+            .navigationBarTitleDisplayMode(.inline)
+            
+            .navigationBarItems(
+                trailing: ShareLink(item: URL(string: "https://www.quantamagazine.org/the-best-neighborhoods-for-starting-a-life-in-the-galaxy-20240124")!, preview: SharePreview("Cosmofy's Article of the Month", image: Image("iconApp")))
+            )
+    }
+}

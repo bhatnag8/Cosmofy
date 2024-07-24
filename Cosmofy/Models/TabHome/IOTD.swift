@@ -31,7 +31,7 @@ extension ImageLoader {
         DispatchQueue.main.async {
             self.downloadedImage = UIImage(data: data)
         }
-    }
+    }   
 }
 
 struct APOD: Codable {

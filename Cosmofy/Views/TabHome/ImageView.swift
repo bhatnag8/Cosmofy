@@ -1,6 +1,8 @@
 import SwiftUI
-import WebKit
 
+#if !os(tvOS)
+import WebKit
+#endif
 
 var today = ""
 var done = false
@@ -14,6 +16,7 @@ struct IOTDView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                #if !os(tvOS)
                 if showDatePicker {
                     DatePicker("Select Date", selection: $selectedDate, in: dateRange, displayedComponents: .date)
                         .datePickerStyle(GraphicalDatePickerStyle())
@@ -28,6 +31,7 @@ struct IOTDView: View {
                         .tint(.SOUR)
                         .animation(.easeInOut, value: showDatePicker)
                 }
+                #endif
                 
                 ScrollView {
                     if let errorMessage = viewModel.errorMessage {
@@ -73,6 +77,22 @@ struct IOTDView: View {
                             }
                             .padding()
                             
+                            #if os(tvOS)
+                            if apod.media_type == "image" {
+                                ImageView(apod.url)
+                                    .aspectRatio(contentMode: .fit)
+                                    .padding()
+                            } else if apod.media_type == "video" {
+                                VStack {
+                                    Text("Video content cannot be displayed on Watch. Please view it on your iPhone.")
+                                        .padding()
+                                        .font(.caption2)
+                                        .foregroundStyle(.red)
+                                }
+                                .padding()
+                            }
+                            #else
+                            
                             if apod.media_type == "video" {
                                 WebView(urlString: apod.url)
                                     .frame(height: 300)
@@ -81,6 +101,7 @@ struct IOTDView: View {
                                 ImageView(apod.url)
                                     .padding(.horizontal)
                             }
+                            #endif
                             
                             if !apod.explanation.isEmpty {
                                 VStack {
@@ -156,7 +177,7 @@ struct ImageView: View {
         if let image = imageLoader.downloadedImage {
             Image(uiImage: image)
                 .resizable()
-                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .clipShape(RoundedRectangle(cornerRadius: 18))
                 .aspectRatio(contentMode: .fit)
         } else {
             ProgressView("Loading...")
@@ -166,6 +187,7 @@ struct ImageView: View {
 }
 
 
+#if !os(tvOS)
 
 struct WebView: UIViewRepresentable {
     
@@ -184,6 +206,8 @@ struct WebView: UIViewRepresentable {
         // Leave this empty for now
     }
 }
+
+#endif
 
 struct WordByWordTextView: View {
     let fullText: String
