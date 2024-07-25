@@ -8,121 +8,308 @@
 import SwiftUI
 
 struct Home: View {
-    @State private var trigger: Bool = false
-
+    @ObservedObject var viewModel: ViewModelAPOD
+    @State var loaded: Bool = false
+    
     var body: some View {
         
         NavigationStack {
             ScrollView(.vertical) {
-                VStack(alignment: .leading, spacing: 0) {
-                    GeometryReader { proxy in
-                        let size = proxy.size
-                        ScrollView(.horizontal) {
-                            HStack(spacing: 10) {
-                                ForEach(imageList) { card in
-                                    GeometryReader { geometry in
-                                        let cardSize = geometry.size
-                                        let minX = min(geometry.frame(in: .scrollView).minX * 1.2, geometry.size.width * 1.2)
-                                        
-                                        Image(card.imageName)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                            .offset(x: -minX)
-                                            .frame(width: cardSize.width * 2)
-                                            .frame(width: cardSize.width, height: cardSize.height)
-                                            .overlay {
-                                                OverlayView(card: card)
-                                            }
-                                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                                            .shadow(color: card.color, radius: 3)
-                                        
-                                    }
-                                    .frame(width: size.width - 50, height: size.height - 50)
-                                    .scrollTransition(.interactive, axis: .horizontal) { view, phase in
-                                        view.scaleEffect(phase.isIdentity ? 1 : 0.95)
-                                    }
-                                }
-                            }
-                            .padding(12)
-                            .scrollTargetLayout()
-                            .frame(height: size.height, alignment: .top)
-                        }
-                        .scrollTargetBehavior(.viewAligned)
-                        .scrollIndicators(.hidden)
-                    }
-                    .frame(height: UIScreen.main.bounds.height * 0.65)
-                    .padding(.horizontal, -8)
+                VStack {
                     
-                    VStack() {
-                        HStack {
-                            Text("Cosmofy")
-                                .font(Font.custom("SF Pro Rounded Bold", size: 32))
-                            Spacer()
-                            GarenText(text: "1.3", trigger: trigger)
-                                .font(Font.system(size: 18, weight: .semibold, design: .monospaced))
+                    ZStack {
+                        Image("August")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(height: 250)
+                            .clipShape(RoundedRectangle(cornerRadius: 16))
+                        
+                        VStack {
+                            Color.clear
+                        }
+                        .background(.regularMaterial)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 250)
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                        .environment(\.colorScheme, .dark)
+                        
+                        Image("August")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(height: 250)
+                            .mask(LinearGradient(
+                                gradient: Gradient(
+                                    stops: [
+                                        .init(color: Color.black, location: 0.35),
+                                        .init(color: Color.black.opacity(0), location: 0.75),
+                                        .init(color: Color.black.opacity(0), location: 2)
+                                    ]
+                                ),
+                                startPoint: .top,
+                                endPoint: .bottom
+                            ))
+                            .clipShape(RoundedRectangle(cornerRadius: 16))
+                        
+                        VStack(spacing: 5) {
                             
-                        }
-                        
-                        NavigationLink(destination: ArticleView()) {
+                            Spacer()
                             HStack {
-                                Image("home-icon-1")
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
-                                Text("Article of the Month")
-                                    .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                                    .foregroundColor(.primary)
+                                Text("AUGUST 2024")
+                                    .textCase(.uppercase)
+                                    .foregroundStyle(.white)
                                 Spacer()
-                                Image(systemName: "chevron.right")
+                            }
+                            HStack {
+                                Text("Introducing: Astronauts")
+                                    .font(.title3)
+                                    .fontDesign(.rounded)
+                                    .foregroundStyle(.white)
+                                Spacer()
+                            }
+                            HStack {
+                                Text("Join the Adventure")
+                                    .font(.subheadline)
+                                    .fontDesign(.rounded)
+                                    .foregroundStyle(.white.opacity(0.5))
+                                Spacer()
                             }
                         }
-                        
-
-                        NavigationLink(destination: IOTDView()) {
-                            HStack {
-                                Image("home-icon-2")
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
-                                Text("Picture of the Day")
-                                    .font(Font.custom("SF Pro Rounded Medium", size: 18))
-                                    .foregroundColor(.primary)
-                                Spacer()
-                                Image(systemName: "chevron.right")
-                            }
-                        }
-                        
-
+                        .padding()
                     }
                     .padding(.horizontal)
-                    .padding(.top, -12)
                 }
-                .padding([.leading, .trailing, .bottom])
-            }
-            .navigationTitle("")
-            .padding(.top)
-        }
-    }
-    
-    @ViewBuilder
-    func OverlayView(card: ImageViewCard) -> some View {
-        ZStack(alignment: .bottomLeading) {
-            LinearGradient(colors: [.clear, .clear, .clear, .black.opacity(0.1), .black.opacity(0.5), .black], startPoint: .top, endPoint: .bottom)
-            
-            HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(card.title)
-                        .font(Font.custom("SF Pro Rounded Semibold", size: 24))
+                
+
+                
+                if let errorMessage = viewModel.errorMessage {
+                    Text(errorMessage)
+                        .padding()
+                        .foregroundStyle(.red)
+                } else if let apod = viewModel.apod {
                     
-                    Text(card.subtitle)
-                        .font(Font.custom("SF Pro Rounded Medium", size: 16))
+                    NavigationLink(destination: IOTDView(viewModel: viewModel)) {
+                        
+                        VStack(spacing: 0) {
+                            
+                            VStack {
+                                HStack {
+                                    Text("Astronomy Picture of the Day")
+                                        .textCase(.uppercase)
+                                        .foregroundStyle(.secondary)
+                                    Spacer()
+                                }
+                                .padding(.top)
+                                .padding(.horizontal)
+                                
+                                Divider()
+                                    .padding(.horizontal)
+                                
+                                HStack {
+                                    Text(apod.title)
+                                        .font(.largeTitle)
+                                        .bold()
+                                        .fontWidth(.compressed)
+                                        .multilineTextAlignment(.leading)
+                                    Spacer()
+                                }
+                                .padding(.horizontal)
+                                .padding(.top)
+                                
+                                HStack {
+                                    Text(convertDateString(dateString: apod.date))
+                                        .italic()
+                                        .font(.body)
+                                        .fontDesign(.serif)
+                                    Spacer()
+                                }
+                                .padding(.horizontal)
+                                .padding(.bottom)
+                                
+                            }
+                            
+                            .background(.ultraThinMaterial)
+                            .clipShape(
+                                .rect(
+                                    topLeadingRadius: 16,
+                                    bottomLeadingRadius: 0,
+                                    bottomTrailingRadius: 0,
+                                    topTrailingRadius: 16
+                                )
+                            )
+                            .padding(.horizontal)
+                            
+                            
+                            if apod.media_type == "video" {
+                                WebView(urlString: apod.url)
+                                    .frame(height: 300)
+                                    .padding(.horizontal)
+                            } else {
+                                ImageView(apod.url)
+                                    .padding(.horizontal)
+                                    .onAppear(perform: {
+                                        loaded = true
+                                    })
+                                //                                    .scaledToFill()
+                                
+                            }
+                            HStack {
+                                VStack {
+                                    HStack {
+                                        Text("Read the description")
+                                            .fontWeight(.medium)
+                                            .fontDesign(.rounded)
+                                            .foregroundColor(.primary)
+                                        Spacer()
+                                    }
+                                    HStack {
+                                        Text("and view older images")
+                                            .fontDesign(.rounded)
+                                            .foregroundColor(.secondary)
+                                        Spacer()
+                                    }
+                                }
+                                .padding()
+                                
+                                Image(systemName: "chevron.right")
+                                    .padding(.horizontal)
+                            }
+                            .background(.ultraThinMaterial)
+                            .clipShape(
+                                .rect(
+                                    topLeadingRadius: 0,
+                                    bottomLeadingRadius: 16,
+                                    bottomTrailingRadius: 16,
+                                    topTrailingRadius: 0
+                                )
+                            )
+                            .padding(.horizontal)
+                            
+                        }
+
+                    }
+                    .padding(.top)
+                    
+                    
                 }
-                .foregroundColor(.white)
+                
+                
+                
+                VStack {
+                    
+                    NavigationLink(destination: AugustView()) {
+                        
+                        ZStack {
+                            
+                            Image("August Article")
+                                .resizable()
+                                .scaledToFill()
+                            
+                            VStack {
+                                Color.clear
+                            }
+                            .frame(maxWidth: .infinity)
+                            .background(.ultraThickMaterial)
+                            .environment(\.colorScheme, .dark)
+                            
+                            
+                            
+                            Image("August Article")
+                                .resizable()
+                                .scaledToFill()
+                                .mask(LinearGradient(stops: [
+                                    .init(color: .black.opacity(0), location: 0),
+                                    .init(color: .black, location: 0.2),
+                                    .init(color: .black.opacity(0.5), location: 0.7),
+                                    .init(color: .black.opacity(0), location: 1),
+                                ], startPoint: .top, endPoint: .bottom))
+                            
+                            VStack {
+                                HStack {
+                                    Text("Article of the month")
+                                        .textCase(.uppercase)
+                                        .foregroundStyle(Color.white)
+                                    Spacer()
+                                }
+                                .padding(.top)
+                                .padding(.horizontal)
+                                
+                                Divider()
+                                    .tint(Color.white)
+                                    .padding(.horizontal)
+                                
+                                Spacer()
+                                
+                                HStack {
+                                    VStack {
+                                        Text("08")
+                                            .font(.title)
+                                            .fontDesign(.serif)
+                                            .foregroundStyle(.white)
+                                        
+                                        Text("2024")
+                                            .fontDesign(.serif)
+                                            .foregroundStyle(Color.white.opacity(0.6))
+                                        
+                                    }
+                                    VStack {
+                                        Text("The Best Neighborhoods for Starting a Life in the Galaxy")
+                                            .multilineTextAlignment(.leading)
+                                            .font(.subheadline)
+                                            .fontDesign(.rounded)
+                                            .fontWeight(.medium)
+                                            .foregroundStyle(.white)
+                                        HStack {
+                                            Text("Rebecca Boyle")
+                                                .font(.footnote)
+                                                .multilineTextAlignment(.leading)
+                                                .italic()
+                                                .fontDesign(.serif)
+                                                .foregroundStyle(Color.white.opacity(0.6))
+                                            Spacer()
+                                        }
+                                        
+                                    }
+                                    .padding(.horizontal)
+                                    Spacer()
+                                    Image(systemName: "chevron.right")
+                                        .padding()
+                                        .foregroundStyle(.white)
+                                    
+                                }
+                                .padding()
+                            }
+                            
+                            
+                        }
+                        .clipShape(RoundedRectangle.init(cornerRadius: 18))
+                        
+                        
+                    }
+                }
                 .padding()
                 
-                Spacer()
                 
             }
+            .navigationTitle("Cosmofy")
+            .onAppear {
+#if !os(tvOS)
+                UINavigationBar.appearance().largeTitleTextAttributes = [
+                    .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 34, weight: .semibold),
+                ]
+#endif
+            }
+            .padding(.top)
         }
+        .onAppear() {
+            if !loaded {
+                viewModel.fetch()
+            }
+            
+        }
+        
     }
+    
+    
     
     
 }
@@ -165,8 +352,8 @@ struct ArticleView: View {
                                             .multilineTextAlignment(.leading)
                                             .font(.caption)
                                             .italic()
-                                                .fontDesign(.serif)
-                                                .foregroundColor(.secondary)
+                                            .fontDesign(.serif)
+                                            .foregroundColor(.secondary)
                                         Spacer()
                                     }
                                 }
@@ -218,8 +405,8 @@ struct ArticleView: View {
                                             .multilineTextAlignment(.leading)
                                             .font(.caption)
                                             .italic()
-                                                .fontDesign(.serif)
-                                                .foregroundColor(.secondary)
+                                            .fontDesign(.serif)
+                                            .foregroundColor(.secondary)
                                         Spacer()
                                     }
                                 }
@@ -240,12 +427,15 @@ struct ArticleView: View {
         }
         .navigationTitle("Articles")
         
+        
     }
+    
 }
 
 #Preview {
     
-    Home()
+    Home(viewModel: ViewModelAPOD())
+    
     
 }
 
@@ -254,7 +444,7 @@ struct JuneView: View {
         WebView(urlString: "https://www.quantamagazine.org/what-is-the-geometry-of-the-universe-20200316/")
             .navigationTitle("Article of the Month")
             .navigationBarTitleDisplayMode(.inline)
-            
+        
             .navigationBarItems(
                 trailing: ShareLink(item: URL(string: "https://www.quantamagazine.org/what-is-the-geometry-of-the-universe-20200316/")!, preview: SharePreview("Cosmofy's Article of the Month", image: Image("iconApp")))
             )
@@ -267,7 +457,7 @@ struct JulyView: View {
         WebView(urlString: "https://www.quantamagazine.org/how-are-planets-made-new-theories-are-taking-shape-20220609/")
             .navigationTitle("Article of the Month")
             .navigationBarTitleDisplayMode(.inline)
-            
+        
             .navigationBarItems(
                 trailing: ShareLink(item: URL(string: "https://www.quantamagazine.org/how-are-planets-made-new-theories-are-taking-shape-20220609/")!, preview: SharePreview("Cosmofy's Article of the Month", image: Image("iconApp")))
             )
@@ -280,9 +470,73 @@ struct AugustView: View {
         WebView(urlString: "https://www.quantamagazine.org/the-best-neighborhoods-for-starting-a-life-in-the-galaxy-20240124")
             .navigationTitle("Article of the Month")
             .navigationBarTitleDisplayMode(.inline)
-            
+        
             .navigationBarItems(
                 trailing: ShareLink(item: URL(string: "https://www.quantamagazine.org/the-best-neighborhoods-for-starting-a-life-in-the-galaxy-20240124")!, preview: SharePreview("Cosmofy's Article of the Month", image: Image("iconApp")))
             )
     }
 }
+
+/*
+ GeometryReader { proxy in
+ let size = proxy.size
+ ScrollView(.horizontal) {
+ HStack(spacing: 10) {
+ ForEach(imageList) { card in
+ GeometryReader { geometry in
+ let cardSize = geometry.size
+ let minX = min(geometry.frame(in: .scrollView).minX * 1.2, geometry.size.width * 1.2)
+ 
+ Image(card.imageName)
+ .resizable()
+ .aspectRatio(contentMode: .fill)
+ .offset(x: -minX)
+ .frame(width: cardSize.width * 2)
+ .frame(width: cardSize.width, height: cardSize.height)
+ .overlay {
+ OverlayView(card: card)
+ }
+ .clipShape(RoundedRectangle(cornerRadius: 20))
+ .shadow(color: card.color, radius: 3)
+ 
+ }
+ .frame(width: size.width - 50, height: size.height - 50)
+ .scrollTransition(.interactive, axis: .horizontal) { view, phase in
+ view.scaleEffect(phase.isIdentity ? 1 : 0.95)
+ }
+ }
+ }
+ .padding(12)
+ .scrollTargetLayout()
+ .frame(height: size.height, alignment: .top)
+ }
+ .scrollTargetBehavior(.viewAligned)
+ .scrollIndicators(.hidden)
+ }
+ .frame(height: UIScreen.main.bounds.height * 0.65)
+ .padding(.horizontal, -8)
+ 
+ @ViewBuilder
+ func OverlayView(card: ImageViewCard) -> some View {
+ ZStack(alignment: .bottomLeading) {
+ LinearGradient(colors: [.clear, .clear, .clear, .black.opacity(0.1), .black.opacity(0.5), .black], startPoint: .top, endPoint: .bottom)
+ 
+ HStack {
+ VStack(alignment: .leading, spacing: 4) {
+ Text(card.title)
+ .font(Font.custom("SF Pro Rounded Semibold", size: 24))
+ 
+ Text(card.subtitle)
+ .font(Font.custom("SF Pro Rounded Medium", size: 16))
+ }
+ .foregroundColor(.white)
+ .padding()
+ 
+ Spacer()
+ 
+ }
+ }
+ }
+ 
+ */
+

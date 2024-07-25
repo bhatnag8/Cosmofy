@@ -8,6 +8,7 @@ Dive into the wonders of our solar system with Cosmofy! This app allows you to e
 
 [Join External Testing](https://apple.co/49pVuCy)
 
+
 ### Features:
 - **Planetary Models**: Experience the solar system like never before with detailed 3D models of planets.
 - **Planet Information**: Dive deep into the history, composition, and unique features of each planet.

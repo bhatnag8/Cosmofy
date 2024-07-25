@@ -1,9 +1,14 @@
-//
-//  API_IOTD.swift
-//  Cosmofy
-//
-//  Created by Arryan Bhatnagar on 3/15/24.
-//
+/*
+-----------------------------------------------------------------------------
+File Name: API_OPENAI.swift
+Description: ...
+-----------------------------------------------------------------------------
+Creation Date: 3/15/24
+-----------------------------------------------------------------------------
+Author: Arryan Bhatnagar
+Project: Cosmofy 4th Edition
+-----------------------------------------------------------------------------
+*/
 
 import Foundation
 
@@ -17,6 +22,7 @@ class ViewModelAPOD: ObservableObject {
                 self.errorMessage = "Failed to fetch data: \(error.localizedDescription)."
             } else if let apod = apod {
                 self.apod = apod
+                
             }
         }
     }

@@ -451,7 +451,7 @@ struct PlanetView: View {
  
  */
 #Preview {
-    PlanetView(planet: venusPlanet)
+    PlanetView(planet: earthPlanet)
 }
 
 //                            .foregroundStyle(planet.name == $0.name ? $0.color.gradient : Color.black.opacity(0.5).gradient)

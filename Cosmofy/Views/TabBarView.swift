@@ -13,6 +13,7 @@ struct TabBarView: View {
         UITabBar.appearance().backgroundColor = UIColor.systemBackground
     }
     
+    @StateObject private var viewModelAPOD = ViewModelAPOD()
     @State private var fetchComplete = false
     @State private var fetchFailed = false
     
@@ -20,7 +21,7 @@ struct TabBarView: View {
         TabView {
             
             if UIDevice.current.userInterfaceIdiom == .phone {
-                Home()
+                Home(viewModel: viewModelAPOD)
                     .tabItem {
                         Label("Home", image: "tab-bar-home")
                     }
@@ -74,7 +75,8 @@ struct TabBarView: View {
                 }
             }
             
-            
+            viewModelAPOD.fetch()
+
         }
     }
 }

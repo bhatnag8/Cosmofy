@@ -1,5 +1,5 @@
 {
-  "originHash" : "09b5ee9773300f7eacdc507fe3d603d004b3bf04e0c2b2b05d982f52dc7b90f9",
+  "originHash" : "639959f6b799b9f8856f94a78a4e86161029c3ddb6f0d0978e723b5dbdb09849",
   "pins" : [
     {
       "identity" : "networkimage",
@@ -26,6 +26,15 @@
       "state" : {
         "revision" : "e029f75f9c43e52e351528a78e293a997200b9f8",
         "version" : "2.0.0"
+      }
+    },
+    {
+      "identity" : "swiftuigradientblur",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/unitedadityaa/SwiftUIGradientBlur",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d9cccf84c0b20433c679c0470878205d235e81bb"
       }
     }
   ],

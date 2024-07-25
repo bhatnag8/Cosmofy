@@ -7,32 +7,19 @@ import WebKit
 var today = ""
 var done = false
 
+
+#if !os(tvOS)
 struct IOTDView: View {
     @ObservedObject var viewModel = ViewModelAPOD()
-    @State private var fetched: Bool = false
+
+
+//    @State private var fetched: Bool = false
     @State private var showDatePicker: Bool = false
     @State private var selectedDate: Date = Date()
 
     var body: some View {
         NavigationStack {
             VStack {
-                #if !os(tvOS)
-                if showDatePicker {
-                    DatePicker("Select Date", selection: $selectedDate, in: dateRange, displayedComponents: .date)
-                        .datePickerStyle(GraphicalDatePickerStyle())
-                        .padding()
-                        .onChange(of: selectedDate) { oldDate, newDate in
-                            let dateFormatter = DateFormatter()
-                            dateFormatter.dateFormat = "yyyy-MM-dd"
-                            let dateString = dateFormatter.string(from: newDate)
-                            viewModel.fetch(for: dateString)
-                            showDatePicker.toggle()
-                        }
-                        .tint(.SOUR)
-                        .animation(.easeInOut, value: showDatePicker)
-                }
-                #endif
-                
                 ScrollView {
                     if let errorMessage = viewModel.errorMessage {
                         Text(errorMessage)
@@ -47,11 +34,6 @@ struct IOTDView: View {
                                             .font(Font.system(size: 16))
                                             .textCase(.uppercase)
                                             .foregroundStyle(.secondary)
-                                            .onAppear(perform: {
-                                                if !done {
-                                                    today = viewModel.apod!.date
-                                                    done = true
-                                                }})
                                         Spacer()
                                     }
                                     Divider()
@@ -100,6 +82,7 @@ struct IOTDView: View {
                             } else {
                                 ImageView(apod.url)
                                     .padding(.horizontal)
+
                             }
                             #endif
                             
@@ -130,19 +113,31 @@ struct IOTDView: View {
                     }
                 }
             }
-            .navigationBarItems(trailing: Button(action: {
-                selectedDate = convertStringToDate(dateString: viewModel.apod?.date ?? "")
-                withAnimation {
-                    showDatePicker.toggle()
-                }
-            }) {
-                Image(systemName: "calendar.badge.plus")
-                    .imageScale(.large)
-            })
-            .onAppear {
-                if !fetched {
-                    viewModel.fetch()
-                    fetched = true
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    DatePicker(
+                        "",
+                        selection: $selectedDate,
+                        in: dateRange,
+                        displayedComponents: .date
+                    )
+                    .datePickerStyle(CompactDatePickerStyle())
+                    .onChange(of: selectedDate) { oldDate, newDate in
+                        print("Original selectedDate (UTC): \(oldDate)")
+                        print("Original selectedDate (UTC): \(newDate)")
+
+                        // Convert the selected date to Eastern Time Zone
+
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "yyyy-MM-dd"
+                        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+                        let dateString = dateFormatter.string(from: newDate)
+                        print("Formatted Date String: \(dateString)")
+                        
+                        viewModel.fetch(for: dateString)
+                    }
+                    .tint(.SOUR)
                 }
             }
         }
@@ -152,18 +147,26 @@ struct IOTDView: View {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let minDate = dateFormatter.date(from: "1995-06-16")!
-        let maxDate = dateFormatter.date(from: today)!
-        return minDate...maxDate
+        // Get the current date and time
+               let currentDate = Date()
+               
+               // Convert the current date to the EST time zone
+               let estTimeZone = TimeZone(abbreviation: "EST")!
+               var calendar = Calendar.current
+               calendar.timeZone = estTimeZone
+               let estDate = calendar.startOfDay(for: currentDate)
+        print(estDate)
+        return minDate...estDate
+    }
+    
+    private var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        return formatter
     }
 }
+#endif
 
-func convertStringToDate(dateString: String) -> Date {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd"
-    dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-    dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-    return dateFormatter.date(from: dateString) ?? Date()
-}
 
 // View for displaying images
 struct ImageView: View {
@@ -177,8 +180,8 @@ struct ImageView: View {
         if let image = imageLoader.downloadedImage {
             Image(uiImage: image)
                 .resizable()
-                .clipShape(RoundedRectangle(cornerRadius: 18))
-                .aspectRatio(contentMode: .fit)
+//                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .aspectRatio(contentMode: .fill)
         } else {
             ProgressView("Loading...")
                 .padding()

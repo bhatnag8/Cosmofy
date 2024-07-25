@@ -1,15 +1,27 @@
-//  ========================================
-//  API.swift
-//  Cosmofy
-//  4th Edition
-//  Created by Arryan Bhatnagar on 10/21/23.
-//  Abstract: Configures the request to OpenAI API.
-//  ========================================
-
+/*
+-----------------------------------------------------------------------------
+File Name: API_OPENAI.swift
+Description: Configures the request to OpenAI API and manages interactions
+             with the API, including message sending and response handling.
+-----------------------------------------------------------------------------
+Creation Date: 10/21/23
+-----------------------------------------------------------------------------
+Author: Arryan Bhatnagar
+Project: Cosmofy 4th Edition
+-----------------------------------------------------------------------------
+*/
+ 
+ 
+/* MARK: imports */
 import Foundation
 import CryptoKit
 
+// Flag indicating whether AES decryption is complete
 var AES_Complete: Bool = false
+
+/* MARK: class InteractingViewModel
+   ViewModel for interacting with the OpenAI API
+ */
 
 class InteractingViewModel: ObservableObject {
     
@@ -18,17 +30,22 @@ class InteractingViewModel: ObservableObject {
     @Published var inputMessage: String = ""
     
     private let api: API
-    //  🌌 🚀 🌠 🏔️ 🌟
+    
+    // Initialize the view model with an API instance
     init(api: API) {
         self.api = api
-        messages.append(MessageRow(isInteractingWithChatGPT: false,
-                                            sendImage: "openai",
-                                            sendText: "Greetings from Swift! I can provide you with in-depth knowledge and insights about space like never before.",
-                                            responseImage: "",
-                                            responseText: nil,
-                                            responseError: nil))
+        
+        messages.append(MessageRow(
+            isInteractingWithChatGPT: false,
+            sendImage: "openai",
+            sendText: "Greetings from Swift! I can provide you with in-depth knowledge and insights about space like never before.",
+            responseImage: "",
+            responseText: nil,
+            responseError: nil
+        ))
     }
     
+    // Handles the send button tap event by sending the input message.
     @MainActor
     func sendTapped() async {
         let text = inputMessage
@@ -36,6 +53,8 @@ class InteractingViewModel: ObservableObject {
         await send(text: text)
     }
     
+    // Retries sending a previously sent message.
+    // Parameter message: The message to be retried.
     @MainActor
     func retry(message: MessageRow) async {
         guard let index = messages.firstIndex(where: {$0.id == message.id}) else {
@@ -46,12 +65,19 @@ class InteractingViewModel: ObservableObject {
         await send(text: message.sendText)
     }
     
+    // Sends a text message and updates the message list with the response.
+    // Parameter text: The text to be sent.
     @MainActor
     func send(text: String) async {
         isInteractingWithChatGPT = true
         var streamText = ""
         var messageRow = MessageRow(
-            isInteractingWithChatGPT: true, sendImage: "user", sendText: text, responseImage: "swift", responseText: streamText, responseError: nil
+            isInteractingWithChatGPT: true, 
+            sendImage: "user",
+            sendText: text,
+            responseImage: "swift",
+            responseText: streamText,
+            responseError: nil
         )
         
         self.messages.append(messageRow)
@@ -73,7 +99,9 @@ class InteractingViewModel: ObservableObject {
     }
 }
 
-
+/* MARK: class API
+   API client for communicating with OpenAI.
+ */
 class API: @unchecked Sendable {
         
     private let systemMessage: Message
@@ -85,6 +113,7 @@ class API: @unchecked Sendable {
     private var apiKey: String?
     private var historyList = [Message]()
     private let urlSession = URLSession.shared
+    
     private var urlRequest: URLRequest {
         let url = URL(string: "http://api.arryan.xyz:8002/api/providers/openai/v1/chat/completions" )!
         var urlRequest = URLRequest(url: url)
@@ -114,7 +143,7 @@ class API: @unchecked Sendable {
         ]
     }
     
-    init(model: String = "gpt-3.5-turbo", systemPrompt: String = "You are a helpful assistant who will answer space/astronomy questions. Your name is Swift.", temperature: Double = 0.65) {
+    init(model: String = "gpt-3.5-turbo", systemPrompt: String = "You are a helpful assistant who will answer space/astronomy questions. Your name is Swift. You may answer any other questions. You are in an app called Cosmofy.", temperature: Double = 0.65) {
         self.model = model
         self.systemMessage = .init(role: "system", content: systemPrompt)
         self.temperature = temperature
@@ -126,6 +155,8 @@ class API: @unchecked Sendable {
         }
     }
     
+    // Fetches and decrypts the API key.
+    // Parameter completion: Closure to be called with the decrypted API key.
     private func fetchApiKey(completion: @escaping (String?) -> Void) {
         guard let url = URL(string: "https://api.arryan.xyz:6969/get-api-key") else {
             completion(nil)
@@ -158,6 +189,12 @@ class API: @unchecked Sendable {
         task.resume()
     }
     
+    // Decrypts the provided data using AES encryption.
+    // Parameters:
+    // - encryptedData: Base64 encoded encrypted data.
+    // - iv: Base64 encoded initialization vector.
+    // - authTag: Base64 encoded authentication tag.
+    // Returns: Decrypted string or nil if decryption fails.
     private func decrypt(encryptedData: String, iv: String, authTag: String) -> String? {
         guard let encryptedData = Data(base64Encoded: encryptedData),
               let iv = Data(base64Encoded: iv),
@@ -222,10 +259,11 @@ class API: @unchecked Sendable {
                            let data = line.dropFirst(6).data(using: .utf8),
                            let response = try? self.jsonDecoder.decode(StreamCompletionResponse.self, from: data),
                            let text = response.choices.first?.delta.content {
-                            //Haptics.shared.impact(for: .light)
+                            /* Haptics.shared.impact(for: .light)  */
                             responseText += text
                             continuation.yield(text)
-//                            try await Task.sleep(nanoseconds: 2 * 10000000)  // 2 seconds in nanoseconds
+                            /* Slows down each token by 2 ns
+                            try await Task.sleep(nanoseconds: 2 * 10000000) */
                         }
                     }
                     self.appendToHistoryList(userText: text, responseText: responseText)
@@ -270,7 +308,6 @@ class API: @unchecked Sendable {
             throw "Long Response: Max character limit of 40000"
         }
         
-        
         let request = Request(model: model, temperature: temperature, messages: generateMessages(from: text), stream: stream)
         return try JSONEncoder().encode(request)
     }
@@ -278,10 +315,10 @@ class API: @unchecked Sendable {
     private func appendToHistoryList(userText: String, responseText: String) {
         self.historyList.append(.init(role: "user", content: userText))
         self.historyList.append(.init(role: "assistant", content: responseText))
-
     }
 }
 
+/* MARK: extension String */
 extension String: CustomNSError {
     public var errorUserInfo: [String : Any] {
         [
@@ -290,6 +327,7 @@ extension String: CustomNSError {
     }
 }
 
+/* MARK: extension Data */
 extension Data {
     init?(hexString: String) {
         let len = hexString.count / 2
