@@ -85,7 +85,8 @@ struct Home: View {
                 ZStack(alignment: .bottom) {
                     Image("August")
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
+                        .frame(height: 250)
+                        .aspectRatio(contentMode: .fit)
                         .variableBlur(radius: 6) { geometryProxy, context in
                             // draw a linear gradient across the entire mask from top to bottom
                             context.fill(
@@ -127,7 +128,7 @@ struct Home: View {
                     
                     
                 }
-                .padding(.horizontal, .top)
+                .padding([.horizontal, .top])
                 
                 
                         
