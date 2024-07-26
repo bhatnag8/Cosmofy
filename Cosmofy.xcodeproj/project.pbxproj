@@ -56,6 +56,7 @@
 		0B87A67A2C4144D500BF924B /* TVMessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87A6792C4144D500BF924B /* TVMessageRowView.swift */; };
 		0B87A67B2C4147E700BF924B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
 		0B87A67F2C41623600BF924B /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87A67D2C41622C00BF924B /* Map.swift */; };
+		0B8D86032C537EF20052913D /* Variablur in Frameworks */ = {isa = PBXBuildFile; productRef = 0B8D86022C537EF20052913D /* Variablur */; };
 		0B923B6E2B9CBBEE009B8D45 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */; };
 		0B9755BA2C2EF9E7002D9C70 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B9755B92C2EF9E7002D9C70 /* Launch Screen.storyboard */; };
 		0B97AE222C1E9078003E96EB /* API_APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2652BA4D16F004491B7 /* API_APOD.swift */; };
@@ -145,7 +146,6 @@
 		0B1BAD562AE97736001CFC35 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0B2420AF2C511C69005A5958 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B2420B12C511C94005A5958 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B2420B32C512AE6005A5958 /* Cosmofy tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Cosmofy tvOS.app"; path = "/Users/SOUR/Documents/Cosmofy/build/Debug-appletvos/Cosmofy tvOS.app"; sourceTree = "<absolute>"; };
 		0B2420B62C519F3C005A5958 /* Cosmofy iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmofy iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B3990712C4683DC0000683E /* API_ASTRONAUT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_ASTRONAUT.swift; sourceTree = "<group>"; };
 		0B3EC2632BA4BAFE004491B7 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
@@ -161,6 +161,8 @@
 		0B87A6772C4144B700BF924B /* TVSwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSwiftView.swift; sourceTree = "<group>"; };
 		0B87A6792C4144D500BF924B /* TVMessageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMessageRowView.swift; sourceTree = "<group>"; };
 		0B87A67D2C41622C00BF924B /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		0B8D85FF2C537D5F0052913D /* Cosmofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosmofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B8D86002C537D5F0052913D /* Cosmofy tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmofy tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		0B9755B92C2EF9E7002D9C70 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0B97AE2A2C200979003E96EB /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
@@ -184,7 +186,6 @@
 		0BB14A522B9C339800476F3C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0BBAC7402C4E755600DE4C85 /* AstronautsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautsView.swift; sourceTree = "<group>"; };
 		0BBAC7422C4E779A00DE4C85 /* MapHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHelpers.swift; sourceTree = "<group>"; };
-		0BDBC9C92C1D956E00F720F2 /* Cosmofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Cosmofy.app; path = "/Users/SOUR/Documents/Cosmofy/build/Debug-watchos/Cosmofy.app"; sourceTree = "<absolute>"; };
 		0BDBC9CB2C1D956E00F720F2 /* CosmofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmofyApp.swift; sourceTree = "<group>"; };
 		0BDBC9CD2C1D956E00F720F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0BDBC9CF2C1D957000F720F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -224,6 +225,7 @@
 			files = (
 				0BD7A7642C2B3D5600D75F1D /* VTabView in Frameworks */,
 				0B39A33C2C1D5799003159F9 /* MarkdownUI in Frameworks */,
+				0B8D86032C537EF20052913D /* Variablur in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +489,8 @@
 				0BB07A7F2C31360E0066977E /* Cosmofy for TV */,
 				0B2420B62C519F3C005A5958 /* Cosmofy iOS.app */,
 				0B2420B82C51AB5F005A5958 /* Frameworks */,
+				0B8D85FF2C537D5F0052913D /* Cosmofy.app */,
+				0B8D86002C537D5F0052913D /* Cosmofy tvOS.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -523,7 +527,7 @@
 				0B87A6732C41303500BF924B /* MarkdownUI */,
 			);
 			productName = "Cosmofy for TV";
-			productReference = 0B2420B32C512AE6005A5958 /* Cosmofy tvOS.app */;
+			productReference = 0B8D86002C537D5F0052913D /* Cosmofy tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0BDBC9C82C1D956E00F720F2 /* Cosmofy watchOS */ = {
@@ -540,7 +544,7 @@
 			);
 			name = "Cosmofy watchOS";
 			productName = "WatchCosmofy Watch App";
-			productReference = 0BDBC9C92C1D956E00F720F2 /* Cosmofy.app */;
+			productReference = 0B8D85FF2C537D5F0052913D /* Cosmofy.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2FBBB6542945531500BBB072 /* Cosmofy iOS */ = {
@@ -561,6 +565,7 @@
 			packageProductDependencies = (
 				0B39A33B2C1D5799003159F9 /* MarkdownUI */,
 				0BD7A7632C2B3D5600D75F1D /* VTabView */,
+				0B8D86022C537EF20052913D /* Variablur */,
 			);
 			productName = Spacefy;
 			productReference = 0B2420B62C519F3C005A5958 /* Cosmofy iOS.app */;
@@ -602,6 +607,7 @@
 				0B39A33A2C1D5799003159F9 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 				0BD7A7622C2B3D5600D75F1D /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */,
 				0B2420B72C51AB4A005A5958 /* XCRemoteSwiftPackageReference "SwiftUIGradientBlur" */,
+				0B8D86012C537E1F0052913D /* XCRemoteSwiftPackageReference "Variablur" */,
 			);
 			productRefGroup = 2FBBB64C2945531500BBB072;
 			projectDirPath = "";
@@ -1160,6 +1166,14 @@
 				minimumVersion = 2.3.0;
 			};
 		};
+		0B8D86012C537E1F0052913D /* XCRemoteSwiftPackageReference "Variablur" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daprice/Variablur";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		0BD7A7622C2B3D5600D75F1D /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-vertical-tab-view";
@@ -1180,6 +1194,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0B39A33A2C1D5799003159F9 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
+		};
+		0B8D86022C537EF20052913D /* Variablur */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B8D86012C537E1F0052913D /* XCRemoteSwiftPackageReference "Variablur" */;
+			productName = Variablur;
 		};
 		0BD7A7632C2B3D5600D75F1D /* VTabView */ = {
 			isa = XCSwiftPackageProductDependency;

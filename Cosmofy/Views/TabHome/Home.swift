@@ -6,6 +6,7 @@
 //  173
 
 import SwiftUI
+import Variablur
 
 struct Home: View {
     @ObservedObject var viewModel: ViewModelAPOD
@@ -79,7 +80,58 @@ struct Home: View {
                     .padding(.horizontal)
                 }
                 
+                
 
+                ZStack(alignment: .bottom) {
+                    Image("August")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .variableBlur(radius: 6) { geometryProxy, context in
+                            // draw a linear gradient across the entire mask from top to bottom
+                            context.fill(
+                                Path(geometryProxy.frame(in: .local)),
+                                with: .linearGradient(
+                                    .init(colors: [.white, .clear]),
+                                    startPoint: .init(x: 0, y: geometryProxy.size.height),
+                                    endPoint: .init(x: 0, y: geometryProxy.size.height*0.5)
+                                )
+                            )
+                        }
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+
+                    VStack(spacing: 5) {
+                        
+                        Spacer()
+                        HStack {
+                            Text("AUGUST 2024")
+                                .textCase(.uppercase)
+                                .foregroundStyle(.white)
+                            Spacer()
+                        }
+                        HStack {
+                            Text("Introducing: Astronauts")
+                                .font(.title3)
+                                .fontDesign(.rounded)
+                                .foregroundStyle(.white)
+                            Spacer()
+                        }
+                        HStack {
+                            Text("Join the Adventure")
+                                .font(.subheadline)
+                                .fontDesign(.rounded)
+                                .foregroundStyle(.white.opacity(0.5))
+                            Spacer()
+                        }
+                    }
+                    .padding()
+                    
+                    
+                }
+                .padding(.horizontal, .top)
+                
+                
+                        
+                
                 
                 if let errorMessage = viewModel.errorMessage {
                     Text(errorMessage)
@@ -298,7 +350,6 @@ struct Home: View {
                 ]
 #endif
             }
-            .padding(.top)
         }
         .onAppear() {
             if !loaded {
