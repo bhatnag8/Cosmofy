@@ -28,8 +28,10 @@ struct MessageRowView: View {
             }
         }
         .clipShape(RoundedRectangle(cornerRadius: 24))
-        .padding(.vertical, 4)
+        .padding(.vertical, 8)
         .padding(.horizontal)
+        .shadow(color: .black.opacity(0.15), radius: 4)
+
 
     }
     
@@ -53,12 +55,12 @@ struct MessageRowView: View {
                         Text("swift")
                             .textCase(.uppercase)
                             .foregroundStyle(.secondary)
-                            .font(.caption)
+                            .font(.footnote)
                     } else {
                         Text(image)
                             .textCase(.uppercase)
                             .foregroundStyle(.secondary)
-                            .font(.caption)
+                            .font(.footnote)
                     }
                 }
             }
@@ -117,12 +119,14 @@ struct MessageRowView: View {
                 if showDotLoading {
                     LoadingView(color: .labelColorMod)
                         .frame(height: 10)
+//                        .frame(maxWidth: 25)
                 }
             }
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.ultraThinMaterial)
+
     
     }
 }

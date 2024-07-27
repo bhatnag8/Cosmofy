@@ -126,6 +126,7 @@ struct SwiftView: View {
 
                 TextField("Ask away...", text: $vm.inputMessage, axis: .vertical)
                 #if !os(tvOS)
+                
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 #endif
                     .focused($isTextFieldFocused)

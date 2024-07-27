@@ -16,79 +16,12 @@ struct Home: View {
         
         NavigationStack {
             ScrollView(.vertical) {
-                VStack {
-                    
-                    ZStack {
-                        Image("August")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(height: 250)
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
-                        
-                        VStack {
-                            Color.clear
-                        }
-                        .background(.regularMaterial)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 250)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                        .environment(\.colorScheme, .dark)
-                        
-                        Image("August")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(height: 250)
-                            .mask(LinearGradient(
-                                gradient: Gradient(
-                                    stops: [
-                                        .init(color: Color.black, location: 0.35),
-                                        .init(color: Color.black.opacity(0), location: 0.75),
-                                        .init(color: Color.black.opacity(0), location: 2)
-                                    ]
-                                ),
-                                startPoint: .top,
-                                endPoint: .bottom
-                            ))
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
-                        
-                        VStack(spacing: 5) {
-                            
-                            Spacer()
-                            HStack {
-                                Text("AUGUST 2024")
-                                    .textCase(.uppercase)
-                                    .foregroundStyle(.white)
-                                Spacer()
-                            }
-                            HStack {
-                                Text("Introducing: Astronauts")
-                                    .font(.title3)
-                                    .fontDesign(.rounded)
-                                    .foregroundStyle(.white)
-                                Spacer()
-                            }
-                            HStack {
-                                Text("Join the Adventure")
-                                    .font(.subheadline)
-                                    .fontDesign(.rounded)
-                                    .foregroundStyle(.white.opacity(0.5))
-                                Spacer()
-                            }
-                        }
-                        .padding()
-                    }
-                    .padding(.horizontal)
-                }
-                
-                
-
-                ZStack(alignment: .bottom) {
+                ZStack() {
                     Image("August")
                         .resizable()
                         .frame(height: 250)
                         .aspectRatio(contentMode: .fit)
                         .variableBlur(radius: 6) { geometryProxy, context in
-                            // draw a linear gradient across the entire mask from top to bottom
                             context.fill(
                                 Path(geometryProxy.frame(in: .local)),
                                 with: .linearGradient(
@@ -125,19 +58,18 @@ struct Home: View {
                         }
                     }
                     .padding()
-                    
-                    
                 }
+//                .shadow(color: .black, radius: 3)
+                .shadow(color: .black.opacity(0.2), radius: 4)
+
                 .padding([.horizontal, .top])
-                
-                
-                        
-                
+
                 
                 if let errorMessage = viewModel.errorMessage {
                     Text(errorMessage)
                         .padding()
                         .foregroundStyle(.red)
+                    
                 } else if let apod = viewModel.apod {
                     
                     NavigationLink(destination: IOTDView(viewModel: viewModel)) {
@@ -166,7 +98,6 @@ struct Home: View {
                                     Spacer()
                                 }
                                 .padding(.horizontal)
-                                .padding(.top)
                                 
                                 HStack {
                                     Text(convertDateString(dateString: apod.date))
@@ -240,116 +171,116 @@ struct Home: View {
                         }
 
                     }
+                    .shadow(color: .black.opacity(0.2), radius: 4)
                     .padding(.top)
                     
-                    
+                } else {
+                    Rectangle()
+                        .fill(Color.gray.opacity(0.2))
+                        .shadow(color: .black.opacity(0.2), radius: 4)
+                        .frame(height: 500)
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                        .padding(.top)
+                        .padding(.horizontal)
+                        .onAppear {
+                            print("loain")
+                        }
                 }
                 
                 
                 
-                VStack {
+                NavigationLink(destination: AugustView()) {
                     
-                    NavigationLink(destination: AugustView()) {
+                    ZStack {
                         
-                        ZStack {
-                            
-                            Image("August Article")
-                                .resizable()
-                                .scaledToFill()
-                            
-                            VStack {
-                                Color.clear
+                        Image("August Article")
+                            .resizable()
+                            .scaledToFill()
+                            .variableBlur(radius: 6) { geometryProxy, context in
+                                // draw a linear gradient across the entire mask from top to bottom
+                                context.fill(
+                                    Path(geometryProxy.frame(in: .local)),
+                                    with: .linearGradient(
+                                        .init(colors: [.white, .clear]),
+                                        startPoint: .init(x: 0, y: geometryProxy.size.height),
+                                        endPoint: .init(x: 0, y: geometryProxy.size.height*0.5)
+                                    )
+                                )
                             }
-                            .frame(maxWidth: .infinity)
-                            .background(.ultraThickMaterial)
-                            .environment(\.colorScheme, .dark)
                             
-                            
-                            
-                            Image("August Article")
-                                .resizable()
-                                .scaledToFill()
-                                .mask(LinearGradient(stops: [
-                                    .init(color: .black.opacity(0), location: 0),
-                                    .init(color: .black, location: 0.2),
-                                    .init(color: .black.opacity(0.5), location: 0.7),
-                                    .init(color: .black.opacity(0), location: 1),
-                                ], startPoint: .top, endPoint: .bottom))
-                            
-                            VStack {
-                                HStack {
-                                    Text("Article of the month")
-                                        .textCase(.uppercase)
-                                        .foregroundStyle(Color.white)
-                                    Spacer()
-                                }
-                                .padding(.top)
-                                .padding(.horizontal)
-                                
-                                Divider()
-                                    .tint(Color.white)
-                                    .padding(.horizontal)
-                                
+                            .clipShape(RoundedRectangle(cornerRadius: 16))
+                        
+                        
+                        VStack {
+                            HStack {
+                                Text("Article of the month")
+                                    .textCase(.uppercase)
+                                    .foregroundStyle(Color.white)
                                 Spacer()
-                                
-                                HStack {
-                                    VStack {
-                                        Text("08")
-                                            .font(.title)
-                                            .fontDesign(.serif)
-                                            .foregroundStyle(.white)
-                                        
-                                        Text("2024")
-                                            .fontDesign(.serif)
-                                            .foregroundStyle(Color.white.opacity(0.6))
-                                        
-                                    }
-                                    VStack {
-                                        Text("The Best Neighborhoods for Starting a Life in the Galaxy")
-                                            .multilineTextAlignment(.leading)
-                                            .font(.subheadline)
-                                            .fontDesign(.rounded)
-                                            .fontWeight(.medium)
-                                            .foregroundStyle(.white)
-                                        HStack {
-                                            Text("Rebecca Boyle")
-                                                .font(.footnote)
-                                                .multilineTextAlignment(.leading)
-                                                .italic()
-                                                .fontDesign(.serif)
-                                                .foregroundStyle(Color.white.opacity(0.6))
-                                            Spacer()
-                                        }
-                                        
-                                    }
-                                    .padding(.horizontal)
-                                    Spacer()
-                                    Image(systemName: "chevron.right")
-                                        .padding()
+                            }
+                            .padding(.top)
+                            .padding(.horizontal)
+                            
+                            Spacer()
+                            
+                            HStack {
+                                VStack {
+                                    Text("08")
+                                        .font(.title)
+                                        .fontDesign(.serif)
                                         .foregroundStyle(.white)
                                     
+                                    Text("2024")
+                                        .fontDesign(.serif)
+                                        .foregroundStyle(Color.white.opacity(0.6))
+                                    
                                 }
-                                .padding()
+                                VStack {
+                                    Text("The Best Neighborhoods for Starting a Life in the Galaxy")
+                                        .multilineTextAlignment(.leading)
+                                        .font(.subheadline)
+                                        .fontDesign(.rounded)
+                                        .fontWeight(.medium)
+                                        .foregroundStyle(.white)
+                                    HStack {
+                                        Text("Rebecca Boyle")
+                                            .font(.footnote)
+                                            .multilineTextAlignment(.leading)
+                                            .italic()
+                                            .fontDesign(.serif)
+                                            .foregroundStyle(Color.white.opacity(0.6))
+                                        Spacer()
+                                    }
+                                    
+                                }
+                                .padding(.horizontal)
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .padding()
+                                    .foregroundStyle(.white)
+                                
                             }
-                            
-                            
+                            .padding()
                         }
-                        .clipShape(RoundedRectangle.init(cornerRadius: 18))
                         
                         
                     }
+                    .clipShape(RoundedRectangle.init(cornerRadius: 18))
+                    
+                    
                 }
+                .shadow(color: .black.opacity(0.2), radius: 4)
                 .padding()
                 
                 
             }
             .navigationTitle("Cosmofy")
             .onAppear {
-#if !os(tvOS)
+            #if !os(tvOS)
                 UINavigationBar.appearance().largeTitleTextAttributes = [
                     .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 34, weight: .semibold),
                 ]
-#endif
+            #endif
             }
         }
         .onAppear() {
