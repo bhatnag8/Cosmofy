@@ -63,6 +63,8 @@ class AstroService: ObservableObject {
             }, receiveValue: { response in
 //                print("Decoded response: \(response)")
                 self.astroResponse = response
+                print("Task: fetched Astronauts")
+
             })
     }
 }

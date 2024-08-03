@@ -33,6 +33,7 @@
 		0B161A6D2BA02123008F3D0F /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6C2BA02123008F3D0F /* Planet.swift */; };
 		0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD502AE96FE7001CFC35 /* ci_scripts */; };
 		0B1BAD572AE97736001CFC35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD562AE97736001CFC35 /* .gitignore */; };
+		0B1C6E0F2C5CDF16002F6CDC /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C6E0E2C5CDF16002F6CDC /* Profile.swift */; };
 		0B3990722C4683DC0000683E /* API_ASTRONAUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3990712C4683DC0000683E /* API_ASTRONAUT.swift */; };
 		0B3990732C4683DC0000683E /* API_ASTRONAUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3990712C4683DC0000683E /* API_ASTRONAUT.swift */; };
 		0B3990742C4683DC0000683E /* API_ASTRONAUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3990712C4683DC0000683E /* API_ASTRONAUT.swift */; };
@@ -64,6 +65,8 @@
 		0B97AE2B2C200979003E96EB /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B97AE2A2C200979003E96EB /* ImageView.swift */; };
 		0B97AE2D2C2009B3003E96EB /* PlanetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B97AE2C2C2009B3003E96EB /* PlanetsView.swift */; };
 		0B9B4D6A2C45B90E0069E5C8 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9B4D692C45B90E0069E5C8 /* Home.swift */; };
+		0B9E32AE2C581DCC006F4E96 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E32AD2C581DCC006F4E96 /* IntroView.swift */; };
+		0B9E32B02C581E01006F4E96 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E32AF2C581E01006F4E96 /* OnboardingView.swift */; };
 		0B9F02782B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */; };
 		0B9F02792B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02702B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf */; };
 		0B9F027A2B75E5B200CB5543 /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02712B75E5B200CB5543 /* SF-Pro-Rounded-Semibold.otf */; };
@@ -84,9 +87,9 @@
 		0BB14A432B9C2B1100476F3C /* CosmofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A422B9C2B1100476F3C /* CosmofyApp.swift */; };
 		0BB14A4D2B9C2EB000476F3C /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */; };
 		0BB14A532B9C339800476F3C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A522B9C339800476F3C /* Card.swift */; };
+		0BB2C2052C56265C000EC228 /* Astronauts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2C2042C56265B000EC228 /* Astronauts.swift */; };
 		0BBAC7412C4E755600DE4C85 /* AstronautsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBAC7402C4E755600DE4C85 /* AstronautsView.swift */; };
 		0BBAC7432C4E779A00DE4C85 /* MapHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBAC7422C4E779A00DE4C85 /* MapHelpers.swift */; };
-		0BBAC7452C4E7A1E00DE4C85 /* MapHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBAC7422C4E779A00DE4C85 /* MapHelpers.swift */; };
 		0BD7A7642C2B3D5600D75F1D /* VTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 0BD7A7632C2B3D5600D75F1D /* VTabView */; };
 		0BDBC9CE2C1D956E00F720F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBC9CD2C1D956E00F720F2 /* ContentView.swift */; };
 		0BDBC9D02C1D957000F720F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BDBC9CF2C1D957000F720F2 /* Assets.xcassets */; };
@@ -94,6 +97,8 @@
 		0BDBC9DD2C1D95CB00F720F2 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6C2BA02123008F3D0F /* Planet.swift */; };
 		0BDBC9E12C1DA48000F720F2 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */; };
 		0BF2A4172BFBF24B007B3E4B /* GarenText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF2A4162BFBF24B007B3E4B /* GarenText.swift */; };
+		0BF311B42C5D91A000EAA4AA /* Learn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF311B32C5D91A000EAA4AA /* Learn.swift */; };
+		0BF311B62C5D91B600EAA4AA /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF311B52C5D91B600EAA4AA /* Activities.swift */; };
 		0BFB21052B9CEB1400C84FD8 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB21042B9CEB1400C84FD8 /* Home.swift */; };
 		0BFCD5472C43E6BA005E06A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
 		0BFCD5482C43E6BD005E06A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
@@ -144,9 +149,9 @@
 		0B161A6C2BA02123008F3D0F /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		0B1BAD502AE96FE7001CFC35 /* ci_scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ci_scripts; sourceTree = "<group>"; };
 		0B1BAD562AE97736001CFC35 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0B1C6E0E2C5CDF16002F6CDC /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		0B2420AF2C511C69005A5958 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B2420B12C511C94005A5958 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B2420B62C519F3C005A5958 /* Cosmofy iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmofy iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B3990712C4683DC0000683E /* API_ASTRONAUT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_ASTRONAUT.swift; sourceTree = "<group>"; };
 		0B3EC2632BA4BAFE004491B7 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		0B3EC2652BA4D16F004491B7 /* API_APOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_APOD.swift; sourceTree = "<group>"; };
@@ -161,13 +166,13 @@
 		0B87A6772C4144B700BF924B /* TVSwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSwiftView.swift; sourceTree = "<group>"; };
 		0B87A6792C4144D500BF924B /* TVMessageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMessageRowView.swift; sourceTree = "<group>"; };
 		0B87A67D2C41622C00BF924B /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
-		0B8D85FF2C537D5F0052913D /* Cosmofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosmofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B8D86002C537D5F0052913D /* Cosmofy tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmofy tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		0B9755B92C2EF9E7002D9C70 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0B97AE2A2C200979003E96EB /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		0B97AE2C2C2009B3003E96EB /* PlanetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsView.swift; sourceTree = "<group>"; };
 		0B9B4D692C45B90E0069E5C8 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		0B9E32AD2C581DCC006F4E96 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		0B9E32AF2C581E01006F4E96 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Heavy.otf"; sourceTree = "<group>"; };
 		0B9F02702B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
 		0B9F02712B75E5B200CB5543 /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
@@ -184,13 +189,19 @@
 		0BB14A422B9C2B1100476F3C /* CosmofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmofyApp.swift; sourceTree = "<group>"; };
 		0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		0BB14A522B9C339800476F3C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		0BB2C2042C56265B000EC228 /* Astronauts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronauts.swift; sourceTree = "<group>"; };
 		0BBAC7402C4E755600DE4C85 /* AstronautsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautsView.swift; sourceTree = "<group>"; };
 		0BBAC7422C4E779A00DE4C85 /* MapHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHelpers.swift; sourceTree = "<group>"; };
 		0BDBC9CB2C1D956E00F720F2 /* CosmofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmofyApp.swift; sourceTree = "<group>"; };
 		0BDBC9CD2C1D956E00F720F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0BDBC9CF2C1D957000F720F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BDBC9D22C1D957000F720F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0BE374C32C5A498E00AA2EA9 /* Cosmofy iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmofy iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BE374C42C5A498E00AA2EA9 /* Cosmofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosmofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BE374C52C5A498E00AA2EA9 /* Cosmofy tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmofy tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF2A4162BFBF24B007B3E4B /* GarenText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarenText.swift; sourceTree = "<group>"; };
+		0BF311B32C5D91A000EAA4AA /* Learn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn.swift; sourceTree = "<group>"; };
+		0BF311B52C5D91B600EAA4AA /* Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
 		0BFB21042B9CEB1400C84FD8 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		0BFDE74C2C2E062D00E8B3FB /* iPadPlanetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadPlanetsView.swift; sourceTree = "<group>"; };
 		0BFDE74E2C2EBDAF00E8B3FB /* iPadPlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadPlanetView.swift; sourceTree = "<group>"; };
@@ -252,13 +263,6 @@
 			path = Universal;
 			sourceTree = "<group>";
 		};
-		0B2420B82C51AB5F005A5958 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		0B3EC2672BA4D22D004491B7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				0BFB21042B9CEB1400C84FD8 /* Home.swift */,
+				0BB2C2042C56265B000EC228 /* Astronauts.swift */,
 				0B3EC2632BA4BAFE004491B7 /* ImageView.swift */,
 				0B7A208B2C2D892B00212777 /* iPadHome.swift */,
 			);
@@ -302,6 +307,8 @@
 		0B86159A2BAF4AEC008CCD5F /* TabPlanets */ = {
 			isa = PBXGroup;
 			children = (
+				0BBAC7422C4E779A00DE4C85 /* MapHelpers.swift */,
+				0B05E3F02BE98AFE007A116E /* Map.swift */,
 				0B00383C2B9F8B7900DAD175 /* PlanetsView.swift */,
 				0BFDE74C2C2E062D00E8B3FB /* iPadPlanetsView.swift */,
 				0BFF74662B76FE0B0079A71A /* PlanetView.swift */,
@@ -310,13 +317,12 @@
 			path = TabPlanets;
 			sourceTree = "<group>";
 		};
-		0B87A67C2C41619700BF924B /* TabNatureScope */ = {
+		0B87A67C2C41619700BF924B /* TabProfile */ = {
 			isa = PBXGroup;
 			children = (
-				0B05E3F02BE98AFE007A116E /* Map.swift */,
-				0BBAC7422C4E779A00DE4C85 /* MapHelpers.swift */,
+				0B1C6E0E2C5CDF16002F6CDC /* Profile.swift */,
 			);
-			path = TabNatureScope;
+			path = TabProfile;
 			sourceTree = "<group>";
 		};
 		0B9B4D682C45B9010069E5C8 /* TabHome */ = {
@@ -352,6 +358,15 @@
 				0B87A67D2C41622C00BF924B /* Map.swift */,
 			);
 			path = TabNatureScope;
+			sourceTree = "<group>";
+		};
+		0B9E32AA2C581D7B006F4E96 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				0B9E32AD2C581DCC006F4E96 /* IntroView.swift */,
+				0B9E32AF2C581E01006F4E96 /* OnboardingView.swift */,
+			);
+			path = Intro;
 			sourceTree = "<group>";
 		};
 		0B9F026E2B75E56000CB5543 /* Fonts */ = {
@@ -396,11 +411,13 @@
 		0BB14A482B9C2B6C00476F3C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */,
+				0BF311B22C5D8B4200EAA4AA /* Kids */,
+				0B9E32AA2C581D7B006F4E96 /* Intro */,
 				0B8615992BAF4AE0008CCD5F /* TabHome */,
 				0B86159A2BAF4AEC008CCD5F /* TabPlanets */,
 				0B8615972BAF4AAA008CCD5F /* TabSwift */,
-				0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */,
-				0B87A67C2C41619700BF924B /* TabNatureScope */,
+				0B87A67C2C41619700BF924B /* TabProfile */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -477,32 +494,40 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		0BF311B22C5D8B4200EAA4AA /* Kids */ = {
+			isa = PBXGroup;
+			children = (
+				0BF311B32C5D91A000EAA4AA /* Learn.swift */,
+				0BF311B52C5D91B600EAA4AA /* Activities.swift */,
+			);
+			path = Kids;
+			sourceTree = "<group>";
+		};
 		2FBBB64C2945531500BBB072 = {
 			isa = PBXGroup;
 			children = (
-				0B2420B52C51982C005A5958 /* Universal */,
-				0BB07A782C3132750066977E /* README.md */,
-				0B1BAD562AE97736001CFC35 /* .gitignore */,
 				0B1BAD502AE96FE7001CFC35 /* ci_scripts */,
+				0B2420B52C51982C005A5958 /* Universal */,
 				2FBBB6572945531500BBB072 /* Cosmofy */,
 				0BDBC9CA2C1D956E00F720F2 /* Cosmofy for Watch */,
 				0BB07A7F2C31360E0066977E /* Cosmofy for TV */,
-				0B2420B62C519F3C005A5958 /* Cosmofy iOS.app */,
-				0B2420B82C51AB5F005A5958 /* Frameworks */,
-				0B8D85FF2C537D5F0052913D /* Cosmofy.app */,
-				0B8D86002C537D5F0052913D /* Cosmofy tvOS.app */,
+				0BB07A782C3132750066977E /* README.md */,
+				0B1BAD562AE97736001CFC35 /* .gitignore */,
+				0BE374C32C5A498E00AA2EA9 /* Cosmofy iOS.app */,
+				0BE374C42C5A498E00AA2EA9 /* Cosmofy.app */,
+				0BE374C52C5A498E00AA2EA9 /* Cosmofy tvOS.app */,
 			);
 			sourceTree = "<group>";
 		};
 		2FBBB6572945531500BBB072 /* Cosmofy */ = {
 			isa = PBXGroup;
 			children = (
-				0BB14A482B9C2B6C00476F3C /* Views */,
 				2F6427CF2A4FA4EF00CC503D /* Cosmofy.entitlements */,
 				2FBBB6612945531700BBB072 /* Assets.xcassets */,
 				2FBBB6662945531700BBB072 /* Info.plist */,
 				0B9755B92C2EF9E7002D9C70 /* Launch Screen.storyboard */,
 				0BB14A422B9C2B1100476F3C /* CosmofyApp.swift */,
+				0BB14A482B9C2B6C00476F3C /* Views */,
 			);
 			path = Cosmofy;
 			sourceTree = "<group>";
@@ -527,7 +552,7 @@
 				0B87A6732C41303500BF924B /* MarkdownUI */,
 			);
 			productName = "Cosmofy for TV";
-			productReference = 0B8D86002C537D5F0052913D /* Cosmofy tvOS.app */;
+			productReference = 0BE374C52C5A498E00AA2EA9 /* Cosmofy tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0BDBC9C82C1D956E00F720F2 /* Cosmofy watchOS */ = {
@@ -544,7 +569,7 @@
 			);
 			name = "Cosmofy watchOS";
 			productName = "WatchCosmofy Watch App";
-			productReference = 0B8D85FF2C537D5F0052913D /* Cosmofy.app */;
+			productReference = 0BE374C42C5A498E00AA2EA9 /* Cosmofy.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2FBBB6542945531500BBB072 /* Cosmofy iOS */ = {
@@ -568,7 +593,7 @@
 				0B8D86022C537EF20052913D /* Variablur */,
 			);
 			productName = Spacefy;
-			productReference = 0B2420B62C519F3C005A5958 /* Cosmofy iOS.app */;
+			productReference = 0BE374C32C5A498E00AA2EA9 /* Cosmofy iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -608,6 +633,7 @@
 				0BD7A7622C2B3D5600D75F1D /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */,
 				0B2420B72C51AB4A005A5958 /* XCRemoteSwiftPackageReference "SwiftUIGradientBlur" */,
 				0B8D86012C537E1F0052913D /* XCRemoteSwiftPackageReference "Variablur" */,
+				0BB2C2062C563302000EC228 /* XCRemoteSwiftPackageReference "SkeletonUI" */,
 			);
 			productRefGroup = 2FBBB64C2945531500BBB072;
 			projectDirPath = "";
@@ -704,7 +730,6 @@
 				0B3990742C4683DC0000683E /* API_ASTRONAUT.swift in Sources */,
 				0BB07A962C3159A90066977E /* ImageView.swift in Sources */,
 				0BB07A952C3159600066977E /* API_APOD.swift in Sources */,
-				0BBAC7452C4E7A1E00DE4C85 /* MapHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,6 +754,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B161A6D2BA02123008F3D0F /* Planet.swift in Sources */,
+				0BF311B42C5D91A000EAA4AA /* Learn.swift in Sources */,
 				0BFF74672B76FE0B0079A71A /* PlanetView.swift in Sources */,
 				0B05E3F12BE98AFE007A116E /* Map.swift in Sources */,
 				0B7D18CC2AE8B655009C2317 /* SwiftView.swift in Sources */,
@@ -741,12 +767,16 @@
 				0B3EC2662BA4D16F004491B7 /* API_APOD.swift in Sources */,
 				0B40299C2BA4FEC1004B0F43 /* IOTD.swift in Sources */,
 				0B3EC2642BA4BAFE004491B7 /* ImageView.swift in Sources */,
+				0BB2C2052C56265C000EC228 /* Astronauts.swift in Sources */,
 				0BBAC7432C4E779A00DE4C85 /* MapHelpers.swift in Sources */,
 				0BFDE74D2C2E062D00E8B3FB /* iPadPlanetsView.swift in Sources */,
 				0BF2A4172BFBF24B007B3E4B /* GarenText.swift in Sources */,
+				0B1C6E0F2C5CDF16002F6CDC /* Profile.swift in Sources */,
+				0B9E32AE2C581DCC006F4E96 /* IntroView.swift in Sources */,
 				0B161A6B2BA014DC008F3D0F /* View+TabMask.swift in Sources */,
 				0B923B6E2B9CBBEE009B8D45 /* TabBarView.swift in Sources */,
 				0B00383B2B9F89E100DAD175 /* Tab.swift in Sources */,
+				0B9E32B02C581E01006F4E96 /* OnboardingView.swift in Sources */,
 				0B05E3F62BEA07E8007A116E /* API_EONET.swift in Sources */,
 				0B7671932AE47E22008E57B2 /* API_OPENAI.swift in Sources */,
 				0B7A208C2C2D892B00212777 /* iPadHome.swift in Sources */,
@@ -755,6 +785,7 @@
 				0BB14A4D2B9C2EB000476F3C /* Color+Hex.swift in Sources */,
 				0B161A692B9FF30B008F3D0F /* View+OffsetX.swift in Sources */,
 				0B7D18BF2AE8A482009C2317 /* MessageRow.swift in Sources */,
+				0BF311B62C5D91B600EAA4AA /* Activities.swift in Sources */,
 				0B7671972AE4C3FE008E57B2 /* Swift.swift in Sources */,
 				2F4F8FC5295EC08100F7EE98 /* PlanetNode.swift in Sources */,
 				0B8615A82BAF6580008CCD5F /* LoadingView.swift in Sources */,
@@ -1055,7 +1086,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1096,7 +1127,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1172,6 +1203,14 @@
 			requirement = {
 				branch = main;
 				kind = branch;
+			};
+		};
+		0BB2C2062C563302000EC228 /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CSolanaM/SkeletonUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
 			};
 		};
 		0BD7A7622C2B3D5600D75F1D /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */ = {

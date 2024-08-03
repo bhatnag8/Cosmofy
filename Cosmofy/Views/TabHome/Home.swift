@@ -9,133 +9,114 @@ import SwiftUI
 import Variablur
 
 struct Home: View {
+    
     @ObservedObject var viewModel: ViewModelAPOD
-    @State var loaded: Bool = false
+    @ObservedObject var astroService: AstroService
+
+    @AppStorage("selectedProfile") var currentSelectedProfile: Int?
     
     var body: some View {
         
         NavigationStack {
             ScrollView(.vertical) {
-                ZStack() {
-                    Image("August")
-                        .resizable()
-                        .frame(height: 250)
-                        .aspectRatio(contentMode: .fit)
-                        .variableBlur(radius: 6) { geometryProxy, context in
-                            context.fill(
-                                Path(geometryProxy.frame(in: .local)),
-                                with: .linearGradient(
-                                    .init(colors: [.white, .clear]),
-                                    startPoint: .init(x: 0, y: geometryProxy.size.height),
-                                    endPoint: .init(x: 0, y: geometryProxy.size.height*0.5)
-                                )
-                            )
-                        }
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
-
-                    VStack(spacing: 5) {
-                        
-                        Spacer()
-                        HStack {
-                            Text("AUGUST 2024")
-                                .textCase(.uppercase)
-                                .foregroundStyle(.white)
-                            Spacer()
-                        }
-                        HStack {
-                            Text("Introducing: Astronauts")
-                                .font(.title3)
-                                .fontDesign(.rounded)
-                                .foregroundStyle(.white)
-                            Spacer()
-                        }
-                        HStack {
-                            Text("Join the Adventure")
-                                .font(.subheadline)
-                                .fontDesign(.rounded)
-                                .foregroundStyle(.white.opacity(0.5))
-                            Spacer()
-                        }
-                    }
-                    .padding()
-                }
-//                .shadow(color: .black, radius: 3)
-                .shadow(color: .black.opacity(0.2), radius: 4)
-
-                .padding([.horizontal, .top])
-
                 
+                Button(action: {
+                    withAnimation {
+                        currentSelectedProfile = (currentSelectedProfile! % 3) + 1
+
+                    }
+                }) {
+                    Text("Toggle Tab Bar")
+                }
+                
+                articleOfTheMonth
+                    .padding([.top, .horizontal])
+
+
                 if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage)
-                        .padding()
-                        .foregroundStyle(.red)
+                    HStack {
+                        Image(systemName: "exclamationmark.icloud")
+                            .foregroundStyle(.white)
+                            .font(.title2)
+                            .padding()
+                        
+                        if errorMessage == "Failed to fetch data: The Internet connection appears to be offline.." {
+                            Text("Sorry, you are not connected to the Internet 😩")
+                                .fontWeight(.medium)
+                                .fontDesign(.rounded)
+                                .foregroundStyle(.white)
+                                .padding(.vertical)
+                                .padding(.trailing)
+                        } else {
+                            Text(errorMessage)
+                                .fontWeight(.medium)
+                                .fontDesign(.rounded)
+                                .foregroundStyle(.white)
+                                .padding(.vertical)
+                                .padding(.trailing)
+                        }
+                        Spacer()
+                    }
+                    .background(Color.red.gradient)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .padding(.horizontal)
                     
                 } else if let apod = viewModel.apod {
                     
-                    NavigationLink(destination: IOTDView(viewModel: viewModel)) {
-                        
-                        VStack(spacing: 0) {
-                            
-                            VStack {
-                                HStack {
-                                    Text("Astronomy Picture of the Day")
-                                        .textCase(.uppercase)
-                                        .foregroundStyle(.secondary)
-                                    Spacer()
-                                }
-                                .padding(.top)
-                                .padding(.horizontal)
-                                
-                                Divider()
-                                    .padding(.horizontal)
-                                
-                                HStack {
-                                    Text(apod.title)
-                                        .font(.largeTitle)
-                                        .bold()
-                                        .fontWidth(.compressed)
-                                        .multilineTextAlignment(.leading)
-                                    Spacer()
-                                }
-                                .padding(.horizontal)
-                                
-                                HStack {
-                                    Text(convertDateString(dateString: apod.date))
-                                        .italic()
-                                        .font(.body)
-                                        .fontDesign(.serif)
-                                    Spacer()
-                                }
-                                .padding(.horizontal)
-                                .padding(.bottom)
-                                
+                    VStack(spacing: 0) {
+                        VStack {
+                            HStack {
+                                Text("Astronomy Picture of the Day")
+                                    .textCase(.uppercase)
+                                    .foregroundColor(.secondary)
+                                Spacer()
                             }
+                            .padding([.top, .horizontal])
+                            .padding(.bottom, 8)
                             
-                            .background(.ultraThinMaterial)
-                            .clipShape(
-                                .rect(
-                                    topLeadingRadius: 16,
-                                    bottomLeadingRadius: 0,
-                                    bottomTrailingRadius: 0,
-                                    topTrailingRadius: 16
-                                )
-                            )
+                            HStack {
+                                Text(apod.title)
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .fontWidth(.compressed)
+                                    .multilineTextAlignment(.leading)
+                                Spacer()
+                            }
                             .padding(.horizontal)
                             
-                            
-                            if apod.media_type == "video" {
-                                WebView(urlString: apod.url)
-                                    .frame(height: 300)
-                                    .padding(.horizontal)
-                            } else {
-                                ImageView(apod.url)
-                                    .padding(.horizontal)
-                                    .onAppear(perform: {
-                                        loaded = true
-                                    })
-                                //                                    .scaledToFill()
-                                
+                            HStack {
+                                Text(convertDateString(dateString: apod.date))
+                                    .italic()
+                                    .font(.body)
+                                    .fontDesign(.serif)
+                                Spacer()
                             }
+                            .padding(.horizontal)
+                            .padding(.bottom)
+                            
+                        }
+                        .background(.ultraThinMaterial)
+                        .clipShape(
+                            .rect(
+                                topLeadingRadius: 16,
+                                bottomLeadingRadius: 0,
+                                bottomTrailingRadius: 0,
+                                topTrailingRadius: 16
+                            )
+                        )
+                        .padding(.horizontal)
+                        
+                        
+                        if apod.media_type == "video" {
+                            WebView(urlString: apod.url)
+                                .frame(height: 300)
+                                .padding(.horizontal)
+                        } else {
+                            ImageView(apod.url)
+                                .padding(.horizontal)
+                        }
+                                            
+                        NavigationLink(destination: IOTDView(viewModel: viewModel)) {
                             HStack {
                                 VStack {
                                     HStack {
@@ -155,7 +136,8 @@ struct Home: View {
                                 .padding()
                                 
                                 Image(systemName: "chevron.right")
-                                    .padding(.horizontal)
+                                    .padding(.trailing, 32)
+                                    
                             }
                             .background(.ultraThinMaterial)
                             .clipShape(
@@ -167,13 +149,9 @@ struct Home: View {
                                 )
                             )
                             .padding(.horizontal)
-                            
                         }
-
                     }
-                    .shadow(color: .black.opacity(0.2), radius: 4)
-                    .padding(.top)
-                    
+                    .padding(.vertical)
                 } else {
                     Rectangle()
                         .fill(Color.gray.opacity(0.2))
@@ -182,97 +160,12 @@ struct Home: View {
                         .clipShape(RoundedRectangle(cornerRadius: 16))
                         .padding(.top)
                         .padding(.horizontal)
-                        .onAppear {
-                            print("loain")
-                        }
                 }
                 
-                
-                
-                NavigationLink(destination: AugustView()) {
-                    
-                    ZStack {
-                        
-                        Image("August Article")
-                            .resizable()
-                            .scaledToFill()
-                            .variableBlur(radius: 6) { geometryProxy, context in
-                                // draw a linear gradient across the entire mask from top to bottom
-                                context.fill(
-                                    Path(geometryProxy.frame(in: .local)),
-                                    with: .linearGradient(
-                                        .init(colors: [.white, .clear]),
-                                        startPoint: .init(x: 0, y: geometryProxy.size.height),
-                                        endPoint: .init(x: 0, y: geometryProxy.size.height*0.5)
-                                    )
-                                )
-                            }
-                            
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
-                        
-                        
-                        VStack {
-                            HStack {
-                                Text("Article of the month")
-                                    .textCase(.uppercase)
-                                    .foregroundStyle(Color.white)
-                                Spacer()
-                            }
-                            .padding(.top)
-                            .padding(.horizontal)
-                            
-                            Spacer()
-                            
-                            HStack {
-                                VStack {
-                                    Text("08")
-                                        .font(.title)
-                                        .fontDesign(.serif)
-                                        .foregroundStyle(.white)
-                                    
-                                    Text("2024")
-                                        .fontDesign(.serif)
-                                        .foregroundStyle(Color.white.opacity(0.6))
-                                    
-                                }
-                                VStack {
-                                    Text("The Best Neighborhoods for Starting a Life in the Galaxy")
-                                        .multilineTextAlignment(.leading)
-                                        .font(.subheadline)
-                                        .fontDesign(.rounded)
-                                        .fontWeight(.medium)
-                                        .foregroundStyle(.white)
-                                    HStack {
-                                        Text("Rebecca Boyle")
-                                            .font(.footnote)
-                                            .multilineTextAlignment(.leading)
-                                            .italic()
-                                            .fontDesign(.serif)
-                                            .foregroundStyle(Color.white.opacity(0.6))
-                                        Spacer()
-                                    }
-                                    
-                                }
-                                .padding(.horizontal)
-                                Spacer()
-                                Image(systemName: "chevron.right")
-                                    .padding()
-                                    .foregroundStyle(.white)
-                                
-                            }
-                            .padding()
-                        }
-                        
-                        
-                    }
-                    .clipShape(RoundedRectangle.init(cornerRadius: 18))
-                    
-                    
-                }
-                .shadow(color: .black.opacity(0.2), radius: 4)
-                .padding()
-                
-                
+                AstronautsView(astroService: astroService)
+                    .padding(.horizontal)
+                    .padding(.bottom)
+ 
             }
             .navigationTitle("Cosmofy")
             .onAppear {
@@ -283,18 +176,82 @@ struct Home: View {
             #endif
             }
         }
-        .onAppear() {
-            if !loaded {
-                viewModel.fetch()
-            }
-            
-        }
         
     }
     
-    
-    
-    
+    // MARK: articleOfTheMonth
+    private var articleOfTheMonth: some View {
+        ZStack {
+            Image("August Article")
+                .resizable()
+                .scaledToFill()
+                .variableBlur(radius: 6) { geometryProxy, context in
+                    context.fill(
+                        Path(geometryProxy.frame(in: .local)),
+                        with: .linearGradient(
+                            .init(colors: [.white, .clear]),
+                            startPoint: .init(x: 0, y: geometryProxy.size.height),
+                            endPoint: .init(x: 0, y: geometryProxy.size.height*0.5)
+                        )
+                    )
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+            
+            VStack {
+                HStack {
+                    Text("Article of the month")
+                        .textCase(.uppercase)
+                        .foregroundStyle(Color.white)
+                    Spacer()
+                }
+                .padding(.top)
+                .padding(.horizontal)
+                
+                Spacer()
+                
+                NavigationLink(destination: AugustView()) {
+                    HStack {
+                        VStack {
+                            Text("08")
+                                .font(.title)
+                                .fontDesign(.serif)
+                                .foregroundStyle(.white)
+                            Text("2024")
+                                .fontDesign(.serif)
+                                .foregroundStyle(Color.white.opacity(0.6))
+                            
+                        }
+                        VStack {
+                            Text("The Best Neighborhoods for Starting a Life in the Galaxy")
+                                .multilineTextAlignment(.leading)
+                                .font(.subheadline)
+                                .fontDesign(.rounded)
+                                .fontWeight(.medium)
+                                .foregroundStyle(.white)
+                            HStack {
+                                Text("Rebecca Boyle")
+                                    .font(.footnote)
+                                    .multilineTextAlignment(.leading)
+                                    .italic()
+                                    .fontDesign(.serif)
+                                    .foregroundStyle(Color.white.opacity(0.6))
+                                Spacer()
+                            }
+                            
+                        }
+                        .padding(.horizontal)
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .padding()
+                            .foregroundStyle(.white)
+                        
+                    }
+                    .padding()
+                }
+            }
+        }
+        .clipShape(RoundedRectangle.init(cornerRadius: 18))
+    }
 }
 
 struct ArticleView: View {
@@ -415,12 +372,6 @@ struct ArticleView: View {
     
 }
 
-#Preview {
-    
-    Home(viewModel: ViewModelAPOD())
-    
-    
-}
 
 struct JuneView: View {
     var body: some View {
@@ -460,66 +411,57 @@ struct AugustView: View {
     }
 }
 
-/*
- GeometryReader { proxy in
- let size = proxy.size
- ScrollView(.horizontal) {
- HStack(spacing: 10) {
- ForEach(imageList) { card in
- GeometryReader { geometry in
- let cardSize = geometry.size
- let minX = min(geometry.frame(in: .scrollView).minX * 1.2, geometry.size.width * 1.2)
- 
- Image(card.imageName)
- .resizable()
- .aspectRatio(contentMode: .fill)
- .offset(x: -minX)
- .frame(width: cardSize.width * 2)
- .frame(width: cardSize.width, height: cardSize.height)
- .overlay {
- OverlayView(card: card)
- }
- .clipShape(RoundedRectangle(cornerRadius: 20))
- .shadow(color: card.color, radius: 3)
- 
- }
- .frame(width: size.width - 50, height: size.height - 50)
- .scrollTransition(.interactive, axis: .horizontal) { view, phase in
- view.scaleEffect(phase.isIdentity ? 1 : 0.95)
- }
- }
- }
- .padding(12)
- .scrollTargetLayout()
- .frame(height: size.height, alignment: .top)
- }
- .scrollTargetBehavior(.viewAligned)
- .scrollIndicators(.hidden)
- }
- .frame(height: UIScreen.main.bounds.height * 0.65)
- .padding(.horizontal, -8)
- 
- @ViewBuilder
- func OverlayView(card: ImageViewCard) -> some View {
- ZStack(alignment: .bottomLeading) {
- LinearGradient(colors: [.clear, .clear, .clear, .black.opacity(0.1), .black.opacity(0.5), .black], startPoint: .top, endPoint: .bottom)
- 
- HStack {
- VStack(alignment: .leading, spacing: 4) {
- Text(card.title)
- .font(Font.custom("SF Pro Rounded Semibold", size: 24))
- 
- Text(card.subtitle)
- .font(Font.custom("SF Pro Rounded Medium", size: 16))
- }
- .foregroundColor(.white)
- .padding()
- 
- Spacer()
- 
- }
- }
- }
- 
- */
+struct NewUpdateView: View {
+    var body: some View {
+        ZStack() {
+            Image("August")
+                .resizable()
+                .frame(height: 250)
+                .aspectRatio(contentMode: .fit)
+                .variableBlur(radius: 6) { geometryProxy, context in
+                    context.fill(
+                        Path(geometryProxy.frame(in: .local)),
+                        with: .linearGradient(
+                            .init(colors: [.white, .clear]),
+                            startPoint: .init(x: 0, y: geometryProxy.size.height),
+                            endPoint: .init(x: 0, y: geometryProxy.size.height*0.5)
+                        )
+                    )
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+//                .onAppear() {
+//                    print("currentSelectedProfile: \(currentSelectedProfile)")
+//                }
 
+            VStack(spacing: 5) {
+                
+                Spacer()
+                HStack {
+                    Text("AUGUST 2024")
+                        .textCase(.uppercase)
+                        .foregroundStyle(.white)
+                    Spacer()
+                }
+                HStack {
+                    Text("Introducing: Astronauts")
+                        .font(.title3)
+                        .fontDesign(.rounded)
+                        .foregroundStyle(.white)
+                    Spacer()
+                }
+                HStack {
+                    Text("Join the Adventure")
+                        .font(.subheadline)
+                        .fontDesign(.rounded)
+                        .foregroundStyle(.white.opacity(0.5))
+                    Spacer()
+                }
+            }
+            .padding()
+        }
+//                .shadow(color: .black, radius: 3)
+        .shadow(color: .black.opacity(0.2), radius: 4)
+
+        .padding([.horizontal, .top])
+    }
+}

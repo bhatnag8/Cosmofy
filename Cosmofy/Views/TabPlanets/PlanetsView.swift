@@ -12,6 +12,10 @@ struct PlanetsView: View {
     @State private var selectedTab: Tab?
     @Environment(\.colorScheme) private var scheme
     @State private var tabProgress: CGFloat = 0
+    
+    @Binding var complete: Bool
+    @Binding var failed: Bool
+    
     var body: some View {
         
         NavigationStack {
@@ -26,9 +30,8 @@ struct PlanetsView: View {
                         LazyHStack(spacing: 0) {
                             ScrollView(.vertical) {
                                 ForEach(innerPlanets) { planet in
-                                    PlanetBlock(planet: planet)
+                                    PlanetBlock(planet: planet, complete: $complete, failed: $failed)
                                 }
-                                
                             }
                             .listStyle(PlainListStyle())
                             .id(Tab.inner)
@@ -36,9 +39,8 @@ struct PlanetsView: View {
 
                             ScrollView(.vertical) {
                                 ForEach(outerPlanets) { planet in
-                                    PlanetBlock(planet: planet)
+                                    PlanetBlock(planet: planet, complete: $complete, failed: $failed)
                                 }
-                                
                             }
                             .id(Tab.outer)
                             .containerRelativeFrame(.horizontal)
@@ -128,9 +130,11 @@ struct PlanetsView: View {
 
 struct PlanetBlock: View {
     var planet: Planet
+    @Binding var complete: Bool
+    @Binding var failed: Bool
     
     var body: some View {
-        NavigationLink(destination: PlanetView(planet: planet)) {
+        NavigationLink(destination: PlanetView(planet: planet, complete: $complete, failed: $failed)) {
             HStack(spacing: 16) {
                 Image(planet.imageName)
                     .resizable()
@@ -141,13 +145,16 @@ struct PlanetBlock: View {
                 VStack() {
                     HStack {
                         Text(planet.name)
-                            .font(Font.custom("SF Pro Rounded Medium", size: 20))
+                            .font(.title3)
+                            .fontDesign(.rounded)
+                            .fontWeight(.medium)
                         Spacer()
                     }
 
                     HStack {
                         Text(planet.description)
-                            .font(Font.custom("SF Pro Rounded Regular", size: 16))
+                            .fontDesign(.rounded)
+                            .font(.subheadline)
                             .foregroundColor(.secondary)
                             .multilineTextAlignment(.leading)
                         Spacer()
@@ -162,7 +169,3 @@ struct PlanetBlock: View {
     }
 }
 
-
-#Preview {
-    PlanetsView()
-}

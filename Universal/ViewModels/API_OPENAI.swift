@@ -150,7 +150,6 @@ class API: @unchecked Sendable {
 
         fetchApiKey { [weak self] decryptedApiKey in
             self?.apiKey = decryptedApiKey
-            print("Swift: AES Complete, Successfully Authenticated")
             AES_Complete = true
         }
     }
@@ -165,7 +164,6 @@ class API: @unchecked Sendable {
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
-                print("Error fetching API key: \(error?.localizedDescription ?? "Unknown error")")
                 completion(nil)
                 return
             }
@@ -208,7 +206,6 @@ class API: @unchecked Sendable {
             let decryptedData = try AES.GCM.open(sealedBox, using: aesKey)
             return String(data: decryptedData, encoding: .utf8)
         } catch {
-            print("Decryption error: \(error.localizedDescription)")
             return nil
         }
     }

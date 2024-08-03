@@ -19,28 +19,47 @@ struct CosmofyApp: App {
 
 
 struct SplashScreen: View {
+    @StateObject var viewModel = ViewModelAPOD()
+    @StateObject var astroService = AstroService()
+
     @State private var showSplash = true
+    @AppStorage("selectedProfile") var currentSelectedProfile: Int?
+    @AppStorage("signed_in") var currentUserSignedIn: Bool = false
+
+    
+    @State private var fetchComplete = false
+    @State private var fetchFailed = false
 
     var body: some View {
         ZStack {
             if showSplash {
                 SplashScreenView()
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.05) {
+//                        currentUserSignedIn = false
+                        viewModel.fetch()
+                        astroService.fetchAstros()
+                        NetworkManager().fetchEvents { result in
+                            switch result {
+                            case .success(let events):
+                                fetchedEvents = events
+                                fetchComplete = true
+                                print("Nature Scope: All Events Fetched")
+                            case .failure(let error):
+                                fetchedErrorMessage = error.localizedDescription
+                                fetchFailed = true
+                                print("Nature Scope: Failed to Fetch Events")
+                                print(fetchedErrorMessage)
+                            }
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
                             withAnimation {
                                 showSplash = false
+                                print(currentSelectedProfile)
                             }
                         }
                     }
             } else {
-                TabBarView()
-                    .onAppear {
-                        #if !os(tvOS)
-                        UINavigationBar.appearance().largeTitleTextAttributes = [
-                            .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 34, weight: .semibold),
-                        ]
-                        #endif
-                    }
+                IntroView(viewModel: viewModel, astroService: astroService, fetchComplete: $fetchComplete, fetchFailed: $fetchFailed)
             }
         }
     }
@@ -66,14 +85,6 @@ struct SplashScreenView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 64, height: 64)
                 .edgesIgnoringSafeArea(.all)
-            
-//            VStack {
-//                Spacer()
-//                Text("1.3")
-//                    .font(.headline)
-//                    .foregroundColor(.black)
-//            }
-//            .padding()
         }
     }
 }

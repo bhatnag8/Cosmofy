@@ -19,10 +19,10 @@ class ViewModelAPOD: ObservableObject {
     func fetch(for date: String? = nil) {
         API_IOTD.getImageOfTheDay(for: date) { apod, error in
             if let error = error {
-                self.errorMessage = "Failed to fetch data: \(error.localizedDescription)."
+                self.errorMessage = "Failed to fetch APOD data: \(error.localizedDescription)."
             } else if let apod = apod {
                 self.apod = apod
-                
+                print("Task: fetched APOD for \(date ?? "default value")")
             }
         }
     }

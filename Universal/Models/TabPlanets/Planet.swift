@@ -159,7 +159,7 @@ let earthPlanet = Planet(
     imageNameClosed: "smiling-earth",
     description: NSLocalizedString("The blue planet, rich with life and diverse ecosystems.", comment: ""),
     visual: NSLocalizedString("Earth was always perceived as a planet", comment: ""),
-    color: .green,
+    color: .colorEarth,
     moons: 1,
     rings: 0,
     gravity: 10,

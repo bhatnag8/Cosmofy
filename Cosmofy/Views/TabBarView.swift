@@ -9,78 +9,83 @@ import SwiftUI
 
 struct TabBarView: View {
     
-    init() {
-        UITabBar.appearance().backgroundColor = UIColor.systemBackground
-    }
+    @ObservedObject var viewModel: ViewModelAPOD
+    @ObservedObject var astroService: AstroService
     
-    @StateObject private var viewModelAPOD = ViewModelAPOD()
-    @State private var fetchComplete = false
-    @State private var fetchFailed = false
-    
+    @Binding var fetchComplete: Bool
+    @Binding var fetchFailed: Bool
+
     var body: some View {
         TabView {
-            
+                        
             if UIDevice.current.userInterfaceIdiom == .phone {
-                Home(viewModel: viewModelAPOD)
+                Home(viewModel: viewModel, astroService: astroService)
                     .tabItem {
                         Label("Home", image: "tab-bar-home")
+                    }
+                
+                PlanetsView(complete: $fetchComplete, failed: $fetchFailed)
+                    .tabItem {
+                        Label("Planets", image: "tab-bar-planets")
                     }
             } else {
                 iPadHome()
                     .tabItem {
                         Label("Home", image: "tab-bar-home")
                     }
-            }
-            
-            if UIDevice.current.userInterfaceIdiom == .phone {
-                PlanetsView()
-                    .tabItem {
-                        Label("Planets", image: "tab-bar-planets")
-                    }
-            } else {
+                
                 iPadPlanetsView()
                     .tabItem {
                         Label("Planets", image: "tab-bar-planets")
                     }
-            }   
+            }
             
             SwiftView()
                 .tabItem {
                     Label("Swift", image: "tab-bar-swift")
                 }
             
-            RNNMaybach(complete: $fetchComplete, failed: $fetchFailed)
+            Profile()
                 .tabItem {
-                    Label("Nature Scope", image: "tab-bar-roadmap")
+                    Label("Swift", image: "tab-bar-swift")
                 }
-            
-            
         }
         .tint(.primary)
-        //        .background(Color(.systemBackground).edgesIgnoringSafeArea(.all)) // Set the background color of TabView
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
             UINavigationBar.appearance().largeTitleTextAttributes = [
                 .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont(descriptor: UIFont.systemFont(ofSize: 34, weight: .semibold).fontDescriptor.withDesign(.rounded)!, size: 34),
             ]
-            NetworkManager().fetchEvents { result in
-                switch result {
-                case .success(let events):
-                    fetchedEvents = events
-                    fetchComplete = true
-                    print("Nature Scope: All Events Fetched")
-                case .failure(let error):
-                    fetchedErrorMessage = error.localizedDescription
-                    fetchFailed = true
-                    print("Nature Scope: Failed to Fetch Events")
-                }
-            }
-            
-            viewModelAPOD.fetch()
-
         }
     }
 }
 
-#Preview {
-    TabBarView()
+struct TabBarKids: View {
+    var body: some View {
+        TabView {
+            Learn()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Learn")
+                }
+                .tag(0)
+            
+            Activities()
+                .tabItem {
+                    Image(systemName: "gamecontroller")
+                    Text("Activities")
+                }
+                .tag(1)
+            
+            Profile()
+                .tabItem {
+                    Image(systemName: "person.fill")
+                    Text("Profile")
+                }
+                .tag(2)
+        }
+        .tint(.purple)
+    }
 }
+
+

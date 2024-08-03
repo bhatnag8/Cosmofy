@@ -233,33 +233,3 @@ struct SomeView: View {
     
 }
 
-
-struct PlanetPropertyView: View {
-    var title: String
-    var value: String
-    var unit: String
-    var color: Color
-    @State private var topExpanded: Bool = true
-    
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 4) {
-                Text(title)
-                    .font(Font.custom("SF Pro Rounded Medium", size: 16))
-                    .foregroundColor(.secondary)
-                HStack(alignment: .firstTextBaseline) {
-                    Text(value).foregroundStyle(.BETRAYED)
-                        .font(Font.custom("SF Pro Rounded Semibold", size: 20))
-                    
-                    if (unit == "moons" && value == "1") {
-                        Text("moon").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(color)
-                    } else {
-                        Text(unit).font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(color)
-                    }
-                }
-            }
-            Spacer()
-        }
-        .padding(.horizontal)
-    }
-}
