@@ -31,30 +31,32 @@ struct Planet: Identifiable, Equatable, Hashable {
     var averageTemperature: Int
     var density: Float?
     var orbitalInclination: Float
+    var facts: [String]
     static func == (lhs: Planet, rhs: Planet) -> Bool {
-            return lhs.id == rhs.id &&
-                lhs.name == rhs.name &&
-                lhs.order == rhs.order &&
-                lhs.imageName == rhs.imageName &&
-                lhs.imageNameClosed == rhs.imageNameClosed &&
-                lhs.description == rhs.description &&
-                lhs.visual == rhs.visual &&
-                lhs.color == rhs.color &&
-                lhs.moons == rhs.moons &&
-                lhs.rings == rhs.rings &&
-                lhs.gravity == rhs.gravity &&
-                lhs.escapeVelocity == rhs.escapeVelocity &&
-                lhs.radius == rhs.radius &&
-                lhs.mass == rhs.mass &&
-                lhs.volume == rhs.volume &&
-                lhs.images == rhs.images &&
-                lhs.atmosphere == rhs.atmosphere &&
-                lhs.isAnimated == rhs.isAnimated &&
-                lhs.expandedDescription == rhs.expandedDescription &&
-                lhs.averageTemperature == rhs.averageTemperature &&
-                lhs.density == rhs.density &&
-                lhs.orbitalInclination == rhs.orbitalInclination
-        }
+        return lhs.id == rhs.id &&
+            lhs.name == rhs.name &&
+            lhs.order == rhs.order &&
+            lhs.imageName == rhs.imageName &&
+            lhs.imageNameClosed == rhs.imageNameClosed &&
+            lhs.description == rhs.description &&
+            lhs.visual == rhs.visual &&
+            lhs.color == rhs.color &&
+            lhs.moons == rhs.moons &&
+            lhs.rings == rhs.rings &&
+            lhs.gravity == rhs.gravity &&
+            lhs.escapeVelocity == rhs.escapeVelocity &&
+            lhs.radius == rhs.radius &&
+            lhs.mass == rhs.mass &&
+            lhs.volume == rhs.volume &&
+            lhs.images == rhs.images &&
+            lhs.atmosphere == rhs.atmosphere &&
+            lhs.isAnimated == rhs.isAnimated &&
+            lhs.expandedDescription == rhs.expandedDescription &&
+            lhs.averageTemperature == rhs.averageTemperature &&
+            lhs.density == rhs.density &&
+            lhs.orbitalInclination == rhs.orbitalInclination &&
+            lhs.facts == rhs.facts
+    }
 }
 
 struct Atmosphere: Identifiable, Hashable {
@@ -89,7 +91,12 @@ let neptunePlanet = Planet(
     expandedDescription: NSLocalizedString("Neptune, the eighth planet from the Sun, is known for its striking blue color and dynamic atmosphere, which includes the fastest winds in the solar system. This gas giant, discovered in 1846, has a prominent role in understanding planetary formation and atmospheric dynamics due to its complex weather patterns and unique position in the outer solar system.", comment: ""),
     averageTemperature: -201,
     density: 1.638,
-    orbitalInclination: 1.77
+    orbitalInclination: 1.77,
+    facts: [
+        "A day on Neptune is 16 hours, but a year lasts 165 Earth years. Barely one Neptune year has passed since the planet’s discovery in 1846.",
+        "Neptune has six rings and 13 confirmed moons. One of these moons, Triton, has geysers that spray icy material more than five miles (eight kilometers) high into the frigid atmosphere.",
+        "Neptune’s magnetic field is 27 times mightier than Earth’s."
+    ]
 )
 
 let mercuryAtmosphere = [
@@ -117,7 +124,12 @@ let mercuryPlanet = Planet(
     expandedDescription: NSLocalizedString("Mercury, the closest planet to the Sun, experiences extreme temperatures due to its lack of a substantial atmosphere and rapid orbital period. Its surface, marked by craters and ridges, provides critical insights into the early solar system's history and planetary formation.", comment: ""),
     averageTemperature: 167,
     density: 5.427,
-    orbitalInclination: 7.00
+    orbitalInclination: 7.00,
+    facts: [
+        "Don't bother scouring the sky here for any moons. Mercury doesn’t have any!",
+        "NASA's MESSENGER spacecraft, which has been orbiting Mercury since 2011, carries a heavy-duty sunshade made from ceramic cloth.",
+        "Mercury was named after a fleet-footed Roman god."
+    ]
 )
 
 let venusAtmosphere = [
@@ -144,7 +156,12 @@ let venusPlanet = Planet(
     expandedDescription: NSLocalizedString("Venus, shrouded in a thick, toxic atmosphere of carbon dioxide and sulfuric acid clouds, is the hottest planet in our solar system. Its extreme surface temperatures and atmospheric pressure offer a glimpse into the greenhouse effect, making it a crucial subject of study for understanding atmospheric sciences.", comment: ""),
     averageTemperature: 464,
     density: 5.243,
-    orbitalInclination: 3.39
+    orbitalInclination: 3.39,
+    facts: [
+        "A Venus day is the equivalent of 243 Earth days, although a year is roughly 225 Earth days.",
+        "Venus rotates in the opposite direction—called retrograde rotation—of most planets.",
+        "Venus has more volcanoes (more than 1,600) than any other planet in the solar system. Most lie dormant."
+    ]
 )
 
 let earthAtmosphere = [
@@ -171,7 +188,12 @@ let earthPlanet = Planet(
     expandedDescription: NSLocalizedString("Earth, our home planet, is unique for its abundant liquid water and life-supporting atmosphere. Its diverse ecosystems and geological activity are central to studying planetary habitability and environmental sciences.", comment: ""),
     averageTemperature: 15,
     density: 5.514,
-    orbitalInclination: 0.00
+    orbitalInclination: 0.00,
+    facts: [
+        "Thanks to Earth’s “axial tilt,” which exposes more or less of our planet’s northern and southern hemispheres to the sun depending on the time of year (and is also responsible for our seasons), some spots near the poles experience 24 hours of straight daylight or darkness.",
+        "Earth’s rotation combined with its core of molten nickel and iron generates a magnetic field, shielding us from solar radiation while creating light shows—called auroras—that are literally out of this world.",
+        "Earth’s land masses move, a phenomenon known as “continental drift.” They creep about as fast as your fingernails grow."
+    ]
 )
 
 let marsAtmosphere = [
@@ -199,7 +221,13 @@ let marsPlanet = Planet(
     expandedDescription: NSLocalizedString("Mars, known as the Red Planet due to its iron oxide-rich surface, features vast canyons, extinct volcanoes, and polar ice caps. Its potential for past or present life and suitability for human exploration make it a focal point of planetary science and exploration missions.", comment: ""),
     averageTemperature: -63,
     density: 3.9335,
-    orbitalInclination: 1.85
+    orbitalInclination: 1.85,
+    facts: [
+        "The surface and orbit of Mars bustles with robotic vehicles and probes that are mining the planet for all sorts of info—including signs of life (none have been found so far).",
+        "Mars is home to one of the largest canyons in the solar system (big enough to swallow the Grand Canyon) and the tallest volcano, Olympus Mons, which is nearly three times as tall as Mt. Everest.",
+        "Radio listeners who tuned in late to a 1938 Halloween broadcast of H.G. Wells’ science-fiction book War of the Worlds thought the program was a genuine news report of a Martian invasion!",
+        "In 2015 scientists confirmed water flows on Mars, raising questions about whether life could exist on the red planet."
+    ]
 )
 
 let jupiterAtmosphere = [
@@ -226,7 +254,12 @@ let jupiterPlanet = Planet(
     expandedDescription: NSLocalizedString("Jupiter, the largest planet in our solar system, is known for its immense size and the Great Red Spot, a persistent high-pressure storm. Its complex system of rings and moons, including the potentially habitable Europa, provides a rich field for studying planetary formation and dynamics.", comment: ""),
     averageTemperature: -145,
     density: 1.326,
-    orbitalInclination: 1.30
+    orbitalInclination: 1.30,
+    facts: [
+        "Set shields at maximum. Jupiter generates radiation levels more than a thousand times the lethal dose.",
+        "Nearly three Earths could span Jupiter's Great Red Spot, a hurricane that has raged for centuries.",
+        "Jupiter may be the largest planet in the solar system, but it has the shortest day—just 10 hours—because of its rapid rotation."
+    ]
 )
 
 let saturnAtmosphere = [
@@ -253,7 +286,12 @@ let saturnPlanet = Planet(
     expandedDescription: NSLocalizedString("Saturn, the sixth planet from the Sun, is renowned for its extensive and visually striking ring system. Its unique features, including multiple moons with subsurface oceans, make it a key subject for understanding planetary rings, moon formation, and the potential for life beyond Earth.", comment: ""),
     averageTemperature: -178,
     density: 0.687,
-    orbitalInclination: 2.48
+    orbitalInclination: 2.48,
+    facts: [
+        "Saturn is the only planet in the solar system that’s less dense than water—which means it would float if you dunked it in a large enough ocean.",
+        "Titan, one of Saturn’s 53 moons and its largest, has an atmosphere of mostly nitrogen similar to ancient Earth’s.",
+        "A small moon named Mimas sports an impact crater that makes it look just like the Death Star from Star Wars."
+    ]
 )
 
 let uranusAtmosphere = [
@@ -280,7 +318,12 @@ let uranusPlanet = Planet(
     expandedDescription: NSLocalizedString("Uranus, an ice giant with a unique sideways rotation, has an atmosphere rich in water, ammonia, and methane ices. Its unusual axial tilt and faint ring system provide insights into extreme seasonal changes and the diversity of planetary systems.", comment: ""),
     averageTemperature: -224,
     density: 1.271,
-    orbitalInclination: 0.77
+    orbitalInclination: 0.77,
+    facts: [
+        "Uranus (along with Neptune) is one of the smaller gas giants, but it’s still a giant! Nearly 60 Earths could cram inside Uranus.",
+        "Not only is Uranus knocked on its side, it also spins in the opposite direction (the only other planet with such a “retrograde” rotation is Venus).",
+        "Uranus’ year lasts 84 Earth years, but its day is just 17 hours."
+    ]
 )
 let innerPlanets = [
     mercuryPlanet, venusPlanet, earthPlanet, marsPlanet
@@ -294,3 +337,35 @@ let allPlanets = [
     mercuryPlanet, venusPlanet, earthPlanet, marsPlanet, jupiterPlanet, saturnPlanet, uranusPlanet, neptunePlanet
 ]
 
+let allPlanetsModded = [
+    entryPlanet,
+    mercuryPlanet, venusPlanet, earthPlanet, marsPlanet, jupiterPlanet, saturnPlanet, uranusPlanet, neptunePlanet
+]
+
+
+let entryPlanet = Planet(
+    name: NSLocalizedString("Uranus", comment: ""),
+    order: "7th",
+    imageName: "smiling-uranus",
+    imageNameClosed: "smiling-uranus",
+    description: NSLocalizedString("An ice giant with a tilted rotation axis, causing extreme seasonal variations.", comment: ""),
+    visual: NSLocalizedString("March 13, 1781", comment: ""),
+    color: .colorUranus,
+    moons: 27,
+    rings: 13,
+    gravity: 9,
+    escapeVelocity: "76,968",
+    radius: "2.5362 × 10⁴",
+    mass: "8.6810 × 10²⁵",
+    volume: "6.833 × 10¹³",
+    atmosphere: uranusAtmosphere,
+    expandedDescription: NSLocalizedString("Uranus, an ice giant with a unique sideways rotation, has an atmosphere rich in water, ammonia, and methane ices. Its unusual axial tilt and faint ring system provide insights into extreme seasonal changes and the diversity of planetary systems.", comment: ""),
+    averageTemperature: -224,
+    density: 1.271,
+    orbitalInclination: 0.77,
+    facts: [
+        "Uranus (along with Neptune) is one of the smaller gas giants, but it’s still a giant! Nearly 60 Earths could cram inside Uranus.",
+        "Not only is Uranus knocked on its side, it also spins in the opposite direction (the only other planet with such a “retrograde” rotation is Venus).",
+        "Uranus’ year lasts 84 Earth years, but its day is just 17 hours."
+    ]
+)

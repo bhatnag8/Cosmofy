@@ -259,8 +259,11 @@ class API: @unchecked Sendable {
                             /* Haptics.shared.impact(for: .light)  */
                             responseText += text
                             continuation.yield(text)
-                            /* Slows down each token by 2 ns
-                            try await Task.sleep(nanoseconds: 2 * 10000000) */
+                            /* Slows down each token by 2 ns */
+                             
+                            #if os(watchOS)
+                            try await Task.sleep(nanoseconds: (10 + UInt64(Double.pi)) * 10000000)
+                            #endif
                         }
                     }
                     self.appendToHistoryList(userText: text, responseText: responseText)

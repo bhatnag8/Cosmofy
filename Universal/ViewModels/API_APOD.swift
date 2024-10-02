@@ -32,6 +32,8 @@ class API_IOTD {
     class func getImageOfTheDay(for date: String? = nil, _ completion: @escaping (APOD?, Error?) -> Void) {
         Constants.session.dataTask(with: Constants.request(for: date)) { data, response, error in
             guard let data = data, error == nil else {
+                print("do getImageOfTheDay")
+
                 DispatchQueue.main.async {
                     completion(nil, error)
                 }
@@ -39,11 +41,14 @@ class API_IOTD {
             }
             
             do {
+                print("do getImageOfTheDay")
+
                 let apod = try Constants.decoder.decode(APOD.self, from: data)
                 DispatchQueue.main.async {
                     completion(apod, nil)
                 }
             } catch {
+                print("catch getImageOfTheDay")
                 DispatchQueue.main.async {
                     completion(nil, error)
                 }

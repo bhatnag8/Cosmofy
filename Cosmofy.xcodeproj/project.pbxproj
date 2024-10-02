@@ -34,13 +34,23 @@
 		0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD502AE96FE7001CFC35 /* ci_scripts */; };
 		0B1BAD572AE97736001CFC35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD562AE97736001CFC35 /* .gitignore */; };
 		0B1C6E0F2C5CDF16002F6CDC /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C6E0E2C5CDF16002F6CDC /* Profile.swift */; };
-		0B3990722C4683DC0000683E /* API_ASTRONAUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3990712C4683DC0000683E /* API_ASTRONAUT.swift */; };
-		0B3990732C4683DC0000683E /* API_ASTRONAUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3990712C4683DC0000683E /* API_ASTRONAUT.swift */; };
-		0B3990742C4683DC0000683E /* API_ASTRONAUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3990712C4683DC0000683E /* API_ASTRONAUT.swift */; };
-		0B39A33C2C1D5799003159F9 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0B39A33B2C1D5799003159F9 /* MarkdownUI */; };
+		0B365C3E2CAC990500B07EFE /* MessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B365C3D2CAC990400B07EFE /* MessageRowView.swift */; };
 		0B3EC2642BA4BAFE004491B7 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2632BA4BAFE004491B7 /* ImageView.swift */; };
 		0B3EC2662BA4D16F004491B7 /* API_APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2652BA4D16F004491B7 /* API_APOD.swift */; };
 		0B40299C2BA4FEC1004B0F43 /* IOTD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B40299B2BA4FEC1004B0F43 /* IOTD.swift */; };
+		0B5C33D92CA7C1E500B8BDD5 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0B5C33D82CA7C1E500B8BDD5 /* MarkdownUI */; };
+		0B5C33DB2CA7C1EF00B8BDD5 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0B5C33DA2CA7C1EF00B8BDD5 /* MarkdownUI */; };
+		0B5C33DC2CA7C26C00B8BDD5 /* MapHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBAC7422C4E779A00DE4C85 /* MapHelpers.swift */; };
+		0B5C33E02CA870F000B8BDD5 /* Text+ForegroundLinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5C33DF2CA870E300B8BDD5 /* Text+ForegroundLinearGradient.swift */; };
+		0B63FC142CAB80FE00DEEE0F /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0B63FC132CAB80FE00DEEE0F /* MarkdownUI */; };
+		0B63FC162CAC3E8900DEEE0F /* SwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B63FC152CAC3E8800DEEE0F /* SwiftView.swift */; };
+		0B6E541D2CAB17250094B3FF /* Bumbbled.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B6E541C2CAB17250094B3FF /* Bumbbled.otf */; };
+		0B6E541E2CAB17250094B3FF /* Bumbbled.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B6E541C2CAB17250094B3FF /* Bumbbled.otf */; };
+		0B6E541F2CAB17250094B3FF /* Bumbbled.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B6E541C2CAB17250094B3FF /* Bumbbled.otf */; };
+		0B6E54202CAB45810094B3FF /* API_OPENAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671922AE47E22008E57B2 /* API_OPENAI.swift */; };
+		0B6E54212CAB45A50094B3FF /* Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671962AE4C3FE008E57B2 /* Swift.swift */; };
+		0B6E54222CAB45A50094B3FF /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18BE2AE8A482009C2317 /* MessageRow.swift */; };
+		0B6E54232CAB45B90094B3FF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8615A72BAF6580008CCD5F /* LoadingView.swift */; };
 		0B7671932AE47E22008E57B2 /* API_OPENAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671922AE47E22008E57B2 /* API_OPENAI.swift */; };
 		0B7671972AE4C3FE008E57B2 /* Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671962AE4C3FE008E57B2 /* Swift.swift */; };
 		0B7A208C2C2D892B00212777 /* iPadHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A208B2C2D892B00212777 /* iPadHome.swift */; };
@@ -52,12 +62,10 @@
 		0B87A66E2C41300200BF924B /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18BE2AE8A482009C2317 /* MessageRow.swift */; };
 		0B87A66F2C41300F00BF924B /* API_OPENAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671922AE47E22008E57B2 /* API_OPENAI.swift */; };
 		0B87A6722C41302100BF924B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8615A72BAF6580008CCD5F /* LoadingView.swift */; };
-		0B87A6742C41303500BF924B /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0B87A6732C41303500BF924B /* MarkdownUI */; };
 		0B87A6782C4144B800BF924B /* TVSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87A6772C4144B700BF924B /* TVSwiftView.swift */; };
 		0B87A67A2C4144D500BF924B /* TVMessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87A6792C4144D500BF924B /* TVMessageRowView.swift */; };
 		0B87A67B2C4147E700BF924B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
 		0B87A67F2C41623600BF924B /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87A67D2C41622C00BF924B /* Map.swift */; };
-		0B8D86032C537EF20052913D /* Variablur in Frameworks */ = {isa = PBXBuildFile; productRef = 0B8D86022C537EF20052913D /* Variablur */; };
 		0B923B6E2B9CBBEE009B8D45 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */; };
 		0B9755BA2C2EF9E7002D9C70 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B9755B92C2EF9E7002D9C70 /* Launch Screen.storyboard */; };
 		0B97AE222C1E9078003E96EB /* API_APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2652BA4D16F004491B7 /* API_APOD.swift */; };
@@ -79,7 +87,6 @@
 		0BB07A792C3132750066977E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0BB07A782C3132750066977E /* README.md */; };
 		0BB07A812C31360E0066977E /* CosmofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB07A802C31360E0066977E /* CosmofyApp.swift */; };
 		0BB07A852C3136100066977E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB07A842C3136100066977E /* Assets.xcassets */; };
-		0BB07A882C3136100066977E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB07A872C3136100066977E /* Preview Assets.xcassets */; };
 		0BB07A922C3156DB0066977E /* IOTD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B40299B2BA4FEC1004B0F43 /* IOTD.swift */; };
 		0BB07A952C3159600066977E /* API_APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2652BA4D16F004491B7 /* API_APOD.swift */; };
 		0BB07A962C3159A90066977E /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2632BA4BAFE004491B7 /* ImageView.swift */; };
@@ -87,18 +94,17 @@
 		0BB14A432B9C2B1100476F3C /* CosmofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A422B9C2B1100476F3C /* CosmofyApp.swift */; };
 		0BB14A4D2B9C2EB000476F3C /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */; };
 		0BB14A532B9C339800476F3C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A522B9C339800476F3C /* Card.swift */; };
-		0BB2C2052C56265C000EC228 /* Astronauts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2C2042C56265B000EC228 /* Astronauts.swift */; };
-		0BBAC7412C4E755600DE4C85 /* AstronautsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBAC7402C4E755600DE4C85 /* AstronautsView.swift */; };
 		0BBAC7432C4E779A00DE4C85 /* MapHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBAC7422C4E779A00DE4C85 /* MapHelpers.swift */; };
-		0BD7A7642C2B3D5600D75F1D /* VTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 0BD7A7632C2B3D5600D75F1D /* VTabView */; };
+		0BD13DE42C83E54100121BEC /* KidsPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD13DE32C83E54100121BEC /* KidsPlanetView.swift */; };
 		0BDBC9CE2C1D956E00F720F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBC9CD2C1D956E00F720F2 /* ContentView.swift */; };
 		0BDBC9D02C1D957000F720F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BDBC9CF2C1D957000F720F2 /* Assets.xcassets */; };
-		0BDBC9D32C1D957000F720F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BDBC9D22C1D957000F720F2 /* Preview Assets.xcassets */; };
 		0BDBC9DD2C1D95CB00F720F2 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6C2BA02123008F3D0F /* Planet.swift */; };
 		0BDBC9E12C1DA48000F720F2 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */; };
+		0BEFAB9D2C6FAD18007B71B3 /* VTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 0BEFAB9C2C6FAD18007B71B3 /* VTabView */; };
+		0BEFAB9F2C6FAD2C007B71B3 /* VTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 0BEFAB9E2C6FAD2C007B71B3 /* VTabView */; };
 		0BF2A4172BFBF24B007B3E4B /* GarenText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF2A4162BFBF24B007B3E4B /* GarenText.swift */; };
 		0BF311B42C5D91A000EAA4AA /* Learn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF311B32C5D91A000EAA4AA /* Learn.swift */; };
-		0BF311B62C5D91B600EAA4AA /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF311B52C5D91B600EAA4AA /* Activities.swift */; };
+		0BF311B62C5D91B600EAA4AA /* LearnArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF311B52C5D91B600EAA4AA /* LearnArticles.swift */; };
 		0BFB21052B9CEB1400C84FD8 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB21042B9CEB1400C84FD8 /* Home.swift */; };
 		0BFCD5472C43E6BA005E06A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
 		0BFCD5482C43E6BD005E06A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
@@ -151,11 +157,17 @@
 		0B1BAD562AE97736001CFC35 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0B1C6E0E2C5CDF16002F6CDC /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		0B2420AF2C511C69005A5958 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B2420B12C511C94005A5958 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B3990712C4683DC0000683E /* API_ASTRONAUT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_ASTRONAUT.swift; sourceTree = "<group>"; };
+		0B2895112C838E1600CEFC47 /* Cosmofy iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmofy iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B2895122C838E1600CEFC47 /* Cosmofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosmofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B2895132C838E1600CEFC47 /* Cosmofy tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmofy tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B365C3D2CAC990400B07EFE /* MessageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRowView.swift; sourceTree = "<group>"; };
 		0B3EC2632BA4BAFE004491B7 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		0B3EC2652BA4D16F004491B7 /* API_APOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_APOD.swift; sourceTree = "<group>"; };
 		0B40299B2BA4FEC1004B0F43 /* IOTD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTD.swift; sourceTree = "<group>"; };
+		0B5C33DD2CA7C43400B8BDD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B5C33DF2CA870E300B8BDD5 /* Text+ForegroundLinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+ForegroundLinearGradient.swift"; sourceTree = "<group>"; };
+		0B63FC152CAC3E8800DEEE0F /* SwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftView.swift; sourceTree = "<group>"; };
+		0B6E541C2CAB17250094B3FF /* Bumbbled.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bumbbled.otf; sourceTree = "<group>"; };
 		0B7671922AE47E22008E57B2 /* API_OPENAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_OPENAI.swift; sourceTree = "<group>"; };
 		0B7671962AE4C3FE008E57B2 /* Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift.swift; sourceTree = "<group>"; };
 		0B7A208B2C2D892B00212777 /* iPadHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadHome.swift; sourceTree = "<group>"; };
@@ -185,23 +197,17 @@
 		0BB07A782C3132750066977E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0BB07A802C31360E0066977E /* CosmofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmofyApp.swift; sourceTree = "<group>"; };
 		0BB07A842C3136100066977E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0BB07A872C3136100066977E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0BB14A422B9C2B1100476F3C /* CosmofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmofyApp.swift; sourceTree = "<group>"; };
 		0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		0BB14A522B9C339800476F3C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		0BB2C2042C56265B000EC228 /* Astronauts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronauts.swift; sourceTree = "<group>"; };
-		0BBAC7402C4E755600DE4C85 /* AstronautsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautsView.swift; sourceTree = "<group>"; };
 		0BBAC7422C4E779A00DE4C85 /* MapHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHelpers.swift; sourceTree = "<group>"; };
+		0BD13DE32C83E54100121BEC /* KidsPlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsPlanetView.swift; sourceTree = "<group>"; };
 		0BDBC9CB2C1D956E00F720F2 /* CosmofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmofyApp.swift; sourceTree = "<group>"; };
 		0BDBC9CD2C1D956E00F720F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0BDBC9CF2C1D957000F720F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0BDBC9D22C1D957000F720F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0BE374C32C5A498E00AA2EA9 /* Cosmofy iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmofy iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0BE374C42C5A498E00AA2EA9 /* Cosmofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosmofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0BE374C52C5A498E00AA2EA9 /* Cosmofy tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmofy tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF2A4162BFBF24B007B3E4B /* GarenText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarenText.swift; sourceTree = "<group>"; };
 		0BF311B32C5D91A000EAA4AA /* Learn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn.swift; sourceTree = "<group>"; };
-		0BF311B52C5D91B600EAA4AA /* Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
+		0BF311B52C5D91B600EAA4AA /* LearnArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnArticles.swift; sourceTree = "<group>"; };
 		0BFB21042B9CEB1400C84FD8 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		0BFDE74C2C2E062D00E8B3FB /* iPadPlanetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadPlanetsView.swift; sourceTree = "<group>"; };
 		0BFDE74E2C2EBDAF00E8B3FB /* iPadPlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadPlanetView.swift; sourceTree = "<group>"; };
@@ -219,7 +225,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B87A6742C41303500BF924B /* MarkdownUI in Frameworks */,
+				0BEFAB9F2C6FAD2C007B71B3 /* VTabView in Frameworks */,
+				0B5C33DB2CA7C1EF00B8BDD5 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +234,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B63FC142CAB80FE00DEEE0F /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,9 +242,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BD7A7642C2B3D5600D75F1D /* VTabView in Frameworks */,
-				0B39A33C2C1D5799003159F9 /* MarkdownUI in Frameworks */,
-				0B8D86032C537EF20052913D /* Variablur in Frameworks */,
+				0BEFAB9D2C6FAD18007B71B3 /* VTabView in Frameworks */,
+				0B5C33D92CA7C1E500B8BDD5 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +276,6 @@
 				0B7671922AE47E22008E57B2 /* API_OPENAI.swift */,
 				0B3EC2652BA4D16F004491B7 /* API_APOD.swift */,
 				0B05E3F52BEA07E8007A116E /* API_EONET.swift */,
-				0B3990712C4683DC0000683E /* API_ASTRONAUT.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -297,7 +303,6 @@
 			isa = PBXGroup;
 			children = (
 				0BFB21042B9CEB1400C84FD8 /* Home.swift */,
-				0BB2C2042C56265B000EC228 /* Astronauts.swift */,
 				0B3EC2632BA4BAFE004491B7 /* ImageView.swift */,
 				0B7A208B2C2D892B00212777 /* iPadHome.swift */,
 			);
@@ -325,11 +330,29 @@
 			path = TabProfile;
 			sourceTree = "<group>";
 		};
+		0B882F712C660E86007F5E8F /* Cosmofy iPadOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Cosmofy iPadOS";
+			sourceTree = "<group>";
+		};
+		0B882F722C660E9F007F5E8F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0BDBC9CD2C1D956E00F720F2 /* ContentView.swift */,
+				0B97AE2C2C2009B3003E96EB /* PlanetsView.swift */,
+				0B63FC152CAC3E8800DEEE0F /* SwiftView.swift */,
+				0B365C3D2CAC990400B07EFE /* MessageRowView.swift */,
+				0B97AE2A2C200979003E96EB /* ImageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0B9B4D682C45B9010069E5C8 /* TabHome */ = {
 			isa = PBXGroup;
 			children = (
 				0B9B4D692C45B90E0069E5C8 /* Home.swift */,
-				0BBAC7402C4E755600DE4C85 /* AstronautsView.swift */,
 			);
 			path = TabHome;
 			sourceTree = "<group>";
@@ -372,6 +395,7 @@
 		0B9F026E2B75E56000CB5543 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				0B6E541C2CAB17250094B3FF /* Bumbbled.otf */,
 				0B9F02732B75E5B200CB5543 /* SF-Pro-Rounded-Black.otf */,
 				0B9F02702B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf */,
 				0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */,
@@ -385,35 +409,26 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		0BB07A7F2C31360E0066977E /* Cosmofy for TV */ = {
+		0BB07A7F2C31360E0066977E /* Cosmofy tvOS */ = {
 			isa = PBXGroup;
 			children = (
-				0B2420B12C511C94005A5958 /* Info.plist */,
 				0BB07A802C31360E0066977E /* CosmofyApp.swift */,
+				0B5C33DD2CA7C43400B8BDD5 /* Info.plist */,
 				0B9B4D682C45B9010069E5C8 /* TabHome */,
 				0B9B4D6B2C45B9190069E5C8 /* TabPlanets */,
 				0B9B4D6D2C45B9250069E5C8 /* TabNatureScope */,
 				0B9B4D6C2C45B91F0069E5C8 /* TabSwift */,
 				0BB07A842C3136100066977E /* Assets.xcassets */,
-				0BB07A862C3136100066977E /* Preview Content */,
 			);
-			path = "Cosmofy for TV";
-			sourceTree = "<group>";
-		};
-		0BB07A862C3136100066977E /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				0BB07A872C3136100066977E /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
+			path = "Cosmofy tvOS";
 			sourceTree = "<group>";
 		};
 		0BB14A482B9C2B6C00476F3C /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */,
-				0BF311B22C5D8B4200EAA4AA /* Kids */,
 				0B9E32AA2C581D7B006F4E96 /* Intro */,
+				0BF311B22C5D8B4200EAA4AA /* Kids */,
 				0B8615992BAF4AE0008CCD5F /* TabHome */,
 				0B86159A2BAF4AEC008CCD5F /* TabPlanets */,
 				0B8615972BAF4AAA008CCD5F /* TabSwift */,
@@ -426,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */,
+				0B5C33DF2CA870E300B8BDD5 /* Text+ForegroundLinearGradient.swift */,
 				0B161A682B9FF30B008F3D0F /* View+OffsetX.swift */,
 				0B161A6A2BA014DC008F3D0F /* View+TabMask.swift */,
 			);
@@ -461,26 +477,22 @@
 			path = TabPlanets;
 			sourceTree = "<group>";
 		};
-		0BDBC9CA2C1D956E00F720F2 /* Cosmofy for Watch */ = {
+		0BDBC9CA2C1D956E00F720F2 /* Cosmofy watchOS */ = {
 			isa = PBXGroup;
 			children = (
+				0BDBC9CF2C1D957000F720F2 /* Assets.xcassets */,
 				0B2420AF2C511C69005A5958 /* Info.plist */,
 				0BDBC9CB2C1D956E00F720F2 /* CosmofyApp.swift */,
-				0BDBC9CD2C1D956E00F720F2 /* ContentView.swift */,
-				0B97AE2C2C2009B3003E96EB /* PlanetsView.swift */,
-				0B97AE2A2C200979003E96EB /* ImageView.swift */,
-				0BDBC9CF2C1D957000F720F2 /* Assets.xcassets */,
-				0BDBC9D12C1D957000F720F2 /* Preview Content */,
+				0B882F722C660E9F007F5E8F /* Views */,
 			);
-			path = "Cosmofy for Watch";
+			path = "Cosmofy watchOS";
 			sourceTree = "<group>";
 		};
-		0BDBC9D12C1D957000F720F2 /* Preview Content */ = {
+		0BEFAB9B2C6FAD18007B71B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0BDBC9D22C1D957000F720F2 /* Preview Assets.xcassets */,
 			);
-			path = "Preview Content";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		0BF2A4152BFBEEFC007B3E4B /* Helpers */ = {
@@ -498,7 +510,8 @@
 			isa = PBXGroup;
 			children = (
 				0BF311B32C5D91A000EAA4AA /* Learn.swift */,
-				0BF311B52C5D91B600EAA4AA /* Activities.swift */,
+				0BF311B52C5D91B600EAA4AA /* LearnArticles.swift */,
+				0BD13DE32C83E54100121BEC /* KidsPlanetView.swift */,
 			);
 			path = Kids;
 			sourceTree = "<group>";
@@ -508,28 +521,30 @@
 			children = (
 				0B1BAD502AE96FE7001CFC35 /* ci_scripts */,
 				0B2420B52C51982C005A5958 /* Universal */,
-				2FBBB6572945531500BBB072 /* Cosmofy */,
-				0BDBC9CA2C1D956E00F720F2 /* Cosmofy for Watch */,
-				0BB07A7F2C31360E0066977E /* Cosmofy for TV */,
+				2FBBB6572945531500BBB072 /* Cosmofy iOS */,
+				0B882F712C660E86007F5E8F /* Cosmofy iPadOS */,
+				0BDBC9CA2C1D956E00F720F2 /* Cosmofy watchOS */,
+				0BB07A7F2C31360E0066977E /* Cosmofy tvOS */,
 				0BB07A782C3132750066977E /* README.md */,
 				0B1BAD562AE97736001CFC35 /* .gitignore */,
-				0BE374C32C5A498E00AA2EA9 /* Cosmofy iOS.app */,
-				0BE374C42C5A498E00AA2EA9 /* Cosmofy.app */,
-				0BE374C52C5A498E00AA2EA9 /* Cosmofy tvOS.app */,
+				0BEFAB9B2C6FAD18007B71B3 /* Frameworks */,
+				0B2895112C838E1600CEFC47 /* Cosmofy iOS.app */,
+				0B2895122C838E1600CEFC47 /* Cosmofy.app */,
+				0B2895132C838E1600CEFC47 /* Cosmofy tvOS.app */,
 			);
 			sourceTree = "<group>";
 		};
-		2FBBB6572945531500BBB072 /* Cosmofy */ = {
+		2FBBB6572945531500BBB072 /* Cosmofy iOS */ = {
 			isa = PBXGroup;
 			children = (
-				2F6427CF2A4FA4EF00CC503D /* Cosmofy.entitlements */,
 				2FBBB6612945531700BBB072 /* Assets.xcassets */,
+				2F6427CF2A4FA4EF00CC503D /* Cosmofy.entitlements */,
 				2FBBB6662945531700BBB072 /* Info.plist */,
 				0B9755B92C2EF9E7002D9C70 /* Launch Screen.storyboard */,
 				0BB14A422B9C2B1100476F3C /* CosmofyApp.swift */,
 				0BB14A482B9C2B6C00476F3C /* Views */,
 			);
-			path = Cosmofy;
+			path = "Cosmofy iOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,10 +564,11 @@
 			);
 			name = "Cosmofy tvOS";
 			packageProductDependencies = (
-				0B87A6732C41303500BF924B /* MarkdownUI */,
+				0BEFAB9E2C6FAD2C007B71B3 /* VTabView */,
+				0B5C33DA2CA7C1EF00B8BDD5 /* MarkdownUI */,
 			);
 			productName = "Cosmofy for TV";
-			productReference = 0BE374C52C5A498E00AA2EA9 /* Cosmofy tvOS.app */;
+			productReference = 0B2895132C838E1600CEFC47 /* Cosmofy tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0BDBC9C82C1D956E00F720F2 /* Cosmofy watchOS */ = {
@@ -569,7 +585,7 @@
 			);
 			name = "Cosmofy watchOS";
 			productName = "WatchCosmofy Watch App";
-			productReference = 0BE374C42C5A498E00AA2EA9 /* Cosmofy.app */;
+			productReference = 0B2895122C838E1600CEFC47 /* Cosmofy.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2FBBB6542945531500BBB072 /* Cosmofy iOS */ = {
@@ -588,12 +604,11 @@
 			);
 			name = "Cosmofy iOS";
 			packageProductDependencies = (
-				0B39A33B2C1D5799003159F9 /* MarkdownUI */,
-				0BD7A7632C2B3D5600D75F1D /* VTabView */,
-				0B8D86022C537EF20052913D /* Variablur */,
+				0BEFAB9C2C6FAD18007B71B3 /* VTabView */,
+				0B5C33D82CA7C1E500B8BDD5 /* MarkdownUI */,
 			);
 			productName = Spacefy;
-			productReference = 0BE374C32C5A498E00AA2EA9 /* Cosmofy iOS.app */;
+			productReference = 0B2895112C838E1600CEFC47 /* Cosmofy iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -629,11 +644,9 @@
 			);
 			mainGroup = 2FBBB64C2945531500BBB072;
 			packageReferences = (
-				0B39A33A2C1D5799003159F9 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
-				0BD7A7622C2B3D5600D75F1D /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */,
-				0B2420B72C51AB4A005A5958 /* XCRemoteSwiftPackageReference "SwiftUIGradientBlur" */,
-				0B8D86012C537E1F0052913D /* XCRemoteSwiftPackageReference "Variablur" */,
-				0BB2C2062C563302000EC228 /* XCRemoteSwiftPackageReference "SkeletonUI" */,
+				0BEFAB992C6FACD4007B71B3 /* XCRemoteSwiftPackageReference "Zoomable" */,
+				0BEFAB9A2C6FACEB007B71B3 /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */,
+				0B5C33D72CA7C1E500B8BDD5 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = 2FBBB64C2945531500BBB072;
 			projectDirPath = "";
@@ -651,7 +664,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BB07A882C3136100066977E /* Preview Assets.xcassets in Resources */,
+				0B6E541F2CAB17250094B3FF /* Bumbbled.otf in Resources */,
 				0B0B5CDF2C401EB40097A98D /* SF-Pro-Rounded-Black.otf in Resources */,
 				0B0B5CE02C401EB40097A98D /* SF-Pro-Rounded-Heavy.otf in Resources */,
 				0B0B5CE12C401EB40097A98D /* SF-Pro-Rounded-Light.otf in Resources */,
@@ -672,8 +685,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BDBC9D32C1D957000F720F2 /* Preview Assets.xcassets in Resources */,
 				0BFCD5482C43E6BD005E06A4 /* Assets.xcassets in Resources */,
+				0B6E541E2CAB17250094B3FF /* Bumbbled.otf in Resources */,
 				0BDBC9D02C1D957000F720F2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -687,6 +700,7 @@
 				0B1BAD572AE97736001CFC35 /* .gitignore in Resources */,
 				0B9755BA2C2EF9E7002D9C70 /* Launch Screen.storyboard in Resources */,
 				0B9F027C2B75E5B200CB5543 /* SF-Pro-Rounded-Black.otf in Resources */,
+				0B6E541D2CAB17250094B3FF /* Bumbbled.otf in Resources */,
 				0BFCD5472C43E6BA005E06A4 /* Assets.xcassets in Resources */,
 				0B9F02802B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf in Resources */,
 				0BB07A792C3132750066977E /* README.md in Resources */,
@@ -714,7 +728,6 @@
 				0B0B5CDE2C401C430097A98D /* Color+Hex.swift in Sources */,
 				0B87A66F2C41300F00BF924B /* API_OPENAI.swift in Sources */,
 				0B87A67A2C4144D500BF924B /* TVMessageRowView.swift in Sources */,
-				0BBAC7412C4E755600DE4C85 /* AstronautsView.swift in Sources */,
 				0BB07A812C31360E0066977E /* CosmofyApp.swift in Sources */,
 				0B0B5CFE2C4028020097A98D /* Event.swift in Sources */,
 				0B87A67F2C41623600BF924B /* Map.swift in Sources */,
@@ -727,9 +740,9 @@
 				0B87A6782C4144B800BF924B /* TVSwiftView.swift in Sources */,
 				0B0B5CFD2C4027FB0097A98D /* API_EONET.swift in Sources */,
 				0B87A6722C41302100BF924B /* LoadingView.swift in Sources */,
-				0B3990742C4683DC0000683E /* API_ASTRONAUT.swift in Sources */,
 				0BB07A962C3159A90066977E /* ImageView.swift in Sources */,
 				0BB07A952C3159600066977E /* API_APOD.swift in Sources */,
+				0B5C33DC2CA7C26C00B8BDD5 /* MapHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,15 +750,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B3990732C4683DC0000683E /* API_ASTRONAUT.swift in Sources */,
 				0B97AE2B2C200979003E96EB /* ImageView.swift in Sources */,
 				0BDBC9CE2C1D956E00F720F2 /* ContentView.swift in Sources */,
 				0B97AE222C1E9078003E96EB /* API_APOD.swift in Sources */,
 				0B97AE2D2C2009B3003E96EB /* PlanetsView.swift in Sources */,
 				0BDBC9DD2C1D95CB00F720F2 /* Planet.swift in Sources */,
+				0B365C3E2CAC990500B07EFE /* MessageRowView.swift in Sources */,
+				0B6E54232CAB45B90094B3FF /* LoadingView.swift in Sources */,
 				0B97AE232C1E90CA003E96EB /* IOTD.swift in Sources */,
+				0B6E54202CAB45810094B3FF /* API_OPENAI.swift in Sources */,
 				0BFDE7502C2EE61500E8B3FB /* CosmofyApp.swift in Sources */,
 				0BDBC9E12C1DA48000F720F2 /* Color+Hex.swift in Sources */,
+				0B63FC162CAC3E8900DEEE0F /* SwiftView.swift in Sources */,
+				0B6E54212CAB45A50094B3FF /* Swift.swift in Sources */,
+				0B6E54222CAB45A50094B3FF /* MessageRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,12 +780,11 @@
 				0BFDE74F2C2EBDAF00E8B3FB /* iPadPlanetView.swift in Sources */,
 				0BFB21052B9CEB1400C84FD8 /* Home.swift in Sources */,
 				0BB14A432B9C2B1100476F3C /* CosmofyApp.swift in Sources */,
-				0B3990722C4683DC0000683E /* API_ASTRONAUT.swift in Sources */,
 				0B00383D2B9F8B7900DAD175 /* PlanetsView.swift in Sources */,
+				0BD13DE42C83E54100121BEC /* KidsPlanetView.swift in Sources */,
 				0B3EC2662BA4D16F004491B7 /* API_APOD.swift in Sources */,
 				0B40299C2BA4FEC1004B0F43 /* IOTD.swift in Sources */,
 				0B3EC2642BA4BAFE004491B7 /* ImageView.swift in Sources */,
-				0BB2C2052C56265C000EC228 /* Astronauts.swift in Sources */,
 				0BBAC7432C4E779A00DE4C85 /* MapHelpers.swift in Sources */,
 				0BFDE74D2C2E062D00E8B3FB /* iPadPlanetsView.swift in Sources */,
 				0BF2A4172BFBF24B007B3E4B /* GarenText.swift in Sources */,
@@ -781,11 +798,12 @@
 				0B7671932AE47E22008E57B2 /* API_OPENAI.swift in Sources */,
 				0B7A208C2C2D892B00212777 /* iPadHome.swift in Sources */,
 				0BB14A532B9C339800476F3C /* Card.swift in Sources */,
+				0B5C33E02CA870F000B8BDD5 /* Text+ForegroundLinearGradient.swift in Sources */,
 				0B7D18C82AE8AB97009C2317 /* MessageRowView.swift in Sources */,
 				0BB14A4D2B9C2EB000476F3C /* Color+Hex.swift in Sources */,
 				0B161A692B9FF30B008F3D0F /* View+OffsetX.swift in Sources */,
 				0B7D18BF2AE8A482009C2317 /* MessageRow.swift in Sources */,
-				0BF311B62C5D91B600EAA4AA /* Activities.swift in Sources */,
+				0BF311B62C5D91B600EAA4AA /* LearnArticles.swift in Sources */,
 				0B7671972AE4C3FE008E57B2 /* Swift.swift in Sources */,
 				2F4F8FC5295EC08100F7EE98 /* PlanetNode.swift in Sources */,
 				0B8615A82BAF6580008CCD5F /* LoadingView.swift in Sources */,
@@ -810,22 +828,23 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Cosmofy for TV/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Cosmofy for TV/Info.plist";
+				INFOPLIST_FILE = "Cosmofy tvOS/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Cosmofy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -846,22 +865,23 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Cosmofy for TV/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Cosmofy for TV/Info.plist";
+				INFOPLIST_FILE = "Cosmofy tvOS/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Cosmofy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -885,7 +905,7 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Cosmofy for Watch/Info.plist";
+				INFOPLIST_FILE = "Cosmofy watchOS/Info.plist";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.snape447.Cosmofy;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
@@ -894,7 +914,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy.watchkitapp;
 				PRODUCT_NAME = Cosmofy;
 				SDKROOT = watchos;
@@ -918,7 +938,7 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Cosmofy for Watch/Info.plist";
+				INFOPLIST_FILE = "Cosmofy watchOS/Info.plist";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.snape447.Cosmofy;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
@@ -927,7 +947,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy.watchkitapp;
 				PRODUCT_NAME = Cosmofy;
 				SDKROOT = watchos;
@@ -1064,12 +1084,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = Cosmofy/Cosmofy.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Cosmofy iOS/Cosmofy.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Cosmofy/Info.plist;
+				INFOPLIST_FILE = "Cosmofy iOS/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Cosmofy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1105,12 +1125,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = Cosmofy/Cosmofy.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Cosmofy iOS/Cosmofy.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Cosmofy/Info.plist;
+				INFOPLIST_FILE = "Cosmofy iOS/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Cosmofy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1181,39 +1201,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0B2420B72C51AB4A005A5958 /* XCRemoteSwiftPackageReference "SwiftUIGradientBlur" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/unitedadityaa/SwiftUIGradientBlur";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		0B39A33A2C1D5799003159F9 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+		0B5C33D72CA7C1E500B8BDD5 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.0;
+				minimumVersion = 2.4.0;
 			};
 		};
-		0B8D86012C537E1F0052913D /* XCRemoteSwiftPackageReference "Variablur" */ = {
+		0BEFAB992C6FACD4007B71B3 /* XCRemoteSwiftPackageReference "Zoomable" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/daprice/Variablur";
+			repositoryURL = "https://github.com/ryohey/Zoomable.git";
 			requirement = {
 				branch = main;
 				kind = branch;
 			};
 		};
-		0BB2C2062C563302000EC228 /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/CSolanaM/SkeletonUI";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.2;
-			};
-		};
-		0BD7A7622C2B3D5600D75F1D /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */ = {
+		0BEFAB9A2C6FACEB007B71B3 /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-vertical-tab-view";
 			requirement = {
@@ -1224,24 +1228,29 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0B39A33B2C1D5799003159F9 /* MarkdownUI */ = {
+		0B5C33D82CA7C1E500B8BDD5 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0B39A33A2C1D5799003159F9 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			package = 0B5C33D72CA7C1E500B8BDD5 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
 		};
-		0B87A6732C41303500BF924B /* MarkdownUI */ = {
+		0B5C33DA2CA7C1EF00B8BDD5 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0B39A33A2C1D5799003159F9 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			package = 0B5C33D72CA7C1E500B8BDD5 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
 		};
-		0B8D86022C537EF20052913D /* Variablur */ = {
+		0B63FC132CAB80FE00DEEE0F /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0B8D86012C537E1F0052913D /* XCRemoteSwiftPackageReference "Variablur" */;
-			productName = Variablur;
+			package = 0B5C33D72CA7C1E500B8BDD5 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
 		};
-		0BD7A7632C2B3D5600D75F1D /* VTabView */ = {
+		0BEFAB9C2C6FAD18007B71B3 /* VTabView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0BD7A7622C2B3D5600D75F1D /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */;
+			package = 0BEFAB9A2C6FACEB007B71B3 /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */;
+			productName = VTabView;
+		};
+		0BEFAB9E2C6FAD2C007B71B3 /* VTabView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BEFAB9A2C6FACEB007B71B3 /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */;
 			productName = VTabView;
 		};
 /* End XCSwiftPackageProductDependency section */
