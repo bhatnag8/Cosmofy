@@ -4,19 +4,8 @@
 <dict>
 	<key>API_KEY_DEBUG</key>
 	<string></string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Bumbbled.otf</string>
-		<string>SF-Pro-Rounded-Heavy.otf</string>
-		<string>SF-Pro-Rounded-Bold.otf</string>
-		<string>SF-Pro-Rounded-Semibold.otf</string>
-		<string>SF-Pro-Rounded-Regular.otf</string>
-		<string>SF-Pro-Rounded-Black.otf</string>
-		<string>SF-Pro-Rounded-Light.otf</string>
-		<string>SF-Pro-Rounded-Thin.otf</string>
-		<string>SF-Pro-Rounded-Medium.otf</string>
-		<string>SF-Pro-Rounded-Ultralight.otf</string>
-	</array>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -44,7 +33,18 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Bumbbled.otf</string>
+		<string>SF-Pro-Rounded-Heavy.otf</string>
+		<string>SF-Pro-Rounded-Bold.otf</string>
+		<string>SF-Pro-Rounded-Semibold.otf</string>
+		<string>SF-Pro-Rounded-Regular.otf</string>
+		<string>SF-Pro-Rounded-Black.otf</string>
+		<string>SF-Pro-Rounded-Light.otf</string>
+		<string>SF-Pro-Rounded-Thin.otf</string>
+		<string>SF-Pro-Rounded-Medium.otf</string>
+		<string>SF-Pro-Rounded-Ultralight.otf</string>
+	</array>
 </dict>
 </plist>
