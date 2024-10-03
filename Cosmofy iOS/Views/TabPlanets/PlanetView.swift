@@ -74,12 +74,12 @@ struct PlanetView: View {
                 .padding()
                 
                 if planet == earthPlanet {
-                    NavigationLink {
-                        RNNMaybach(complete: $complete, failed: $failed)
-                            
-                    } label: {
-                        Text("Enter Nature Scope")
-                    }
+                    NavView(
+                        view: RNNMaybach(complete: $complete, failed: $failed),
+                        imageName: "home-icon-4",
+                        title: "Nature Scope",
+                        subtitle: "View natural events and disasters around the globe"
+                    )
                 }
                 
                 VStack {

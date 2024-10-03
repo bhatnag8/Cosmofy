@@ -330,13 +330,6 @@
 			path = TabProfile;
 			sourceTree = "<group>";
 		};
-		0B882F712C660E86007F5E8F /* Cosmofy iPadOS */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Cosmofy iPadOS";
-			sourceTree = "<group>";
-		};
 		0B882F722C660E9F007F5E8F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,7 +515,6 @@
 				0B1BAD502AE96FE7001CFC35 /* ci_scripts */,
 				0B2420B52C51982C005A5958 /* Universal */,
 				2FBBB6572945531500BBB072 /* Cosmofy iOS */,
-				0B882F712C660E86007F5E8F /* Cosmofy iPadOS */,
 				0BDBC9CA2C1D956E00F720F2 /* Cosmofy watchOS */,
 				0BB07A7F2C31360E0066977E /* Cosmofy tvOS */,
 				0BB07A782C3132750066977E /* README.md */,

@@ -10,41 +10,24 @@ import SwiftUI
 import SceneKit
 
 
-struct RightView: View {
+struct PlanetsView: View {
     @State private var selectedPlanet: Planet? = nil
     
     var body: some View {
         NavigationStack {
             TabView {
-                ForEach(allPlanetsModded) { planet in
-                    
-                    if planet == entryPlanet {
-                        VStack {
-                            HStack {
-                                Text("Cosmofy")
-                                Spacer()
+                ForEach(allPlanets) { planet in
+                    ZStack {
+                        PlanetPreview(planet: planet)
+                            .containerBackground(planet.color.gradient, for: .tabView)
+                            .onTapGesture {
+                                selectedPlanet = planet
                             }
-                            HStack {
-                                Text("2.0")
-                                Spacer()
-                            }
-                            Spacer()
-                        }
-                        .navigationTitle("Hello, world!")
-
-                    } else {
-                        ZStack {
-                            PlanetPreview(planet: planet)
-                                .containerBackground(planet.color.gradient, for: .tabView)
-                                .onTapGesture {
-                                    selectedPlanet = planet
-                                }
-                        }
-                        .navigationTitle("Planets")
-
                     }
                 }
             }
+            .navigationTitle("Planets")
+
         }
         .tabViewStyle(.verticalPage)
         .sheet(item: $selectedPlanet) { planet in

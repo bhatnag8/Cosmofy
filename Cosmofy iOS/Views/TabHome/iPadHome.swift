@@ -18,6 +18,10 @@ struct iPadHome: View {
             VStack {
                 ScrollView {
                     HStack {
+                        
+                        
+                        
+                        
                         // View 1
                         VStack {
                                 
@@ -99,7 +103,7 @@ struct iPadHome: View {
                                 fetched = true
                             }
                         }
-
+                        
                         // View 2
                         VStack {
                             VStack {
@@ -115,85 +119,104 @@ struct iPadHome: View {
                             .padding(.top)
                             .padding(.horizontal, 32)
                             
-                            NavigationLink(destination: AugustView()) {
-                                
-                                ZStack(alignment: .bottom) {
-                                    
-                                    Image("August Article")
-                                        .resizable()
-                                        .scaledToFit()
-                                    
-                                    VStack {
-                                        Text(" ")
-                                        Text(" ")
-                                        Text(" ")
-                                        Text(" ")
-                                        Text(" ")
-                                        Text(" ")
-                                        Text(" ")
-                                        Text(" ")
-                                        Text(" ")
-                                        Text(" ")
-                                        Text(" ")
-
-                                    }
-                                    .frame(maxWidth: .infinity)
-                                    .background(
-                                        VisualEffectView(effect: UIBlurEffect(style: .dark))
-                                                    )
-                                    
-                                        
-                                    Image("August Article")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .mask(LinearGradient(stops: [.init(color: .white, location: 0),
-                                                                                     .init(color: .white, location: 0.4),
-                                                                                     .init(color: .clear, location: 0.80),], startPoint: .top, endPoint: .bottom))
-                                    
-                                    
-                                    HStack {
-                                        VStack {
-                                            Text("08")
-                                                .font(.largeTitle)
-                                                .fontDesign(.serif)
-                                                .foregroundStyle(.white)
-                                            
-                                            Text("2024")
-                                                .fontDesign(.serif)
-                                                .foregroundStyle(Color.gray.opacity(0.6))
-//                                                .foregroundStyle(.white)
-
-                                        }
-                                        
-                                        VStack() {
-                                            HStack {
-                                                Text("The Best Neighborhoods for Starting a Life in the Galaxy")
-                                                    .multilineTextAlignment(.leading)
-                                                    .font(Font.custom("SF Pro Rounded Regular", size: 18))
-                                                    .foregroundStyle(.white)
-                                                Spacer()
+                            VStack(spacing: 32) {
+                                NavigationLink(destination: OctoberView()) {
+                                    VStack(spacing: 0) {
+                                        Image("October Article")
+                                            .resizable()
+                                            .scaledToFit()
+                                        HStack {
+                                            VStack {
+                                                Text("10")
+                                                    .font(.largeTitle)
+                                                    .fontDesign(.serif)
+                                                
+                                                Text("2024")
+                                                    .fontDesign(.serif)
+                                                    .foregroundStyle(.secondary)
                                             }
                                             
-                                            HStack {
-                                                Text("Rebecca Boyle")
-                                                    .multilineTextAlignment(.leading)
-                                                    .italic()
+                                            
+                                            VStack(spacing: 4) {
+                                                HStack {
+                                                    Text("The #1 Clue to Quantum Gravity Sits on the Surfaces of Black Holes")
+                                                        .multilineTextAlignment(.leading)
+                                                        .font(Font.custom("SF Pro Rounded Regular", size: 16))
+                                                        .foregroundColor(.primary)
+                                                    Spacer()
+                                                }
+                                                
+                                                HStack {
+                                                    Text("Joseph Howlett")
+                                                        .multilineTextAlignment(.leading)
+                                                        .font(.caption)
+                                                        .italic()
                                                         .fontDesign(.serif)
-                                                        .foregroundStyle(Color.gray.opacity(0.6))
-                                                Spacer()
+                                                        .foregroundColor(.secondary)
+                                                    Spacer()
+                                                }
                                             }
+                                            .padding(.leading)
+                                            
+                                            Spacer()
                                             
                                         }
-                                        .padding(.leading)
-                                                                                    
+                                        .padding()
+                                        .background(Color.gray.opacity(0.1))
                                     }
-                                    .padding()
-
+                                    .clipShape(RoundedRectangle.init(cornerRadius: 18))
+                                    
                                 }
-                                .clipShape(RoundedRectangle.init(cornerRadius: 18))
-
-                                
+                                NavigationLink(destination: SeptemberView()) {
+                                    VStack(spacing: 0) {
+                                        
+                                        Image("September Article")
+                                            .resizable()
+                                            .scaledToFit()
+                                        HStack {
+                                            VStack {
+                                                Text("09")
+                                                    .font(.largeTitle)
+                                                    .fontDesign(.serif)
+                                                
+                                                Text("2024")
+                                                    .fontDesign(.serif)
+                                                    .foregroundStyle(.secondary)
+                                            }
+                                            
+                                            
+                                            VStack() {
+                                                HStack {
+                                                    Text("The Webb Telescope Further Deepens the Biggest Controversy in Cosmology")
+                                                        .multilineTextAlignment(.leading)
+                                                        .font(Font.custom("SF Pro Rounded Regular", size: 16))
+                                                        .foregroundColor(.primary)
+                                                    Spacer()
+                                                }
+                                                
+                                                HStack {
+                                                    Text("Liz Kruesi")
+                                                        .multilineTextAlignment(.leading)
+                                                        .font(.caption)
+                                                        .italic()
+                                                        .fontDesign(.serif)
+                                                        .foregroundColor(.secondary)
+                                                    Spacer()
+                                                }
+                                            }
+                                            .padding(.leading)
+                                            
+                                            Spacer()
+                                            
+                                        }
+                                        .padding()
+                                        .background(Color.gray.opacity(0.1))
+                                    }
+                                    .clipShape(RoundedRectangle.init(cornerRadius: 18))
+                                    
+                                }
                             }
+                            
                             .padding(.horizontal, 32)
                             .padding(.top)
                             
@@ -202,6 +225,8 @@ struct iPadHome: View {
 
                         }
                         .frame(maxWidth: .infinity)
+
+
 
                     }
                 }

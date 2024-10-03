@@ -19,14 +19,27 @@
 
 echo "Stage: PRE-Xcode Build is activated .... "
  
-# Navigate to the 'Cosmofy' directory from current path
-cd ../Cosmofy/
-
+# Navigate to the 'Cosmofy iOS' directory from current path
+cd ../'Cosmofy iOS'/
 # Replace the API_KEY_DEBUG value in Info.plist
 plutil -replace API_KEY_DEBUG -string $API_KEY_DEBUG Info.plist
-
-# Print the contents of Info.plist to verify the chang
+# Print the contents of Info.plist to verify the change
 plutil -p Info.plist
+
+# Navigate to the 'Cosmofy watchOS' directory from current path
+cd ../'Cosmofy watchOS'/
+# Replace the API_KEY_DEBUG value in Info.plist
+plutil -replace API_KEY_DEBUG -string $API_KEY_DEBUG Info.plist
+# Print the contents of Info.plist to verify the change
+plutil -p Info.plist
+
+# Navigate to the 'Cosmofy tvOS' directory from current path
+cd ../'Cosmofy tvOS'/
+# Replace the API_KEY_DEBUG value in Info.plist
+plutil -replace API_KEY_DEBUG -string $API_KEY_DEBUG Info.plist
+# Print the contents of Info.plist to verify the change
+plutil -p Info.plist
+
 
 echo "Stage: PRE-Xcode Build is DONE .... "
 

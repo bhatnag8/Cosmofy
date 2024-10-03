@@ -19,7 +19,7 @@ struct Planet: Identifiable, Equatable, Hashable {
     var color: Color
     var moons: Int
     var rings: Int
-    var gravity: Int
+    var gravity: Float
     var escapeVelocity: String
     var radius: String
     var mass: String
@@ -66,10 +66,13 @@ struct Atmosphere: Identifiable, Hashable {
 }
 
 let neptuneAtmosphere = [
-    Atmosphere(molar: "20", formula: "H₂"),
-    Atmosphere(molar: "28", formula: "N₂"),
-    Atmosphere(molar: "16", formula: "O₂")
+    Atmosphere(molar: "2", formula: "H₂"),      // Hydrogen (H₂) ~80%
+    Atmosphere(molar: "4", formula: "He"),      // Helium (He) ~19%
+    Atmosphere(molar: "16", formula: "CH₄"),    // Methane (CH₄) ~1.5%
+    Atmosphere(molar: "17", formula: "NH₃"),    // Ammonia (NH₃)
+    Atmosphere(molar: "18", formula: "H₂O")     // Water Vapor (H₂O)
 ]
+
 
 
 let neptunePlanet = Planet(
@@ -82,7 +85,7 @@ let neptunePlanet = Planet(
     color: .colorNeptune,
     moons: 14,
     rings: 5,
-    gravity: 11,
+    gravity: 11.15,
     escapeVelocity: "84,816",
     radius: "2.4622 × 10⁴",
     mass: "1.0241 × 10²⁶",
@@ -100,9 +103,16 @@ let neptunePlanet = Planet(
 )
 
 let mercuryAtmosphere = [
-    Atmosphere(molar: "4", formula: "He"),
-    Atmosphere(molar: "40", formula: "Ar"),
-    Atmosphere(molar: "1", formula: "H")
+    Atmosphere(molar: "4", formula: "He"),     // Helium
+    Atmosphere(molar: "40", formula: "Ar"),    // Argon
+    Atmosphere(molar: "1", formula: "H"),      // Hydrogen
+    Atmosphere(molar: "12", formula: "C"),     // Carbon
+    Atmosphere(molar: "14", formula: "N"),     // Nitrogen
+    Atmosphere(molar: "16", formula: "O"),     // Oxygen
+    Atmosphere(molar: "20", formula: "Ne"),    // Neon
+    Atmosphere(molar: "28", formula: "CO"),    // Carbon Monoxide
+    Atmosphere(molar: "18", formula: "H₂O"),   // Water vapor (H₂O)
+    Atmosphere(molar: "44", formula: "CO₂")    // Carbon Dioxide (CO₂)
 ]
 
 let mercuryPlanet = Planet(
@@ -115,11 +125,11 @@ let mercuryPlanet = Planet(
     color: .colorMercury,
     moons: 0,
     rings: 0,
-    gravity: 4,
+    gravity: 3.7,
     escapeVelocity: "15,300",
-    radius: "2.4397 × 10³",
-    mass: "3.3010 × 10²³",
-    volume: "6.08272 × 10¹⁰",
+    radius: "2.440 × 10³",
+    mass: "3.301 × 10²³",
+    volume: "6.083 × 10¹⁰",
     atmosphere: mercuryAtmosphere,
     expandedDescription: NSLocalizedString("Mercury, the closest planet to the Sun, experiences extreme temperatures due to its lack of a substantial atmosphere and rapid orbital period. Its surface, marked by craters and ridges, provides critical insights into the early solar system's history and planetary formation.", comment: ""),
     averageTemperature: 167,
@@ -133,8 +143,14 @@ let mercuryPlanet = Planet(
 )
 
 let venusAtmosphere = [
-    Atmosphere(molar: "44", formula: "CO₂"),
-    Atmosphere(molar: "28", formula: "N₂")
+    Atmosphere(molar: "44", formula: "CO₂"),    // Carbon Dioxide (CO₂)
+    Atmosphere(molar: "18", formula: "H₂O"),    // Water Vapor (H₂O)
+    Atmosphere(molar: "32", formula: "O₂"),     // Oxygen (O₂)
+    Atmosphere(molar: "28", formula: "N₂"),     // Nitrogen (N₂)
+    Atmosphere(molar: "2", formula: "H₂"),      // Hydrogen (H₂)
+    Atmosphere(molar: "34", formula: "H₂S"),    // Hydrogen Sulfide (H₂S)
+    Atmosphere(molar: "17", formula: "NH₃"),    // Ammonia (NH₃)
+    Atmosphere(molar: "64", formula: "SO₂")     // Sulfur Dioxide (SO₂)
 ]
 
 let venusPlanet = Planet(
@@ -147,10 +163,10 @@ let venusPlanet = Planet(
     color: .colorVenus,
     moons: 0,
     rings: 0,
-    gravity: 9,
+    gravity: 8.87,
     escapeVelocity: "37,296",
-    radius: "6.0518 × 10³",
-    mass: "4.8673 × 10²⁴",
+    radius: "6.052 × 10³",
+    mass: "4.867 × 10²⁴",
     volume: "9.28415 × 10¹¹",
     atmosphere: venusAtmosphere,
     expandedDescription: NSLocalizedString("Venus, shrouded in a thick, toxic atmosphere of carbon dioxide and sulfuric acid clouds, is the hottest planet in our solar system. Its extreme surface temperatures and atmospheric pressure offer a glimpse into the greenhouse effect, making it a crucial subject of study for understanding atmospheric sciences.", comment: ""),
@@ -165,8 +181,11 @@ let venusPlanet = Planet(
 )
 
 let earthAtmosphere = [
-    Atmosphere(molar: "29", formula: "N₂"),
-    Atmosphere(molar: "32", formula: "O₂")
+    Atmosphere(molar: "28", formula: "N₂"),     // Nitrogen (N₂) ~78%
+    Atmosphere(molar: "32", formula: "O₂"),     // Oxygen (O₂) ~21%
+    Atmosphere(molar: "44", formula: "CO₂"),    // Carbon Dioxide (CO₂) ~0.04%
+    Atmosphere(molar: "18", formula: "H₂O"),    // Water Vapor (H₂O) ~0-4%
+    Atmosphere(molar: "40", formula: "Ar")      // Argon (Ar) ~0.93%
 ]
 
 let earthPlanet = Planet(
@@ -179,7 +198,7 @@ let earthPlanet = Planet(
     color: .colorEarth,
     moons: 1,
     rings: 0,
-    gravity: 10,
+    gravity: 9.80665,
     escapeVelocity: "40,284",
     radius: "6.3710 × 10³",
     mass: "5.9722 × 10²⁴",
@@ -197,10 +216,13 @@ let earthPlanet = Planet(
 )
 
 let marsAtmosphere = [
-    Atmosphere(molar: "44", formula: "CO₂"),
-    Atmosphere(molar: "28", formula: "N₂"),
-    Atmosphere(molar: "18", formula: "H₂O")
+    Atmosphere(molar: "44", formula: "CO₂"),    // Carbon Dioxide (CO₂) ~95.3%
+    Atmosphere(molar: "28", formula: "N₂"),     // Nitrogen (N₂) ~2.7%
+    Atmosphere(molar: "16", formula: "O₂"),     // Oxygen (O₂) ~0.13%
+    Atmosphere(molar: "32", formula: "O₃"),     // Ozone (O₃)
+    Atmosphere(molar: "40", formula: "Ar")      // Argon (Ar) ~1.6%
 ]
+
 
 let marsPlanet = Planet(
     name: NSLocalizedString("Mars", comment: ""),
@@ -212,7 +234,7 @@ let marsPlanet = Planet(
     color: .colorMars,
     moons: 2,
     rings: 0,
-    gravity: 4,
+    gravity: 3.71,
     escapeVelocity: "18,108",
     radius: "3.3895 × 10³",
     mass: "3.3895 × 10²³",
@@ -231,9 +253,13 @@ let marsPlanet = Planet(
 )
 
 let jupiterAtmosphere = [
-    Atmosphere(molar: "2", formula: "H₂"),
-    Atmosphere(molar: "4", formula: "He")
+    Atmosphere(molar: "2", formula: "H₂"),      // Hydrogen (H₂) ~89.8%
+    Atmosphere(molar: "4", formula: "He"),      // Helium (He) ~10.2%
+    Atmosphere(molar: "16", formula: "CH₄"),    // Methane (CH₄)
+    Atmosphere(molar: "28", formula: "NH₃"),    // Ammonia (NH₃)
+    Atmosphere(molar: "18", formula: "H₂O")     // Water Vapor (H₂O)
 ]
+
 
 let jupiterPlanet = Planet(
     name: NSLocalizedString("Jupiter", comment: ""),
@@ -245,7 +271,7 @@ let jupiterPlanet = Planet(
     color: .colorJupiter,
     moons: 95,
     rings: 4,
-    gravity: 25,
+    gravity: 24.79,
     escapeVelocity: "216,720",
     radius: "6.9911 × 10⁴",
     mass: "1.8981 × 10²⁷",
@@ -263,9 +289,13 @@ let jupiterPlanet = Planet(
 )
 
 let saturnAtmosphere = [
-    Atmosphere(molar: "2", formula: "H₂"),
-    Atmosphere(molar: "4", formula: "He")
+    Atmosphere(molar: "2", formula: "H₂"),      // Hydrogen (H₂) ~96%
+    Atmosphere(molar: "4", formula: "He"),      // Helium (He) ~3%
+    Atmosphere(molar: "16", formula: "CH₄"),    // Methane (CH₄)
+    Atmosphere(molar: "28", formula: "NH₃"),    // Ammonia (NH₃)
+    Atmosphere(molar: "18", formula: "H₂O")     // Water Vapor (H₂O)
 ]
+
 
 let saturnPlanet = Planet(
     name: NSLocalizedString("Saturn", comment: ""),
@@ -277,7 +307,7 @@ let saturnPlanet = Planet(
     color: .colorSaturn,
     moons: 83,
     rings: 7,
-    gravity: 11,
+    gravity: 10.4,
     escapeVelocity: "129,924",
     radius: "5.8232 × 10⁴",
     mass: "5.6834 × 10²⁶",
@@ -295,9 +325,13 @@ let saturnPlanet = Planet(
 )
 
 let uranusAtmosphere = [
-    Atmosphere(molar: "2", formula: "H₂"),
-    Atmosphere(molar: "16", formula: "O₂")
+    Atmosphere(molar: "2", formula: "H₂"),      // Hydrogen (H₂) ~82.5%
+    Atmosphere(molar: "4", formula: "He"),      // Helium (He) ~15.2%
+    Atmosphere(molar: "16", formula: "CH₄"),    // Methane (CH₄) ~2.3%
+    Atmosphere(molar: "17", formula: "NH₃"),    // Ammonia (NH₃)
+    Atmosphere(molar: "18", formula: "H₂O")     // Water Vapor (H₂O)
 ]
+
 
 let uranusPlanet = Planet(
     name: NSLocalizedString("Uranus", comment: ""),
@@ -309,7 +343,7 @@ let uranusPlanet = Planet(
     color: .colorUranus,
     moons: 27,
     rings: 13,
-    gravity: 9,
+    gravity: 8.87,
     escapeVelocity: "76,968",
     radius: "2.5362 × 10⁴",
     mass: "8.6810 × 10²⁵",
@@ -337,35 +371,3 @@ let allPlanets = [
     mercuryPlanet, venusPlanet, earthPlanet, marsPlanet, jupiterPlanet, saturnPlanet, uranusPlanet, neptunePlanet
 ]
 
-let allPlanetsModded = [
-    entryPlanet,
-    mercuryPlanet, venusPlanet, earthPlanet, marsPlanet, jupiterPlanet, saturnPlanet, uranusPlanet, neptunePlanet
-]
-
-
-let entryPlanet = Planet(
-    name: NSLocalizedString("Uranus", comment: ""),
-    order: "7th",
-    imageName: "smiling-uranus",
-    imageNameClosed: "smiling-uranus",
-    description: NSLocalizedString("An ice giant with a tilted rotation axis, causing extreme seasonal variations.", comment: ""),
-    visual: NSLocalizedString("March 13, 1781", comment: ""),
-    color: .colorUranus,
-    moons: 27,
-    rings: 13,
-    gravity: 9,
-    escapeVelocity: "76,968",
-    radius: "2.5362 × 10⁴",
-    mass: "8.6810 × 10²⁵",
-    volume: "6.833 × 10¹³",
-    atmosphere: uranusAtmosphere,
-    expandedDescription: NSLocalizedString("Uranus, an ice giant with a unique sideways rotation, has an atmosphere rich in water, ammonia, and methane ices. Its unusual axial tilt and faint ring system provide insights into extreme seasonal changes and the diversity of planetary systems.", comment: ""),
-    averageTemperature: -224,
-    density: 1.271,
-    orbitalInclination: 0.77,
-    facts: [
-        "Uranus (along with Neptune) is one of the smaller gas giants, but it’s still a giant! Nearly 60 Earths could cram inside Uranus.",
-        "Not only is Uranus knocked on its side, it also spins in the opposite direction (the only other planet with such a “retrograde” rotation is Venus).",
-        "Uranus’ year lasts 84 Earth years, but its day is just 17 hours."
-    ]
-)
