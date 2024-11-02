@@ -101,6 +101,55 @@ struct ArticleView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 16) {
+                    NavigationLink(destination: NovemberView()) {
+                        VStack(spacing: 0) {
+                            
+                            Image("November Article")
+                                .resizable()
+                                .frame(height: 180)
+                                .scaledToFit()
+                            HStack {
+                                VStack {
+                                    Text("11")
+                                        .font(.largeTitle)
+                                        .fontDesign(.serif)
+                                    
+                                    Text("2024")
+                                        .fontDesign(.serif)
+                                        .foregroundStyle(.secondary)
+                                }
+                                
+                                
+                                VStack(spacing: 4) {
+                                    HStack {
+                                        Text("It Might Be Possible to Detect Gravitons After All")
+                                            .multilineTextAlignment(.leading)
+                                            .font(Font.custom("SF Pro Rounded Regular", size: 16))
+                                            .foregroundColor(.primary)
+                                        Spacer()
+                                    }
+                                    
+                                    HStack {
+                                        Text("Charlie Wood")
+                                            .multilineTextAlignment(.leading)
+                                            .font(.caption)
+                                            .italic()
+                                            .fontDesign(.serif)
+                                            .foregroundColor(.secondary)
+                                        Spacer()
+                                    }
+                                }
+                                .padding(.leading)
+                                
+                                Spacer()
+                                
+                            }
+                            .padding()
+                            .background(Color.gray.opacity(0.1))
+                        }
+                        .clipShape(RoundedRectangle.init(cornerRadius: 18))
+                        
+                    }
                     NavigationLink(destination: OctoberView()) {
                         VStack(spacing: 0) {
                             
@@ -150,6 +199,7 @@ struct ArticleView: View {
                         .clipShape(RoundedRectangle.init(cornerRadius: 18))
                         
                     }
+                    
                     NavigationLink(destination: SeptemberView()) {
                         VStack(spacing: 0) {
                             
@@ -299,6 +349,7 @@ struct ArticleView: View {
                         .clipShape(RoundedRectangle.init(cornerRadius: 18))
                         
                     }
+                    
                     NavigationLink(destination: JuneView()) {
                         VStack(spacing: 0) {
                             
@@ -415,6 +466,17 @@ struct OctoberView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(
                 trailing: ShareLink(item: URL(string: "https://www.quantamagazine.org/the-1-clue-to-quantum-gravity-sits-on-the-surfaces-of-black-holes-20240925/")!, preview: SharePreview("Cosmofy's Article of the Month", image: Image("iconApp")))
+            )
+    }
+}
+
+struct NovemberView: View {
+    var body: some View {
+        WebView(urlString: "https://www.quantamagazine.org/it-might-be-possible-to-detect-gravitons-after-all-20241030/")
+            .navigationTitle("Article of the Month")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(
+                trailing: ShareLink(item: URL(string: "https://www.quantamagazine.org/it-might-be-possible-to-detect-gravitons-after-all-20241030/")!, preview: SharePreview("Cosmofy's Article of the Month", image: Image("iconApp")))
             )
     }
 }

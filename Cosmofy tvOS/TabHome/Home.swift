@@ -33,12 +33,16 @@ struct Home: View {
                             .foregroundColor(.red)
                     } else if let apod = viewModel.apod {
                         if apod.media_type == "image" {
+                            
+                            if (apod.url != nil) {
+                                ImageView(apod.url!)
+                                    .aspectRatio(contentMode: .fit)
+                                    .padding(.vertical)
+                                    .padding(.trailing, 32)
+    //                                .frame(maxHeight: 1000)
+                            }
                                                         
-                            ImageView(apod.url)
-                                .aspectRatio(contentMode: .fit)
-                                .padding(.vertical)
-                                .padding(.trailing, 32)
-//                                .frame(maxHeight: 1000)
+                            
 //                            Spacer()
                         } else if apod.media_type == "video" {
 

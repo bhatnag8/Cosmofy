@@ -65,7 +65,7 @@ struct PlanetView: View {
                     Text(planet.expandedDescription)
                         .fontDesign(.serif)
                         .italic()
-                        .textSelection(.enabled)
+//                        .textSelection(.enabled)
                         .multilineTextAlignment(.leading)
                         .padding(.horizontal)
                         .padding(.top)

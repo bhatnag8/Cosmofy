@@ -67,9 +67,14 @@ struct IOTDView: View {
                     
                     
                     if apod.media_type == "image" {
-                        ImageView(apod.url)
-                            .aspectRatio(contentMode: .fit)
-                            .padding()
+                        
+                        if (apod.url != nil) {
+                            ImageView(apod.url!)
+                                .aspectRatio(contentMode: .fit)
+                                .padding()
+                        }
+                        
+                        
                     } else if apod.media_type == "video" {
                         VStack {
                             Text("Video content cannot be displayed on Watch. Please view it on your iPhone.")
