@@ -1,5 +1,5 @@
 {
-  "originHash" : "09b5ee9773300f7eacdc507fe3d603d004b3bf04e0c2b2b05d982f52dc7b90f9",
+  "originHash" : "a00b7a556e613a48a8cd958490c03562b34d459b9e78f73de57dd7f1318909c0",
   "pins" : [
     {
       "identity" : "networkimage",
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/gonzalezreal/swift-markdown-ui",
       "state" : {
-        "revision" : "ae799d015a5374708f7b4c85f3294c05f2a564e2",
-        "version" : "2.3.0"
+        "revision" : "55441810c0f678c78ed7e2ebd46dde89228e02fc",
+        "version" : "2.4.0"
       }
     },
     {
@@ -26,6 +26,15 @@
       "state" : {
         "revision" : "e029f75f9c43e52e351528a78e293a997200b9f8",
         "version" : "2.0.0"
+      }
+    },
+    {
+      "identity" : "zoomable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ryohey/Zoomable.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "525c0e1784825261b84d21c5cd5a159245a40ea6"
       }
     }
   ],
