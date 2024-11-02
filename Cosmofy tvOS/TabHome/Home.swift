@@ -16,10 +16,56 @@ struct Home: View {
     var body: some View {
 
             HStack {
-                // MARK: View 1
+                
+                // MARK: View 2
                 VStack {
                     HStack {
                         Text("Astronomy Picture of the Day")
+                            .textCase(.uppercase)
+                            .foregroundColor(.secondary)
+                        Spacer()
+                    }
+                    Divider()
+                    
+                    if let errorMessage = viewModel.errorMessage {
+                        Text(errorMessage)
+                            .padding()
+                            .foregroundColor(.red)
+                    } else if let apod = viewModel.apod {
+                        if apod.media_type == "image" {
+                                                        
+                            ImageView(apod.url)
+                                .aspectRatio(contentMode: .fit)
+                                .padding(.vertical)
+                                .padding(.trailing, 32)
+//                                .frame(maxHeight: 1000)
+//                            Spacer()
+                        } else if apod.media_type == "video" {
+
+                            Text("Video content cannot be displayed on Apple TV. Please view it on Cosmofy on your iPhone.")
+                                .padding(.vertical)
+                                .padding(.horizontal, 32)
+                                .foregroundStyle(.red)
+                        }
+                    } else {
+                        ProgressView("Loading...")
+                            .padding()
+                    }
+                        
+
+
+                    
+                    
+                    
+                    Spacer()
+
+                }
+                
+                
+                // MARK: View 1
+                VStack {
+                    HStack {
+                        Text("description")
                             .textCase(.uppercase)
                             .foregroundColor(.secondary)
                         Spacer()
@@ -48,20 +94,6 @@ struct Home: View {
                             }
                             
                             
-//                            if apod.media_type == "image" {
-//                                ImageView(apod.url)
-//                                    .aspectRatio(contentMode: .fit)
-//                                    .padding()
-//                                    .frame(maxHeight: 1000)
-//                            } else if apod.media_type == "video" {
-//
-//                                #if !os(tvOS)
-//                                WebView(urlString: apod.url)
-//                                    .frame(height: 300)
-//                                    .padding(.horizontal)
-//                                #endif
-//                            }
-                            
                             if let errorMessage = viewModel.errorMessage {
                                 Text(errorMessage)
                                     .padding()
@@ -70,7 +102,7 @@ struct Home: View {
                                 VStack {
                                     Text(apod.explanation)
                                         .font(.caption2)
-                                        .padding()
+                                        .padding(.vertical)
                                         .italic()
                                         .fontDesign(.serif)
                                 }
@@ -79,56 +111,17 @@ struct Home: View {
                                     .padding()
                             }
                             
-                            Spacer()
+                            
                         }
                     } else {
                         ProgressView("Loading...")
                             .padding()
                     }
-
-                }
-
-                // MARK: View 2
-                VStack {
-                    HStack {
-                        Text("description")
-                            .textCase(.uppercase)
-                            .foregroundColor(.secondary)
-                        Spacer()
-                    }
-                    Divider()
-                    
-                    if let errorMessage = viewModel.errorMessage {
-                        Text(errorMessage)
-                            .padding()
-                            .foregroundColor(.red)
-                    } else if let apod = viewModel.apod {
-                        if apod.media_type == "image" {
-                            ImageView(apod.url)
-                                .aspectRatio(contentMode: .fit)
-                                .padding()
-                                .frame(maxHeight: 1000)
-                        } else if apod.media_type == "video" {
-
-                            #if !os(tvOS)
-                            WebView(urlString: apod.url)
-                                .frame(height: 300)
-                                .padding(.horizontal)
-                            #endif
-                        }
-                    } else {
-                        ProgressView("Loading...")
-                            .padding()
-                    }
-                        
-
-
-                    
-                    
-                    
                     Spacer()
 
                 }
+
+
             }
         
         .onAppear {

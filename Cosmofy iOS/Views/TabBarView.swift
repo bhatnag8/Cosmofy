@@ -27,6 +27,16 @@ struct TabBarView: View {
                         .tabItem {
                             Label("Planets", image: "tab-bar-planets")
                         }
+                    
+                    SwiftView()
+                        .tabItem {
+                            Label("Swift", image: "tab-bar-swift")
+                        }
+                    
+                    Profile()
+                        .tabItem {
+                            Label("Profile", image: "tab-bar-profile")
+                        }
                 } else {
                     iPadHome()
                         .tabItem {
@@ -37,17 +47,22 @@ struct TabBarView: View {
                         .tabItem {
                             Label("Planets", image: "tab-bar-planets")
                         }
+                    
+                    SwiftView()
+                        .tabItem {
+                            Label("Swift", image: "tab-bar-swift")
+                        }
+                    
+                    RNNMaybach(complete: $fetchComplete, failed: $fetchFailed)
+                        .tabItem {
+                            Label("Nature Scope", image: "tab-bar-naturescope")
+                        }
+                    
                 }
                 
-                SwiftView()
-                    .tabItem {
-                        Label("Swift", image: "tab-bar-swift")
-                    }
+                
                             
-                Profile()
-                    .tabItem {
-                        Label("Profile", image: "tab-bar-profile")
-                    }
+                
             }
 
             .tint(.primary)

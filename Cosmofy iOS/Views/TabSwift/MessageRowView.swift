@@ -30,7 +30,6 @@ struct MessageRowView: View {
         .clipShape(RoundedRectangle(cornerRadius: 24))
         .padding(.vertical, 8)
         .padding(.horizontal)
-        .shadow(color: .black.opacity(0.15), radius: 4)
 
 
     }
@@ -133,3 +132,4 @@ struct MessageRowView: View {
     
     }
 }
+

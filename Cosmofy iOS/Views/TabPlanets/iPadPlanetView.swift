@@ -67,16 +67,9 @@ struct iPadPlanetView: View {
                 VStack {
                     VStack {
                         HStack {
-                            if !(planet.name == "Earth") {
-                                Text("First Human Visual Observation")
-                                    .font(Font.custom("SF Pro Rounded Regular", size: 16))
-                                    .foregroundColor(.secondary)
-                            } else {
-                                Text("Earth was always perceived as a planet")
-                                    .font(Font.custom("SF Pro Rounded Regular", size: 16))
-                                    .foregroundColor(.secondary)
-                            }
-                            
+                            Text("First Human Visual Observation")
+                                .font(Font.custom("SF Pro Rounded Regular", size: 16))
+                                .foregroundColor(.secondary)
                             Spacer()
                         }
                         

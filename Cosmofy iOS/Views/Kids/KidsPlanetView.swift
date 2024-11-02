@@ -12,7 +12,8 @@ struct KidsPlanetView: View {
     
     var planet: Planet
     @State private var planets: [Planet] = allPlanets
-    
+    @State private var isPresented = false
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -53,17 +54,29 @@ struct KidsPlanetView: View {
                 .padding()
                 
                 HStack {
-                    HStack {
-                        Spacer()
-                        Text("Explore in 3D")
-                            .foregroundStyle(.white)
-                            .fontDesign(.rounded)
-                            .fontWeight(.medium)
-                        Spacer()
+
+
+                    
+                    Button(action: {
+                        self.isPresented.toggle()
+                    }) {
+                        HStack {
+                            Spacer()
+                            Text("Explore in 3D")
+                                .foregroundStyle(.white)
+                                .fontDesign(.rounded)
+                                .fontWeight(.medium)
+                            Spacer()
+                        }
+                        .frame(height: 55)
+                        .background(planet.color.gradient)
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
                     }
-                    .frame(height: 55)
-                    .background(planet.color.gradient)
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .padding(8)
+                    .fullScreenCover(isPresented: $isPresented) {
+                        SomeView(planet: planet)
+                    }
+
 
 
                     /*

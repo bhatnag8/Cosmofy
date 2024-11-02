@@ -30,8 +30,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2FBBB6542945531500BBB072"
-               BuildableName = "Cosmofy iOS.app"
-               BlueprintName = "Cosmofy iOS"
+               BuildableName = "Cosmofy.app"
+               BlueprintName = "Cosmofy"
                ReferencedContainer = "container:Cosmofy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -12,41 +12,65 @@
 		0B05E3F12BE98AFE007A116E /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B05E3F02BE98AFE007A116E /* Map.swift */; };
 		0B05E3F42BEA0676007A116E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B05E3F32BEA0676007A116E /* Event.swift */; };
 		0B05E3F62BEA07E8007A116E /* API_EONET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B05E3F52BEA07E8007A116E /* API_EONET.swift */; };
-		0B0B5CDC2C401BF50097A98D /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6C2BA02123008F3D0F /* Planet.swift */; };
-		0B0B5CDD2C401C030097A98D /* PlanetNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F8FC4295EC08100F7EE98 /* PlanetNode.swift */; };
-		0B0B5CDE2C401C430097A98D /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */; };
-		0B0B5CDF2C401EB40097A98D /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02732B75E5B200CB5543 /* SF-Pro-Rounded-Black.otf */; };
-		0B0B5CE02C401EB40097A98D /* SF-Pro-Rounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */; };
-		0B0B5CE12C401EB40097A98D /* SF-Pro-Rounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02742B75E5B200CB5543 /* SF-Pro-Rounded-Light.otf */; };
-		0B0B5CE22C401EB40097A98D /* SF-Pro-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02762B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf */; };
-		0B0B5CE32C401EB40097A98D /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02772B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf */; };
-		0B0B5CE42C401EB40097A98D /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02712B75E5B200CB5543 /* SF-Pro-Rounded-Semibold.otf */; };
-		0B0B5CE52C401EB40097A98D /* SF-Pro-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02722B75E5B200CB5543 /* SF-Pro-Rounded-Ultralight.otf */; };
-		0B0B5CE62C401EB40097A98D /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02752B75E5B200CB5543 /* SF-Pro-Rounded-Thin.otf */; };
-		0B0B5CE72C401EB40097A98D /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02702B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf */; };
-		0B0B5CF32C401F280097A98D /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0B5CF12C401F280097A98D /* PlanetView.swift */; };
-		0B0B5CF62C401F340097A98D /* PlanetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0B5CF42C401F340097A98D /* PlanetsView.swift */; };
-		0B0B5CFD2C4027FB0097A98D /* API_EONET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B05E3F52BEA07E8007A116E /* API_EONET.swift */; };
-		0B0B5CFE2C4028020097A98D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B05E3F32BEA0676007A116E /* Event.swift */; };
 		0B161A692B9FF30B008F3D0F /* View+OffsetX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A682B9FF30B008F3D0F /* View+OffsetX.swift */; };
 		0B161A6B2BA014DC008F3D0F /* View+TabMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6A2BA014DC008F3D0F /* View+TabMask.swift */; };
 		0B161A6D2BA02123008F3D0F /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6C2BA02123008F3D0F /* Planet.swift */; };
 		0B1BAD512AE96FE7001CFC35 /* ci_scripts in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD502AE96FE7001CFC35 /* ci_scripts */; };
 		0B1BAD572AE97736001CFC35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD562AE97736001CFC35 /* .gitignore */; };
 		0B1C6E0F2C5CDF16002F6CDC /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C6E0E2C5CDF16002F6CDC /* Profile.swift */; };
+		0B1D32482CD68DBB00818658 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6C2BA02123008F3D0F /* Planet.swift */; };
+		0B1D324D2CD68DBB00818658 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B05E3F32BEA0676007A116E /* Event.swift */; };
+		0B1D32532CD68DBB00818658 /* API_APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2652BA4D16F004491B7 /* API_APOD.swift */; };
+		0B1D32542CD68DBB00818658 /* IOTD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B40299B2BA4FEC1004B0F43 /* IOTD.swift */; };
+		0B1D32582CD68DBB00818658 /* GarenText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF2A4162BFBF24B007B3E4B /* GarenText.swift */; };
+		0B1D325B2CD68DBB00818658 /* View+TabMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6A2BA014DC008F3D0F /* View+TabMask.swift */; };
+		0B1D325D2CD68DBB00818658 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B00383A2B9F89E000DAD175 /* Tab.swift */; };
+		0B1D325F2CD68DBB00818658 /* API_EONET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B05E3F52BEA07E8007A116E /* API_EONET.swift */; };
+		0B1D32602CD68DBB00818658 /* API_OPENAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671922AE47E22008E57B2 /* API_OPENAI.swift */; };
+		0B1D32622CD68DBB00818658 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A522B9C339800476F3C /* Card.swift */; };
+		0B1D32632CD68DBB00818658 /* Text+ForegroundLinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5C33DF2CA870E300B8BDD5 /* Text+ForegroundLinearGradient.swift */; };
+		0B1D32652CD68DBB00818658 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */; };
+		0B1D32662CD68DBB00818658 /* View+OffsetX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A682B9FF30B008F3D0F /* View+OffsetX.swift */; };
+		0B1D32672CD68DBB00818658 /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18BE2AE8A482009C2317 /* MessageRow.swift */; };
+		0B1D32692CD68DBB00818658 /* Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671962AE4C3FE008E57B2 /* Swift.swift */; };
+		0B1D326A2CD68DBB00818658 /* PlanetNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F8FC4295EC08100F7EE98 /* PlanetNode.swift */; };
+		0B1D32702CD68DBB00818658 /* SF-Pro-Rounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02742B75E5B200CB5543 /* SF-Pro-Rounded-Light.otf */; };
+		0B1D32712CD68DBB00818658 /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02752B75E5B200CB5543 /* SF-Pro-Rounded-Thin.otf */; };
+		0B1D32722CD68DBB00818658 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD562AE97736001CFC35 /* .gitignore */; };
+		0B1D32742CD68DBB00818658 /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02732B75E5B200CB5543 /* SF-Pro-Rounded-Black.otf */; };
+		0B1D32752CD68DBB00818658 /* Bumbbled.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B6E541C2CAB17250094B3FF /* Bumbbled.otf */; };
+		0B1D32762CD68DBB00818658 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
+		0B1D32772CD68DBB00818658 /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02772B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf */; };
+		0B1D32782CD68DBB00818658 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0BB07A782C3132750066977E /* README.md */; };
+		0B1D32792CD68DBB00818658 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F8FC1295EBC5100F7EE98 /* star.png */; };
+		0B1D327A2CD68DBB00818658 /* SF-Pro-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02762B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf */; };
+		0B1D327B2CD68DBB00818658 /* SF-Pro-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02722B75E5B200CB5543 /* SF-Pro-Rounded-Ultralight.otf */; };
+		0B1D327C2CD68DBB00818658 /* StarsParticleSystem.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F8FC0295EBC5100F7EE98 /* StarsParticleSystem.scnp */; };
+		0B1D327D2CD68DBB00818658 /* ci_scripts in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BAD502AE96FE7001CFC35 /* ci_scripts */; };
+		0B1D327E2CD68DBB00818658 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02702B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf */; };
+		0B1D327F2CD68DBB00818658 /* SF-Pro-Rounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */; };
+		0B1D32802CD68DBB00818658 /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02712B75E5B200CB5543 /* SF-Pro-Rounded-Semibold.otf */; };
+		0B1D32882CD68E1100818658 /* CosmofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB07A802C31360E0066977E /* CosmofyApp.swift */; };
+		0B1D32892CD68E2600818658 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87A67D2C41622C00BF924B /* Map.swift */; };
+		0B1D328A2CD68E2600818658 /* TVMessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87A6792C4144D500BF924B /* TVMessageRowView.swift */; };
+		0B1D328B2CD68E2600818658 /* TVSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87A6772C4144B700BF924B /* TVSwiftView.swift */; };
+		0B1D328C2CD68E2600818658 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9B4D692C45B90E0069E5C8 /* Home.swift */; };
+		0B1D328D2CD68E2600818658 /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0B5CF12C401F280097A98D /* PlanetView.swift */; };
+		0B1D328E2CD68E2600818658 /* PlanetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0B5CF42C401F340097A98D /* PlanetsView.swift */; };
+		0B1D328F2CD68EBD00818658 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2632BA4BAFE004491B7 /* ImageView.swift */; };
+		0B1D32902CD68ED400818658 /* MapHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBAC7422C4E779A00DE4C85 /* MapHelpers.swift */; };
+		0B1D32912CD68F0200818658 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8615A72BAF6580008CCD5F /* LoadingView.swift */; };
+		0B1D32932CD6903300818658 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0B1D32922CD6903300818658 /* MarkdownUI */; };
+		0B1D32952CD6903600818658 /* VTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 0B1D32942CD6903600818658 /* VTabView */; };
 		0B365C3E2CAC990500B07EFE /* MessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B365C3D2CAC990400B07EFE /* MessageRowView.swift */; };
 		0B3EC2642BA4BAFE004491B7 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2632BA4BAFE004491B7 /* ImageView.swift */; };
 		0B3EC2662BA4D16F004491B7 /* API_APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2652BA4D16F004491B7 /* API_APOD.swift */; };
 		0B40299C2BA4FEC1004B0F43 /* IOTD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B40299B2BA4FEC1004B0F43 /* IOTD.swift */; };
-		0B5C33D92CA7C1E500B8BDD5 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0B5C33D82CA7C1E500B8BDD5 /* MarkdownUI */; };
-		0B5C33DB2CA7C1EF00B8BDD5 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0B5C33DA2CA7C1EF00B8BDD5 /* MarkdownUI */; };
-		0B5C33DC2CA7C26C00B8BDD5 /* MapHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBAC7422C4E779A00DE4C85 /* MapHelpers.swift */; };
 		0B5C33E02CA870F000B8BDD5 /* Text+ForegroundLinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5C33DF2CA870E300B8BDD5 /* Text+ForegroundLinearGradient.swift */; };
 		0B63FC142CAB80FE00DEEE0F /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0B63FC132CAB80FE00DEEE0F /* MarkdownUI */; };
 		0B63FC162CAC3E8900DEEE0F /* SwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B63FC152CAC3E8800DEEE0F /* SwiftView.swift */; };
 		0B6E541D2CAB17250094B3FF /* Bumbbled.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B6E541C2CAB17250094B3FF /* Bumbbled.otf */; };
 		0B6E541E2CAB17250094B3FF /* Bumbbled.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B6E541C2CAB17250094B3FF /* Bumbbled.otf */; };
-		0B6E541F2CAB17250094B3FF /* Bumbbled.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B6E541C2CAB17250094B3FF /* Bumbbled.otf */; };
 		0B6E54202CAB45810094B3FF /* API_OPENAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671922AE47E22008E57B2 /* API_OPENAI.swift */; };
 		0B6E54212CAB45A50094B3FF /* Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671962AE4C3FE008E57B2 /* Swift.swift */; };
 		0B6E54222CAB45A50094B3FF /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18BE2AE8A482009C2317 /* MessageRow.swift */; };
@@ -58,23 +82,15 @@
 		0B7D18C82AE8AB97009C2317 /* MessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18C72AE8AB97009C2317 /* MessageRowView.swift */; };
 		0B7D18CC2AE8B655009C2317 /* SwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18CB2AE8B655009C2317 /* SwiftView.swift */; };
 		0B8615A82BAF6580008CCD5F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8615A72BAF6580008CCD5F /* LoadingView.swift */; };
-		0B87A66D2C41300200BF924B /* Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671962AE4C3FE008E57B2 /* Swift.swift */; };
-		0B87A66E2C41300200BF924B /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D18BE2AE8A482009C2317 /* MessageRow.swift */; };
-		0B87A66F2C41300F00BF924B /* API_OPENAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7671922AE47E22008E57B2 /* API_OPENAI.swift */; };
-		0B87A6722C41302100BF924B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8615A72BAF6580008CCD5F /* LoadingView.swift */; };
-		0B87A6782C4144B800BF924B /* TVSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87A6772C4144B700BF924B /* TVSwiftView.swift */; };
-		0B87A67A2C4144D500BF924B /* TVMessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87A6792C4144D500BF924B /* TVMessageRowView.swift */; };
-		0B87A67B2C4147E700BF924B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
-		0B87A67F2C41623600BF924B /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87A67D2C41622C00BF924B /* Map.swift */; };
 		0B923B6E2B9CBBEE009B8D45 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B923B6D2B9CBBEE009B8D45 /* TabBarView.swift */; };
 		0B9755BA2C2EF9E7002D9C70 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B9755B92C2EF9E7002D9C70 /* Launch Screen.storyboard */; };
 		0B97AE222C1E9078003E96EB /* API_APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2652BA4D16F004491B7 /* API_APOD.swift */; };
 		0B97AE232C1E90CA003E96EB /* IOTD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B40299B2BA4FEC1004B0F43 /* IOTD.swift */; };
 		0B97AE2B2C200979003E96EB /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B97AE2A2C200979003E96EB /* ImageView.swift */; };
 		0B97AE2D2C2009B3003E96EB /* PlanetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B97AE2C2C2009B3003E96EB /* PlanetsView.swift */; };
-		0B9B4D6A2C45B90E0069E5C8 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9B4D692C45B90E0069E5C8 /* Home.swift */; };
 		0B9E32AE2C581DCC006F4E96 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E32AD2C581DCC006F4E96 /* IntroView.swift */; };
 		0B9E32B02C581E01006F4E96 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E32AF2C581E01006F4E96 /* OnboardingView.swift */; };
+		0B9E5F6F2CAF95C0009DEFFE /* Cosmofy.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0B2895122C838E1600CEFC47 /* Cosmofy.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0B9F02782B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F026F2B75E5B200CB5543 /* SF-Pro-Rounded-Heavy.otf */; };
 		0B9F02792B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02702B75E5B200CB5543 /* SF-Pro-Rounded-Bold.otf */; };
 		0B9F027A2B75E5B200CB5543 /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02712B75E5B200CB5543 /* SF-Pro-Rounded-Semibold.otf */; };
@@ -85,31 +101,23 @@
 		0B9F027F2B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02762B75E5B200CB5543 /* SF-Pro-Rounded-Medium.otf */; };
 		0B9F02802B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0B9F02772B75E5B200CB5543 /* SF-Pro-Rounded-Regular.otf */; };
 		0BB07A792C3132750066977E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0BB07A782C3132750066977E /* README.md */; };
-		0BB07A812C31360E0066977E /* CosmofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB07A802C31360E0066977E /* CosmofyApp.swift */; };
-		0BB07A852C3136100066977E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB07A842C3136100066977E /* Assets.xcassets */; };
-		0BB07A922C3156DB0066977E /* IOTD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B40299B2BA4FEC1004B0F43 /* IOTD.swift */; };
-		0BB07A952C3159600066977E /* API_APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2652BA4D16F004491B7 /* API_APOD.swift */; };
-		0BB07A962C3159A90066977E /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EC2632BA4BAFE004491B7 /* ImageView.swift */; };
-		0BB07A982C3159CC0066977E /* GarenText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF2A4162BFBF24B007B3E4B /* GarenText.swift */; };
 		0BB14A432B9C2B1100476F3C /* CosmofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A422B9C2B1100476F3C /* CosmofyApp.swift */; };
 		0BB14A4D2B9C2EB000476F3C /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */; };
 		0BB14A532B9C339800476F3C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A522B9C339800476F3C /* Card.swift */; };
 		0BBAC7432C4E779A00DE4C85 /* MapHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBAC7422C4E779A00DE4C85 /* MapHelpers.swift */; };
 		0BD13DE42C83E54100121BEC /* KidsPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD13DE32C83E54100121BEC /* KidsPlanetView.swift */; };
+		0BD73D382CAF7C0E00B87156 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0BD73D372CAF7C0E00B87156 /* MarkdownUI */; };
 		0BDBC9CE2C1D956E00F720F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBC9CD2C1D956E00F720F2 /* ContentView.swift */; };
 		0BDBC9D02C1D957000F720F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BDBC9CF2C1D957000F720F2 /* Assets.xcassets */; };
 		0BDBC9DD2C1D95CB00F720F2 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B161A6C2BA02123008F3D0F /* Planet.swift */; };
 		0BDBC9E12C1DA48000F720F2 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB14A4C2B9C2EB000476F3C /* Color+Hex.swift */; };
 		0BEFAB9D2C6FAD18007B71B3 /* VTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 0BEFAB9C2C6FAD18007B71B3 /* VTabView */; };
-		0BEFAB9F2C6FAD2C007B71B3 /* VTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 0BEFAB9E2C6FAD2C007B71B3 /* VTabView */; };
 		0BF2A4172BFBF24B007B3E4B /* GarenText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF2A4162BFBF24B007B3E4B /* GarenText.swift */; };
 		0BF311B42C5D91A000EAA4AA /* Learn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF311B32C5D91A000EAA4AA /* Learn.swift */; };
 		0BF311B62C5D91B600EAA4AA /* LearnArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF311B52C5D91B600EAA4AA /* LearnArticles.swift */; };
 		0BFB21052B9CEB1400C84FD8 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB21042B9CEB1400C84FD8 /* Home.swift */; };
 		0BFCD5472C43E6BA005E06A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
 		0BFCD5482C43E6BD005E06A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBB6612945531700BBB072 /* Assets.xcassets */; };
-		0BFCD5492C441175005E06A4 /* StarsParticleSystem.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F8FC0295EBC5100F7EE98 /* StarsParticleSystem.scnp */; };
-		0BFCD54A2C441178005E06A4 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F8FC1295EBC5100F7EE98 /* star.png */; };
 		0BFDE74D2C2E062D00E8B3FB /* iPadPlanetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFDE74C2C2E062D00E8B3FB /* iPadPlanetsView.swift */; };
 		0BFDE74F2C2EBDAF00E8B3FB /* iPadPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFDE74E2C2EBDAF00E8B3FB /* iPadPlanetView.swift */; };
 		0BFDE7502C2EE61500E8B3FB /* CosmofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBC9CB2C1D956E00F720F2 /* CosmofyApp.swift */; };
@@ -120,22 +128,54 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0BDBC9D42C1D957000F720F2 /* PBXContainerItemProxy */ = {
+		0B1D323E2CD68DBB00818658 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FBBB64D2945531500BBB072 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B1D323C2CD68DBB00818658;
+			remoteInfo = "Cosmofy tvOS";
+		};
+		0B50409C2CAF79E400F04A76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FBBB64D2945531500BBB072 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B1D323C2CD68DBB00818658;
+			remoteInfo = "Cosmofy tvOS";
+		};
+		0B9E5F702CAF95C0009DEFFE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2FBBB64D2945531500BBB072 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0BDBC9C82C1D956E00F720F2;
-			remoteInfo = "WatchCosmofy Watch App";
+			remoteInfo = "Cosmofy watchOS";
+		};
+		0BD73D3C2CAF841D00B87156 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FBBB64D2945531500BBB072 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0BDBC9C82C1D956E00F720F2;
+			remoteInfo = "Cosmofy watchOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0B1D32812CD68DBB00818658 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0BDBC9D72C1D957000F720F2 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
+				0B9E5F6F2CAF95C0009DEFFE /* Cosmofy.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,10 +196,10 @@
 		0B1BAD502AE96FE7001CFC35 /* ci_scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ci_scripts; sourceTree = "<group>"; };
 		0B1BAD562AE97736001CFC35 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0B1C6E0E2C5CDF16002F6CDC /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		0B1D32862CD68DBB00818658 /* Cosmofy tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmofy tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B2420AF2C511C69005A5958 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B2895112C838E1600CEFC47 /* Cosmofy iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmofy iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B2895112C838E1600CEFC47 /* Cosmofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosmofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B2895122C838E1600CEFC47 /* Cosmofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosmofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B2895132C838E1600CEFC47 /* Cosmofy tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmofy tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B365C3D2CAC990400B07EFE /* MessageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRowView.swift; sourceTree = "<group>"; };
 		0B3EC2632BA4BAFE004491B7 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		0B3EC2652BA4D16F004491B7 /* API_APOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_APOD.swift; sourceTree = "<group>"; };
@@ -221,12 +261,12 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0BB07A7B2C31360D0066977E /* Frameworks */ = {
+		0B1D326C2CD68DBB00818658 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BEFAB9F2C6FAD2C007B71B3 /* VTabView in Frameworks */,
-				0B5C33DB2CA7C1EF00B8BDD5 /* MarkdownUI in Frameworks */,
+				0B1D32952CD6903600818658 /* VTabView in Frameworks */,
+				0B1D32932CD6903300818658 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BEFAB9D2C6FAD18007B71B3 /* VTabView in Frameworks */,
-				0B5C33D92CA7C1E500B8BDD5 /* MarkdownUI in Frameworks */,
+				0BD73D382CAF7C0E00B87156 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,9 +560,9 @@
 				0BB07A782C3132750066977E /* README.md */,
 				0B1BAD562AE97736001CFC35 /* .gitignore */,
 				0BEFAB9B2C6FAD18007B71B3 /* Frameworks */,
-				0B2895112C838E1600CEFC47 /* Cosmofy iOS.app */,
+				0B2895112C838E1600CEFC47 /* Cosmofy.app */,
 				0B2895122C838E1600CEFC47 /* Cosmofy.app */,
-				0B2895132C838E1600CEFC47 /* Cosmofy tvOS.app */,
+				0B1D32862CD68DBB00818658 /* Cosmofy tvOS.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -542,25 +582,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0BB07A7D2C31360D0066977E /* Cosmofy tvOS */ = {
+		0B1D323C2CD68DBB00818658 /* Cosmofy tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0BB07A892C3136100066977E /* Build configuration list for PBXNativeTarget "Cosmofy tvOS" */;
+			buildConfigurationList = 0B1D32832CD68DBB00818658 /* Build configuration list for PBXNativeTarget "Cosmofy tvOS" */;
 			buildPhases = (
-				0BB07A7A2C31360D0066977E /* Sources */,
-				0BB07A7B2C31360D0066977E /* Frameworks */,
-				0BB07A7C2C31360D0066977E /* Resources */,
+				0B1D32472CD68DBB00818658 /* Sources */,
+				0B1D326C2CD68DBB00818658 /* Frameworks */,
+				0B1D326F2CD68DBB00818658 /* Resources */,
+				0B1D32812CD68DBB00818658 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0B1D323D2CD68DBB00818658 /* PBXTargetDependency */,
 			);
 			name = "Cosmofy tvOS";
 			packageProductDependencies = (
-				0BEFAB9E2C6FAD2C007B71B3 /* VTabView */,
-				0B5C33DA2CA7C1EF00B8BDD5 /* MarkdownUI */,
+				0B1D32922CD6903300818658 /* MarkdownUI */,
+				0B1D32942CD6903600818658 /* VTabView */,
 			);
-			productName = "Cosmofy for TV";
-			productReference = 0B2895132C838E1600CEFC47 /* Cosmofy tvOS.app */;
+			productName = Spacefy;
+			productReference = 0B1D32862CD68DBB00818658 /* Cosmofy tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0BDBC9C82C1D956E00F720F2 /* Cosmofy watchOS */ = {
@@ -580,9 +622,9 @@
 			productReference = 0B2895122C838E1600CEFC47 /* Cosmofy.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2FBBB6542945531500BBB072 /* Cosmofy iOS */ = {
+		2FBBB6542945531500BBB072 /* Cosmofy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2FBBB6692945531700BBB072 /* Build configuration list for PBXNativeTarget "Cosmofy iOS" */;
+			buildConfigurationList = 2FBBB6692945531700BBB072 /* Build configuration list for PBXNativeTarget "Cosmofy" */;
 			buildPhases = (
 				2FBBB6512945531500BBB072 /* Sources */,
 				2FBBB6522945531500BBB072 /* Frameworks */,
@@ -592,15 +634,17 @@
 			buildRules = (
 			);
 			dependencies = (
-				0BDBC9D52C1D957000F720F2 /* PBXTargetDependency */,
+				0B50409D2CAF79E400F04A76 /* PBXTargetDependency */,
+				0BD73D3D2CAF841D00B87156 /* PBXTargetDependency */,
+				0B9E5F712CAF95C0009DEFFE /* PBXTargetDependency */,
 			);
-			name = "Cosmofy iOS";
+			name = Cosmofy;
 			packageProductDependencies = (
 				0BEFAB9C2C6FAD18007B71B3 /* VTabView */,
-				0B5C33D82CA7C1E500B8BDD5 /* MarkdownUI */,
+				0BD73D372CAF7C0E00B87156 /* MarkdownUI */,
 			);
 			productName = Spacefy;
-			productReference = 0B2895112C838E1600CEFC47 /* Cosmofy iOS.app */;
+			productReference = 0B2895112C838E1600CEFC47 /* Cosmofy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -613,9 +657,6 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					0BB07A7D2C31360D0066977E = {
-						CreatedOnToolsVersion = 15.4;
-					};
 					0BDBC9C82C1D956E00F720F2 = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -644,32 +685,34 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2FBBB6542945531500BBB072 /* Cosmofy iOS */,
+				2FBBB6542945531500BBB072 /* Cosmofy */,
 				0BDBC9C82C1D956E00F720F2 /* Cosmofy watchOS */,
-				0BB07A7D2C31360D0066977E /* Cosmofy tvOS */,
+				0B1D323C2CD68DBB00818658 /* Cosmofy tvOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0BB07A7C2C31360D0066977E /* Resources */ = {
+		0B1D326F2CD68DBB00818658 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B6E541F2CAB17250094B3FF /* Bumbbled.otf in Resources */,
-				0B0B5CDF2C401EB40097A98D /* SF-Pro-Rounded-Black.otf in Resources */,
-				0B0B5CE02C401EB40097A98D /* SF-Pro-Rounded-Heavy.otf in Resources */,
-				0B0B5CE12C401EB40097A98D /* SF-Pro-Rounded-Light.otf in Resources */,
-				0B0B5CE22C401EB40097A98D /* SF-Pro-Rounded-Medium.otf in Resources */,
-				0B0B5CE32C401EB40097A98D /* SF-Pro-Rounded-Regular.otf in Resources */,
-				0BFCD5492C441175005E06A4 /* StarsParticleSystem.scnp in Resources */,
-				0B0B5CE42C401EB40097A98D /* SF-Pro-Rounded-Semibold.otf in Resources */,
-				0B0B5CE52C401EB40097A98D /* SF-Pro-Rounded-Ultralight.otf in Resources */,
-				0B0B5CE62C401EB40097A98D /* SF-Pro-Rounded-Thin.otf in Resources */,
-				0B0B5CE72C401EB40097A98D /* SF-Pro-Rounded-Bold.otf in Resources */,
-				0BFCD54A2C441178005E06A4 /* star.png in Resources */,
-				0B87A67B2C4147E700BF924B /* Assets.xcassets in Resources */,
-				0BB07A852C3136100066977E /* Assets.xcassets in Resources */,
+				0B1D32702CD68DBB00818658 /* SF-Pro-Rounded-Light.otf in Resources */,
+				0B1D32712CD68DBB00818658 /* SF-Pro-Rounded-Thin.otf in Resources */,
+				0B1D32722CD68DBB00818658 /* .gitignore in Resources */,
+				0B1D32742CD68DBB00818658 /* SF-Pro-Rounded-Black.otf in Resources */,
+				0B1D32752CD68DBB00818658 /* Bumbbled.otf in Resources */,
+				0B1D32762CD68DBB00818658 /* Assets.xcassets in Resources */,
+				0B1D32772CD68DBB00818658 /* SF-Pro-Rounded-Regular.otf in Resources */,
+				0B1D32782CD68DBB00818658 /* README.md in Resources */,
+				0B1D32792CD68DBB00818658 /* star.png in Resources */,
+				0B1D327A2CD68DBB00818658 /* SF-Pro-Rounded-Medium.otf in Resources */,
+				0B1D327B2CD68DBB00818658 /* SF-Pro-Rounded-Ultralight.otf in Resources */,
+				0B1D327C2CD68DBB00818658 /* StarsParticleSystem.scnp in Resources */,
+				0B1D327D2CD68DBB00818658 /* ci_scripts in Resources */,
+				0B1D327E2CD68DBB00818658 /* SF-Pro-Rounded-Bold.otf in Resources */,
+				0B1D327F2CD68DBB00818658 /* SF-Pro-Rounded-Heavy.otf in Resources */,
+				0B1D32802CD68DBB00818658 /* SF-Pro-Rounded-Semibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,31 +753,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0BB07A7A2C31360D0066977E /* Sources */ = {
+		0B1D32472CD68DBB00818658 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B0B5CF32C401F280097A98D /* PlanetView.swift in Sources */,
-				0BB07A982C3159CC0066977E /* GarenText.swift in Sources */,
-				0B0B5CDC2C401BF50097A98D /* Planet.swift in Sources */,
-				0B0B5CDE2C401C430097A98D /* Color+Hex.swift in Sources */,
-				0B87A66F2C41300F00BF924B /* API_OPENAI.swift in Sources */,
-				0B87A67A2C4144D500BF924B /* TVMessageRowView.swift in Sources */,
-				0BB07A812C31360E0066977E /* CosmofyApp.swift in Sources */,
-				0B0B5CFE2C4028020097A98D /* Event.swift in Sources */,
-				0B87A67F2C41623600BF924B /* Map.swift in Sources */,
-				0BB07A922C3156DB0066977E /* IOTD.swift in Sources */,
-				0B0B5CDD2C401C030097A98D /* PlanetNode.swift in Sources */,
-				0B0B5CF62C401F340097A98D /* PlanetsView.swift in Sources */,
-				0B9B4D6A2C45B90E0069E5C8 /* Home.swift in Sources */,
-				0B87A66D2C41300200BF924B /* Swift.swift in Sources */,
-				0B87A66E2C41300200BF924B /* MessageRow.swift in Sources */,
-				0B87A6782C4144B800BF924B /* TVSwiftView.swift in Sources */,
-				0B0B5CFD2C4027FB0097A98D /* API_EONET.swift in Sources */,
-				0B87A6722C41302100BF924B /* LoadingView.swift in Sources */,
-				0BB07A962C3159A90066977E /* ImageView.swift in Sources */,
-				0BB07A952C3159600066977E /* API_APOD.swift in Sources */,
-				0B5C33DC2CA7C26C00B8BDD5 /* MapHelpers.swift in Sources */,
+				0B1D328F2CD68EBD00818658 /* ImageView.swift in Sources */,
+				0B1D32482CD68DBB00818658 /* Planet.swift in Sources */,
+				0B1D32892CD68E2600818658 /* Map.swift in Sources */,
+				0B1D328A2CD68E2600818658 /* TVMessageRowView.swift in Sources */,
+				0B1D328B2CD68E2600818658 /* TVSwiftView.swift in Sources */,
+				0B1D328C2CD68E2600818658 /* Home.swift in Sources */,
+				0B1D328D2CD68E2600818658 /* PlanetView.swift in Sources */,
+				0B1D328E2CD68E2600818658 /* PlanetsView.swift in Sources */,
+				0B1D324D2CD68DBB00818658 /* Event.swift in Sources */,
+				0B1D32532CD68DBB00818658 /* API_APOD.swift in Sources */,
+				0B1D32542CD68DBB00818658 /* IOTD.swift in Sources */,
+				0B1D32912CD68F0200818658 /* LoadingView.swift in Sources */,
+				0B1D32882CD68E1100818658 /* CosmofyApp.swift in Sources */,
+				0B1D32582CD68DBB00818658 /* GarenText.swift in Sources */,
+				0B1D325B2CD68DBB00818658 /* View+TabMask.swift in Sources */,
+				0B1D325D2CD68DBB00818658 /* Tab.swift in Sources */,
+				0B1D325F2CD68DBB00818658 /* API_EONET.swift in Sources */,
+				0B1D32602CD68DBB00818658 /* API_OPENAI.swift in Sources */,
+				0B1D32622CD68DBB00818658 /* Card.swift in Sources */,
+				0B1D32632CD68DBB00818658 /* Text+ForegroundLinearGradient.swift in Sources */,
+				0B1D32902CD68ED400818658 /* MapHelpers.swift in Sources */,
+				0B1D32652CD68DBB00818658 /* Color+Hex.swift in Sources */,
+				0B1D32662CD68DBB00818658 /* View+OffsetX.swift in Sources */,
+				0B1D32672CD68DBB00818658 /* MessageRow.swift in Sources */,
+				0B1D32692CD68DBB00818658 /* Swift.swift in Sources */,
+				0B1D326A2CD68DBB00818658 /* PlanetNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,84 +853,112 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0BDBC9D52C1D957000F720F2 /* PBXTargetDependency */ = {
+		0B1D323D2CD68DBB00818658 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B1D323C2CD68DBB00818658 /* Cosmofy tvOS */;
+			targetProxy = 0B1D323E2CD68DBB00818658 /* PBXContainerItemProxy */;
+		};
+		0B50409D2CAF79E400F04A76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B1D323C2CD68DBB00818658 /* Cosmofy tvOS */;
+			targetProxy = 0B50409C2CAF79E400F04A76 /* PBXContainerItemProxy */;
+		};
+		0B9E5F712CAF95C0009DEFFE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0BDBC9C82C1D956E00F720F2 /* Cosmofy watchOS */;
-			targetProxy = 0BDBC9D42C1D957000F720F2 /* PBXContainerItemProxy */;
+			targetProxy = 0B9E5F702CAF95C0009DEFFE /* PBXContainerItemProxy */;
+		};
+		0BD73D3D2CAF841D00B87156 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0BDBC9C82C1D956E00F720F2 /* Cosmofy watchOS */;
+			targetProxy = 0BD73D3C2CAF841D00B87156 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0BB07A8A2C3136100066977E /* Debug */ = {
+		0B1D32842CD68DBB00818658 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Cosmofy iOS/Cosmofy.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "";
+				CURRENT_PROJECT_VERSION = 901;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
-				ENABLE_PREVIEWS = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Cosmofy tvOS/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Cosmofy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to your photo library to save the NASA Astronomy Picture of the Day to your device.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 17.0;
 			};
 			name = Debug;
 		};
-		0BB07A8B2C3136100066977E /* Release */ = {
+		0B1D32852CD68DBB00818658 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Cosmofy iOS/Cosmofy.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "";
+				CURRENT_PROJECT_VERSION = 901;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
-				ENABLE_PREVIEWS = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Cosmofy tvOS/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Cosmofy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to your photo library to save the NASA Astronomy Picture of the Day to your device.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.snape447.Cosmofy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 17.0;
 			};
 			name = Release;
 		};
@@ -892,7 +968,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 901;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -925,7 +1001,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 901;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -1078,7 +1154,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Cosmofy iOS/Cosmofy.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 901;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Cosmofy iOS/Info.plist";
@@ -1120,7 +1196,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Cosmofy iOS/Cosmofy.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 901;
 				DEVELOPMENT_TEAM = 6C6Q6AQ2V8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Cosmofy iOS/Info.plist";
@@ -1156,11 +1232,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0BB07A892C3136100066977E /* Build configuration list for PBXNativeTarget "Cosmofy tvOS" */ = {
+		0B1D32832CD68DBB00818658 /* Build configuration list for PBXNativeTarget "Cosmofy tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0BB07A8A2C3136100066977E /* Debug */,
-				0BB07A8B2C3136100066977E /* Release */,
+				0B1D32842CD68DBB00818658 /* Debug */,
+				0B1D32852CD68DBB00818658 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1183,7 +1259,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2FBBB6692945531700BBB072 /* Build configuration list for PBXNativeTarget "Cosmofy iOS" */ = {
+		2FBBB6692945531700BBB072 /* Build configuration list for PBXNativeTarget "Cosmofy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FBBB66A2945531700BBB072 /* Debug */,
@@ -1222,27 +1298,27 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0B5C33D82CA7C1E500B8BDD5 /* MarkdownUI */ = {
+		0B1D32922CD6903300818658 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0B5C33D72CA7C1E500B8BDD5 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
 		};
-		0B5C33DA2CA7C1EF00B8BDD5 /* MarkdownUI */ = {
+		0B1D32942CD6903600818658 /* VTabView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0B5C33D72CA7C1E500B8BDD5 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
-			productName = MarkdownUI;
+			package = 0BEFAB9A2C6FACEB007B71B3 /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */;
+			productName = VTabView;
 		};
 		0B63FC132CAB80FE00DEEE0F /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0B5C33D72CA7C1E500B8BDD5 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
 		};
-		0BEFAB9C2C6FAD18007B71B3 /* VTabView */ = {
+		0BD73D372CAF7C0E00B87156 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0BEFAB9A2C6FACEB007B71B3 /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */;
-			productName = VTabView;
+			package = 0B5C33D72CA7C1E500B8BDD5 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
 		};
-		0BEFAB9E2C6FAD2C007B71B3 /* VTabView */ = {
+		0BEFAB9C2C6FAD18007B71B3 /* VTabView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0BEFAB9A2C6FACEB007B71B3 /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */;
 			productName = VTabView;
