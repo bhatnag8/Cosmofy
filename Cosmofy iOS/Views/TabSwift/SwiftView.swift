@@ -38,53 +38,38 @@ struct SwiftView: View {
     
     var chatListView: some View {
         ScrollViewReader { proxy in
-            VStack(spacing: 0) {
-                ScrollView {
-                    LazyVStack(spacing: 0) {
-                        ForEach(vm.messages) {
-                            message in MessageRowView(message: message) {
-                                message in
-                                
-                                Task {
-                                    @MainActor in await vm.retry(message: message)
+            GeometryReader { geometry in
+                VStack(spacing: 0) {
+                    ScrollView {
+                        LazyVStack(spacing: 0) {
+                            ForEach(vm.messages) { message in
+                                MessageRowView(message: message) { message in
+                                    Task { @MainActor in await vm.retry(message: message) }
                                 }
+                                .frame(width: geometry.size.width) // Set full width
                             }
                         }
-                #if !os(tvOS)
-                        .gesture(
-                            
-                           DragGesture()
-                            .onChanged { _ in
-                                userTouched = true
-                           }
-                            
-                        )
-                    #endif
-                        
+                        // Detect if the user touches or scrolls in the view
+//                        .gesture(
+//                            DragGesture().onChanged { _ in
+//                                userTouched = true // Stop auto-scrolling on user interaction
+//
+//                            }
+//                        )
                     }
                     .onTapGesture {
                         isTextFieldFocused = false
+                        userTouched = true // Stop auto-scrolling on user interaction
                     }
-                }
+                    .onChange(of: vm.messages.last?.responseText) { oldValue, newValue in
+                        if !userTouched { // Only auto-scroll if user hasn't interacted
+                            scrollToBottom(proxy: proxy)
+                        }
+                    }
 
-                .onTapGesture {
-                    isTextFieldFocused = false
-                }
-                
-//                Divider()
-//                TipView(tip)
-//                    .onTapGesture {
-//                    tip.invalidate(reason: .actionPerformed)
-//                }
+                    bottomView(image: "user", proxy: proxy)
 
-                bottomView(image: "user", proxy: proxy)
-
-                Spacer()
-            }
-
-            .onChange(of: vm.messages.last?.responseText) { oldValue, newValue in
-                if !userTouched {
-                    scrollToBottom(proxy: proxy)
+                    Spacer()
                 }
             }
         }
@@ -93,6 +78,8 @@ struct SwiftView: View {
         #endif
         
     }
+
+
     
     func bottomView(image: String, proxy: ScrollViewProxy) -> some View {
         HStack(alignment: .top, spacing: 8) {
