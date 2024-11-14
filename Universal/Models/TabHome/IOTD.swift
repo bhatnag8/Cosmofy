@@ -42,7 +42,7 @@ struct APOD: Codable {
     let media_type: String?
     let service_version: String?
     let title: String
-    let url: String
+    let url: String?
 }
 
 class Constants {

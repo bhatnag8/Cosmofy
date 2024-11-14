@@ -70,23 +70,24 @@ struct MessageRowView: View {
                     if !complete {
                         WordByWordTextView(text, interval: 0.075)
                             .multilineTextAlignment(.leading)
-                            .textSelection(.enabled)
+//                            .textSelection(.enabled)
                             .onAppear {
                                 complete = true
                             }
                     } else {
                         Text(text)
                             .multilineTextAlignment(.leading)
-                            .textSelection(.enabled)
+//                            .textSelection(.enabled)
                     }
                     
 //                        .font(Font.custom("SF Pro Rounded Medium", size: 18))
                 } else {
-//                    Markdown(text)
-//                        .textSelection(.enabled)
-                    Text(text)
+                    Markdown(text)
                         .multilineTextAlignment(.leading)
                         .textSelection(.enabled)
+//                    Text(text)
+//                        .multilineTextAlignment(.leading)
+////                        .textSelection(.enabled)
                 }
                 #else
                 if image == "openai" {

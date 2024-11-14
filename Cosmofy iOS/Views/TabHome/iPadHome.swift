@@ -20,8 +20,6 @@ struct iPadHome: View {
                     HStack {
                         
                         
-                        
-                        
                         // View 1
                         VStack {
                                 
@@ -69,17 +67,20 @@ struct iPadHome: View {
                                         
                                         
                                         if apod.media_type == "image" {
-                                            ImageView(apod.url)
-                                                .aspectRatio(contentMode: .fit)
-                                                .padding(.vertical)
-                                                .padding(.horizontal, 32)
+                                            if (apod.url != nil) {
+                                                ImageView(apod.url!)
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .padding(.vertical)
+                                                    .padding(.horizontal, 32)
+                                            }
                                         } else if apod.media_type == "video" {
-                                            
-                                            #if !os(tvOS)
-                                            WebView(urlString: apod.url)
-                                                .frame(height: 300)
-                                                .padding(.vertical)
-                                            #endif
+                                            if (apod.url != nil) {
+#if !os(tvOS)
+                                                WebView(urlString: apod.url!)
+                                                    .frame(height: 300)
+                                                    .padding(.vertical)
+#endif
+                                            }
                                         }
                                         
                                         Text(apod.explanation)
@@ -120,6 +121,54 @@ struct iPadHome: View {
                             .padding(.horizontal, 32)
                             
                             VStack(spacing: 32) {
+                                NavigationLink(destination: NovemberView()) {
+                                    VStack(spacing: 0) {
+                                        
+                                        Image("November Article")
+                                            .resizable()
+                                            .scaledToFit()
+                                        HStack {
+                                            VStack {
+                                                Text("11")
+                                                    .font(.largeTitle)
+                                                    .fontDesign(.serif)
+                                                
+                                                Text("2024")
+                                                    .fontDesign(.serif)
+                                                    .foregroundStyle(.secondary)
+                                            }
+                                            
+                                            
+                                            VStack() {
+                                                HStack {
+                                                    Text("It Might Be Possible to Detect Gravitons After All")
+                                                        .multilineTextAlignment(.leading)
+                                                        .font(Font.custom("SF Pro Rounded Regular", size: 16))
+                                                        .foregroundColor(.primary)
+                                                    Spacer()
+                                                }
+                                                
+                                                HStack {
+                                                    Text("Charlie Wood")
+                                                        .multilineTextAlignment(.leading)
+                                                        .font(.caption)
+                                                        .italic()
+                                                        .fontDesign(.serif)
+                                                        .foregroundColor(.secondary)
+                                                    Spacer()
+                                                }
+                                            }
+                                            .padding(.leading)
+                                            
+                                            Spacer()
+                                            
+                                        }
+                                        .padding()
+                                        .background(Color.gray.opacity(0.1))
+                                    }
+                                    .clipShape(RoundedRectangle.init(cornerRadius: 18))
+                                    
+                                }
                                 NavigationLink(destination: OctoberView()) {
                                     VStack(spacing: 0) {
                                         Image("October Article")
@@ -167,54 +216,7 @@ struct iPadHome: View {
                                     .clipShape(RoundedRectangle.init(cornerRadius: 18))
                                     
                                 }
-                                NavigationLink(destination: SeptemberView()) {
-                                    VStack(spacing: 0) {
-                                        
-                                        Image("September Article")
-                                            .resizable()
-                                            .scaledToFit()
-                                        HStack {
-                                            VStack {
-                                                Text("09")
-                                                    .font(.largeTitle)
-                                                    .fontDesign(.serif)
-                                                
-                                                Text("2024")
-                                                    .fontDesign(.serif)
-                                                    .foregroundStyle(.secondary)
-                                            }
-                                            
-                                            
-                                            VStack() {
-                                                HStack {
-                                                    Text("The Webb Telescope Further Deepens the Biggest Controversy in Cosmology")
-                                                        .multilineTextAlignment(.leading)
-                                                        .font(Font.custom("SF Pro Rounded Regular", size: 16))
-                                                        .foregroundColor(.primary)
-                                                    Spacer()
-                                                }
-                                                
-                                                HStack {
-                                                    Text("Liz Kruesi")
-                                                        .multilineTextAlignment(.leading)
-                                                        .font(.caption)
-                                                        .italic()
-                                                        .fontDesign(.serif)
-                                                        .foregroundColor(.secondary)
-                                                    Spacer()
-                                                }
-                                            }
-                                            .padding(.leading)
-                                            
-                                            Spacer()
-                                            
-                                        }
-                                        .padding()
-                                        .background(Color.gray.opacity(0.1))
-                                    }
-                                    .clipShape(RoundedRectangle.init(cornerRadius: 18))
-                                    
-                                }
+                                
                             }
                             
                             .padding(.horizontal, 32)

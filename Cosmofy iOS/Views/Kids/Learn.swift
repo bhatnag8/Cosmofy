@@ -245,16 +245,24 @@ struct IOTDViewKids: View {
                         }
                         .padding()
                         if apod.media_type == "video" {
-                            WebView(urlString: apod.url)
-                                .frame(height: 300)
-                                .padding(.horizontal)
+                            
+                            if (apod.url != nil) {
+                                WebView(urlString: apod.url!)
+                                    .frame(height: 300)
+                                    .padding(.horizontal)
+                            }
+                            
+                            
                         } else {
                             if apod.hdurl != nil {
                                 ImageView(apod.hdurl!)
                                     .padding(.horizontal)
                             } else {
-                                ImageView(apod.url)
-                                    .padding(.horizontal)
+                                if (apod.url != nil) {
+                                    ImageView(apod.url!)
+                                        .padding(.horizontal)
+                                }
+                                
                             }
                         }
 
