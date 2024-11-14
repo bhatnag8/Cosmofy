@@ -82,11 +82,12 @@ struct MessageRowView: View {
                     
 //                        .font(Font.custom("SF Pro Rounded Medium", size: 18))
                 } else {
-//                    Markdown(text)
-//                        .textSelection(.enabled)
-                    Text(text)
+                    Markdown(text)
                         .multilineTextAlignment(.leading)
-//                        .textSelection(.enabled)
+                        .textSelection(.enabled)
+//                    Text(text)
+//                        .multilineTextAlignment(.leading)
+////                        .textSelection(.enabled)
                 }
                 #else
                 if image == "openai" {

@@ -126,7 +126,8 @@ struct PlanetView: View {
                 HStack() {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Atmosphere")
-                            .font(Font.custom("SF Pro Rounded Medium", size: 16))
+                            .fontDesign(.rounded)
+                            .fontWeight(.medium)
                             .foregroundColor(.secondary)
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack() {
@@ -145,7 +146,8 @@ struct PlanetView: View {
                 
                 HStack {
                     Text("Average Temperatures of Planets")
-                        .font(Font.custom("SF Pro Rounded Medium", size: 16))
+                        .fontDesign(.rounded)
+                        .fontWeight(.medium)
                         .foregroundColor(.secondary)
                     Spacer()
                 }
@@ -224,7 +226,8 @@ struct PlanetView: View {
                 
                 HStack {
                     Text("Planets farther from the Sun have lower temperatures, highlighting the impact of solar distance on planetary climates.")
-                        .font(Font.custom("SF Pro Rounded Regular", size: 12))
+                        .fontDesign(.rounded)
+                        .font(.caption)
                         .foregroundStyle(.secondary)
                     Spacer()
                 }
@@ -235,11 +238,11 @@ struct PlanetView: View {
 //            .background(colorScheme == .dark ? Color.init(hex: 0x0F0F15) : Color.clear)
             // 0F0F15 0x181C22
             .navigationTitle(planet.name)
-            .onAppear {
-                UINavigationBar.appearance().largeTitleTextAttributes = [
-                    .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 34, weight: .semibold),
-                ]
-            }
+//            .onAppear {
+//                UINavigationBar.appearance().largeTitleTextAttributes = [
+//                    .font: UIFont(name: "SF Pro Rounded Bold", size: 34) ?? UIFont.systemFont(ofSize: 34, weight: .semibold),
+//                ]
+//            }
             .navigationBarItems(
                 trailing: ShareLink(item: URL(string: "https://apps.apple.com/app/cosmofy/id6450969556")!, preview: SharePreview("Cosmofy on the Apple App Store", image: Image("iconApp")))
                     .foregroundStyle(planet.color)
@@ -365,7 +368,8 @@ struct PlanetPropertyView: View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
-                    .font(Font.custom("SF Pro Rounded Medium", size: 16))
+                    .fontDesign(.rounded)
+                    .fontWeight(.medium)
                     .foregroundColor(.secondary)
                 
                 HStack(alignment: .firstTextBaseline) {
@@ -375,10 +379,16 @@ struct PlanetPropertyView: View {
                         .fontWeight(.semibold)
                     
                     if (unit == "moons" && value == "1") {
-                        Text("moon").font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(color)
+                        Text("moon")
+                            .fontDesign(.rounded)
+                            .fontWeight(.medium)
+                            .foregroundStyle(color)
 
                     } else {
-                        Text(unit).font(Font.custom("SF Pro Rounded Semibold", size: 16)).foregroundStyle(color)
+                        Text(unit)
+                            .fontDesign(.rounded)
+                            .fontWeight(.medium)
+                            .foregroundStyle(color)
                     }
                 }
             }

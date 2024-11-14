@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0B1D323C2CD68DBB00818658"
+               BlueprintIdentifier = "0B9953722CE5439200124D68"
                BuildableName = "Cosmofy tvOS.app"
                BlueprintName = "Cosmofy tvOS"
                ReferencedContainer = "container:Cosmofy.xcodeproj">
@@ -44,7 +44,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0B1D323C2CD68DBB00818658"
+            BlueprintIdentifier = "0B9953722CE5439200124D68"
             BuildableName = "Cosmofy tvOS.app"
             BlueprintName = "Cosmofy tvOS"
             ReferencedContainer = "container:Cosmofy.xcodeproj">
@@ -61,7 +61,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0B1D323C2CD68DBB00818658"
+            BlueprintIdentifier = "0B9953722CE5439200124D68"
             BuildableName = "Cosmofy tvOS.app"
             BlueprintName = "Cosmofy tvOS"
             ReferencedContainer = "container:Cosmofy.xcodeproj">
