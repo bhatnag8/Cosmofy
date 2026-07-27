@@ -14,7 +14,7 @@ import Foundation
 class GraphQLClient {
     static let shared = GraphQLClient()
 
-    private let endpoint = URL(string: "https://prod3.livia.arryan.xyz/graphql")!
+    private let endpoint = URL(string: "https://livia.arryan.xyz/graphql")!
     private let session = URLSession.shared
 
     private init() {}
